@@ -1,0 +1,17 @@
+{
+  "name": "send-educacional",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tailwind.config.js",
+ "scripts": {
+    "dev": "tailwindcss -i ./src/input.css -o ./style.css --watch",
+    "build": "tailwindcss -i ./src/input.css -o ./style.css --minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  }
+}
