@@ -214,3 +214,35 @@ function registrar_lead_crm() {
         wp_send_json_success();
     }
 }
+
+
+add_action('wp_ajax_registrar_newsletter_rd', 'registrar_newsletter_rd');
+add_action('wp_ajax_nopriv_registrar_newsletter_rd', 'registrar_newsletter_rd');
+
+function registrar_newsletter_rd() {
+    $api_key = '699cbb3b8057d8001d350178'; // Colocaremos a chave aqui depois
+    $email = isset($_POST['email']) ? sanitize_email($_POST['email']) : '';
+
+    if (empty($email)) {
+        wp_send_json_error('E-mail vazio');
+    }
+
+    $body = [
+        'event_type'   => 'CONVERSION',
+        'event_family' => 'CDP',
+        'payload'      => [
+            'conversion_identifier' => 'newsletter-blog', // Identificador da Newsletter
+            'email'                 => $email
+        ]
+    ];
+
+    wp_remote_post('https://api.rd.services/platform/conversions?api_key=' . $api_key, [
+        'headers'     => ['Content-Type' => 'application/json'],
+        'body'        => wp_json_encode($body),
+        'method'      => 'POST',
+        'timeout'     => 10,
+        'sslverify'   => false // Para o Localhost
+    ]);
+
+    wp_send_json_success();
+}

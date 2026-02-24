@@ -401,7 +401,7 @@
         </div>
     </section>
 
-    <section class="py-24 bg-slate-50">
+    <!-- <section class="py-24 bg-slate-50">
         <div class="container mx-auto px-6 max-w-6xl text-center">
             <h2 class="text-3xl font-extrabold text-slate-900 mb-12">Quem confia no Send Educacional</h2>
             <div class="grid md:grid-cols-3 gap-8 text-left">
@@ -440,7 +440,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <section class="relative py-20 bg-white">
         <div class="absolute bottom-0 left-0 right-0 h-32 bg-[#1e3a8a]" style="clip-path: ellipse(70% 100% at 50% 100%);"></div>

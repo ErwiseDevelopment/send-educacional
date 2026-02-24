@@ -244,20 +244,51 @@ get_header();
                 Acesse, em primeira mão, nossos principais artigos e materiais educativos diretamente no seu e-mail.
             </p>
             
-            <form class="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto mb-4">
-                <input type="email" placeholder="Seu melhor e-mail corporativo" required class="flex-grow px-5 py-3 rounded-lg border border-slate-200 focus:outline-none focus:border-blue-500 text-sm">
-                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-3 rounded-lg transition-colors text-sm shadow-md">
+           <form id="form-newsletter" class="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto mb-4" onsubmit="assinarNewsletter(event)">
+                <input type="email" id="email_newsletter" placeholder="Seu melhor e-mail corporativo" required class="flex-grow px-5 py-3 rounded-lg border border-slate-200 focus:outline-none focus:border-blue-500 text-sm">
+                <button type="submit" id="btn_newsletter" class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-3 rounded-lg transition-colors text-sm shadow-md">
                     Cadastre-se!
                 </button>
             </form>
-            <p class="text-[10px] text-slate-400 max-w-lg mx-auto">
-                *Você pode deixar de receber essas comunicações quando quiser.
+            <p id="msg_newsletter" class="hidden text-green-600 font-bold text-sm mt-2 transition-all">
+                ✅ Inscrição realizada com sucesso!
             </p>
         </div>
     </section>
 
 </main>
 <script>
+
+function assinarNewsletter(e) {
+    e.preventDefault();
+    
+    const btn = document.getElementById('btn_newsletter');
+    const email = document.getElementById('email_newsletter').value;
+    const msg = document.getElementById('msg_newsletter');
+
+    btn.disabled = true;
+    btn.innerHTML = 'Enviando...';
+
+    // Monta os dados para o AJAX
+    const dados = new URLSearchParams({
+        action: 'registrar_newsletter_rd',
+        email: email
+    });
+
+    fetch('<?php echo admin_url('admin-ajax.php'); ?>', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: dados
+    }).finally(() => {
+        // Feedback visual para o usuário
+        btn.innerHTML = 'Cadastrado!';
+        btn.classList.replace('bg-blue-600', 'bg-green-600');
+        btn.classList.replace('hover:bg-blue-700', 'hover:bg-green-700');
+        msg.classList.remove('hidden');
+        document.getElementById('email_newsletter').value = ''; // Limpa o campo
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     const botoesFiltro = document.querySelectorAll('.btn-filtro');
     const formBusca = document.getElementById('form-busca-blog');
