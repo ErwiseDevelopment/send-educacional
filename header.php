@@ -51,7 +51,7 @@
                         <div class="border-b border-gray-100 mx-4 my-1"></div>
                         
                         <li>
-                            <a href="https://help.sendsolutions.com.br/" class="flex justify-between items-center px-5 py-3 hover:bg-slate-50 transition-colors">
+                            <a href="https://help.sendsolutions.com.br/"  target="_blank" class="flex justify-between items-center px-5 py-3 hover:bg-slate-50 transition-colors">
                                 Documentação do sistema
                                 <svg class="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>
                             </a>
@@ -60,7 +60,7 @@
                         <div class="border-b border-gray-100 mx-4 my-1"></div>
                         
                         <li>
-                            <a href="https://aplicacao.sendsolutions.com.br/" class="flex justify-between items-center px-5 py-3 hover:bg-slate-50 transition-colors">
+                            <a href="https://aplicacao.sendsolutions.com.br/TimeSheet/timesheet.login.aspx" class="flex justify-between items-center px-5 py-3 hover:bg-slate-50 transition-colors">
                                 Suporte
                                 <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
                             </a>
