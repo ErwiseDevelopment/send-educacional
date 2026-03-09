@@ -13,7 +13,7 @@
        <div class="flex flex-col items-start justify-center">
             <a href="<?php echo home_url(); ?>" class="block transition-transform hover:scale-105">
                 <img 
-                    src="<?php echo home_url('/wp-content/uploads/2026/02/3-1-e1771525969584.png'); ?>" 
+                    src="<?php echo home_url('/wp-content/uploads/2026/03/3-1-e1771525969584.png'); ?>" 
                     alt="Send Educacional" 
                     width="473" 
                     height="207" 

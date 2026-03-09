@@ -57,7 +57,7 @@
                     </div>
                     
                     <div class="w-full h-[calc(100%-3rem)] bg-slate-100 relative overflow-hidden">
-                        <img src="<?php echo home_url('/wp-content/uploads/2026/02/dash-academico.png'); ?>" alt="Dashboard Acadêmico" class="w-full h-full object-cover scroll-image">
+                        <img src="<?php echo home_url('/wp-content/uploads/2026/03/dash-academico-1.png'); ?>" alt="Dashboard Acadêmico" class="w-full h-full object-cover scroll-image">
                         
                         <div class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-slate-900/80 text-white text-[10px] font-bold uppercase tracking-widest px-5 py-2.5 rounded-full backdrop-blur-md opacity-100 group-hover:opacity-0 transition-opacity duration-500 pointer-events-none flex items-center gap-2 shadow-lg">
                             <svg class="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
@@ -272,7 +272,7 @@
                     <p class="text-slate-600 text-lg mb-6">Dashboards gerenciais com KPIs em tempo real. Controle a evasão, acompanhe desistentes e atue rapidamente nos alunos com risco de cancelamento baseando-se em dados precisos.</p>
                 </div>
                 <div class="bg-slate-100 rounded-2xl aspect-[16/10] border border-slate-200 shadow-xl overflow-hidden group scroll-container cursor-ns-resize">
-                    <img src="<?php echo home_url('/wp-content/uploads/2026/02/dash-evasao.png'); ?>" alt="Dashboard Direção e Evasão" class="w-full h-full object-cover scroll-image">
+                    <img src="<?php echo home_url('/wp-content/uploads/2026/03/dash-evasao-1.png'); ?>" alt="Dashboard Direção e Evasão" class="w-full h-full object-cover scroll-image">
                 </div>
             </div>
 
@@ -282,7 +282,7 @@
                     <p class="text-slate-600 text-lg mb-6">Acompanhe em tempo real as matrículas ativas, novos calouros e veteranos. Filtre por período e tenha o controle da sua base de estudantes a um clique de distância.</p>
                 </div>
                 <div class="bg-slate-100 rounded-2xl aspect-[16/10] border border-slate-200 shadow-xl overflow-hidden group scroll-container cursor-ns-resize">
-                    <img src="<?php echo home_url('/wp-content/uploads/2026/02/dash-academico.png'); ?>" alt="Dashboard Secretaria" class="w-full h-full object-cover scroll-image">
+                    <img src="<?php echo home_url('/wp-content/uploads/2026/03/dash-academico-1.png'); ?>" alt="Dashboard Secretaria" class="w-full h-full object-cover scroll-image">
                 </div>
             </div>
 
@@ -292,7 +292,7 @@
                     <p class="text-slate-600 text-lg mb-6">Diga adeus às planilhas. Monitore o faturamento, os valores a receber e controle os índices de inadimplência de forma cirúrgica com nossos painéis financeiros detalhados.</p>
                 </div>
                 <div class="bg-slate-100 rounded-2xl aspect-[16/10] border border-slate-200 shadow-xl overflow-hidden group scroll-container cursor-ns-resize">
-                    <img src="<?php echo home_url('/wp-content/uploads/2026/02/dash-financeiro.png'); ?>" alt="Dashboard Financeiro" class="w-full h-full object-cover scroll-image">
+                    <img src="<?php echo home_url('/wp-content/uploads/2026/03/dash-financeiro-1.png'); ?>" alt="Dashboard Financeiro" class="w-full h-full object-cover scroll-image">
                 </div>
             </div>
         </div>
@@ -401,48 +401,7 @@
         </div>
     </section>
 
-    <!-- <section class="py-24 bg-slate-50">
-        <div class="container mx-auto px-6 max-w-6xl text-center">
-            <h2 class="text-3xl font-extrabold text-slate-900 mb-12">Quem confia no Send Educacional</h2>
-            <div class="grid md:grid-cols-3 gap-8 text-left">
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-                    <div class="flex text-yellow-400 mb-4">★★★★★</div>
-                    <p class="text-slate-600 mb-6 italic">"A automação da régua de cobrança do Send reduziu nossa inadimplência em quase 30% no primeiro semestre. Além disso, a equipe de suporte é fantástica."</p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 bg-slate-200 rounded-full mr-4"></div>
-                        <div>
-                            <h4 class="font-bold text-slate-900 text-sm">Carlos Almeida</h4>
-                            <p class="text-xs text-slate-500">Diretor Financeiro</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-                    <div class="flex text-yellow-400 mb-4">★★★★★</div>
-                    <p class="text-slate-600 mb-6 italic">"O módulo de Secretaria Acadêmica acabou com o uso de papel na faculdade. O processo de matrícula digital com assinatura eletrônica é rápido e seguro."</p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 bg-slate-200 rounded-full mr-4"></div>
-                        <div>
-                            <h4 class="font-bold text-slate-900 text-sm">Mariana Costa</h4>
-                            <p class="text-xs text-slate-500">Secretária Acadêmica</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-                    <div class="flex text-yellow-400 mb-4">★★★★★</div>
-                    <p class="text-slate-600 mb-6 italic">"Tínhamos muito receio de trocar de ERP, mas a migração de dados feita pela equipe da Send foi transparente. Os portais do aluno são muito intuitivos."</p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 bg-slate-200 rounded-full mr-4"></div>
-                        <div>
-                            <h4 class="font-bold text-slate-900 text-sm">Roberto Silva</h4>
-                            <p class="text-xs text-slate-500">Gestor de T.I.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-    <section class="relative py-20 bg-white">
+      <section class="relative py-20 bg-white">
         <div class="absolute bottom-0 left-0 right-0 h-32 bg-[#1e3a8a]" style="clip-path: ellipse(70% 100% at 50% 100%);"></div>
 
         <div class="container mx-auto px-6 relative z-10">
