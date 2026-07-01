@@ -35,7 +35,7 @@
             </h1>
 
             <p class="text-xl text-slate-600 mb-10 max-w-3xl mx-auto leading-relaxed">
-                Acadêmico, financeiro, captação e agora o AVA nativo — integrados de ponta a ponta. Menos planilha, menos remendo entre sistemas, com o suporte de quem tem 33 anos de mercado.
+                Do processo seletivo ao diploma digital: acadêmico, financeiro, secretaria e o AVA nativo em uma só plataforma — adequada ao MEC, com o suporte de quem tem 33 anos de mercado.
             </p>
 
             <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
@@ -285,7 +285,7 @@
                             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path></svg>
                         </div>
                         <h4 class="text-3xl font-bold text-slate-900 mb-4">Secretaria Acadêmica</h4>
-                        <p class="text-slate-600 text-lg mb-6">Da matrícula à colação de grau no mesmo lugar: diploma digital, histórico escolar e rematrícula sem digitar tudo de novo à mão.</p>
+                        <p class="text-slate-600 text-lg mb-6">Do processo seletivo à colação de grau: matrícula e rematrícula online, diário de classe, histórico, diploma digital e adequação às portarias do MEC.</p>
                     </div>
                     <div class="relative z-10 mt-6">
                         <a href="<?php echo home_url('/gestao-academica'); ?>" class="inline-flex items-center justify-center bg-blue-50 hover:bg-blue-600 text-blue-700 hover:text-white font-bold py-3 px-8 rounded-xl transition-colors duration-300">
@@ -301,7 +301,7 @@
                             <svg class="w-8 h-8 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                         </div>
                         <h4 class="text-2xl font-bold mb-4">Gestão Financeira</h4>
-                        <p class="text-indigo-100 text-lg mb-8 leading-relaxed">Régua de cobrança automática, acordos e notas fiscais integradas — para a inadimplência parar de correr solta.</p>
+                        <p class="text-indigo-100 text-lg mb-8 leading-relaxed">Boletos, Pix e régua de cobrança automática, acordos, DRE e notas fiscais — inadimplência sob controle, do lançamento ao caixa.</p>
                     </div>
                     <div class="relative z-10 mt-auto">
                         <a href="<?php echo home_url('/gestao-financeira'); ?>" class="block text-center bg-white text-indigo-900 font-bold py-3 px-6 rounded-xl w-full hover:bg-indigo-50 transition">
@@ -316,7 +316,7 @@
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                         </div>
                         <h4 class="text-xl font-bold text-slate-900 mb-3">Portal do Aluno + AVA nativo</h4>
-                        <p class="text-slate-600 mb-6">Portal do aluno, professor e polos EAD, com o AVA próprio junto: notas, diários, requerimentos e aulas online no mesmo login.</p>
+                        <p class="text-slate-600 mb-6">Portais do aluno, do docente e do coordenador, com gestão de polos EAD e o AVA nativo junto: notas, diário, requerimentos e aulas no mesmo login.</p>
                     </div>
                     <a href="<?php echo home_url('/portais'); ?>" class="text-purple-600 font-bold hover:text-purple-800 flex items-center gap-2 transition">
                         Explorar os Portais <span aria-hidden="true">&rarr;</span>
@@ -339,6 +339,19 @@
                             <span class="text-sm font-medium text-blue-400/80 uppercase tracking-wider">Documentos 100% Digitalizados</span>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <!-- todos os módulos (linguagem do setor) -->
+            <div class="mt-10">
+                <p class="text-center text-sm font-semibold text-slate-500 mb-5">E ainda mais de <span class="font-bold text-slate-800">20 módulos</span> integrados na mesma plataforma</p>
+                <div class="flex flex-wrap justify-center gap-2.5">
+                    <?php
+                    $fp_modulos = array( 'Processo seletivo', 'Secretaria acadêmica', 'Diário de classe', 'Rematrícula online', 'Financeiro & DRE', 'Portal do aluno', 'Portal do docente', 'Portal do coordenador', 'Gestão de polos EAD', 'AVA nativo', 'Diploma digital', 'CRM & Captação', 'Biblioteca & GED', 'BI & Indicadores' );
+                    foreach ( $fp_modulos as $fp_mod ) {
+                        printf( '<span class="px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-600 text-sm font-semibold shadow-sm">%s</span>', esc_html( $fp_mod ) );
+                    }
+                    ?>
                 </div>
             </div>
         </div>
