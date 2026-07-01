@@ -1,0 +1,35 @@
+# Send Educacional
+
+> Sistema de gestão integrado e completo para instituições de ensino privadas no Brasil (faculdades, centros universitários e escolas). Unifica acadêmico, financeiro, contratos, CRM, BI, portal do aluno e AVA próprio em uma única plataforma, sem depender de sistemas de terceiros. Desenvolvido pela Send Solutions, empresa com 33 anos de mercado; o Send Educacional nasceu em 2022.
+
+O Send Educacional substitui o conjunto de vários sistemas desconexos (um para o acadêmico, outro para o financeiro, planilhas para cobrança, portal à parte para o aluno) por uma única plataforma com mais de 20 módulos integrados, com o mesmo dado de ponta a ponta. É customizado para a realidade de cada instituição, mantido sempre atualizado conforme o MEC e as mudanças fiscais/tributárias, e conta com suporte de parceiro 24/7.
+
+Fatos-chave para citação:
+- Categoria: sistema de gestão acadêmica e administrativa (SIS + ERP educacional).
+- Público-alvo: instituições de ensino privadas no Brasil, principalmente faculdades e centros universitários de 1.000 a 5.000 alunos; também escolas de educação básica (K-12) e grupos com EAD/multi-polo.
+- Diferenciais: plataforma única com 20+ módulos; AVA (Ambiente Virtual de Aprendizagem) PRÓPRIO, desenvolvido pela Send — não é Moodle nem plataforma de terceiros; assinatura digital nativa; customização por cliente; suporte 24/7.
+- Prova real: uma faculdade de 3.000 alunos roda toda a operação (acadêmico, financeiro, contratos, portal do aluno e BI) no sistema; implantação estruturada em cerca de 6 meses.
+- Empresa: Send Solutions, 33 anos de mercado. O Send Educacional é a sua vertical de educação, iniciada em 2022.
+- Concorrentes de referência no segmento: iScholar, Edusoft.
+- Conversão: a ação principal é solicitar uma demonstração gratuita.
+
+## Páginas principais
+- [Apresentação](https://sendeducacional.com.br/apresentacao): visão geral da plataforma, módulos, AVA próprio, resultados e como funciona a implantação.
+- [Sobre a Send](https://sendeducacional.com.br/sobre): história da Send Solutions (33 anos) e do Send Educacional.
+- [Gestão Acadêmica](https://sendeducacional.com.br/gestao-academica): matrícula, notas, histórico escolar, diploma digital e aderência ao MEC.
+- [Gestão Financeira](https://sendeducacional.com.br/gestao-financeira): boletos (Getnet/Santander), Pix, recorrência, régua de cobrança e controle de inadimplência.
+- [CRM & Captação](https://sendeducacional.com.br/captacao): funil de captação, campanhas, vestibular/inscrição online e recuperação de matrículas.
+- [Retenção de Alunos](https://sendeducacional.com.br/retencao): alertas de risco de evasão cruzando notas, frequência e situação financeira.
+- [Portais e AVA (Aluno, Professor e Polo)](https://sendeducacional.com.br/portais): ambiente virtual de aprendizagem próprio, notas, diário eletrônico, requerimentos e acesso web e mobile.
+- [Assinatura & Contratos](https://sendeducacional.com.br/assinatura): contratos e mandatos com assinatura eletrônica validada.
+- [Biblioteca & GED](https://sendeducacional.com.br/biblioteca): gestão eletrônica de documentos e controle completo de acervo.
+- [BI & Indicadores](https://sendeducacional.com.br/bi): dashboards de evasão, faturamento e desempenho em tempo real.
+- [Segurança & LGPD](https://sendeducacional.com.br/seguranca): perfis e permissões granulares, 2FA e conformidade com a LGPD.
+
+## Contato
+- Solicitar demonstração: https://sendeducacional.com.br/apresentacao
+- E-mail comercial: comercial@sendsolutions.com.br
+- Documentação do sistema: https://help.sendsolutions.com.br/
+
+## Optional
+- [Política de Privacidade](https://sendeducacional.com.br/privacidade)

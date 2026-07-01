@@ -6,6 +6,7 @@ if (!defined('ABSPATH')) exit;
 // MÓDULOS DO TEMA (métricas + atualização via Git)
 // ========================================================
 require_once get_template_directory() . '/inc/tracking.php';
+require_once get_template_directory() . '/inc/seo.php';
 
 /* -------------------------------------------------------------------------
  * Auto-update do tema via GitHub (plugin-update-checker) — mesmo esquema do
