@@ -418,6 +418,35 @@
         </div>
     </section>
 
+    <!-- ===================== DIFERENCIAIS ===================== -->
+    <section class="relative z-10 py-24">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="text-center mb-14 reveal">
+                <span class="text-blue-400 font-bold tracking-widest uppercase text-xs">Por que o Send</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mt-4">O que nos torna <span class="gtext">diferentes</span></h2>
+                <p class="text-lg text-slate-400 mt-4 max-w-2xl mx-auto">Não é só mais um sistema de gestão: é a soma de plataforma única, AVA próprio e o suporte de quem faz software há 33 anos.</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 reveal">
+                <?php
+                $fp_dif = array(
+                    array( 'AVA nativo, sem Moodle', 'O ambiente de aula é desenvolvido pela própria Send e integrado ao acadêmico e ao financeiro — sem depender de LMS de terceiros.', '<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h14a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M9 20h6M12 16v4"></path><path fill="currentColor" stroke="none" d="M10.5 7.8l3.2 2-3.2 2v-4z"></path></svg>' ),
+                    array( 'Uma plataforma, não remendos', 'Do processo seletivo ao diploma digital no mesmo sistema, com os dados conversando de ponta a ponta.', '<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3 3 8l9 5 9-5-9-5z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M3 13l9 5 9-5M3 17l9 5 9-5"></path></svg>' ),
+                    array( '33 anos de mercado', 'Nascido dentro da Send Solutions, com a estabilidade de quem entende gestão há três décadas.', '<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3l2.6 5.3 5.9.9-4.2 4.1 1 5.8L12 16.9 6.7 19.2l1-5.8-4.2-4.1 5.9-.9L12 3z"></path></svg>' ),
+                    array( 'Suporte de parceiro', 'Implantação guiada e suporte próximo: a gente conduz a migração sem parar a sua operação.', '<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>' ),
+                    array( 'Aderência ao MEC nativa', 'Diploma digital, portarias e recredenciamento sempre em dia — sem correria a cada mudança da regulação.', '<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15a5 5 0 100-10 5 5 0 000 10z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M8.5 13.5L7 21l5-2.5L17 21l-1.5-7.5"></path></svg>' ),
+                    array( 'Dados que não se perdem', 'A nota do AVA cai no histórico e a cobrança no financeiro — sem reimportar planilha nem digitar duas vezes.', '<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 5v5h5M20 19v-5h-5"></path><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 9A8 8 0 006 5.3L4 7m0 10a8 8 0 0013.5 1.7L20 17"></path></svg>' ),
+                );
+                foreach ( $fp_dif as $d ) {
+                    printf(
+                        '<div class="glass glass-hover rounded-3xl p-7"><div class="w-12 h-12 igrad rounded-2xl flex items-center justify-center mb-5">%s</div><h3 class="text-lg font-bold text-white mb-2">%s</h3><p class="text-slate-400 leading-relaxed text-sm">%s</p></div>',
+                        $d[2], esc_html( $d[0] ), esc_html( $d[1] )
+                    );
+                }
+                ?>
+            </div>
+        </div>
+    </section>
+
     <!-- ===================== JEITO ANTIGO x SEND ===================== -->
     <section class="relative z-10 py-24">
         <div class="container mx-auto px-6 max-w-5xl">
