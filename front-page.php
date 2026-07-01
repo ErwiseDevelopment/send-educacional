@@ -340,10 +340,18 @@
                     Em constante evolução
                 </div>
                 <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight">Os módulos mais novos para <span class="gtext">crescer e reter</span></h2>
-                <p class="text-slate-400 max-w-2xl mx-auto text-lg mt-4">Além do dia a dia da gestão: ferramentas para captar mais alunos e reduzir a evasão, desenvolvidas pela própria Send.</p>
+                <p class="text-slate-400 max-w-2xl mx-auto text-lg mt-4">Além do dia a dia da gestão: ferramentas para captar, ensinar e reter alunos, desenvolvidas pela própria Send.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-6 reveal">
+            <div class="grid md:grid-cols-3 gap-6 reveal">
+                <div class="glass glass-hover rounded-3xl p-9 relative">
+                    <span class="absolute -top-3 right-8 text-white text-[10px] font-black px-3 py-1.5 rounded-full uppercase tracking-widest inline-flex items-center gap-1.5" style="background:linear-gradient(100deg,#7c3aed,#c026d3)"><svg class="w-3 h-3" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 4.5 13H11l-1 9 8.5-11H12l1-9z"></path></svg> Novidade</span>
+                    <div class="w-14 h-14 rounded-2xl bg-violet-500/15 border border-violet-500/30 flex items-center justify-center mb-6"><svg class="w-7 h-7 text-violet-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h14a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M9 20h6M12 16v4"></path><path fill="currentColor" stroke="none" d="M10 7.5l4 2.5-4 2.5v-5z"></path></svg></div>
+                    <h3 class="text-2xl font-bold text-white mb-3">AVA nativo</h3>
+                    <p class="text-slate-400 leading-relaxed mb-7">Ambiente de aula desenvolvido pela própria Send: aulas, avaliações e notas dentro do mesmo sistema do acadêmico e do financeiro — sem depender de Moodle.</p>
+                    <button onclick="document.getElementById('demo-modal').classList.remove('hidden')" class="inline-flex items-center gap-2 font-bold text-violet-300 hover:text-white transition">Conhecer o AVA <span aria-hidden="true">&rarr;</span></button>
+                </div>
+
                 <div class="glass glass-hover rounded-3xl p-9 relative">
                     <span class="absolute -top-3 right-8 gbtn text-white text-[10px] font-black px-3 py-1.5 rounded-full uppercase tracking-widest inline-flex items-center gap-1.5"><svg class="w-3 h-3" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 4.5 13H11l-1 9 8.5-11H12l1-9z"></path></svg> Novidade</span>
                     <div class="w-14 h-14 rounded-2xl bg-blue-500/15 border border-blue-500/30 flex items-center justify-center mb-6"><svg class="w-7 h-7 text-blue-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 4h18M4 4v6l6 4-6 4v2h16v-2l-6-4 6-4V4"></path></svg></div>
