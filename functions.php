@@ -7,7 +7,6 @@ if (!defined('ABSPATH')) exit;
 // ========================================================
 require_once get_template_directory() . '/inc/tracking.php';
 require_once get_template_directory() . '/inc/seo.php';
-require_once get_template_directory() . '/inc/cpt-cleanup.php';
 
 /* -------------------------------------------------------------------------
  * Auto-update do tema via GitHub (plugin-update-checker) — mesmo esquema do
