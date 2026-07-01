@@ -30,13 +30,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sendeducacional.com.br/gestao-financeira</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://sendeducacional.com.br/captacao</loc>
+    <loc>https://sendeducacional.com.br/financeiro</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -54,7 +48,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sendeducacional.com.br/assinatura</loc>
+    <loc>https://sendeducacional.com.br/requerimentos</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -71,10 +65,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- Conteúdo -->
   <url>
-    <loc>https://sendeducacional.com.br/seguranca</loc>
+    <loc>https://sendeducacional.com.br/blog</loc>
     <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
