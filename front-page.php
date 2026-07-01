@@ -61,32 +61,42 @@
                         <span class="mx-auto text-[11px] text-slate-400 font-semibold bg-white border border-slate-100 rounded-full px-4 py-1">app.sendeducacional.com.br</span>
                     </div>
 
-                    <div class="grid" style="grid-template-columns:56px 1fr;">
-                        <div class="bg-slate-900 py-4 flex flex-col items-center gap-4">
-                            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 text-white font-extrabold flex items-center justify-center text-sm">S</div>
-                            <span class="w-5 h-5 rounded-md bg-blue-500"></span>
-                            <span class="w-5 h-5 rounded-md bg-white/10"></span>
-                            <span class="w-5 h-5 rounded-md bg-white/10"></span>
-                            <span class="w-5 h-5 rounded-md bg-white/10"></span>
-                            <span class="w-5 h-5 rounded-md bg-white/10"></span>
+                    <div class="grid" style="grid-template-columns:158px 1fr;">
+                        <!-- menu lateral com nomes reais do sistema -->
+                        <div class="bg-slate-900 py-4 px-3 flex flex-col gap-1">
+                            <div class="flex items-center gap-2 px-2 mb-3">
+                                <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 text-white font-extrabold flex items-center justify-center text-xs">S</div>
+                                <span class="text-white text-[12px] font-bold tracking-tight">Send<span class="text-slate-500 font-medium"> Edu</span></span>
+                            </div>
+                            <?php
+                            $fp_nav = array( 'Painel' => true, 'Secretaria' => false, 'Acadêmico' => false, 'Financeiro' => false, 'AVA' => false, 'Relatórios' => false );
+                            foreach ( $fp_nav as $fp_label => $fp_on ) {
+                                printf(
+                                    '<span class="flex items-center gap-2 px-2 py-1.5 rounded-lg text-[11px] font-semibold %s"><span class="w-3.5 h-3.5 rounded %s"></span>%s</span>',
+                                    $fp_on ? 'bg-blue-600 text-white' : 'text-slate-400',
+                                    $fp_on ? 'bg-white/40' : 'bg-white/10',
+                                    esc_html( $fp_label )
+                                );
+                            }
+                            ?>
                         </div>
 
+                        <!-- área principal -->
                         <div class="p-5 md:p-6 text-left bg-white">
                             <div class="flex items-center justify-between mb-5">
                                 <div>
-                                    <p class="text-sm md:text-base font-extrabold text-slate-900 tracking-tight">Visão geral</p>
-                                    <p class="text-[11px] text-slate-400 font-medium">Resumo do mês · 2026</p>
+                                    <p class="text-sm md:text-base font-extrabold text-slate-900 tracking-tight">Painel acadêmico</p>
+                                    <p class="text-[11px] text-slate-400 font-medium">Faculdade Exemplo · período 2026.1</p>
                                 </div>
                                 <div class="hidden sm:flex gap-1.5 text-[11px] font-semibold">
-                                    <span class="px-3 py-1.5 rounded-lg bg-blue-600 text-white">Acadêmico</span>
-                                    <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-500">Financeiro</span>
-                                    <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-500">Evasão</span>
+                                    <span class="px-3 py-1.5 rounded-lg bg-blue-600 text-white">2026.1</span>
+                                    <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-500">2025.2</span>
                                 </div>
                             </div>
 
                             <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
                                 <div class="rounded-xl border border-slate-100 p-3">
-                                    <p class="text-[10px] font-semibold text-slate-400 uppercase tracking-wide">Matrículas</p>
+                                    <p class="text-[10px] font-semibold text-slate-400 uppercase tracking-wide">Matrículas 2026.1</p>
                                     <p class="text-lg font-extrabold text-slate-900 leading-tight">1.284</p>
                                     <span class="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-600"><svg class="w-2.5 h-2.5" viewBox="0 0 10 10" fill="currentColor"><path d="M5 1 9 8 1 8Z"></path></svg> 12%</span>
                                 </div>
@@ -96,33 +106,67 @@
                                     <span class="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-600"><svg class="w-2.5 h-2.5" viewBox="0 0 10 10" fill="currentColor"><path d="M5 9 1 2 9 2Z"></path></svg> 1,8pp</span>
                                 </div>
                                 <div class="rounded-xl border border-slate-100 p-3">
-                                    <p class="text-[10px] font-semibold text-slate-400 uppercase tracking-wide">Risco evasão</p>
+                                    <p class="text-[10px] font-semibold text-slate-400 uppercase tracking-wide">Risco de evasão</p>
                                     <p class="text-lg font-extrabold text-slate-900 leading-tight">37</p>
                                     <span class="inline-flex items-center gap-1 text-[10px] font-bold text-amber-600">alunos</span>
                                 </div>
                                 <div class="rounded-xl border border-slate-100 p-3">
-                                    <p class="text-[10px] font-semibold text-slate-400 uppercase tracking-wide">Receita</p>
-                                    <p class="text-lg font-extrabold text-slate-900 leading-tight">R$2,4M</p>
-                                    <span class="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-600"><svg class="w-2.5 h-2.5" viewBox="0 0 10 10" fill="currentColor"><path d="M5 1 9 8 1 8Z"></path></svg> 8%</span>
+                                    <p class="text-[10px] font-semibold text-slate-400 uppercase tracking-wide">Rematrícula</p>
+                                    <p class="text-lg font-extrabold text-slate-900 leading-tight">86%</p>
+                                    <span class="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-600"><svg class="w-2.5 h-2.5" viewBox="0 0 10 10" fill="currentColor"><path d="M5 1 9 8 1 8Z"></path></svg> concluída</span>
                                 </div>
                             </div>
 
                             <div class="grid md:grid-cols-3 gap-3">
+                                <!-- lista de últimas matrículas -->
                                 <div class="md:col-span-2 rounded-xl border border-slate-100 p-3">
-                                    <p class="text-[10px] font-semibold text-slate-400 uppercase tracking-wide mb-2">Matrículas por mês</p>
-                                    <div class="fp-bars"><span style="height:42%"></span><span style="height:55%"></span><span style="height:48%"></span><span style="height:70%"></span><span style="height:62%"></span><span style="height:85%"></span><span style="height:100%"></span></div>
-                                </div>
-                                <div class="rounded-xl border border-slate-100 p-3">
-                                    <p class="text-[10px] font-semibold text-slate-400 uppercase tracking-wide mb-2">Cursos</p>
-                                    <div class="flex items-center gap-3">
-                                        <div class="fp-donut"></div>
-                                        <div class="space-y-1 text-[10px] text-slate-500 font-medium">
-                                            <div><span class="fp-dot" style="background:#4f46e5"></span> Graduação</div>
-                                            <div><span class="fp-dot" style="background:#3b82f6"></span> EAD</div>
-                                            <div><span class="fp-dot" style="background:#22d3ee"></span> Pós</div>
-                                            <div><span class="fp-dot" style="background:#e2e8f0"></span> Técnico</div>
-                                        </div>
+                                    <div class="flex items-center justify-between mb-2.5">
+                                        <p class="text-[10px] font-semibold text-slate-400 uppercase tracking-wide">Últimas matrículas</p>
+                                        <span class="text-[10px] font-semibold text-blue-600">ver todas</span>
                                     </div>
+                                    <div class="space-y-2">
+                                        <?php
+                                        $fp_matriculas = array(
+                                            array( 'Ana Beatriz Rocha', 'Direito', 'Noite', 'Confirmada', 'bg-emerald-50 text-emerald-600' ),
+                                            array( 'Lucas Martins', 'Análise e Desenv. de Sistemas', 'EAD', 'Aguardando', 'bg-amber-50 text-amber-600' ),
+                                            array( 'Marina Alves', 'Enfermagem', 'Manhã', 'Confirmada', 'bg-emerald-50 text-emerald-600' ),
+                                            array( 'Rafael Souza', 'Administração', 'Noite', 'Contrato', 'bg-blue-50 text-blue-600' ),
+                                        );
+                                        foreach ( $fp_matriculas as $m ) {
+                                            printf(
+                                                '<div class="flex items-center gap-2 text-[11px]">
+                                                    <span class="w-6 h-6 rounded-full bg-slate-100 text-slate-500 flex items-center justify-center font-bold text-[10px] shrink-0">%s</span>
+                                                    <span class="font-semibold text-slate-700 w-24 truncate">%s</span>
+                                                    <span class="text-slate-400 flex-1 truncate hidden sm:block">%s</span>
+                                                    <span class="text-slate-400 w-10 hidden sm:block">%s</span>
+                                                    <span class="px-2 py-0.5 rounded-full font-bold %s">%s</span>
+                                                </div>',
+                                                esc_html( mb_substr( $m[0], 0, 1 ) ),
+                                                esc_html( $m[0] ), esc_html( $m[1] ), esc_html( $m[2] ), $m[4], esc_html( $m[3] )
+                                            );
+                                        }
+                                        ?>
+                                    </div>
+                                </div>
+
+                                <!-- AVA: atividades a corrigir -->
+                                <div class="rounded-xl border border-slate-100 p-3">
+                                    <div class="flex items-center gap-1.5 mb-2.5">
+                                        <span class="px-1.5 py-0.5 rounded bg-indigo-50 text-indigo-600 text-[9px] font-bold uppercase tracking-wide">AVA</span>
+                                        <p class="text-[10px] font-semibold text-slate-400 uppercase tracking-wide">a corrigir</p>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <?php
+                                        $fp_ava = array( array( 'Cálculo I', '12' ), array( 'Anatomia', '8' ), array( 'Prog. Orient. a Objetos', '5' ) );
+                                        foreach ( $fp_ava as $a ) {
+                                            printf(
+                                                '<div class="flex items-center justify-between gap-2 text-[11px]"><span class="text-slate-600 font-medium truncate">%s</span><span class="w-6 h-5 rounded bg-indigo-600 text-white font-bold flex items-center justify-center text-[10px] shrink-0">%s</span></div>',
+                                                esc_html( $a[0] ), esc_html( $a[1] )
+                                            );
+                                        }
+                                        ?>
+                                    </div>
+                                    <div class="mt-3 pt-2 border-t border-slate-100 text-[10px] font-semibold text-indigo-600">Abrir diário de classe</div>
                                 </div>
                             </div>
                         </div>
