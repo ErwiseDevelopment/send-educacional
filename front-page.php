@@ -321,7 +321,7 @@
                 <p class="text-center text-sm font-semibold text-slate-400 mb-5">E ainda mais de <span class="font-bold text-white">20 módulos</span> na mesma plataforma</p>
                 <div class="flex flex-wrap justify-center gap-2.5">
                     <?php
-                    $fp_modulos = array( 'Processo seletivo', 'Secretaria acadêmica', 'Diário de classe', 'Rematrícula online', 'Financeiro & DRE', 'Portal do aluno', 'Portal do docente', 'Portal do coordenador', 'Gestão de polos EAD', 'AVA nativo', 'Diploma digital', 'CRM & Captação', 'Biblioteca & GED', 'BI & Indicadores' );
+                    $fp_modulos = array( 'Processo seletivo', 'Matrícula & rematrícula', 'Assinatura digital', 'Secretaria acadêmica', 'Diário de classe', 'Financeiro & DRE', 'Portal do aluno', 'Portal do docente', 'Portal do coordenador', 'Gestão de polos EAD', 'AVA nativo', 'Diploma digital', 'CRM & Captação', 'Retenção de alunos', 'Biblioteca & GED', 'BI & Indicadores' );
                     foreach ( $fp_modulos as $fp_mod ) {
                         printf( '<span class="px-4 py-2 rounded-full glass text-slate-300 text-sm font-semibold">%s</span>', esc_html( $fp_mod ) );
                     }
@@ -331,42 +331,49 @@
         </div>
     </section>
 
-    <!-- ===================== MÓDULOS NOVOS (crescimento) ===================== -->
+    <!-- ===================== JORNADA COMPLETA ===================== -->
     <section class="relative z-10 py-24">
         <div class="container mx-auto px-6 max-w-6xl">
-            <div class="text-center mb-14 reveal">
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-300 text-xs font-bold uppercase tracking-widest mb-4">
-                    <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span></span>
-                    Em constante evolução
-                </div>
-                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight">Os módulos mais novos para <span class="gtext">crescer e reter</span></h2>
-                <p class="text-slate-400 max-w-2xl mx-auto text-lg mt-4">Além do dia a dia da gestão: ferramentas para captar, ensinar e reter alunos, desenvolvidas pela própria Send.</p>
+            <div class="text-center mb-16 reveal">
+                <span class="text-blue-400 font-bold tracking-widest uppercase text-xs">Uma plataforma, a jornada inteira</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mt-4">Da captação ao <span class="gtext">diploma digital</span>, sem trocar de sistema</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto text-lg mt-4">Matrícula com assinatura digital, secretaria, financeiro, AVA e diploma — cada etapa já conversa com a próxima, sem planilha nem sistema paralelo.</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-6 reveal">
-                <div class="glass glass-hover rounded-3xl p-9 relative">
-                    <span class="absolute -top-3 right-8 text-white text-[10px] font-black px-3 py-1.5 rounded-full uppercase tracking-widest inline-flex items-center gap-1.5" style="background:linear-gradient(100deg,#7c3aed,#c026d3)"><svg class="w-3 h-3" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 4.5 13H11l-1 9 8.5-11H12l1-9z"></path></svg> Novidade</span>
-                    <div class="w-14 h-14 rounded-2xl bg-violet-500/15 border border-violet-500/30 flex items-center justify-center mb-6"><svg class="w-7 h-7 text-violet-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h14a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M9 20h6M12 16v4"></path><path fill="currentColor" stroke="none" d="M10 7.5l4 2.5-4 2.5v-5z"></path></svg></div>
-                    <h3 class="text-2xl font-bold text-white mb-3">AVA nativo</h3>
-                    <p class="text-slate-400 leading-relaxed mb-7">Ambiente de aula desenvolvido pela própria Send: aulas, avaliações e notas dentro do mesmo sistema do acadêmico e do financeiro — sem depender de Moodle.</p>
-                    <button onclick="document.getElementById('demo-modal').classList.remove('hidden')" class="inline-flex items-center gap-2 font-bold text-violet-300 hover:text-white transition">Conhecer o AVA <span aria-hidden="true">&rarr;</span></button>
+            <div class="relative reveal">
+                <div class="hidden lg:block absolute top-7 left-[8%] right-[8%] h-px bg-gradient-to-r from-blue-500/40 via-violet-500/40 to-fuchsia-500/40"></div>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-4 gap-y-8">
+                    <?php
+                    $fp_jornada = array(
+                        array( 'Captação & CRM', 'Funil de leads, campanhas e recuperação de matrículas.', '<path stroke-linecap="round" stroke-linejoin="round" d="M4 5h16M7 10h10M10 15h4M11 19h2"></path>', false ),
+                        array( 'Matrícula & Assinatura', '100% digital, com contrato assinado eletronicamente.', '<path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5"></path><path stroke-linecap="round" stroke-linejoin="round" d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"></path>', false ),
+                        array( 'Secretaria acadêmica', 'Diário de classe, histórico, rematrícula e documentos.', '<path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M12 14v7M5 11v5c0 1 3 3 7 3s7-2 7-3v-5"></path>', false ),
+                        array( 'Financeiro', 'Boletos, Pix, régua de cobrança, acordos e DRE.', '<path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8V7m0 9v1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>', false ),
+                        array( 'AVA nativo', 'Aulas, materiais e avaliações online — sem Moodle.', '<path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h14a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M9 20h6M12 16v4"></path><path fill="currentColor" stroke="none" d="M10 7.5l4 2.5-4 2.5v-5z"></path>', true ),
+                        array( 'Diploma digital', 'Emissão nativa, adequada às portarias do MEC.', '<path stroke-linecap="round" stroke-linejoin="round" d="M12 15a4 4 0 100-8 4 4 0 000 8z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M8.5 13.5 7 21l5-2.5L17 21l-1.5-7.5"></path>', false ),
+                    );
+                    foreach ( $fp_jornada as $j ) {
+                        $bg    = $j[3] ? 'linear-gradient(135deg,#7c3aed,#c026d3)' : 'linear-gradient(135deg,#3b82f6,#7c3aed)';
+                        $badge = $j[3] ? '<span class="absolute -top-2 -right-2 text-[8px] font-black uppercase tracking-wider text-white px-1.5 py-0.5 rounded-full" style="background:linear-gradient(100deg,#7c3aed,#c026d3)">Novo</span>' : '';
+                        printf(
+                            '<div class="text-center px-1">
+                                <div class="relative w-14 h-14 mx-auto rounded-2xl flex items-center justify-center mb-4 z-10 ring-4 ring-[#070b18]" style="background:%s">
+                                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">%s</svg>
+                                    %s
+                                </div>
+                                <h4 class="text-sm font-bold text-white leading-tight">%s</h4>
+                                <p class="text-[12px] text-slate-400 mt-1 leading-snug">%s</p>
+                            </div>',
+                            $bg, $j[2], $badge, esc_html( $j[0] ), esc_html( $j[1] )
+                        );
+                    }
+                    ?>
                 </div>
+            </div>
 
-                <div class="glass glass-hover rounded-3xl p-9 relative">
-                    <span class="absolute -top-3 right-8 gbtn text-white text-[10px] font-black px-3 py-1.5 rounded-full uppercase tracking-widest inline-flex items-center gap-1.5"><svg class="w-3 h-3" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 4.5 13H11l-1 9 8.5-11H12l1-9z"></path></svg> Novidade</span>
-                    <div class="w-14 h-14 rounded-2xl bg-blue-500/15 border border-blue-500/30 flex items-center justify-center mb-6"><svg class="w-7 h-7 text-blue-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 4h18M4 4v6l6 4-6 4v2h16v-2l-6-4 6-4V4"></path></svg></div>
-                    <h3 class="text-2xl font-bold text-white mb-3">CRM &amp; Captação</h3>
-                    <p class="text-slate-400 leading-relaxed mb-7">Acompanhe cada lead desde o primeiro clique no site, organize o funil de captação e recupere matrículas que ficaram pelo caminho.</p>
-                    <button onclick="document.getElementById('demo-modal').classList.remove('hidden')" class="inline-flex items-center gap-2 font-bold text-blue-300 hover:text-white transition">Conhecer o CRM <span aria-hidden="true">&rarr;</span></button>
-                </div>
-
-                <div class="glass glass-hover rounded-3xl p-9 relative">
-                    <span class="absolute -top-3 right-8 text-white text-[10px] font-black px-3 py-1.5 rounded-full uppercase tracking-widest inline-flex items-center gap-1.5" style="background:linear-gradient(100deg,#10b981,#14b8a6)"><svg class="w-3 h-3" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 4.5 13H11l-1 9 8.5-11H12l1-9z"></path></svg> Lançamento</span>
-                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center mb-6"><svg class="w-7 h-7 text-emerald-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 10-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z"></path></svg></div>
-                    <h3 class="text-2xl font-bold text-white mb-3">Retenção de Alunos</h3>
-                    <p class="text-slate-400 leading-relaxed mb-7">A ferramenta cruza frequência, notas e financeiro e gera alertas de risco de evasão — para você agir antes de o aluno pedir transferência.</p>
-                    <button onclick="document.getElementById('demo-modal').classList.remove('hidden')" class="inline-flex items-center gap-2 font-bold text-emerald-300 hover:text-white transition">Saber mais sobre retenção <span aria-hidden="true">&rarr;</span></button>
-                </div>
+            <div class="mt-14 text-center reveal">
+                <button onclick="document.getElementById('demo-modal').classList.remove('hidden')" class="gbtn text-white font-bold px-8 py-4 rounded-2xl transition-all hover:-translate-y-0.5">Ver a plataforma completa</button>
+                <p class="text-slate-500 text-sm mt-3">Mais de 20 módulos, do primeiro contato ao diploma.</p>
             </div>
         </div>
     </section>
