@@ -39,6 +39,9 @@
     .tabx { color:#94a3b8; border-bottom:2px solid transparent; }
     .tabx.tab-active { color:#fff; border-bottom-color:#6d4bef; }
 
+    .sys-donut { width:74px; height:74px; border-radius:50%; background:conic-gradient(#3b82f6 0 94%, #334155 94% 100%); display:flex; align-items:center; justify-content:center; position:relative; }
+    .sys-donut::after { content:""; position:absolute; width:48px; height:48px; border-radius:50%; background:#0f1526; }
+
     @media (prefers-reduced-motion:reduce){
         .reveal{opacity:1;transform:none;transition:none}
         .floaty,.floaty2,.mq,.aurora::before,.aurora::after{animation:none}
@@ -78,15 +81,66 @@
             <div class="relative">
                 <div class="absolute -inset-x-10 -top-8 bottom-0 bg-gradient-to-b from-blue-500/40 to-violet-600/10 blur-3xl rounded-[3rem]"></div>
 
-                <div class="relative fp-dash cardring">
-                    <div class="h-11 border-b border-slate-100 bg-slate-50 flex items-center px-4 gap-2">
-                        <span class="w-3 h-3 rounded-full bg-slate-300"></span>
-                        <span class="w-3 h-3 rounded-full bg-slate-300"></span>
-                        <span class="w-3 h-3 rounded-full bg-slate-300"></span>
-                        <span class="mx-auto text-[11px] text-slate-400 font-semibold bg-white border border-slate-100 rounded-full px-4 py-1">app.sendeducacional.com.br</span>
+                <div class="relative rounded-2xl overflow-hidden border border-white/10 bg-[#0a0f1e] cardring">
+                    <div class="h-11 flex items-center px-4 gap-2 border-b border-white/10 bg-slate-900/60">
+                        <span class="w-3 h-3 rounded-full bg-slate-600"></span>
+                        <span class="w-3 h-3 rounded-full bg-slate-600"></span>
+                        <span class="w-3 h-3 rounded-full bg-slate-600"></span>
+                        <span class="mx-auto text-[11px] text-slate-400 font-semibold bg-white/5 border border-white/10 rounded-full px-4 py-1">app.sendeducacional.com.br</span>
                     </div>
+                    <div class="p-5 md:p-6 text-left">
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="flex items-center gap-2.5">
+                                <span class="w-8 h-8 rounded-lg flex items-center justify-center" style="background:linear-gradient(135deg,#3b82f6,#7c3aed)"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 5 3 9l9 4 9-4-9-4z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M7 11v4c0 1 2.5 2.5 5 2.5s5-1.5 5-2.5v-4"></path></svg></span>
+                                <span class="text-white font-extrabold text-sm tracking-tight">SEND <span class="text-slate-500 font-medium">EDUCACIONAL</span></span>
+                                <span class="hidden sm:inline text-slate-600">|</span>
+                                <span class="hidden sm:inline text-slate-400 text-sm font-semibold">Faculdade Exemplo</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-[11px]">
+                                <span class="hidden sm:block text-slate-400 font-medium">Coordenação</span>
+                                <span class="w-6 h-6 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600"></span>
+                            </div>
+                        </div>
 
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/sistema-painel.png" alt="Painel do Send Educacional — todos os módulos em um só lugar" class="w-full block" loading="lazy">
+                        <p class="text-[10px] uppercase tracking-wide text-slate-500 font-bold mb-2.5">Mais acessados</p>
+                        <div class="grid grid-cols-3 sm:grid-cols-6 gap-2 mb-5">
+                            <?php
+                            $fp_atalhos = array(
+                                array( 'Secretaria', '#3b82f6' ), array( 'Financeiro', '#14b8a6' ), array( 'Contas a receber', '#22c55e' ),
+                                array( 'Contrato', '#6366f1' ), array( 'Documentos', '#a855f7' ), array( 'Retenção', '#06b6d4' ),
+                            );
+                            foreach ( $fp_atalhos as $t ) {
+                                printf(
+                                    '<div class="rounded-lg bg-white/[.03] border border-white/5 p-2.5 text-center"><span class="w-7 h-7 mx-auto rounded-md flex items-center justify-center mb-1.5" style="background:%s22;border:1px solid %s44"><span class="w-3 h-3 rounded-sm" style="background:%s"></span></span><span class="text-[9px] text-slate-400 font-semibold block truncate">%s</span></div>',
+                                    $t[1], $t[1], $t[1], esc_html( $t[0] )
+                                );
+                            }
+                            ?>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                            <?php
+                            $fp_grupos = array(
+                                array( 'Financeiro', '#14b8a6', array( 'Financeiro Gerencial', 'Contas a Receber', 'Contas a Pagar', 'Fluxo de Caixa' ) ),
+                                array( 'Acadêmico', '#3b82f6', array( 'Secretaria', 'Retenção', 'Requerimentos', 'Biblioteca' ) ),
+                                array( 'Gestão', '#a855f7', array( 'Contrato', 'Documentos', 'Assinaturas', 'GED' ) ),
+                            );
+                            foreach ( $fp_grupos as $g ) {
+                                $rows = '';
+                                foreach ( $g[2] as $item ) {
+                                    $rows .= sprintf(
+                                        '<div class="flex items-center justify-between rounded-lg bg-white/[.03] px-2.5 py-1.5 text-[11px] text-slate-300"><span class="flex items-center gap-2 truncate"><span class="w-3.5 h-3.5 rounded" style="background:%s33"></span>%s</span><svg class="w-3 h-3 text-slate-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5h5v5M19 5l-8 8M9 5H5v14h14v-4"></path></svg></div>',
+                                        $g[1], esc_html( $item )
+                                    );
+                                }
+                                printf(
+                                    '<div class="rounded-xl bg-white/[.02] border border-white/5 p-3"><p class="text-[10px] uppercase tracking-wide text-slate-400 font-bold mb-2 flex items-center gap-1.5"><span class="w-2 h-2 rounded-full" style="background:%s"></span>%s</p><div class="space-y-1.5">%s</div></div>',
+                                    $g[1], esc_html( $g[0] ), $rows
+                                );
+                            }
+                            ?>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="floaty hidden md:flex absolute -left-8 bottom-14 items-center gap-3 glass rounded-2xl px-4 py-3">
@@ -306,7 +360,59 @@
                         <span class="w-2.5 h-2.5 rounded-full bg-slate-600"></span>
                         <span class="mx-auto text-[11px] text-slate-400 font-semibold bg-white/5 border border-white/10 rounded-full px-4 py-1">app.sendeducacional.com.br/assinaturas</span>
                     </div>
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/sistema-assinaturas.png" alt="Central de assinaturas do Send Educacional" class="w-full max-h-[560px] object-cover object-top block" loading="lazy">
+                    <div class="p-4 md:p-5 bg-[#0a0f1e]">
+                        <p class="text-sm font-extrabold text-white mb-3">Central de assinaturas</p>
+                        <div class="grid grid-cols-2 gap-3 mb-3">
+                            <div class="rounded-xl bg-white/[.03] border border-white/5 p-3"><p class="text-[10px] text-slate-400 font-semibold">Concluídos</p><p class="text-2xl font-extrabold text-white mt-1">3.692</p></div>
+                            <div class="rounded-xl bg-white/[.03] border border-white/5 p-3"><p class="text-[10px] text-slate-400 font-semibold">Assinados internamente</p><p class="text-2xl font-extrabold text-white mt-1">389</p></div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3 mb-3">
+                            <div class="rounded-xl bg-white/[.03] border border-white/5 p-3">
+                                <p class="text-[10px] text-slate-400 font-semibold mb-2">Distribuição por status</p>
+                                <div class="flex items-center gap-3">
+                                    <div class="sys-donut shrink-0"><span class="relative z-10 text-xs font-bold text-white">94%</span></div>
+                                    <div class="space-y-1 text-[10px] text-slate-400">
+                                        <div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-blue-500"></span>Concluído <span class="text-slate-500">3.692</span></div>
+                                        <div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-amber-400"></span>Em assinatura <span class="text-slate-500">217</span></div>
+                                        <div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-rose-500"></span>Recusado <span class="text-slate-500">10</span></div>
+                                        <div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-slate-500"></span>Cancelado <span class="text-slate-500">1</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rounded-xl bg-white/[.03] border border-white/5 p-3">
+                                <p class="text-[10px] text-slate-400 font-semibold mb-2">Assinaturas por período</p>
+                                <div class="space-y-1.5">
+                                    <?php
+                                    $fp_per = array( array( 'EAD Grad. 2026.2', 92 ), array( 'EAD Grad. 2026.1', 64 ), array( 'Graduação 2026.1', 44 ), array( 'Pós 2026.1', 28 ), array( 'Semi 2026.2', 14 ) );
+                                    foreach ( $fp_per as $p ) {
+                                        printf( '<div class="flex items-center gap-2 text-[9px]"><span class="w-20 text-slate-400 truncate">%s</span><div class="flex-1 h-1.5 rounded bg-white/5"><div class="h-full rounded bg-blue-500" style="width:%d%%"></div></div></div>', esc_html( $p[0] ), (int) $p[1] );
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rounded-xl bg-white/[.03] border border-white/5 overflow-hidden">
+                            <div class="grid gap-2 px-3 py-2 text-[9px] uppercase text-slate-500 font-bold border-b border-white/5" style="grid-template-columns:1.5fr 1.4fr .8fr .9fr;">
+                                <span>Aluno</span><span>Curso / período</span><span>Situação</span><span>Status</span>
+                            </div>
+                            <?php
+                            $fp_ass = array(
+                                array( 'Ana Beatriz Rocha', 'EAD · Gestão Comercial 2026.2', 'Pré-matrícula', '#3b82f6', 'Em assinatura', '#f59e0b' ),
+                                array( 'Lucas Martins', 'ADS 2026.2', 'Pré-matrícula', '#3b82f6', 'Em assinatura', '#f59e0b' ),
+                                array( 'Marina Alves', 'Enfermagem 2026.2', 'Cursando', '#3b82f6', 'Concluído', '#22c55e' ),
+                                array( 'Rafael Souza', 'Administração 2026.2', 'Pré-matrícula', '#3b82f6', 'Concluído', '#22c55e' ),
+                                array( 'Camila Ferreira', 'Ciências Contábeis 2026.2', 'Cursando', '#3b82f6', 'Concluído', '#22c55e' ),
+                                array( 'Bruno Almeida', 'Comércio Exterior 2026.2', 'Pré-matrícula', '#3b82f6', 'Em assinatura', '#f59e0b' ),
+                            );
+                            foreach ( $fp_ass as $r ) {
+                                printf(
+                                    '<div class="grid gap-2 px-3 py-2 text-[10px] items-center border-b border-white/[.03]" style="grid-template-columns:1.5fr 1.4fr .8fr .9fr;"><span class="text-slate-200 font-semibold truncate">%s</span><span class="text-slate-400 truncate">%s</span><span class="justify-self-start px-1.5 py-0.5 rounded text-[8px] font-bold" style="background:%s22;color:%s">%s</span><span class="justify-self-start px-1.5 py-0.5 rounded text-[8px] font-bold" style="background:%s22;color:%s">%s</span></div>',
+                                    esc_html( $r[0] ), esc_html( $r[1] ), $r[3], $r[3], esc_html( $r[2] ), $r[5], $r[5], esc_html( $r[4] )
+                                );
+                            }
+                            ?>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
