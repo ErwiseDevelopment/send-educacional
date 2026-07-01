@@ -73,7 +73,12 @@ add_filter('nav_menu_css_class', 'send_adicionar_classes_li_menu', 1, 3);
 // Adiciona classes do Tailwind nos <a> do menu
 function send_adicionar_classes_a_menu($atts, $item, $args) {
     if($args->theme_location == 'menu-principal') {
-        $atts['class'] = 'text-slate-600 hover:text-blue-600 font-semibold text-sm uppercase tracking-wide transition-colors';
+        if ( is_front_page() ) {
+            // Home tem hero escuro: menu em tom claro.
+            $atts['class'] = 'text-slate-200 hover:text-white font-semibold text-sm uppercase tracking-wide transition-colors';
+        } else {
+            $atts['class'] = 'text-slate-600 hover:text-blue-600 font-semibold text-sm uppercase tracking-wide transition-colors';
+        }
     }
     return $atts;
 }
