@@ -73,12 +73,8 @@ add_filter('nav_menu_css_class', 'send_adicionar_classes_li_menu', 1, 3);
 // Adiciona classes do Tailwind nos <a> do menu
 function send_adicionar_classes_a_menu($atts, $item, $args) {
     if($args->theme_location == 'menu-principal') {
-        if ( is_front_page() ) {
-            // Home tem hero escuro: menu em tom claro.
-            $atts['class'] = 'text-slate-200 hover:text-white font-semibold text-sm uppercase tracking-wide transition-colors';
-        } else {
-            $atts['class'] = 'text-slate-600 hover:text-blue-600 font-semibold text-sm uppercase tracking-wide transition-colors';
-        }
+        // Cabeçalho escuro em todo o site: menu em tom claro.
+        $atts['class'] = 'text-slate-300 hover:text-white font-semibold text-sm uppercase tracking-wide transition-colors';
     }
     return $atts;
 }
@@ -117,30 +113,30 @@ function enviar_posts_filtrados() {
             $cat = get_the_category();
             $nome_categoria = !empty($cat) ? $cat[0]->name : 'Artigo';
             ?>
-            <article class="col-span-1 group flex flex-col bg-white rounded-[1.5rem] border border-slate-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all overflow-hidden animate-[fadeIn_0.5s_ease-in-out]">
-                <a href="<?php the_permalink(); ?>" class="block w-full h-48 bg-slate-200 overflow-hidden relative">
+            <article class="col-span-1 group flex flex-col glass glass-hover rounded-[1.5rem] hover:-translate-y-1 transition-all overflow-hidden animate-[fadeIn_0.5s_ease-in-out]">
+                <a href="<?php the_permalink(); ?>" class="block w-full h-48 bg-white/[.02] overflow-hidden relative">
                     <?php if ( has_post_thumbnail() ) : ?>
                         <?php the_post_thumbnail('medium_large', ['class' => 'w-full h-full object-cover group-hover:scale-105 transition-transform duration-700']); ?>
                     <?php endif; ?>
                 </a>
                 <div class="p-6 flex flex-col flex-grow">
-                    <span class="text-blue-600 font-bold uppercase tracking-wider text-[9px] mb-2 block">
+                    <span class="text-blue-300 font-bold uppercase tracking-wider text-[9px] mb-2 block">
                         <?php echo esc_html($nome_categoria); ?>
                     </span>
                     <a href="<?php the_permalink(); ?>">
-                        <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug">
+                        <h3 class="text-lg font-bold text-white group-hover:text-blue-300 transition-colors mb-2 leading-snug">
                             <?php the_title(); ?>
                         </h3>
                     </a>
-                    <p class="text-slate-500 text-xs mb-4 line-clamp-3 leading-relaxed">
+                    <p class="text-slate-400 text-xs mb-4 line-clamp-3 leading-relaxed">
                         <?php echo wp_trim_words(get_the_excerpt(), 18); ?>
                     </p>
-                    
-                    <div class="mt-auto flex items-center justify-between border-t border-slate-50 pt-4">
+
+                    <div class="mt-auto flex items-center justify-between border-t border-white/10 pt-4">
                         <span class="text-slate-400 text-[10px] font-semibold">
                             <?php echo get_the_date('d M, Y'); ?>
                         </span>
-                        <a href="<?php the_permalink(); ?>" class="text-blue-600 font-bold text-[11px] flex items-center gap-1 group-hover:text-blue-800">Ler artigo &rarr;</a>
+                        <a href="<?php the_permalink(); ?>" class="text-blue-300 font-bold text-[11px] flex items-center gap-1 group-hover:text-blue-200">Ler artigo &rarr;</a>
                     </div>
                 </div>
             </article>
@@ -149,12 +145,12 @@ function enviar_posts_filtrados() {
         wp_reset_postdata();
     else :
         ?>
-        <div class="col-span-full text-center py-16 bg-white rounded-[1.5rem] border border-slate-100">
-            <div class="w-16 h-16 bg-slate-100 text-slate-400 rounded-full flex items-center justify-center mx-auto mb-4">
+        <div class="col-span-full text-center py-16 glass rounded-[1.5rem]">
+            <div class="w-16 h-16 bg-white/5 text-slate-400 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
             </div>
-            <h3 class="text-xl font-bold text-slate-900 mb-2">Nenhum resultado encontrado</h3>
-            <p class="text-slate-500 text-sm">Não encontramos artigos para "<strong><?php echo esc_html($busca); ?></strong>". Tente outras palavras.</p>
+            <h3 class="text-xl font-bold text-white mb-2">Nenhum resultado encontrado</h3>
+            <p class="text-slate-400 text-sm">Não encontramos artigos para "<strong><?php echo esc_html($busca); ?></strong>". Tente outras palavras.</p>
         </div>
         <?php
     endif;

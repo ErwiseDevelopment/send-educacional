@@ -4,7 +4,7 @@ Template Name: Módulo - Gestão de Requerimentos e Protocolos
 */
 get_header(); ?>
 
-<main class="bg-slate-50 min-h-screen">
+<main class="min-h-screen">
 
     <section class="bg-slate-900 pt-32 pb-24 border-b border-slate-800 relative overflow-hidden text-center">
         <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#475569 1px, transparent 1px); background-size: 24px 24px;"></div>
@@ -35,18 +35,18 @@ get_header(); ?>
 
     <section class="relative z-20 -mt-8">
         <div class="container mx-auto px-6 max-w-5xl">
-            <div class="bg-white rounded-2xl shadow-xl border border-slate-200 p-8 flex flex-col md:flex-row justify-around items-center divide-y md:divide-y-0 md:divide-x divide-slate-100">
+            <div class="glass rounded-2xl p-8 flex flex-col md:flex-row justify-around items-center divide-y md:divide-y-0 md:divide-x divide-white/10">
                 <div class="text-center p-4 w-full">
-                    <p class="text-3xl font-extrabold text-orange-600 mb-1">Workflow</p>
-                    <p class="text-sm font-semibold text-slate-500 uppercase tracking-wide">Fluxos Automatizados</p>
+                    <p class="text-3xl font-extrabold gtext mb-1">Workflow</p>
+                    <p class="text-sm font-semibold text-slate-400 uppercase tracking-wide">Fluxos Automatizados</p>
                 </div>
                 <div class="text-center p-4 w-full">
-                    <p class="text-3xl font-extrabold text-orange-600 mb-1">SLA</p>
-                    <p class="text-sm font-semibold text-slate-500 uppercase tracking-wide">Gestão de Prazos (SLA)</p>
+                    <p class="text-3xl font-extrabold gtext mb-1">SLA</p>
+                    <p class="text-sm font-semibold text-slate-400 uppercase tracking-wide">Gestão de Prazos (SLA)</p>
                 </div>
                 <div class="text-center p-4 w-full">
-                    <p class="text-3xl font-extrabold text-orange-600 mb-1">360º</p>
-                    <p class="text-sm font-semibold text-slate-500 uppercase tracking-wide">Performance por Equipe</p>
+                    <p class="text-3xl font-extrabold gtext mb-1">360º</p>
+                    <p class="text-sm font-semibold text-slate-400 uppercase tracking-wide">Performance por Equipe</p>
                 </div>
             </div>
         </div>
@@ -55,20 +55,20 @@ get_header(); ?>
     <section class="py-24 relative z-20">
         <div class="container mx-auto px-6 max-w-7xl">
             
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-black text-slate-900 mb-4 tracking-tight">Atendimento Nível Enterprise</h2>
-                <p class="text-lg text-slate-500">Esqueça tickets em softwares genéricos. Nosso módulo é construído no coração dos dados do aluno.</p>
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-black text-white mb-4 tracking-tight">Atendimento Nível Enterprise</h2>
+                <p class="text-lg text-slate-400">Esqueça tickets em softwares genéricos. Nosso módulo é construído no coração dos dados do aluno.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <div class="bg-white rounded-[2.5rem] border border-slate-200 p-10 shadow-lg shadow-slate-200/50 hover:border-orange-400 transition-all duration-500 group relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-orange-50 rounded-full blur-3xl -mr-10 -mt-10 group-hover:bg-orange-100 transition-colors"></div>
-                    <div class="w-16 h-16 bg-orange-600 text-white rounded-2xl flex items-center justify-center mb-8 shadow-md">
+                <div class="glass glass-hover rounded-[2.5rem] p-10 transition-all duration-500 group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-orange-600/10 rounded-full blur-3xl -mr-10 -mt-10 group-hover:bg-orange-600/20 transition-colors"></div>
+                    <div class="w-16 h-16 bg-white/5 border border-white/10 text-orange-300 rounded-2xl flex items-center justify-center mb-8">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
                     </div>
-                    <h3 class="text-2xl font-extrabold text-slate-900 mb-6">Workflow Inteligente</h3>
-                    <ul class="space-y-4 text-slate-600 text-sm font-medium">
+                    <h3 class="text-2xl font-extrabold text-white mb-6">Workflow Inteligente</h3>
+                    <ul class="space-y-4 text-slate-400 text-sm font-medium">
                         <li class="flex items-start gap-3"><span class="text-orange-500 mt-0.5">✓</span> Construção visual de Fluxo de Requerimento</li>
                         <li class="flex items-start gap-3"><span class="text-orange-500 mt-0.5">✓</span> Criação ilimitada de Tipos de Requerimentos</li>
                         <li class="flex items-start gap-3"><span class="text-orange-500 mt-0.5">✓</span> Roteamento automático entre Áreas e Departamentos</li>
@@ -94,13 +94,13 @@ get_header(); ?>
                     </ul>
                 </div>
 
-                <div class="bg-white rounded-[2.5rem] border border-slate-200 p-10 shadow-lg shadow-slate-200/50 hover:border-orange-400 transition-all duration-500 group relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-orange-50 rounded-full blur-3xl -mr-10 -mt-10 group-hover:bg-orange-100 transition-colors"></div>
-                    <div class="w-16 h-16 bg-orange-600 text-white rounded-2xl flex items-center justify-center mb-8 shadow-md">
+                <div class="glass glass-hover rounded-[2.5rem] p-10 transition-all duration-500 group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-orange-600/10 rounded-full blur-3xl -mr-10 -mt-10 group-hover:bg-orange-600/20 transition-colors"></div>
+                    <div class="w-16 h-16 bg-white/5 border border-white/10 text-orange-300 rounded-2xl flex items-center justify-center mb-8">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
                     </div>
-                    <h3 class="text-2xl font-extrabold text-slate-900 mb-6">Atendimento ao Aluno</h3>
-                    <ul class="space-y-4 text-slate-600 text-sm font-medium">
+                    <h3 class="text-2xl font-extrabold text-white mb-6">Atendimento ao Aluno</h3>
+                    <ul class="space-y-4 text-slate-400 text-sm font-medium">
                         <li class="flex items-start gap-3"><span class="text-orange-500 mt-0.5">✓</span> Abertura de protocolos diretamente pelo Portal do Aluno</li>
                         <li class="flex items-start gap-3"><span class="text-orange-500 mt-0.5">✓</span> Histórico de interações e chat com a secretaria</li>
                         <li class="flex items-start gap-3"><span class="text-orange-500 mt-0.5">✓</span> Upload seguro de anexos e documentos exigidos</li>
@@ -110,12 +110,12 @@ get_header(); ?>
                     </ul>
                 </div>
 
-                <div class="bg-white rounded-[2.5rem] border border-slate-200 p-10 shadow-lg shadow-slate-200/50 hover:border-amber-400 transition-all duration-500 group relative overflow-hidden">
-                    <div class="w-16 h-16 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center mb-8 shadow-md">
+                <div class="glass glass-hover rounded-[2.5rem] p-10 transition-all duration-500 group relative overflow-hidden">
+                    <div class="w-16 h-16 bg-white/5 border border-white/10 text-amber-300 rounded-2xl flex items-center justify-center mb-8">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                     </div>
-                    <h3 class="text-2xl font-extrabold text-slate-900 mb-6">Comunicação Ativa</h3>
-                    <ul class="space-y-4 text-slate-600 text-sm font-medium">
+                    <h3 class="text-2xl font-extrabold text-white mb-6">Comunicação Ativa</h3>
+                    <ul class="space-y-4 text-slate-400 text-sm font-medium">
                         <li class="flex items-start gap-3"><span class="text-amber-500 mt-0.5">✓</span> Configuração ilimitada de Layouts de E-mail</li>
                         <li class="flex items-start gap-3"><span class="text-amber-500 mt-0.5">✓</span> Disparo automático por mudança de etapa no fluxo</li>
                         <li class="flex items-start gap-3"><span class="text-amber-500 mt-0.5">✓</span> Personalização por Tipo de E-mail Institucional</li>
@@ -124,12 +124,12 @@ get_header(); ?>
                     </ul>
                 </div>
 
-                <div class="bg-white rounded-[2.5rem] border border-slate-200 p-10 shadow-lg shadow-slate-200/50 hover:border-orange-400 transition-all duration-500 group relative overflow-hidden">
-                    <div class="w-16 h-16 bg-orange-100 text-orange-600 rounded-2xl flex items-center justify-center mb-8 shadow-md">
+                <div class="glass glass-hover rounded-[2.5rem] p-10 transition-all duration-500 group relative overflow-hidden">
+                    <div class="w-16 h-16 bg-white/5 border border-white/10 text-orange-300 rounded-2xl flex items-center justify-center mb-8">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                     </div>
-                    <h3 class="text-2xl font-extrabold text-slate-900 mb-6">Produtividade de Equipes</h3>
-                    <ul class="space-y-4 text-slate-600 text-sm font-medium">
+                    <h3 class="text-2xl font-extrabold text-white mb-6">Produtividade de Equipes</h3>
+                    <ul class="space-y-4 text-slate-400 text-sm font-medium">
                         <li class="flex items-start gap-3"><span class="text-orange-500 mt-0.5">✓</span> Cadastro e gestão de Equipes Multidisciplinares</li>
                         <li class="flex items-start gap-3"><span class="text-orange-500 mt-0.5">✓</span> Atribuição de permissões por Áreas de atuação</li>
                         <li class="flex items-start gap-3"><span class="text-orange-500 mt-0.5">✓</span> Relatório Analítico de Performance por Equipe</li>
@@ -138,12 +138,12 @@ get_header(); ?>
                     </ul>
                 </div>
 
-                <div class="bg-white rounded-[2.5rem] border border-slate-200 p-10 shadow-lg shadow-slate-200/50 hover:border-amber-400 transition-all duration-500 group relative overflow-hidden">
-                    <div class="w-16 h-16 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center mb-8 shadow-md">
+                <div class="glass glass-hover rounded-[2.5rem] p-10 transition-all duration-500 group relative overflow-hidden">
+                    <div class="w-16 h-16 bg-white/5 border border-white/10 text-amber-300 rounded-2xl flex items-center justify-center mb-8">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
                     </div>
-                    <h3 class="text-2xl font-extrabold text-slate-900 mb-6">Relatórios & BI</h3>
-                    <ul class="space-y-4 text-slate-600 text-sm font-medium">
+                    <h3 class="text-2xl font-extrabold text-white mb-6">Relatórios & BI</h3>
+                    <ul class="space-y-4 text-slate-400 text-sm font-medium">
                         <li class="flex items-start gap-3"><span class="text-amber-500 mt-0.5">✓</span> Visão Gerencial: Relatório de Fluxos Específicos</li>
                         <li class="flex items-start gap-3"><span class="text-amber-500 mt-0.5">✓</span> Exportação de Relatório de Atendimento Diário</li>
                         <li class="flex items-start gap-3"><span class="text-amber-500 mt-0.5">✓</span> Visão Consolidada de Requerimentos Pendentes</li>
@@ -165,7 +165,7 @@ get_header(); ?>
             <p class="text-xl text-slate-400 mb-12 font-light leading-relaxed">
                 Pare de perder tempo procurando protocolos físicos ou e-mails esquecidos. Transforme sua secretaria numa operação digital orientada a SLA e resultados.
             </p>
-            <button onclick="document.getElementById('demo-modal').classList.remove('hidden')" class="bg-orange-500 text-white px-12 py-5 rounded-2xl font-black text-xl transition-all shadow-2xl shadow-orange-500/30 hover:scale-105 hover:bg-orange-600 flex items-center justify-center gap-3 mx-auto">
+            <button onclick="document.getElementById('demo-modal').classList.remove('hidden')" class="gbtn text-white px-12 py-5 rounded-2xl font-black text-xl transition-all hover:scale-105 flex items-center justify-center gap-3 mx-auto">
                 Transformar meu Atendimento
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </button>

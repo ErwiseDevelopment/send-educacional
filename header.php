@@ -6,19 +6,14 @@
     <script type="text/javascript" async src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/f6a85af9-2d97-40e4-8ae5-c237e1855b05-loader.js" ></script>
     <?php wp_head(); ?>
 </head>
-<body <?php body_class('bg-gray-50 text-gray-800 font-sans'); ?>>
+<body <?php body_class('bg-[#070b18] text-slate-200 font-sans antialiased'); ?>>
 
 <?php $se_home = is_front_page(); ?>
-<header class="<?php echo $se_home ? 'absolute top-0 left-0 right-0 z-50' : 'bg-white shadow-sm sticky top-0 z-50'; ?>">
+<header class="<?php echo $se_home ? 'absolute top-0 left-0 right-0 z-50' : 'sticky top-0 z-50 bg-[#070b18]/85 backdrop-blur-md border-b border-white/10'; ?>">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
        <div class="flex flex-col items-start justify-center">
             <a href="<?php echo home_url(); ?>" class="flex items-center gap-2.5 transition-transform hover:scale-105">
-                <?php if ( $se_home ) : ?>
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-branco.png" alt="Send Educacional" width="473" height="207" class="h-12 md:h-14 w-auto object-contain">
-                <?php else : ?>
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-icone.png" alt="" width="1024" height="642" class="h-10 md:h-11 w-auto object-contain" onerror="this.remove()">
-                    <span class="font-extrabold text-lg md:text-xl text-slate-900 leading-none tracking-tight">Send <span class="font-medium text-slate-500">Educacional</span></span>
-                <?php endif; ?>
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-branco.png" alt="Send Educacional" width="473" height="207" class="h-11 md:h-12 w-auto object-contain">
             </a>
        </div>
         

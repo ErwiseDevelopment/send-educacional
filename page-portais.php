@@ -4,7 +4,7 @@ Template Name: Módulo - Portais Integrados
 */
 get_header(); ?>
 
-<main class="bg-slate-50 min-h-screen">
+<main class="min-h-screen">
 
     <section class="bg-slate-900 pt-32 pb-24 border-b border-slate-800 relative overflow-hidden text-center">
         <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#475569 1px, transparent 1px); background-size: 24px 24px;"></div>
@@ -22,8 +22,8 @@ get_header(); ?>
                 Acesso Web e Mobile
             </div>
 
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight">
-                A sua instituição na <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-fuchsia-400">palma da mão</span> de quem importa.
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight reveal">
+                A sua instituição na <span class="gtext">palma da mão</span> de quem importa.
             </h1>
             
             <p class="text-xl text-slate-400 leading-relaxed max-w-2xl mx-auto">
@@ -34,18 +34,18 @@ get_header(); ?>
 
     <section class="relative z-20 -mt-8">
         <div class="container mx-auto px-6 max-w-5xl">
-            <div class="bg-white rounded-2xl shadow-xl border border-slate-200 p-8 flex flex-col md:flex-row justify-around items-center divide-y md:divide-y-0 md:divide-x divide-slate-100">
+            <div class="glass rounded-2xl p-8 flex flex-col md:flex-row justify-around items-center divide-y md:divide-y-0 md:divide-x divide-white/10">
                 <div class="text-center p-4 w-full">
-                    <p class="text-3xl font-extrabold text-purple-600 mb-1">100%</p>
-                    <p class="text-sm font-semibold text-slate-500 uppercase tracking-wide">Responsivo</p>
+                    <p class="text-3xl font-extrabold gtext mb-1">100%</p>
+                    <p class="text-sm font-semibold text-slate-400 uppercase tracking-wide">Responsivo</p>
                 </div>
                 <div class="text-center p-4 w-full">
-                    <p class="text-3xl font-extrabold text-purple-600 mb-1">Zero</p>
-                    <p class="text-sm font-semibold text-slate-500 uppercase tracking-wide">Atraso na Sincronização</p>
+                    <p class="text-3xl font-extrabold gtext mb-1">Zero</p>
+                    <p class="text-sm font-semibold text-slate-400 uppercase tracking-wide">Atraso na Sincronização</p>
                 </div>
                 <div class="text-center p-4 w-full">
-                    <p class="text-3xl font-extrabold text-purple-600 mb-1">Self-Service</p>
-                    <p class="text-sm font-semibold text-slate-500 uppercase tracking-wide">Para Alunos e Professores</p>
+                    <p class="text-3xl font-extrabold gtext mb-1">Self-Service</p>
+                    <p class="text-sm font-semibold text-slate-400 uppercase tracking-wide">Para Alunos e Professores</p>
                 </div>
             </div>
         </div>
@@ -53,7 +53,7 @@ get_header(); ?>
 
     <section class="py-16">
         <div class="container mx-auto px-6 max-w-5xl">
-            <div class="prose prose-lg prose-slate max-w-none text-center mb-16">
+            <div class="prose prose-lg prose-invert max-w-none text-center mb-16">
                 <?php
                 while ( have_posts() ) :
                     the_post();
@@ -62,25 +62,25 @@ get_header(); ?>
                 ?>
             </div>
 
-            <div class="mb-16 text-center max-w-3xl mx-auto">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Uma experiência digital sem fricção</h2>
-                <p class="text-lg text-slate-600">Reduza drasticamente o volume de atendimentos no balcão da faculdade. Com os portais do Send Educacional, cada usuário tem autonomia para resolver suas pendências de onde estiver.</p>
+            <div class="mb-16 text-center max-w-3xl mx-auto reveal">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">Uma experiência digital sem fricção</h2>
+                <p class="text-lg text-slate-400">Reduza drasticamente o volume de atendimentos no balcão da faculdade. Com os portais do Send Educacional, cada usuário tem autonomia para resolver suas pendências de onde estiver.</p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 
-                <div class="flex flex-col p-8 bg-white rounded-3xl border border-slate-200 hover:border-purple-300 hover:shadow-2xl transition-all group">
-                    <div class="w-16 h-16 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
+                <div class="flex flex-col p-8 glass glass-hover rounded-3xl transition-all group reveal">
+                    <div class="w-16 h-16 bg-white/5 border border-white/10 text-purple-300 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14v7M5 9.8v4.4M19 9.8v4.4"></path></svg>
                     </div>
-                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Portal do Aluno</h3>
-                    <p class="text-slate-600 leading-relaxed mb-6">O centro de comando do estudante. Autonomia total para acompanhar a vida acadêmica e financeira sem precisar ligar para a secretaria.</p>
-                    
-                    <ul class="space-y-3 mt-auto border-t border-slate-100 pt-6">
-                        <li class="flex items-start text-sm text-slate-700 font-medium"><svg class="w-5 h-5 mr-3 text-purple-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Boletim, notas e faltas em tempo real.</li>
-                        <li class="flex items-start text-sm text-slate-700 font-medium"><svg class="w-5 h-5 mr-3 text-purple-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Emissão de 2ª via de boletos e código Pix.</li>
-                        <li class="flex items-start text-sm text-slate-700 font-medium"><svg class="w-5 h-5 mr-3 text-purple-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Abertura de requerimentos online (Ex: atestados).</li>
-                        <li class="flex items-start text-sm text-slate-700 font-medium"><svg class="w-5 h-5 mr-3 text-purple-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Rematrícula e aceite de contrato com 1 clique.</li>
+                    <h3 class="text-2xl font-bold text-white mb-4">Portal do Aluno</h3>
+                    <p class="text-slate-400 leading-relaxed mb-6">O centro de comando do estudante. Autonomia total para acompanhar a vida acadêmica e financeira sem precisar ligar para a secretaria.</p>
+
+                    <ul class="space-y-3 mt-auto border-t border-white/10 pt-6">
+                        <li class="flex items-start text-sm text-slate-300 font-medium"><svg class="w-5 h-5 mr-3 text-purple-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Boletim, notas e faltas em tempo real.</li>
+                        <li class="flex items-start text-sm text-slate-300 font-medium"><svg class="w-5 h-5 mr-3 text-purple-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Emissão de 2ª via de boletos e código Pix.</li>
+                        <li class="flex items-start text-sm text-slate-300 font-medium"><svg class="w-5 h-5 mr-3 text-purple-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Abertura de requerimentos online (Ex: atestados).</li>
+                        <li class="flex items-start text-sm text-slate-300 font-medium"><svg class="w-5 h-5 mr-3 text-purple-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Rematrícula e aceite de contrato com 1 clique.</li>
                     </ul>
                 </div>
 
@@ -101,18 +101,18 @@ get_header(); ?>
                     </ul>
                 </div>
 
-                <div class="flex flex-col p-8 bg-white rounded-3xl border border-slate-200 hover:border-purple-300 hover:shadow-2xl transition-all group">
-                    <div class="w-16 h-16 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
+                <div class="flex flex-col p-8 glass glass-hover rounded-3xl transition-all group reveal">
+                    <div class="w-16 h-16 bg-white/5 border border-white/10 text-purple-300 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                     </div>
-                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Portal Polo (Parceiros)</h3>
-                    <p class="text-slate-600 leading-relaxed mb-6">Fundamental para instituições com ensino à distância (EAD). Dê aos seus coordenadores de polo a visibilidade que eles precisam para escalar captações.</p>
-                    
-                    <ul class="space-y-3 mt-auto border-t border-slate-100 pt-6">
-                        <li class="flex items-start text-sm text-slate-700 font-medium"><svg class="w-5 h-5 mr-3 text-purple-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Gestão isolada de alunos por unidade/polo.</li>
-                        <li class="flex items-start text-sm text-slate-700 font-medium"><svg class="w-5 h-5 mr-3 text-purple-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Acompanhamento de repasses e comissões.</li>
-                        <li class="flex items-start text-sm text-slate-700 font-medium"><svg class="w-5 h-5 mr-3 text-purple-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Relatórios locais de inadimplência e evasão.</li>
-                        <li class="flex items-start text-sm text-slate-700 font-medium"><svg class="w-5 h-5 mr-3 text-purple-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Intermediação de documentos do aluno.</li>
+                    <h3 class="text-2xl font-bold text-white mb-4">Portal Polo (Parceiros)</h3>
+                    <p class="text-slate-400 leading-relaxed mb-6">Fundamental para instituições com ensino à distância (EAD). Dê aos seus coordenadores de polo a visibilidade que eles precisam para escalar captações.</p>
+
+                    <ul class="space-y-3 mt-auto border-t border-white/10 pt-6">
+                        <li class="flex items-start text-sm text-slate-300 font-medium"><svg class="w-5 h-5 mr-3 text-purple-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Gestão isolada de alunos por unidade/polo.</li>
+                        <li class="flex items-start text-sm text-slate-300 font-medium"><svg class="w-5 h-5 mr-3 text-purple-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Acompanhamento de repasses e comissões.</li>
+                        <li class="flex items-start text-sm text-slate-300 font-medium"><svg class="w-5 h-5 mr-3 text-purple-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Relatórios locais de inadimplência e evasão.</li>
+                        <li class="flex items-start text-sm text-slate-300 font-medium"><svg class="w-5 h-5 mr-3 text-purple-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Intermediação de documentos do aluno.</li>
                     </ul>
                 </div>
 
@@ -127,7 +127,7 @@ get_header(); ?>
         <div class="container mx-auto px-6 max-w-3xl relative z-10">
             <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-6">Modernize a experiência da sua comunidade acadêmica.</h2>
             <p class="text-lg text-slate-400 mb-10">Descubra na prática como os portais do Send Educacional são fáceis de usar, tanto no computador quanto na tela do celular.</p>
-            <button onclick="document.getElementById('demo-modal').classList.remove('hidden')" class="bg-purple-600 hover:bg-purple-500 text-white px-10 py-4 rounded-xl font-extrabold text-lg transition-all shadow-2xl hover:scale-105 hover:shadow-purple-500/30">
+            <button onclick="document.getElementById('demo-modal').classList.remove('hidden')" class="gbtn text-white px-10 py-4 rounded-xl font-extrabold text-lg transition-all hover:scale-105">
                 Ver os Portais em Ação
             </button>
         </div>

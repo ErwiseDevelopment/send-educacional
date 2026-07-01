@@ -4,7 +4,7 @@ Template Name: Módulo - Gestão de Retenção e Sucesso
 */
 get_header(); ?>
 
-<main class="bg-slate-50 min-h-screen">
+<main class="min-h-screen">
 
     <section class="bg-slate-900 pt-32 pb-24 border-b border-slate-800 relative overflow-hidden text-center">
         <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#475569 1px, transparent 1px); background-size: 24px 24px;"></div>
@@ -35,18 +35,18 @@ get_header(); ?>
 
     <section class="relative z-20 -mt-8">
         <div class="container mx-auto px-6 max-w-5xl">
-            <div class="bg-white rounded-2xl shadow-xl border border-slate-200 p-8 flex flex-col md:flex-row justify-around items-center divide-y md:divide-y-0 md:divide-x divide-slate-100">
+            <div class="glass rounded-2xl p-8 flex flex-col md:flex-row justify-around items-center divide-y md:divide-y-0 md:divide-x divide-white/10">
                 <div class="text-center p-4 w-full">
-                    <p class="text-3xl font-extrabold text-violet-600 mb-1">Preditivo</p>
-                    <p class="text-sm font-semibold text-slate-500 uppercase tracking-wide">Algoritmo de Risco</p>
+                    <p class="text-3xl font-extrabold gtext mb-1">Preditivo</p>
+                    <p class="text-sm font-semibold text-slate-400 uppercase tracking-wide">Algoritmo de Risco</p>
                 </div>
                 <div class="text-center p-4 w-full">
-                    <p class="text-3xl font-extrabold text-violet-600 mb-1">360º</p>
-                    <p class="text-sm font-semibold text-slate-500 uppercase tracking-wide">Visão do Engajamento</p>
+                    <p class="text-3xl font-extrabold gtext mb-1">360º</p>
+                    <p class="text-sm font-semibold text-slate-400 uppercase tracking-wide">Visão do Engajamento</p>
                 </div>
                 <div class="text-center p-4 w-full">
-                    <p class="text-3xl font-extrabold text-violet-600 mb-1">Ação</p>
-                    <p class="text-sm font-semibold text-slate-500 uppercase tracking-wide">Régua de Resgate</p>
+                    <p class="text-3xl font-extrabold gtext mb-1">Ação</p>
+                    <p class="text-sm font-semibold text-slate-400 uppercase tracking-wide">Régua de Resgate</p>
                 </div>
             </div>
         </div>
@@ -55,20 +55,20 @@ get_header(); ?>
     <section class="py-24 relative z-20">
         <div class="container mx-auto px-6 max-w-7xl">
             
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-black text-slate-900 mb-4 tracking-tight">O Fim das Surpresas no Final do Semestre</h2>
-                <p class="text-lg text-slate-500">Transforme dados isolados em estratégias ativas de permanência estudantil.</p>
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-black text-white mb-4 tracking-tight">O Fim das Surpresas no Final do Semestre</h2>
+                <p class="text-lg text-slate-400">Transforme dados isolados em estratégias ativas de permanência estudantil.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <div class="bg-white rounded-[2.5rem] border border-slate-200 p-10 shadow-lg shadow-slate-200/50 hover:border-violet-400 transition-all duration-500 group relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-violet-50 rounded-full blur-3xl -mr-10 -mt-10 group-hover:bg-violet-100 transition-colors"></div>
-                    <div class="w-16 h-16 bg-violet-600 text-white rounded-2xl flex items-center justify-center mb-8 shadow-md">
+                <div class="glass glass-hover rounded-[2.5rem] p-10 transition-all duration-500 group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-violet-600/10 rounded-full blur-3xl -mr-10 -mt-10 group-hover:bg-violet-600/20 transition-colors"></div>
+                    <div class="w-16 h-16 bg-white/5 border border-white/10 text-violet-300 rounded-2xl flex items-center justify-center mb-8">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
                     </div>
-                    <h3 class="text-2xl font-extrabold text-slate-900 mb-6">Matriz de Risco</h3>
-                    <ul class="space-y-4 text-slate-600 text-sm font-medium">
+                    <h3 class="text-2xl font-extrabold text-white mb-6">Matriz de Risco</h3>
+                    <ul class="space-y-4 text-slate-400 text-sm font-medium">
                         <li class="flex items-start gap-3"><span class="text-violet-500 mt-0.5">✓</span> Algoritmo de identificação de alunos em risco</li>
                         <li class="flex items-start gap-3"><span class="text-violet-500 mt-0.5">✓</span> Monitoramento de acessos e inatividade no Moodle</li>
                         <li class="flex items-start gap-3"><span class="text-violet-500 mt-0.5">✓</span> Alertas automáticos de excesso de faltas</li>
@@ -94,13 +94,13 @@ get_header(); ?>
                     </ul>
                 </div>
 
-                <div class="bg-white rounded-[2.5rem] border border-slate-200 p-10 shadow-lg shadow-slate-200/50 hover:border-violet-400 transition-all duration-500 group relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-violet-50 rounded-full blur-3xl -mr-10 -mt-10 group-hover:bg-violet-100 transition-colors"></div>
-                    <div class="w-16 h-16 bg-violet-600 text-white rounded-2xl flex items-center justify-center mb-8 shadow-md">
+                <div class="glass glass-hover rounded-[2.5rem] p-10 transition-all duration-500 group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-violet-600/10 rounded-full blur-3xl -mr-10 -mt-10 group-hover:bg-violet-600/20 transition-colors"></div>
+                    <div class="w-16 h-16 bg-white/5 border border-white/10 text-violet-300 rounded-2xl flex items-center justify-center mb-8">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                     </div>
-                    <h3 class="text-2xl font-extrabold text-slate-900 mb-6">Régua de Relacionamento</h3>
-                    <ul class="space-y-4 text-slate-600 text-sm font-medium">
+                    <h3 class="text-2xl font-extrabold text-white mb-6">Régua de Relacionamento</h3>
+                    <ul class="space-y-4 text-slate-400 text-sm font-medium">
                         <li class="flex items-start gap-3"><span class="text-violet-500 mt-0.5">✓</span> Disparo automatizado de e-mails motivacionais</li>
                         <li class="flex items-start gap-3"><span class="text-violet-500 mt-0.5">✓</span> Notificação de saudade (Falta de acesso ao portal)</li>
                         <li class="flex items-start gap-3"><span class="text-violet-500 mt-0.5">✓</span> Comunicação direcionada por Segmento/Polo</li>
@@ -110,12 +110,12 @@ get_header(); ?>
                     </ul>
                 </div>
 
-                <div class="bg-white rounded-[2.5rem] border border-slate-200 p-10 shadow-lg shadow-slate-200/50 hover:border-fuchsia-400 transition-all duration-500 group relative overflow-hidden">
-                    <div class="w-16 h-16 bg-fuchsia-100 text-fuchsia-600 rounded-2xl flex items-center justify-center mb-8 shadow-md">
+                <div class="glass glass-hover rounded-[2.5rem] p-10 transition-all duration-500 group relative overflow-hidden">
+                    <div class="w-16 h-16 bg-white/5 border border-white/10 text-fuchsia-300 rounded-2xl flex items-center justify-center mb-8">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
                     </div>
-                    <h3 class="text-2xl font-extrabold text-slate-900 mb-6">Funil de Rematrícula</h3>
-                    <ul class="space-y-4 text-slate-600 text-sm font-medium">
+                    <h3 class="text-2xl font-extrabold text-white mb-6">Funil de Rematrícula</h3>
+                    <ul class="space-y-4 text-slate-400 text-sm font-medium">
                         <li class="flex items-start gap-3"><span class="text-fuchsia-500 mt-0.5">✓</span> Acompanhamento em tempo real das rematrículas</li>
                         <li class="flex items-start gap-3"><span class="text-fuchsia-500 mt-0.5">✓</span> Gestão de pendências que bloqueiam a renovação</li>
                         <li class="flex items-start gap-3"><span class="text-fuchsia-500 mt-0.5">✓</span> Alertas de alunos "Elegíveis, porém não rematriculados"</li>
@@ -124,12 +124,12 @@ get_header(); ?>
                     </ul>
                 </div>
 
-                <div class="bg-white rounded-[2.5rem] border border-slate-200 p-10 shadow-lg shadow-slate-200/50 hover:border-violet-400 transition-all duration-500 group relative overflow-hidden">
-                    <div class="w-16 h-16 bg-violet-100 text-violet-600 rounded-2xl flex items-center justify-center mb-8 shadow-md">
+                <div class="glass glass-hover rounded-[2.5rem] p-10 transition-all duration-500 group relative overflow-hidden">
+                    <div class="w-16 h-16 bg-white/5 border border-white/10 text-violet-300 rounded-2xl flex items-center justify-center mb-8">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
                     </div>
-                    <h3 class="text-2xl font-extrabold text-slate-900 mb-6">Gestão de Evasão Real</h3>
-                    <ul class="space-y-4 text-slate-600 text-sm font-medium">
+                    <h3 class="text-2xl font-extrabold text-white mb-6">Gestão de Evasão Real</h3>
+                    <ul class="space-y-4 text-slate-400 text-sm font-medium">
                         <li class="flex items-start gap-3"><span class="text-violet-500 mt-0.5">✓</span> Fluxo de aprovação para solicitações de trancamento</li>
                         <li class="flex items-start gap-3"><span class="text-violet-500 mt-0.5">✓</span> Painel de motivos de cancelamento (Diagnóstico)</li>
                         <li class="flex items-start gap-3"><span class="text-violet-500 mt-0.5">✓</span> Entrevista de desligamento integrada ao sistema</li>
@@ -138,12 +138,12 @@ get_header(); ?>
                     </ul>
                 </div>
 
-                <div class="bg-white rounded-[2.5rem] border border-slate-200 p-10 shadow-lg shadow-slate-200/50 hover:border-fuchsia-400 transition-all duration-500 group relative overflow-hidden">
-                    <div class="w-16 h-16 bg-fuchsia-100 text-fuchsia-600 rounded-2xl flex items-center justify-center mb-8 shadow-md">
+                <div class="glass glass-hover rounded-[2.5rem] p-10 transition-all duration-500 group relative overflow-hidden">
+                    <div class="w-16 h-16 bg-white/5 border border-white/10 text-fuchsia-300 rounded-2xl flex items-center justify-center mb-8">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path></svg>
                     </div>
-                    <h3 class="text-2xl font-extrabold text-slate-900 mb-6">BI de Sucesso</h3>
-                    <ul class="space-y-4 text-slate-600 text-sm font-medium">
+                    <h3 class="text-2xl font-extrabold text-white mb-6">BI de Sucesso</h3>
+                    <ul class="space-y-4 text-slate-400 text-sm font-medium">
                         <li class="flex items-start gap-3"><span class="text-fuchsia-600 mt-0.5">✓</span> Dashboard executivo de Churn (Evasão) Acadêmico</li>
                         <li class="flex items-start gap-3"><span class="text-fuchsia-600 mt-0.5">✓</span> Gráficos de retenção cruzados por Curso e Turma</li>
                         <li class="flex items-start gap-3"><span class="text-fuchsia-600 mt-0.5">✓</span> Mapa de calor de acessos e engajamento</li>
@@ -165,7 +165,7 @@ get_header(); ?>
             <p class="text-xl text-slate-400 mb-12 font-light leading-relaxed">
                 Pare de perder alunos silenciosamente. Descubra como o módulo de Retenção do Send Educacional transforma dados operacionais em estratégias ativas de permanência.
             </p>
-            <button onclick="document.getElementById('demo-modal').classList.remove('hidden')" class="bg-violet-600 text-white px-12 py-5 rounded-2xl font-black text-xl transition-all shadow-2xl shadow-violet-500/30 hover:scale-105 hover:bg-violet-500 flex items-center justify-center gap-3 mx-auto">
+            <button onclick="document.getElementById('demo-modal').classList.remove('hidden')" class="gbtn text-white px-12 py-5 rounded-2xl font-black text-xl transition-all hover:scale-105 flex items-center justify-center gap-3 mx-auto">
                 Blindar a Retenção da Minha Instituição
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </button>
