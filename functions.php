@@ -6,7 +6,38 @@ if (!defined('ABSPATH')) exit;
 // MÓDULOS DO TEMA (métricas + atualização via Git)
 // ========================================================
 require_once get_template_directory() . '/inc/tracking.php';
-require_once get_template_directory() . '/inc/git-updater.php';
+
+/* -------------------------------------------------------------------------
+ * Auto-update do tema via GitHub (plugin-update-checker) — mesmo esquema do
+ * tema salvatorianos. Suba um commit na branch `main` com a "Version" do
+ * style.css maior que a instalada e o WordPress mostra o aviso de atualização
+ * em 1 clique (Painel > Atualizações). Repo privado: precisa da constante
+ * MEU_GH_TOKEN definida no wp-config.php.
+ * ---------------------------------------------------------------------- */
+$send_puc_loader = get_template_directory() . '/plugin-update-checker/plugin-update-checker.php';
+if ( is_readable( $send_puc_loader ) ) {
+	require $send_puc_loader;
+
+	$send_theme_slug = basename( get_template_directory() ); // send-educacional
+
+	$send_update_checker = \YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker(
+		'https://github.com/ErwiseDevelopment/' . $send_theme_slug . '/',
+		get_template_directory() . '/functions.php',
+		$send_theme_slug,
+		1
+	);
+	$send_update_checker->setBranch( 'main' );
+
+	if ( defined( 'MEU_GH_TOKEN' ) && MEU_GH_TOKEN ) {
+		$send_update_checker->setAuthentication( MEU_GH_TOKEN );
+	}
+
+	foreach ( array( 'load-update-core.php', 'load-themes.php' ) as $send_puc_hook ) {
+		add_action( $send_puc_hook, array( $send_update_checker, 'checkForUpdates' ) );
+	}
+
+	unset( $send_puc_loader, $send_theme_slug, $send_puc_hook );
+}
 
 function send_educacional_setup() {
     // Adiciona suporte a tag <title> e imagens destacadas
