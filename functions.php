@@ -2,6 +2,12 @@
 // Evita acesso direto
 if (!defined('ABSPATH')) exit;
 
+// ========================================================
+// MÓDULOS DO TEMA (métricas + atualização via Git)
+// ========================================================
+require_once get_template_directory() . '/inc/tracking.php';
+require_once get_template_directory() . '/inc/git-updater.php';
+
 function send_educacional_setup() {
     // Adiciona suporte a tag <title> e imagens destacadas
     add_theme_support('title-tag');

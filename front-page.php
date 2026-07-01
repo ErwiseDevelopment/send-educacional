@@ -218,8 +218,8 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 
                 <div class="bg-slate-800/60 backdrop-blur-md p-10 rounded-[2.5rem] border border-slate-700 hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-500/20 transition-all group relative">
-                    <div class="absolute -top-4 right-8 bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-xs font-black px-4 py-2 rounded-full uppercase tracking-widest shadow-lg shadow-blue-500/30 transform group-hover:scale-110 transition-transform">
-                        🔥 Novidade
+                    <div class="absolute -top-4 right-8 bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-xs font-black px-4 py-2 rounded-full uppercase tracking-widest shadow-lg shadow-blue-500/30 transform group-hover:scale-110 transition-transform inline-flex items-center gap-1.5">
+                        <svg class="w-3 h-3" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 4.5 13H11l-1 9 8.5-11H12l1-9z"></path></svg> Novidade
                     </div>
                     
                     <div class="w-16 h-16 bg-blue-500/20 border border-blue-500/30 rounded-2xl flex items-center justify-center mb-8">
@@ -235,8 +235,8 @@
                 </div>
 
                 <div class="bg-slate-800/60 backdrop-blur-md p-10 rounded-[2.5rem] border border-slate-700 hover:border-emerald-500 hover:shadow-2xl hover:shadow-emerald-500/20 transition-all group relative">
-                    <div class="absolute -top-4 right-8 bg-gradient-to-r from-emerald-500 to-teal-400 text-white text-xs font-black px-4 py-2 rounded-full uppercase tracking-widest shadow-lg shadow-emerald-500/30 transform group-hover:scale-110 transition-transform">
-                        🔥 Lançamento
+                    <div class="absolute -top-4 right-8 bg-gradient-to-r from-emerald-500 to-teal-400 text-white text-xs font-black px-4 py-2 rounded-full uppercase tracking-widest shadow-lg shadow-emerald-500/30 transform group-hover:scale-110 transition-transform inline-flex items-center gap-1.5">
+                        <svg class="w-3 h-3" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 4.5 13H11l-1 9 8.5-11H12l1-9z"></path></svg> Lançamento
                     </div>
 
                     <div class="w-16 h-16 bg-emerald-500/20 border border-emerald-500/30 rounded-2xl flex items-center justify-center mb-8">
