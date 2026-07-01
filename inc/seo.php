@@ -39,8 +39,19 @@ function se_seo_maybe_serve_file() {
 			exit;
 		}
 	}
+
+	// Só deve existir UM sitemap: o curado em /sitemap.xml.
+	// Qualquer sitemap automático (RankMath: sitemap_index.xml, page-sitemap.xml…)
+	// é redirecionado para ele.
+	if ( preg_match( '#(sitemap_index|[a-z]+-sitemap)\.xml$#i', $path ) ) {
+		wp_safe_redirect( home_url( '/sitemap.xml' ), 301 );
+		exit;
+	}
 }
 add_action( 'template_redirect', 'se_seo_maybe_serve_file', 0 );
+
+// Desliga o sitemap nativo do WordPress — deixamos só o /sitemap.xml curado.
+add_filter( 'wp_sitemaps_enabled', '__return_false' );
 
 /**
  * Aponta o sitemap no robots.txt virtual do WordPress.
