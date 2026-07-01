@@ -12,14 +12,13 @@
 <header class="<?php echo $se_home ? 'absolute top-0 left-0 right-0 z-50' : 'bg-white shadow-sm sticky top-0 z-50'; ?>">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
        <div class="flex flex-col items-start justify-center">
-            <a href="<?php echo home_url(); ?>" class="block transition-transform hover:scale-105">
-                <img
-                    src="<?php echo $se_home ? home_url('/wp-content/uploads/2026/02/5-1-e1714491597203.png') : home_url('/wp-content/uploads/2026/03/3-1-e1771525969584.png'); ?>"
-                    alt="Send Educacional"
-                    width="473"
-                    height="207"
-                    class="h-12 md:h-14 w-auto object-contain"
-                >
+            <a href="<?php echo home_url(); ?>" class="flex items-center gap-2.5 transition-transform hover:scale-105">
+                <?php if ( $se_home ) : ?>
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-branco.png" alt="Send Educacional" width="473" height="207" class="h-12 md:h-14 w-auto object-contain">
+                <?php else : ?>
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-icone.png" alt="" width="1024" height="642" class="h-10 md:h-11 w-auto object-contain" onerror="this.remove()">
+                    <span class="font-extrabold text-lg md:text-xl text-slate-900 leading-none tracking-tight">Send <span class="font-medium text-slate-500">Educacional</span></span>
+                <?php endif; ?>
             </a>
        </div>
         

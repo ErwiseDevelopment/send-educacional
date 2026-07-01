@@ -86,112 +86,7 @@
                         <span class="mx-auto text-[11px] text-slate-400 font-semibold bg-white border border-slate-100 rounded-full px-4 py-1">app.sendeducacional.com.br</span>
                     </div>
 
-                    <div class="grid" style="grid-template-columns:158px 1fr;">
-                        <div class="bg-slate-900 py-4 px-3 flex flex-col gap-1">
-                            <div class="flex items-center gap-2 px-2 mb-3">
-                                <div class="w-7 h-7 rounded-lg igrad text-white font-extrabold flex items-center justify-center text-xs">S</div>
-                                <span class="text-white text-[12px] font-bold tracking-tight">Send<span class="text-slate-500 font-medium"> Edu</span></span>
-                            </div>
-                            <?php
-                            $fp_nav = array( 'Painel' => true, 'Secretaria' => false, 'Acadêmico' => false, 'Financeiro' => false, 'AVA' => false, 'Relatórios' => false );
-                            foreach ( $fp_nav as $fp_label => $fp_on ) {
-                                printf(
-                                    '<span class="flex items-center gap-2 px-2 py-1.5 rounded-lg text-[11px] font-semibold %s"><span class="w-3.5 h-3.5 rounded %s"></span>%s</span>',
-                                    $fp_on ? 'bg-blue-600 text-white' : 'text-slate-400',
-                                    $fp_on ? 'bg-white/40' : 'bg-white/10',
-                                    esc_html( $fp_label )
-                                );
-                            }
-                            ?>
-                        </div>
-
-                        <div class="p-5 md:p-6 text-left bg-white">
-                            <div class="flex items-center justify-between mb-5">
-                                <div>
-                                    <p class="text-sm md:text-base font-extrabold text-slate-900 tracking-tight">Painel acadêmico</p>
-                                    <p class="text-[11px] text-slate-400 font-medium">Faculdade Exemplo · período 2026.1</p>
-                                </div>
-                                <div class="hidden sm:flex gap-1.5 text-[11px] font-semibold">
-                                    <span class="px-3 py-1.5 rounded-lg bg-blue-600 text-white">2026.1</span>
-                                    <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-500">2025.2</span>
-                                </div>
-                            </div>
-
-                            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
-                                <div class="rounded-xl border border-slate-100 p-3">
-                                    <p class="text-[10px] font-semibold text-slate-400 uppercase tracking-wide">Matrículas 2026.1</p>
-                                    <p class="text-lg font-extrabold text-slate-900 leading-tight">1.284</p>
-                                    <span class="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-600"><svg class="w-2.5 h-2.5" viewBox="0 0 10 10" fill="currentColor"><path d="M5 1 9 8 1 8Z"></path></svg> 12%</span>
-                                </div>
-                                <div class="rounded-xl border border-slate-100 p-3">
-                                    <p class="text-[10px] font-semibold text-slate-400 uppercase tracking-wide">Inadimplência</p>
-                                    <p class="text-lg font-extrabold text-slate-900 leading-tight">4,2%</p>
-                                    <span class="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-600"><svg class="w-2.5 h-2.5" viewBox="0 0 10 10" fill="currentColor"><path d="M5 9 1 2 9 2Z"></path></svg> 1,8pp</span>
-                                </div>
-                                <div class="rounded-xl border border-slate-100 p-3">
-                                    <p class="text-[10px] font-semibold text-slate-400 uppercase tracking-wide">Risco de evasão</p>
-                                    <p class="text-lg font-extrabold text-slate-900 leading-tight">37</p>
-                                    <span class="inline-flex items-center gap-1 text-[10px] font-bold text-amber-600">alunos</span>
-                                </div>
-                                <div class="rounded-xl border border-slate-100 p-3">
-                                    <p class="text-[10px] font-semibold text-slate-400 uppercase tracking-wide">Rematrícula</p>
-                                    <p class="text-lg font-extrabold text-slate-900 leading-tight">86%</p>
-                                    <span class="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-600"><svg class="w-2.5 h-2.5" viewBox="0 0 10 10" fill="currentColor"><path d="M5 1 9 8 1 8Z"></path></svg> concluída</span>
-                                </div>
-                            </div>
-
-                            <div class="grid md:grid-cols-3 gap-3">
-                                <div class="md:col-span-2 rounded-xl border border-slate-100 p-3">
-                                    <div class="flex items-center justify-between mb-2.5">
-                                        <p class="text-[10px] font-semibold text-slate-400 uppercase tracking-wide">Últimas matrículas</p>
-                                        <span class="text-[10px] font-semibold text-blue-600">ver todas</span>
-                                    </div>
-                                    <div class="space-y-2">
-                                        <?php
-                                        $fp_matriculas = array(
-                                            array( 'Ana Beatriz Rocha', 'Direito', 'Noite', 'Confirmada', 'bg-emerald-50 text-emerald-600' ),
-                                            array( 'Lucas Martins', 'Análise e Desenv. de Sistemas', 'EAD', 'Aguardando', 'bg-amber-50 text-amber-600' ),
-                                            array( 'Marina Alves', 'Enfermagem', 'Manhã', 'Confirmada', 'bg-emerald-50 text-emerald-600' ),
-                                            array( 'Rafael Souza', 'Administração', 'Noite', 'Contrato', 'bg-blue-50 text-blue-600' ),
-                                        );
-                                        foreach ( $fp_matriculas as $m ) {
-                                            printf(
-                                                '<div class="flex items-center gap-2 text-[11px]">
-                                                    <span class="w-6 h-6 rounded-full bg-slate-100 text-slate-500 flex items-center justify-center font-bold text-[10px] shrink-0">%s</span>
-                                                    <span class="font-semibold text-slate-700 w-24 truncate">%s</span>
-                                                    <span class="text-slate-400 flex-1 truncate hidden sm:block">%s</span>
-                                                    <span class="text-slate-400 w-10 hidden sm:block">%s</span>
-                                                    <span class="px-2 py-0.5 rounded-full font-bold %s">%s</span>
-                                                </div>',
-                                                esc_html( mb_substr( $m[0], 0, 1 ) ),
-                                                esc_html( $m[0] ), esc_html( $m[1] ), esc_html( $m[2] ), $m[4], esc_html( $m[3] )
-                                            );
-                                        }
-                                        ?>
-                                    </div>
-                                </div>
-
-                                <div class="rounded-xl border border-slate-100 p-3">
-                                    <div class="flex items-center gap-1.5 mb-2.5">
-                                        <span class="px-1.5 py-0.5 rounded bg-indigo-50 text-indigo-600 text-[9px] font-bold uppercase tracking-wide">AVA</span>
-                                        <p class="text-[10px] font-semibold text-slate-400 uppercase tracking-wide">a corrigir</p>
-                                    </div>
-                                    <div class="space-y-2">
-                                        <?php
-                                        $fp_ava = array( array( 'Cálculo I', '12' ), array( 'Anatomia', '8' ), array( 'Prog. Orient. a Objetos', '5' ) );
-                                        foreach ( $fp_ava as $a ) {
-                                            printf(
-                                                '<div class="flex items-center justify-between gap-2 text-[11px]"><span class="text-slate-600 font-medium truncate">%s</span><span class="w-6 h-5 rounded bg-indigo-600 text-white font-bold flex items-center justify-center text-[10px] shrink-0">%s</span></div>',
-                                                esc_html( $a[0] ), esc_html( $a[1] )
-                                            );
-                                        }
-                                        ?>
-                                    </div>
-                                    <div class="mt-3 pt-2 border-t border-slate-100 text-[10px] font-semibold text-indigo-600">Abrir diário de classe</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/sistema-painel.png" alt="Painel do Send Educacional — todos os módulos em um só lugar" class="w-full block" loading="lazy">
                 </div>
 
                 <div class="floaty hidden md:flex absolute -left-8 bottom-14 items-center gap-3 glass rounded-2xl px-4 py-3">
@@ -378,47 +273,40 @@
         </div>
     </section>
 
-    <!-- ===================== PERSONAS (telas reais) ===================== -->
+    <!-- ===================== TELAS REAIS DO SISTEMA ===================== -->
     <section class="relative z-10 py-24">
-        <div class="container mx-auto px-6 max-w-6xl text-center">
-            <div class="mb-12 reveal">
-                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">Feito para quem constrói a educação</h2>
-                <p class="text-lg text-slate-400">Cada setor enxerga a instituição pela tela que faz sentido para o seu trabalho.</p>
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="text-center mb-12 reveal">
+                <span class="text-blue-400 font-bold tracking-widest uppercase text-xs">A rotina real, dentro do sistema</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mt-4">Feito para quem constrói a educação</h2>
+                <p class="text-lg text-slate-400 mt-4 max-w-2xl mx-auto">Telas de verdade do Send Educacional: indicadores em tempo real, filtros por período e curso, e a operação inteira sob controle.</p>
             </div>
 
-            <div class="flex flex-wrap justify-center gap-6 mb-12 border-b border-white/10">
-                <button class="px-5 py-4 text-lg font-semibold tabx tab-active" data-target="tab-direcao">Para a Direção</button>
-                <button class="px-5 py-4 text-lg font-semibold tabx" data-target="tab-secretaria">Para a Secretaria</button>
-                <button class="px-5 py-4 text-lg font-semibold tabx" data-target="tab-financeiro">Para o Financeiro</button>
-            </div>
-
-            <div id="tab-direcao" class="tab-content text-left grid lg:grid-cols-2 gap-12 items-center">
+            <div class="grid lg:grid-cols-2 gap-12 items-center reveal">
                 <div>
-                    <h3 class="text-2xl font-bold text-white mb-4">Visão 360º da instituição</h3>
-                    <p class="text-slate-400 text-lg">Dashboards gerenciais com KPIs em tempo real. Acompanhe a evasão, veja quem está com risco de cancelar e atue cedo, com base em dados e não em achismo.</p>
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass text-xs font-bold uppercase tracking-widest text-blue-300 mb-5">Central de assinaturas</div>
+                    <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">Contratos e assinaturas digitais, sob controle</h3>
+                    <p class="text-slate-400 text-lg mb-6">Do envio à assinatura concluída: acompanhe cada contrato por período letivo, curso, modalidade e status — com distribuição em tempo real e busca por aluno ou matrícula.</p>
+                    <ul class="space-y-3">
+                        <?php foreach ( array(
+                            'Assinatura digital validada — e registro de contrato assinado internamente.',
+                            'Distribuição por status: em assinatura, concluído, recusado, cancelado.',
+                            'Filtros por período, curso, modalidade e situação acadêmica.',
+                        ) as $li ) {
+                            printf( '<li class="flex items-start gap-3 text-slate-300"><svg class="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>%s</li>', esc_html( $li ) );
+                        } ?>
+                    </ul>
+                    <button onclick="document.getElementById('demo-modal').classList.remove('hidden')" class="mt-7 gbtn text-white font-bold px-7 py-3.5 rounded-2xl transition-all hover:-translate-y-0.5">Ver na demonstração</button>
                 </div>
-                <div class="glass rounded-2xl aspect-[16/10] overflow-hidden cardring">
-                    <img src="<?php echo home_url('/wp-content/uploads/2026/03/dash-evasao-1.png'); ?>" alt="Dashboard Direção e Evasão" class="w-full h-full object-cover object-top">
-                </div>
-            </div>
 
-            <div id="tab-secretaria" class="tab-content text-left grid lg:grid-cols-2 gap-12 items-center hidden">
-                <div>
-                    <h3 class="text-2xl font-bold text-white mb-4">Controle acadêmico total</h3>
-                    <p class="text-slate-400 text-lg">Acompanhe em tempo real as matrículas ativas, novos calouros e veteranos. Filtre por período e tenha o controle da sua base de estudantes a um clique de distância.</p>
-                </div>
-                <div class="glass rounded-2xl aspect-[16/10] overflow-hidden cardring">
-                    <img src="<?php echo home_url('/wp-content/uploads/2026/03/dash-academico-1.png'); ?>" alt="Dashboard Secretaria" class="w-full h-full object-cover object-top">
-                </div>
-            </div>
-
-            <div id="tab-financeiro" class="tab-content text-left grid lg:grid-cols-2 gap-12 items-center hidden">
-                <div>
-                    <h3 class="text-2xl font-bold text-white mb-4">Alta performance de caixa</h3>
-                    <p class="text-slate-400 text-lg">Deixe as planilhas para trás. Acompanhe faturamento, valores a receber e os índices de inadimplência com precisão, direto nos painéis financeiros.</p>
-                </div>
-                <div class="glass rounded-2xl aspect-[16/10] overflow-hidden cardring">
-                    <img src="<?php echo home_url('/wp-content/uploads/2026/03/dash-financeiro-1.png'); ?>" alt="Dashboard Financeiro" class="w-full h-full object-cover object-top">
+                <div class="rounded-2xl overflow-hidden border border-white/10 bg-slate-950 cardring">
+                    <div class="h-10 flex items-center px-4 gap-2 border-b border-white/10 bg-slate-900/70">
+                        <span class="w-2.5 h-2.5 rounded-full bg-slate-600"></span>
+                        <span class="w-2.5 h-2.5 rounded-full bg-slate-600"></span>
+                        <span class="w-2.5 h-2.5 rounded-full bg-slate-600"></span>
+                        <span class="mx-auto text-[11px] text-slate-400 font-semibold bg-white/5 border border-white/10 rounded-full px-4 py-1">app.sendeducacional.com.br/assinaturas</span>
+                    </div>
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/sistema-assinaturas.png" alt="Central de assinaturas do Send Educacional" class="w-full max-h-[560px] object-cover object-top block" loading="lazy">
                 </div>
             </div>
         </div>
