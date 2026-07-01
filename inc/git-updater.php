@@ -124,8 +124,31 @@ function se_git_update() {
  *  CRON (rotina diária opcional)
  * ============================================================ */
 
+/**
+ * A atualização automática está ligada?
+ * Pode ser ligada pelo painel (opção) OU — de preferência em produção — por uma
+ * constante no wp-config.php:
+ *     define( 'SE_THEME_GIT_AUTOUPDATE', true );      // liga (intervalo padrão: de hora em hora)
+ *     define( 'SE_THEME_GIT_AUTOUPDATE', 'daily' );   // liga com um intervalo específico
+ */
+function se_git_autoupdate_enabled() {
+	if ( defined( 'SE_THEME_GIT_AUTOUPDATE' ) && SE_THEME_GIT_AUTOUPDATE ) return true;
+	return (bool) get_option( 'se_git_autoupdate' );
+}
+
+/** Intervalo do cron (slug de agendamento do WP: hourly, twicedaily, daily...). */
+function se_git_schedule_slug() {
+	$slug = 'hourly';
+	if ( defined( 'SE_THEME_GIT_AUTOUPDATE' ) && is_string( SE_THEME_GIT_AUTOUPDATE ) && SE_THEME_GIT_AUTOUPDATE !== '' ) {
+		$slug = SE_THEME_GIT_AUTOUPDATE;
+	}
+	$slug = apply_filters( 'se_git_schedule_slug', $slug );
+	$schedules = wp_get_schedules();
+	return isset( $schedules[ $slug ] ) ? $slug : 'hourly';
+}
+
 function se_git_cron_handler() {
-	if ( ! get_option( 'se_git_autoupdate' ) ) return;
+	if ( ! se_git_autoupdate_enabled() ) return;
 	if ( ! se_git_ready() ) return;
 	se_git( 'fetch --all --prune' );
 	if ( se_git_behind() > 0 ) {
@@ -134,18 +157,27 @@ function se_git_cron_handler() {
 }
 add_action( SE_GIT_CRON_HOOK, 'se_git_cron_handler' );
 
-/** Liga/desliga o agendamento conforme a opção. */
+/** Garante que o agendamento (e o intervalo) reflitam o estado atual. */
 function se_git_sync_schedule() {
-	$enabled   = (bool) get_option( 'se_git_autoupdate' );
+	$enabled   = se_git_autoupdate_enabled();
+	$slug      = se_git_schedule_slug();
 	$scheduled = wp_next_scheduled( SE_GIT_CRON_HOOK );
-	if ( $enabled && ! $scheduled ) {
-		wp_schedule_event( time() + 3600, 'daily', SE_GIT_CRON_HOOK );
-	} elseif ( ! $enabled && $scheduled ) {
+	$recur     = $scheduled ? wp_get_schedule( SE_GIT_CRON_HOOK ) : '';
+
+	if ( $enabled ) {
+		if ( ! $scheduled ) {
+			wp_schedule_event( time() + 300, $slug, SE_GIT_CRON_HOOK );
+		} elseif ( $recur !== $slug ) { // intervalo mudou
+			wp_unschedule_event( $scheduled, SE_GIT_CRON_HOOK );
+			wp_schedule_event( time() + 300, $slug, SE_GIT_CRON_HOOK );
+		}
+	} elseif ( $scheduled ) {
 		wp_unschedule_event( $scheduled, SE_GIT_CRON_HOOK );
 	}
 }
 add_action( 'update_option_se_git_autoupdate', 'se_git_sync_schedule' );
 add_action( 'add_option_se_git_autoupdate', 'se_git_sync_schedule' );
+add_action( 'init', 'se_git_sync_schedule' ); // agenda sozinho quando ligado pelo wp-config
 
 // Limpa o agendamento se o tema for trocado.
 add_action( 'switch_theme', function () {
@@ -242,7 +274,11 @@ function se_git_render_page() {
 	$commit  = $ready ? se_git_current_commit() : null;
 	$branch  = $ready ? se_git_branch() : '—';
 	$remote  = $ready ? se_git( 'remote get-url origin' ) : array( 'output' => '—' );
-	$auto    = (bool) get_option( 'se_git_autoupdate' );
+	$auto     = (bool) get_option( 'se_git_autoupdate' );
+	$forced   = defined( 'SE_THEME_GIT_AUTOUPDATE' ) && SE_THEME_GIT_AUTOUPDATE;
+	$enabled  = se_git_autoupdate_enabled();
+	$slug     = se_git_schedule_slug();
+	$next_run = wp_next_scheduled( SE_GIT_CRON_HOOK );
 	$last    = get_option( 'se_git_last_run' );
 	$notice  = get_transient( 'se_git_notice_' . get_current_user_id() );
 	delete_transient( 'se_git_notice_' . get_current_user_id() );
@@ -311,16 +347,29 @@ function se_git_render_page() {
 			</form>
 		</div>
 
-		<h2>Atualização automática (diária)</h2>
+		<h2>Atualização automática</h2>
+		<?php if ( $forced ) : ?>
+			<div class="notice notice-info inline" style="max-width:820px;margin:0 0 12px;">
+				<p>
+					Ligada pelo <code>wp-config.php</code> (<code>SE_THEME_GIT_AUTOUPDATE</code>). O tema é verificado
+					<strong><?php echo esc_html( $slug ); ?></strong> e atualizado sozinho quando há commit novo em <code>origin/<?php echo esc_html( se_git_branch() ); ?></code>.
+					<?php if ( $next_run ) : ?>Próxima verificação: <strong><?php echo esc_html( mysql2date( 'd/m/Y H:i', gmdate( 'Y-m-d H:i:s', $next_run ) ) ); ?></strong>.<?php endif; ?>
+				</p>
+			</div>
+		<?php endif; ?>
 		<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
 			<?php wp_nonce_field( 'se_git_action' ); ?>
 			<input type="hidden" name="action" value="se_git_action">
 			<input type="hidden" name="se_git_action" value="toggle_auto">
 			<label style="display:inline-flex;align-items:center;gap:8px;">
-				<input type="checkbox" name="se_git_autoupdate" value="1" <?php checked( $auto ); ?>>
-				Verificar o Git uma vez por dia e atualizar sozinho quando houver novidade.
+				<input type="checkbox" name="se_git_autoupdate" value="1" <?php checked( $auto ); ?> <?php disabled( $forced ); ?>>
+				Verificar o Git periodicamente e atualizar sozinho quando houver novidade.
 			</label>
-			<p><button type="submit" class="button">Salvar preferência</button></p>
+			<?php if ( $forced ) : ?>
+				<p style="color:#94a3b8;">Controlado pelo <code>wp-config.php</code> — a opção do painel fica desabilitada.</p>
+			<?php else : ?>
+				<p><button type="submit" class="button">Salvar preferência</button></p>
+			<?php endif; ?>
 		</form>
 
 		<h2>Webhook de deploy (opcional)</h2>
