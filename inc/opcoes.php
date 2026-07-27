@@ -50,10 +50,81 @@ function se_email_contato() {
 	return $email !== '' ? $email : 'comercial@sendsolutions.com.br';
 }
 
-/** URL da logo (versão branca, usada no cabeçalho e no rodapé). */
+/**
+ * ID do anexo da logo, quando a opção guarda um anexo da biblioteca.
+ * Valores antigos guardavam a URL crua; nesse caso tentamos descobrir o anexo.
+ */
+function se_logo_id() {
+	$logo = get_theme_mod( 'se_logo', '' );
+
+	if ( is_numeric( $logo ) ) {
+		return (int) $logo;
+	}
+
+	$logo = trim( (string) $logo );
+	if ( $logo === '' ) {
+		return 0;
+	}
+
+	$id = attachment_url_to_postid( $logo );
+	if ( ! $id ) {
+		// URLs de miniatura/-scaled nem sempre batem com o arquivo do anexo
+		$limpo = preg_replace( '/-(scaled|\d+x\d+)(\.[a-z]+)$/i', '$2', $logo );
+		$id    = $limpo !== $logo ? attachment_url_to_postid( $limpo ) : 0;
+	}
+	if ( ! $id ) {
+		$id = se_logo_id_por_arquivo_editado( $logo );
+	}
+	return (int) $id;
+}
+
+/**
+ * Recuperação para URLs que ficaram para trás: quando a imagem é recortada no
+ * editor do WordPress, o anexo passa a apontar para um arquivo "-e<timestamp>"
+ * e a URL antiga deixa de casar. Aqui procuramos o anexo pelo nome original.
+ */
+function se_logo_id_por_arquivo_editado( $url ) {
+	$uploads = wp_get_upload_dir();
+	if ( empty( $uploads['baseurl'] ) || strpos( $url, $uploads['baseurl'] ) !== 0 ) {
+		return 0;
+	}
+
+	$caminho = ltrim( substr( $url, strlen( $uploads['baseurl'] ) ), '/' );
+	if ( ! preg_match( '/^(.+)(\.[a-z0-9]+)$/i', $caminho, $m ) ) {
+		return 0;
+	}
+
+	global $wpdb;
+	$like = $wpdb->esc_like( $m[1] . '-e' ) . '%' . $wpdb->esc_like( $m[2] );
+
+	return (int) $wpdb->get_var( $wpdb->prepare(
+		"SELECT post_id FROM {$wpdb->postmeta}
+		 WHERE meta_key = '_wp_attached_file' AND meta_value LIKE %s
+		 ORDER BY post_id DESC LIMIT 1",
+		$like
+	) );
+}
+
+/**
+ * URL da logo (versão branca, usada no cabeçalho e no rodapé).
+ * Resolvendo pelo anexo, um corte feito no editor de imagem do WordPress
+ * (que gera um arquivo novo, "-e<timestamp>") passa a valer sozinho.
+ */
 function se_logo_url() {
+	$id = se_logo_id();
+	if ( $id ) {
+		$url = wp_get_attachment_url( $id );
+		if ( $url ) {
+			return $url;
+		}
+	}
+
 	$logo = trim( (string) get_theme_mod( 'se_logo', '' ) );
-	return $logo !== '' ? $logo : get_template_directory_uri() . '/assets/img/logo-branco.png';
+	if ( $logo !== '' && ! is_numeric( $logo ) ) {
+		return $logo; // URL de fora da biblioteca
+	}
+
+	return get_template_directory_uri() . '/assets/img/logo-branco.png';
 }
 
 /**
@@ -62,20 +133,11 @@ function se_logo_url() {
  * tamanho fica só por CSS — melhor do que declarar uma proporção errada).
  */
 function se_logo_dimensoes() {
-	$logo = trim( (string) get_theme_mod( 'se_logo', '' ) );
+	$id = se_logo_id();
 
-	if ( $logo === '' ) {
-		return array( 989, 240 ); // logo que vem no tema
-	}
-
-	$id = attachment_url_to_postid( $logo );
 	if ( ! $id ) {
-		// URLs de miniatura/-scaled às vezes não batem com o anexo original
-		$limpo = preg_replace( '/-(scaled|\d+x\d+)(\.[a-z]+)$/i', '$2', $logo );
-		$id    = $limpo !== $logo ? attachment_url_to_postid( $limpo ) : 0;
-	}
-	if ( ! $id ) {
-		return null;
+		$logo = trim( (string) get_theme_mod( 'se_logo', '' ) );
+		return $logo === '' ? array( 989, 240 ) : null; // 989x240 = logo do tema
 	}
 
 	$src = wp_get_attachment_image_src( $id, 'full' );
@@ -115,6 +177,14 @@ function se_logo_css() {
 }
 add_action( 'wp_head', 'se_logo_css', 20 );
 
+/** Aceita o ID do anexo (formato novo) ou uma URL crua (valores antigos). */
+function se_sanitize_logo( $valor ) {
+	if ( is_numeric( $valor ) ) {
+		return (int) $valor > 0 ? (int) $valor : '';
+	}
+	return esc_url_raw( (string) $valor );
+}
+
 /** Registra a seção "Send Educacional" no Personalizar. */
 function se_customize_register( $wp_customize ) {
 
@@ -126,15 +196,18 @@ function se_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'se_logo', array(
 		'default'           => '',
-		'sanitize_callback' => 'esc_url_raw',
+		'sanitize_callback' => 'se_sanitize_logo',
 		'transport'         => 'refresh',
 	) );
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'se_logo', array(
+	// Media control guarda o ID do anexo (e não a URL): assim, se a imagem for
+	// recortada depois no editor do WordPress, o site acompanha sozinho.
+	$wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'se_logo', array(
 		'label'       => 'Logo (fundo transparente, versão branca)',
 		'description' => 'Aparece no cabeçalho e no rodapé. Deixe vazio para usar a logo que vem no tema. '
 			. 'Envie a imagem já recortada, sem sobra transparente em volta: o tamanho é medido pela altura '
 			. 'do arquivo inteiro, então uma moldura vazia faz a marca aparecer pequena.',
 		'section'     => 'se_geral',
+		'mime_type'   => 'image',
 	) ) );
 
 	$wp_customize->add_setting( 'se_logo_altura', array(
