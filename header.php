@@ -13,7 +13,7 @@
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
        <div class="flex flex-col items-start justify-center">
             <a href="<?php echo home_url(); ?>" class="flex items-center gap-2.5 transition-transform hover:scale-105">
-                <img src="<?php echo esc_url( se_logo_url() ); ?>" alt="Send Educacional" width="989" height="240" class="h-11 md:h-12 w-auto object-contain">
+                <img src="<?php echo esc_url( se_logo_url() ); ?>" alt="Send Educacional"<?php echo se_logo_dimensoes_attr(); ?> class="se-logo w-auto object-contain">
             </a>
        </div>
         

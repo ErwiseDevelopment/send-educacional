@@ -22,9 +22,8 @@
                         <img
                             src="<?php echo esc_url( se_logo_url() ); ?>"
                             alt="Send Educacional"
-                            width="989"
-                            height="240"
-                            class="h-12 md:h-14 w-auto object-contain"
+                            <?php echo trim( se_logo_dimensoes_attr() ); ?>
+                            class="se-logo-rodape w-auto object-contain"
                         >
                     </div>
 
