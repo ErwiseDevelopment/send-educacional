@@ -25,6 +25,15 @@
                             <?php echo trim( se_logo_dimensoes_attr() ); ?>
                             class="se-logo-rodape w-auto object-contain"
                         >
+
+                        <span class="block mt-6 text-xs uppercase tracking-widest text-blue-200">uma solução</span>
+                        <img
+                            src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-send-solutions.png"
+                            alt="Send Solutions"
+                            width="500"
+                            height="116"
+                            class="mt-3 h-7 w-auto object-contain"
+                        >
                     </div>
 
                     <h4 class="text-xl font-bold mb-4 text-white">Contato</h4>
