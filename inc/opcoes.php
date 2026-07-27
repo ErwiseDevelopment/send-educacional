@@ -215,7 +215,7 @@ function se_customize_register( $wp_customize ) {
 	// recortada depois no editor do WordPress, o site acompanha sozinho.
 	$wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'se_logo', array(
 		'label'       => 'Logo (fundo transparente, versão branca)',
-		'description' => 'Aparece no cabeçalho e no rodapé. Deixe vazio para usar a logo que vem no tema. '
+		'description' => 'Aparece no cabeçalho. Deixe vazio para usar a logo que vem no tema. '
 			. 'Envie a imagem já recortada, sem sobra transparente em volta: o tamanho é medido pela altura '
 			. 'do arquivo inteiro, então uma moldura vazia faz a marca aparecer pequena.',
 		'section'     => 'se_geral',
@@ -229,7 +229,7 @@ function se_customize_register( $wp_customize ) {
 	) );
 	$wp_customize->add_control( 'se_logo_altura', array(
 		'label'       => 'Altura da logo no cabeçalho (px)',
-		'description' => 'Padrão 48. No celular sai 20% menor e no rodapé 8px maior, automaticamente.',
+		'description' => 'Padrão 48. No celular sai um pouco menor, automaticamente.',
 		'section'     => 'se_geral',
 		'type'        => 'number',
 		'input_attrs' => array( 'min' => 24, 'max' => 160, 'step' => 2 ),

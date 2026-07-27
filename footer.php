@@ -19,14 +19,7 @@
                 
                 <div class="lg:col-span-2">
                     <div class="mb-6">
-                        <img
-                            src="<?php echo esc_url( se_logo_url() ); ?>"
-                            alt="Send Educacional"
-                            <?php echo trim( se_logo_dimensoes_attr() ); ?>
-                            class="se-logo-rodape w-auto object-contain"
-                        >
-
-                        <span class="block mt-6 text-xs uppercase tracking-widest text-blue-200">uma solução</span>
+                        <span class="block text-xs uppercase tracking-widest text-blue-200">uma solução</span>
                         <img
                             src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-send-solutions.png"
                             alt="Send Solutions"
