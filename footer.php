@@ -20,13 +20,15 @@
                 <div class="lg:col-span-2">
                     <div class="mb-6">
                         <span class="block text-xs uppercase tracking-widest text-blue-200">uma solução</span>
-                        <img
-                            src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-send-solutions.png"
-                            alt="Send Solutions"
-                            width="500"
-                            height="116"
-                            class="mt-3 h-7 w-auto object-contain"
-                        >
+                        <a href="https://sendsolutions.com.br" target="_blank" rel="noopener" class="inline-block mt-3 transition-transform hover:scale-105" aria-label="Send Solutions">
+                            <img
+                                src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-send-solutions.png"
+                                alt="Send Solutions"
+                                width="500"
+                                height="116"
+                                class="h-9 w-auto object-contain"
+                            >
+                        </a>
                     </div>
 
                     <h4 class="text-xl font-bold mb-4 text-white">Contato</h4>
