@@ -42,7 +42,7 @@
                 <span class="text-2xl font-black tracking-widest uppercase text-slate-900">Send</span>
             </div>
             <div class="hidden md:flex items-center gap-6">
-                <a href="https://wa.me/5511937049755" target="_blank" class="text-sm font-bold text-slate-500 hover:text-blue-600 transition">Dúvidas? Chame no WhatsApp</a>
+                <a href="<?php echo esc_url( se_whatsapp_link() ); ?>" target="_blank" class="text-sm font-bold text-slate-500 hover:text-blue-600 transition">Dúvidas? Chame no WhatsApp</a>
                 <a href="#agendar" class="bg-slate-900 hover:bg-black text-white px-6 py-2.5 rounded-full font-bold text-sm shadow-lg transition-transform hover:-translate-y-0.5">Agendar Reunião</a>
             </div>
         </div>
@@ -224,7 +224,7 @@
         </footer>
     </main>
 
-    <a href="https://wa.me/5511937049755?text=Ol%C3%A1!+Estou+na+Bett+Educar,+li+o+folder+e+gostaria+de+saber+mais+sobre+o+Send+Educacional." 
+    <a href="<?php echo esc_url( se_whatsapp_link( 'Olá! Estou na Bett Educar, li o folder e gostaria de saber mais sobre o Send Educacional.' ) ); ?>"
        target="_blank" 
        class="fixed bottom-6 right-6 bg-[#25D366] hover:bg-[#128C7E] text-white p-4 rounded-full shadow-[0_10px_20px_rgba(37,211,102,0.4)] hover:-translate-y-1 transition-all duration-300 z-50 flex items-center justify-center group">
         

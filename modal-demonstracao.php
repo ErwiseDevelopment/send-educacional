@@ -122,7 +122,7 @@
         if(sucessoContainer) sucessoContainer.classList.remove('hidden');
 
         const texto = `Olá! Meu nome é ${dados.nome}, sou ${dados.cargo} na instituição ${dados.instituicao}. Temos cerca de ${dados.alunos} alunos e gostaria de uma demonstração.`;
-        const zapUrl = `https://api.whatsapp.com/send?phone=5511937049755&text=${encodeURIComponent(texto)}`;
+        const zapUrl = `https://api.whatsapp.com/send?phone=<?php echo esc_js( se_whatsapp_num() ); ?>&text=${encodeURIComponent(texto)}`;
 
         setTimeout(() => {
             window.open(zapUrl, '_blank');
