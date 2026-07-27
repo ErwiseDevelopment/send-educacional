@@ -256,6 +256,9 @@ get_header();
                     Inscrição realizada com sucesso!
                 </span>
             </p>
+            <p id="erro_newsletter" class="hidden text-amber-500 font-bold text-sm mt-2 transition-all">
+                Não conseguimos concluir sua inscrição agora. Tente novamente em instantes.
+            </p>
         </div>
     </section>
 
@@ -278,11 +281,27 @@ function assinarNewsletter(e) {
         email: email
     });
 
+    const erro = document.getElementById('erro_newsletter');
+    erro.classList.add('hidden');
+
     fetch('<?php echo admin_url('admin-ajax.php'); ?>', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: dados
-    }).finally(() => {
+    }).then(function (r) {
+        return r.ok ? r.json() : { success: false };
+    }).catch(function () {
+        return { success: false };
+    }).then(function (resposta) {
+        // Sem canal alternativo aqui: se a RD recusar, o certo é dizer que
+        // não deu, e não limpar o campo, para a pessoa poder tentar de novo.
+        if (!resposta || resposta.success !== true) {
+            btn.disabled = false;
+            btn.innerHTML = 'Cadastre-se!';
+            erro.classList.remove('hidden');
+            return;
+        }
+
         // Feedback visual para o usuário
         btn.innerHTML = 'Cadastrado!';
         btn.classList.replace('bg-blue-600', 'bg-green-600');

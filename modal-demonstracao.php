@@ -77,6 +77,9 @@
                 </form>
 
                 <div id="sucesso_container" class="hidden text-center py-10 animate-[fadeIn_0.5s]">
+                    <p id="aviso_registro" class="hidden text-sm text-amber-500 font-bold mb-4">
+                        Não conseguimos registrar seus dados automaticamente, mas seu contato não se perdeu: estamos te levando direto para o especialista.
+                    </p>
                     <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
                         <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
                     </div>
@@ -116,7 +119,17 @@
         method: 'POST',
         headers: { 'Content-Type' : 'application/x-www-form-urlencoded' },
         body: new URLSearchParams(dados)
-    }).finally(() => {
+    }).then(function (r) {
+        return r.ok ? r.json() : { success: false };
+    }).catch(function () {
+        return { success: false };
+    }).then(function (resposta) {
+        // O lead não pode ser perdido: mesmo se o CRM recusar, seguimos para o
+        // WhatsApp — mas avisando, em vez de fingir que deu tudo certo.
+        if (!resposta || resposta.success !== true) {
+            document.getElementById('aviso_registro')?.classList.remove('hidden');
+        }
+
         // Proteção extra: só executa se o elemento existir
         if(formContainer) formContainer.classList.add('hidden');
         if(sucessoContainer) sucessoContainer.classList.remove('hidden');

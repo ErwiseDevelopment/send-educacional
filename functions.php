@@ -247,12 +247,42 @@ function registrar_lead_crm() {
     ]);
 
     $code = wp_remote_retrieve_response_code($response);
-    
+
     if ( is_wp_error( $response ) || ($code < 200 || $code > 299) ) {
+        se_registrar_falha_integracao( 'CRM (demonstração)', $response, $code );
         wp_send_json_error('Erro na API');
     } else {
         wp_send_json_success();
     }
+}
+
+/**
+ * Guarda a falha de uma integração no log do PHP e numa opção, para dar
+ * para auditar depois. Sem isso, uma chave expirada derruba a captação
+ * de leads em silêncio — foi o que aconteceu com a newsletter.
+ */
+function se_registrar_falha_integracao( $rotulo, $resposta, $code = 0 ) {
+    $motivo = is_wp_error( $resposta )
+        ? $resposta->get_error_message()
+        : trim( wp_remote_retrieve_body( $resposta ) );
+
+    $motivo = mb_substr( wp_strip_all_tags( (string) $motivo ), 0, 300 );
+    $linha  = sprintf( '[Send Educacional] %s falhou (HTTP %s): %s', $rotulo, $code ?: 'sem resposta', $motivo );
+
+    error_log( $linha );
+
+    // Últimas 20 falhas, para consulta rápida sem depender do log do servidor.
+    $historico = get_option( 'se_falhas_integracao', array() );
+    if ( ! is_array( $historico ) ) {
+        $historico = array();
+    }
+    array_unshift( $historico, array(
+        'quando' => current_time( 'mysql' ),
+        'onde'   => $rotulo,
+        'code'   => (int) $code,
+        'motivo' => $motivo,
+    ) );
+    update_option( 'se_falhas_integracao', array_slice( $historico, 0, 20 ), false );
 }
 
 
@@ -276,13 +306,20 @@ function registrar_newsletter_rd() {
         ]
     ];
 
-    wp_remote_post('https://api.rd.services/platform/conversions?api_key=' . $api_key, [
+    $response = wp_remote_post('https://api.rd.services/platform/conversions?api_key=' . $api_key, [
         'headers'     => ['Content-Type' => 'application/json'],
         'body'        => wp_json_encode($body),
         'method'      => 'POST',
         'timeout'     => 10,
         'sslverify'   => false // Para o Localhost
     ]);
+
+    $code = wp_remote_retrieve_response_code($response);
+
+    if ( is_wp_error( $response ) || ($code < 200 || $code > 299) ) {
+        se_registrar_falha_integracao( 'Newsletter (RD Station Marketing)', $response, $code );
+        wp_send_json_error('Não foi possível concluir a inscrição.');
+    }
 
     wp_send_json_success();
 }
