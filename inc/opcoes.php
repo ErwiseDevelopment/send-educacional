@@ -50,6 +50,18 @@ function se_email_contato() {
 	return $email !== '' ? $email : 'comercial@sendsolutions.com.br';
 }
 
+/** Perfil do Instagram exibido no rodapé. */
+function se_instagram_url() {
+	$url = trim( (string) get_theme_mod( 'se_instagram', 'https://www.instagram.com/sendeducacional' ) );
+	return $url;
+}
+
+/** Perfil do LinkedIn exibido no rodapé. */
+function se_linkedin_url() {
+	$url = trim( (string) get_theme_mod( 'se_linkedin', 'https://www.linkedin.com/company/send-educacional/' ) );
+	return $url;
+}
+
 /**
  * ID do anexo da logo, quando a opção guarda um anexo da biblioteca.
  * Valores antigos guardavam a URL crua; nesse caso tentamos descobrir o anexo.
@@ -256,6 +268,30 @@ function se_customize_register( $wp_customize ) {
 		'label'   => 'E-mail comercial (rodapé)',
 		'section' => 'se_geral',
 		'type'    => 'email',
+	) );
+
+	$wp_customize->add_setting( 'se_instagram', array(
+		'default'           => 'https://www.instagram.com/sendeducacional',
+		'sanitize_callback' => 'esc_url_raw',
+		'transport'         => 'refresh',
+	) );
+	$wp_customize->add_control( 'se_instagram', array(
+		'label'       => 'Instagram (rodapé)',
+		'description' => 'Endereço completo do perfil. Deixe vazio para esconder o ícone.',
+		'section'     => 'se_geral',
+		'type'        => 'url',
+	) );
+
+	$wp_customize->add_setting( 'se_linkedin', array(
+		'default'           => 'https://www.linkedin.com/company/send-educacional/',
+		'sanitize_callback' => 'esc_url_raw',
+		'transport'         => 'refresh',
+	) );
+	$wp_customize->add_control( 'se_linkedin', array(
+		'label'       => 'LinkedIn (rodapé)',
+		'description' => 'Endereço completo da página. Deixe vazio para esconder o ícone.',
+		'section'     => 'se_geral',
+		'type'        => 'url',
 	) );
 }
 add_action( 'customize_register', 'se_customize_register' );
