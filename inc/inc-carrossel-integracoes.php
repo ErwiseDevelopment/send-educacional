@@ -156,7 +156,7 @@
         endfor; ?>
 
         <div class="integration-card !bg-blue-600 !border-none !filter-none cursor-pointer group shadow-lg shadow-blue-200" 
-             onclick="document.getElementById('demo-modal').classList.remove('hidden')">
+             onclick="abrirDemo()">
             <div class="text-white flex flex-col items-center">
                 <svg class="w-6 h-6 mb-1 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>

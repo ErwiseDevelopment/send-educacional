@@ -86,10 +86,10 @@ get_header(); ?>
                     </div>
                     <h3 class="text-2xl font-extrabold text-white mb-6">AVA & Integrações</h3>
                     <ul class="space-y-4 text-indigo-100 text-sm font-medium">
-                        <li class="flex items-start gap-3"><span class="text-indigo-400 mt-0.5">✓</span> Sincronização Bidirecional Moodle</li>
+                        <li class="flex items-start gap-3"><span class="text-indigo-400 mt-0.5">✓</span> AVA próprio, com sincronização bidirecional para quem mantém o Moodle</li>
                         <li class="flex items-start gap-3"><span class="text-indigo-400 mt-0.5">✓</span> Inscrição de Matrículas e Cursos no AVA</li>
                         <li class="flex items-start gap-3"><span class="text-indigo-400 mt-0.5">✓</span> Logs e Notificações de Integração em tempo real</li>
-                        <li class="flex items-start gap-3"><span class="text-indigo-400 mt-0.5">✓</span> Relatório de Últimos Acessos ao Moodle</li>
+                        <li class="flex items-start gap-3"><span class="text-indigo-400 mt-0.5">✓</span> Relatório de últimos acessos ao ambiente de aula (AVA próprio ou Moodle)</li>
                         <li class="flex items-start gap-3"><span class="text-indigo-400 mt-0.5">✓</span> Sincronização de Trancamentos e Cancelamentos</li>
                         <li class="flex items-start gap-3"><span class="text-indigo-400 mt-0.5">✓</span> CRM Dynamics: Captura de Candidatos</li>
                         <li class="flex items-start gap-3"><span class="text-indigo-400 mt-0.5">✓</span> CRM Dynamics: Retorno Automático de Vínculo</li>
@@ -156,9 +156,9 @@ get_header(); ?>
         <div class="container mx-auto px-6 max-w-4xl relative z-10">
             <h2 class="text-4xl md:text-6xl font-black text-white mb-8 tracking-tighter">Pronto para operar no <span class="gtext">nível máximo?</span></h2>
             <p class="text-xl text-slate-400 mb-12 font-light leading-relaxed">
-                Nenhum outro sistema no mercado oferece esta profundidade de gestão acadêmica com implantação consultiva. Agende uma conversa técnica e desafie os nossos especialistas.
+                São mais de 80 funcionalidades nativas de gestão acadêmica, com implantação conduzida por um consultor — não por um manual em PDF. Agende uma conversa técnica e traga os seus processos.
             </p>
-            <button onclick="document.getElementById('demo-modal').classList.remove('hidden')" class="gbtn text-white px-12 py-5 rounded-2xl font-black text-xl transition-all hover:scale-105 flex items-center justify-center gap-3 mx-auto">
+            <button onclick="abrirDemo()" class="gbtn text-white px-12 py-5 rounded-2xl font-black text-xl transition-all hover:scale-105 flex items-center justify-center gap-3 mx-auto">
                 Quero conhecer na prática
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </button>

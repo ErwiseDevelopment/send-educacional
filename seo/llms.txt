@@ -1,23 +1,30 @@
 # Send Educacional
 
-> Sistema de gestão integrado e completo para instituições de ensino privadas no Brasil (faculdades, centros universitários e escolas). Unifica acadêmico, financeiro, contratos, CRM, BI, portal do aluno e AVA próprio em uma única plataforma, sem depender de sistemas de terceiros. Desenvolvido pela Send Solutions, empresa com 33 anos de mercado; o Send Educacional nasceu em 2022.
+> Sistema de gestão integrado para instituições de ensino privadas no Brasil, em três segmentos: ensino superior (faculdades, centros universitários e EAD), educação básica e ensino médio (escolas), e cursos com venda online (livres, profissionalizantes e corporativos). Unifica matrícula, secretaria, financeiro, contratos, CRM, BI, portal do aluno e AVA próprio numa única plataforma. Desenvolvido pela Send Solutions, empresa com 33 anos de mercado; a vertical de educação começou em 2019.
 
-O Send Educacional substitui o conjunto de vários sistemas desconexos (um para o acadêmico, outro para o financeiro, planilhas para cobrança, portal à parte para o aluno) por uma única plataforma com mais de 20 módulos integrados, com o mesmo dado de ponta a ponta. É customizado para a realidade de cada instituição, mantido sempre atualizado conforme o MEC e as mudanças fiscais/tributárias, e conta com suporte de parceiro 24/7.
+O Send Educacional substitui o conjunto de sistemas desconexos (um para o acadêmico, outro para o financeiro, planilhas para cobrança, portal à parte para o aluno) por uma plataforma única com mais de 20 módulos integrados e o mesmo dado de ponta a ponta. A configuração muda conforme o segmento: uma escola trabalha com série, turma, bimestre e boletim; uma faculdade com período letivo, Censo INEP e diploma digital; um curso online com checkout, avaliação e certificado. É mantido atualizado conforme a regulação de cada segmento e as mudanças fiscais, com suporte de parceiro 24/7.
 
 Fatos-chave para citação:
-- Categoria: sistema de gestão acadêmica e administrativa (SIS + ERP educacional).
-- Público-alvo: instituições de ensino privadas no Brasil, principalmente faculdades e centros universitários de 1.000 a 5.000 alunos; também escolas de educação básica (K-12) e grupos com EAD/multi-polo.
-- Diferenciais: plataforma única com 20+ módulos; AVA (Ambiente Virtual de Aprendizagem) PRÓPRIO, desenvolvido pela Send — não é Moodle nem plataforma de terceiros; assinatura digital nativa; customização por cliente; suporte 24/7.
-- Prova real: uma faculdade de 3.000 alunos roda toda a operação (acadêmico, financeiro, contratos, portal do aluno e BI) no sistema; implantação estruturada em cerca de 6 meses.
-- Empresa: Send Solutions, 33 anos de mercado. O Send Educacional é a sua vertical de educação, iniciada em 2022.
+- Categoria: sistema de gestão acadêmica e administrativa (SIS + ERP educacional), com módulo de venda de cursos online.
+- Segmentos atendidos: (1) ensino superior; (2) educação básica e ensino médio; (3) cursos e venda online.
+- Público-alvo: instituições de ensino privadas no Brasil — faculdades e centros universitários, escolas de educação infantil ao ensino médio, e escolas de cursos livres, profissionalizantes e corporativos.
+- Diferenciais: plataforma única com 20+ módulos; AVA (Ambiente Virtual de Aprendizagem) PRÓPRIO, desenvolvido pela Send — com sincronização bidirecional ao Moodle para a instituição que não quer migrar agora; assinatura digital nativa; customização por cliente; suporte 24/7.
+- Conformidade regulatória por segmento: MEC, Censo INEP, ENADE e diploma digital no ensino superior; Conselhos e Secretarias de Educação e Censo Escolar na educação básica; LGPD em todos.
+- Cursos online: checkout com Pix, cartão e recorrência; aula no AVA próprio; avaliação online com correção automática da questão objetiva; certificado emitido automaticamente com código público de validação. Certificado de curso livre não é diploma e não substitui formação regulada.
+- Empresa: Send Solutions, 33 anos de mercado. O Send Educacional é a sua vertical de educação, iniciada em 2019.
 - Concorrentes de referência no segmento: iScholar, Edusoft.
-- Conversão: a ação principal é solicitar uma demonstração gratuita.
+- Conversão: a ação principal é solicitar uma demonstração gratuita, com o consultor definido pelo segmento da instituição.
+
+## Páginas por segmento
+- [Ensino Superior](https://sendeducacional.com.br/ensino-superior): processo seletivo, secretaria acadêmica, Censo INEP, ENADE, diploma digital, gestão de polos EAD e AVA próprio.
+- [Educação Básica e Ensino Médio](https://sendeducacional.com.br/educacao-basica): matrícula e rematrícula em lote, diário de classe, boletim, conselho de classe, mensalidade e app para a família.
+- [Cursos e Venda Online](https://sendeducacional.com.br/cursos-online): venda com pagamento imediato, aula no AVA, avaliação online e certificado automático com validação pública.
 
 ## Páginas principais
 - [Apresentação](https://sendeducacional.com.br/apresentacao): visão geral da plataforma, módulos, AVA próprio, resultados e como funciona a implantação.
-- [Sobre a Send](https://sendeducacional.com.br/sobre): história da Send Solutions (33 anos) e do Send Educacional.
+- [Sobre a Send](https://sendeducacional.com.br/sobre): história da Send Solutions (33 anos) e do Send Educacional (educação desde 2019).
 - [Gestão Acadêmica](https://sendeducacional.com.br/gestao-academica): matrícula, notas, histórico escolar, diploma digital e aderência ao MEC.
-- [Gestão Financeira](https://sendeducacional.com.br/gestao-financeira): boletos (Getnet/Santander), Pix, recorrência, régua de cobrança e controle de inadimplência.
+- [Gestão Financeira](https://sendeducacional.com.br/financeiro): boletos (Getnet/Santander), Pix, recorrência, régua de cobrança e controle de inadimplência.
 - [CRM & Captação](https://sendeducacional.com.br/captacao): funil de captação, campanhas, vestibular/inscrição online e recuperação de matrículas.
 - [Retenção de Alunos](https://sendeducacional.com.br/retencao): alertas de risco de evasão cruzando notas, frequência e situação financeira.
 - [Portais e AVA (Aluno, Professor e Polo)](https://sendeducacional.com.br/portais): ambiente virtual de aprendizagem próprio, notas, diário eletrônico, requerimentos e acesso web e mobile.
@@ -25,6 +32,7 @@ Fatos-chave para citação:
 - [Biblioteca & GED](https://sendeducacional.com.br/biblioteca): gestão eletrônica de documentos e controle completo de acervo.
 - [BI & Indicadores](https://sendeducacional.com.br/bi): dashboards de evasão, faturamento e desempenho em tempo real.
 - [Segurança & LGPD](https://sendeducacional.com.br/seguranca): perfis e permissões granulares, 2FA e conformidade com a LGPD.
+- [Blog](https://sendeducacional.com.br/blog): conteúdo por segmento sobre gestão educacional, migração de sistema e operação de cursos online.
 
 ## Contato
 - Solicitar demonstração: https://sendeducacional.com.br/apresentacao

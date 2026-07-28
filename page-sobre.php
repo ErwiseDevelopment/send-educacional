@@ -29,9 +29,42 @@ get_header(); ?>
             <div class="flex flex-col lg:flex-row items-center gap-20">
                 <div class="w-full lg:w-1/2 relative">
                     <div class="absolute -top-10 -left-10 w-40 h-40 bg-blue-600/10 rounded-full -z-10"></div>
-                    <div class="relative z-10 rounded-[3rem] overflow-hidden cardring">
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Inovação Send" class="w-full h-auto transform hover:scale-105 transition-transform duration-700">
-                    </div>
+                    <?php
+                    // Numa página que fala de três décadas de história, foto de banco
+                    // de imagem trabalha contra o argumento. Se o cliente subir a foto
+                    // real do time no Personalizar, ela entra aqui; enquanto não subir,
+                    // mostramos a linha do tempo — nunca um escritório genérico.
+                    $sobre_foto = se_foto_time_id();
+                    if ( $sobre_foto ) : ?>
+                        <div class="relative z-10 rounded-[3rem] overflow-hidden cardring">
+                            <?php echo wp_get_attachment_image( $sobre_foto, 'large', false, array(
+                                'class' => 'w-full h-auto transform hover:scale-105 transition-transform duration-700',
+                                'alt'   => 'Time da Send Solutions',
+                            ) ); ?>
+                        </div>
+                    <?php else : ?>
+                        <div class="relative z-10 glass rounded-[3rem] p-10 cardring">
+                            <p class="text-xs font-bold uppercase tracking-widest text-blue-300 mb-8">A linha do tempo</p>
+                            <ol class="space-y-7 relative">
+                                <span class="absolute left-[13px] top-2 bottom-2 w-px bg-gradient-to-b from-blue-500/50 to-violet-500/20" aria-hidden="true"></span>
+                                <?php foreach ( array(
+                                    array( '1994', 'Nasce a Send Solutions', 'Sistemas de gestão para indústria, comércio e serviços.' ),
+                                    array( '2019', 'A Send entra em educação', 'A bagagem de ERP passa a ser aplicada à gestão de instituições de ensino.' ),
+                                    array( 'Hoje', 'Três segmentos atendidos', 'Ensino superior, educação básica e média, e cursos com venda online.' ),
+                                ) as $marco ) {
+                                    printf(
+                                        '<li class="relative pl-12">
+                                            <span class="absolute left-0 top-0.5 w-7 h-7 rounded-full igrad ring-4 ring-[#0b1020]"></span>
+                                            <span class="block text-2xl font-extrabold gtext leading-none">%s</span>
+                                            <span class="block font-bold text-white mt-2">%s</span>
+                                            <span class="block text-slate-400 text-sm leading-relaxed mt-1">%s</span>
+                                        </li>',
+                                        esc_html( $marco[0] ), esc_html( $marco[1] ), esc_html( $marco[2] )
+                                    );
+                                } ?>
+                            </ol>
+                        </div>
+                    <?php endif; ?>
                 </div>
                 <div class="w-full lg:w-1/2">
                     <h2 class="reveal text-4xl font-extrabold text-white mb-6 tracking-tight">O Próximo Passo: <br><span class="gtext">Send Educacional</span></h2>
@@ -87,7 +120,7 @@ get_header(); ?>
 
         <div class="container mx-auto px-6 py-24 text-center">
             <h2 class="reveal text-3xl font-bold text-white mb-6">Pronto para transformar sua instituição?</h2>
-            <button onclick="document.getElementById('demo-modal').classList.remove('hidden')" class="gbtn text-white px-10 py-4 rounded-2xl font-bold text-lg transition-all hover:scale-105">
+            <button onclick="abrirDemo()" class="gbtn text-white px-10 py-4 rounded-2xl font-bold text-lg transition-all hover:scale-105">
                 Solicitar Demonstração Gratuita
             </button>
         </div>

@@ -45,7 +45,7 @@ get_header(); ?>
                     <p class="text-slate-400 mb-8 leading-relaxed text-sm flex-grow">
                         Combate à inadimplência com régua de cobrança automática, conciliação PIX instantânea, repasse para polos e emissão automática de NF-e.
                     </p>
-                    <a href="<?php echo home_url('/gestao-financeira'); ?>" class="inline-flex items-center font-bold text-blue-300 hover:text-blue-200 group-hover:translate-x-1 transition-transform">
+                    <a href="<?php echo home_url('/financeiro'); ?>" class="inline-flex items-center font-bold text-blue-300 hover:text-blue-200 group-hover:translate-x-1 transition-transform">
                         Conhecer módulo <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"></path></svg>
                     </a>
                 </div>

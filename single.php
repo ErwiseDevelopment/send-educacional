@@ -94,7 +94,7 @@ get_header();
                                 Descubra como o <strong class="text-white">Send Educacional</strong> pode automatizar a gestão da sua escola e reduzir a inadimplência hoje mesmo.
                             </p>
                             
-                            <button onclick="document.getElementById('demo-modal').classList.remove('hidden')" class="w-full bg-white text-blue-900 font-bold py-4 rounded-xl hover:bg-blue-50 transition-colors shadow-lg flex justify-center items-center gap-2">
+                            <button onclick="abrirDemo()" class="w-full bg-white text-blue-900 font-bold py-4 rounded-xl hover:bg-blue-50 transition-colors shadow-lg flex justify-center items-center gap-2">
                                 Agendar Demonstração <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                             </button>
                             
@@ -116,7 +116,7 @@ get_header();
                 <h2 class="text-3xl font-extrabold text-slate-900 mb-2">Pronto para o próximo passo?</h2>
                 <p class="text-slate-600 text-lg">Pare de perder tempo com processos manuais. Fale com nossos consultores.</p>
             </div>
-            <button onclick="document.getElementById('demo-modal').classList.remove('hidden')" class="flex-shrink-0 bg-blue-600 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-blue-700 transition-transform hover:-translate-y-1 shadow-xl shadow-blue-500/30">
+            <button onclick="abrirDemo()" class="flex-shrink-0 bg-blue-600 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-blue-700 transition-transform hover:-translate-y-1 shadow-xl shadow-blue-500/30">
                 Falar com Especialista
             </button>
         </div>

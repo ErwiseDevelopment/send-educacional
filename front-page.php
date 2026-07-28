@@ -57,23 +57,29 @@
         <div class="container mx-auto px-6 text-center max-w-5xl">
             <a href="#ava" class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-xs font-semibold text-slate-300 mb-8 hover:text-white transition">
                 <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span></span>
-                Novo: AVA nativo, sem depender de Moodle
+                Novo: AVA próprio, desenvolvido pela Send
                 <span class="text-slate-500">&rarr;</span>
             </a>
 
             <h1 class="text-[2.7rem] md:text-7xl font-extrabold tracking-tight leading-[1.03] mb-7">
-                Toda a gestão da sua<br class="hidden md:block"> instituição em <span class="gtext">um só sistema</span>
+                Toda a gestão da sua<br class="hidden md:block"> instituição de ensino em <span class="gtext">um só sistema</span>
             </h1>
 
             <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed mb-9">
-                Do processo seletivo ao diploma digital: acadêmico, financeiro, secretaria e o <span class="text-white font-semibold">AVA nativo</span> em uma só plataforma — adequada ao MEC, com o suporte de quem tem 33 anos de mercado.
+                Matrícula, secretaria, financeiro, sala de aula e o <span class="text-white font-semibold">AVA próprio</span> numa plataforma só — configurada para o seu segmento, com o suporte de quem faz software de gestão há 33 anos.
             </p>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
-                <button onclick="document.getElementById('demo-modal').classList.remove('hidden')" class="gbtn text-white font-bold px-8 py-4 rounded-2xl text-lg w-full sm:w-auto transition-all hover:-translate-y-0.5">Solicitar demonstração</button>
-                <a href="#ecossistema" class="w-full sm:w-auto px-8 py-4 rounded-2xl text-lg font-semibold text-white glass hover:bg-white/10 transition">Explorar módulos</a>
+                <button onclick="abrirDemo()" class="gbtn text-white font-bold px-8 py-4 rounded-2xl text-lg w-full sm:w-auto transition-all hover:-translate-y-0.5">Solicitar demonstração</button>
+                <a href="#segmentos" class="w-full sm:w-auto px-8 py-4 rounded-2xl text-lg font-semibold text-white glass hover:bg-white/10 transition">Ver a solução do meu segmento</a>
             </div>
-            <p class="text-slate-500 text-sm mt-5">Demonstração gratuita · sem compromisso · feita por um especialista</p>
+            <p class="text-slate-500 text-sm mt-5">Demonstração gratuita · sem compromisso · feita por um especialista do seu segmento</p>
+        </div>
+
+        <!-- ===== BIFURCAÇÃO: a home é a porta de três públicos diferentes ===== -->
+        <div id="segmentos" class="container mx-auto px-6 max-w-5xl mt-14 reveal scroll-mt-24">
+            <p class="text-center text-sm font-bold uppercase tracking-widest text-slate-400 mb-5">Onde você trabalha?</p>
+            <?php se_bloco_segmentos(); ?>
         </div>
 
         <!-- tela do sistema (clara) sobre o hero escuro -->
@@ -95,6 +101,7 @@
                                 <span class="text-white font-extrabold text-sm tracking-tight">SEND <span class="text-slate-500 font-medium">EDUCACIONAL</span></span>
                                 <span class="hidden sm:inline text-slate-600">|</span>
                                 <span class="hidden sm:inline text-slate-400 text-sm font-semibold">Faculdade Exemplo</span>
+                                <span class="hidden md:inline text-[9px] uppercase tracking-widest font-bold text-slate-500 border border-white/10 rounded-full px-2 py-0.5">Dados ilustrativos</span>
                             </div>
                             <div class="flex items-center gap-2 text-[11px]">
                                 <span class="hidden sm:block text-slate-400 font-medium">Coordenação</span>
@@ -157,8 +164,8 @@
         <!-- marquee -->
         <div class="relative z-10 mt-16 border-t border-white/10 py-6 mqo">
             <div class="mq text-slate-500 text-sm font-semibold uppercase tracking-widest">
-                <span>MEC</span><span>Diploma Digital</span><span>Pix</span><span>Getnet</span><span>Santander</span><span>WhatsApp</span><span>Asaas</span><span>LGPD</span><span>Polos EAD</span>
-                <span>MEC</span><span>Diploma Digital</span><span>Pix</span><span>Getnet</span><span>Santander</span><span>WhatsApp</span><span>Asaas</span><span>LGPD</span><span>Polos EAD</span>
+                <span>MEC</span><span>Censo Escolar</span><span>Diploma Digital</span><span>Certificado online</span><span>Pix</span><span>Getnet</span><span>Santander</span><span>WhatsApp</span><span>Asaas</span><span>LGPD</span><span>Polos EAD</span>
+                <span>MEC</span><span>Censo Escolar</span><span>Diploma Digital</span><span>Certificado online</span><span>Pix</span><span>Getnet</span><span>Santander</span><span>WhatsApp</span><span>Asaas</span><span>LGPD</span><span>Polos EAD</span>
             </div>
         </div>
     </section>
@@ -167,19 +174,28 @@
     <section class="relative z-10 py-16">
         <div class="container mx-auto px-6 max-w-6xl grid grid-cols-2 md:grid-cols-4 gap-4 reveal">
             <?php
+            // Cada número aqui precisa aguentar ser checado. "33 anos" é da Send
+            // Solutions, não de educação — dizer os dois evita a leitura errada.
             $fp_stats = array(
-                array( '33', 'Anos de mercado' ),
-                array( '20+', 'Módulos integrados' ),
-                array( '3.000', 'Alunos em produção' ),
-                array( '100%', 'Aderência ao MEC' ),
+                array( '33', 'Anos de mercado', 'Send Solutions · em educação desde 2019' ),
+                array( '20+', 'Módulos integrados', 'na mesma plataforma' ),
+                array( '80+', 'Funcionalidades nativas', 'só no acadêmico' ),
+                array( '3', 'Segmentos atendidos', 'superior · básica e média · cursos online' ),
             );
             foreach ( $fp_stats as $s ) {
                 printf(
-                    '<div class="glass rounded-2xl p-6 text-center"><div class="text-4xl md:text-5xl font-extrabold gtext tracking-tight">%s</div><p class="text-slate-400 text-xs font-semibold uppercase tracking-wide mt-2">%s</p></div>',
-                    esc_html( $s[0] ), esc_html( $s[1] )
+                    '<div class="glass rounded-2xl p-6 text-center"><div class="text-4xl md:text-5xl font-extrabold gtext tracking-tight">%s</div><p class="text-slate-300 text-xs font-semibold uppercase tracking-wide mt-2">%s</p><p class="text-slate-500 text-[11px] mt-1.5 leading-snug">%s</p></div>',
+                    esc_html( $s[0] ), esc_html( $s[1] ), esc_html( $s[2] )
                 );
             }
             ?>
+        </div>
+
+        <div class="container mx-auto px-6 max-w-4xl mt-6 reveal">
+            <p class="text-center text-sm text-slate-500 leading-relaxed">
+                <span class="text-slate-300 font-semibold">Conformidade regulatória por segmento:</span>
+                MEC, Censo INEP e diploma digital no ensino superior; Conselhos de Educação, Secretarias e Censo Escolar na educação básica; LGPD em todos.
+            </p>
         </div>
     </section>
 
@@ -191,9 +207,9 @@
                     <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span></span>
                     Novidade
                 </div>
-                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight mb-6">O AVA agora é <span class="gtext">nativo</span> — não de terceiros.</h2>
-                <p class="text-lg text-slate-400 leading-relaxed mb-8">Desenvolvemos o nosso próprio Ambiente Virtual de Aprendizagem. Aulas, materiais e avaliações online ficam dentro do mesmo sistema do acadêmico e do financeiro — o aluno não troca de ambiente e as notas caem direto no histórico, sem reimportar nada.</p>
-                <button onclick="document.getElementById('demo-modal').classList.remove('hidden')" class="gbtn text-white font-bold px-7 py-3.5 rounded-2xl transition-all hover:-translate-y-0.5">Ver o AVA na demonstração</button>
+                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight mb-6">O AVA é <span class="gtext">próprio</span> — e o Moodle continua sendo uma opção.</h2>
+                <p class="text-lg text-slate-400 leading-relaxed mb-8">Desenvolvemos o nosso próprio Ambiente Virtual de Aprendizagem: aulas, materiais e avaliações ficam dentro do mesmo sistema do acadêmico e do financeiro, e as notas caem direto no histórico sem reimportar nada. Quem já roda no Moodle e não quer migrar agora continua rodando: existe sincronização bidirecional de turmas, matrículas e notas. A troca acontece quando você decidir, não como condição para começar.</p>
+                <button onclick="abrirDemo()" class="gbtn text-white font-bold px-7 py-3.5 rounded-2xl transition-all hover:-translate-y-0.5">Ver o AVA na demonstração</button>
             </div>
             <div class="glass rounded-3xl p-7 md:p-9 cardring">
                 <p class="text-xs font-bold uppercase tracking-widest text-blue-300 mb-6">O que o AVA nativo entrega</p>
@@ -224,8 +240,8 @@
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="text-center mb-14 reveal">
                 <span class="text-blue-400 font-bold tracking-widest uppercase text-xs">Ecossistema integrado</span>
-                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mt-4">Do processo seletivo ao diploma digital</h2>
-                <p class="text-lg text-slate-400 mt-4 max-w-2xl mx-auto">Todos os setores da instituição no mesmo sistema, com os dados conversando de ponta a ponta.</p>
+                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mt-4">Todos os setores no mesmo sistema</h2>
+                <p class="text-lg text-slate-400 mt-4 max-w-2xl mx-auto">Da primeira conversa com o aluno até a conclusão do curso, com os dados conversando de ponta a ponta — no ensino superior, na escola e no curso online.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-5 reveal">
@@ -244,7 +260,7 @@
                         <h3 class="text-xl font-bold text-white mb-3">Gestão Financeira</h3>
                         <p class="text-slate-400 leading-relaxed mb-6">Boletos, Pix e régua de cobrança automática, acordos, DRE e notas fiscais — inadimplência sob controle, do lançamento ao caixa.</p>
                     </div>
-                    <a href="<?php echo home_url('/gestao-financeira'); ?>" class="inline-flex items-center gap-2 font-bold text-blue-300 hover:text-white transition">Ver módulo financeiro <span aria-hidden="true">&rarr;</span></a>
+                    <a href="<?php echo home_url('/financeiro'); ?>" class="inline-flex items-center gap-2 font-bold text-blue-300 hover:text-white transition">Ver módulo financeiro <span aria-hidden="true">&rarr;</span></a>
                 </div>
 
                 <div class="glass glass-hover rounded-3xl p-9 flex flex-col justify-between">
@@ -285,8 +301,8 @@
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="text-center mb-16 reveal">
                 <span class="text-blue-400 font-bold tracking-widest uppercase text-xs">Uma plataforma, a jornada inteira</span>
-                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mt-4">Da captação ao <span class="gtext">diploma digital</span>, sem trocar de sistema</h2>
-                <p class="text-slate-400 max-w-2xl mx-auto text-lg mt-4">Matrícula com assinatura digital, secretaria, financeiro, AVA e diploma — cada etapa já conversa com a próxima, sem planilha nem sistema paralelo.</p>
+                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mt-4">Da captação à <span class="gtext">conclusão</span>, sem trocar de sistema</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto text-lg mt-4">Matrícula com assinatura digital, secretaria, financeiro, AVA e a emissão do documento final — cada etapa já conversa com a próxima, sem planilha nem sistema paralelo.</p>
             </div>
 
             <div class="relative reveal">
@@ -296,10 +312,10 @@
                     $fp_jornada = array(
                         array( 'Captação & CRM', 'Funil de leads, campanhas e recuperação de matrículas.', '<path stroke-linecap="round" stroke-linejoin="round" d="M4 5h16M7 10h10M10 15h4M11 19h2"></path>', false ),
                         array( 'Matrícula & Assinatura', '100% digital, com contrato assinado eletronicamente.', '<path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5"></path><path stroke-linecap="round" stroke-linejoin="round" d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"></path>', false ),
-                        array( 'Secretaria acadêmica', 'Diário de classe, histórico, rematrícula e documentos.', '<path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M12 14v7M5 11v5c0 1 3 3 7 3s7-2 7-3v-5"></path>', false ),
+                        array( 'Secretaria', 'Diário de classe, histórico, rematrícula e documentos.', '<path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M12 14v7M5 11v5c0 1 3 3 7 3s7-2 7-3v-5"></path>', false ),
                         array( 'Financeiro', 'Boletos, Pix, régua de cobrança, acordos e DRE.', '<path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8V7m0 9v1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>', false ),
-                        array( 'AVA nativo', 'Aulas, materiais e avaliações online — sem Moodle.', '<path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h14a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M9 20h6M12 16v4"></path><path fill="currentColor" stroke="none" d="M10 7.5l4 2.5-4 2.5v-5z"></path>', true ),
-                        array( 'Diploma digital', 'Emissão nativa, adequada às portarias do MEC.', '<path stroke-linecap="round" stroke-linejoin="round" d="M12 15a4 4 0 100-8 4 4 0 000 8z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M8.5 13.5 7 21l5-2.5L17 21l-1.5-7.5"></path>', false ),
+                        array( 'AVA próprio', 'Aulas, materiais e avaliações online, no mesmo sistema.', '<path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h14a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M9 20h6M12 16v4"></path><path fill="currentColor" stroke="none" d="M10 7.5l4 2.5-4 2.5v-5z"></path>', true ),
+                        array( 'Diploma ou certificado', 'Diploma digital no padrão do MEC; certificado com validação nos cursos livres.', '<path stroke-linecap="round" stroke-linejoin="round" d="M12 15a4 4 0 100-8 4 4 0 000 8z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M8.5 13.5 7 21l5-2.5L17 21l-1.5-7.5"></path>', false ),
                     );
                     foreach ( $fp_jornada as $j ) {
                         $bg    = $j[3] ? 'linear-gradient(135deg,#7c3aed,#c026d3)' : 'linear-gradient(135deg,#3b82f6,#7c3aed)';
@@ -321,8 +337,8 @@
             </div>
 
             <div class="mt-14 text-center reveal">
-                <button onclick="document.getElementById('demo-modal').classList.remove('hidden')" class="gbtn text-white font-bold px-8 py-4 rounded-2xl transition-all hover:-translate-y-0.5">Ver a plataforma completa</button>
-                <p class="text-slate-500 text-sm mt-3">Mais de 20 módulos, do primeiro contato ao diploma.</p>
+                <button onclick="abrirDemo()" class="gbtn text-white font-bold px-8 py-4 rounded-2xl transition-all hover:-translate-y-0.5">Ver a plataforma completa</button>
+                <p class="text-slate-500 text-sm mt-3">Mais de 20 módulos, do primeiro contato ao documento final.</p>
             </div>
         </div>
     </section>
@@ -333,7 +349,7 @@
             <div class="text-center mb-12 reveal">
                 <span class="text-blue-400 font-bold tracking-widest uppercase text-xs">A rotina real, dentro do sistema</span>
                 <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mt-4">Feito para quem constrói a educação</h2>
-                <p class="text-lg text-slate-400 mt-4 max-w-2xl mx-auto">Telas de verdade do Send Educacional: indicadores em tempo real, filtros por período e curso, e a operação inteira sob controle.</p>
+                <p class="text-lg text-slate-400 mt-4 max-w-2xl mx-auto">As telas do Send Educacional, reproduzidas aqui com dados ilustrativos: indicadores em tempo real, filtros por período e curso, e a operação inteira sob controle.</p>
             </div>
 
             <div class="grid lg:grid-cols-2 gap-12 items-center reveal">
@@ -350,7 +366,7 @@
                             printf( '<li class="flex items-start gap-3 text-slate-300"><svg class="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>%s</li>', esc_html( $li ) );
                         } ?>
                     </ul>
-                    <button onclick="document.getElementById('demo-modal').classList.remove('hidden')" class="mt-7 gbtn text-white font-bold px-7 py-3.5 rounded-2xl transition-all hover:-translate-y-0.5">Ver na demonstração</button>
+                    <button onclick="abrirDemo()" class="mt-7 gbtn text-white font-bold px-7 py-3.5 rounded-2xl transition-all hover:-translate-y-0.5">Ver na demonstração</button>
                 </div>
 
                 <div class="rounded-2xl overflow-hidden border border-white/10 bg-slate-950 cardring">
@@ -412,6 +428,7 @@
                             }
                             ?>
                         </div>
+                        <p class="text-[10px] text-slate-500 text-center mt-3 uppercase tracking-widest font-bold">Dados ilustrativos</p>
                     </div>
                 </div>
             </div>
@@ -424,16 +441,16 @@
             <div class="text-center mb-14 reveal">
                 <span class="text-blue-400 font-bold tracking-widest uppercase text-xs">Por que o Send</span>
                 <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mt-4">O que nos torna <span class="gtext">diferentes</span></h2>
-                <p class="text-lg text-slate-400 mt-4 max-w-2xl mx-auto">Não é só mais um sistema de gestão: é a soma de plataforma única, AVA próprio e o suporte de quem faz software há 33 anos.</p>
+                <p class="text-lg text-slate-400 mt-4 max-w-2xl mx-auto">Não é só mais um sistema de gestão: é a soma de plataforma única, AVA próprio e o suporte de quem faz software de gestão há 33 anos.</p>
             </div>
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 reveal">
                 <?php
                 $fp_dif = array(
-                    array( 'AVA nativo, sem Moodle', 'O ambiente de aula é desenvolvido pela própria Send e integrado ao acadêmico e ao financeiro — sem depender de LMS de terceiros.', '<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h14a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M9 20h6M12 16v4"></path><path fill="currentColor" stroke="none" d="M10.5 7.8l3.2 2-3.2 2v-4z"></path></svg>' ),
+                    array( 'AVA próprio, e Moodle integrado', 'O ambiente de aula é desenvolvido pela própria Send e integrado ao acadêmico e ao financeiro. Quem já usa Moodle mantém, com sincronização bidirecional.', '<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h14a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M9 20h6M12 16v4"></path><path fill="currentColor" stroke="none" d="M10.5 7.8l3.2 2-3.2 2v-4z"></path></svg>' ),
                     array( 'Uma plataforma, não remendos', 'Do processo seletivo ao diploma digital no mesmo sistema, com os dados conversando de ponta a ponta.', '<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3 3 8l9 5 9-5-9-5z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M3 13l9 5 9-5M3 17l9 5 9-5"></path></svg>' ),
                     array( '33 anos de mercado', 'Nascido dentro da Send Solutions, com a estabilidade de quem entende gestão há três décadas.', '<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3l2.6 5.3 5.9.9-4.2 4.1 1 5.8L12 16.9 6.7 19.2l1-5.8-4.2-4.1 5.9-.9L12 3z"></path></svg>' ),
                     array( 'Suporte de parceiro', 'Implantação guiada e suporte próximo: a gente conduz a migração sem parar a sua operação.', '<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>' ),
-                    array( 'Aderência ao MEC nativa', 'Diploma digital, portarias e recredenciamento sempre em dia — sem correria a cada mudança da regulação.', '<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15a5 5 0 100-10 5 5 0 000 10z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M8.5 13.5L7 21l5-2.5L17 21l-1.5-7.5"></path></svg>' ),
+                    array( 'Conformidade por segmento', 'MEC, Censo e diploma digital no superior; Conselhos, Secretarias e Censo Escolar na educação básica — cada um com o que a sua rede exige.', '<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15a5 5 0 100-10 5 5 0 000 10z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M8.5 13.5L7 21l5-2.5L17 21l-1.5-7.5"></path></svg>' ),
                     array( 'Dados que não se perdem', 'A nota do AVA cai no histórico e a cobrança no financeiro — sem reimportar planilha nem digitar duas vezes.', '<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 5v5h5M20 19v-5h-5"></path><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 9A8 8 0 006 5.3L4 7m0 10a8 8 0 0013.5 1.7L20 17"></path></svg>' ),
                 );
                 foreach ( $fp_dif as $d ) {
@@ -519,6 +536,58 @@
         </div>
     </section>
 
+    <!-- ===================== PROVA SOCIAL ===================== -->
+    <?php se_bloco_prova_social(); ?>
+
+    <!-- ===================== BLOG ===================== -->
+    <?php
+    // O blog existia mas não aparecia na home. Como o conteúdo alimenta as três
+    // portas, ele precisa estar visível para quem chega pela home.
+    $fp_posts = new WP_Query( array(
+        'post_type'           => 'post',
+        'posts_per_page'      => 3,
+        'post_status'         => 'publish',
+        'ignore_sticky_posts' => true,
+        'no_found_rows'       => true,
+    ) );
+    if ( $fp_posts->have_posts() ) : ?>
+    <section class="relative z-10 py-20">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="flex flex-wrap items-end justify-between gap-4 mb-10 reveal">
+                <div>
+                    <span class="text-blue-400 font-bold tracking-widest uppercase text-xs">Conteúdo</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight mt-3">Do blog do Send Educacional</h2>
+                </div>
+                <a href="<?php echo esc_url( home_url( '/blog' ) ); ?>" class="inline-flex items-center gap-2 font-bold text-blue-300 hover:text-white transition">Ver todos os artigos <span aria-hidden="true">&rarr;</span></a>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-5 reveal">
+                <?php while ( $fp_posts->have_posts() ) : $fp_posts->the_post();
+                    $fp_cats = get_the_category();
+                    ?>
+                    <article class="group flex flex-col glass glass-hover rounded-3xl overflow-hidden">
+                        <?php if ( has_post_thumbnail() ) : ?>
+                            <a href="<?php the_permalink(); ?>" class="block h-40 overflow-hidden bg-white/[.02]">
+                                <?php the_post_thumbnail( 'medium_large', array( 'class' => 'w-full h-full object-cover group-hover:scale-105 transition-transform duration-700' ) ); ?>
+                            </a>
+                        <?php endif; ?>
+                        <div class="p-7 flex flex-col flex-grow">
+                            <?php if ( $fp_cats ) : ?>
+                                <span class="text-blue-300 font-bold uppercase tracking-wider text-[10px] mb-2.5"><?php echo esc_html( $fp_cats[0]->name ); ?></span>
+                            <?php endif; ?>
+                            <h3 class="text-lg font-bold text-white leading-snug mb-3 group-hover:text-blue-300 transition-colors">
+                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                            </h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-5"><?php echo esc_html( wp_trim_words( get_the_excerpt(), 22 ) ); ?></p>
+                            <a href="<?php the_permalink(); ?>" class="mt-auto inline-flex items-center gap-1.5 text-sm font-bold text-blue-300 group-hover:text-white transition">Ler artigo <span aria-hidden="true">&rarr;</span></a>
+                        </div>
+                    </article>
+                <?php endwhile; ?>
+            </div>
+        </div>
+    </section>
+    <?php endif; wp_reset_postdata(); ?>
+
     <!-- ===================== CTA FINAL ===================== -->
     <section class="relative z-10 pb-28 pt-4">
         <div class="container mx-auto px-6 max-w-6xl reveal">
@@ -526,8 +595,8 @@
                 <div class="absolute -top-16 -right-16 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
                 <div class="absolute -bottom-16 -left-16 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
                 <h2 class="relative z-10 text-3xl md:text-5xl font-extrabold text-white mb-5 leading-tight">Veja o Send rodando na realidade da sua instituição.</h2>
-                <p class="relative z-10 text-blue-100 text-lg max-w-2xl mx-auto mb-9">Agende uma demonstração gratuita. Um especialista mostra os módulos que fazem sentido para o porte da sua escola.</p>
-                <button onclick="document.getElementById('demo-modal').classList.remove('hidden')" class="relative z-10 bg-white text-blue-700 hover:bg-blue-50 px-10 py-5 rounded-2xl font-extrabold text-lg transition-all hover:scale-105">Solicitar demonstração</button>
+                <p class="relative z-10 text-blue-100 text-lg max-w-2xl mx-auto mb-9">Agende uma demonstração gratuita. Um especialista do seu segmento mostra os módulos que fazem sentido para a sua operação.</p>
+                <button onclick="abrirDemo()" class="relative z-10 bg-white text-blue-700 hover:bg-blue-50 px-10 py-5 rounded-2xl font-extrabold text-lg transition-all hover:scale-105">Solicitar demonstração</button>
                 <p class="relative z-10 text-blue-200 text-sm mt-4">Gratuita e sem compromisso</p>
             </div>
         </div>

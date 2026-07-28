@@ -10,31 +10,38 @@
 
 <?php $se_home = is_front_page(); ?>
 <header class="<?php echo $se_home ? 'absolute top-0 left-0 right-0 z-50' : 'sticky top-0 z-50 bg-[#070b18]/85 backdrop-blur-md border-b border-white/10'; ?>">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-       <div class="flex flex-col items-start justify-center">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center gap-4">
+       <div class="flex flex-col items-start justify-center shrink-0">
             <a href="<?php echo home_url(); ?>" class="flex items-center gap-2.5 transition-transform hover:scale-105">
                 <img src="<?php echo esc_url( se_logo_url() ); ?>" alt="Send Educacional"<?php echo se_logo_dimensoes_attr(); ?> class="se-logo w-auto object-contain">
             </a>
        </div>
-        
-        <nav class="hidden md:flex items-center">
+
+        <?php // O menu ganhou os três segmentos: precisa caber sem encavalar a logo. ?>
+        <nav class="hidden lg:flex items-center min-w-0 flex-1 justify-center">
             <?php
             wp_nav_menu(array(
                 'theme_location'  => 'menu-principal',
                 'container'       => false, // Remove a div em volta
-                'menu_class'      => 'flex space-x-8', // Classes na <ul>
+                'menu_class'      => 'flex flex-wrap items-center justify-center gap-x-5 xl:gap-x-7 gap-y-1', // Classes na <ul>
                 'fallback_cb'     => false // Não mostra menu feio se não houver menu criado
             ));
             ?>
         </nav>
 
-        <div class="flex items-center space-x-3 md:space-x-4 relative">
-            
-            <button onclick="document.getElementById('demo-modal').classList.remove('hidden')" class="hidden md:inline-flex bg-blue-800 hover:bg-blue-900 text-white px-5 py-2.5 rounded-md font-bold text-sm transition-colors shadow-sm">
+        <div class="flex items-center space-x-3 md:space-x-4 relative shrink-0">
+
+            <?php // Abaixo de lg o menu vira botão: sem ele, os segmentos ficariam inalcançáveis no celular. ?>
+            <button id="btn-menu-mobile" class="lg:hidden text-slate-200 hover:text-white p-2 -ml-2" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-mobile">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16"></path></svg>
+            </button>
+
+            <button onclick="abrirDemo()" class="hidden md:inline-flex bg-blue-800 hover:bg-blue-900 text-white px-5 py-2.5 rounded-md font-bold text-sm transition-colors shadow-sm">
                 Solicitar demonstração
             </button>
 
-            <div class="relative">
+            <?php // Abaixo de sm o botão sai da barra e reaparece dentro do menu: senão a linha não cabe em 390px. ?>
+            <div class="relative hidden sm:block">
                 <button id="btn-area-cliente" class="flex items-center gap-2 border-2 border-blue-500 text-blue-600 bg-white hover:bg-blue-50 px-4 py-2 rounded-md font-bold text-sm transition-colors">
                     Área do Cliente
                     <svg class="w-4 h-4 fill-current transform transition-transform duration-200" id="seta-dropdown" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
@@ -65,9 +72,40 @@
             </div>
         </div>
     </div>
+
+    <div id="menu-mobile" class="hidden lg:hidden border-t border-white/10 bg-[#070b18]/95 backdrop-blur-md">
+        <div class="container mx-auto px-6 py-5">
+            <?php
+            wp_nav_menu( array(
+                'theme_location' => 'menu-principal',
+                'container'      => false,
+                'menu_class'     => 'flex flex-col gap-1',
+                'fallback_cb'    => false,
+            ) );
+            ?>
+            <button onclick="abrirDemo()" class="mt-5 w-full gbtn text-white font-bold px-5 py-3.5 rounded-xl text-sm">
+                Solicitar demonstração
+            </button>
+
+            <div class="sm:hidden mt-5 pt-5 border-t border-white/10">
+                <p class="text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-3">Área do Cliente</p>
+                <a href="https://help.sendsolutions.com.br/" target="_blank" rel="noopener" class="block py-2 text-sm font-semibold text-slate-300 hover:text-white transition-colors">Documentação do sistema</a>
+                <a href="https://aplicacao.sendsolutions.com.br/TimeSheet/timesheet.login.aspx" class="block py-2 text-sm font-semibold text-slate-300 hover:text-white transition-colors">Suporte</a>
+            </div>
+        </div>
+    </div>
 </header>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+    var btnMenuMobile = document.getElementById('btn-menu-mobile');
+    var menuMobile = document.getElementById('menu-mobile');
+    if (btnMenuMobile && menuMobile) {
+        btnMenuMobile.addEventListener('click', function () {
+            var aberto = !menuMobile.classList.toggle('hidden');
+            btnMenuMobile.setAttribute('aria-expanded', aberto ? 'true' : 'false');
+        });
+    }
+
     const btnAreaCliente = document.getElementById('btn-area-cliente');
     const menuAreaCliente = document.getElementById('menu-area-cliente');
     const setaDropdown = document.getElementById('seta-dropdown');

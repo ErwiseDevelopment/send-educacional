@@ -106,7 +106,7 @@ get_header(); ?>
         <div class="container mx-auto px-6 max-w-3xl relative z-10">
             <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-6">Sua instituição 100% digital e organizada</h2>
             <p class="text-lg text-slate-400 mb-10">Agende uma conversa com nossos consultores e descubra como otimizar sua gestão acadêmica.</p>
-            <button onclick="document.getElementById('demo-modal').classList.remove('hidden')" class="gbtn text-white px-10 py-4 rounded-2xl font-bold text-lg transition-all hover:scale-105">
+            <button onclick="abrirDemo()" class="gbtn text-white px-10 py-4 rounded-2xl font-bold text-lg transition-all hover:scale-105">
                 Solicitar Demonstração
             </button>
         </div>

@@ -26,6 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
   .gtext{ background:linear-gradient(100deg,#60a5fa,#818cf8 45%,#c084fc); -webkit-background-clip:text; background-clip:text; color:transparent; }
   .gbtn{ background:linear-gradient(100deg,#2563eb,#6d4bef); box-shadow:0 10px 30px -8px rgba(79,70,229,.6); }
   .gbtn:hover{ box-shadow:0 14px 38px -8px rgba(79,70,229,.85); }
+  .ap-seg-opt:has(input:checked){ border-color:#2563eb; background:#eff6ff; box-shadow:0 0 0 3px rgba(37,99,235,.12); }
   .card-ring{ box-shadow:0 1px 0 0 rgba(255,255,255,.06) inset,0 30px 60px -30px rgba(2,6,23,.8); }
   .floaty{ animation:floaty 6s ease-in-out infinite; }
   .floaty2{ animation:floaty 7s ease-in-out infinite; }
@@ -173,10 +174,10 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 <!-- ===================== STATS ===================== -->
 <section class="bg-white py-16 border-b border-slate-100">
   <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center reveal">
-    <div><div class="text-4xl md:text-5xl font-extrabold tracking-tight gtext">33</div><p class="text-slate-500 text-sm font-semibold uppercase tracking-wide mt-1">Anos de mercado</p></div>
-    <div><div class="text-4xl md:text-5xl font-extrabold tracking-tight gtext">20+</div><p class="text-slate-500 text-sm font-semibold uppercase tracking-wide mt-1">Módulos integrados</p></div>
-    <div><div class="text-4xl md:text-5xl font-extrabold tracking-tight gtext">3.000</div><p class="text-slate-500 text-sm font-semibold uppercase tracking-wide mt-1">Alunos em produção</p></div>
-    <div><div class="text-4xl md:text-5xl font-extrabold tracking-tight gtext">24/7</div><p class="text-slate-500 text-sm font-semibold uppercase tracking-wide mt-1">Suporte de parceiro</p></div>
+    <div><div class="text-4xl md:text-5xl font-extrabold tracking-tight gtext">33</div><p class="text-slate-500 text-sm font-semibold uppercase tracking-wide mt-1">Anos de mercado</p><p class="text-slate-400 text-xs mt-1">Send Solutions · em educação desde 2019</p></div>
+    <div><div class="text-4xl md:text-5xl font-extrabold tracking-tight gtext">20+</div><p class="text-slate-500 text-sm font-semibold uppercase tracking-wide mt-1">Módulos integrados</p><p class="text-slate-400 text-xs mt-1">na mesma plataforma</p></div>
+    <div><div class="text-4xl md:text-5xl font-extrabold tracking-tight gtext">3</div><p class="text-slate-500 text-sm font-semibold uppercase tracking-wide mt-1">Segmentos atendidos</p><p class="text-slate-400 text-xs mt-1">superior · básica e média · cursos online</p></div>
+    <div><div class="text-4xl md:text-5xl font-extrabold tracking-tight gtext">24/7</div><p class="text-slate-500 text-sm font-semibold uppercase tracking-wide mt-1">Suporte de parceiro</p><p class="text-slate-400 text-xs mt-1">implantação conduzida por consultor</p></div>
   </div>
 </section>
 
@@ -186,7 +187,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
     <span class="text-blue-600 font-bold tracking-widest uppercase text-xs">O que é o Send Educacional</span>
     <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight mt-4 mb-6 leading-tight">Um sistema único no lugar de vários que não conversam.</h2>
     <p class="text-lg text-slate-500 leading-relaxed mb-5">A maioria das instituições usa um sistema para o acadêmico, outro para o financeiro, uma planilha para a cobrança e um portal à parte para o aluno — e gasta tempo costurando tudo na mão. O Send reúne essa operação inteira em <span class="text-slate-800 font-semibold">uma só plataforma</span>, com os dados integrados de ponta a ponta.</p>
-    <p class="text-lg text-slate-500 leading-relaxed">Nascido em 2022 dentro da <span class="text-slate-800 font-semibold">Send Solutions</span> (33 anos de mercado), é mantido sempre atualizado conforme o MEC e as mudanças fiscais. Até o <span class="text-slate-800 font-semibold">ambiente de aula (AVA) é desenvolvido pela própria Send</span> — sem refém de Moodle nem de terceiros.</p>
+    <p class="text-lg text-slate-500 leading-relaxed">Nascido em 2019 dentro da <span class="text-slate-800 font-semibold">Send Solutions</span> (33 anos de mercado), é mantido sempre atualizado conforme o MEC e as mudanças fiscais. Até o <span class="text-slate-800 font-semibold">ambiente de aula (AVA) é desenvolvido pela própria Send</span> — sem depender de LMS de terceiros — e com integração ao Moodle para quem prefere manter o que já usa.</p>
   </div>
 </section>
 
@@ -199,7 +200,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
         <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span></span> Novidade
       </div>
       <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight mb-6">O AVA agora é <span class="gtext">nosso</span> — não de terceiros.</h2>
-      <p class="text-lg text-slate-400 leading-relaxed mb-8">Desenvolvemos o nosso próprio <span class="text-white font-semibold">Ambiente Virtual de Aprendizagem</span>. Aulas, conteúdo e avaliações online ficam dentro do mesmo sistema do acadêmico e do financeiro — o aluno não troca de ambiente, e você não fica refém de Moodle.</p>
+      <p class="text-lg text-slate-400 leading-relaxed mb-8">Desenvolvemos o nosso próprio <span class="text-white font-semibold">Ambiente Virtual de Aprendizagem</span>. Aulas, conteúdo e avaliações online ficam dentro do mesmo sistema do acadêmico e do financeiro — o aluno não troca de ambiente. Quem já roda no Moodle mantém, com sincronização bidirecional.</p>
       <button type="button" onclick="abrirDemo()" data-track="ava-demo" class="gbtn text-white font-bold px-7 py-3.5 rounded-2xl transition-all hover:-translate-y-0.5">Ver o AVA na demonstração</button>
     </div>
     <div class="bg-white/[.04] border border-white/10 rounded-3xl p-7 md:p-9 backdrop-blur card-ring">
@@ -423,19 +424,43 @@ if ( ! defined( 'ABSPATH' ) ) exit;
       </button>
       <div class="px-9 pt-10 pb-9">
         <h3 id="demo-modal-title" class="text-2xl font-extrabold text-slate-900 tracking-tight">Agendar demonstração</h3>
-        <p class="text-slate-500 mt-1.5 mb-7 text-sm font-medium">Preencha os campos para direcionarmos o consultor certo para o porte da sua instituição.</p>
+        <p class="text-slate-500 mt-1.5 mb-7 text-sm font-medium">Comece pelo tipo de instituição: é assim que direcionamos você ao consultor daquele segmento.</p>
         <form id="form-apresentacao" class="grid grid-cols-1 md:grid-cols-2 gap-4" onsubmit="enviarLeadApresentacao(event)">
           <div class="hidden"><input type="text" id="ap_hp" autocomplete="off" tabindex="-1"></div>
+
+          <fieldset class="col-span-2">
+            <legend class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2.5">Tipo de instituição</legend>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+              <?php foreach ( se_segmentos() as $ap_slug => $ap_s ) : ?>
+                <label class="ap-seg-opt flex flex-col justify-center cursor-pointer rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-3 transition-all hover:border-slate-300">
+                  <input type="radio" name="ap_segmento" value="<?php echo esc_attr( $ap_slug ); ?>" required class="sr-only">
+                  <span class="text-sm font-bold text-slate-800 leading-tight"><?php echo esc_html( $ap_s['curto'] ); ?></span>
+                  <span class="text-[11px] text-slate-500 leading-snug mt-0.5"><?php echo esc_html( $ap_s['publico'] ); ?></span>
+                </label>
+              <?php endforeach; ?>
+            </div>
+          </fieldset>
+
           <input id="ap_nome" required placeholder="Nome completo" class="col-span-2 border border-slate-200 rounded-xl px-4 py-3.5 bg-slate-50 font-medium focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-500">
           <input id="ap_instituicao" required placeholder="Nome da instituição" class="col-span-2 border border-slate-200 rounded-xl px-4 py-3.5 bg-slate-50 font-medium focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-500">
           <input id="ap_whatsapp" required placeholder="WhatsApp" class="col-span-2 md:col-span-1 border border-slate-200 rounded-xl px-4 py-3.5 bg-slate-50 font-medium focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-500">
           <input id="ap_email" type="email" required placeholder="E-mail" class="col-span-2 md:col-span-1 border border-slate-200 rounded-xl px-4 py-3.5 bg-slate-50 font-medium focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-500">
-          <select id="ap_cargo" required class="col-span-2 md:col-span-1 border border-slate-200 rounded-xl px-4 py-3.5 bg-slate-50 font-medium text-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500/40"><option value="" disabled selected>Seu cargo...</option><option>Diretor / Mantenedor</option><option>Coordenador</option><option>Secretário(a)</option><option>TI / Gestor</option></select>
-          <select id="ap_alunos" required class="col-span-2 md:col-span-1 border border-slate-200 rounded-xl px-4 py-3.5 bg-slate-50 font-medium text-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500/40"><option value="" disabled selected>Qtd. de alunos...</option><option>Até 200</option><option>201 a 500</option><option>501 a 1000</option><option>Mais de 1000</option></select>
+          <select id="ap_cargo" required class="col-span-2 md:col-span-1 border border-slate-200 rounded-xl px-4 py-3.5 bg-slate-50 font-medium text-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500/40"><option value="" disabled selected>Escolha o segmento antes</option></select>
+          <select id="ap_alunos" required class="col-span-2 md:col-span-1 border border-slate-200 rounded-xl px-4 py-3.5 bg-slate-50 font-medium text-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500/40"><option value="" disabled selected>Escolha o segmento antes</option></select>
+
+          <label class="col-span-2 flex items-start gap-3 cursor-pointer">
+            <input type="checkbox" id="ap_lgpd" required class="mt-0.5 w-5 h-5 shrink-0 rounded-md border-2 border-slate-200 text-blue-600 focus:ring-blue-500 focus:ring-offset-0">
+            <span class="text-xs text-slate-500 leading-relaxed">
+              Autorizo a Send a usar os dados acima para entrar em contato comigo sobre o Send Educacional, conforme a
+              <a href="<?php echo esc_url( home_url( '/privacidade' ) ); ?>" target="_blank" rel="noopener" class="text-blue-600 font-semibold underline">Política de Privacidade</a>.
+              Posso pedir a exclusão a qualquer momento.
+            </span>
+          </label>
+
           <button type="submit" id="ap_btn" data-track="modal-enviar" class="col-span-2 gbtn text-white font-extrabold py-4 rounded-2xl text-lg mt-1">Falar com um especialista</button>
-          <p class="col-span-2 text-[10px] text-slate-400 text-center uppercase tracking-widest font-bold flex items-center justify-center gap-1.5"><i class="ti ti-lock"></i> Dados protegidos pela LGPD</p>
         </form>
         <div id="ap_sucesso" class="hidden text-center py-8">
+          <p id="ap_aviso" class="hidden text-sm text-amber-500 font-bold mb-4">Não conseguimos registrar seus dados automaticamente, mas seu contato não se perdeu: estamos te levando direto para o especialista.</p>
           <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-5"><i class="ti ti-check text-3xl"></i></div>
           <h3 class="text-2xl font-bold text-slate-900">Recebemos seu contato.</h3>
           <p class="text-slate-500 mt-2">Estamos te levando para o WhatsApp de um especialista...</p>
@@ -462,7 +487,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
   // Catálogo de módulos (bento)
   var modulos = [
-    ['AVA · Ambiente de aula próprio','Aulas, conteúdo e avaliações online — desenvolvido pela Send, sem Moodle.','Novo','ti-school'],
+    ['AVA · Ambiente de aula próprio','Aulas, conteúdo e avaliações online — desenvolvido pela Send, com Moodle integrado.','Novo','ti-school'],
     ['CRM & Captação','Funil de captação, campanhas e recuperação de matrículas.','Novo','ti-filter'],
     ['Retenção de Alunos','Alertas de risco de evasão por notas, frequência e financeiro.','Novo','ti-shield-heart'],
     ['Secretaria Acadêmica','Matrícula, notas, histórico, diploma digital e MEC.','','ti-certificate'],
@@ -484,26 +509,67 @@ if ( ! defined( 'ABSPATH' ) ) exit;
       + '</div>';
   }).join('');
 
+  // Cargo e porte dependem do segmento — mesma tabela do resto do site.
+  var AP_SEGMENTOS = <?php echo wp_json_encode( se_segmentos_para_js() ); ?>;
+
+  function apPreencher(select, opcoes){
+    select.innerHTML = '';
+    var vazio = document.createElement('option');
+    vazio.value = ''; vazio.disabled = true; vazio.selected = true; vazio.textContent = 'Selecione...';
+    select.appendChild(vazio);
+    opcoes.forEach(function(o){
+      var op = document.createElement('option');
+      op.value = o; op.textContent = o;
+      select.appendChild(op);
+    });
+  }
+
+  document.addEventListener('change', function(e){
+    if (!e.target || e.target.name !== 'ap_segmento') return;
+    var s = AP_SEGMENTOS[e.target.value];
+    if (!s) return;
+    apPreencher(document.getElementById('ap_cargo'), s.cargos);
+    apPreencher(document.getElementById('ap_alunos'), s.porte);
+    document.getElementById('ap_instituicao').placeholder =
+      e.target.value === 'cursos-online' ? 'Nome da escola ou empresa' : 'Nome da instituição';
+  });
+
   // Envio do lead (RD Station + redireciona ao WhatsApp) — mesmo endpoint do site
   function enviarLeadApresentacao(e){
     e.preventDefault();
     if (document.getElementById('ap_hp').value !== '') return; // honeypot
     var btn = document.getElementById('ap_btn');
+    var marcado = document.querySelector('input[name="ap_segmento"]:checked');
+    var slug = marcado ? marcado.value : '';
+    var seg = AP_SEGMENTOS[slug] || { rotulo: '', porte_rotulo: 'Porte' };
+
     var dados = {
       action: 'registrar_lead_crm',
       nome: document.getElementById('ap_nome').value || '',
       instituicao: document.getElementById('ap_instituicao').value || '',
+      segmento: seg.rotulo,
+      segmento_slug: slug,
       cargo: document.getElementById('ap_cargo').value || '',
       alunos: document.getElementById('ap_alunos').value || '',
+      porte_rotulo: seg.porte_rotulo,
       whatsapp: document.getElementById('ap_whatsapp').value || '',
-      email: document.getElementById('ap_email').value || ''
+      email: document.getElementById('ap_email').value || '',
+      consentimento: document.getElementById('ap_lgpd').checked ? '1' : ''
     };
     btn.disabled = true; btn.textContent = 'Enviando...';
+
     fetch(AP_AJAX, { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:new URLSearchParams(dados) })
-      .finally(function(){
+      .then(function(r){ return r.ok ? r.json() : { success:false }; })
+      .catch(function(){ return { success:false }; })
+      .then(function(resposta){
+        // Não fingir sucesso: se o CRM recusou, o lead segue para o WhatsApp com aviso.
+        if (!resposta || resposta.success !== true) {
+          var aviso = document.getElementById('ap_aviso');
+          if (aviso) aviso.classList.remove('hidden');
+        }
         document.getElementById('form-apresentacao').classList.add('hidden');
         document.getElementById('ap_sucesso').classList.remove('hidden');
-        var msg = 'Olá! Meu nome é '+dados.nome+', sou '+dados.cargo+' na instituição '+dados.instituicao+'. Temos cerca de '+dados.alunos+' alunos e gostaria de uma demonstração do Send Educacional.';
+        var msg = 'Olá! Meu nome é '+dados.nome+', sou '+dados.cargo+' em '+dados.instituicao+' ('+dados.segmento+'). '+dados.porte_rotulo+': '+dados.alunos+'. Gostaria de uma demonstração do Send Educacional.';
         setTimeout(function(){ window.open('https://api.whatsapp.com/send?phone='+AP_ZAP+'&text='+encodeURIComponent(msg), '_blank'); fecharDemo(); }, 1200);
       });
   }

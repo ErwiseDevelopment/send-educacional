@@ -142,7 +142,7 @@ get_header();
                     <p class="text-blue-100 text-sm md:text-base mb-6 max-w-lg">
                         Tenha uma instituição de alta performance com o melhor ecossistema de gestão escolar.
                     </p>
-                    <button onclick="document.getElementById('demo-modal').classList.remove('hidden')" class="bg-[#00d68f] hover:bg-[#00c080] text-slate-900 px-6 py-3 rounded-lg font-bold text-sm transition-transform hover:-translate-y-1 shadow-md">
+                    <button onclick="abrirDemo()" class="bg-[#00d68f] hover:bg-[#00c080] text-slate-900 px-6 py-3 rounded-lg font-bold text-sm transition-transform hover:-translate-y-1 shadow-md">
                         Agende uma demonstração grátis!
                     </button>
                 </div>

@@ -60,17 +60,25 @@
                         <?php endif; ?>
                     </div>
 
-                    <button onclick="document.getElementById('demo-modal').classList.remove('hidden')" class="bg-white text-blue-900 font-bold py-3 px-6 rounded-md hover:bg-blue-50 transition-colors flex items-center gap-2 shadow-sm">
+                    <button onclick="abrirDemo()" class="bg-white text-blue-900 font-bold py-3 px-6 rounded-md hover:bg-blue-50 transition-colors flex items-center gap-2 shadow-sm">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                         Fale conosco
                     </button>
                 </div>
 
                 <div class="lg:col-span-1 mt-4 lg:mt-0">
+                    <h4 class="text-lg font-bold mb-6 text-white">Segmentos</h4>
+                    <ul class="space-y-4 text-blue-100 text-sm mb-8">
+                        <?php foreach ( se_segmentos() as $se_slug => $se_s ) : ?>
+                            <li><a href="<?php echo esc_url( se_segmento_url( $se_slug ) ); ?>" class="hover:text-white transition-colors"><?php echo esc_html( $se_s['nome'] ); ?></a></li>
+                        <?php endforeach; ?>
+                    </ul>
+
                     <h4 class="text-lg font-bold mb-6 text-white">Ecossistema</h4>
                     <ul class="space-y-4 text-blue-100 text-sm">
                         <li><a href="<?php echo home_url('/gestao-academica'); ?>" class="hover:text-white transition-colors">Gestão Acadêmica</a></li>
-                        <li><a href="<?php echo home_url('/gestao-financeira'); ?>" class="hover:text-white transition-colors">Gestão Financeira</a></li>
+                        <?php // era /gestao-financeira, que devolve 404: o slug em produção é /financeiro ?>
+                        <li><a href="<?php echo home_url('/financeiro'); ?>" class="hover:text-white transition-colors">Gestão Financeira</a></li>
                         <li><a href="<?php echo home_url('/requerimentos'); ?>" class="hover:text-white transition-colors">Central de Requerimentos</a></li>
                         <li><a href="<?php echo home_url('/retencao'); ?>" class="hover:text-white transition-colors">Retenção de Alunos</a></li>
                         <li><a href="<?php echo home_url('/captacao'); ?>" class="hover:text-white transition-colors">CRM Educacional</a></li>

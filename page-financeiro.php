@@ -187,7 +187,7 @@ get_header(); ?>
             <p class="text-xl text-slate-400 mb-12 font-light leading-relaxed">
                 Nossos consultores vão mostrar exatamente como o Send Educacional substitui processos manuais por regras inteligentes, reduzindo a sua inadimplência nos primeiros meses.
             </p>
-            <button onclick="document.getElementById('demo-modal').classList.remove('hidden')" class="gbtn text-white px-12 py-5 rounded-2xl font-black text-xl transition-all hover:scale-105 flex items-center justify-center gap-3 mx-auto">
+            <button onclick="abrirDemo()" class="gbtn text-white px-12 py-5 rounded-2xl font-black text-xl transition-all hover:scale-105 flex items-center justify-center gap-3 mx-auto">
                 Solicitar Demonstração Gratuita
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </button>

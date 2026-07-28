@@ -70,7 +70,7 @@ get_header(); ?>
                     <h3 class="text-2xl font-extrabold text-white mb-6">Matriz de Risco</h3>
                     <ul class="space-y-4 text-slate-400 text-sm font-medium">
                         <li class="flex items-start gap-3"><span class="text-violet-500 mt-0.5">✓</span> Algoritmo de identificação de alunos em risco</li>
-                        <li class="flex items-start gap-3"><span class="text-violet-500 mt-0.5">✓</span> Monitoramento de acessos e inatividade no Moodle</li>
+                        <li class="flex items-start gap-3"><span class="text-violet-500 mt-0.5">✓</span> Monitoramento de acessos e inatividade no ambiente de aula (AVA próprio ou Moodle)</li>
                         <li class="flex items-start gap-3"><span class="text-violet-500 mt-0.5">✓</span> Alertas automáticos de excesso de faltas</li>
                         <li class="flex items-start gap-3"><span class="text-violet-500 mt-0.5">✓</span> Mapeamento de quedas bruscas de rendimento (Notas)</li>
                         <li class="flex items-start gap-3"><span class="text-violet-500 mt-0.5">✓</span> Cruzamento de inadimplência com risco acadêmico</li>
@@ -165,7 +165,7 @@ get_header(); ?>
             <p class="text-xl text-slate-400 mb-12 font-light leading-relaxed">
                 Pare de perder alunos silenciosamente. Descubra como o módulo de Retenção do Send Educacional transforma dados operacionais em estratégias ativas de permanência.
             </p>
-            <button onclick="document.getElementById('demo-modal').classList.remove('hidden')" class="gbtn text-white px-12 py-5 rounded-2xl font-black text-xl transition-all hover:scale-105 flex items-center justify-center gap-3 mx-auto">
+            <button onclick="abrirDemo()" class="gbtn text-white px-12 py-5 rounded-2xl font-black text-xl transition-all hover:scale-105 flex items-center justify-center gap-3 mx-auto">
                 Blindar a Retenção da Minha Instituição
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </button>

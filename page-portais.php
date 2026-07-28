@@ -127,7 +127,7 @@ get_header(); ?>
         <div class="container mx-auto px-6 max-w-3xl relative z-10">
             <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-6">Modernize a experiência da sua comunidade acadêmica.</h2>
             <p class="text-lg text-slate-400 mb-10">Descubra na prática como os portais do Send Educacional são fáceis de usar, tanto no computador quanto na tela do celular.</p>
-            <button onclick="document.getElementById('demo-modal').classList.remove('hidden')" class="gbtn text-white px-10 py-4 rounded-xl font-extrabold text-lg transition-all hover:scale-105">
+            <button onclick="abrirDemo()" class="gbtn text-white px-10 py-4 rounded-xl font-extrabold text-lg transition-all hover:scale-105">
                 Ver os Portais em Ação
             </button>
         </div>

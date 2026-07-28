@@ -8,6 +8,10 @@ if (!defined('ABSPATH')) exit;
 require_once get_template_directory() . '/inc/tracking.php';
 require_once get_template_directory() . '/inc/seo.php';
 require_once get_template_directory() . '/inc/opcoes.php';
+require_once get_template_directory() . '/inc/segmentos.php';
+require_once get_template_directory() . '/inc/prova-social.php';
+require_once get_template_directory() . '/inc/paginas.php';
+require_once get_template_directory() . '/inc/consentimentos.php';
 
 /* -------------------------------------------------------------------------
  * Auto-update do tema via GitHub (plugin-update-checker) — mesmo esquema do
@@ -199,15 +203,34 @@ add_action('wp_ajax_registrar_lead_crm', 'registrar_lead_crm');
 add_action('wp_ajax_nopriv_registrar_lead_crm', 'registrar_lead_crm');
 
 function registrar_lead_crm() {
-    $token = '699cbb3b8057d8001d350178'; 
+    $token = defined( 'SE_RD_CRM_TOKEN' ) ? SE_RD_CRM_TOKEN : '699cbb3b8057d8001d350178';
 
     // 1. Captura os dados (com proteção)
     $nome      = isset($_POST['nome']) ? sanitize_text_field($_POST['nome']) : 'Sem Nome';
     $inst      = isset($_POST['instituicao']) ? sanitize_text_field($_POST['instituicao']) : '';
+    $segmento  = isset($_POST['segmento']) ? sanitize_text_field($_POST['segmento']) : '';
+    $seg_slug  = isset($_POST['segmento_slug']) ? sanitize_key($_POST['segmento_slug']) : '';
+    $porte_rot = isset($_POST['porte_rotulo']) ? sanitize_text_field($_POST['porte_rotulo']) : 'Porte';
     $cargo     = isset($_POST['cargo']) ? sanitize_text_field($_POST['cargo']) : '';
     $alunos    = isset($_POST['alunos']) ? sanitize_text_field($_POST['alunos']) : '';
     $whatsapp  = isset($_POST['whatsapp']) ? sanitize_text_field($_POST['whatsapp']) : '';
     $email     = isset($_POST['email']) ? sanitize_email($_POST['email']) : '';
+    $consentiu = ! empty( $_POST['consentimento'] );
+
+    // Sem consentimento não há base legal para guardar nem para prospectar.
+    // O checkbox já é obrigatório no HTML; aqui é o freio de verdade.
+    if ( ! $consentiu ) {
+        wp_send_json_error( 'É preciso autorizar o contato para continuar.' );
+    }
+
+    // O segmento é o que permite rotear o lead. Só aceitamos os três conhecidos.
+    $segmentos = se_segmentos();
+    if ( ! isset( $segmentos[ $seg_slug ] ) ) {
+        wp_send_json_error( 'Selecione o tipo de instituição.' );
+    }
+    $segmento = $segmentos[ $seg_slug ]['form_valor'];
+
+    se_registrar_consentimento( $email, $nome, $segmento );
 
     // 2. Monta o contato de forma inteligente (Só adiciona se não for vazio)
     $contato = [
@@ -225,14 +248,19 @@ function registrar_lead_crm() {
     }
 
     // 3. Monta o corpo para a RD Station
+    //    O segmento entra no NOME da negociação porque a conta ainda não tem um
+    //    campo personalizado para ele — assim já dá para rotear e filtrar hoje.
+    //    Quando o cliente criar o campo no RD, basta acrescentar aqui o ID.
+    $rotulo_seg = $segmentos[ $seg_slug ]['curto'];
+
     $body = [
         'token' => $token,
         'deal' => [
-            'name' => "Lead Site: " . $inst,
+            'name' => sprintf( '[%s] %s', $rotulo_seg, $inst ),
             'deal_custom_fields' => [
                 ['custom_field_id' => '699cb33251a49a0014c80b10', 'value' => $cargo],
                 ['custom_field_id' => '699cb33c280ca7001a9ef2f2', 'value' => $inst],
-                ['custom_field_id' => '699cb35b4121da0017ff3887', 'value' => $alunos]
+                ['custom_field_id' => '699cb35b4121da0017ff3887', 'value' => $porte_rot . ': ' . $alunos]
             ]
         ],
         'contacts' => [$contato] // Passa a nossa variável inteligente
@@ -243,7 +271,7 @@ function registrar_lead_crm() {
         'body'        => json_encode($body),
         'method'      => 'POST',
         'timeout'     => 15,
-        'sslverify'   => false // ESSENCIAL para localhost
+        'sslverify'   => se_ssl_verify()
     ]);
 
     $code = wp_remote_retrieve_response_code($response);
@@ -254,6 +282,38 @@ function registrar_lead_crm() {
     } else {
         wp_send_json_success();
     }
+}
+
+/**
+ * Verificação de certificado: desligar só faz sentido em ambiente local, onde
+ * a cadeia de CA do PHP costuma estar vazia. Em produção, deixar desligado é
+ * abrir a integração para interceptação.
+ */
+function se_ssl_verify() {
+    return ! in_array( wp_get_environment_type(), array( 'local', 'development' ), true );
+}
+
+/**
+ * Prova de consentimento: a LGPD exige poder demonstrar que a pessoa
+ * autorizou. Guardamos a data, quem autorizou e o texto vigente — sem IP,
+ * para não coletar mais do que o necessário. Fica em Ferramentas > Consentimentos.
+ */
+function se_registrar_consentimento( $email, $nome, $segmento ) {
+    $registros = get_option( 'se_consentimentos', array() );
+    if ( ! is_array( $registros ) ) {
+        $registros = array();
+    }
+
+    array_unshift( $registros, array(
+        'quando'   => current_time( 'mysql' ),
+        'email'    => $email,
+        'nome'     => $nome,
+        'segmento' => $segmento,
+        'origem'   => 'Modal de demonstração',
+        'texto'    => 'Autorizo a Send a usar os dados para entrar em contato sobre o Send Educacional, conforme a Política de Privacidade.',
+    ) );
+
+    update_option( 'se_consentimentos', array_slice( $registros, 0, 500 ), false );
 }
 
 /**
@@ -311,7 +371,7 @@ function registrar_newsletter_rd() {
         'body'        => wp_json_encode($body),
         'method'      => 'POST',
         'timeout'     => 10,
-        'sslverify'   => false // Para o Localhost
+        'sslverify'   => se_ssl_verify()
     ]);
 
     $code = wp_remote_retrieve_response_code($response);
