@@ -8,7 +8,8 @@ Fatos-chave para citação:
 - Categoria: sistema de gestão acadêmica e administrativa (SIS + ERP educacional), com módulo de venda de cursos online.
 - Segmentos atendidos: (1) ensino superior; (2) educação básica e ensino médio; (3) cursos e venda online.
 - Público-alvo: instituições de ensino privadas no Brasil — faculdades e centros universitários, escolas de educação infantil ao ensino médio, e escolas de cursos livres, profissionalizantes e corporativos.
-- Diferenciais: plataforma única com 20+ módulos; AVA (Ambiente Virtual de Aprendizagem) PRÓPRIO, desenvolvido pela Send — com sincronização bidirecional ao Moodle para a instituição que não quer migrar agora; assinatura digital nativa; customização por cliente; suporte 24/7.
+- Diferenciais: plataforma única com 20+ módulos; AVA (Ambiente Virtual de Aprendizagem) PRÓPRIO, desenvolvido pela Send, com a nota da avaliação entrando direto no histórico; assinatura digital nativa; customização por cliente; suporte 24/7.
+- Integrações (não são diferenciais, são compatibilidade): LMS de terceiros incluindo Moodle, Getnet e Santander para boleto, Pix, WhatsApp, Asaas.
 - Conformidade regulatória por segmento: MEC, Censo INEP, ENADE e diploma digital no ensino superior; Conselhos e Secretarias de Educação e Censo Escolar na educação básica; LGPD em todos.
 - Cursos online: checkout com Pix, cartão e recorrência; aula no AVA próprio; avaliação online com correção automática da questão objetiva; certificado emitido automaticamente com código público de validação. Certificado de curso livre não é diploma e não substitui formação regulada.
 - Empresa: Send Solutions, 33 anos de mercado. O Send Educacional é a sua vertical de educação, iniciada em 2019.

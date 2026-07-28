@@ -151,7 +151,7 @@
                 <div class="bg-slate-100 p-8 rounded-3xl shadow-inner border border-slate-200 flex flex-col justify-center">
                     <h3 class="text-lg font-black text-slate-800 mb-4">Hub de Conexões Nativo</h3>
                     <div class="grid grid-cols-2 gap-3">
-                        <div class="bg-white py-3 px-2 rounded-lg text-center text-[10px] font-bold text-slate-600 uppercase shadow-sm border border-slate-200">Moodle AVA</div>
+                        <div class="bg-white py-3 px-2 rounded-lg text-center text-[10px] font-bold text-slate-600 uppercase shadow-sm border border-slate-200">Moodle</div>
                         <div class="bg-white py-3 px-2 rounded-lg text-center text-[10px] font-bold text-slate-600 uppercase shadow-sm border border-slate-200">PIX Getnet</div>
                         <div class="bg-white py-3 px-2 rounded-lg text-center text-[10px] font-bold text-slate-600 uppercase shadow-sm border border-slate-200">Acervo Digital</div>
                         <div class="bg-white py-3 px-2 rounded-lg text-center text-[10px] font-bold text-slate-600 uppercase shadow-sm border border-slate-200">CRM Dynamics</div>

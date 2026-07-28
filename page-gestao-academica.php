@@ -86,10 +86,10 @@ get_header(); ?>
                     </div>
                     <h3 class="text-2xl font-extrabold text-white mb-6">AVA & Integrações</h3>
                     <ul class="space-y-4 text-indigo-100 text-sm font-medium">
-                        <li class="flex items-start gap-3"><span class="text-indigo-400 mt-0.5">✓</span> AVA próprio, com sincronização bidirecional para quem mantém o Moodle</li>
+                        <li class="flex items-start gap-3"><span class="text-indigo-400 mt-0.5">✓</span> AVA próprio: aula, material e avaliação no mesmo sistema</li>
                         <li class="flex items-start gap-3"><span class="text-indigo-400 mt-0.5">✓</span> Inscrição de Matrículas e Cursos no AVA</li>
                         <li class="flex items-start gap-3"><span class="text-indigo-400 mt-0.5">✓</span> Logs e Notificações de Integração em tempo real</li>
-                        <li class="flex items-start gap-3"><span class="text-indigo-400 mt-0.5">✓</span> Relatório de últimos acessos ao ambiente de aula (AVA próprio ou Moodle)</li>
+                        <li class="flex items-start gap-3"><span class="text-indigo-400 mt-0.5">✓</span> Relatório de últimos acessos ao ambiente de aula</li>
                         <li class="flex items-start gap-3"><span class="text-indigo-400 mt-0.5">✓</span> Sincronização de Trancamentos e Cancelamentos</li>
                         <li class="flex items-start gap-3"><span class="text-indigo-400 mt-0.5">✓</span> CRM Dynamics: Captura de Candidatos</li>
                         <li class="flex items-start gap-3"><span class="text-indigo-400 mt-0.5">✓</span> CRM Dynamics: Retorno Automático de Vínculo</li>

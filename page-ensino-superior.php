@@ -91,7 +91,7 @@ get_header(); ?>
                     ),
                     array(
                         'EAD, polos e AVA',
-                        array( 'AVA próprio, desenvolvido pela Send', 'Integração com Moodle para quem não quer migrar', 'Gestão de polos e de tutoria', 'Aula, material e avaliação online', 'Frequência e progresso por aluno', 'Portal do polo com metas e repasses' ),
+                        array( 'AVA próprio, desenvolvido pela Send', 'Aula, material e avaliação online', 'Gestão de polos e de tutoria', 'Frequência e progresso por aluno', 'Portal do polo com metas e repasses', 'Integração com o ambiente de aula já em uso' ),
                         home_url( '/portais' ),
                     ),
                     array(
@@ -132,14 +132,14 @@ get_header(); ?>
         <div class="container mx-auto px-6 max-w-6xl grid lg:grid-cols-2 gap-14 items-center reveal">
             <div>
                 <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass text-[11px] font-bold uppercase tracking-widest mb-5" style="color:<?php echo esc_attr( $se_cor ); ?>">AVA próprio</span>
-                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-5">O ambiente de aula é nosso — e o Moodle continua sendo uma opção</h2>
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-5">O ambiente de aula é nosso, e conversa com o acadêmico</h2>
                 <p class="text-lg text-slate-400 leading-relaxed mb-6">
-                    O Send Educacional tem AVA próprio, desenvolvido pela Send: a aula, o material e a avaliação ficam no mesmo sistema do acadêmico e do financeiro, e a nota cai direto no histórico. Para a IES que já roda no Moodle e não quer migrar agora, existe sincronização bidirecional — as duas coisas convivem, e a troca acontece quando você decidir.
+                    O Send Educacional tem AVA próprio, desenvolvido pela Send: a aula, o material e a avaliação ficam no mesmo sistema do acadêmico e do financeiro, e a nota cai direto no histórico — sem exportar, sem reimportar e sem o professor lançar duas vezes. O acesso do aluno ao ambiente também é o que alimenta o alerta de evasão.
                 </p>
                 <ul class="space-y-3 mb-8">
                     <?php foreach ( array(
                         'AVA próprio: aula, material, avaliação e nota no mesmo login do aluno.',
-                        'Integração com Moodle: turmas, matrículas e notas sincronizadas nos dois sentidos.',
+                        'Quem já usa outro ambiente de aula não precisa migrar junto: a integração existe.',
                         'Relatório de últimos acessos, que alimenta o alerta de evasão.',
                     ) as $li ) {
                         printf( '<li class="flex items-start gap-3 text-slate-300"><svg class="w-5 h-5 flex-shrink-0 mt-0.5" style="color:%s" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>%s</li>', esc_attr( $se_cor ), esc_html( $li ) );
@@ -179,7 +179,7 @@ get_header(); ?>
             <div class="space-y-3 reveal">
                 <?php
                 $es_faq = array(
-                    array( 'Já rodamos no Moodle. Precisamos migrar?', 'Não precisa. O Send tem AVA próprio, mas mantém sincronização bidirecional com o Moodle: turmas, matrículas e notas passam nos dois sentidos. Muita IES começa mantendo o Moodle e migra depois, quando quiser — não é condição para implantar.' ),
+                    array( 'Já usamos outro ambiente de aula. Precisamos migrar?', 'Não precisa. O Send tem AVA próprio, e ele é o caminho que recomendamos porque a nota cai direto no histórico. Mas trocar o ambiente de aula não é condição para implantar o acadêmico e o financeiro: existe integração com o LMS que a IES já usa, inclusive Moodle, e a migração fica para quando fizer sentido.' ),
                     array( 'A IES tem EAD com vários polos. O sistema separa?', 'Separa. Curso, turma, tutoria, repasse e indicadores são por polo, com o portal do polo à parte, e a mantenedora enxerga tudo consolidado.' ),
                     array( 'Como fica o diploma digital?', 'A emissão e o registro seguem o padrão das portarias do MEC, com assinatura digital e livro de registro dentro do próprio sistema — não é um serviço externo contratado à parte.' ),
                     array( 'Quanto tempo leva a implantação?', 'Depende do porte e de quanta informação vem do sistema antigo. O caminho é sempre levantamento de processos, importação da base, configuração dos períodos letivos e treinamento por setor, com consultor conduzindo. Numa IES de porte médio isso costuma se organizar em alguns meses, não em semanas — e a gente prefere dizer isso antes.' ),

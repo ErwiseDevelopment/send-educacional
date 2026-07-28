@@ -238,9 +238,9 @@ function se_artigos_semente() {
 </ol>
 <p>Numa IES de porte médio isso se organiza em alguns meses, não em algumas semanas. Quem promete duas semanas está deixando uma dessas etapas de fora — normalmente a terceira.</p>
 
-<h2>E o AVA?</h2>
-<p>É a pergunta mais comum de quem já roda no Moodle. A resposta prática: não é preciso migrar o ambiente de aula junto com o acadêmico. O Send Educacional tem AVA próprio, desenvolvido pela Send, em que a aula, o material e a avaliação ficam no mesmo sistema do acadêmico e do financeiro — e a nota cai direto no histórico. Para a IES que prefere manter o Moodle por ora, existe sincronização bidirecional: turmas, matrículas e notas passam nos dois sentidos.</p>
-<p>Migrar tudo de uma vez é uma opção, não um requisito. Separar as duas decisões costuma reduzir bastante o risco da virada.</p>
+<h2>E o ambiente de aula?</h2>
+<p>Vale separar as duas decisões. O Send Educacional tem AVA próprio, em que a aula, o material e a avaliação ficam no mesmo sistema do acadêmico e do financeiro — e a nota cai direto no histórico, sem exportação. É o caminho que rende mais no dia a dia.</p>
+<p>Mas trocar o ambiente de aula não precisa acontecer junto com a troca do acadêmico. Existe integração com o LMS que a IES já usa, e adiar essa parte costuma reduzir bastante o risco da virada.</p>
 
 <h2>A regulação não espera a migração</h2>
 <p>Censo INEP, ENADE, diploma digital e recredenciamento seguem o calendário deles, independentemente do seu projeto interno. Por isso a data da virada precisa ser escolhida olhando esse calendário — e não só a agenda da TI. Um bom cronograma de implantação já nasce desviando das janelas críticas do seu ano letivo.</p>
@@ -250,7 +250,7 @@ function se_artigos_semente() {
 <li>Quem executa a importação da base — vocês ou nós?</li>
 <li>Como e contra o quê os dados migrados são conferidos antes da virada?</li>
 <li>O diploma digital é nativo ou é um serviço externo contratado à parte?</li>
-<li>O que acontece com o Moodle que já usamos?</li>
+<li>O que acontece com o ambiente de aula que já usamos?</li>
 <li>Quem treina cada setor, e por quanto tempo depois da virada vocês ficam por perto?</li>
 </ul>
 

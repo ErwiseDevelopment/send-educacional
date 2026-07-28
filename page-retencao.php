@@ -70,7 +70,7 @@ get_header(); ?>
                     <h3 class="text-2xl font-extrabold text-white mb-6">Matriz de Risco</h3>
                     <ul class="space-y-4 text-slate-400 text-sm font-medium">
                         <li class="flex items-start gap-3"><span class="text-violet-500 mt-0.5">✓</span> Algoritmo de identificação de alunos em risco</li>
-                        <li class="flex items-start gap-3"><span class="text-violet-500 mt-0.5">✓</span> Monitoramento de acessos e inatividade no ambiente de aula (AVA próprio ou Moodle)</li>
+                        <li class="flex items-start gap-3"><span class="text-violet-500 mt-0.5">✓</span> Monitoramento de acessos e inatividade no ambiente de aula</li>
                         <li class="flex items-start gap-3"><span class="text-violet-500 mt-0.5">✓</span> Alertas automáticos de excesso de faltas</li>
                         <li class="flex items-start gap-3"><span class="text-violet-500 mt-0.5">✓</span> Mapeamento de quedas bruscas de rendimento (Notas)</li>
                         <li class="flex items-start gap-3"><span class="text-violet-500 mt-0.5">✓</span> Cruzamento de inadimplência com risco acadêmico</li>

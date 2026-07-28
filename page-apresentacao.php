@@ -187,7 +187,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
     <span class="text-blue-600 font-bold tracking-widest uppercase text-xs">O que é o Send Educacional</span>
     <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight mt-4 mb-6 leading-tight">Um sistema único no lugar de vários que não conversam.</h2>
     <p class="text-lg text-slate-500 leading-relaxed mb-5">A maioria das instituições usa um sistema para o acadêmico, outro para o financeiro, uma planilha para a cobrança e um portal à parte para o aluno — e gasta tempo costurando tudo na mão. O Send reúne essa operação inteira em <span class="text-slate-800 font-semibold">uma só plataforma</span>, com os dados integrados de ponta a ponta.</p>
-    <p class="text-lg text-slate-500 leading-relaxed">Nascido em 2019 dentro da <span class="text-slate-800 font-semibold">Send Solutions</span> (33 anos de mercado), é mantido sempre atualizado conforme o MEC e as mudanças fiscais. Até o <span class="text-slate-800 font-semibold">ambiente de aula (AVA) é desenvolvido pela própria Send</span> — sem depender de LMS de terceiros — e com integração ao Moodle para quem prefere manter o que já usa.</p>
+    <p class="text-lg text-slate-500 leading-relaxed">Nascido em 2019 dentro da <span class="text-slate-800 font-semibold">Send Solutions</span> (33 anos de mercado), é mantido sempre atualizado conforme o MEC e as mudanças fiscais. Até o <span class="text-slate-800 font-semibold">ambiente de aula (AVA) é desenvolvido pela própria Send</span>, e não um sistema de terceiros costurado por fora.</p>
   </div>
 </section>
 
@@ -200,7 +200,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
         <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span></span> Novidade
       </div>
       <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight mb-6">O AVA agora é <span class="gtext">nosso</span> — não de terceiros.</h2>
-      <p class="text-lg text-slate-400 leading-relaxed mb-8">Desenvolvemos o nosso próprio <span class="text-white font-semibold">Ambiente Virtual de Aprendizagem</span>. Aulas, conteúdo e avaliações online ficam dentro do mesmo sistema do acadêmico e do financeiro — o aluno não troca de ambiente. Quem já roda no Moodle mantém, com sincronização bidirecional.</p>
+      <p class="text-lg text-slate-400 leading-relaxed mb-8">Desenvolvemos o nosso próprio <span class="text-white font-semibold">Ambiente Virtual de Aprendizagem</span>. Aulas, conteúdo e avaliações online ficam dentro do mesmo sistema do acadêmico e do financeiro — o aluno não troca de ambiente e a nota cai direto no histórico.</p>
       <button type="button" onclick="abrirDemo()" data-track="ava-demo" class="gbtn text-white font-bold px-7 py-3.5 rounded-2xl transition-all hover:-translate-y-0.5">Ver o AVA na demonstração</button>
     </div>
     <div class="bg-white/[.04] border border-white/10 rounded-3xl p-7 md:p-9 backdrop-blur card-ring">
@@ -487,7 +487,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
   // Catálogo de módulos (bento)
   var modulos = [
-    ['AVA · Ambiente de aula próprio','Aulas, conteúdo e avaliações online — desenvolvido pela Send, com Moodle integrado.','Novo','ti-school'],
+    ['AVA · Ambiente de aula próprio','Aulas, conteúdo e avaliações online — desenvolvido pela Send, integrado ao acadêmico.','Novo','ti-school'],
     ['CRM & Captação','Funil de captação, campanhas e recuperação de matrículas.','Novo','ti-filter'],
     ['Retenção de Alunos','Alertas de risco de evasão por notas, frequência e financeiro.','Novo','ti-shield-heart'],
     ['Secretaria Acadêmica','Matrícula, notas, histórico, diploma digital e MEC.','','ti-certificate'],
