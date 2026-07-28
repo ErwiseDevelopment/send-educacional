@@ -2,12 +2,60 @@
 Theme Name: Send Educacional
 Description: Tema customizado para o SaaS Send Educacional usando Tailwind CSS.
 Author: Send Solutions
-Version: 1.7.1
+Version: 1.8.0
 */
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ===== Tipografia =====
+   Uma fonte só (Inter) deixava tudo com cara de template. Fraunces entra
+   nos títulos e nos números grandes; o resto continua em Inter, que é
+   melhor para interface e texto corrido. */
+.titulo{
+  font-family:'Fraunces',Georgia,'Times New Roman',serif;
+  font-optical-sizing:auto;
+  font-variation-settings:"opsz" 120;
+  font-weight:600;
+  letter-spacing:-.035em;
+}
+.titulo-leve{font-weight:500}
+/* Em corpo pequeno a serifa precisa do eixo óptico menor para não fechar. */
+.titulo-mini{font-family:'Fraunces',Georgia,serif;font-variation-settings:"opsz" 14;font-weight:600;letter-spacing:-.01em}
+.numero{
+  font-family:'Fraunces',Georgia,serif;
+  font-variation-settings:"opsz" 144;
+  font-weight:600;
+  letter-spacing:-.05em;
+  font-variant-numeric:lining-nums tabular-nums;
+}
+
+/* ===== Formas de seção =====
+   Três formas diferentes de propósito. O site inteiro era a mesma grade de
+   cartões de vidro repetida oito vezes — é o que mais o entrega como
+   template. Aqui existem: cartão (o que já havia), faixa editorial com
+   filete e lista numerada sem caixa nenhuma. */
+
+/* 1. Faixa de números: filete no lugar de caixa. */
+.faixa{border-top:1px solid rgba(255,255,255,.12)}
+.faixa-item{padding:1.75rem 0 0;border-top:1px solid rgba(255,255,255,.12);margin-top:-1px}
+@media (min-width:768px){
+  .faixa-item{border-top:0;border-left:1px solid rgba(255,255,255,.12);padding:0 0 0 1.75rem;margin-top:0}
+  .faixa-item:first-child{border-left:0;padding-left:0}
+}
+
+/* 2. Lista numerada editorial: sem fundo, sem borda, só o filete de cima. */
+.marco{position:relative;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.12);transition:border-color .3s ease}
+.marco:hover{border-top-color:rgba(96,165,250,.5)}
+.marco-num{font-family:'Fraunces',Georgia,serif;font-variation-settings:"opsz" 40;font-weight:600;
+  font-size:.8rem;letter-spacing:.02em;color:#64748b;display:block;margin-bottom:.65rem}
+
+/* 3. Coluna que acompanha a rolagem, para a seção ter um dominante. */
+@media (min-width:1024px){ .fixa{position:sticky;top:7rem} }
+
+/* Filete comum, para separar sem desenhar caixa. */
+.regra{border-top:1px solid rgba(255,255,255,.1)}
 
 /* ===== Design tokens escuros — compartilhados entre a home e as páginas internas ===== */
 .gtext{background:linear-gradient(100deg,#60a5fa,#818cf8 45%,#c084fc);-webkit-background-clip:text;background-clip:text;color:transparent}

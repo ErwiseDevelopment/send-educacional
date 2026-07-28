@@ -23,7 +23,7 @@ get_header(); ?>
                 Cursos livres, profissionalizantes e corporativos
             </span>
 
-            <h1 class="text-[2.4rem] md:text-6xl font-extrabold tracking-tight leading-[1.05] mb-6">
+            <h1 class="titulo text-[2.5rem] md:text-[4.4rem] leading-[0.99] tracking-tightest mb-6">
                 Venda o curso, dê a aula, aplique a prova e <span class="gtext">emita o certificado</span> — no mesmo sistema.
             </h1>
 
@@ -44,7 +44,7 @@ get_header(); ?>
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="text-center mb-14 reveal">
                 <span class="font-bold tracking-widest uppercase text-xs" style="color:<?php echo esc_attr( $se_cor ); ?>">Pagamento · Avaliação · Certificado</span>
-                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mt-4">Os três pontos que costumam quebrar</h2>
+                <h2 class="titulo text-[2.2rem] md:text-5xl leading-[1.03] mt-4">Os três pontos que costumam quebrar</h2>
                 <p class="text-lg text-slate-400 mt-4 max-w-2xl mx-auto">São eles que fazem operação de curso online virar trabalho manual. Aqui os três já vêm resolvidos e conversando entre si.</p>
             </div>
 
@@ -102,7 +102,7 @@ get_header(); ?>
                     printf(
                         '<div class="glass glass-hover rounded-3xl p-8 flex flex-col">
                             <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style="background:%s22;border:1px solid %s55"><svg class="w-7 h-7" style="color:%s" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">%s</svg></div>
-                            <h3 class="text-xl font-bold text-white mb-3">%s</h3>
+                            <h3 class="titulo-mini text-xl text-white mb-3">%s</h3>
                             <p class="text-slate-400 leading-relaxed mb-6">%s</p>
                             <ul class="space-y-2.5 mt-auto">%s</ul>
                         </div>',
@@ -120,7 +120,7 @@ get_header(); ?>
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="text-center mb-14 reveal">
                 <span class="font-bold tracking-widest uppercase text-xs" style="color:<?php echo esc_attr( $se_cor ); ?>">Do clique ao certificado</span>
-                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mt-4">Sem ninguém no meio do caminho</h2>
+                <h2 class="titulo text-[2.2rem] md:text-5xl leading-[1.03] mt-4">Sem ninguém no meio do caminho</h2>
                 <p class="text-slate-400 max-w-2xl mx-auto text-lg mt-4">Cada etapa entrega a próxima automaticamente. Ninguém da sua equipe precisa liberar acesso, lançar nota ou montar certificado.</p>
             </div>
 
@@ -157,7 +157,7 @@ get_header(); ?>
         <div class="container mx-auto px-6 max-w-6xl grid lg:grid-cols-2 gap-12 items-center reveal">
             <div>
                 <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass text-[11px] font-bold uppercase tracking-widest mb-5" style="color:<?php echo esc_attr( $se_cor ); ?>">Certificado</span>
-                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-5">O certificado que ninguém precisa montar</h2>
+                <h2 class="titulo text-[2rem] md:text-4xl leading-[1.04] mb-5">O certificado que ninguém precisa montar</h2>
                 <p class="text-lg text-slate-400 leading-relaxed mb-6">
                     Certificado emitido no momento em que o aluno cumpre a regra de conclusão que você definiu — carga horária, nota mínima, progresso ou tudo isso junto. Sai com a sua marca, com a carga horária e com um código único.
                 </p>
@@ -208,7 +208,7 @@ get_header(); ?>
     <section class="relative py-20">
         <div class="container mx-auto px-6 max-w-5xl">
             <div class="text-center mb-12 reveal">
-                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight">Três ferramentas ou <span class="gtext">uma só</span></h2>
+                <h2 class="titulo text-[2.2rem] md:text-5xl leading-[1.03]">Três ferramentas ou <span class="gtext">uma só</span></h2>
                 <p class="text-lg text-slate-400 mt-4">A conta que ninguém faz: o tempo que a sua equipe gasta ligando um sistema no outro.</p>
             </div>
 
@@ -247,10 +247,13 @@ get_header(); ?>
         </div>
     </section>
 
+    <!-- ================= CATÁLOGO COMPLETO DE MÓDULOS ================= -->
+    <?php se_bloco_modulos( 'cursos-online', $se_cor ); ?>
+
     <!-- ================= PERGUNTAS ================= -->
     <section class="relative py-20">
         <div class="container mx-auto px-6 max-w-3xl">
-            <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-center mb-12 reveal">Perguntas que sempre aparecem</h2>
+            <h2 class="titulo text-[2rem] md:text-4xl leading-[1.04] text-center mb-12 reveal">Perguntas que sempre aparecem</h2>
             <div class="space-y-3 reveal">
                 <?php
                 $co_faq = array(
@@ -278,7 +281,7 @@ get_header(); ?>
     <section class="relative py-20">
         <div class="container mx-auto px-6 max-w-5xl">
             <div class="glass rounded-[2.5rem] p-10 md:p-14 text-center cardring reveal">
-                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-5">Mostre o seu fluxo, a gente mostra o sistema</h2>
+                <h2 class="titulo text-[2.2rem] md:text-5xl leading-[1.03] mb-5">Mostre o seu fluxo, a gente mostra o sistema</h2>
                 <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-8">Na demonstração a gente pega o seu curso de verdade e percorre a jornada inteira: venda, aula, prova e certificado. Sem apresentação genérica.</p>
                 <button data-track="cta-final-cursos-online" onclick="abrirDemo('cursos-online')" class="gbtn text-white font-bold px-9 py-4 rounded-2xl text-lg transition-all hover:-translate-y-0.5">Solicitar demonstração</button>
                 <p class="text-slate-500 text-sm mt-4">Gratuita · sem compromisso · com um especialista do segmento</p>

@@ -23,7 +23,7 @@ get_header(); ?>
                 Infantil · Fundamental I e II · Ensino Médio
             </span>
 
-            <h1 class="text-[2.4rem] md:text-6xl font-extrabold tracking-tight leading-[1.05] mb-6">
+            <h1 class="titulo text-[2.5rem] md:text-[4.4rem] leading-[0.99] tracking-tightest mb-6">
                 A secretaria, o financeiro e a sala de aula <span class="gtext">no mesmo sistema</span>
             </h1>
 
@@ -33,7 +33,7 @@ get_header(); ?>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
                 <button data-track="cta-hero-educacao-basica" onclick="abrirDemo('educacao-basica')" class="gbtn text-white font-bold px-8 py-4 rounded-2xl text-lg w-full sm:w-auto transition-all hover:-translate-y-0.5">Solicitar demonstração</button>
-                <a href="#rotina" class="w-full sm:w-auto px-8 py-4 rounded-2xl text-lg font-semibold text-white glass hover:bg-white/10 transition">Ver a rotina da escola</a>
+                <a href="#catalogo" class="w-full sm:w-auto px-8 py-4 rounded-2xl text-lg font-semibold text-white glass hover:bg-white/10 transition">Ver tudo o que o sistema faz</a>
             </div>
             <p class="text-slate-500 text-sm mt-5">Demonstração gratuita · sem compromisso · com um especialista em educação básica</p>
         </div>
@@ -61,120 +61,15 @@ get_header(); ?>
         </div>
     </section>
 
-    <!-- ================= MÓDULOS DA ESCOLA ================= -->
-    <section id="rotina" class="relative py-20">
-        <div class="container mx-auto px-6 max-w-6xl">
-            <div class="text-center mb-14 reveal">
-                <span class="font-bold tracking-widest uppercase text-xs" style="color:<?php echo esc_attr( $se_cor ); ?>">A rotina inteira da escola</span>
-                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mt-4">Da matrícula ao boletim, sem retrabalho</h2>
-                <p class="text-lg text-slate-400 mt-4 max-w-2xl mx-auto">Cada setor lança a informação uma vez só — e ela aparece pronta para o próximo.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 reveal">
-                <?php
-                $eb_mods = array(
-                    array(
-                        'Secretaria escolar',
-                        array(
-                            'Matrícula e rematrícula online',
-                            'Rematrícula em lote por série e turma',
-                            'Contrato com assinatura eletrônica',
-                            'Enturmação e transferência',
-                            'Ficha do aluno, saúde e responsáveis',
-                            'Declarações e histórico escolar',
-                        ),
-                        '<path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.6a1 1 0 01.7.3l5.4 5.4a1 1 0 01.3.7V19a2 2 0 01-2 2z"></path>',
-                    ),
-                    array(
-                        'Sala de aula',
-                        array(
-                            'Diário de classe digital',
-                            'Chamada e registro de frequência',
-                            'Lançamento de notas por bimestre',
-                            'Boletim e ficha individual',
-                            'Conselho de classe e parecer descritivo',
-                            'Recuperação e progressão parcial',
-                        ),
-                        '<path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H6a2 2 0 01-2-2V6z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M8 8h8M8 12h5M9 22h6"></path>',
-                    ),
-                    array(
-                        'Financeiro da escola',
-                        array(
-                            'Mensalidade, material e contraturno',
-                            'Boleto, Pix e cartão recorrente',
-                            'Bolsa, desconto e convênio',
-                            'Régua de cobrança automática',
-                            'Acordo de renegociação',
-                            'Fluxo de caixa e DRE da escola',
-                        ),
-                        '<path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.7 0-3 .9-3 2s1.3 2 3 2 3 .9 3 2-1.3 2-3 2m0-8V7m0 9v1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>',
-                    ),
-                    array(
-                        'Família e aluno',
-                        array(
-                            'App e portal do responsável',
-                            'Boletim, faltas e ocorrências em tempo real',
-                            'Segunda via de boleto sem ligar na escola',
-                            'Comunicados e circulares com confirmação de leitura',
-                            'Agenda, calendário e cardápio',
-                            'Autorização de saída e de passeio',
-                        ),
-                        '<path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.4-1.9M17 20H7m10 0v-2c0-.7-.1-1.3-.4-1.9M7 20H2v-2a3 3 0 015.4-1.9M7 20v-2c0-.7.1-1.3.4-1.9m0 0a5 5 0 019.2 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"></path>',
-                    ),
-                    array(
-                        'Direção e coordenação',
-                        array(
-                            'Painel de indicadores da escola',
-                            'Evasão e risco de não rematrícula',
-                            'Desempenho por turma e por disciplina',
-                            'Inadimplência por série',
-                            'Ocupação de vagas e projeção do ano',
-                            'Relatórios prontos para a mantenedora',
-                        ),
-                        '<path stroke-linecap="round" stroke-linejoin="round" d="M9 19V6l-4 2v11M9 19l6-3M9 19H5M15 16V5l4-2v11l-4 2z"></path>',
-                    ),
-                    array(
-                        'Documentos e arquivo',
-                        array(
-                            'GED: documento do aluno digitalizado',
-                            'Histórico e transferência sem papel',
-                            'Biblioteca e controle de acervo',
-                            'Guarda de contratos assinados',
-                            'Busca por aluno, turma ou ano',
-                            'Registro de acesso, para a LGPD',
-                        ),
-                        '<path stroke-linecap="round" stroke-linejoin="round" d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"></path>',
-                    ),
-                );
-                foreach ( $eb_mods as $m ) {
-                    $itens = '';
-                    foreach ( $m[1] as $i ) {
-                        $itens .= sprintf(
-                            '<li class="flex items-start gap-2.5 text-sm text-slate-400"><svg class="w-4 h-4 flex-shrink-0 mt-0.5" style="color:%s" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>%s</li>',
-                            esc_attr( $se_cor ), esc_html( $i )
-                        );
-                    }
-                    printf(
-                        '<div class="glass glass-hover rounded-3xl p-8">
-                            <div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-6" style="background:%s22;border:1px solid %s55"><svg class="w-6 h-6" style="color:%s" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">%s</svg></div>
-                            <h3 class="text-lg font-bold text-white mb-5">%s</h3>
-                            <ul class="space-y-2.5">%s</ul>
-                        </div>',
-                        esc_attr( $se_cor ), esc_attr( $se_cor ), esc_attr( $se_cor ), $m[2],
-                        esc_html( $m[0] ), $itens
-                    );
-                }
-                ?>
-            </div>
-        </div>
-    </section>
+    <!-- ================= CATÁLOGO COMPLETO DE MÓDULOS ================= -->
+    <?php se_bloco_modulos( 'educacao-basica', $se_cor ); ?>
 
     <!-- ================= REMATRÍCULA ================= -->
     <section class="relative py-20">
         <div class="container mx-auto px-6 max-w-6xl grid lg:grid-cols-2 gap-12 items-center reveal">
             <div>
                 <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass text-[11px] font-bold uppercase tracking-widest mb-5" style="color:<?php echo esc_attr( $se_cor ); ?>">Campanha de rematrícula</span>
-                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-5">A rematrícula sem o mutirão de dezembro</h2>
+                <h2 class="titulo text-[2rem] md:text-4xl leading-[1.04] mb-5">A rematrícula sem o mutirão de dezembro</h2>
                 <p class="text-lg text-slate-400 leading-relaxed mb-6">
                     A escola abre a campanha, o sistema gera o contrato de cada aluno com o valor e o desconto certos, e o responsável assina do celular. A secretaria só cuida da exceção — não da fila inteira.
                 </p>
@@ -237,7 +132,7 @@ get_header(); ?>
                         <div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-5" style="background:<?php echo esc_attr( $se_cor ); ?>22;border:1px solid <?php echo esc_attr( $se_cor ); ?>55">
                             <svg class="w-6 h-6" style="color:<?php echo esc_attr( $se_cor ); ?>" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.6-4A12 12 0 0112 2.9 12 12 0 013.4 6 12 12 0 003 9c0 5.6 3.8 10.3 9 11.6 5.2-1.3 9-6 9-11.6 0-1-.1-2-.4-3z"></path></svg>
                         </div>
-                        <h2 class="text-2xl font-extrabold tracking-tight mb-3">Regulação de escola é outra</h2>
+                        <h2 class="titulo text-2xl leading-tight mb-3">Regulação de escola é outra</h2>
                         <p class="text-slate-400 leading-relaxed">Educação básica não responde ao MEC do mesmo jeito que uma faculdade: quem regula é o Conselho Estadual ou Municipal de Educação e a Secretaria de Educação. O sistema fala essa língua.</p>
                     </div>
                     <div class="md:col-span-2 grid sm:grid-cols-2 gap-4">
@@ -261,7 +156,7 @@ get_header(); ?>
     <!-- ================= PERGUNTAS ================= -->
     <section class="relative py-20">
         <div class="container mx-auto px-6 max-w-3xl">
-            <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-center mb-12 reveal">Perguntas que sempre aparecem</h2>
+            <h2 class="titulo text-[2rem] md:text-4xl leading-[1.04] text-center mb-12 reveal">Perguntas que sempre aparecem</h2>
             <div class="space-y-3 reveal">
                 <?php
                 $eb_faq = array(
@@ -289,7 +184,7 @@ get_header(); ?>
     <section class="relative py-20">
         <div class="container mx-auto px-6 max-w-5xl">
             <div class="glass rounded-[2.5rem] p-10 md:p-14 text-center cardring reveal">
-                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-5">Uma demonstração com a rotina da sua escola</h2>
+                <h2 class="titulo text-[2.2rem] md:text-5xl leading-[1.03] mb-5">Uma demonstração com a rotina da sua escola</h2>
                 <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-8">Sem apresentação genérica: a gente pega a sua rematrícula, o seu boletim e a sua cobrança e mostra como ficam dentro do sistema.</p>
                 <button data-track="cta-final-educacao-basica" onclick="abrirDemo('educacao-basica')" class="gbtn text-white font-bold px-9 py-4 rounded-2xl text-lg transition-all hover:-translate-y-0.5">Solicitar demonstração</button>
                 <p class="text-slate-500 text-sm mt-4">Gratuita · sem compromisso · com um especialista em educação básica</p>

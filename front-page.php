@@ -61,7 +61,7 @@
                 <span class="text-slate-500">&rarr;</span>
             </a>
 
-            <h1 class="text-[2.7rem] md:text-7xl font-extrabold tracking-tight leading-[1.03] mb-7">
+            <h1 class="titulo text-[2.9rem] md:text-[5.2rem] leading-[0.97] tracking-tightest mb-7">
                 Toda a gestão da sua<br class="hidden md:block"> instituição de ensino em <span class="gtext">um só sistema</span>
             </h1>
 
@@ -172,29 +172,34 @@
 
     <!-- ===================== NÚMEROS ===================== -->
     <section class="relative z-10 py-16">
-        <div class="container mx-auto px-6 max-w-6xl grid grid-cols-2 md:grid-cols-4 gap-4 reveal">
-            <?php
-            // Cada número aqui precisa aguentar ser checado. "33 anos" é da Send
-            // Solutions, não de educação — dizer os dois evita a leitura errada.
-            $fp_stats = array(
-                array( '33', 'Anos de mercado', 'Send Solutions · em educação desde 2019' ),
-                array( '20+', 'Módulos integrados', 'na mesma plataforma' ),
-                array( '80+', 'Funcionalidades nativas', 'só no acadêmico' ),
-                array( '3', 'Segmentos atendidos', 'superior · básica e média · cursos online' ),
-            );
-            foreach ( $fp_stats as $s ) {
-                printf(
-                    '<div class="glass rounded-2xl p-6 text-center"><div class="text-4xl md:text-5xl font-extrabold gtext tracking-tight">%s</div><p class="text-slate-300 text-xs font-semibold uppercase tracking-wide mt-2">%s</p><p class="text-slate-500 text-[11px] mt-1.5 leading-snug">%s</p></div>',
-                    esc_html( $s[0] ), esc_html( $s[1] ), esc_html( $s[2] )
+        <?php // Filete no lugar de caixa: quatro cartões iguais viravam mais uma grade. ?>
+        <div class="container mx-auto px-6 max-w-6xl reveal">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-y-8 md:gap-x-10">
+                <?php
+                // Cada número aqui precisa aguentar ser checado. "33 anos" é da Send
+                // Solutions, não de educação — dizer os dois evita a leitura errada.
+                $fp_stats = array(
+                    array( '33', 'anos de mercado', 'Send Solutions · em educação desde 2019' ),
+                    array( '20+', 'módulos integrados', 'na mesma plataforma, com o mesmo dado' ),
+                    array( '150+', 'funcionalidades nativas', 'entre acadêmico, financeiro e atendimento' ),
+                    array( '3', 'segmentos atendidos', 'superior · básica e média · cursos online' ),
                 );
-            }
-            ?>
-        </div>
+                foreach ( $fp_stats as $s ) {
+                    printf(
+                        '<div class="faixa-item">
+                            <div class="numero text-5xl md:text-6xl text-white leading-none">%s</div>
+                            <p class="titulo-mini text-slate-200 text-base mt-3">%s</p>
+                            <p class="text-slate-500 text-[13px] mt-1.5 leading-snug">%s</p>
+                        </div>',
+                        esc_html( $s[0] ), esc_html( $s[1] ), esc_html( $s[2] )
+                    );
+                }
+                ?>
+            </div>
 
-        <div class="container mx-auto px-6 max-w-4xl mt-6 reveal">
-            <p class="text-center text-sm text-slate-500 leading-relaxed">
-                <span class="text-slate-300 font-semibold">Conformidade regulatória por segmento:</span>
-                MEC, Censo INEP e diploma digital no ensino superior; Conselhos de Educação, Secretarias e Censo Escolar na educação básica; LGPD em todos.
+            <p class="regra mt-12 pt-6 text-sm text-slate-500 leading-relaxed max-w-3xl">
+                <span class="text-slate-300 font-semibold">Conformidade regulatória por segmento.</span>
+                MEC, Censo INEP e diploma digital no ensino superior. Conselhos de Educação, Secretarias e Censo Escolar na educação básica. LGPD nos três.
             </p>
         </div>
     </section>
@@ -207,12 +212,12 @@
                     <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span></span>
                     Novidade
                 </div>
-                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight mb-6">A aula acontece <span class="gtext">dentro do sistema</span>, não ao lado dele.</h2>
+                <h2 class="titulo text-[2.2rem] md:text-5xl leading-[1.02] mb-6">A aula acontece <span class="gtext">dentro do sistema</span>, não ao lado dele.</h2>
                 <p class="text-lg text-slate-400 leading-relaxed mb-8">Desenvolvemos o nosso próprio Ambiente Virtual de Aprendizagem: aula, material e avaliação ficam no mesmo sistema do acadêmico e do financeiro, e a nota cai direto no histórico sem ninguém reimportar planilha. O aluno estuda, é avaliado e vê a nota sem trocar de ambiente — e a coordenação enxerga acesso, progresso e desempenho no mesmo lugar em que enxerga a matrícula e a mensalidade.</p>
                 <button onclick="abrirDemo()" class="gbtn text-white font-bold px-7 py-3.5 rounded-2xl transition-all hover:-translate-y-0.5">Ver o AVA na demonstração</button>
             </div>
             <div class="glass rounded-3xl p-7 md:p-9 cardring">
-                <p class="text-xs font-bold uppercase tracking-widest text-blue-300 mb-6">O que o AVA nativo entrega</p>
+                <p class="text-xs font-bold uppercase tracking-widest text-blue-300 mb-6">O que o AVA próprio entrega</p>
                 <ul class="space-y-4">
                     <?php
                     $ava_itens = array(
@@ -240,7 +245,7 @@
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="text-center mb-14 reveal">
                 <span class="text-blue-400 font-bold tracking-widest uppercase text-xs">Ecossistema integrado</span>
-                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mt-4">Todos os setores no mesmo sistema</h2>
+                <h2 class="titulo text-[2.2rem] md:text-5xl leading-[1.03] mt-4">Todos os setores no mesmo sistema</h2>
                 <p class="text-lg text-slate-400 mt-4 max-w-2xl mx-auto">Da primeira conversa com o aluno até a conclusão do curso, com os dados conversando de ponta a ponta — no ensino superior, na escola e no curso online.</p>
             </div>
 
@@ -248,7 +253,7 @@
                 <div class="md:col-span-2 glass glass-hover rounded-3xl p-9 flex flex-col justify-between">
                     <div class="md:w-3/4">
                         <div class="w-14 h-14 igrad rounded-2xl flex items-center justify-center mb-6"><svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M12 14v7"></path></svg></div>
-                        <h3 class="text-2xl font-bold text-white mb-3">Secretaria Acadêmica</h3>
+                        <h3 class="titulo-mini text-2xl text-white mb-3">Secretaria Acadêmica</h3>
                         <p class="text-slate-400 leading-relaxed mb-6">Do processo seletivo à colação de grau: matrícula e rematrícula online, diário de classe, histórico, diploma digital e adequação às portarias do MEC.</p>
                     </div>
                     <a href="<?php echo home_url('/gestao-academica'); ?>" class="inline-flex items-center gap-2 font-bold text-blue-300 hover:text-white transition">Conhecer o módulo acadêmico <span aria-hidden="true">&rarr;</span></a>
@@ -257,7 +262,7 @@
                 <div class="glass glass-hover rounded-3xl p-9 flex flex-col justify-between">
                     <div>
                         <div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6"><svg class="w-7 h-7 text-blue-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8V7m0 9v1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
-                        <h3 class="text-xl font-bold text-white mb-3">Gestão Financeira</h3>
+                        <h3 class="titulo-mini text-xl text-white mb-3">Gestão Financeira</h3>
                         <p class="text-slate-400 leading-relaxed mb-6">Boletos, Pix e régua de cobrança automática, acordos, DRE e notas fiscais — inadimplência sob controle, do lançamento ao caixa.</p>
                     </div>
                     <a href="<?php echo home_url('/financeiro'); ?>" class="inline-flex items-center gap-2 font-bold text-blue-300 hover:text-white transition">Ver módulo financeiro <span aria-hidden="true">&rarr;</span></a>
@@ -266,8 +271,8 @@
                 <div class="glass glass-hover rounded-3xl p-9 flex flex-col justify-between">
                     <div>
                         <div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6"><svg class="w-7 h-7 text-violet-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17H5a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-4m-6 4h6"></path></svg></div>
-                        <h3 class="text-xl font-bold text-white mb-3">Portais + AVA nativo</h3>
-                        <p class="text-slate-400 leading-relaxed mb-6">Portais do aluno, do docente e do coordenador, com gestão de polos EAD e o AVA nativo junto: notas, diário, requerimentos e aulas no mesmo login.</p>
+                        <h3 class="titulo-mini text-xl text-white mb-3">Portais + AVA próprio</h3>
+                        <p class="text-slate-400 leading-relaxed mb-6">Portais do aluno, do docente e do coordenador, com gestão de polos EAD e o AVA próprio junto: notas, diário, requerimentos e aulas no mesmo login.</p>
                     </div>
                     <a href="<?php echo home_url('/portais'); ?>" class="inline-flex items-center gap-2 font-bold text-blue-300 hover:text-white transition">Explorar os portais <span aria-hidden="true">&rarr;</span></a>
                 </div>
@@ -275,7 +280,7 @@
                 <div class="md:col-span-2 glass glass-hover rounded-3xl p-9 flex items-center gap-6">
                     <div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0"><svg class="w-7 h-7 text-blue-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg></div>
                     <div>
-                        <h3 class="text-xl font-bold text-white mb-2">Biblioteca &amp; GED</h3>
+                        <h3 class="titulo-mini text-xl text-white mb-2">Biblioteca &amp; GED</h3>
                         <p class="text-slate-400 leading-relaxed">Gestão eletrônica de documentos para adequação fiscal e acadêmica, com controle completo de acervo — documentos 100% digitalizados.</p>
                     </div>
                 </div>
@@ -286,7 +291,7 @@
                 <p class="text-center text-sm font-semibold text-slate-400 mb-5">E ainda mais de <span class="font-bold text-white">20 módulos</span> na mesma plataforma</p>
                 <div class="flex flex-wrap justify-center gap-2.5">
                     <?php
-                    $fp_modulos = array( 'Processo seletivo', 'Matrícula & rematrícula', 'Assinatura digital', 'Secretaria acadêmica', 'Diário de classe', 'Financeiro & DRE', 'Portal do aluno', 'Portal do docente', 'Portal do coordenador', 'Gestão de polos EAD', 'AVA nativo', 'Diploma digital', 'CRM & Captação', 'Retenção de alunos', 'Biblioteca & GED', 'BI & Indicadores' );
+                    $fp_modulos = array( 'Processo seletivo', 'Matrícula & rematrícula', 'Assinatura digital', 'Secretaria acadêmica', 'Diário de classe', 'Financeiro & DRE', 'Portal do aluno', 'Portal do docente', 'Portal do coordenador', 'Gestão de polos EAD', 'AVA próprio', 'Diploma digital', 'CRM & Captação', 'Retenção de alunos', 'Biblioteca & GED', 'BI & Indicadores' );
                     foreach ( $fp_modulos as $fp_mod ) {
                         printf( '<span class="px-4 py-2 rounded-full glass text-slate-300 text-sm font-semibold">%s</span>', esc_html( $fp_mod ) );
                     }
@@ -301,7 +306,7 @@
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="text-center mb-16 reveal">
                 <span class="text-blue-400 font-bold tracking-widest uppercase text-xs">Uma plataforma, a jornada inteira</span>
-                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mt-4">Da captação à <span class="gtext">conclusão</span>, sem trocar de sistema</h2>
+                <h2 class="titulo text-[2.2rem] md:text-5xl leading-[1.03] mt-4">Da captação à <span class="gtext">conclusão</span>, sem trocar de sistema</h2>
                 <p class="text-slate-400 max-w-2xl mx-auto text-lg mt-4">Matrícula com assinatura digital, secretaria, financeiro, AVA e a emissão do documento final — cada etapa já conversa com a próxima, sem planilha nem sistema paralelo.</p>
             </div>
 
@@ -348,14 +353,14 @@
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="text-center mb-12 reveal">
                 <span class="text-blue-400 font-bold tracking-widest uppercase text-xs">A rotina real, dentro do sistema</span>
-                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mt-4">Feito para quem constrói a educação</h2>
+                <h2 class="titulo text-[2.2rem] md:text-5xl leading-[1.03] mt-4">Feito para quem constrói a educação</h2>
                 <p class="text-lg text-slate-400 mt-4 max-w-2xl mx-auto">As telas do Send Educacional, reproduzidas aqui com dados ilustrativos: indicadores em tempo real, filtros por período e curso, e a operação inteira sob controle.</p>
             </div>
 
             <div class="grid lg:grid-cols-2 gap-12 items-center reveal">
                 <div>
                     <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass text-xs font-bold uppercase tracking-widest text-blue-300 mb-5">Central de assinaturas</div>
-                    <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">Contratos e assinaturas digitais, sob controle</h3>
+                    <h3 class="titulo text-2xl md:text-3xl text-white mb-4">Contratos e assinaturas digitais, sob controle</h3>
                     <p class="text-slate-400 text-lg mb-6">Do envio à assinatura concluída: acompanhe cada contrato por período letivo, curso, modalidade e status — com distribuição em tempo real e busca por aluno ou matrícula.</p>
                     <ul class="space-y-3">
                         <?php foreach ( array(
@@ -436,27 +441,43 @@
     </section>
 
     <!-- ===================== DIFERENCIAIS ===================== -->
-    <section class="relative z-10 py-24">
-        <div class="container mx-auto px-6 max-w-6xl">
-            <div class="text-center mb-14 reveal">
-                <span class="text-blue-400 font-bold tracking-widest uppercase text-xs">Por que o Send</span>
-                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mt-4">O que nos torna <span class="gtext">diferentes</span></h2>
-                <p class="text-lg text-slate-400 mt-4 max-w-2xl mx-auto">Não é só mais um sistema de gestão: é a soma de plataforma única, AVA próprio e o suporte de quem faz software de gestão há 33 anos.</p>
+    <?php /* Eram seis cartões idênticos — o pior sintoma de "grade repetida".
+             Aqui a seção tem um dominante à esquerda e a lista à direita, em
+             filete, sem caixa. */ ?>
+    <section class="relative z-10 py-28">
+        <div class="container mx-auto px-6 max-w-6xl grid lg:grid-cols-12 gap-x-16 gap-y-12">
+
+            <div class="lg:col-span-5 reveal">
+                <div class="fixa">
+                    <span class="text-blue-400 font-bold tracking-widest uppercase text-xs">Por que o Send</span>
+                    <h2 class="titulo text-[2.6rem] md:text-6xl leading-[0.98] mt-5 mb-6">
+                        Seis motivos,<br>e nenhum deles<br>é <span class="gtext">o preço</span>.
+                    </h2>
+                    <p class="text-lg text-slate-400 leading-relaxed mb-8 max-w-sm">
+                        Sistema barato que exige três planilhas por fora sai caro. O que a gente vende é a operação inteira num lugar só, com quem responde quando dá problema.
+                    </p>
+                    <button onclick="abrirDemo()" class="gbtn text-white font-bold px-7 py-3.5 rounded-2xl transition-all hover:-translate-y-0.5">Ver na prática</button>
+                </div>
             </div>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 reveal">
+
+            <div class="lg:col-span-7 grid sm:grid-cols-2 gap-x-10 gap-y-10 reveal">
                 <?php
                 $fp_dif = array(
-                    array( 'AVA próprio', 'O ambiente de aula é desenvolvido pela própria Send e nasce integrado ao acadêmico e ao financeiro: a nota da avaliação já entra no histórico do aluno.', '<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h14a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M9 20h6M12 16v4"></path><path fill="currentColor" stroke="none" d="M10.5 7.8l3.2 2-3.2 2v-4z"></path></svg>' ),
-                    array( 'Uma plataforma, não remendos', 'Do processo seletivo ao diploma digital no mesmo sistema, com os dados conversando de ponta a ponta.', '<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3 3 8l9 5 9-5-9-5z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M3 13l9 5 9-5M3 17l9 5 9-5"></path></svg>' ),
-                    array( '33 anos de mercado', 'Nascido dentro da Send Solutions, com a estabilidade de quem entende gestão há três décadas.', '<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3l2.6 5.3 5.9.9-4.2 4.1 1 5.8L12 16.9 6.7 19.2l1-5.8-4.2-4.1 5.9-.9L12 3z"></path></svg>' ),
-                    array( 'Suporte de parceiro', 'Implantação guiada e suporte próximo: a gente conduz a migração sem parar a sua operação.', '<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>' ),
-                    array( 'Conformidade por segmento', 'MEC, Censo e diploma digital no superior; Conselhos, Secretarias e Censo Escolar na educação básica — cada um com o que a sua rede exige.', '<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15a5 5 0 100-10 5 5 0 000 10z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M8.5 13.5L7 21l5-2.5L17 21l-1.5-7.5"></path></svg>' ),
-                    array( 'Dados que não se perdem', 'A nota do AVA cai no histórico e a cobrança no financeiro — sem reimportar planilha nem digitar duas vezes.', '<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 5v5h5M20 19v-5h-5"></path><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 9A8 8 0 006 5.3L4 7m0 10a8 8 0 0013.5 1.7L20 17"></path></svg>' ),
+                    array( 'AVA próprio', 'O ambiente de aula é desenvolvido pela própria Send e nasce integrado ao acadêmico e ao financeiro: a nota da avaliação já entra no histórico do aluno.' ),
+                    array( 'Uma plataforma, não remendos', 'Do primeiro contato ao documento final no mesmo sistema, com os dados conversando de ponta a ponta.' ),
+                    array( 'Dados que não se perdem', 'A nota da avaliação cai no histórico e a cobrança no financeiro — sem reimportar planilha nem digitar duas vezes.' ),
+                    array( 'Conformidade por segmento', 'MEC, Censo e diploma digital no superior. Conselhos, Secretarias e Censo Escolar na educação básica. Cada um com o que a sua rede exige.' ),
+                    array( 'Implantação conduzida', 'Levantamento de processos, importação da base e treinamento por setor, com um consultor junto — não um manual em PDF.' ),
+                    array( '33 anos de mercado', 'Nascido dentro da Send Solutions, com a estabilidade de quem faz software de gestão há três décadas.' ),
                 );
-                foreach ( $fp_dif as $d ) {
+                foreach ( $fp_dif as $n => $d ) {
                     printf(
-                        '<div class="glass glass-hover rounded-3xl p-7"><div class="w-12 h-12 igrad rounded-2xl flex items-center justify-center mb-5">%s</div><h3 class="text-lg font-bold text-white mb-2">%s</h3><p class="text-slate-400 leading-relaxed text-sm">%s</p></div>',
-                        $d[2], esc_html( $d[0] ), esc_html( $d[1] )
+                        '<div class="marco">
+                            <span class="marco-num">%02d</span>
+                            <h3 class="titulo-mini text-white text-xl mb-2.5">%s</h3>
+                            <p class="text-slate-400 leading-relaxed text-[15px]">%s</p>
+                        </div>',
+                        $n + 1, esc_html( $d[0] ), esc_html( $d[1] )
                     );
                 }
                 ?>
@@ -468,7 +489,7 @@
     <section class="relative z-10 py-24">
         <div class="container mx-auto px-6 max-w-5xl">
             <div class="text-center mb-14 reveal">
-                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">Por que as instituições estão mudando</h2>
+                <h2 class="titulo text-[2.2rem] md:text-5xl leading-[1.03] mb-4">Por que as instituições estão mudando</h2>
                 <p class="text-lg text-slate-400">Chega de remendos. A diferença entre sistemas defasados e um ecossistema integrado.</p>
             </div>
             <div class="grid md:grid-cols-2 gap-5 reveal">
@@ -498,7 +519,7 @@
         <div class="container mx-auto px-6 max-w-6xl grid lg:grid-cols-2 gap-14 items-center reveal">
             <div>
                 <span class="text-blue-400 font-bold tracking-widest uppercase text-xs">Segurança &amp; implantação</span>
-                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight mt-4 mb-5">Medo de trocar de sistema? A gente conduz.</h2>
+                <h2 class="titulo text-[2rem] md:text-4xl leading-[1.04] mt-4 mb-5">Medo de trocar de sistema? A gente conduz.</h2>
                 <p class="text-slate-400 text-lg mb-8 leading-relaxed">Migração guiada e silenciosa: sua operação não para, nem no meio do semestre. E os dados dos seus alunos ficam sob criptografia e conformidade com a LGPD.</p>
                 <div class="grid grid-cols-2 gap-4">
                     <div class="glass rounded-2xl p-5">
@@ -556,7 +577,7 @@
             <div class="flex flex-wrap items-end justify-between gap-4 mb-10 reveal">
                 <div>
                     <span class="text-blue-400 font-bold tracking-widest uppercase text-xs">Conteúdo</span>
-                    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight mt-3">Do blog do Send Educacional</h2>
+                    <h2 class="titulo text-[2rem] md:text-4xl leading-[1.05] mt-3">Do blog do Send Educacional</h2>
                 </div>
                 <a href="<?php echo esc_url( home_url( '/blog' ) ); ?>" class="inline-flex items-center gap-2 font-bold text-blue-300 hover:text-white transition">Ver todos os artigos <span aria-hidden="true">&rarr;</span></a>
             </div>
@@ -594,7 +615,7 @@
             <div class="relative overflow-hidden rounded-[2.5rem] px-8 py-16 md:p-20 text-center" style="background:linear-gradient(120deg,#1d4ed8,#4f46e5 55%,#7c3aed)">
                 <div class="absolute -top-16 -right-16 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
                 <div class="absolute -bottom-16 -left-16 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
-                <h2 class="relative z-10 text-3xl md:text-5xl font-extrabold text-white mb-5 leading-tight">Veja o Send rodando na realidade da sua instituição.</h2>
+                <h2 class="titulo relative z-10 text-[2.2rem] md:text-5xl text-white mb-5 leading-[1.03]">Veja o Send rodando na realidade da sua instituição.</h2>
                 <p class="relative z-10 text-blue-100 text-lg max-w-2xl mx-auto mb-9">Agende uma demonstração gratuita. Um especialista do seu segmento mostra os módulos que fazem sentido para a sua operação.</p>
                 <button onclick="abrirDemo()" class="relative z-10 bg-white text-blue-700 hover:bg-blue-50 px-10 py-5 rounded-2xl font-extrabold text-lg transition-all hover:scale-105">Solicitar demonstração</button>
                 <p class="relative z-10 text-blue-200 text-sm mt-4">Gratuita e sem compromisso</p>

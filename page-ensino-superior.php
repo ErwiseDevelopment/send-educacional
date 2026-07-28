@@ -23,7 +23,7 @@ get_header(); ?>
                 Faculdades · Centros universitários · EAD e polos
             </span>
 
-            <h1 class="text-[2.4rem] md:text-6xl font-extrabold tracking-tight leading-[1.05] mb-6">
+            <h1 class="titulo text-[2.5rem] md:text-[4.4rem] leading-[0.99] tracking-tightest mb-6">
                 Do processo seletivo ao <span class="gtext">diploma digital</span>, sem trocar de sistema
             </h1>
 
@@ -33,7 +33,7 @@ get_header(); ?>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
                 <button data-track="cta-hero-ensino-superior" onclick="abrirDemo('ensino-superior')" class="gbtn text-white font-bold px-8 py-4 rounded-2xl text-lg w-full sm:w-auto transition-all hover:-translate-y-0.5">Solicitar demonstração</button>
-                <a href="#modulos" class="w-full sm:w-auto px-8 py-4 rounded-2xl text-lg font-semibold text-white glass hover:bg-white/10 transition">Ver os módulos</a>
+                <a href="#catalogo" class="w-full sm:w-auto px-8 py-4 rounded-2xl text-lg font-semibold text-white glass hover:bg-white/10 transition">Ver o catálogo completo</a>
             </div>
             <p class="text-slate-500 text-sm mt-5">Demonstração gratuita · sem compromisso · com um especialista em ensino superior</p>
         </div>
@@ -44,7 +44,7 @@ get_header(); ?>
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="text-center mb-10 reveal">
                 <span class="font-bold tracking-widest uppercase text-xs" style="color:<?php echo esc_attr( $se_cor ); ?>">Regulação sem susto</span>
-                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight mt-4">O que a sua IES precisa entregar, já dentro do sistema</h2>
+                <h2 class="titulo text-[2rem] md:text-4xl leading-[1.04] mt-4">O que a sua IES precisa entregar, já dentro do sistema</h2>
             </div>
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 reveal">
                 <?php foreach ( array(
@@ -54,7 +54,7 @@ get_header(); ?>
                     array( 'Recredenciamento', 'Documentação, atas e histórico organizados no GED, prontos para a visita in loco.' ),
                 ) as $r ) {
                     printf(
-                        '<div class="glass glass-hover rounded-3xl p-7"><div class="w-11 h-11 rounded-xl flex items-center justify-center mb-5" style="background:%s22;border:1px solid %s55"><svg class="w-5 h-5" style="color:%s" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div><h3 class="font-bold text-white mb-2">%s</h3><p class="text-slate-400 text-sm leading-relaxed">%s</p></div>',
+                        '<div class="glass glass-hover rounded-3xl p-7"><div class="w-11 h-11 rounded-xl flex items-center justify-center mb-5" style="background:%s22;border:1px solid %s55"><svg class="w-5 h-5" style="color:%s" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div><h3 class="titulo-mini text-white text-lg mb-2">%s</h3><p class="text-slate-400 text-sm leading-relaxed">%s</p></div>',
                         esc_attr( $se_cor ), esc_attr( $se_cor ), esc_attr( $se_cor ), esc_html( $r[0] ), esc_html( $r[1] )
                     );
                 } ?>
@@ -62,77 +62,15 @@ get_header(); ?>
         </div>
     </section>
 
-    <!-- ================= MÓDULOS ================= -->
-    <section id="modulos" class="relative py-20">
-        <div class="container mx-auto px-6 max-w-6xl">
-            <div class="text-center mb-14 reveal">
-                <span class="font-bold tracking-widest uppercase text-xs" style="color:<?php echo esc_attr( $se_cor ); ?>">Ecossistema integrado</span>
-                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mt-4">A operação inteira da IES</h2>
-                <p class="text-lg text-slate-400 mt-4 max-w-2xl mx-auto">Mais de 20 módulos na mesma plataforma, com o mesmo dado de ponta a ponta.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 reveal">
-                <?php
-                $es_mods = array(
-                    array(
-                        'Processo seletivo e captação',
-                        array( 'Vestibular e inscrição online', 'Prova agendada e prova online', 'ENEM e transferência externa', 'Funil de captação no CRM', 'Campanhas e recuperação de matrícula', 'Conversão de inscrito em matriculado' ),
-                        home_url( '/captacao' ),
-                    ),
-                    array(
-                        'Secretaria acadêmica',
-                        array( 'Matrícula, rematrícula e trancamento', 'Diário de classe e frequência', 'Dependências (DPs) e adaptação', 'Histórico e aproveitamento de estudos', 'Colação de grau e diploma digital', 'Requerimentos e protocolos' ),
-                        home_url( '/gestao-academica' ),
-                    ),
-                    array(
-                        'Financeiro da IES',
-                        array( 'Boleto, Pix e cartão recorrente', 'Régua de cobrança automática', 'FIES, PROUNI, bolsa e convênio', 'Acordo de renegociação', 'Nota fiscal e DRE', 'Repasse e comissão de polo' ),
-                        home_url( '/financeiro' ),
-                    ),
-                    array(
-                        'EAD, polos e AVA',
-                        array( 'AVA próprio, desenvolvido pela Send', 'Aula, material e avaliação online', 'Gestão de polos e de tutoria', 'Frequência e progresso por aluno', 'Portal do polo com metas e repasses', 'Integração com o ambiente de aula já em uso' ),
-                        home_url( '/portais' ),
-                    ),
-                    array(
-                        'Retenção e evasão',
-                        array( 'Alerta de risco cruzando nota, frequência e financeiro', 'Fila de contato para a coordenação', 'Histórico de tratativas por aluno', 'Motivo de evasão categorizado', 'Campanha de retorno de ex-aluno', 'Indicador de evasão por curso e período' ),
-                        home_url( '/retencao' ),
-                    ),
-                    array(
-                        'Documentos e BI',
-                        array( 'GED do dossiê do aluno', 'Assinatura eletrônica de contratos', 'Biblioteca e controle de acervo', 'Painéis de evasão e faturamento', 'Indicadores por curso, turno e polo', 'Relatórios para a mantenedora' ),
-                        home_url( '/biblioteca' ),
-                    ),
-                );
-                foreach ( $es_mods as $m ) {
-                    $itens = '';
-                    foreach ( $m[1] as $i ) {
-                        $itens .= sprintf(
-                            '<li class="flex items-start gap-2.5 text-sm text-slate-400"><svg class="w-4 h-4 flex-shrink-0 mt-0.5" style="color:%s" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>%s</li>',
-                            esc_attr( $se_cor ), esc_html( $i )
-                        );
-                    }
-                    printf(
-                        '<div class="glass glass-hover rounded-3xl p-8 flex flex-col">
-                            <h3 class="text-lg font-bold text-white mb-5">%s</h3>
-                            <ul class="space-y-2.5 mb-6">%s</ul>
-                            <a href="%s" class="mt-auto inline-flex items-center gap-1.5 text-sm font-bold text-blue-300 hover:text-white transition">Ver o módulo <span aria-hidden="true">&rarr;</span></a>
-                        </div>',
-                        esc_html( $m[0] ), $itens, esc_url( $m[2] )
-                    );
-                }
-                ?>
-            </div>
-        </div>
-    </section>
+    <!-- ================= CATÁLOGO COMPLETO DE MÓDULOS ================= -->
+    <?php se_bloco_modulos( 'ensino-superior', $se_cor ); ?>
 
     <!-- ================= AVA ================= -->
     <section class="relative py-20">
         <div class="container mx-auto px-6 max-w-6xl grid lg:grid-cols-2 gap-14 items-center reveal">
             <div>
                 <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass text-[11px] font-bold uppercase tracking-widest mb-5" style="color:<?php echo esc_attr( $se_cor ); ?>">AVA próprio</span>
-                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-5">O ambiente de aula é nosso, e conversa com o acadêmico</h2>
+                <h2 class="titulo text-[2rem] md:text-4xl leading-[1.04] mb-5">O ambiente de aula é nosso, e conversa com o acadêmico</h2>
                 <p class="text-lg text-slate-400 leading-relaxed mb-6">
                     O Send Educacional tem AVA próprio, desenvolvido pela Send: a aula, o material e a avaliação ficam no mesmo sistema do acadêmico e do financeiro, e a nota cai direto no histórico — sem exportar, sem reimportar e sem o professor lançar duas vezes. O acesso do aluno ao ambiente também é o que alimenta o alerta de evasão.
                 </p>
@@ -175,7 +113,7 @@ get_header(); ?>
     <!-- ================= PERGUNTAS ================= -->
     <section class="relative py-20">
         <div class="container mx-auto px-6 max-w-3xl">
-            <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-center mb-12 reveal">Perguntas que sempre aparecem</h2>
+            <h2 class="titulo text-[2rem] md:text-4xl leading-[1.04] text-center mb-12 reveal">Perguntas que sempre aparecem</h2>
             <div class="space-y-3 reveal">
                 <?php
                 $es_faq = array(
@@ -203,7 +141,7 @@ get_header(); ?>
     <section class="relative py-20">
         <div class="container mx-auto px-6 max-w-5xl">
             <div class="glass rounded-[2.5rem] p-10 md:p-14 text-center cardring reveal">
-                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-5">Uma demonstração com os processos da sua IES</h2>
+                <h2 class="titulo text-[2.2rem] md:text-5xl leading-[1.03] mb-5">Uma demonstração com os processos da sua IES</h2>
                 <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-8">A gente parte do seu processo seletivo, da sua secretaria e da sua cobrança — e mostra onde cada um deles vive dentro do sistema.</p>
                 <button data-track="cta-final-ensino-superior" onclick="abrirDemo('ensino-superior')" class="gbtn text-white font-bold px-9 py-4 rounded-2xl text-lg transition-all hover:-translate-y-0.5">Solicitar demonstração</button>
                 <p class="text-slate-500 text-sm mt-4">Gratuita · sem compromisso · com um especialista em ensino superior</p>

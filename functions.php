@@ -11,6 +11,7 @@ require_once get_template_directory() . '/inc/opcoes.php';
 require_once get_template_directory() . '/inc/segmentos.php';
 require_once get_template_directory() . '/inc/menu.php';
 require_once get_template_directory() . '/inc/menu-render.php';
+require_once get_template_directory() . '/inc/modulos.php';
 require_once get_template_directory() . '/inc/prova-social.php';
 require_once get_template_directory() . '/inc/paginas.php';
 require_once get_template_directory() . '/inc/consentimentos.php';
@@ -61,9 +62,30 @@ function send_educacional_setup() {
 add_action('after_setup_theme', 'send_educacional_setup');
 
 function send_educacional_scripts() {
-    // Carrega a fonte Inter
-    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap', false);
-    
+    /*
+     * Duas fontes, não uma.
+     *
+     * Inter sozinha é a fonte padrão da internet: correta e sem opinião —
+     * é parte do motivo de o site parecer template. Fraunces entra só nos
+     * títulos: é uma serifa variável, com eixo óptico, que dá ao site a
+     * credibilidade editorial que combina com educação, enquanto o texto
+     * corrido e a interface seguem na Inter, que é melhor nesse papel.
+     */
+    wp_enqueue_style(
+        'google-fonts',
+        'https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap',
+        array(),
+        null
+    );
+
+    // Pré-conexão: a fonte é render-blocking, vale economizar o handshake.
+    add_filter( 'wp_resource_hints', function ( $urls, $rel ) {
+        if ( $rel === 'preconnect' ) {
+            $urls[] = array( 'href' => 'https://fonts.gstatic.com', 'crossorigin' => 'anonymous' );
+        }
+        return $urls;
+    }, 10, 2 );
+
     // Carrega o CSS principal gerado pelo Tailwind (style.css na raiz)
     wp_enqueue_style('send-style', get_stylesheet_uri(), array(), wp_get_theme()->get('Version'));
 }
