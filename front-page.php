@@ -55,12 +55,6 @@
     <!-- ===================== HERO ===================== -->
     <section class="relative z-10 pt-36 pb-24">
         <div class="container mx-auto px-6 text-center max-w-5xl">
-            <a href="#ava" class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-xs font-semibold text-slate-300 mb-8 hover:text-white transition">
-                <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span></span>
-                Novo: AVA próprio, desenvolvido pela Send
-                <span class="text-slate-500">&rarr;</span>
-            </a>
-
             <h1 class="titulo text-[2.9rem] md:text-[5.2rem] leading-[0.97] tracking-tightest mb-7">
                 Toda a gestão da sua<br class="hidden md:block"> instituição de ensino em <span class="gtext">um só sistema</span>
             </h1>
