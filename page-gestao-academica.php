@@ -79,21 +79,21 @@ get_header(); ?>
                     </ul>
                 </div>
 
-                <div class="sup-escura bg-slate-900 rounded-[2.5rem] border border-slate-700 p-10 shadow-2xl hover:border-indigo-400 transition-all duration-500 group relative overflow-hidden">
+                <div class="glass glass-hover rounded-[2.5rem] p-10 transition-all duration-500 group relative overflow-hidden">
                     <div class="absolute top-0 right-0 w-40 h-40 bg-indigo-600/20 rounded-full blur-3xl -mr-10 -mt-10 group-hover:bg-indigo-600/30 transition-colors"></div>
                     <div class="w-16 h-16 bg-indigo-600 txt-forte rounded-2xl flex items-center justify-center mb-8 shadow-md">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
                     </div>
                     <h3 class="text-2xl font-extrabold txt-forte mb-6">AVA & Integrações</h3>
-                    <ul class="space-y-4 text-indigo-100 text-sm font-medium">
-                        <li class="flex items-start gap-3"><span class="text-indigo-400 mt-0.5">✓</span> AVA próprio: aula, material e avaliação no mesmo sistema</li>
-                        <li class="flex items-start gap-3"><span class="text-indigo-400 mt-0.5">✓</span> Inscrição de Matrículas e Cursos no AVA</li>
-                        <li class="flex items-start gap-3"><span class="text-indigo-400 mt-0.5">✓</span> Logs e Notificações de Integração em tempo real</li>
-                        <li class="flex items-start gap-3"><span class="text-indigo-400 mt-0.5">✓</span> Relatório de últimos acessos ao ambiente de aula</li>
-                        <li class="flex items-start gap-3"><span class="text-indigo-400 mt-0.5">✓</span> Sincronização de Trancamentos e Cancelamentos</li>
-                        <li class="flex items-start gap-3"><span class="text-indigo-400 mt-0.5">✓</span> CRM Dynamics: Captura de Candidatos</li>
-                        <li class="flex items-start gap-3"><span class="text-indigo-400 mt-0.5">✓</span> CRM Dynamics: Retorno Automático de Vínculo</li>
-                        <li class="flex items-start gap-3"><span class="text-indigo-400 mt-0.5">✓</span> Configurações completas de WebService</li>
+                    <ul class="space-y-4 txt text-sm font-medium">
+                        <li class="flex items-start gap-3"><span class="text-indigo-600 mt-0.5">✓</span> AVA próprio: aula, material e avaliação no mesmo sistema</li>
+                        <li class="flex items-start gap-3"><span class="text-indigo-600 mt-0.5">✓</span> Inscrição de Matrículas e Cursos no AVA</li>
+                        <li class="flex items-start gap-3"><span class="text-indigo-600 mt-0.5">✓</span> Logs e Notificações de Integração em tempo real</li>
+                        <li class="flex items-start gap-3"><span class="text-indigo-600 mt-0.5">✓</span> Relatório de últimos acessos ao ambiente de aula</li>
+                        <li class="flex items-start gap-3"><span class="text-indigo-600 mt-0.5">✓</span> Sincronização de Trancamentos e Cancelamentos</li>
+                        <li class="flex items-start gap-3"><span class="text-indigo-600 mt-0.5">✓</span> CRM Dynamics: Captura de Candidatos</li>
+                        <li class="flex items-start gap-3"><span class="text-indigo-600 mt-0.5">✓</span> CRM Dynamics: Retorno Automático de Vínculo</li>
+                        <li class="flex items-start gap-3"><span class="text-indigo-600 mt-0.5">✓</span> Configurações completas de WebService</li>
                     </ul>
                 </div>
 

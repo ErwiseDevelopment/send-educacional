@@ -78,19 +78,19 @@ get_header(); ?>
                     </ul>
                 </div>
 
-                <div class="sup-escura bg-slate-900 rounded-[2.5rem] border border-slate-700 p-10 shadow-2xl hover:border-fuchsia-400 transition-all duration-500 group relative overflow-hidden">
+                <div class="glass glass-hover rounded-[2.5rem] p-10 transition-all duration-500 group relative overflow-hidden">
                     <div class="absolute top-0 right-0 w-40 h-40 bg-fuchsia-600/20 rounded-full blur-3xl -mr-10 -mt-10 group-hover:bg-fuchsia-600/30 transition-colors"></div>
                     <div class="w-16 h-16 bg-fuchsia-500 txt-forte rounded-2xl flex items-center justify-center mb-8 shadow-md">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path></svg>
                     </div>
                     <h3 class="text-2xl font-extrabold txt-forte mb-6">Intervenção e Suporte</h3>
-                    <ul class="space-y-4 text-fuchsia-100 text-sm font-medium">
-                        <li class="flex items-start gap-3"><span class="text-fuchsia-400 mt-0.5">✓</span> Abertura de protocolos de intervenção pedagógica</li>
-                        <li class="flex items-start gap-3"><span class="text-fuchsia-400 mt-0.5">✓</span> Histórico completo de atendimentos do aluno</li>
-                        <li class="flex items-start gap-3"><span class="text-fuchsia-400 mt-0.5">✓</span> Registro de encaminhamentos psicológicos e tutorias</li>
-                        <li class="flex items-start gap-3"><span class="text-fuchsia-400 mt-0.5">✓</span> Acionamento automático do coordenador de curso</li>
-                        <li class="flex items-start gap-3"><span class="text-fuchsia-400 mt-0.5">✓</span> Workflow de resgate (Contato telefônico/WhatsApp)</li>
-                        <li class="flex items-start gap-3"><span class="text-fuchsia-400 mt-0.5">✓</span> Feedback de sucesso ou falha na retenção</li>
+                    <ul class="space-y-4 txt text-sm font-medium">
+                        <li class="flex items-start gap-3"><span class="text-fuchsia-600 mt-0.5">✓</span> Abertura de protocolos de intervenção pedagógica</li>
+                        <li class="flex items-start gap-3"><span class="text-fuchsia-600 mt-0.5">✓</span> Histórico completo de atendimentos do aluno</li>
+                        <li class="flex items-start gap-3"><span class="text-fuchsia-600 mt-0.5">✓</span> Registro de encaminhamentos psicológicos e tutorias</li>
+                        <li class="flex items-start gap-3"><span class="text-fuchsia-600 mt-0.5">✓</span> Acionamento automático do coordenador de curso</li>
+                        <li class="flex items-start gap-3"><span class="text-fuchsia-600 mt-0.5">✓</span> Workflow de resgate (Contato telefônico/WhatsApp)</li>
+                        <li class="flex items-start gap-3"><span class="text-fuchsia-600 mt-0.5">✓</span> Feedback de sucesso ou falha na retenção</li>
                     </ul>
                 </div>
 

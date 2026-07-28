@@ -2,7 +2,7 @@
 Theme Name: Send Educacional
 Description: Tema customizado para o SaaS Send Educacional usando Tailwind CSS.
 Author: Send Solutions
-Version: 2.0.0
+Version: 2.0.1
 */
 
 @tailwind base;
@@ -256,3 +256,10 @@ Version: 2.0.0
    sumia dentro do botao. */
 .gbtn{--t-forte:#fff;--t:#fff;color:#fff}
 .gbtn:hover{color:#fff}
+
+/* Campo de formulario que obedece a superficie: era translucido (so servia no
+   escuro) e sumia dentro do cartao branco. */
+.se-campo{background:var(--sup-fundo);border:1px solid var(--bloco-borda);color:var(--t-forte)}
+.sup-clara .se-campo,.sup-clara-2 .se-campo{background:#fff;border-color:rgba(3,4,41,.16)}
+.se-campo::placeholder{color:var(--t-fraco)}
+.se-campo:focus{border-color:#4a78b0;box-shadow:0 0 0 3px rgba(74,120,176,.18)}

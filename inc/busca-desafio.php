@@ -106,7 +106,7 @@ function se_bloco_busca_desafio() {
 							<svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 txt-fraco pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.2-5.2M17 10a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
 							<input type="search" id="se-busca" autocomplete="off"
 							       placeholder="Ex.: rematrícula, inadimplência, certificado"
-							       class="w-full bg-white/[.06] border linha rounded-2xl pl-12 pr-4 py-4 txt-forte placeholder:txt-fraco focus:outline-none focus:border-blue-400 transition-colors">
+							       class="se-campo w-full rounded-2xl pl-12 pr-4 py-4 focus:outline-none transition-colors">
 						</div>
 						<button type="button" id="se-busca-demo" onclick="abrirDemo()" class="gbtn txt-forte font-bold px-7 py-4 rounded-2xl transition-all hover:-translate-y-0.5 shrink-0">
 							Falar com um especialista

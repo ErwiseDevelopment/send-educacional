@@ -288,7 +288,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
           <div class="text-6xl md:text-7xl font-extrabold tracking-tighter leading-none">3.000</div>
           <p class="text-blue-100 font-semibold mt-3 text-lg">alunos com a operação 100% no Send</p>
         </div>
-        <div class="relative z-10 flex items-center gap-2 mt-6 text-blue-100 text-sm font-medium"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Em produção, todos os dias</div>
+        <div class="relative z-10 flex items-center gap-2 mt-6 txt text-sm font-medium"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Em produção, todos os dias</div>
       </div>
       <div class="lg:col-span-2 grid grid-cols-2 gap-4">
         <div class="bg-white/[.04] border linha rounded-3xl p-7 flex flex-col justify-center"><div class="text-4xl md:text-5xl font-extrabold gtext">20+</div><p class="txt text-sm font-semibold mt-1">Módulos integrados</p></div>

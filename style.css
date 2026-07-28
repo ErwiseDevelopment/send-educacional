@@ -2,7 +2,7 @@
 Theme Name: Send Educacional
 Description: Tema customizado para o SaaS Send Educacional usando Tailwind CSS.
 Author: Send Solutions
-Version: 2.0.0
+Version: 2.0.1
 */
 
 *, ::before, ::after {
@@ -2174,11 +2174,6 @@ video {
   background-color: transparent !important;
 }
 
-.bg-\[\#00d68f\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 214 143 / var(--tw-bg-opacity, 1));
-}
-
 .bg-\[\#030429\] {
   --tw-bg-opacity: 1;
   background-color: rgb(3 4 41 / var(--tw-bg-opacity, 1));
@@ -2313,6 +2308,11 @@ video {
 
 .bg-emerald-500\/20 {
   background-color: rgb(16 185 129 / 0.2);
+}
+
+.bg-emerald-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 150 105 / var(--tw-bg-opacity, 1));
 }
 
 .bg-emerald-600\/10 {
@@ -2533,10 +2533,6 @@ video {
 
 .bg-white\/\[\.04\] {
   background-color: rgb(255 255 255 / .04);
-}
-
-.bg-white\/\[\.06\] {
-  background-color: rgb(255 255 255 / .06);
 }
 
 .bg-gradient-to-b {
@@ -3361,24 +3357,19 @@ video {
   letter-spacing: 0.1em;
 }
 
-.text-amber-100 {
-  --tw-text-opacity: 1;
-  color: rgb(254 243 199 / var(--tw-text-opacity, 1));
-}
-
 .text-amber-300 {
   --tw-text-opacity: 1;
   color: rgb(252 211 77 / var(--tw-text-opacity, 1));
 }
 
-.text-amber-400 {
-  --tw-text-opacity: 1;
-  color: rgb(251 191 36 / var(--tw-text-opacity, 1));
-}
-
 .text-amber-500 {
   --tw-text-opacity: 1;
   color: rgb(245 158 11 / var(--tw-text-opacity, 1));
+}
+
+.text-amber-600 {
+  --tw-text-opacity: 1;
+  color: rgb(217 119 6 / var(--tw-text-opacity, 1));
 }
 
 .text-black {
@@ -3421,11 +3412,6 @@ video {
   color: rgb(6 182 212 / var(--tw-text-opacity, 1));
 }
 
-.text-emerald-100 {
-  --tw-text-opacity: 1;
-  color: rgb(209 250 229 / var(--tw-text-opacity, 1));
-}
-
 .text-emerald-400 {
   --tw-text-opacity: 1;
   color: rgb(52 211 153 / var(--tw-text-opacity, 1));
@@ -3441,11 +3427,6 @@ video {
   color: rgb(5 150 105 / var(--tw-text-opacity, 1));
 }
 
-.text-fuchsia-100 {
-  --tw-text-opacity: 1;
-  color: rgb(225 226 237 / var(--tw-text-opacity, 1));
-}
-
 .text-fuchsia-300 {
   --tw-text-opacity: 1;
   color: rgb(151 153 193 / var(--tw-text-opacity, 1));
@@ -3456,14 +3437,14 @@ video {
   color: rgb(117 118 173 / var(--tw-text-opacity, 1));
 }
 
+.text-fuchsia-600 {
+  --tw-text-opacity: 1;
+  color: rgb(43 45 129 / var(--tw-text-opacity, 1));
+}
+
 .text-green-600 {
   --tw-text-opacity: 1;
   color: rgb(22 163 74 / var(--tw-text-opacity, 1));
-}
-
-.text-indigo-100 {
-  --tw-text-opacity: 1;
-  color: rgb(225 226 237 / var(--tw-text-opacity, 1));
 }
 
 .text-indigo-300 {
@@ -3471,9 +3452,9 @@ video {
   color: rgb(151 153 193 / var(--tw-text-opacity, 1));
 }
 
-.text-indigo-400 {
+.text-indigo-600 {
   --tw-text-opacity: 1;
-  color: rgb(117 118 173 / var(--tw-text-opacity, 1));
+  color: rgb(43 45 129 / var(--tw-text-opacity, 1));
 }
 
 .text-orange-300 {
@@ -4667,6 +4648,33 @@ video {
   color:#fff
 }
 
+/* Campo de formulario que obedece a superficie: era translucido (so servia no
+   escuro) e sumia dentro do cartao branco. */
+
+.se-campo{
+  background:var(--sup-fundo);
+  border:1px solid var(--bloco-borda);
+  color:var(--t-forte)
+}
+
+.sup-clara .se-campo,.sup-clara-2 .se-campo{
+  background:#fff;
+  border-color:rgba(3,4,41,.16)
+}
+
+.se-campo::-moz-placeholder{
+  color:var(--t-fraco)
+}
+
+.se-campo::placeholder{
+  color:var(--t-fraco)
+}
+
+.se-campo:focus{
+  border-color:#4a78b0;
+  box-shadow:0 0 0 3px rgba(74,120,176,.18)
+}
+
 .last\:mb-0:last-child {
   margin-bottom: 0px;
 }
@@ -4703,11 +4711,6 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.hover\:border-amber-400:hover {
-  --tw-border-opacity: 1;
-  border-color: rgb(251 191 36 / var(--tw-border-opacity, 1));
-}
-
 .hover\:border-blue-300:hover {
   --tw-border-opacity: 1;
   border-color: rgb(150 177 209 / var(--tw-border-opacity, 1));
@@ -4716,21 +4719,6 @@ video {
 .hover\:border-blue-500:hover {
   --tw-border-opacity: 1;
   border-color: rgb(88 131 182 / var(--tw-border-opacity, 1));
-}
-
-.hover\:border-emerald-400:hover {
-  --tw-border-opacity: 1;
-  border-color: rgb(52 211 153 / var(--tw-border-opacity, 1));
-}
-
-.hover\:border-fuchsia-400:hover {
-  --tw-border-opacity: 1;
-  border-color: rgb(117 118 173 / var(--tw-border-opacity, 1));
-}
-
-.hover\:border-indigo-400:hover {
-  --tw-border-opacity: 1;
-  border-color: rgb(117 118 173 / var(--tw-border-opacity, 1));
 }
 
 .hover\:border-slate-200:hover {
@@ -4746,11 +4734,6 @@ video {
 .hover\:border-violet-500:hover {
   --tw-border-opacity: 1;
   border-color: rgb(77 79 149 / var(--tw-border-opacity, 1));
-}
-
-.hover\:bg-\[\#00c080\]:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 192 128 / var(--tw-bg-opacity, 1));
 }
 
 .hover\:bg-\[\#128C7E\]:hover {
@@ -4895,11 +4878,6 @@ video {
   --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.focus\:border-blue-400:focus {
-  --tw-border-opacity: 1;
-  border-color: rgb(114 150 193 / var(--tw-border-opacity, 1));
 }
 
 .focus\:border-blue-500:focus {

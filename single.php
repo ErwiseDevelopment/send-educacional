@@ -90,7 +90,7 @@ get_header();
                             <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -mr-10 -mt-10"></div>
                             
                             <h3 class="text-2xl font-extrabold mb-3 leading-tight">Gostou desse conteúdo?</h3>
-                            <p class="text-blue-100 mb-6 text-sm leading-relaxed">
+                            <p class="txt mb-6 text-sm leading-relaxed">
                                 Descubra como o <strong class="txt-forte">Send Educacional</strong> pode automatizar a gestão da sua escola e reduzir a inadimplência hoje mesmo.
                             </p>
                             

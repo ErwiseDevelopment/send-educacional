@@ -139,10 +139,10 @@ get_header();
                 
                 <div class="relative z-10 p-8 md:p-10 md:w-2/3">
                     <h3 class="text-2xl md:text-3xl font-extrabold txt-forte mb-2">Escolha crescer hoje com o Send!</h3>
-                    <p class="text-blue-100 text-sm md:text-base mb-6 max-w-lg">
+                    <p class="txt text-sm md:text-base mb-6 max-w-lg">
                         Tenha uma instituição de alta performance com o melhor ecossistema de gestão escolar.
                     </p>
-                    <button onclick="abrirDemo()" class="bg-[#00d68f] hover:bg-[#00c080] text-slate-900 px-6 py-3 rounded-lg font-bold text-sm transition-transform hover:-translate-y-1 shadow-md">
+                    <button onclick="abrirDemo()" class="bg-white hover:bg-blue-50 text-blue-900 px-6 py-3 rounded-lg font-bold text-sm transition-transform hover:-translate-y-1 shadow-md">
                         Agende uma demonstração grátis!
                     </button>
                 </div>

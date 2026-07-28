@@ -33,7 +33,7 @@
 
                     <h4 class="text-xl font-bold mb-4 txt-forte">Contato</h4>
                     
-                    <div class="space-y-3 text-blue-100 text-sm mb-6">
+                    <div class="space-y-3 txt text-sm mb-6">
                         <p class="flex items-center gap-3">
                             <svg class="w-5 h-5 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
                             <a href="<?php echo esc_url( se_whatsapp_link( 'Informações' ) ); ?>" target="_blank" class="hover-forte transition"><?php echo esc_html( se_whatsapp_label() ); ?></a>
@@ -68,14 +68,14 @@
 
                 <div class="lg:col-span-1 mt-4 lg:mt-0">
                     <h4 class="text-lg font-bold mb-6 txt-forte">Segmentos</h4>
-                    <ul class="space-y-4 text-blue-100 text-sm mb-8">
+                    <ul class="space-y-4 txt text-sm mb-8">
                         <?php foreach ( se_segmentos() as $se_slug => $se_s ) : ?>
                             <li><a href="<?php echo esc_url( se_segmento_url( $se_slug ) ); ?>" class="hover-forte transition-colors"><?php echo esc_html( $se_s['nome'] ); ?></a></li>
                         <?php endforeach; ?>
                     </ul>
 
                     <h4 class="text-lg font-bold mb-6 txt-forte">Ecossistema</h4>
-                    <ul class="space-y-4 text-blue-100 text-sm">
+                    <ul class="space-y-4 txt text-sm">
                         <li><a href="<?php echo home_url('/gestao-academica'); ?>" class="hover-forte transition-colors">Gestão Acadêmica</a></li>
                         <?php // era /gestao-financeira, que devolve 404: o slug em produção é /financeiro ?>
                         <li><a href="<?php echo home_url('/financeiro'); ?>" class="hover-forte transition-colors">Gestão Financeira</a></li>
@@ -89,7 +89,7 @@
 
                 <div class="lg:col-span-1 mt-4 lg:mt-0">
                     <h4 class="text-lg font-bold mb-6 txt-forte">Conteúdo</h4>
-                    <ul class="space-y-4 text-blue-100 text-sm">
+                    <ul class="space-y-4 txt text-sm">
                         <li><a href="<?php echo home_url('/blog'); ?>" class="hover-forte transition-colors">Blog</a></li>
                         <li><a href="https://help.sendsolutions.com.br/" target="_blank" class="hover-forte transition-colors">Central de Ajuda</a></li>
                     </ul>
@@ -97,7 +97,7 @@
 
                 <div class="lg:col-span-1 mt-4 lg:mt-0">
                     <h4 class="text-lg font-bold mb-6 txt-forte">Send Solutions</h4>
-                    <ul class="space-y-4 text-blue-100 text-sm">
+                    <ul class="space-y-4 txt text-sm">
                         <li><a href="<?php echo home_url('/sobre'); ?>" class="hover-forte transition-colors">Sobre nós</a></li>
                         <li><a href="<?php echo home_url('/privacidade'); ?>" class="hover-forte transition-colors">Política de Privacidade</a></li>
                     </ul>

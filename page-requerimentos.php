@@ -78,19 +78,19 @@ get_header(); ?>
                     </ul>
                 </div>
 
-                <div class="sup-escura bg-slate-900 rounded-[2.5rem] border border-slate-700 p-10 shadow-2xl hover:border-amber-400 transition-all duration-500 group relative overflow-hidden">
+                <div class="glass glass-hover rounded-[2.5rem] p-10 transition-all duration-500 group relative overflow-hidden">
                     <div class="absolute top-0 right-0 w-40 h-40 bg-amber-600/20 rounded-full blur-3xl -mr-10 -mt-10 group-hover:bg-amber-600/30 transition-colors"></div>
                     <div class="w-16 h-16 bg-amber-500 txt-forte rounded-2xl flex items-center justify-center mb-8 shadow-md">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     </div>
                     <h3 class="text-2xl font-extrabold txt-forte mb-6">Controle de SLA</h3>
-                    <ul class="space-y-4 text-amber-100 text-sm font-medium">
-                        <li class="flex items-start gap-3"><span class="text-amber-400 mt-0.5">✓</span> Definição de Service Level Agreement (SLA) por tipo</li>
-                        <li class="flex items-start gap-3"><span class="text-amber-400 mt-0.5">✓</span> Alertas de quebra de prazos institucionais</li>
-                        <li class="flex items-start gap-3"><span class="text-amber-400 mt-0.5">✓</span> Relatório de Acompanhamento de SLA (Atrasos/No Prazo)</li>
-                        <li class="flex items-start gap-3"><span class="text-amber-400 mt-0.5">✓</span> Relatório de Requerimentos Pendentes Críticos</li>
-                        <li class="flex items-start gap-3"><span class="text-amber-400 mt-0.5">✓</span> Priorização visual de tickets na fila de atendimento</li>
-                        <li class="flex items-start gap-3"><span class="text-amber-400 mt-0.5">✓</span> Bloqueio de avanço de etapa sem resolução técnica</li>
+                    <ul class="space-y-4 txt text-sm font-medium">
+                        <li class="flex items-start gap-3"><span class="text-amber-600 mt-0.5">✓</span> Definição de Service Level Agreement (SLA) por tipo</li>
+                        <li class="flex items-start gap-3"><span class="text-amber-600 mt-0.5">✓</span> Alertas de quebra de prazos institucionais</li>
+                        <li class="flex items-start gap-3"><span class="text-amber-600 mt-0.5">✓</span> Relatório de Acompanhamento de SLA (Atrasos/No Prazo)</li>
+                        <li class="flex items-start gap-3"><span class="text-amber-600 mt-0.5">✓</span> Relatório de Requerimentos Pendentes Críticos</li>
+                        <li class="flex items-start gap-3"><span class="text-amber-600 mt-0.5">✓</span> Priorização visual de tickets na fila de atendimento</li>
+                        <li class="flex items-start gap-3"><span class="text-amber-600 mt-0.5">✓</span> Bloqueio de avanço de etapa sem resolução técnica</li>
                     </ul>
                 </div>
 
