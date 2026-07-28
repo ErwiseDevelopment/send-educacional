@@ -63,17 +63,16 @@ add_action('after_setup_theme', 'send_educacional_setup');
 
 function send_educacional_scripts() {
     /*
-     * Duas fontes, não uma.
+     * Poppins é a fonte da marca Send — uma família só, do título ao rodapé.
      *
-     * Inter sozinha é a fonte padrão da internet: correta e sem opinião —
-     * é parte do motivo de o site parecer template. Fraunces entra só nos
-     * títulos: é uma serifa variável, com eixo óptico, que dá ao site a
-     * credibilidade editorial que combina com educação, enquanto o texto
-     * corrido e a interface seguem na Inter, que é melhor nesse papel.
+     * Com uma fonte geométrica sem serifa, a hierarquia não pode vir do
+     * contraste entre duas famílias: ela vem de peso e espacejamento. Por isso
+     * carregamos até o 800 (é o peso que dá presença aos títulos) e o 300,
+     * que segura os textos de apoio sem pesar.
      */
     wp_enqueue_style(
         'google-fonts',
-        'https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap',
+        'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap',
         array(),
         null
     );

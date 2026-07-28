@@ -7,7 +7,7 @@ get_header(); ?>
 <main class="min-h-screen">
 
     <section class="bg-slate-900 pt-32 pb-20 relative overflow-hidden text-center">
-        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#475569 1px, transparent 1px); background-size: 24px 24px;"></div>
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#3a3b58 1px, transparent 1px); background-size: 24px 24px;"></div>
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-blue-600/20 blur-[100px] rounded-full pointer-events-none z-0"></div>
         
         <div class="container mx-auto px-6 relative z-10">
@@ -107,7 +107,7 @@ get_header(); ?>
     </section>
 
     <section class="py-32 bg-slate-900 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#3b82f6 1px, transparent 1px); background-size: 40px 40px;"></div>
+        <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#4a78b0 1px, transparent 1px); background-size: 40px 40px;"></div>
         <div class="absolute top-1/2 left-0 w-96 h-96 bg-fuchsia-600/20 blur-[120px] rounded-full transform -translate-y-1/2"></div>
         <div class="absolute top-1/2 right-0 w-96 h-96 bg-blue-600/20 blur-[120px] rounded-full transform -translate-y-1/2"></div>
         

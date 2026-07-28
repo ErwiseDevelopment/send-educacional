@@ -60,7 +60,7 @@ function se_menu_painel( $item ) {
 	     class="se-mega-painel hidden absolute left-0 right-0 top-full"
 	     data-painel="<?php echo esc_attr( $item['chave'] ); ?>">
 
-		<div class="border-t border-white/10 bg-[#080d1c] shadow-[0_40px_80px_-30px_rgba(2,6,23,.9)]">
+		<div class="border-t border-white/10 bg-[#050741] shadow-[0_40px_80px_-30px_rgba(2,6,23,.9)]">
 			<div class="container mx-auto px-6 max-w-7xl py-8">
 				<div class="grid grid-cols-12 gap-8">
 

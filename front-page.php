@@ -1,12 +1,12 @@
 <?php get_header(); ?>
 
 <style>
-    .ink { background:#070b18; }
+    .ink { background:#030429; }
     /* camadas de ambiente (aurora + grade) fixas atrás de tudo */
     .aurora { position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden; }
     .aurora::before, .aurora::after { content:""; position:absolute; border-radius:50%; filter:blur(130px); opacity:.45; }
-    .aurora::before { width:620px; height:620px; background:#2563eb; top:-160px; left:-120px; animation:drift1 20s ease-in-out infinite; }
-    .aurora::after  { width:520px; height:520px; background:#7c3aed; top:180px; right:-140px; animation:drift2 24s ease-in-out infinite; }
+    .aurora::before { width:620px; height:620px; background:#4a78b0; top:-160px; left:-120px; animation:drift1 20s ease-in-out infinite; }
+    .aurora::after  { width:520px; height:520px; background:#080b6c; top:180px; right:-140px; animation:drift2 24s ease-in-out infinite; }
     @keyframes drift1 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(120px,90px)} }
     @keyframes drift2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-110px,120px)} }
     .gridmask { position:fixed; inset:0; z-index:0; pointer-events:none;
@@ -14,14 +14,14 @@
         background-size:54px 54px;
         -webkit-mask-image:radial-gradient(100% 55% at 50% 0,#000,transparent 78%); mask-image:radial-gradient(100% 55% at 50% 0,#000,transparent 78%); }
 
-    .gtext { background:linear-gradient(100deg,#60a5fa,#818cf8 45%,#c084fc); -webkit-background-clip:text; background-clip:text; color:transparent; }
-    .gbtn  { background:linear-gradient(100deg,#2563eb,#6d4bef); box-shadow:0 10px 30px -8px rgba(79,70,229,.6); }
+    .gtext { background:linear-gradient(100deg,#7296c1,#7296c1 45%,#9799c1); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .gbtn  { background:linear-gradient(100deg,#4a78b0,#1f3184); box-shadow:0 10px 30px -8px rgba(79,70,229,.6); }
     .gbtn:hover { box-shadow:0 16px 42px -8px rgba(79,70,229,.9); }
     .glass { background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.09); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); }
     .glass-hover { transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease; }
     .glass-hover:hover { transform:translateY(-4px); border-color:rgba(96,165,250,.45); box-shadow:0 30px 60px -30px rgba(37,99,235,.55); }
     .cardring { box-shadow:0 1px 0 0 rgba(255,255,255,.06) inset, 0 40px 90px -40px rgba(2,6,23,.95); }
-    .igrad { background:linear-gradient(135deg,#3b82f6,#7c3aed); }
+    .igrad { background:linear-gradient(135deg,#4a78b0,#080b6c); }
 
     .fp-dash { background:#fff; border-radius:16px; overflow:hidden; border:1px solid rgba(15,23,42,.08); }
 
@@ -36,11 +36,11 @@
     .mq { display:flex; gap:46px; white-space:nowrap; animation:mq 28s linear infinite; }
     @keyframes mq { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 
-    .tabx { color:#94a3b8; border-bottom:2px solid transparent; }
-    .tabx.tab-active { color:#fff; border-bottom-color:#6d4bef; }
+    .tabx { color:#8b8c9d; border-bottom:2px solid transparent; }
+    .tabx.tab-active { color:#fff; border-bottom-color:#1f3184; }
 
-    .sys-donut { width:74px; height:74px; border-radius:50%; background:conic-gradient(#3b82f6 0 94%, #334155 94% 100%); display:flex; align-items:center; justify-content:center; position:relative; }
-    .sys-donut::after { content:""; position:absolute; width:48px; height:48px; border-radius:50%; background:#0f1526; }
+    .sys-donut { width:74px; height:74px; border-radius:50%; background:conic-gradient(#4a78b0 0 94%, #212243 94% 100%); display:flex; align-items:center; justify-content:center; position:relative; }
+    .sys-donut::after { content:""; position:absolute; width:48px; height:48px; border-radius:50%; background:#050741; }
 
     @media (prefers-reduced-motion:reduce){
         .reveal{opacity:1;transform:none;transition:none}
@@ -87,7 +87,7 @@
             <div class="relative">
                 <div class="absolute -inset-x-10 -top-8 bottom-0 bg-gradient-to-b from-blue-500/40 to-violet-600/10 blur-3xl rounded-[3rem]"></div>
 
-                <div class="relative rounded-2xl overflow-hidden border border-white/10 bg-[#0a0f1e] cardring">
+                <div class="relative rounded-2xl overflow-hidden border border-white/10 bg-[#050741] cardring">
                     <div class="h-11 flex items-center px-4 gap-2 border-b border-white/10 bg-slate-900/60">
                         <span class="w-3 h-3 rounded-full bg-slate-600"></span>
                         <span class="w-3 h-3 rounded-full bg-slate-600"></span>
@@ -97,7 +97,7 @@
                     <div class="p-5 md:p-6 text-left">
                         <div class="flex items-center justify-between mb-5">
                             <div class="flex items-center gap-2.5">
-                                <span class="w-8 h-8 rounded-lg flex items-center justify-center" style="background:linear-gradient(135deg,#3b82f6,#7c3aed)"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 5 3 9l9 4 9-4-9-4z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M7 11v4c0 1 2.5 2.5 5 2.5s5-1.5 5-2.5v-4"></path></svg></span>
+                                <span class="w-8 h-8 rounded-lg flex items-center justify-center" style="background:linear-gradient(135deg,#4a78b0,#080b6c)"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 5 3 9l9 4 9-4-9-4z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M7 11v4c0 1 2.5 2.5 5 2.5s5-1.5 5-2.5v-4"></path></svg></span>
                                 <span class="text-white font-extrabold text-sm tracking-tight">SEND <span class="text-slate-500 font-medium">EDUCACIONAL</span></span>
                                 <span class="hidden sm:inline text-slate-600">|</span>
                                 <span class="hidden sm:inline text-slate-400 text-sm font-semibold">Faculdade Exemplo</span>
@@ -113,8 +113,8 @@
                         <div class="grid grid-cols-3 sm:grid-cols-6 gap-2 mb-5">
                             <?php
                             $fp_atalhos = array(
-                                array( 'Secretaria', '#3b82f6' ), array( 'Financeiro', '#14b8a6' ), array( 'Contas a receber', '#22c55e' ),
-                                array( 'Contrato', '#6366f1' ), array( 'Documentos', '#a855f7' ), array( 'Retenção', '#06b6d4' ),
+                                array( 'Secretaria', '#4a78b0' ), array( 'Financeiro', '#56b2cb' ), array( 'Contas a receber', '#22c55e' ),
+                                array( 'Contrato', '#6366f1' ), array( 'Documentos', '#2b2d81' ), array( 'Retenção', '#06b6d4' ),
                             );
                             foreach ( $fp_atalhos as $t ) {
                                 printf(
@@ -128,9 +128,9 @@
                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                             <?php
                             $fp_grupos = array(
-                                array( 'Financeiro', '#14b8a6', array( 'Financeiro Gerencial', 'Contas a Receber', 'Contas a Pagar', 'Fluxo de Caixa' ) ),
-                                array( 'Acadêmico', '#3b82f6', array( 'Secretaria', 'Retenção', 'Requerimentos', 'Biblioteca' ) ),
-                                array( 'Gestão', '#a855f7', array( 'Contrato', 'Documentos', 'Assinaturas', 'GED' ) ),
+                                array( 'Financeiro', '#56b2cb', array( 'Financeiro Gerencial', 'Contas a Receber', 'Contas a Pagar', 'Fluxo de Caixa' ) ),
+                                array( 'Acadêmico', '#4a78b0', array( 'Secretaria', 'Retenção', 'Requerimentos', 'Biblioteca' ) ),
+                                array( 'Gestão', '#2b2d81', array( 'Contrato', 'Documentos', 'Assinaturas', 'GED' ) ),
                             );
                             foreach ( $fp_grupos as $g ) {
                                 $rows = '';
@@ -323,11 +323,11 @@
                         array( 'Diploma ou certificado', 'Diploma digital no padrão do MEC; certificado com validação nos cursos livres.', '<path stroke-linecap="round" stroke-linejoin="round" d="M12 15a4 4 0 100-8 4 4 0 000 8z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M8.5 13.5 7 21l5-2.5L17 21l-1.5-7.5"></path>', false ),
                     );
                     foreach ( $fp_jornada as $j ) {
-                        $bg    = $j[3] ? 'linear-gradient(135deg,#7c3aed,#c026d3)' : 'linear-gradient(135deg,#3b82f6,#7c3aed)';
-                        $badge = $j[3] ? '<span class="absolute -top-2 -right-2 text-[8px] font-black uppercase tracking-wider text-white px-1.5 py-0.5 rounded-full" style="background:linear-gradient(100deg,#7c3aed,#c026d3)">Novo</span>' : '';
+                        $bg    = $j[3] ? 'linear-gradient(135deg,#080b6c,#2b2d81)' : 'linear-gradient(135deg,#4a78b0,#080b6c)';
+                        $badge = $j[3] ? '<span class="absolute -top-2 -right-2 text-[8px] font-black uppercase tracking-wider text-white px-1.5 py-0.5 rounded-full" style="background:linear-gradient(100deg,#080b6c,#2b2d81)">Novo</span>' : '';
                         printf(
                             '<div class="text-center px-1">
-                                <div class="relative w-14 h-14 mx-auto rounded-2xl flex items-center justify-center mb-4 z-10 ring-4 ring-[#070b18]" style="background:%s">
+                                <div class="relative w-14 h-14 mx-auto rounded-2xl flex items-center justify-center mb-4 z-10 ring-4 ring-[#030429]" style="background:%s">
                                     <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">%s</svg>
                                     %s
                                 </div>
@@ -381,7 +381,7 @@
                         <span class="w-2.5 h-2.5 rounded-full bg-slate-600"></span>
                         <span class="mx-auto text-[11px] text-slate-400 font-semibold bg-white/5 border border-white/10 rounded-full px-4 py-1">app.sendeducacional.com.br/assinaturas</span>
                     </div>
-                    <div class="p-4 md:p-5 bg-[#0a0f1e]">
+                    <div class="p-4 md:p-5 bg-[#050741]">
                         <p class="text-sm font-extrabold text-white mb-3">Central de assinaturas</p>
                         <div class="grid grid-cols-2 gap-3 mb-3">
                             <div class="rounded-xl bg-white/[.03] border border-white/5 p-3"><p class="text-[10px] text-slate-400 font-semibold">Concluídos</p><p class="text-2xl font-extrabold text-white mt-1">3.692</p></div>
@@ -418,12 +418,12 @@
                             </div>
                             <?php
                             $fp_ass = array(
-                                array( 'Ana Beatriz Rocha', 'EAD · Gestão Comercial 2026.2', 'Pré-matrícula', '#3b82f6', 'Em assinatura', '#f59e0b' ),
-                                array( 'Lucas Martins', 'ADS 2026.2', 'Pré-matrícula', '#3b82f6', 'Em assinatura', '#f59e0b' ),
-                                array( 'Marina Alves', 'Enfermagem 2026.2', 'Cursando', '#3b82f6', 'Concluído', '#22c55e' ),
-                                array( 'Rafael Souza', 'Administração 2026.2', 'Pré-matrícula', '#3b82f6', 'Concluído', '#22c55e' ),
-                                array( 'Camila Ferreira', 'Ciências Contábeis 2026.2', 'Cursando', '#3b82f6', 'Concluído', '#22c55e' ),
-                                array( 'Bruno Almeida', 'Comércio Exterior 2026.2', 'Pré-matrícula', '#3b82f6', 'Em assinatura', '#f59e0b' ),
+                                array( 'Ana Beatriz Rocha', 'EAD · Gestão Comercial 2026.2', 'Pré-matrícula', '#4a78b0', 'Em assinatura', '#f59e0b' ),
+                                array( 'Lucas Martins', 'ADS 2026.2', 'Pré-matrícula', '#4a78b0', 'Em assinatura', '#f59e0b' ),
+                                array( 'Marina Alves', 'Enfermagem 2026.2', 'Cursando', '#4a78b0', 'Concluído', '#22c55e' ),
+                                array( 'Rafael Souza', 'Administração 2026.2', 'Pré-matrícula', '#4a78b0', 'Concluído', '#22c55e' ),
+                                array( 'Camila Ferreira', 'Ciências Contábeis 2026.2', 'Cursando', '#4a78b0', 'Concluído', '#22c55e' ),
+                                array( 'Bruno Almeida', 'Comércio Exterior 2026.2', 'Pré-matrícula', '#4a78b0', 'Em assinatura', '#f59e0b' ),
                             );
                             foreach ( $fp_ass as $r ) {
                                 printf(
@@ -501,7 +501,7 @@
                         } ?>
                     </ul>
                 </div>
-                <div class="rounded-3xl p-9 relative overflow-hidden" style="background:linear-gradient(135deg,#1d4ed8,#6d28d9)">
+                <div class="rounded-3xl p-9 relative overflow-hidden" style="background:linear-gradient(135deg,#335298,#080b6c)">
                     <div class="absolute -top-10 -right-10 w-48 h-48 bg-white/10 rounded-full blur-2xl"></div>
                     <h3 class="text-lg font-bold text-white mb-6 flex items-center gap-2 relative z-10"><span class="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></span> Com o Send Educacional</h3>
                     <ul class="space-y-4 relative z-10 font-medium text-white">
@@ -612,7 +612,7 @@
     <!-- ===================== CTA FINAL ===================== -->
     <section class="relative z-10 pb-28 pt-4">
         <div class="container mx-auto px-6 max-w-6xl reveal">
-            <div class="relative overflow-hidden rounded-[2.5rem] px-8 py-16 md:p-20 text-center" style="background:linear-gradient(120deg,#1d4ed8,#4f46e5 55%,#7c3aed)">
+            <div class="relative overflow-hidden rounded-[2.5rem] px-8 py-16 md:p-20 text-center" style="background:linear-gradient(120deg,#335298,#1f3184 55%,#080b6c)">
                 <div class="absolute -top-16 -right-16 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
                 <div class="absolute -bottom-16 -left-16 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
                 <h2 class="titulo relative z-10 text-[2.2rem] md:text-5xl text-white mb-5 leading-[1.03]">Veja o Send rodando na realidade da sua instituição.</h2>

@@ -18,10 +18,10 @@
         align-items: center;
         gap: 8px;
         padding: 6px 16px;
-        background: #eff6ff;
-        border: 1px solid #dbeafe;
+        background: #f1f4f9;
+        border: 1px solid #c5d4e6;
         border-radius: 99px;
-        color: #2563eb;
+        color: #4a78b0;
         font-size: 11px;
         font-weight: 800;
         text-transform: uppercase;
@@ -32,13 +32,13 @@
     .hub-title {
         font-size: 32px;
         font-weight: 900;
-        color: #0f172a;
+        color: #07082c;
         letter-spacing: -1px;
         line-height: 1.1;
     }
 
     .hub-subtitle {
-        color: #64748b;
+        color: #54546d;
         max-width: 600px;
         margin: 12px auto 0;
         font-size: 16px;
@@ -88,8 +88,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background: #f8fafc;
-        border: 1px solid #f1f5f9;
+        background: #f7f7f9;
+        border: 1px solid #f7f7f9;
         border-radius: 1.5rem;
         transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         filter: grayscale(100%);
@@ -99,7 +99,7 @@
     .integration-card:hover {
         filter: grayscale(0%);
         background: white;
-        border-color: #dbeafe;
+        border-color: #c5d4e6;
         box-shadow: 0 15px 30px -10px rgba(37, 99, 235, 0.1);
         transform: translateY(-5px);
     }
@@ -116,7 +116,7 @@
         <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L1 12h3v9h6v-6h4v6h6v-9h3L12 2z"/></svg>
         Ecossistema Conectado
     </div>
-    <h2 class="hub-title">Hub de <span style="color: #2563eb;">Integrações</span></h2>
+    <h2 class="hub-title">Hub de <span style="color: #4a78b0;">Integrações</span></h2>
     <p class="hub-subtitle">
         O Send Educacional conecta-se nativamente com as melhores ferramentas do mercado para potencializar a sua gestão.
     </p>

@@ -7,7 +7,7 @@ get_header(); ?>
 <main class="min-h-screen">
 
     <section class="bg-slate-900 pt-32 pb-24 border-b border-slate-800 relative overflow-hidden text-center">
-        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#475569 1px, transparent 1px); background-size: 24px 24px;"></div>
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#3a3b58 1px, transparent 1px); background-size: 24px 24px;"></div>
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-blue-600/20 blur-[120px] rounded-full pointer-events-none z-0"></div>
         
         <div class="container mx-auto px-6 max-w-5xl relative z-10">

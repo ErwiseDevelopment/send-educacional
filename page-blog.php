@@ -227,8 +227,8 @@ get_header();
                 ?>
             </div>
             <style>
-                .page-numbers.current .px-3 { background-color: #2563eb; color: white; border-radius: 0.5rem; }
-                .page-numbers.current .px-3:hover { background-color: #2563eb; }
+                .page-numbers.current .px-3 { background-color: #4a78b0; color: white; border-radius: 0.5rem; }
+                .page-numbers.current .px-3:hover { background-color: #4a78b0; }
             </style>
         </div>
 

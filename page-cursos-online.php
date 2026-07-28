@@ -6,7 +6,7 @@ $se_seg  = se_segmento( 'cursos-online' );
 $se_cor  = $se_seg['cor'];
 get_header(); ?>
 
-<main class="relative text-white overflow-hidden" style="background:#070b18">
+<main class="relative text-white overflow-hidden" style="background:#030429">
 
     <section class="relative pt-36 pb-16">
         <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[420px] rounded-full blur-[140px] pointer-events-none" style="background:<?php echo esc_attr( $se_cor ); ?>2e"></div>
@@ -125,7 +125,7 @@ get_header(); ?>
             </div>
 
             <div class="relative reveal">
-                <div class="hidden lg:block absolute top-7 left-[8%] right-[8%] h-px" style="background:linear-gradient(90deg,<?php echo esc_attr( $se_cor ); ?>55,#3b82f655)"></div>
+                <div class="hidden lg:block absolute top-7 left-[8%] right-[8%] h-px" style="background:linear-gradient(90deg,<?php echo esc_attr( $se_cor ); ?>55,#4a78b055)"></div>
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-4 gap-y-8">
                     <?php
                     $co_jornada = array(
@@ -139,7 +139,7 @@ get_header(); ?>
                     foreach ( $co_jornada as $n => $j ) {
                         printf(
                             '<div class="text-center px-1">
-                                <div class="relative w-14 h-14 mx-auto rounded-2xl flex items-center justify-center mb-4 z-10 ring-4 ring-[#070b18] text-white font-extrabold" style="background:linear-gradient(135deg,%s,#3b82f6)">%d</div>
+                                <div class="relative w-14 h-14 mx-auto rounded-2xl flex items-center justify-center mb-4 z-10 ring-4 ring-[#030429] text-white font-extrabold" style="background:linear-gradient(135deg,%s,#4a78b0)">%d</div>
                                 <h4 class="text-sm font-bold text-white leading-tight">%s</h4>
                                 <p class="text-[12px] text-slate-400 mt-1 leading-snug">%s</p>
                             </div>',
@@ -173,7 +173,7 @@ get_header(); ?>
                 <button data-track="cta-certificado" onclick="abrirDemo('cursos-online')" class="gbtn text-white font-bold px-7 py-3.5 rounded-2xl transition-all hover:-translate-y-0.5">Ver o certificado na demonstração</button>
             </div>
 
-            <div class="rounded-2xl overflow-hidden border border-white/10 cardring" style="background:#0a0f1e">
+            <div class="rounded-2xl overflow-hidden border border-white/10 cardring" style="background:#050741">
                 <div class="h-10 flex items-center px-4 gap-2 border-b border-white/10 bg-slate-900/70">
                     <span class="w-2.5 h-2.5 rounded-full bg-slate-600"></span>
                     <span class="w-2.5 h-2.5 rounded-full bg-slate-600"></span>

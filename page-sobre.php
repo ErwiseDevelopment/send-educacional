@@ -7,7 +7,7 @@ get_header(); ?>
 <main class="min-h-screen">
 
     <section class="bg-slate-900 pt-32 pb-32 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#475569 1px, transparent 1px); background-size: 32px 32px;"></div>
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#3a3b58 1px, transparent 1px); background-size: 32px 32px;"></div>
         <div class="absolute -top-24 -right-24 w-96 h-96 bg-blue-600/20 blur-[120px] rounded-full"></div>
         
         <div class="container mx-auto px-6 relative z-10 text-center">
@@ -54,7 +54,7 @@ get_header(); ?>
                                 ) as $marco ) {
                                     printf(
                                         '<li class="relative pl-12">
-                                            <span class="absolute left-0 top-0.5 w-7 h-7 rounded-full igrad ring-4 ring-[#0b1020]"></span>
+                                            <span class="absolute left-0 top-0.5 w-7 h-7 rounded-full igrad ring-4 ring-[#050741]"></span>
                                             <span class="block text-2xl font-extrabold gtext leading-none">%s</span>
                                             <span class="block font-bold text-white mt-2">%s</span>
                                             <span class="block text-slate-400 text-sm leading-relaxed mt-1">%s</span>

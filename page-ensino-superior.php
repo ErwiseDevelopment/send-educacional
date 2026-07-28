@@ -6,7 +6,7 @@ $se_seg = se_segmento( 'ensino-superior' );
 $se_cor = $se_seg['cor'];
 get_header(); ?>
 
-<main class="relative text-white overflow-hidden" style="background:#070b18">
+<main class="relative text-white overflow-hidden" style="background:#030429">
 
     <section class="relative pt-36 pb-16">
         <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[420px] rounded-full blur-[140px] pointer-events-none" style="background:<?php echo esc_attr( $se_cor ); ?>2e"></div>
@@ -100,7 +100,7 @@ get_header(); ?>
                     );
                     foreach ( $es_jornada as $n => $j ) {
                         printf(
-                            '<li class="flex items-start gap-4"><span class="w-8 h-8 rounded-xl flex items-center justify-center text-sm font-extrabold text-white flex-shrink-0" style="background:linear-gradient(135deg,%s,#7c3aed)">%d</span><span><span class="block font-bold text-white text-sm">%s</span><span class="block text-slate-400 text-sm leading-snug mt-0.5">%s</span></span></li>',
+                            '<li class="flex items-start gap-4"><span class="w-8 h-8 rounded-xl flex items-center justify-center text-sm font-extrabold text-white flex-shrink-0" style="background:linear-gradient(135deg,%s,#080b6c)">%d</span><span><span class="block font-bold text-white text-sm">%s</span><span class="block text-slate-400 text-sm leading-snug mt-0.5">%s</span></span></li>',
                             esc_attr( $se_cor ), $n + 1, esc_html( $j[0] ), esc_html( $j[1] )
                         );
                     }

@@ -167,17 +167,17 @@ get_header();
 </main>
 
 <style>
-    .prose h2 { font-size: 2rem; font-weight: 800; margin-top: 2.5rem; margin-bottom: 1rem; color: #0f172a; }
+    .prose h2 { font-size: 2rem; font-weight: 800; margin-top: 2.5rem; margin-bottom: 1rem; color: #07082c; }
     .prose h3 { font-size: 1.5rem; font-weight: 700; margin-top: 2rem; margin-bottom: 1rem; color: #1e293b; }
-    .prose p { margin-bottom: 1.5rem; line-height: 1.8; color: #475569; font-size: 1.125rem; }
-    .prose ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; color: #475569; font-size: 1.125rem; }
+    .prose p { margin-bottom: 1.5rem; line-height: 1.8; color: #3a3b58; font-size: 1.125rem; }
+    .prose ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; color: #3a3b58; font-size: 1.125rem; }
     .prose li { margin-bottom: 0.5rem; }
-    .prose blockquote { border-left: 4px solid #2563eb; padding-left: 1.5rem; font-style: italic; color: #64748b; margin: 2rem 0; font-size: 1.25rem; }
+    .prose blockquote { border-left: 4px solid #4a78b0; padding-left: 1.5rem; font-style: italic; color: #54546d; margin: 2rem 0; font-size: 1.25rem; }
     .prose img { border-radius: 1rem; margin: 2rem auto; box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1); }
     
     /* NOVA REGRA PARA LINKS: Deixa o texto azul, em negrito e com sublinhado ao passar o mouse */
-    .prose a { color: #2563eb; font-weight: 600; text-decoration: none; transition: color 0.2s ease-in-out; }
-    .prose a:hover { color: #1d4ed8; text-decoration: underline; }
+    .prose a { color: #4a78b0; font-weight: 600; text-decoration: none; transition: color 0.2s ease-in-out; }
+    .prose a:hover { color: #335298; text-decoration: underline; }
 </style>
 
 <?php get_footer(); ?>

@@ -261,73 +261,73 @@ function se_analytics_render_dashboard() {
 		<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin:18px 0;">
 			<?php
 			$cards = array(
-				array( 'Visitas (pageviews)', number_format_i18n( $views ), '#2563eb' ),
-				array( 'Visitantes únicos', number_format_i18n( $visitors ), '#7c3aed' ),
+				array( 'Visitas (pageviews)', number_format_i18n( $views ), '#4a78b0' ),
+				array( 'Visitantes únicos', number_format_i18n( $visitors ), '#080b6c' ),
 				array( 'Cliques monitorados', number_format_i18n( $clicks ), '#0ea5e9' ),
 				array( 'Tráfego mobile', $mobile_pct . '%', '#16a34a' ),
 			);
 			foreach ( $cards as $c ) : ?>
-				<div style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:18px 20px;box-shadow:0 1px 2px rgba(0,0,0,.04);">
-					<div style="font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:#94a3b8;font-weight:700;"><?php echo esc_html( $c[0] ); ?></div>
+				<div style="background:#fff;border:1px solid #d9d9df;border-radius:12px;padding:18px 20px;box-shadow:0 1px 2px rgba(0,0,0,.04);">
+					<div style="font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:#8b8c9d;font-weight:700;"><?php echo esc_html( $c[0] ); ?></div>
 					<div style="font-size:30px;font-weight:800;color:<?php echo esc_attr( $c[2] ); ?>;line-height:1.2;margin-top:6px;"><?php echo esc_html( $c[1] ); ?></div>
 				</div>
 			<?php endforeach; ?>
 		</div>
 
-		<div style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:18px 20px;margin-bottom:20px;">
-			<h2 style="margin-top:0;font-size:14px;color:#334155;">Visitas por dia</h2>
-			<div style="display:flex;align-items:flex-end;gap:4px;height:150px;border-bottom:1px solid #eef2f7;padding-top:10px;">
+		<div style="background:#fff;border:1px solid #d9d9df;border-radius:12px;padding:18px 20px;margin-bottom:20px;">
+			<h2 style="margin-top:0;font-size:14px;color:#212243;">Visitas por dia</h2>
+			<div style="display:flex;align-items:flex-end;gap:4px;height:150px;border-bottom:1px solid #ededf0;padding-top:10px;">
 				<?php
 				for ( $i = $range - 1; $i >= 0; $i-- ) {
 					$day = gmdate( 'Y-m-d', strtotime( "-{$i} days", current_time( 'timestamp' ) ) );
 					$c   = isset( $by_day[ $day ] ) ? (int) $by_day[ $day ]->c : 0;
 					$h   = $max_day > 0 ? max( 2, round( $c / $max_day * 130 ) ) : 2;
 					printf(
-						'<div title="%s: %d visita(s)" style="flex:1;min-width:3px;height:%dpx;border-radius:4px 4px 0 0;background:linear-gradient(180deg,#60a5fa,#4f46e5);opacity:.85;"></div>',
+						'<div title="%s: %d visita(s)" style="flex:1;min-width:3px;height:%dpx;border-radius:4px 4px 0 0;background:linear-gradient(180deg,#7296c1,#1f3184);opacity:.85;"></div>',
 						esc_attr( date_i18n( 'd/m', strtotime( $day ) ) ), $c, $h
 					);
 				}
 				?>
 			</div>
-			<div style="display:flex;justify-content:space-between;font-size:11px;color:#94a3b8;margin-top:6px;">
+			<div style="display:flex;justify-content:space-between;font-size:11px;color:#8b8c9d;margin-top:6px;">
 				<span><?php echo esc_html( date_i18n( 'd/m', strtotime( $since ) ) ); ?></span>
 				<span>hoje</span>
 			</div>
 		</div>
 
 		<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
-			<div style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:18px 20px;">
-				<h2 style="margin-top:0;font-size:14px;color:#334155;">Páginas mais vistas</h2>
+			<div style="background:#fff;border:1px solid #d9d9df;border-radius:12px;padding:18px 20px;">
+				<h2 style="margin-top:0;font-size:14px;color:#212243;">Páginas mais vistas</h2>
 				<table class="widefat striped" style="border:0;">
 					<thead><tr><th>Página</th><th style="width:80px;text-align:right;">Visitas</th></tr></thead>
 					<tbody>
 					<?php if ( $top_pages ) : foreach ( $top_pages as $p ) : ?>
 						<tr>
-							<td><strong><?php echo esc_html( $p->page_title ?: '(sem título)' ); ?></strong><br><span style="color:#94a3b8;font-size:11px;"><?php echo esc_html( urldecode( $p->page_url ) ); ?></span></td>
+							<td><strong><?php echo esc_html( $p->page_title ?: '(sem título)' ); ?></strong><br><span style="color:#8b8c9d;font-size:11px;"><?php echo esc_html( urldecode( $p->page_url ) ); ?></span></td>
 							<td style="text-align:right;font-weight:700;"><?php echo number_format_i18n( $p->c ); ?></td>
 						</tr>
 					<?php endforeach; else : ?>
-						<tr><td colspan="2" style="color:#94a3b8;">Ainda sem dados no período.</td></tr>
+						<tr><td colspan="2" style="color:#8b8c9d;">Ainda sem dados no período.</td></tr>
 					<?php endif; ?>
 					</tbody>
 				</table>
 			</div>
 
-			<div style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:18px 20px;">
-				<h2 style="margin-top:0;font-size:14px;color:#334155;">Cliques por elemento</h2>
+			<div style="background:#fff;border:1px solid #d9d9df;border-radius:12px;padding:18px 20px;">
+				<h2 style="margin-top:0;font-size:14px;color:#212243;">Cliques por elemento</h2>
 				<table class="widefat striped" style="border:0;">
 					<thead><tr><th>Elemento (data-track)</th><th style="width:80px;text-align:right;">Cliques</th></tr></thead>
 					<tbody>
 					<?php if ( $top_clicks ) : foreach ( $top_clicks as $c ) : ?>
 						<tr><td><code><?php echo esc_html( $c->label ); ?></code></td><td style="text-align:right;font-weight:700;"><?php echo number_format_i18n( $c->c ); ?></td></tr>
 					<?php endforeach; else : ?>
-						<tr><td colspan="2" style="color:#94a3b8;">Nenhum clique monitorado ainda. Adicione <code>data-track="nome"</code> nos botões.</td></tr>
+						<tr><td colspan="2" style="color:#8b8c9d;">Nenhum clique monitorado ainda. Adicione <code>data-track="nome"</code> nos botões.</td></tr>
 					<?php endif; ?>
 					</tbody>
 				</table>
 
 				<?php if ( $top_ref ) : ?>
-					<h2 style="font-size:14px;color:#334155;margin-top:22px;">Origem das visitas (referer)</h2>
+					<h2 style="font-size:14px;color:#212243;margin-top:22px;">Origem das visitas (referer)</h2>
 					<table class="widefat striped" style="border:0;">
 						<tbody>
 						<?php foreach ( $top_ref as $r ) : ?>

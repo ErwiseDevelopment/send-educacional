@@ -2,32 +2,28 @@
 Theme Name: Send Educacional
 Description: Tema customizado para o SaaS Send Educacional usando Tailwind CSS.
 Author: Send Solutions
-Version: 1.8.0
+Version: 1.9.0
 */
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* ===== Tipografia =====
-   Uma fonte só (Inter) deixava tudo com cara de template. Fraunces entra
-   nos títulos e nos números grandes; o resto continua em Inter, que é
-   melhor para interface e texto corrido. */
+/* ===== Tipografia — Poppins, a fonte da marca =====
+   Uma família só. A hierarquia vem de peso e espacejamento, não do contraste
+   entre duas fontes: 800 bem apertado nos títulos, 400 no texto corrido. */
 .titulo{
-  font-family:'Fraunces',Georgia,'Times New Roman',serif;
-  font-optical-sizing:auto;
-  font-variation-settings:"opsz" 120;
-  font-weight:600;
+  font-family:'Poppins',system-ui,sans-serif;
+  font-weight:800;
   letter-spacing:-.035em;
 }
-.titulo-leve{font-weight:500}
-/* Em corpo pequeno a serifa precisa do eixo óptico menor para não fechar. */
-.titulo-mini{font-family:'Fraunces',Georgia,serif;font-variation-settings:"opsz" 14;font-weight:600;letter-spacing:-.01em}
+.titulo-leve{font-weight:600;letter-spacing:-.02em}
+/* Em corpo pequeno o aperto precisa ser menor, senão as letras colam. */
+.titulo-mini{font-family:'Poppins',system-ui,sans-serif;font-weight:700;letter-spacing:-.015em}
 .numero{
-  font-family:'Fraunces',Georgia,serif;
-  font-variation-settings:"opsz" 144;
-  font-weight:600;
-  letter-spacing:-.05em;
+  font-family:'Poppins',system-ui,sans-serif;
+  font-weight:800;
+  letter-spacing:-.045em;
   font-variant-numeric:lining-nums tabular-nums;
 }
 
@@ -38,44 +34,44 @@ Version: 1.8.0
    filete e lista numerada sem caixa nenhuma. */
 
 /* 1. Faixa de números: filete no lugar de caixa. */
-.faixa{border-top:1px solid rgba(255,255,255,.12)}
-.faixa-item{padding:1.75rem 0 0;border-top:1px solid rgba(255,255,255,.12);margin-top:-1px}
+.faixa{border-top:1px solid rgba(255,255,255,.14)}
+.faixa-item{padding:1.75rem 0 0;border-top:1px solid rgba(255,255,255,.14);margin-top:-1px}
 @media (min-width:768px){
-  .faixa-item{border-top:0;border-left:1px solid rgba(255,255,255,.12);padding:0 0 0 1.75rem;margin-top:0}
+  .faixa-item{border-top:0;border-left:1px solid rgba(255,255,255,.14);padding:0 0 0 1.75rem;margin-top:0}
   .faixa-item:first-child{border-left:0;padding-left:0}
 }
 
 /* 2. Lista numerada editorial: sem fundo, sem borda, só o filete de cima. */
-.marco{position:relative;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.12);transition:border-color .3s ease}
-.marco:hover{border-top-color:rgba(96,165,250,.5)}
-.marco-num{font-family:'Fraunces',Georgia,serif;font-variation-settings:"opsz" 40;font-weight:600;
-  font-size:.8rem;letter-spacing:.02em;color:#64748b;display:block;margin-bottom:.65rem}
+.marco{position:relative;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.14);transition:border-color .3s ease}
+.marco:hover{border-top-color:rgba(74,120,176,.85)}
+.marco-num{font-family:'Poppins',system-ui,sans-serif;font-weight:700;
+  font-size:.8rem;letter-spacing:.08em;color:#7296c1;display:block;margin-bottom:.65rem}
 
 /* 3. Coluna que acompanha a rolagem, para a seção ter um dominante. */
 @media (min-width:1024px){ .fixa{position:sticky;top:7rem} }
 
 /* Filete comum, para separar sem desenhar caixa. */
-.regra{border-top:1px solid rgba(255,255,255,.1)}
+.regra{border-top:1px solid rgba(255,255,255,.12)}
 
 /* ===== Design tokens escuros — compartilhados entre a home e as páginas internas ===== */
-.gtext{background:linear-gradient(100deg,#60a5fa,#818cf8 45%,#c084fc);-webkit-background-clip:text;background-clip:text;color:transparent}
-.gbtn{background:linear-gradient(100deg,#2563eb,#6d4bef);box-shadow:0 10px 30px -8px rgba(79,70,229,.6)}
-.gbtn:hover{box-shadow:0 16px 42px -8px rgba(79,70,229,.9)}
-.glass{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.gtext{background:linear-gradient(100deg,#96b1d1,#7296c1 45%,#4a78b0);-webkit-background-clip:text;background-clip:text;color:transparent}
+.gbtn{background:linear-gradient(100deg,#4a78b0,#1f3184);box-shadow:0 10px 30px -8px rgba(8,11,108,.75)}
+.gbtn:hover{background:linear-gradient(100deg,#5883b6,#2b2d81);box-shadow:0 16px 42px -8px rgba(8,11,108,.95)}
+.glass{background:rgba(74,120,176,.07);border:1px solid rgba(150,177,209,.16);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 .glass-hover{transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease}
-.glass-hover:hover{transform:translateY(-4px);border-color:rgba(96,165,250,.45);box-shadow:0 30px 60px -30px rgba(37,99,235,.55)}
-.cardring{box-shadow:0 1px 0 0 rgba(255,255,255,.06) inset,0 40px 90px -40px rgba(2,6,23,.95)}
-.igrad{background:linear-gradient(135deg,#3b82f6,#7c3aed)}
+.glass-hover:hover{transform:translateY(-4px);border-color:rgba(74,120,176,.6);box-shadow:0 30px 60px -30px rgba(8,11,108,.9)}
+.cardring{box-shadow:0 1px 0 0 rgba(255,255,255,.07) inset,0 40px 90px -40px rgba(3,4,41,.95)}
+.igrad{background:linear-gradient(135deg,#4a78b0,#080b6c)}
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
 .reveal.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 
 /* ===== Mega menu (cabeçalho) — ver inc/menu.php ===== */
 .se-nav-link{display:inline-flex;align-items:center;gap:.35rem;padding:.5rem .75rem;border-radius:.6rem;
-  font-size:.875rem;font-weight:600;color:#cbd5e1;white-space:nowrap;cursor:pointer;
+  font-size:.875rem;font-weight:600;color:#b8b9c3;white-space:nowrap;cursor:pointer;
   transition:color .2s ease,background-color .2s ease}
 .se-nav-link:hover{color:#fff;background:rgba(255,255,255,.06)}
-.se-nav-link:focus-visible{outline:2px solid #60a5fa;outline-offset:2px}
+.se-nav-link:focus-visible{outline:2px solid #7296c1;outline-offset:2px}
 .se-nav-ativo{color:#fff;background:rgba(255,255,255,.06)}
 .se-chevron{transition:transform .2s ease}
 .se-nav-ativo .se-chevron,.se-acc-aberto .se-chevron{transform:rotate(180deg)}
@@ -83,19 +79,19 @@ Version: 1.8.0
 /* Sem animação de entrada de propósito: opacity/transform no painel o deixam
    translúcido por cima do hero e ainda criam contexto de empilhamento próprio,
    que foi o que jogou o menu para trás do título da home. Aparece direto. */
-.se-mega-painel{max-height:calc(100vh - 5.5rem);overflow-y:auto}
+.se-mega-painel{max-height:calc(100vh - 5.5rem);overflow-y:auto;background:#050741}
 
 /* Na home o cabeçalho é transparente sobre o hero. Com o painel aberto isso
    fica estranho (barra clara em cima de painel escuro): fecha o fundo. */
-.se-header-solido{background:#080d1c}
+.se-header-solido{background:#050741}
 
 .se-menu-mobile-rolagem{max-height:calc(100vh - 5rem);overflow-y:auto}
 
 .se-aba{display:flex;align-items:center;gap:.7rem;width:100%;padding:.7rem .85rem;border-radius:.85rem;
-  font-size:.875rem;font-weight:600;color:#cbd5e1;text-align:left;cursor:pointer;
+  font-size:.875rem;font-weight:600;color:#b8b9c3;text-align:left;cursor:pointer;
   border:1px solid transparent;transition:background-color .2s ease,color .2s ease,border-color .2s ease}
 .se-aba:hover{color:#fff;background:rgba(255,255,255,.04)}
-.se-aba:focus-visible{outline:2px solid #60a5fa;outline-offset:-2px}
+.se-aba:focus-visible{outline:2px solid #7296c1;outline-offset:-2px}
 .se-aba-ativa{color:#fff;background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.1)}
 .se-aba-icone{display:flex;align-items:center;justify-content:center;width:2rem;height:2rem;flex:none;
   border-radius:.6rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}
@@ -103,13 +99,13 @@ Version: 1.8.0
 .se-mega-item{display:flex;align-items:flex-start;gap:.7rem;padding:.55rem;margin:-.55rem;
   border-radius:.75rem;transition:background-color .2s ease}
 .se-mega-item:hover{background:rgba(255,255,255,.04)}
-.se-mega-item:focus-visible{outline:2px solid #60a5fa;outline-offset:-2px}
+.se-mega-item:focus-visible{outline:2px solid #7296c1;outline-offset:-2px}
 .se-mega-item-icone{display:flex;align-items:center;justify-content:center;width:2rem;height:2rem;flex:none;
   margin-top:.05rem;border-radius:.55rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}
 
 .se-mega-post{display:block;padding:.75rem;border-radius:.75rem;background:rgba(255,255,255,.03);
   border:1px solid rgba(255,255,255,.07);transition:border-color .2s ease,transform .2s ease}
-.se-mega-post:hover{border-color:rgba(96,165,250,.45);transform:translateY(-2px)}
+.se-mega-post:hover{border-color:rgba(74,120,176,.6);transform:translateY(-2px)}
 
 @media (prefers-reduced-motion:reduce){
   .se-mega-painel{animation:none}

@@ -13,41 +13,50 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/tabler-icons.min.css">
 <script src="https://cdn.tailwindcss.com"></script>
-<script>tailwind.config={theme:{extend:{fontFamily:{sans:['"Plus Jakarta Sans"','sans-serif']}}}}</script>
+<script>tailwind.config={theme:{extend:{
+      colors:{
+        slate:{50:'#f7f7f9',100:'#ededf0',200:'#d9d9df',300:'#b8b9c3',400:'#8b8c9d',500:'#6d6d83',600:'#54546d',700:'#3a3b58',800:'#212243',900:'#121336',950:'#07082c'},
+        blue:{50:'#f1f4f9',100:'#e2e9f2',200:'#c5d4e6',300:'#96b1d1',400:'#7296c1',500:'#5883b6',600:'#4a78b0',700:'#335298',800:'#1f3184',900:'#080b6c',950:'#050746'},
+        indigo:{50:'#f0f0f6',100:'#e1e2ed',200:'#c4c4dc',300:'#9799c1',400:'#7576ad',500:'#4d4f95',600:'#2b2d81',700:'#080b6c',800:'#060956',900:'#050741',950:'#030429'},
+        violet:{50:'#f0f0f6',100:'#e1e2ed',200:'#c4c4dc',300:'#9799c1',400:'#7576ad',500:'#4d4f95',600:'#2b2d81',700:'#080b6c',800:'#060956',900:'#050741',950:'#030429'},
+        emerald:{400:'#56b2cb',500:'#3f97b3',600:'#2f7e98'}
+      },
+      fontFamily:{sans:['Poppins','sans-serif']}
+    }}}</script>
 <style>
   :root{ --ink:#080a17; }
-  body{ font-family:'Plus Jakarta Sans',sans-serif; }
+  body{ font-family:'Poppins',sans-serif; }
   .ink{ background:var(--ink); }
   .grid-mask{ background-image:linear-gradient(rgba(148,163,184,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(148,163,184,.07) 1px,transparent 1px); background-size:48px 48px; -webkit-mask-image:radial-gradient(110% 90% at 50% 0,#000 30%,transparent 72%); mask-image:radial-gradient(110% 90% at 50% 0,#000 30%,transparent 72%); }
   .glow{ background:radial-gradient(60% 60% at 50% 0,rgba(59,130,246,.35),transparent 70%),radial-gradient(40% 50% at 80% 20%,rgba(139,92,246,.25),transparent 70%); }
-  .gtext{ background:linear-gradient(100deg,#60a5fa,#818cf8 45%,#c084fc); -webkit-background-clip:text; background-clip:text; color:transparent; }
-  .gbtn{ background:linear-gradient(100deg,#2563eb,#6d4bef); box-shadow:0 10px 30px -8px rgba(79,70,229,.6); }
+  .gtext{ background:linear-gradient(100deg,#7296c1,#7296c1 45%,#9799c1); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .gbtn{ background:linear-gradient(100deg,#4a78b0,#1f3184); box-shadow:0 10px 30px -8px rgba(79,70,229,.6); }
   .gbtn:hover{ box-shadow:0 14px 38px -8px rgba(79,70,229,.85); }
-  .ap-seg-opt:has(input:checked){ border-color:#2563eb; background:#eff6ff; box-shadow:0 0 0 3px rgba(37,99,235,.12); }
+  .ap-seg-opt:has(input:checked){ border-color:#4a78b0; background:#f1f4f9; box-shadow:0 0 0 3px rgba(37,99,235,.12); }
   .card-ring{ box-shadow:0 1px 0 0 rgba(255,255,255,.06) inset,0 30px 60px -30px rgba(2,6,23,.8); }
   .floaty{ animation:floaty 6s ease-in-out infinite; }
   .floaty2{ animation:floaty 7s ease-in-out infinite; }
   @keyframes floaty{ 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
   .dash{ background:#fff; border-radius:18px; overflow:hidden; border:1px solid rgba(15,23,42,.08); }
-  .dbar{ height:42px; display:flex; align-items:center; gap:8px; padding:0 16px; background:#f8fafc; border-bottom:1px solid #eef2f7; }
+  .dbar{ height:42px; display:flex; align-items:center; gap:8px; padding:0 16px; background:#f7f7f9; border-bottom:1px solid #ededf0; }
   .dot{ width:11px;height:11px;border-radius:50%; }
-  .durl{ margin:0 auto; font-size:11px; color:#94a3b8; background:#fff; border:1px solid #eef2f7; border-radius:999px; padding:4px 16px; font-weight:600; }
+  .durl{ margin:0 auto; font-size:11px; color:#8b8c9d; background:#fff; border:1px solid #ededf0; border-radius:999px; padding:4px 16px; font-weight:600; }
   .dbody{ display:grid; grid-template-columns:64px 1fr; min-height:330px; }
-  .dside{ background:#0b1020; padding:16px 0; display:flex; flex-direction:column; align-items:center; gap:18px; }
-  .dside .smark{ width:34px;height:34px;border-radius:10px; background:linear-gradient(135deg,#3b82f6,#7c3aed); color:#fff; font-weight:800; display:flex;align-items:center;justify-content:center; }
+  .dside{ background:#050741; padding:16px 0; display:flex; flex-direction:column; align-items:center; gap:18px; }
+  .dside .smark{ width:34px;height:34px;border-radius:10px; background:linear-gradient(135deg,#4a78b0,#080b6c); color:#fff; font-weight:800; display:flex;align-items:center;justify-content:center; }
   .dside i{ width:20px;height:20px;border-radius:6px;background:rgba(255,255,255,.12); display:block; }
-  .dside i.on{ background:#60a5fa; }
+  .dside i.on{ background:#7296c1; }
   .dmain{ padding:18px 20px; }
-  .kpi{ border:1px solid #eef2f7; border-radius:14px; padding:12px 14px; background:#fff; }
-  .kpi .v{ font-size:20px; font-weight:800; color:#0f172a; letter-spacing:-.02em; }
-  .kpi .l{ font-size:10.5px; font-weight:600; color:#94a3b8; text-transform:uppercase; letter-spacing:.06em; }
+  .kpi{ border:1px solid #ededf0; border-radius:14px; padding:12px 14px; background:#fff; }
+  .kpi .v{ font-size:20px; font-weight:800; color:#07082c; letter-spacing:-.02em; }
+  .kpi .l{ font-size:10.5px; font-weight:600; color:#8b8c9d; text-transform:uppercase; letter-spacing:.06em; }
   .chip{ font-size:10px;font-weight:700;padding:2px 7px;border-radius:999px; display:inline-flex; align-items:center; gap:3px; }
   .bars{ display:flex; align-items:flex-end; gap:9px; height:90px; }
-  .bars span{ flex:1; border-radius:6px 6px 0 0; background:linear-gradient(180deg,#60a5fa,#4f46e5); opacity:.85; }
-  .donut{ width:104px;height:104px;border-radius:50%; background:conic-gradient(#4f46e5 0 46%,#3b82f6 46% 72%,#22d3ee 72% 88%,#e2e8f0 88% 100%); display:flex;align-items:center;justify-content:center; }
+  .bars span{ flex:1; border-radius:6px 6px 0 0; background:linear-gradient(180deg,#7296c1,#1f3184); opacity:.85; }
+  .donut{ width:104px;height:104px;border-radius:50%; background:conic-gradient(#1f3184 0 46%,#4a78b0 46% 72%,#22d3ee 72% 88%,#d9d9df 88% 100%); display:flex;align-items:center;justify-content:center; }
   .donut::after{ content:"";width:62px;height:62px;border-radius:50%;background:#fff; }
   .lg-dot{ width:9px;height:9px;border-radius:3px;display:inline-block; }
   .mqo{ overflow:hidden; }
@@ -139,10 +148,10 @@ if ( ! defined( 'ABSPATH' ) ) exit;
                 <div class="flex items-center gap-3">
                   <div class="donut"></div>
                   <div class="space-y-1.5 text-[11px] text-slate-500 font-medium">
-                    <div><span class="lg-dot" style="background:#4f46e5"></span> Graduação</div>
-                    <div><span class="lg-dot" style="background:#3b82f6"></span> EAD</div>
+                    <div><span class="lg-dot" style="background:#1f3184"></span> Graduação</div>
+                    <div><span class="lg-dot" style="background:#4a78b0"></span> EAD</div>
                     <div><span class="lg-dot" style="background:#22d3ee"></span> Pós</div>
-                    <div><span class="lg-dot" style="background:#e2e8f0"></span> Técnico</div>
+                    <div><span class="lg-dot" style="background:#d9d9df"></span> Técnico</div>
                   </div>
                 </div>
               </div>
@@ -234,7 +243,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
           <li class="flex gap-3"><i class="ti ti-x text-red-300 shrink-0 mt-0.5"></i> Vários sistemas que não conversam entre si.</li>
         </ul>
       </div>
-      <div class="rounded-3xl p-9 text-white relative overflow-hidden" style="background:linear-gradient(135deg,#1d4ed8,#6d28d9)">
+      <div class="rounded-3xl p-9 text-white relative overflow-hidden" style="background:linear-gradient(135deg,#335298,#080b6c)">
         <div class="absolute -top-10 -right-10 w-48 h-48 bg-white/10 rounded-full blur-2xl"></div>
         <h3 class="text-lg font-bold mb-6 flex items-center gap-2 relative z-10"><span class="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center"><i class="ti ti-check text-sm"></i></span> Com o Send Educacional</h3>
         <ul class="space-y-4 relative z-10 font-medium">
@@ -272,7 +281,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
     <!-- métricas em destaque -->
     <div class="grid lg:grid-cols-3 gap-4 mb-4">
-      <div class="relative overflow-hidden rounded-3xl p-9 flex flex-col justify-between min-h-[220px]" style="background:linear-gradient(150deg,#1d4ed8,#6d28d9)">
+      <div class="relative overflow-hidden rounded-3xl p-9 flex flex-col justify-between min-h-[220px]" style="background:linear-gradient(150deg,#335298,#080b6c)">
         <div class="absolute -top-12 -right-12 w-48 h-48 bg-white/10 rounded-full blur-2xl"></div>
         <div class="relative z-10">
           <div class="text-6xl md:text-7xl font-extrabold tracking-tighter leading-none">3.000</div>
@@ -337,7 +346,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
           </div>
           <div class="bg-white rounded-3xl border border-slate-100 p-7 shadow-[0_20px_50px_-30px_rgba(2,6,23,.4)] w-full text-left hover:-translate-y-1 transition-transform">
             <div class="flex items-center gap-2 mb-3">
-              <span class="text-[11px] font-bold text-white px-2.5 py-1 rounded-full" style="background:linear-gradient(100deg,#2563eb,#7c3aed)">Etapa 1</span>
+              <span class="text-[11px] font-bold text-white px-2.5 py-1 rounded-full" style="background:linear-gradient(100deg,#4a78b0,#080b6c)">Etapa 1</span>
               <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wide">Semanas 1–6</span>
             </div>
             <h4 class="text-lg font-bold text-slate-900 mb-2">Levantamento &amp; migração</h4>
@@ -355,7 +364,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
           </div>
           <div class="bg-white rounded-3xl border border-slate-100 p-7 shadow-[0_20px_50px_-30px_rgba(2,6,23,.4)] w-full text-left hover:-translate-y-1 transition-transform">
             <div class="flex items-center gap-2 mb-3">
-              <span class="text-[11px] font-bold text-white px-2.5 py-1 rounded-full" style="background:linear-gradient(100deg,#2563eb,#7c3aed)">Etapa 2</span>
+              <span class="text-[11px] font-bold text-white px-2.5 py-1 rounded-full" style="background:linear-gradient(100deg,#4a78b0,#080b6c)">Etapa 2</span>
               <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wide">Semanas 6–16</span>
             </div>
             <h4 class="text-lg font-bold text-slate-900 mb-2">Configuração &amp; treinamento</h4>
@@ -373,7 +382,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
           </div>
           <div class="bg-white rounded-3xl border border-slate-100 p-7 shadow-[0_20px_50px_-30px_rgba(2,6,23,.4)] w-full text-left hover:-translate-y-1 transition-transform">
             <div class="flex items-center gap-2 mb-3">
-              <span class="text-[11px] font-bold text-white px-2.5 py-1 rounded-full" style="background:linear-gradient(100deg,#7c3aed,#c026d3)">Etapa 3</span>
+              <span class="text-[11px] font-bold text-white px-2.5 py-1 rounded-full" style="background:linear-gradient(100deg,#080b6c,#2b2d81)">Etapa 3</span>
               <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wide">Mês ~6</span>
             </div>
             <h4 class="text-lg font-bold text-slate-900 mb-2">Go-live acompanhado</h4>
@@ -389,7 +398,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
     </div>
 
     <div class="mt-12 flex justify-center reveal">
-      <div class="inline-flex items-center gap-3 text-white px-7 py-4 rounded-2xl font-bold shadow-lg" style="background:linear-gradient(100deg,#2563eb,#7c3aed)">
+      <div class="inline-flex items-center gap-3 text-white px-7 py-4 rounded-2xl font-bold shadow-lg" style="background:linear-gradient(100deg,#4a78b0,#080b6c)">
         <i class="ti ti-shield-check text-xl"></i> Do contrato ao go-live em ~6 meses, sem parar a operação.
       </div>
     </div>
@@ -399,7 +408,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 <!-- ===================== CTA FINAL ===================== -->
 <section class="bg-white pb-28 pt-4">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="relative overflow-hidden rounded-[2.5rem] px-8 py-16 md:p-20 text-center" style="background:linear-gradient(120deg,#1d4ed8,#4f46e5 55%,#7c3aed)">
+    <div class="relative overflow-hidden rounded-[2.5rem] px-8 py-16 md:p-20 text-center" style="background:linear-gradient(120deg,#335298,#1f3184 55%,#080b6c)">
       <div class="absolute -top-16 -right-16 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
       <div class="absolute -bottom-16 -left-16 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
       <h2 class="relative z-10 text-3xl md:text-5xl font-extrabold text-white mb-5 leading-tight">Veja o Send rodando na sua realidade.</h2>
@@ -500,10 +509,10 @@ if ( ! defined( 'ABSPATH' ) ) exit;
   ];
   document.getElementById('grid-modulos').innerHTML = modulos.map(function(m,i){
     var feat = (i===0) ? ' md:col-span-2' : '';
-    var badge = m[2] ? '<span class="absolute top-5 right-5 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full text-white" style="background:linear-gradient(100deg,#2563eb,#7c3aed)">'+m[2]+'</span>' : '';
+    var badge = m[2] ? '<span class="absolute top-5 right-5 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full text-white" style="background:linear-gradient(100deg,#4a78b0,#080b6c)">'+m[2]+'</span>' : '';
     return '<div class="group relative bg-white rounded-3xl p-7 border border-slate-200 hover:border-blue-300 hover:shadow-[0_24px_60px_-30px_rgba(37,99,235,.5)] hover:-translate-y-1 transition-all'+feat+'">'
       + badge
-      + '<div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 text-white" style="background:linear-gradient(135deg,#3b82f6,#7c3aed)"><i class="ti '+m[3]+' text-2xl"></i></div>'
+      + '<div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 text-white" style="background:linear-gradient(135deg,#4a78b0,#080b6c)"><i class="ti '+m[3]+' text-2xl"></i></div>'
       + '<h4 class="text-lg font-bold text-slate-900 mb-2">'+m[0]+'</h4>'
       + '<p class="text-slate-500 text-sm leading-relaxed">'+m[1]+'</p>'
       + '</div>';

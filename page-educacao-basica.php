@@ -6,7 +6,7 @@ $se_seg = se_segmento( 'educacao-basica' );
 $se_cor = $se_seg['cor'];
 get_header(); ?>
 
-<main class="relative text-white overflow-hidden" style="background:#070b18">
+<main class="relative text-white overflow-hidden" style="background:#030429">
 
     <section class="relative pt-36 pb-16">
         <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[420px] rounded-full blur-[140px] pointer-events-none" style="background:<?php echo esc_attr( $se_cor ); ?>2e"></div>
@@ -86,7 +86,7 @@ get_header(); ?>
                 <button data-track="cta-rematricula" onclick="abrirDemo('educacao-basica')" class="gbtn text-white font-bold px-7 py-3.5 rounded-2xl transition-all hover:-translate-y-0.5">Ver a campanha na demonstração</button>
             </div>
 
-            <div class="rounded-2xl overflow-hidden border border-white/10 cardring" style="background:#0a0f1e">
+            <div class="rounded-2xl overflow-hidden border border-white/10 cardring" style="background:#050741">
                 <div class="h-10 flex items-center px-4 gap-2 border-b border-white/10 bg-slate-900/70">
                     <span class="w-2.5 h-2.5 rounded-full bg-slate-600"></span>
                     <span class="w-2.5 h-2.5 rounded-full bg-slate-600"></span>

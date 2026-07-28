@@ -5,7 +5,7 @@ get_header();
 
 <main class="bg-slate-50 min-h-screen flex items-center justify-center py-20 relative overflow-hidden">
     
-    <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#94a3b8 1px, transparent 1px); background-size: 32px 32px;"></div>
+    <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#8b8c9d 1px, transparent 1px); background-size: 32px 32px;"></div>
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[100px] pointer-events-none"></div>
 
     <div class="container mx-auto px-6 relative z-10 text-center max-w-3xl">

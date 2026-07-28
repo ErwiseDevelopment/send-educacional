@@ -11,13 +11,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Piloto Automático | Send Educacional</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{
+      colors:{
+        slate:{50:'#f7f7f9',100:'#ededf0',200:'#d9d9df',300:'#b8b9c3',400:'#8b8c9d',500:'#6d6d83',600:'#54546d',700:'#3a3b58',800:'#212243',900:'#121336',950:'#07082c'},
+        blue:{50:'#f1f4f9',100:'#e2e9f2',200:'#c5d4e6',300:'#96b1d1',400:'#7296c1',500:'#5883b6',600:'#4a78b0',700:'#335298',800:'#1f3184',900:'#080b6c',950:'#050746'},
+        indigo:{50:'#f0f0f6',100:'#e1e2ed',200:'#c4c4dc',300:'#9799c1',400:'#7576ad',500:'#4d4f95',600:'#2b2d81',700:'#080b6c',800:'#060956',900:'#050741',950:'#030429'},
+        violet:{50:'#f0f0f6',100:'#e1e2ed',200:'#c4c4dc',300:'#9799c1',400:'#7576ad',500:'#4d4f95',600:'#2b2d81',700:'#080b6c',800:'#060956',900:'#050741',950:'#030429'},
+        emerald:{400:'#56b2cb',500:'#3f97b3',600:'#2f7e98'}
+      },
+      fontFamily:{sans:['Poppins','sans-serif']}
+    }}}</script>
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { font-family: 'Poppins', sans-serif; }
         .bg-brand-dark { background-color: #0c1126; }
-        .bg-dots-light { background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 24px 24px; }
+        .bg-dots-light { background-image: radial-gradient(#b8b9c3 1px, transparent 1px); background-size: 24px 24px; }
         
         /* Glassmorphism premium */
         .glass-panel {

@@ -114,8 +114,8 @@ $md_segmentos = se_segmentos();
 </div>
 
 <style>
-    .lead-seg-opt:has(input:checked) { border-color:#2563eb; background:#eff6ff; box-shadow:0 0 0 4px rgba(37,99,235,.12); }
-    .lead-seg-opt input:focus-visible + span { outline:2px solid #2563eb; outline-offset:2px; }
+    .lead-seg-opt:has(input:checked) { border-color:#4a78b0; background:#f1f4f9; box-shadow:0 0 0 4px rgba(37,99,235,.12); }
+    .lead-seg-opt input:focus-visible + span { outline:2px solid #4a78b0; outline-offset:2px; }
 </style>
 
 <script>
