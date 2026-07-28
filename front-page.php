@@ -1,15 +1,14 @@
 <?php get_header(); ?>
 
 <style>
-    .ink { background:#030429; }
     /* camadas de ambiente (aurora + grade) fixas atrás de tudo */
-    .aurora { position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden; }
+    .aurora { position:absolute; inset:0; z-index:0; pointer-events:none; overflow:hidden; }
     .aurora::before, .aurora::after { content:""; position:absolute; border-radius:50%; filter:blur(130px); opacity:.45; }
     .aurora::before { width:620px; height:620px; background:#4a78b0; top:-160px; left:-120px; animation:drift1 20s ease-in-out infinite; }
     .aurora::after  { width:520px; height:520px; background:#080b6c; top:180px; right:-140px; animation:drift2 24s ease-in-out infinite; }
     @keyframes drift1 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(120px,90px)} }
     @keyframes drift2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-110px,120px)} }
-    .gridmask { position:fixed; inset:0; z-index:0; pointer-events:none;
+    .gridmask { position:absolute; inset:0; z-index:0; pointer-events:none;
         background-image:linear-gradient(rgba(148,163,184,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(148,163,184,.06) 1px,transparent 1px);
         background-size:54px 54px;
         -webkit-mask-image:radial-gradient(100% 55% at 50% 0,#000,transparent 78%); mask-image:radial-gradient(100% 55% at 50% 0,#000,transparent 78%); }
@@ -46,31 +45,31 @@
     }
 </style>
 
-<main class="ink relative text-white overflow-hidden">
-    <div class="aurora"></div>
-    <div class="gridmask"></div>
+<main class="relative overflow-hidden">
 
     <!-- ===================== HERO ===================== -->
-    <section class="relative z-10 pt-36 pb-24">
-        <div class="container mx-auto px-6 text-center max-w-5xl">
+    <section class="sup-escura relative z-10 pt-36 pb-24 overflow-hidden">
+        <div class="aurora"></div>
+        <div class="gridmask"></div>
+        <div class="container mx-auto px-6 text-center max-w-5xl relative z-10">
             <h1 class="titulo text-[2.9rem] md:text-[5.2rem] leading-[0.97] tracking-tightest mb-7">
                 Toda a gestão da sua<br class="hidden md:block"> instituição de ensino em <span class="gtext">um só sistema</span>
             </h1>
 
-            <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed mb-9">
-                Matrícula, secretaria, financeiro, sala de aula e o <span class="text-white font-semibold">AVA próprio</span> numa plataforma só, configurada para o seu segmento, com o suporte de quem faz software de gestão há 33 anos.
+            <p class="text-lg md:text-xl txt max-w-2xl mx-auto leading-relaxed mb-9">
+                Matrícula, secretaria, financeiro, sala de aula e o <span class="txt-forte font-semibold">AVA próprio</span> numa plataforma só, configurada para o seu segmento, com o suporte de quem faz software de gestão há 33 anos.
             </p>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
-                <button onclick="abrirDemo()" class="gbtn text-white font-bold px-8 py-4 rounded-2xl text-lg w-full sm:w-auto transition-all hover:-translate-y-0.5">Solicitar demonstração</button>
-                <a href="#segmentos" class="w-full sm:w-auto px-8 py-4 rounded-2xl text-lg font-semibold text-white glass hover:bg-white/10 transition">Ver a solução do meu segmento</a>
+                <button onclick="abrirDemo()" class="gbtn txt-forte font-bold px-8 py-4 rounded-2xl text-lg w-full sm:w-auto transition-all hover:-translate-y-0.5">Solicitar demonstração</button>
+                <a href="#segmentos" class="w-full sm:w-auto px-8 py-4 rounded-2xl text-lg font-semibold txt-forte glass hover:bg-white/10 transition">Ver a solução do meu segmento</a>
             </div>
-            <p class="text-slate-500 text-sm mt-5">Demonstração gratuita · sem compromisso · feita por um especialista do seu segmento</p>
+            <p class="txt-fraco text-sm mt-5">Demonstração gratuita · sem compromisso · feita por um especialista do seu segmento</p>
         </div>
 
         <!-- ===== BIFURCAÇÃO: a home é a porta de três públicos diferentes ===== -->
         <div id="segmentos" class="container mx-auto px-6 max-w-5xl mt-14 reveal scroll-mt-24">
-            <p class="text-center text-sm font-bold uppercase tracking-widest text-slate-400 mb-5">Onde você trabalha?</p>
+            <p class="text-center text-sm font-bold uppercase tracking-widest txt mb-5">Onde você trabalha?</p>
             <?php se_bloco_segmentos(); ?>
         </div>
 
@@ -79,29 +78,29 @@
             <div class="relative">
                 <div class="absolute -inset-x-10 -top-8 bottom-0 bg-gradient-to-b from-blue-600/40 to-blue-900/10 blur-3xl rounded-[3rem]"></div>
 
-                <div class="relative rounded-2xl overflow-hidden border border-white/10 bg-[#050741] cardring">
-                    <div class="h-11 flex items-center px-4 gap-2 border-b border-white/10 bg-slate-900/60">
+                <div class="sup-escura sup-escura-2 relative rounded-2xl overflow-hidden border linha cardring">
+                    <div class="h-11 flex items-center px-4 gap-2 border-b linha bg-black/25">
                         <span class="w-3 h-3 rounded-full bg-slate-600"></span>
                         <span class="w-3 h-3 rounded-full bg-slate-600"></span>
                         <span class="w-3 h-3 rounded-full bg-slate-600"></span>
-                        <span class="mx-auto text-[11px] text-slate-400 font-semibold bg-white/5 border border-white/10 rounded-full px-4 py-1">app.sendeducacional.com.br</span>
+                        <span class="mx-auto text-[11px] txt font-semibold bg-bloco border linha rounded-full px-4 py-1">app.sendeducacional.com.br</span>
                     </div>
                     <div class="p-5 md:p-6 text-left">
                         <div class="flex items-center justify-between mb-5">
                             <div class="flex items-center gap-2.5">
                                 <span class="w-8 h-8 rounded-lg flex items-center justify-center" style="background:linear-gradient(135deg,#4a78b0,#080b6c)"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 5 3 9l9 4 9-4-9-4z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M7 11v4c0 1 2.5 2.5 5 2.5s5-1.5 5-2.5v-4"></path></svg></span>
-                                <span class="text-white font-extrabold text-sm tracking-tight">SEND <span class="text-slate-500 font-medium">EDUCACIONAL</span></span>
+                                <span class="txt-forte font-extrabold text-sm tracking-tight">SEND <span class="txt-fraco font-medium">EDUCACIONAL</span></span>
                                 <span class="hidden sm:inline text-slate-600">|</span>
-                                <span class="hidden sm:inline text-slate-400 text-sm font-semibold">Faculdade Exemplo</span>
-                                <span class="hidden md:inline text-[9px] uppercase tracking-widest font-bold text-slate-500 border border-white/10 rounded-full px-2 py-0.5">Dados ilustrativos</span>
+                                <span class="hidden sm:inline txt text-sm font-semibold">Faculdade Exemplo</span>
+                                <span class="hidden md:inline text-[9px] uppercase tracking-widest font-bold txt-fraco border linha rounded-full px-2 py-0.5">Dados ilustrativos</span>
                             </div>
                             <div class="flex items-center gap-2 text-[11px]">
-                                <span class="hidden sm:block text-slate-400 font-medium">Coordenação</span>
+                                <span class="hidden sm:block txt font-medium">Coordenação</span>
                                 <span class="w-6 h-6 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600"></span>
                             </div>
                         </div>
 
-                        <p class="text-[10px] uppercase tracking-wide text-slate-500 font-bold mb-2.5">Mais acessados</p>
+                        <p class="text-[10px] uppercase tracking-wide txt-fraco font-bold mb-2.5">Mais acessados</p>
                         <div class="grid grid-cols-3 sm:grid-cols-6 gap-2 mb-5">
                             <?php
                             $fp_atalhos = array(
@@ -110,7 +109,7 @@
                             );
                             foreach ( $fp_atalhos as $t ) {
                                 printf(
-                                    '<div class="rounded-lg bg-white/[.03] border border-white/5 p-2.5 text-center"><span class="w-7 h-7 mx-auto rounded-md flex items-center justify-center mb-1.5" style="background:%s22;border:1px solid %s44"><span class="w-3 h-3 rounded-sm" style="background:%s"></span></span><span class="text-[9px] text-slate-400 font-semibold block truncate">%s</span></div>',
+                                    '<div class="rounded-lg bg-white/[.03] border linha p-2.5 text-center"><span class="w-7 h-7 mx-auto rounded-md flex items-center justify-center mb-1.5" style="background:%s22;border:1px solid %s44"><span class="w-3 h-3 rounded-sm" style="background:%s"></span></span><span class="text-[9px] txt font-semibold block truncate">%s</span></div>',
                                     $t[1], $t[1], $t[1], esc_html( $t[0] )
                                 );
                             }
@@ -128,12 +127,12 @@
                                 $rows = '';
                                 foreach ( $g[2] as $item ) {
                                     $rows .= sprintf(
-                                        '<div class="flex items-center justify-between rounded-lg bg-white/[.03] px-2.5 py-1.5 text-[11px] text-slate-300"><span class="flex items-center gap-2 truncate"><span class="w-3.5 h-3.5 rounded" style="background:%s33"></span>%s</span><svg class="w-3 h-3 text-slate-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5h5v5M19 5l-8 8M9 5H5v14h14v-4"></path></svg></div>',
+                                        '<div class="flex items-center justify-between rounded-lg bg-white/[.03] px-2.5 py-1.5 text-[11px] txt"><span class="flex items-center gap-2 truncate"><span class="w-3.5 h-3.5 rounded" style="background:%s33"></span>%s</span><svg class="w-3 h-3 text-slate-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5h5v5M19 5l-8 8M9 5H5v14h14v-4"></path></svg></div>',
                                         $g[1], esc_html( $item )
                                     );
                                 }
                                 printf(
-                                    '<div class="rounded-xl bg-white/[.02] border border-white/5 p-3"><p class="text-[10px] uppercase tracking-wide text-slate-400 font-bold mb-2 flex items-center gap-1.5"><span class="w-2 h-2 rounded-full" style="background:%s"></span>%s</p><div class="space-y-1.5">%s</div></div>',
+                                    '<div class="rounded-xl bg-white/[.02] border linha p-3"><p class="text-[10px] uppercase tracking-wide txt font-bold mb-2 flex items-center gap-1.5"><span class="w-2 h-2 rounded-full" style="background:%s"></span>%s</p><div class="space-y-1.5">%s</div></div>',
                                     $g[1], esc_html( $g[0] ), $rows
                                 );
                             }
@@ -144,11 +143,11 @@
 
                 <div class="floaty hidden md:flex absolute -left-8 bottom-14 items-center gap-3 glass rounded-2xl px-4 py-3">
                     <div class="w-9 h-9 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></div>
-                    <div class="text-left"><p class="text-[10px] text-slate-400 font-bold uppercase">Mensalidade</p><p class="text-sm font-bold text-white">Paga via Pix</p></div>
+                    <div class="text-left"><p class="text-[10px] txt font-bold uppercase">Mensalidade</p><p class="text-sm font-bold txt-forte">Paga via Pix</p></div>
                 </div>
                 <div class="floaty2 hidden md:flex absolute -right-6 top-20 items-center gap-3 glass rounded-2xl px-4 py-3">
-                    <div class="w-9 h-9 rounded-full bg-blue-500/20 text-blue-300 flex items-center justify-center"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-3-3v6M4 6h16M4 6a1 1 0 011-1h14a1 1 0 011 1M4 6v12a1 1 0 001 1h14a1 1 0 001-1V6"></path></svg></div>
-                    <div class="text-left"><p class="text-[10px] text-slate-400 font-bold uppercase">Diploma</p><p class="text-sm font-bold text-white">Digital emitido</p></div>
+                    <div class="w-9 h-9 rounded-full bg-blue-500/20 txt-link flex items-center justify-center"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-3-3v6M4 6h16M4 6a1 1 0 011-1h14a1 1 0 011 1M4 6v12a1 1 0 001 1h14a1 1 0 001-1V6"></path></svg></div>
+                    <div class="text-left"><p class="text-[10px] txt font-bold uppercase">Diploma</p><p class="text-sm font-bold txt-forte">Digital emitido</p></div>
                 </div>
             </div>
         </div>
@@ -160,8 +159,8 @@
 
     <section class="relative z-10">
         <!-- marquee -->
-        <div class="relative z-10 mt-16 border-t border-white/10 py-6 mqo">
-            <div class="mq text-slate-500 text-sm font-semibold uppercase tracking-widest">
+        <div class="relative z-10 mt-16 border-t linha py-6 mqo">
+            <div class="mq txt-fraco text-sm font-semibold uppercase tracking-widest">
                 <span>MEC</span><span>Censo Escolar</span><span>Diploma Digital</span><span>Certificado online</span><span>Pix</span><span>Getnet</span><span>Santander</span><span>WhatsApp</span><span>Asaas</span><span>LGPD</span><span>Polos EAD</span>
                 <span>MEC</span><span>Censo Escolar</span><span>Diploma Digital</span><span>Certificado online</span><span>Pix</span><span>Getnet</span><span>Santander</span><span>WhatsApp</span><span>Asaas</span><span>LGPD</span><span>Polos EAD</span>
             </div>
@@ -185,9 +184,9 @@
                 foreach ( $fp_stats as $s ) {
                     printf(
                         '<div class="faixa-item">
-                            <div class="numero text-5xl md:text-6xl text-white leading-none">%s</div>
-                            <p class="titulo-mini text-slate-200 text-base mt-3">%s</p>
-                            <p class="text-slate-500 text-[13px] mt-1.5 leading-snug">%s</p>
+                            <div class="numero text-5xl md:text-6xl txt-forte leading-none">%s</div>
+                            <p class="titulo-mini txt-forte text-base mt-3">%s</p>
+                            <p class="txt-fraco text-[13px] mt-1.5 leading-snug">%s</p>
                         </div>',
                         esc_html( $s[0] ), esc_html( $s[1] ), esc_html( $s[2] )
                     );
@@ -195,8 +194,8 @@
                 ?>
             </div>
 
-            <p class="regra mt-12 pt-6 text-sm text-slate-500 leading-relaxed max-w-3xl">
-                <span class="text-slate-300 font-semibold">Conformidade regulatória por segmento.</span>
+            <p class="regra mt-12 pt-6 text-sm txt-fraco leading-relaxed max-w-3xl">
+                <span class="txt font-semibold">Conformidade regulatória por segmento.</span>
                 MEC, Censo INEP e diploma digital no ensino superior. Conselhos de Educação, Secretarias e Censo Escolar na educação básica. LGPD nos três.
             </p>
         </div>
@@ -206,16 +205,16 @@
     <section id="ava" class="relative z-10 py-24">
         <div class="container mx-auto px-6 max-w-6xl grid lg:grid-cols-2 gap-14 items-center reveal">
             <div>
-                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/30 text-blue-300 text-xs font-bold uppercase tracking-widest mb-6">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/30 txt-link text-xs font-bold uppercase tracking-widest mb-6">
                     <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span></span>
                     Novidade
                 </div>
                 <h2 class="titulo text-[2.2rem] md:text-5xl leading-[1.02] mb-6">A aula acontece <span class="gtext">dentro do sistema</span>, não ao lado dele.</h2>
-                <p class="text-lg text-slate-400 leading-relaxed mb-8">Desenvolvemos o nosso próprio Ambiente Virtual de Aprendizagem: aula, material e avaliação ficam no mesmo sistema do acadêmico e do financeiro, e a nota cai direto no histórico sem ninguém reimportar planilha. O aluno estuda, é avaliado e vê a nota sem trocar de ambiente. A coordenação enxerga acesso, progresso e desempenho no mesmo lugar em que enxerga a matrícula e a mensalidade.</p>
-                <button onclick="abrirDemo()" class="gbtn text-white font-bold px-7 py-3.5 rounded-2xl transition-all hover:-translate-y-0.5">Ver o AVA na demonstração</button>
+                <p class="text-lg txt leading-relaxed mb-8">Desenvolvemos o nosso próprio Ambiente Virtual de Aprendizagem: aula, material e avaliação ficam no mesmo sistema do acadêmico e do financeiro, e a nota cai direto no histórico sem ninguém reimportar planilha. O aluno estuda, é avaliado e vê a nota sem trocar de ambiente. A coordenação enxerga acesso, progresso e desempenho no mesmo lugar em que enxerga a matrícula e a mensalidade.</p>
+                <button onclick="abrirDemo()" class="gbtn txt-forte font-bold px-7 py-3.5 rounded-2xl transition-all hover:-translate-y-0.5">Ver o AVA na demonstração</button>
             </div>
             <div class="glass rounded-3xl p-7 md:p-9 cardring">
-                <p class="text-xs font-bold uppercase tracking-widest text-blue-300 mb-6">O que o AVA próprio entrega</p>
+                <p class="text-xs font-bold uppercase tracking-widest txt-link mb-6">O que o AVA próprio entrega</p>
                 <ul class="space-y-4">
                     <?php
                     $ava_itens = array(
@@ -228,7 +227,7 @@
                     );
                     foreach ( $ava_itens as $item ) {
                         printf(
-                            '<li class="flex items-start gap-3 text-slate-200"><svg class="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>%s</li>',
+                            '<li class="flex items-start gap-3 txt-forte"><svg class="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>%s</li>',
                             esc_html( $item )
                         );
                     }
@@ -242,56 +241,56 @@
     <section id="ecossistema" class="relative z-10 py-24">
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="text-center mb-14 reveal">
-                <span class="text-blue-400 font-bold tracking-widest uppercase text-xs">Ecossistema integrado</span>
+                <span class="txt-link font-bold tracking-widest uppercase text-xs">Ecossistema integrado</span>
                 <h2 class="titulo text-[2.2rem] md:text-5xl leading-[1.03] mt-4">Todos os setores no mesmo sistema</h2>
-                <p class="text-lg text-slate-400 mt-4 max-w-2xl mx-auto">Da primeira conversa com o aluno até a conclusão do curso, com os dados conversando de ponta a ponta, no ensino superior, na escola e no curso online.</p>
+                <p class="text-lg txt mt-4 max-w-2xl mx-auto">Da primeira conversa com o aluno até a conclusão do curso, com os dados conversando de ponta a ponta, no ensino superior, na escola e no curso online.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-5 reveal">
                 <div class="md:col-span-2 glass glass-hover rounded-3xl p-9 flex flex-col justify-between">
                     <div class="md:w-3/4">
-                        <div class="w-14 h-14 igrad rounded-2xl flex items-center justify-center mb-6"><svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M12 14v7M5 11v5c0 1 3 3 7 3s7-2 7-3v-5"></path></svg></div>
-                        <h3 class="titulo-mini text-2xl text-white mb-3">Secretaria Acadêmica</h3>
-                        <p class="text-slate-400 leading-relaxed mb-6">Do processo seletivo à colação de grau: matrícula e rematrícula online, diário de classe, histórico, diploma digital e adequação às portarias do MEC.</p>
+                        <div class="w-14 h-14 igrad rounded-2xl flex items-center justify-center mb-6"><svg class="w-7 h-7 txt-forte" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M12 14v7M5 11v5c0 1 3 3 7 3s7-2 7-3v-5"></path></svg></div>
+                        <h3 class="titulo-mini text-2xl txt-forte mb-3">Secretaria Acadêmica</h3>
+                        <p class="txt leading-relaxed mb-6">Do processo seletivo à colação de grau: matrícula e rematrícula online, diário de classe, histórico, diploma digital e adequação às portarias do MEC.</p>
                     </div>
-                    <a href="<?php echo home_url('/gestao-academica'); ?>" class="inline-flex items-center gap-2 font-bold text-blue-300 hover:text-white transition">Conhecer o módulo acadêmico <span aria-hidden="true">&rarr;</span></a>
+                    <a href="<?php echo home_url('/gestao-academica'); ?>" class="inline-flex items-center gap-2 font-bold txt-link hover-forte transition">Conhecer o módulo acadêmico <span aria-hidden="true">&rarr;</span></a>
                 </div>
 
                 <div class="glass glass-hover rounded-3xl p-9 flex flex-col justify-between">
                     <div>
-                        <div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6"><svg class="w-7 h-7 text-blue-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8V7m0 9v1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
-                        <h3 class="titulo-mini text-xl text-white mb-3">Gestão Financeira</h3>
-                        <p class="text-slate-400 leading-relaxed mb-6">Boletos, Pix e régua de cobrança automática, acordos, DRE e notas fiscais. A inadimplência fica sob controle, do lançamento ao caixa.</p>
+                        <div class="w-14 h-14 rounded-2xl bg-bloco border linha flex items-center justify-center mb-6"><svg class="w-7 h-7 txt-link" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8V7m0 9v1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
+                        <h3 class="titulo-mini text-xl txt-forte mb-3">Gestão Financeira</h3>
+                        <p class="txt leading-relaxed mb-6">Boletos, Pix e régua de cobrança automática, acordos, DRE e notas fiscais. A inadimplência fica sob controle, do lançamento ao caixa.</p>
                     </div>
-                    <a href="<?php echo home_url('/financeiro'); ?>" class="inline-flex items-center gap-2 font-bold text-blue-300 hover:text-white transition">Ver módulo financeiro <span aria-hidden="true">&rarr;</span></a>
+                    <a href="<?php echo home_url('/financeiro'); ?>" class="inline-flex items-center gap-2 font-bold txt-link hover-forte transition">Ver módulo financeiro <span aria-hidden="true">&rarr;</span></a>
                 </div>
 
                 <div class="glass glass-hover rounded-3xl p-9 flex flex-col justify-between">
                     <div>
-                        <div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6"><svg class="w-7 h-7 text-violet-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17H5a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-4m-6 4h6"></path></svg></div>
-                        <h3 class="titulo-mini text-xl text-white mb-3">Portais + AVA próprio</h3>
-                        <p class="text-slate-400 leading-relaxed mb-6">Portais do aluno, do docente e do coordenador, com gestão de polos EAD e o AVA próprio junto: notas, diário, requerimentos e aulas no mesmo login.</p>
+                        <div class="w-14 h-14 rounded-2xl bg-bloco border linha flex items-center justify-center mb-6"><svg class="w-7 h-7 text-violet-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17H5a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-4m-6 4h6"></path></svg></div>
+                        <h3 class="titulo-mini text-xl txt-forte mb-3">Portais + AVA próprio</h3>
+                        <p class="txt leading-relaxed mb-6">Portais do aluno, do docente e do coordenador, com gestão de polos EAD e o AVA próprio junto: notas, diário, requerimentos e aulas no mesmo login.</p>
                     </div>
-                    <a href="<?php echo home_url('/portais'); ?>" class="inline-flex items-center gap-2 font-bold text-blue-300 hover:text-white transition">Explorar os portais <span aria-hidden="true">&rarr;</span></a>
+                    <a href="<?php echo home_url('/portais'); ?>" class="inline-flex items-center gap-2 font-bold txt-link hover-forte transition">Explorar os portais <span aria-hidden="true">&rarr;</span></a>
                 </div>
 
                 <div class="md:col-span-2 glass glass-hover rounded-3xl p-9 flex items-center gap-6">
-                    <div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0"><svg class="w-7 h-7 text-blue-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg></div>
+                    <div class="w-14 h-14 rounded-2xl bg-bloco border linha flex items-center justify-center shrink-0"><svg class="w-7 h-7 txt-link" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg></div>
                     <div>
-                        <h3 class="titulo-mini text-xl text-white mb-2">Biblioteca &amp; GED</h3>
-                        <p class="text-slate-400 leading-relaxed">Gestão eletrônica de documentos para adequação fiscal e acadêmica, com controle completo de acervo. Documentos 100% digitalizados.</p>
+                        <h3 class="titulo-mini text-xl txt-forte mb-2">Biblioteca &amp; GED</h3>
+                        <p class="txt leading-relaxed">Gestão eletrônica de documentos para adequação fiscal e acadêmica, com controle completo de acervo. Documentos 100% digitalizados.</p>
                     </div>
                 </div>
             </div>
 
             <!-- todos os módulos -->
             <div class="mt-12 reveal">
-                <p class="text-center text-sm font-semibold text-slate-400 mb-5">E ainda mais de <span class="font-bold text-white">20 módulos</span> na mesma plataforma</p>
+                <p class="text-center text-sm font-semibold txt mb-5">E ainda mais de <span class="font-bold txt-forte">20 módulos</span> na mesma plataforma</p>
                 <div class="flex flex-wrap justify-center gap-2.5">
                     <?php
                     $fp_modulos = array( 'Processo seletivo', 'Matrícula & rematrícula', 'Assinatura digital', 'Secretaria acadêmica', 'Diário de classe', 'Financeiro & DRE', 'Portal do aluno', 'Portal do docente', 'Portal do coordenador', 'Gestão de polos EAD', 'AVA próprio', 'Diploma digital', 'CRM & Captação', 'Retenção de alunos', 'Biblioteca & GED', 'BI & Indicadores' );
                     foreach ( $fp_modulos as $fp_mod ) {
-                        printf( '<span class="px-4 py-2 rounded-full glass text-slate-300 text-sm font-semibold">%s</span>', esc_html( $fp_mod ) );
+                        printf( '<span class="px-4 py-2 rounded-full glass txt text-sm font-semibold">%s</span>', esc_html( $fp_mod ) );
                     }
                     ?>
                 </div>
@@ -306,9 +305,9 @@
     <section class="relative z-10 py-24">
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="text-center mb-16 reveal">
-                <span class="text-blue-400 font-bold tracking-widest uppercase text-xs">Uma plataforma, a jornada inteira</span>
+                <span class="txt-link font-bold tracking-widest uppercase text-xs">Uma plataforma, a jornada inteira</span>
                 <h2 class="titulo text-[2.2rem] md:text-5xl leading-[1.03] mt-4">Da captação à <span class="gtext">conclusão</span>, sem trocar de sistema</h2>
-                <p class="text-slate-400 max-w-2xl mx-auto text-lg mt-4">Matrícula com assinatura digital, secretaria, financeiro, AVA e a emissão do documento final. Cada etapa já conversa com a próxima, sem planilha nem sistema paralelo.</p>
+                <p class="txt max-w-2xl mx-auto text-lg mt-4">Matrícula com assinatura digital, secretaria, financeiro, AVA e a emissão do documento final. Cada etapa já conversa com a próxima, sem planilha nem sistema paralelo.</p>
             </div>
 
             <div class="relative reveal">
@@ -325,15 +324,15 @@
                     );
                     foreach ( $fp_jornada as $j ) {
                         $bg    = $j[3] ? 'linear-gradient(135deg,#080b6c,#2b2d81)' : 'linear-gradient(135deg,#4a78b0,#080b6c)';
-                        $badge = $j[3] ? '<span class="absolute -top-2 -right-2 text-[8px] font-black uppercase tracking-wider text-white px-1.5 py-0.5 rounded-full" style="background:linear-gradient(100deg,#080b6c,#2b2d81)">Novo</span>' : '';
+                        $badge = $j[3] ? '<span class="absolute -top-2 -right-2 text-[8px] font-black uppercase tracking-wider txt-forte px-1.5 py-0.5 rounded-full" style="background:linear-gradient(100deg,#080b6c,#2b2d81)">Novo</span>' : '';
                         printf(
                             '<div class="text-center px-1">
                                 <div class="relative w-14 h-14 mx-auto rounded-2xl flex items-center justify-center mb-4 z-10 ring-4 ring-[#030429]" style="background:%s">
-                                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">%s</svg>
+                                    <svg class="w-7 h-7 txt-forte" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">%s</svg>
                                     %s
                                 </div>
-                                <h4 class="text-sm font-bold text-white leading-tight">%s</h4>
-                                <p class="text-[12px] text-slate-400 mt-1 leading-snug">%s</p>
+                                <h4 class="text-sm font-bold txt-forte leading-tight">%s</h4>
+                                <p class="text-[12px] txt mt-1 leading-snug">%s</p>
                             </div>',
                             $bg, $j[2], $badge, esc_html( $j[0] ), esc_html( $j[1] )
                         );
@@ -343,8 +342,8 @@
             </div>
 
             <div class="mt-14 text-center reveal">
-                <button onclick="abrirDemo()" class="gbtn text-white font-bold px-8 py-4 rounded-2xl transition-all hover:-translate-y-0.5">Ver a plataforma completa</button>
-                <p class="text-slate-500 text-sm mt-3">Mais de 20 módulos, do primeiro contato ao documento final.</p>
+                <button onclick="abrirDemo()" class="gbtn txt-forte font-bold px-8 py-4 rounded-2xl transition-all hover:-translate-y-0.5">Ver a plataforma completa</button>
+                <p class="txt-fraco text-sm mt-3">Mais de 20 módulos, do primeiro contato ao documento final.</p>
             </div>
         </div>
     </section>
@@ -353,88 +352,88 @@
     <section class="relative z-10 py-24">
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="text-center mb-12 reveal">
-                <span class="text-blue-400 font-bold tracking-widest uppercase text-xs">A rotina real, dentro do sistema</span>
+                <span class="txt-link font-bold tracking-widest uppercase text-xs">A rotina real, dentro do sistema</span>
                 <h2 class="titulo text-[2.2rem] md:text-5xl leading-[1.03] mt-4">Feito para quem constrói a educação</h2>
-                <p class="text-lg text-slate-400 mt-4 max-w-2xl mx-auto">As telas do Send Educacional, reproduzidas aqui com dados ilustrativos: indicadores em tempo real, filtros por período e curso, e a operação inteira sob controle.</p>
+                <p class="text-lg txt mt-4 max-w-2xl mx-auto">As telas do Send Educacional, reproduzidas aqui com dados ilustrativos: indicadores em tempo real, filtros por período e curso, e a operação inteira sob controle.</p>
             </div>
 
             <div class="grid lg:grid-cols-2 gap-12 items-center reveal">
                 <div>
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass text-xs font-bold uppercase tracking-widest text-blue-300 mb-5">Central de assinaturas</div>
-                    <h3 class="titulo text-2xl md:text-3xl text-white mb-4">Contratos e assinaturas digitais, sob controle</h3>
-                    <p class="text-slate-400 text-lg mb-6">Do envio à assinatura concluída: acompanhe cada contrato por período letivo, curso, modalidade e status. A distribuição é em tempo real, com busca por aluno ou matrícula.</p>
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass text-xs font-bold uppercase tracking-widest txt-link mb-5">Central de assinaturas</div>
+                    <h3 class="titulo text-2xl md:text-3xl txt-forte mb-4">Contratos e assinaturas digitais, sob controle</h3>
+                    <p class="txt text-lg mb-6">Do envio à assinatura concluída: acompanhe cada contrato por período letivo, curso, modalidade e status. A distribuição é em tempo real, com busca por aluno ou matrícula.</p>
                     <ul class="space-y-3">
                         <?php foreach ( array(
                             'Assinatura digital validada, e registro de contrato assinado internamente.',
                             'Distribuição por status: em assinatura, concluído, recusado, cancelado.',
                             'Filtros por período, curso, modalidade e situação acadêmica.',
                         ) as $li ) {
-                            printf( '<li class="flex items-start gap-3 text-slate-300"><svg class="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>%s</li>', esc_html( $li ) );
+                            printf( '<li class="flex items-start gap-3 txt"><svg class="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>%s</li>', esc_html( $li ) );
                         } ?>
                     </ul>
-                    <button onclick="abrirDemo()" class="mt-7 gbtn text-white font-bold px-7 py-3.5 rounded-2xl transition-all hover:-translate-y-0.5">Ver na demonstração</button>
+                    <button onclick="abrirDemo()" class="mt-7 gbtn txt-forte font-bold px-7 py-3.5 rounded-2xl transition-all hover:-translate-y-0.5">Ver na demonstração</button>
                 </div>
 
-                <div class="rounded-2xl overflow-hidden border border-white/10 bg-slate-950 cardring">
-                    <div class="h-10 flex items-center px-4 gap-2 border-b border-white/10 bg-slate-900/70">
+                <div class="sup-escura rounded-2xl overflow-hidden border linha cardring">
+                    <div class="h-10 flex items-center px-4 gap-2 border-b linha bg-black/25">
                         <span class="w-2.5 h-2.5 rounded-full bg-slate-600"></span>
                         <span class="w-2.5 h-2.5 rounded-full bg-slate-600"></span>
                         <span class="w-2.5 h-2.5 rounded-full bg-slate-600"></span>
-                        <span class="mx-auto text-[11px] text-slate-400 font-semibold bg-white/5 border border-white/10 rounded-full px-4 py-1">app.sendeducacional.com.br/assinaturas</span>
+                        <span class="mx-auto text-[11px] txt font-semibold bg-bloco border linha rounded-full px-4 py-1">app.sendeducacional.com.br/assinaturas</span>
                     </div>
-                    <div class="p-4 md:p-5 bg-[#050741]">
-                        <p class="text-sm font-extrabold text-white mb-3">Central de assinaturas</p>
+                    <div class="p-4 md:p-5">
+                        <p class="text-sm font-extrabold txt-forte mb-3">Central de assinaturas</p>
                         <div class="grid grid-cols-2 gap-3 mb-3">
-                            <div class="rounded-xl bg-white/[.03] border border-white/5 p-3"><p class="text-[10px] text-slate-400 font-semibold">Concluídos</p><p class="text-2xl font-extrabold text-white mt-1">3.692</p></div>
-                            <div class="rounded-xl bg-white/[.03] border border-white/5 p-3"><p class="text-[10px] text-slate-400 font-semibold">Assinados internamente</p><p class="text-2xl font-extrabold text-white mt-1">389</p></div>
+                            <div class="rounded-xl bg-white/[.03] border linha p-3"><p class="text-[10px] txt font-semibold">Concluídos</p><p class="text-2xl font-extrabold txt-forte mt-1">3.692</p></div>
+                            <div class="rounded-xl bg-white/[.03] border linha p-3"><p class="text-[10px] txt font-semibold">Assinados internamente</p><p class="text-2xl font-extrabold txt-forte mt-1">389</p></div>
                         </div>
                         <div class="grid grid-cols-2 gap-3 mb-3">
-                            <div class="rounded-xl bg-white/[.03] border border-white/5 p-3">
-                                <p class="text-[10px] text-slate-400 font-semibold mb-2">Distribuição por status</p>
+                            <div class="rounded-xl bg-white/[.03] border linha p-3">
+                                <p class="text-[10px] txt font-semibold mb-2">Distribuição por status</p>
                                 <div class="flex items-center gap-3">
-                                    <div class="sys-donut shrink-0"><span class="relative z-10 text-xs font-bold text-white">94%</span></div>
-                                    <div class="space-y-1 text-[10px] text-slate-400">
-                                        <div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-blue-500"></span>Concluído <span class="text-slate-500">3.692</span></div>
-                                        <div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-amber-400"></span>Em assinatura <span class="text-slate-500">217</span></div>
-                                        <div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-rose-500"></span>Recusado <span class="text-slate-500">10</span></div>
-                                        <div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-slate-500"></span>Cancelado <span class="text-slate-500">1</span></div>
+                                    <div class="sys-donut shrink-0"><span class="relative z-10 text-xs font-bold txt-forte">94%</span></div>
+                                    <div class="space-y-1 text-[10px] txt">
+                                        <div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-blue-500"></span>Concluído <span class="txt-fraco">3.692</span></div>
+                                        <div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-amber-400"></span>Em assinatura <span class="txt-fraco">217</span></div>
+                                        <div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-rose-500"></span>Recusado <span class="txt-fraco">10</span></div>
+                                        <div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-slate-500"></span>Cancelado <span class="txt-fraco">1</span></div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="rounded-xl bg-white/[.03] border border-white/5 p-3">
-                                <p class="text-[10px] text-slate-400 font-semibold mb-2">Assinaturas por período</p>
+                            <div class="rounded-xl bg-white/[.03] border linha p-3">
+                                <p class="text-[10px] txt font-semibold mb-2">Assinaturas por período</p>
                                 <div class="space-y-1.5">
                                     <?php
                                     $fp_per = array( array( 'EAD Grad. 2026.2', 92 ), array( 'EAD Grad. 2026.1', 64 ), array( 'Graduação 2026.1', 44 ), array( 'Pós 2026.1', 28 ), array( 'Semi 2026.2', 14 ) );
                                     foreach ( $fp_per as $p ) {
-                                        printf( '<div class="flex items-center gap-2 text-[9px]"><span class="w-20 text-slate-400 truncate">%s</span><div class="flex-1 h-1.5 rounded bg-white/5"><div class="h-full rounded bg-blue-500" style="width:%d%%"></div></div></div>', esc_html( $p[0] ), (int) $p[1] );
+                                        printf( '<div class="flex items-center gap-2 text-[9px]"><span class="w-20 txt truncate">%s</span><div class="flex-1 h-1.5 rounded bg-bloco"><div class="h-full rounded bg-blue-500" style="width:%d%%"></div></div></div>', esc_html( $p[0] ), (int) $p[1] );
                                     }
                                     ?>
                                 </div>
                             </div>
                         </div>
-                        <div class="rounded-xl bg-white/[.03] border border-white/5 overflow-hidden">
-                            <div class="grid gap-2 px-3 py-2 text-[9px] uppercase text-slate-500 font-bold border-b border-white/5" style="grid-template-columns:1.5fr 1.4fr .8fr .9fr;">
+                        <div class="rounded-xl bg-white/[.03] border linha overflow-hidden">
+                            <div class="grid gap-2 px-3 py-2 text-[9px] uppercase txt-fraco font-bold border-b linha" style="grid-template-columns:1.5fr 1.4fr .8fr .9fr;">
                                 <span>Aluno</span><span>Curso / período</span><span>Situação</span><span>Status</span>
                             </div>
                             <?php
                             $fp_ass = array(
-                                array( 'Ana Beatriz Rocha', 'EAD · Gestão Comercial 2026.2', 'Pré-matrícula', '#4a78b0', 'Em assinatura', '#f59e0b' ),
-                                array( 'Lucas Martins', 'ADS 2026.2', 'Pré-matrícula', '#4a78b0', 'Em assinatura', '#f59e0b' ),
-                                array( 'Marina Alves', 'Enfermagem 2026.2', 'Cursando', '#4a78b0', 'Concluído', '#22c55e' ),
-                                array( 'Rafael Souza', 'Administração 2026.2', 'Pré-matrícula', '#4a78b0', 'Concluído', '#22c55e' ),
-                                array( 'Camila Ferreira', 'Ciências Contábeis 2026.2', 'Cursando', '#4a78b0', 'Concluído', '#22c55e' ),
-                                array( 'Bruno Almeida', 'Comércio Exterior 2026.2', 'Pré-matrícula', '#4a78b0', 'Em assinatura', '#f59e0b' ),
+                                array( 'Ana Beatriz Rocha', 'EAD · Gestão Comercial 2026.2', 'Pré-matrícula', '#7296c1', 'Em assinatura', '#f59e0b' ),
+                                array( 'Lucas Martins', 'ADS 2026.2', 'Pré-matrícula', '#7296c1', 'Em assinatura', '#f59e0b' ),
+                                array( 'Marina Alves', 'Enfermagem 2026.2', 'Cursando', '#7296c1', 'Concluído', '#22c55e' ),
+                                array( 'Rafael Souza', 'Administração 2026.2', 'Pré-matrícula', '#7296c1', 'Concluído', '#22c55e' ),
+                                array( 'Camila Ferreira', 'Ciências Contábeis 2026.2', 'Cursando', '#7296c1', 'Concluído', '#22c55e' ),
+                                array( 'Bruno Almeida', 'Comércio Exterior 2026.2', 'Pré-matrícula', '#7296c1', 'Em assinatura', '#f59e0b' ),
                             );
                             foreach ( $fp_ass as $r ) {
                                 printf(
-                                    '<div class="grid gap-2 px-3 py-2 text-[10px] items-center border-b border-white/[.03]" style="grid-template-columns:1.5fr 1.4fr .8fr .9fr;"><span class="text-slate-200 font-semibold truncate">%s</span><span class="text-slate-400 truncate">%s</span><span class="justify-self-start px-1.5 py-0.5 rounded text-[8px] font-bold" style="background:%s22;color:%s">%s</span><span class="justify-self-start px-1.5 py-0.5 rounded text-[8px] font-bold" style="background:%s22;color:%s">%s</span></div>',
+                                    '<div class="grid gap-2 px-3 py-2 text-[10px] items-center border-b border-white/[.03]" style="grid-template-columns:1.5fr 1.4fr .8fr .9fr;"><span class="txt-forte font-semibold truncate">%s</span><span class="txt truncate">%s</span><span class="justify-self-start px-1.5 py-0.5 rounded text-[8px] font-bold" style="background:%s22;color:%s">%s</span><span class="justify-self-start px-1.5 py-0.5 rounded text-[8px] font-bold" style="background:%s22;color:%s">%s</span></div>',
                                     esc_html( $r[0] ), esc_html( $r[1] ), $r[3], $r[3], esc_html( $r[2] ), $r[5], $r[5], esc_html( $r[4] )
                                 );
                             }
                             ?>
                         </div>
-                        <p class="text-[10px] text-slate-500 text-center mt-3 uppercase tracking-widest font-bold">Dados ilustrativos</p>
+                        <p class="text-[10px] txt-fraco text-center mt-3 uppercase tracking-widest font-bold">Dados ilustrativos</p>
                     </div>
                 </div>
             </div>
@@ -450,14 +449,14 @@
 
             <div class="lg:col-span-5 reveal">
                 <div class="fixa">
-                    <span class="text-blue-400 font-bold tracking-widest uppercase text-xs">Por que o Send</span>
+                    <span class="txt-link font-bold tracking-widest uppercase text-xs">Por que o Send</span>
                     <h2 class="titulo text-[2.6rem] md:text-6xl leading-[0.98] mt-5 mb-6">
                         Seis motivos,<br>e nenhum deles<br>é <span class="gtext">o preço</span>.
                     </h2>
-                    <p class="text-lg text-slate-400 leading-relaxed mb-8 max-w-sm">
+                    <p class="text-lg txt leading-relaxed mb-8 max-w-sm">
                         Sistema barato que exige três planilhas por fora sai caro. O que a gente vende é a operação inteira num lugar só, com quem responde quando dá problema.
                     </p>
-                    <button onclick="abrirDemo()" class="gbtn text-white font-bold px-7 py-3.5 rounded-2xl transition-all hover:-translate-y-0.5">Ver na prática</button>
+                    <button onclick="abrirDemo()" class="gbtn txt-forte font-bold px-7 py-3.5 rounded-2xl transition-all hover:-translate-y-0.5">Ver na prática</button>
                 </div>
             </div>
 
@@ -475,8 +474,8 @@
                     printf(
                         '<div class="marco">
                             <span class="marco-num">%02d</span>
-                            <h3 class="titulo-mini text-white text-xl mb-2.5">%s</h3>
-                            <p class="text-slate-400 leading-relaxed text-[15px]">%s</p>
+                            <h3 class="titulo-mini txt-forte text-xl mb-2.5">%s</h3>
+                            <p class="txt leading-relaxed text-[15px]">%s</p>
                         </div>',
                         $n + 1, esc_html( $d[0] ), esc_html( $d[1] )
                     );
@@ -491,12 +490,12 @@
         <div class="container mx-auto px-6 max-w-5xl">
             <div class="text-center mb-14 reveal">
                 <h2 class="titulo text-[2.2rem] md:text-5xl leading-[1.03] mb-4">Por que as instituições estão mudando</h2>
-                <p class="text-lg text-slate-400">Chega de remendos. A diferença entre sistemas defasados e um ecossistema integrado.</p>
+                <p class="text-lg txt">Chega de remendos. A diferença entre sistemas defasados e um ecossistema integrado.</p>
             </div>
             <div class="grid md:grid-cols-2 gap-5 reveal">
                 <div class="glass rounded-3xl p-9">
-                    <h3 class="text-lg font-bold text-slate-300 mb-6 flex items-center gap-2"><span class="w-6 h-6 rounded-full bg-red-500/15 text-red-400 flex items-center justify-center"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"></path></svg></span> O jeito antigo</h3>
-                    <ul class="space-y-4 text-slate-400">
+                    <h3 class="text-lg font-bold txt mb-6 flex items-center gap-2"><span class="w-6 h-6 rounded-full bg-red-500/15 text-red-400 flex items-center justify-center"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"></path></svg></span> O jeito antigo</h3>
+                    <ul class="space-y-4 txt">
                         <?php foreach ( array( 'Filas na secretaria durante a matrícula.', 'Cobrança manual gerando inadimplência.', 'Multas no MEC por documentos físicos perdidos.', 'Vários sistemas que não conversam entre si.' ) as $x ) {
                             printf( '<li class="flex gap-3"><svg class="w-5 h-5 text-red-400/70 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"></path></svg>%s</li>', esc_html( $x ) );
                         } ?>
@@ -504,10 +503,10 @@
                 </div>
                 <div class="rounded-3xl p-9 relative overflow-hidden" style="background:linear-gradient(135deg,#335298,#080b6c)">
                     <div class="absolute -top-10 -right-10 w-48 h-48 bg-white/10 rounded-full blur-2xl"></div>
-                    <h3 class="text-lg font-bold text-white mb-6 flex items-center gap-2 relative z-10"><span class="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></span> Com o Send Educacional</h3>
-                    <ul class="space-y-4 relative z-10 font-medium text-white">
+                    <h3 class="text-lg font-bold txt-forte mb-6 flex items-center gap-2 relative z-10"><span class="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></span> Com o Send Educacional</h3>
+                    <ul class="space-y-4 relative z-10 font-medium txt-forte">
                         <?php foreach ( array( 'Matrícula 100% digital com assinatura validada.', 'Régua de cobrança automática e Pix instantâneo.', 'Adequação ao MEC e diploma digital nativo.', 'Tudo num lugar: do portal do aluno à contabilidade.' ) as $y ) {
-                            printf( '<li class="flex gap-3"><svg class="w-5 h-5 text-emerald-300 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>%s</li>', esc_html( $y ) );
+                            printf( '<li class="flex gap-3"><svg class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>%s</li>', esc_html( $y ) );
                         } ?>
                     </ul>
                 </div>
@@ -519,19 +518,19 @@
     <section class="relative z-10 py-24">
         <div class="container mx-auto px-6 max-w-6xl grid lg:grid-cols-2 gap-14 items-center reveal">
             <div>
-                <span class="text-blue-400 font-bold tracking-widest uppercase text-xs">Segurança &amp; implantação</span>
+                <span class="txt-link font-bold tracking-widest uppercase text-xs">Segurança &amp; implantação</span>
                 <h2 class="titulo text-[2rem] md:text-4xl leading-[1.04] mt-4 mb-5">Medo de trocar de sistema? A gente conduz.</h2>
-                <p class="text-slate-400 text-lg mb-8 leading-relaxed">Migração guiada e silenciosa: sua operação não para, nem no meio do semestre. E os dados dos seus alunos ficam sob criptografia e conformidade com a LGPD.</p>
+                <p class="txt text-lg mb-8 leading-relaxed">Migração guiada e silenciosa: sua operação não para, nem no meio do semestre. E os dados dos seus alunos ficam sob criptografia e conformidade com a LGPD.</p>
                 <div class="grid grid-cols-2 gap-4">
                     <div class="glass rounded-2xl p-5">
-                        <div class="w-10 h-10 rounded-lg bg-blue-500/15 text-blue-300 flex items-center justify-center mb-3"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg></div>
-                        <h4 class="font-bold text-white mb-1">100% LGPD</h4>
-                        <p class="text-sm text-slate-400">Criptografia e permissões de usuário estritas.</p>
+                        <div class="w-10 h-10 rounded-lg bg-blue-500/15 txt-link flex items-center justify-center mb-3"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg></div>
+                        <h4 class="font-bold txt-forte mb-1">100% LGPD</h4>
+                        <p class="text-sm txt">Criptografia e permissões de usuário estritas.</p>
                     </div>
                     <div class="glass rounded-2xl p-5">
-                        <div class="w-10 h-10 rounded-lg bg-emerald-500/15 text-emerald-300 flex items-center justify-center mb-3"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg></div>
-                        <h4 class="font-bold text-white mb-1">Conformidade MEC</h4>
-                        <p class="text-sm text-slate-400">Atualizações a cada nova portaria.</p>
+                        <div class="w-10 h-10 rounded-lg bg-emerald-500/15 text-emerald-600 flex items-center justify-center mb-3"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg></div>
+                        <h4 class="font-bold txt-forte mb-1">Conformidade MEC</h4>
+                        <p class="text-sm txt">Atualizações a cada nova portaria.</p>
                     </div>
                 </div>
             </div>
@@ -548,7 +547,7 @@
                     foreach ( $fp_etapas as $i => $e ) {
                         $line = ( $i < $fp_total - 1 ) ? '<div class="w-px flex-1 bg-white/10 mt-2"></div>' : '';
                         printf(
-                            '<div class="flex gap-5"><div class="flex flex-col items-center"><div class="w-9 h-9 rounded-full igrad flex items-center justify-center font-bold text-sm text-white shrink-0">%s</div>%s</div><div class="pb-2"><h4 class="text-lg font-bold text-white">%s</h4><p class="text-sm text-slate-400 mt-1">%s</p></div></div>',
+                            '<div class="flex gap-5"><div class="flex flex-col items-center"><div class="w-9 h-9 rounded-full igrad flex items-center justify-center font-bold text-sm txt-forte shrink-0">%s</div>%s</div><div class="pb-2"><h4 class="text-lg font-bold txt-forte">%s</h4><p class="text-sm txt mt-1">%s</p></div></div>',
                             esc_html( $e[0] ), $line, esc_html( $e[1] ), esc_html( $e[2] )
                         );
                     }
@@ -577,10 +576,10 @@
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="flex flex-wrap items-end justify-between gap-4 mb-10 reveal">
                 <div>
-                    <span class="text-blue-400 font-bold tracking-widest uppercase text-xs">Conteúdo</span>
+                    <span class="txt-link font-bold tracking-widest uppercase text-xs">Conteúdo</span>
                     <h2 class="titulo text-[2rem] md:text-4xl leading-[1.05] mt-3">Do blog do Send Educacional</h2>
                 </div>
-                <a href="<?php echo esc_url( home_url( '/blog' ) ); ?>" class="inline-flex items-center gap-2 font-bold text-blue-300 hover:text-white transition">Ver todos os artigos <span aria-hidden="true">&rarr;</span></a>
+                <a href="<?php echo esc_url( home_url( '/blog' ) ); ?>" class="inline-flex items-center gap-2 font-bold txt-link hover-forte transition">Ver todos os artigos <span aria-hidden="true">&rarr;</span></a>
             </div>
 
             <div class="grid md:grid-cols-3 gap-5 reveal">
@@ -595,13 +594,13 @@
                         <?php endif; ?>
                         <div class="p-7 flex flex-col flex-grow">
                             <?php if ( $fp_cats ) : ?>
-                                <span class="text-blue-300 font-bold uppercase tracking-wider text-[10px] mb-2.5"><?php echo esc_html( $fp_cats[0]->name ); ?></span>
+                                <span class="txt-link font-bold uppercase tracking-wider text-[10px] mb-2.5"><?php echo esc_html( $fp_cats[0]->name ); ?></span>
                             <?php endif; ?>
-                            <h3 class="text-lg font-bold text-white leading-snug mb-3 group-hover:text-blue-300 transition-colors">
+                            <h3 class="text-lg font-bold txt-forte leading-snug mb-3 group-hover-link transition-colors">
                                 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                             </h3>
-                            <p class="text-slate-400 text-sm leading-relaxed mb-5"><?php echo esc_html( wp_trim_words( get_the_excerpt(), 22 ) ); ?></p>
-                            <a href="<?php the_permalink(); ?>" class="mt-auto inline-flex items-center gap-1.5 text-sm font-bold text-blue-300 group-hover:text-white transition">Ler artigo <span aria-hidden="true">&rarr;</span></a>
+                            <p class="txt text-sm leading-relaxed mb-5"><?php echo esc_html( wp_trim_words( get_the_excerpt(), 22 ) ); ?></p>
+                            <a href="<?php the_permalink(); ?>" class="mt-auto inline-flex items-center gap-1.5 text-sm font-bold txt-link group-hover-forte transition">Ler artigo <span aria-hidden="true">&rarr;</span></a>
                         </div>
                     </article>
                 <?php endwhile; ?>
@@ -613,10 +612,10 @@
     <!-- ===================== CTA FINAL ===================== -->
     <section class="relative z-10 pb-28 pt-4">
         <div class="container mx-auto px-6 max-w-6xl reveal">
-            <div class="relative overflow-hidden rounded-[2.5rem] px-8 py-16 md:p-20 text-center" style="background:linear-gradient(120deg,#335298,#1f3184 55%,#080b6c)">
+            <div class="sup-escura relative overflow-hidden rounded-[2.5rem] px-8 py-16 md:p-20 text-center" style="background:linear-gradient(120deg,#335298,#1f3184 55%,#080b6c)">
                 <div class="absolute -top-16 -right-16 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
                 <div class="absolute -bottom-16 -left-16 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
-                <h2 class="titulo relative z-10 text-[2.2rem] md:text-5xl text-white mb-5 leading-[1.03]">Veja o Send rodando na realidade da sua instituição.</h2>
+                <h2 class="titulo relative z-10 text-[2.2rem] md:text-5xl txt-forte mb-5 leading-[1.03]">Veja o Send rodando na realidade da sua instituição.</h2>
                 <p class="relative z-10 text-blue-100 text-lg max-w-2xl mx-auto mb-9">Agende uma demonstração gratuita. Um especialista do seu segmento mostra os módulos que fazem sentido para a sua operação.</p>
                 <button onclick="abrirDemo()" class="relative z-10 bg-white text-blue-700 hover:bg-blue-50 px-10 py-5 rounded-2xl font-extrabold text-lg transition-all hover:scale-105">Solicitar demonstração</button>
                 <p class="relative z-10 text-blue-200 text-sm mt-4">Gratuita e sem compromisso</p>

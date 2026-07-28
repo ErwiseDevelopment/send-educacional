@@ -6,10 +6,10 @@
     <script type="text/javascript" async src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/f6a85af9-2d97-40e4-8ae5-c237e1855b05-loader.js" ></script>
     <?php wp_head(); ?>
 </head>
-<body <?php body_class('bg-[#030429] text-slate-200 font-sans antialiased'); ?>>
+<body <?php body_class('sup-clara font-sans antialiased'); ?>>
 
 <?php $se_home = is_front_page(); ?>
-<header id="se-header" class="<?php echo $se_home ? 'absolute top-0 left-0 right-0 z-50' : 'sticky top-0 z-50 bg-[#030429]/85 backdrop-blur-md border-b border-white/10'; ?>">
+<header id="se-header" class="sup-escura <?php echo $se_home ? 'absolute top-0 left-0 right-0 z-50 !bg-transparent' : 'sticky top-0 z-50 border-b linha'; ?>">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center gap-4">
        <div class="flex flex-col items-start justify-center shrink-0">
             <a href="<?php echo home_url(); ?>" class="flex items-center gap-2.5 transition-transform hover:scale-105">
@@ -23,7 +23,7 @@
         <div class="flex items-center space-x-3 md:space-x-4 relative shrink-0">
 
             <?php // Abaixo de lg o menu vira botão: sem ele, os segmentos ficariam inalcançáveis no celular. ?>
-            <button id="btn-menu-mobile" class="lg:hidden text-slate-200 hover:text-white p-2 -ml-2" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-mobile">
+            <button id="btn-menu-mobile" class="lg:hidden txt-forte hover-forte p-2 -ml-2" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-mobile">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16"></path></svg>
             </button>
 
@@ -33,7 +33,7 @@
 
             <?php // Abaixo de sm o botão sai da barra e reaparece dentro do menu: senão a linha não cabe em 390px. ?>
             <div class="relative hidden sm:block">
-                <button id="btn-area-cliente" class="flex items-center gap-2 border-2 border-blue-500 text-blue-600 bg-white hover:bg-blue-50 px-4 py-2 rounded-md font-bold text-sm transition-colors">
+                <button id="btn-area-cliente" class="flex items-center gap-2 border-2 border-blue-500 text-blue-700 bg-white hover:bg-blue-50 px-4 py-2 rounded-md font-bold text-sm transition-colors">
                     Área do Cliente
                     <svg class="w-4 h-4 fill-current transform transition-transform duration-200" id="seta-dropdown" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                 </button>
@@ -66,17 +66,17 @@
 
     <?php se_menu_paineis_desktop(); ?>
 
-    <div id="menu-mobile" class="hidden lg:hidden border-t border-white/10 bg-[#030429] se-menu-mobile-rolagem">
+    <div id="menu-mobile" class="hidden lg:hidden border-t linha bg-[#030429] se-menu-mobile-rolagem">
         <div class="container mx-auto px-6 py-5">
             <?php se_menu_mobile(); ?>
-            <button onclick="abrirDemo()" class="mt-5 w-full gbtn text-white font-bold px-5 py-3.5 rounded-xl text-sm">
+            <button onclick="abrirDemo()" class="mt-5 w-full gbtn txt-forte font-bold px-5 py-3.5 rounded-xl text-sm">
                 Solicitar demonstração
             </button>
 
-            <div class="sm:hidden mt-5 pt-5 border-t border-white/10">
-                <p class="text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-3">Área do Cliente</p>
-                <a href="https://help.sendsolutions.com.br/" target="_blank" rel="noopener" class="block py-2 text-sm font-semibold text-slate-300 hover:text-white transition-colors">Documentação do sistema</a>
-                <a href="https://aplicacao.sendsolutions.com.br/TimeSheet/timesheet.login.aspx" class="block py-2 text-sm font-semibold text-slate-300 hover:text-white transition-colors">Suporte</a>
+            <div class="sm:hidden mt-5 pt-5 border-t linha">
+                <p class="text-[10px] font-bold uppercase tracking-widest txt-fraco mb-3">Área do Cliente</p>
+                <a href="https://help.sendsolutions.com.br/" target="_blank" rel="noopener" class="block py-2 text-sm font-semibold txt hover-forte transition-colors">Documentação do sistema</a>
+                <a href="https://aplicacao.sendsolutions.com.br/TimeSheet/timesheet.login.aspx" class="block py-2 text-sm font-semibold txt hover-forte transition-colors">Suporte</a>
             </div>
         </div>
     </div>

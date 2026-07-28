@@ -22,7 +22,8 @@ function se_segmentos() {
 			'curto'     => 'Superior',
 			'titulo'    => 'Faculdades, centros universitários e EAD',
 			'resumo'    => 'Processo seletivo, secretaria acadêmica, Censo INEP, colação de grau, diploma digital e gestão de polos, com a regulação do MEC acompanhada de perto.',
-			'cor'       => '#7296c1', // superior, azul da marca clareado (contraste 6.5)
+			'cor'       => '#7296c1', // sobre fundo escuro (contraste 6.5)
+			'cor_clara' => '#4a627d', // sobre fundo claro (contraste 6.3)
 			'publico'   => 'Mantenedores, reitorias, secretaria acadêmica e TI',
 			// Rótulos usados no formulário
 			'form_valor'   => 'Ensino superior',
@@ -44,7 +45,8 @@ function se_segmentos() {
 			'curto'     => 'Básica e Média',
 			'titulo'    => 'Escolas de educação infantil, fundamental e ensino médio',
 			'resumo'    => 'Matrícula e rematrícula, diário de classe, boletim, mensalidade e comunicação com a família no mesmo sistema, sem vocabulário de faculdade e sem planilha paralela.',
-			'cor'       => '#56b2cb', // básica, azul frio da família (contraste 8.2)
+			'cor'       => '#56b2cb', // sobre fundo escuro (contraste 8.2)
+			'cor_clara' => '#387484', // sobre fundo claro (contraste 5.3)
 			'publico'   => 'Mantenedores, direção pedagógica, secretaria escolar e financeiro',
 			'form_valor'   => 'Educação básica e ensino médio',
 			'cargos'       => array( 'Mantenedor(a) / Diretor(a)', 'Direção pedagógica', 'Coordenação pedagógica', 'Secretaria escolar', 'Financeiro', 'TI / Gestor(a) de sistemas' ),
@@ -64,7 +66,8 @@ function se_segmentos() {
 			'curto'     => 'Cursos Online',
 			'titulo'    => 'Cursos livres, profissionalizantes e corporativos',
 			'resumo'    => 'Venda do curso com pagamento na hora, aula no AVA próprio, avaliação online e certificado emitido sozinho, sem juntar checkout, plataforma de aula e planilha de certificado.',
-			'cor'       => '#8f92e8', // cursos online, o azul profundo clareado (contraste 7.1)
+			'cor'       => '#8f92e8', // sobre fundo escuro (contraste 7.1)
+			'cor_clara' => '#5d5f97', // sobre fundo claro (contraste 5.9)
 			'publico'   => 'Fundadores, head de operações, produto e marketing',
 			'form_valor'   => 'Cursos e venda online',
 			'cargos'       => array( 'Fundador(a) / Sócio(a)', 'Head de operações', 'Gestor(a) de produto / conteúdo', 'Marketing', 'Financeiro', 'TI / Gestor(a) de sistemas' ),
@@ -107,7 +110,7 @@ function se_bloco_segmentos( $atual = '', $titulo = '' ) {
 	?>
 	<div class="grid gap-4 <?php echo count( $segmentos ) === 3 ? 'md:grid-cols-3' : 'md:grid-cols-2'; ?>">
 		<?php if ( $titulo ) : ?>
-			<p class="md:col-span-3 text-center text-sm font-bold uppercase tracking-widest text-slate-400 mb-1"><?php echo esc_html( $titulo ); ?></p>
+			<p class="md:col-span-3 text-center text-sm font-bold uppercase tracking-widest txt mb-1"><?php echo esc_html( $titulo ); ?></p>
 		<?php endif; ?>
 		<?php foreach ( $segmentos as $slug => $s ) : ?>
 			<?php
@@ -180,9 +183,9 @@ function se_bloco_comparativo() {
 		<div class="container mx-auto px-6 max-w-6xl">
 
 			<div class="text-center mb-12 reveal">
-				<span class="text-blue-400 font-bold tracking-widest uppercase text-xs">Lado a lado</span>
+				<span class="txt-link font-bold tracking-widest uppercase text-xs">Lado a lado</span>
 				<h2 class="titulo text-[2.2rem] md:text-5xl leading-[1.03] mt-4">Em que os três segmentos são diferentes</h2>
-				<p class="text-lg text-slate-400 mt-4 max-w-2xl mx-auto">
+				<p class="text-lg txt mt-4 max-w-2xl mx-auto">
 					A plataforma é a mesma. O que muda é o vocabulário, quem regula e o que sai no fim.
 				</p>
 			</div>
@@ -196,7 +199,7 @@ function se_bloco_comparativo() {
 								<th scope="col">
 									<a href="<?php echo esc_url( se_segmento_url( $slug ) ); ?>" class="block group">
 										<span class="se-comparativo-tag" style="background:<?php echo esc_attr( $s['cor'] ); ?>"><?php echo esc_html( $s['curto'] ); ?></span>
-										<span class="titulo-mini block text-white text-base mt-3 leading-tight group-hover:text-blue-300 transition-colors"><?php echo esc_html( $s['nome'] ); ?></span>
+										<span class="titulo-mini block txt-forte text-base mt-3 leading-tight group-hover-link transition-colors"><?php echo esc_html( $s['nome'] ); ?></span>
 									</a>
 								</th>
 							<?php endforeach; ?>
@@ -215,9 +218,9 @@ function se_bloco_comparativo() {
 				</table>
 			</div>
 
-			<p class="text-center text-slate-500 text-sm mt-8 reveal">
+			<p class="text-center txt-fraco text-sm mt-8 reveal">
 				Ainda em dúvida sobre onde a sua instituição se encaixa?
-				<button type="button" onclick="abrirDemo()" class="text-blue-400 hover:text-white font-semibold transition-colors">Conte a sua operação para um especialista</button>.
+				<button type="button" onclick="abrirDemo()" class="txt-link hover-forte font-semibold transition-colors">Conte a sua operação para um especialista</button>.
 			</p>
 		</div>
 	</section>

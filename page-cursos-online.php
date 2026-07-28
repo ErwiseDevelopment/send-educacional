@@ -3,17 +3,18 @@
 Template Name: Segmento - Cursos e Venda Online
 */
 $se_seg  = se_segmento( 'cursos-online' );
-$se_cor  = $se_seg['cor'];
+$se_cor  = $se_seg['cor'];        // sobre o hero escuro
+$se_cor_t = $se_seg['cor_clara'];  // como texto, sobre o corpo claro
 get_header(); ?>
 
-<main class="relative text-white overflow-hidden" style="background:#030429">
+<main class="relative overflow-hidden">
 
-    <section class="relative pt-36 pb-16">
+    <section class="sup-escura relative pt-36 pb-16 overflow-hidden">
         <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[420px] rounded-full blur-[140px] pointer-events-none" style="background:<?php echo esc_attr( $se_cor ); ?>2e"></div>
 
         <div class="container mx-auto px-6 max-w-4xl text-center relative z-10">
-            <div class="flex justify-center items-center gap-2 text-xs text-slate-400 mb-7 font-semibold uppercase tracking-widest">
-                <a href="<?php echo esc_url( home_url() ); ?>" class="hover:text-white transition">Início</a>
+            <div class="flex justify-center items-center gap-2 text-xs txt mb-7 font-semibold uppercase tracking-widest">
+                <a href="<?php echo esc_url( home_url() ); ?>" class="hover-forte transition">Início</a>
                 <span aria-hidden="true">/</span>
                 <span style="color:<?php echo esc_attr( $se_cor ); ?>"><?php echo esc_html( $se_seg['nome'] ); ?></span>
             </div>
@@ -27,15 +28,15 @@ get_header(); ?>
                 Venda o curso, dê a aula, aplique a prova e <span class="gtext">emita o certificado</span>, no mesmo sistema.
             </h1>
 
-            <p class="text-lg md:text-xl text-slate-400 leading-relaxed max-w-2xl mx-auto mb-9">
+            <p class="text-lg md:text-xl txt leading-relaxed max-w-2xl mx-auto mb-9">
                 Hoje quase todo mundo junta três ferramentas: um checkout, uma plataforma de aula e uma planilha para os certificados. O Send Educacional resolve as três coisas em um só lugar: o aluno paga, estuda, é avaliado e recebe o certificado sem ninguém precisar conferir nada à mão.
             </p>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
-                <button data-track="cta-hero-cursos-online" onclick="abrirDemo('cursos-online')" class="gbtn text-white font-bold px-8 py-4 rounded-2xl text-lg w-full sm:w-auto transition-all hover:-translate-y-0.5">Quero ver funcionando</button>
-                <a href="#como-funciona" class="w-full sm:w-auto px-8 py-4 rounded-2xl text-lg font-semibold text-white glass hover:bg-white/10 transition">Como funciona</a>
+                <button data-track="cta-hero-cursos-online" onclick="abrirDemo('cursos-online')" class="gbtn txt-forte font-bold px-8 py-4 rounded-2xl text-lg w-full sm:w-auto transition-all hover:-translate-y-0.5">Quero ver funcionando</button>
+                <a href="#como-funciona" class="w-full sm:w-auto px-8 py-4 rounded-2xl text-lg font-semibold txt-forte glass hover:bg-white/10 transition">Como funciona</a>
             </div>
-            <p class="text-slate-500 text-sm mt-5">Demonstração gratuita · sem compromisso · conduzida por quem já implantou</p>
+            <p class="txt-fraco text-sm mt-5">Demonstração gratuita · sem compromisso · conduzida por quem já implantou</p>
         </div>
     </section>
 
@@ -43,9 +44,9 @@ get_header(); ?>
     <section id="como-funciona" class="relative py-20">
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="text-center mb-14 reveal">
-                <span class="font-bold tracking-widest uppercase text-xs" style="color:<?php echo esc_attr( $se_cor ); ?>">Pagamento · Avaliação · Certificado</span>
+                <span class="font-bold tracking-widest uppercase text-xs" style="color:<?php echo esc_attr( $se_cor_t ); ?>">Pagamento · Avaliação · Certificado</span>
                 <h2 class="titulo text-[2.2rem] md:text-5xl leading-[1.03] mt-4">Os três pontos que costumam quebrar</h2>
-                <p class="text-lg text-slate-400 mt-4 max-w-2xl mx-auto">São eles que fazem operação de curso online virar trabalho manual. Aqui os três já vêm resolvidos e conversando entre si.</p>
+                <p class="text-lg txt mt-4 max-w-2xl mx-auto">São eles que fazem operação de curso online virar trabalho manual. Aqui os três já vêm resolvidos e conversando entre si.</p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-5 reveal">
@@ -95,15 +96,15 @@ get_header(); ?>
                     $itens = '';
                     foreach ( $p[2] as $i ) {
                         $itens .= sprintf(
-                            '<li class="flex items-start gap-2.5 text-sm text-slate-300"><svg class="w-4 h-4 flex-shrink-0 mt-0.5" style="color:%s" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>%s</li>',
-                            esc_attr( $se_cor ), esc_html( $i )
+                            '<li class="flex items-start gap-2.5 text-sm txt"><svg class="w-4 h-4 flex-shrink-0 mt-0.5" style="color:%s" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>%s</li>',
+                            esc_attr( $se_cor_t ), esc_html( $i )
                         );
                     }
                     printf(
                         '<div class="glass glass-hover rounded-3xl p-8 flex flex-col">
                             <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style="background:%s22;border:1px solid %s55"><svg class="w-7 h-7" style="color:%s" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">%s</svg></div>
-                            <h3 class="titulo-mini text-xl text-white mb-3">%s</h3>
-                            <p class="text-slate-400 leading-relaxed mb-6">%s</p>
+                            <h3 class="titulo-mini text-xl txt-forte mb-3">%s</h3>
+                            <p class="txt leading-relaxed mb-6">%s</p>
                             <ul class="space-y-2.5 mt-auto">%s</ul>
                         </div>',
                         esc_attr( $se_cor ), esc_attr( $se_cor ), esc_attr( $se_cor ), $p[3],
@@ -119,9 +120,9 @@ get_header(); ?>
     <section class="relative py-20">
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="text-center mb-14 reveal">
-                <span class="font-bold tracking-widest uppercase text-xs" style="color:<?php echo esc_attr( $se_cor ); ?>">Do clique ao certificado</span>
+                <span class="font-bold tracking-widest uppercase text-xs" style="color:<?php echo esc_attr( $se_cor_t ); ?>">Do clique ao certificado</span>
                 <h2 class="titulo text-[2.2rem] md:text-5xl leading-[1.03] mt-4">Sem ninguém no meio do caminho</h2>
-                <p class="text-slate-400 max-w-2xl mx-auto text-lg mt-4">Cada etapa entrega a próxima automaticamente. Ninguém da sua equipe precisa liberar acesso, lançar nota ou montar certificado.</p>
+                <p class="txt max-w-2xl mx-auto text-lg mt-4">Cada etapa entrega a próxima automaticamente. Ninguém da sua equipe precisa liberar acesso, lançar nota ou montar certificado.</p>
             </div>
 
             <div class="relative reveal">
@@ -139,9 +140,9 @@ get_header(); ?>
                     foreach ( $co_jornada as $n => $j ) {
                         printf(
                             '<div class="text-center px-1">
-                                <div class="relative w-14 h-14 mx-auto rounded-2xl flex items-center justify-center mb-4 z-10 ring-4 ring-[#030429] text-white font-extrabold" style="background:linear-gradient(135deg,%s,#4a78b0)">%d</div>
-                                <h4 class="text-sm font-bold text-white leading-tight">%s</h4>
-                                <p class="text-[12px] text-slate-400 mt-1 leading-snug">%s</p>
+                                <div class="relative w-14 h-14 mx-auto rounded-2xl flex items-center justify-center mb-4 z-10 ring-4 ring-[#030429] txt-forte font-extrabold" style="background:linear-gradient(135deg,%s,#4a78b0)">%d</div>
+                                <h4 class="text-sm font-bold txt-forte leading-tight">%s</h4>
+                                <p class="text-[12px] txt mt-1 leading-snug">%s</p>
                             </div>',
                             esc_attr( $se_cor ), $n + 1, esc_html( $j[0] ), esc_html( $j[1] )
                         );
@@ -156,9 +157,9 @@ get_header(); ?>
     <section class="relative py-20">
         <div class="container mx-auto px-6 max-w-6xl grid lg:grid-cols-2 gap-12 items-center reveal">
             <div>
-                <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass text-[11px] font-bold uppercase tracking-widest mb-5" style="color:<?php echo esc_attr( $se_cor ); ?>">Certificado</span>
+                <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass text-[11px] font-bold uppercase tracking-widest mb-5" style="color:<?php echo esc_attr( $se_cor_t ); ?>">Certificado</span>
                 <h2 class="titulo text-[2rem] md:text-4xl leading-[1.04] mb-5">O certificado que ninguém precisa montar</h2>
-                <p class="text-lg text-slate-400 leading-relaxed mb-6">
+                <p class="text-lg txt leading-relaxed mb-6">
                     Certificado emitido no momento em que o aluno cumpre a regra de conclusão que você definiu, carga horária, nota mínima, progresso ou tudo isso junto. Sai com a sua marca, com a carga horária e com um código único.
                 </p>
                 <ul class="space-y-3 mb-8">
@@ -167,38 +168,38 @@ get_header(); ?>
                         'Sem fila de suporte pedindo segunda via, o aluno baixa sozinho pelo portal.',
                         'Modelo configurável por curso: você define layout, assinatura e o que aparece no verso.',
                     ) as $li ) {
-                        printf( '<li class="flex items-start gap-3 text-slate-300"><svg class="w-5 h-5 flex-shrink-0 mt-0.5" style="color:%s" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>%s</li>', esc_attr( $se_cor ), esc_html( $li ) );
+                        printf( '<li class="flex items-start gap-3 txt"><svg class="w-5 h-5 flex-shrink-0 mt-0.5" style="color:%s" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>%s</li>', esc_attr( $se_cor_t ), esc_html( $li ) );
                     } ?>
                 </ul>
-                <button data-track="cta-certificado" onclick="abrirDemo('cursos-online')" class="gbtn text-white font-bold px-7 py-3.5 rounded-2xl transition-all hover:-translate-y-0.5">Ver o certificado na demonstração</button>
+                <button data-track="cta-certificado" onclick="abrirDemo('cursos-online')" class="gbtn txt-forte font-bold px-7 py-3.5 rounded-2xl transition-all hover:-translate-y-0.5">Ver o certificado na demonstração</button>
             </div>
 
-            <div class="rounded-2xl overflow-hidden border border-white/10 cardring" style="background:#050741">
-                <div class="h-10 flex items-center px-4 gap-2 border-b border-white/10 bg-slate-900/70">
+            <div class="sup-escura sup-escura-2 rounded-2xl overflow-hidden border linha cardring">
+                <div class="h-10 flex items-center px-4 gap-2 border-b linha bg-black/25">
                     <span class="w-2.5 h-2.5 rounded-full bg-slate-600"></span>
                     <span class="w-2.5 h-2.5 rounded-full bg-slate-600"></span>
                     <span class="w-2.5 h-2.5 rounded-full bg-slate-600"></span>
-                    <span class="mx-auto text-[11px] text-slate-400 font-semibold bg-white/5 border border-white/10 rounded-full px-4 py-1">validar.suaescola.com.br/certificado</span>
+                    <span class="mx-auto text-[11px] txt font-semibold bg-bloco border linha rounded-full px-4 py-1">validar.suaescola.com.br/certificado</span>
                 </div>
                 <div class="p-5">
-                    <div class="rounded-xl border border-white/10 bg-white/[.03] p-6 text-center mb-4">
-                        <p class="text-[10px] uppercase tracking-[0.25em] text-slate-500 font-bold mb-3">Certificado de conclusão</p>
-                        <p class="text-lg font-extrabold text-white">Aluno Exemplo da Silva</p>
-                        <p class="text-sm text-slate-400 mt-1 mb-4">concluiu o curso <span class="text-slate-200 font-semibold">Gestão Financeira na Prática</span></p>
-                        <div class="grid grid-cols-3 gap-3 text-left border-t border-white/10 pt-4">
-                            <div><p class="text-[9px] uppercase text-slate-500 font-bold">Carga horária</p><p class="text-sm font-bold text-white">40h</p></div>
-                            <div><p class="text-[9px] uppercase text-slate-500 font-bold">Nota final</p><p class="text-sm font-bold text-white">8,7</p></div>
-                            <div><p class="text-[9px] uppercase text-slate-500 font-bold">Conclusão</p><p class="text-sm font-bold text-white">14/03/2026</p></div>
+                    <div class="rounded-xl border linha bg-white/[.03] p-6 text-center mb-4">
+                        <p class="text-[10px] uppercase tracking-[0.25em] txt-fraco font-bold mb-3">Certificado de conclusão</p>
+                        <p class="text-lg font-extrabold txt-forte">Aluno Exemplo da Silva</p>
+                        <p class="text-sm txt mt-1 mb-4">concluiu o curso <span class="txt-forte font-semibold">Gestão Financeira na Prática</span></p>
+                        <div class="grid grid-cols-3 gap-3 text-left border-t linha pt-4">
+                            <div><p class="text-[9px] uppercase txt-fraco font-bold">Carga horária</p><p class="text-sm font-bold txt-forte">40h</p></div>
+                            <div><p class="text-[9px] uppercase txt-fraco font-bold">Nota final</p><p class="text-sm font-bold txt-forte">8,7</p></div>
+                            <div><p class="text-[9px] uppercase txt-fraco font-bold">Conclusão</p><p class="text-sm font-bold txt-forte">14/03/2026</p></div>
                         </div>
                     </div>
                     <div class="rounded-xl border p-4 flex items-center gap-3" style="border-color:<?php echo esc_attr( $se_cor ); ?>44;background:<?php echo esc_attr( $se_cor ); ?>14">
-                        <svg class="w-8 h-8 flex-shrink-0" style="color:<?php echo esc_attr( $se_cor ); ?>" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <svg class="w-8 h-8 flex-shrink-0" style="color:<?php echo esc_attr( $se_cor_t ); ?>" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                         <div>
-                            <p class="text-sm font-bold text-white">Certificado válido</p>
-                            <p class="text-[11px] text-slate-400 font-mono">código EX-4K7P-9QB2-2026</p>
+                            <p class="text-sm font-bold txt-forte">Certificado válido</p>
+                            <p class="text-[11px] txt font-mono">código EX-4K7P-9QB2-2026</p>
                         </div>
                     </div>
-                    <p class="text-[10px] text-slate-500 text-center mt-4 uppercase tracking-widest font-bold">Dados ilustrativos</p>
+                    <p class="text-[10px] txt-fraco text-center mt-4 uppercase tracking-widest font-bold">Dados ilustrativos</p>
                 </div>
             </div>
         </div>
@@ -209,12 +210,12 @@ get_header(); ?>
         <div class="container mx-auto px-6 max-w-5xl">
             <div class="text-center mb-12 reveal">
                 <h2 class="titulo text-[2.2rem] md:text-5xl leading-[1.03]">Três ferramentas ou <span class="gtext">uma só</span></h2>
-                <p class="text-lg text-slate-400 mt-4">A conta que ninguém faz: o tempo que a sua equipe gasta ligando um sistema no outro.</p>
+                <p class="text-lg txt mt-4">A conta que ninguém faz: o tempo que a sua equipe gasta ligando um sistema no outro.</p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-5 reveal">
                 <div class="glass rounded-3xl p-8 border-rose-500/25">
-                    <p class="text-xs font-bold uppercase tracking-widest text-rose-300 mb-5">Com ferramentas separadas</p>
+                    <p class="text-xs font-bold uppercase tracking-widest text-rose-600 mb-5">Com ferramentas separadas</p>
                     <ul class="space-y-3.5">
                         <?php foreach ( array(
                             'Checkout num lugar, aula em outro, certificado no Canva.',
@@ -224,12 +225,12 @@ get_header(); ?>
                             'Aluno que cancelou continua com acesso liberado.',
                             'Nenhum relatório que junte venda, conclusão e evasão.',
                         ) as $x ) {
-                            printf( '<li class="flex items-start gap-3 text-sm text-slate-400"><svg class="w-4 h-4 text-rose-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>%s</li>', esc_html( $x ) );
+                            printf( '<li class="flex items-start gap-3 text-sm txt"><svg class="w-4 h-4 text-rose-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>%s</li>', esc_html( $x ) );
                         } ?>
                     </ul>
                 </div>
                 <div class="glass rounded-3xl p-8" style="border-color:<?php echo esc_attr( $se_cor ); ?>44">
-                    <p class="text-xs font-bold uppercase tracking-widest mb-5" style="color:<?php echo esc_attr( $se_cor ); ?>">Com o Send Educacional</p>
+                    <p class="text-xs font-bold uppercase tracking-widest mb-5" style="color:<?php echo esc_attr( $se_cor_t ); ?>">Com o Send Educacional</p>
                     <ul class="space-y-3.5">
                         <?php foreach ( array(
                             'Venda, aula, avaliação e certificado no mesmo sistema.',
@@ -239,7 +240,7 @@ get_header(); ?>
                             'Assinatura cancelada bloqueia o acesso sem ninguém lembrar.',
                             'Um painel só: venda, progresso, conclusão e inadimplência.',
                         ) as $x ) {
-                            printf( '<li class="flex items-start gap-3 text-sm text-slate-300"><svg class="w-4 h-4 flex-shrink-0 mt-0.5" style="color:%s" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>%s</li>', esc_attr( $se_cor ), esc_html( $x ) );
+                            printf( '<li class="flex items-start gap-3 text-sm txt"><svg class="w-4 h-4 flex-shrink-0 mt-0.5" style="color:%s" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>%s</li>', esc_attr( $se_cor_t ), esc_html( $x ) );
                         } ?>
                     </ul>
                 </div>
@@ -266,8 +267,8 @@ get_header(); ?>
                 foreach ( $co_faq as $f ) {
                     printf(
                         '<details class="group glass rounded-2xl px-6 py-5">
-                            <summary class="flex items-center justify-between cursor-pointer list-none font-bold text-white">%s<svg class="w-5 h-5 text-slate-500 group-open:rotate-45 transition-transform flex-shrink-0 ml-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"></path></svg></summary>
-                            <p class="text-slate-400 leading-relaxed mt-4">%s</p>
+                            <summary class="flex items-center justify-between cursor-pointer list-none font-bold txt-forte">%s<svg class="w-5 h-5 txt-fraco group-open:rotate-45 transition-transform flex-shrink-0 ml-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"></path></svg></summary>
+                            <p class="txt leading-relaxed mt-4">%s</p>
                         </details>',
                         esc_html( $f[0] ), esc_html( $f[1] )
                     );
@@ -282,13 +283,13 @@ get_header(); ?>
         <div class="container mx-auto px-6 max-w-5xl">
             <div class="glass rounded-[2.5rem] p-10 md:p-14 text-center cardring reveal">
                 <h2 class="titulo text-[2.2rem] md:text-5xl leading-[1.03] mb-5">Mostre o seu fluxo, a gente mostra o sistema</h2>
-                <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-8">Na demonstração a gente pega o seu curso de verdade e percorre a jornada inteira: venda, aula, prova e certificado. Sem apresentação genérica.</p>
-                <button data-track="cta-final-cursos-online" onclick="abrirDemo('cursos-online')" class="gbtn text-white font-bold px-9 py-4 rounded-2xl text-lg transition-all hover:-translate-y-0.5">Solicitar demonstração</button>
-                <p class="text-slate-500 text-sm mt-4">Gratuita · sem compromisso · com um especialista do segmento</p>
+                <p class="text-lg txt max-w-2xl mx-auto mb-8">Na demonstração a gente pega o seu curso de verdade e percorre a jornada inteira: venda, aula, prova e certificado. Sem apresentação genérica.</p>
+                <button data-track="cta-final-cursos-online" onclick="abrirDemo('cursos-online')" class="gbtn txt-forte font-bold px-9 py-4 rounded-2xl text-lg transition-all hover:-translate-y-0.5">Solicitar demonstração</button>
+                <p class="txt-fraco text-sm mt-4">Gratuita · sem compromisso · com um especialista do segmento</p>
             </div>
 
             <div class="mt-14 reveal">
-                <p class="text-center text-sm font-bold uppercase tracking-widest text-slate-400 mb-5">Sua operação é outra?</p>
+                <p class="text-center text-sm font-bold uppercase tracking-widest txt mb-5">Sua operação é outra?</p>
                 <?php se_bloco_segmentos( 'cursos-online' ); ?>
             </div>
         </div>

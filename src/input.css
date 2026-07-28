@@ -2,7 +2,7 @@
 Theme Name: Send Educacional
 Description: Tema customizado para o SaaS Send Educacional usando Tailwind CSS.
 Author: Send Solutions
-Version: 1.10.0
+Version: 2.0.0
 */
 
 @tailwind base;
@@ -68,11 +68,11 @@ Version: 1.10.0
 
 /* ===== Mega menu (cabeçalho), ver inc/menu.php ===== */
 .se-nav-link{display:inline-flex;align-items:center;gap:.35rem;padding:.5rem .75rem;border-radius:.6rem;
-  font-size:.875rem;font-weight:600;color:#b8b9c3;white-space:nowrap;cursor:pointer;
+  font-size:.875rem;font-weight:600;color:var(--t);white-space:nowrap;cursor:pointer;
   transition:color .2s ease,background-color .2s ease}
-.se-nav-link:hover{color:#fff;background:rgba(255,255,255,.06)}
+.se-nav-link:hover{color:var(--t-forte);background:rgba(255,255,255,.06)}
 .se-nav-link:focus-visible{outline:2px solid #7296c1;outline-offset:2px}
-.se-nav-ativo{color:#fff;background:rgba(255,255,255,.06)}
+.se-nav-ativo{color:var(--t-forte);background:rgba(255,255,255,.06)}
 .se-chevron{transition:transform .2s ease}
 .se-nav-ativo .se-chevron,.se-acc-aberto .se-chevron{transform:rotate(180deg)}
 
@@ -88,11 +88,11 @@ Version: 1.10.0
 .se-menu-mobile-rolagem{max-height:calc(100vh - 5rem);overflow-y:auto}
 
 .se-aba{display:flex;align-items:center;gap:.7rem;width:100%;padding:.7rem .85rem;border-radius:.85rem;
-  font-size:.875rem;font-weight:600;color:#b8b9c3;text-align:left;cursor:pointer;
+  font-size:.875rem;font-weight:600;color:var(--t);text-align:left;cursor:pointer;
   border:1px solid transparent;transition:background-color .2s ease,color .2s ease,border-color .2s ease}
-.se-aba:hover{color:#fff;background:rgba(255,255,255,.04)}
+.se-aba:hover{color:var(--t-forte);background:rgba(255,255,255,.04)}
 .se-aba:focus-visible{outline:2px solid #7296c1;outline-offset:-2px}
-.se-aba-ativa{color:#fff;background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.1)}
+.se-aba-ativa{color:var(--t-forte);background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.1)}
 .se-aba-icone{display:flex;align-items:center;justify-content:center;width:2rem;height:2rem;flex:none;
   border-radius:.6rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}
 
@@ -119,7 +119,7 @@ Version: 1.10.0
 .se-mega-card:focus-visible{outline:2px solid #7296c1;outline-offset:2px}
 
 /* ===== Busca "Qual e o seu desafio?" (inc/busca-desafio.php) ===== */
-.se-chip{font-size:12.5px;font-weight:600;color:#b8b9c3;background:rgba(74,120,176,.1);
+.se-chip{font-size:12.5px;font-weight:600;background:rgba(74,120,176,.1);
   border:1px solid rgba(150,177,209,.2);border-radius:999px;padding:.35rem .8rem;cursor:pointer;
   transition:color .2s ease,border-color .2s ease,background-color .2s ease}
 .se-chip:hover{color:#fff;border-color:rgba(74,120,176,.65);background:rgba(74,120,176,.2)}
@@ -148,8 +148,111 @@ Version: 1.10.0
   border-top:1px solid rgba(255,255,255,.1)}
 .se-comparativo thead th{border-top:0;padding-bottom:1.5rem}
 .se-comparativo tbody th{width:22%;font-size:12.5px;font-weight:700;text-transform:uppercase;
-  letter-spacing:.06em;color:#8b8c9d}
-.se-comparativo td{width:26%;font-size:14.5px;line-height:1.55;color:#b8b9c3}
-.se-comparativo tbody tr:hover td{color:#fff}
+  letter-spacing:.06em;color:var(--t-fraco)}
+.se-comparativo td{width:26%;font-size:14.5px;line-height:1.55;color:var(--t)}
+.se-comparativo tbody tr:hover td{color:var(--t-forte)}
 .se-comparativo-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.04em;
   text-transform:uppercase;color:#030429;border-radius:999px;padding:.25rem .7rem}
+
+/* =====================================================================
+   SUPERFICIES: claro por padrao, escuro onde e recurso
+   =====================================================================
+   O site era escuro do inicio ao fim. Os cinco concorrentes diretos e o
+   referencial do cliente sao claros, e branco e uma das tres cores da marca.
+   Agora o corpo e claro (e onde se le: catalogo, comparativo, modulos, blog)
+   e o #080b6c fica para hero, faixas de CTA e rodape, onde tem mais forca.
+
+   Cada secao declara .sup-clara ou .sup-escura. As classes de texto abaixo
+   nao carregam cor propria: elas leem a variavel da superficie em que estao.
+   Assim o mesmo componente (catalogo, cartao, tabela) serve nos dois fundos
+   sem duplicar marcacao. */
+
+:root, .sup-clara{
+  --t-forte:#07082c;                 /* titulo            contraste 17.6 */
+  --t:#3a3b58;                       /* texto corrido     contraste  9.6 */
+  --t-fraco:#54546d;                 /* legenda           contraste  6.5 */
+  --t-link:#1f3184;                  /* link              contraste 10.9 */
+  --linha:rgba(3,4,41,.13);
+  --bloco:rgba(3,4,41,.035);
+  --bloco-borda:rgba(3,4,41,.10);
+  --sup-fundo:#ffffff;
+}
+.sup-clara{background:var(--sup-fundo);color:var(--t)}
+.sup-clara-2{--sup-fundo:#f4f6fa}
+
+.sup-escura{
+  --t-forte:#ffffff;                 /* contraste 19.9 sobre #030429 */
+  --t:#b8b9c3;                       /* contraste 10.1 */
+  --t-fraco:#8b8c9d;                 /* contraste  5.9 */
+  --t-link:#96b1d1;                  /* contraste  9.0 */
+  --linha:rgba(255,255,255,.14);
+  --bloco:rgba(255,255,255,.05);
+  --bloco-borda:rgba(255,255,255,.12);
+  --sup-fundo:#030429;
+  background:var(--sup-fundo);
+  color:var(--t);
+}
+.sup-escura-2{--sup-fundo:#050741}
+
+.txt-forte{color:var(--t-forte)}
+.txt{color:var(--t)}
+.txt-fraco{color:var(--t-fraco)}
+.txt-link{color:var(--t-link)}
+.hover-forte:hover{color:var(--t-forte)}
+.hover-link:hover{color:var(--t-link)}
+.linha{border-color:var(--linha)}
+.bg-bloco{background:var(--bloco)}
+.bloco{background:var(--bloco);border:1px solid var(--bloco-borda)}
+
+.group:hover .group-hover-forte{color:var(--t-forte)}
+/* Vidro tambem obedece a superficie: no claro vira um cartao branco com
+   sombra, no escuro segue translucido. */
+.glass{background:var(--bloco);border:1px solid var(--bloco-borda);backdrop-filter:none;-webkit-backdrop-filter:none}
+
+/* Tudo o que muda entre as superficies e VARIAVEL, nao seletor descendente.
+   O <body> inteiro e .sup-clara, entao uma regra como ".sup-clara .glass"
+   casaria tambem dentro das secoes escuras: as variaveis herdam certo, o
+   seletor nao. */
+:root,.sup-clara{
+  --cartao:#ffffff;
+  --cartao-borda:rgba(3,4,41,.09);
+  --cartao-sombra:0 1px 2px rgba(3,4,41,.04),0 12px 28px -18px rgba(3,4,41,.18);
+  --cartao-sombra-hover:0 24px 48px -24px rgba(8,11,108,.32);
+  --cartao-desfoque:none;
+  --anel:0 1px 0 0 rgba(255,255,255,.9) inset,0 30px 70px -35px rgba(8,11,108,.30);
+  --grad-titulo:linear-gradient(100deg,#4a78b0,#1f3184 55%,#080b6c);
+  --num:#4a78b0;
+}
+.sup-escura{
+  --cartao:rgba(255,255,255,.05);
+  --cartao-borda:rgba(255,255,255,.12);
+  --cartao-sombra:none;
+  --cartao-sombra-hover:0 30px 60px -30px rgba(8,11,108,.9);
+  --cartao-desfoque:blur(10px);
+  --anel:0 1px 0 0 rgba(255,255,255,.07) inset,0 40px 90px -40px rgba(3,4,41,.95);
+  --grad-titulo:linear-gradient(100deg,#96b1d1,#7296c1 45%,#4a78b0);
+  --num:#7296c1;
+}
+
+.glass{background:var(--cartao);border:1px solid var(--cartao-borda);box-shadow:var(--cartao-sombra);
+  backdrop-filter:var(--cartao-desfoque);-webkit-backdrop-filter:var(--cartao-desfoque)}
+.glass-hover:hover{transform:translateY(-4px);border-color:rgba(74,120,176,.55);box-shadow:var(--cartao-sombra-hover)}
+.cardring{box-shadow:var(--anel)}
+.gtext{background-image:var(--grad-titulo)}
+.marco-num{color:var(--num)}
+.marco,.regra,.faixa-item,.se-comparativo th,.se-comparativo td{border-color:var(--linha)}
+.se-chip{color:var(--t);background:var(--bloco);border-color:var(--bloco-borda)}
+.se-chip:hover{color:var(--t-forte);border-color:rgba(74,120,176,.6)}
+.se-resultado,.se-mega-post{background:var(--cartao);border-color:var(--cartao-borda)}
+/* Titulo sempre no tom forte da superficie em que esta. */
+.titulo,.titulo-mini,.numero{color:var(--t-forte)}
+
+/* O bloco de segmento tem cor propria e clara: o texto dentro dele e sempre
+   escuro, independente da superficie em que o bloco estiver. */
+.se-bloco-seg{--t-forte:#030429;--t:#030429;--t-fraco:rgba(3,4,41,.7)}
+
+/* Botao de acao tem fundo escuro proprio: o rotulo e branco em qualquer
+   superficie. Sem isto, num bloco claro o rotulo herdava o tom escuro e
+   sumia dentro do botao. */
+.gbtn{--t-forte:#fff;--t:#fff;color:#fff}
+.gbtn:hover{color:#fff}

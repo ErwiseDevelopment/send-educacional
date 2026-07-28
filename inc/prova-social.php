@@ -75,7 +75,7 @@ function se_bloco_prova_social() {
 
 			<?php if ( $logos ) : ?>
 				<div class="text-center mb-10 reveal">
-					<p class="text-sm font-bold uppercase tracking-widest text-slate-400"><?php echo esc_html( $titulo ); ?></p>
+					<p class="text-sm font-bold uppercase tracking-widest txt"><?php echo esc_html( $titulo ); ?></p>
 				</div>
 				<div class="flex flex-wrap items-center justify-center gap-x-10 gap-y-8 mb-16 reveal">
 					<?php foreach ( $logos as $l ) :
@@ -99,14 +99,14 @@ function se_bloco_prova_social() {
 				<div class="grid gap-5 <?php echo count( $deps ) >= 3 ? 'md:grid-cols-3' : ( count( $deps ) === 2 ? 'md:grid-cols-2' : 'max-w-2xl mx-auto' ); ?> reveal">
 					<?php foreach ( $deps as $d ) : ?>
 						<figure class="glass glass-hover rounded-3xl p-8 flex flex-col">
-							<svg class="w-8 h-8 text-blue-400/50 mb-5" fill="currentColor" viewBox="0 0 24 24"><path d="M9.6 6.4C6.5 7.9 4.8 10.6 4.8 14v3.6h6.4V11H8.4c.2-1.4 1-2.4 2.4-3l-1.2-1.6zm8.4 0c-3.1 1.5-4.8 4.2-4.8 7.6v3.6h6.4V11h-2.8c.2-1.4 1-2.4 2.4-3L18 6.4z"/></svg>
-							<blockquote class="text-slate-300 leading-relaxed flex-grow"><?php echo esc_html( $d['texto'] ); ?></blockquote>
+							<svg class="w-8 h-8 txt-link/50 mb-5" fill="currentColor" viewBox="0 0 24 24"><path d="M9.6 6.4C6.5 7.9 4.8 10.6 4.8 14v3.6h6.4V11H8.4c.2-1.4 1-2.4 2.4-3l-1.2-1.6zm8.4 0c-3.1 1.5-4.8 4.2-4.8 7.6v3.6h6.4V11h-2.8c.2-1.4 1-2.4 2.4-3L18 6.4z"/></svg>
+							<blockquote class="txt leading-relaxed flex-grow"><?php echo esc_html( $d['texto'] ); ?></blockquote>
 							<?php if ( $d['autor'] !== '' || $d['instituicao'] !== '' ) : ?>
-								<figcaption class="mt-6 pt-5 border-t border-white/10">
+								<figcaption class="mt-6 pt-5 border-t linha">
 									<?php if ( $d['autor'] !== '' ) : ?>
-										<span class="block text-sm font-bold text-white"><?php echo esc_html( $d['autor'] ); ?></span>
+										<span class="block text-sm font-bold txt-forte"><?php echo esc_html( $d['autor'] ); ?></span>
 									<?php endif; ?>
-									<span class="block text-xs text-slate-400 mt-0.5">
+									<span class="block text-xs txt mt-0.5">
 										<?php echo esc_html( trim( $d['cargo'] . ( $d['cargo'] !== '' && $d['instituicao'] !== '' ? ' · ' : '' ) . $d['instituicao'] ) ); ?>
 									</span>
 								</figcaption>

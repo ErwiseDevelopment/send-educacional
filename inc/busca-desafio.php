@@ -94,7 +94,7 @@ function se_bloco_busca_desafio() {
 
 				<div class="text-center mb-8">
 					<h2 class="titulo text-[2rem] md:text-[2.75rem] leading-[1.05] mb-3">Qual é o seu desafio hoje?</h2>
-					<p class="text-slate-400 text-lg leading-relaxed max-w-xl mx-auto">
+					<p class="txt text-lg leading-relaxed max-w-xl mx-auto">
 						Escreva o que trava a sua operação. A gente mostra qual módulo resolve e em qual segmento ele está configurado.
 					</p>
 				</div>
@@ -103,18 +103,18 @@ function se_bloco_busca_desafio() {
 					<label for="se-busca" class="sr-only">Descreva o seu desafio</label>
 					<div class="flex flex-col sm:flex-row gap-2.5">
 						<div class="relative flex-1">
-							<svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500 pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.2-5.2M17 10a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+							<svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 txt-fraco pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.2-5.2M17 10a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
 							<input type="search" id="se-busca" autocomplete="off"
 							       placeholder="Ex.: rematrícula, inadimplência, certificado"
-							       class="w-full bg-white/[.06] border border-white/15 rounded-2xl pl-12 pr-4 py-4 text-white placeholder:text-slate-500 focus:outline-none focus:border-blue-400 transition-colors">
+							       class="w-full bg-white/[.06] border linha rounded-2xl pl-12 pr-4 py-4 txt-forte placeholder:txt-fraco focus:outline-none focus:border-blue-400 transition-colors">
 						</div>
-						<button type="button" id="se-busca-demo" onclick="abrirDemo()" class="gbtn text-white font-bold px-7 py-4 rounded-2xl transition-all hover:-translate-y-0.5 shrink-0">
+						<button type="button" id="se-busca-demo" onclick="abrirDemo()" class="gbtn txt-forte font-bold px-7 py-4 rounded-2xl transition-all hover:-translate-y-0.5 shrink-0">
 							Falar com um especialista
 						</button>
 					</div>
 
 					<div class="flex flex-wrap items-center gap-2 mt-4" id="se-busca-sugestoes">
-						<span class="text-[11px] font-bold uppercase tracking-widest text-slate-500 mr-1">Comuns:</span>
+						<span class="text-[11px] font-bold uppercase tracking-widest txt-fraco mr-1">Comuns:</span>
 						<?php foreach ( se_busca_sugestoes() as $s ) : ?>
 							<button type="button" class="se-chip" data-termo="<?php echo esc_attr( $s ); ?>"><?php echo esc_html( $s ); ?></button>
 						<?php endforeach; ?>
@@ -212,23 +212,23 @@ function se_bloco_busca_desafio() {
 				saida.classList.remove('hidden');
 				saida.innerHTML =
 					'<div class="regra pt-6 text-center">' +
-					'<p class="text-slate-300">Não achamos nada com <strong class="text-white">' +
+					'<p class="txt">Não achamos nada com <strong class="txt-forte">' +
 					termo.replace(/[<>&]/g, '') + '</strong> no catálogo.</p>' +
-					'<p class="text-slate-500 text-sm mt-2">Pode ser que exista com outro nome. Conte o caso para um especialista e a gente confere junto.</p>' +
-					'<button type="button" onclick="abrirDemo()" class="mt-5 gbtn text-white font-bold px-6 py-3 rounded-xl text-sm">Descrever o meu caso</button>' +
+					'<p class="txt-fraco text-sm mt-2">Pode ser que exista com outro nome. Conte o caso para um especialista e a gente confere junto.</p>' +
+					'<button type="button" onclick="abrirDemo()" class="mt-5 gbtn txt-forte font-bold px-6 py-3 rounded-xl text-sm">Descrever o meu caso</button>' +
 					'</div>';
 				return;
 			}
 
-			var html = '<div class="regra pt-6"><p class="text-[11px] font-bold uppercase tracking-widest text-slate-500 mb-4">' +
+			var html = '<div class="regra pt-6"><p class="text-[11px] font-bold uppercase tracking-widest txt-fraco mb-4">' +
 				r.length + (r.length === 1 ? ' resultado' : ' resultados') + ' no catálogo</p><div class="space-y-3">';
 
 			r.forEach(function (it) {
 				var selos = it.s.map(selo).join('');
 				html += '<div class="se-resultado">' +
 					'<div class="min-w-0">' +
-						'<p class="text-white font-semibold leading-snug">' + it.t + '</p>' +
-						'<p class="text-slate-400 text-[13px] mt-1">Módulo: <span class="text-slate-300">' + it.m + '</span></p>' +
+						'<p class="txt-forte font-semibold leading-snug">' + it.t + '</p>' +
+						'<p class="txt text-[13px] mt-1">Módulo: <span class="txt">' + it.m + '</span></p>' +
 					'</div>' +
 					'<div class="flex flex-wrap gap-1.5 shrink-0">' + selos + '</div>' +
 				'</div>';

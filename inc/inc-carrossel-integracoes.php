@@ -148,14 +148,14 @@
                          class="integration-logo"
                          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                     
-                    <span class="hidden text-slate-400 group-hover:text-blue-600 font-black text-[10px] uppercase tracking-tighter text-center">
+                    <span class="hidden txt group-hover:text-blue-700 font-black text-[10px] uppercase tracking-tighter text-center">
                         <?php echo $nome; ?>
                     </span>
                 </div>
             <?php endforeach; 
         endfor; ?>
 
-        <div class="integration-card !bg-blue-600 !border-none !filter-none cursor-pointer group shadow-lg shadow-blue-200" 
+        <div class="integration-card !bg-blue-700 !border-none !filter-none cursor-pointer group shadow-lg shadow-blue-200" 
              onclick="abrirDemo()">
             <div class="text-white flex flex-col items-center">
                 <svg class="w-6 h-6 mb-1 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

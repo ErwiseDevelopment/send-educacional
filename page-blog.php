@@ -10,11 +10,11 @@ get_header();
     $is_first_page = ( $paged === 1 );
     ?>
 
-    <section class="pt-28 pb-12 bg-[#1e3a8a] relative overflow-hidden text-center">
+    <section class="sup-escura pt-28 pb-12 bg-[#1e3a8a] relative overflow-hidden text-center">
         <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 32px 32px;"></div>
         
         <div class="container mx-auto px-6 relative z-10 max-w-4xl">
-            <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">
+            <h1 class="text-3xl md:text-5xl font-extrabold txt-forte mb-4 tracking-tight">
                 Portal de Conteúdo
             </h1>
             <p class="text-base text-blue-200 mb-8">
@@ -23,10 +23,10 @@ get_header();
 
             <form id="form-busca-blog" class="relative shadow-xl" onsubmit="return false;">
                 <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                    <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    <svg class="w-5 h-5 txt" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                 </div>
-                <input type="search" id="input-busca-blog" class="w-full pl-12 pr-28 py-3 rounded-xl bg-white/5 border border-white/10 focus:ring-4 focus:ring-blue-500/30 text-white placeholder:text-slate-500 font-medium outline-none" placeholder="O que você quer aprender hoje?">
-                <button type="submit" class="absolute inset-y-1.5 right-1.5 gbtn text-white font-bold px-5 rounded-lg transition-colors text-sm">
+                <input type="search" id="input-busca-blog" class="w-full pl-12 pr-28 py-3 rounded-xl bg-bloco border linha focus:ring-4 focus:ring-blue-500/30 txt-forte placeholder:txt-fraco font-medium outline-none" placeholder="O que você quer aprender hoje?">
+                <button type="submit" class="absolute inset-y-1.5 right-1.5 gbtn txt-forte font-bold px-5 rounded-lg transition-colors text-sm">
                     Buscar
                 </button>
             </form>
@@ -74,19 +74,19 @@ get_header();
                                         </div>
                                     </div>
                                     <div class="p-6 md:p-8 flex flex-col flex-grow">
-                                        <span class="text-blue-300 font-bold uppercase tracking-wider text-xs mb-2"><?php echo $nome_categoria; ?></span>
-                                        <h2 class="text-2xl font-extrabold text-white group-hover:text-blue-300 transition-colors mb-3 leading-tight">
+                                        <span class="txt-link font-bold uppercase tracking-wider text-xs mb-2"><?php echo $nome_categoria; ?></span>
+                                        <h2 class="text-2xl font-extrabold txt-forte group-hover-link transition-colors mb-3 leading-tight">
                                             <?php the_title(); ?>
                                         </h2>
-                                        <p class="text-slate-400 text-sm mb-6 line-clamp-2">
+                                        <p class="txt text-sm mb-6 line-clamp-2">
                                             <?php echo wp_trim_words(get_the_excerpt(), 20); ?>
                                         </p>
-                                        <div class="mt-auto flex items-center justify-between border-t border-white/10 pt-4">
+                                        <div class="mt-auto flex items-center justify-between border-t linha pt-4">
                                             <div class="flex items-center gap-2">
                                                 <?php echo get_avatar( get_the_author_meta('ID'), 28, '', '', ['class' => 'w-7 h-7 rounded-full'] ); ?>
-                                                <span class="text-white font-bold text-xs"><?php the_author(); ?></span>
+                                                <span class="txt-forte font-bold text-xs"><?php the_author(); ?></span>
                                             </div>
-                                            <span class="text-slate-400 text-xs font-semibold">
+                                            <span class="txt text-xs font-semibold">
                                                 <?php echo get_the_date('d M, Y'); ?>
                                             </span>
                                         </div>
@@ -94,7 +94,7 @@ get_header();
                                 </a>
                             </div>
                             <div class="lg:col-span-5 flex flex-col gap-4">
-                                <h3 class="text-base font-bold text-white border-b border-white/10 pb-2">Artigos em Alta</h3>
+                                <h3 class="text-base font-bold txt-forte border-b linha pb-2">Artigos em Alta</h3>
 
                         <?php else : ?>
                             <a href="<?php the_permalink(); ?>" class="flex glass glass-hover rounded-2xl transition-all overflow-hidden group h-28">
@@ -104,11 +104,11 @@ get_header();
                                     <?php endif; ?>
                                 </div>
                                 <div class="w-2/3 p-4 flex flex-col justify-center">
-                                    <span class="text-blue-300 font-bold uppercase tracking-wider text-[9px] mb-1"><?php echo $nome_categoria; ?></span>
-                                    <h4 class="text-sm font-bold text-white group-hover:text-blue-300 transition-colors leading-snug line-clamp-2 mb-1">
+                                    <span class="txt-link font-bold uppercase tracking-wider text-[9px] mb-1"><?php echo $nome_categoria; ?></span>
+                                    <h4 class="text-sm font-bold txt-forte group-hover-link transition-colors leading-snug line-clamp-2 mb-1">
                                         <?php the_title(); ?>
                                     </h4>
-                                    <span class="text-slate-400 text-[10px] font-semibold mt-auto"><?php echo get_the_date('d M, Y'); ?></span>
+                                    <span class="txt text-[10px] font-semibold mt-auto"><?php echo get_the_date('d M, Y'); ?></span>
                                 </div>
                             </a>
                         <?php endif; ?>
@@ -119,8 +119,8 @@ get_header();
                 </div> 
             <?php endif; ?>
 
-            <div class="flex items-center gap-3 overflow-x-auto pb-4 mb-10 scrollbar-hide border-b border-white/10" id="filtro-blog">
-                <span class="font-bold text-slate-400 text-xs uppercase tracking-widest whitespace-nowrap">Filtrar:</span>
+            <div class="flex items-center gap-3 overflow-x-auto pb-4 mb-10 scrollbar-hide border-b linha" id="filtro-blog">
+                <span class="font-bold txt text-xs uppercase tracking-widest whitespace-nowrap">Filtrar:</span>
 
                 <button data-categoria="all" class="btn-filtro px-4 py-1.5 rounded-full bg-blue-600 text-white font-bold text-xs whitespace-nowrap transition-colors">
                     Todos
@@ -129,16 +129,16 @@ get_header();
                 <?php
                 $categories = get_categories(['hide_empty' => true]);
                 foreach($categories as $category) {
-                    echo '<button data-categoria="' . $category->term_id . '" class="btn-filtro px-4 py-1.5 rounded-full glass text-slate-300 font-bold text-xs hover:text-blue-300 whitespace-nowrap transition-colors">' . esc_html($category->name) . '</button>';
+                    echo '<button data-categoria="' . $category->term_id . '" class="btn-filtro px-4 py-1.5 rounded-full glass txt font-bold text-xs hover-link whitespace-nowrap transition-colors">' . esc_html($category->name) . '</button>';
                 }
                 ?>
             </div>
 
-            <div class="mb-12 bg-[#1e3a8a] rounded-3xl flex flex-col md:flex-row items-center justify-between overflow-hidden shadow-xl relative max-w-5xl mx-auto">
+            <div class="sup-escura mb-12 bg-[#1e3a8a] rounded-3xl flex flex-col md:flex-row items-center justify-between overflow-hidden shadow-xl relative max-w-5xl mx-auto">
                 <div class="absolute inset-0 bg-gradient-to-r from-transparent to-[#162b66]"></div>
                 
                 <div class="relative z-10 p-8 md:p-10 md:w-2/3">
-                    <h3 class="text-2xl md:text-3xl font-extrabold text-white mb-2">Escolha crescer hoje com o Send!</h3>
+                    <h3 class="text-2xl md:text-3xl font-extrabold txt-forte mb-2">Escolha crescer hoje com o Send!</h3>
                     <p class="text-blue-100 text-sm md:text-base mb-6 max-w-lg">
                         Tenha uma instituição de alta performance com o melhor ecossistema de gestão escolar.
                     </p>
@@ -167,7 +167,7 @@ get_header();
 
         <?php endif; ?>
 
-        <h2 class="text-xl font-bold text-white mb-6">Mais Recentes</h2>
+        <h2 class="text-xl font-bold txt-forte mb-6">Mais Recentes</h2>
 
         <div id="posts-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 min-h-[400px]">
             <?php 
@@ -184,23 +184,23 @@ get_header();
                         <?php endif; ?>
                     </a>
                     <div class="p-6 flex flex-col flex-grow">
-                        <span class="text-blue-300 font-bold uppercase tracking-wider text-[9px] mb-2 block">
+                        <span class="txt-link font-bold uppercase tracking-wider text-[9px] mb-2 block">
                             <?php echo $nome_categoria; ?>
                         </span>
                         <a href="<?php the_permalink(); ?>">
-                            <h3 class="text-lg font-bold text-white group-hover:text-blue-300 transition-colors mb-2 leading-snug">
+                            <h3 class="text-lg font-bold txt-forte group-hover-link transition-colors mb-2 leading-snug">
                                 <?php the_title(); ?>
                             </h3>
                         </a>
-                        <p class="text-slate-400 text-xs mb-4 line-clamp-3 leading-relaxed">
+                        <p class="txt text-xs mb-4 line-clamp-3 leading-relaxed">
                             <?php echo wp_trim_words(get_the_excerpt(), 18); ?>
                         </p>
 
-                        <div class="mt-auto flex items-center justify-between border-t border-white/10 pt-4">
-                            <span class="text-slate-400 text-[10px] font-semibold">
+                        <div class="mt-auto flex items-center justify-between border-t linha pt-4">
+                            <span class="txt text-[10px] font-semibold">
                                 <?php echo get_the_date('d M, Y'); ?>
                             </span>
-                            <a href="<?php the_permalink(); ?>" class="text-blue-300 font-bold text-[11px] flex items-center gap-1 group-hover:text-blue-200">Ler artigo &rarr;</a>
+                            <a href="<?php the_permalink(); ?>" class="txt-link font-bold text-[11px] flex items-center gap-1 group-hover:text-blue-200">Ler artigo &rarr;</a>
                         </div>
                     </div>
                 </article>
@@ -209,7 +209,7 @@ get_header();
             else : 
             ?>
                 <div class="col-span-full text-center py-16 glass rounded-3xl">
-                    <h3 class="text-xl font-bold text-white mb-2">Nenhum artigo encontrado</h3>
+                    <h3 class="text-xl font-bold txt-forte mb-2">Nenhum artigo encontrado</h3>
                 </div>
             <?php endif; ?>
         </div>
@@ -221,7 +221,7 @@ get_header();
                     'prev_text' => '&larr; Voltar',
                     'next_text' => 'Próxima &rarr;',
                     'type'      => 'plain',
-                    'before_page_number' => '<span class="px-3 py-1.5 hover:bg-white/10 rounded-lg transition-colors text-slate-300 block">',
+                    'before_page_number' => '<span class="px-3 py-1.5 hover:bg-white/10 rounded-lg transition-colors txt block">',
                     'after_page_number'  => '</span>',
                 ));
                 ?>
@@ -234,19 +234,19 @@ get_header();
 
     </div>
 
-    <section class="py-16 border-t border-white/10">
+    <section class="py-16 border-t linha">
         <div class="container mx-auto px-6 max-w-3xl text-center">
-            <div class="w-12 h-12 glass rounded-xl flex items-center justify-center mx-auto mb-4 text-blue-300">
+            <div class="w-12 h-12 glass rounded-xl flex items-center justify-center mx-auto mb-4 txt-link">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
             </div>
-            <h2 class="text-2xl font-extrabold text-white mb-3">Inscreva-se em nossa newsletter</h2>
-            <p class="text-slate-400 text-sm mb-6">
+            <h2 class="text-2xl font-extrabold txt-forte mb-3">Inscreva-se em nossa newsletter</h2>
+            <p class="txt text-sm mb-6">
                 Acesse, em primeira mão, nossos principais artigos e materiais educativos diretamente no seu e-mail.
             </p>
 
            <form id="form-newsletter" class="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto mb-4" onsubmit="assinarNewsletter(event)">
-                <input type="email" id="email_newsletter" placeholder="Seu melhor e-mail corporativo" required class="flex-grow px-5 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-slate-500 focus:outline-none focus:border-blue-500 text-sm">
-                <button type="submit" id="btn_newsletter" class="gbtn text-white font-bold px-6 py-3 rounded-lg transition-colors text-sm shadow-md">
+                <input type="email" id="email_newsletter" placeholder="Seu melhor e-mail corporativo" required class="flex-grow px-5 py-3 rounded-lg bg-bloco border linha txt-forte placeholder:txt-fraco focus:outline-none focus:border-blue-500 text-sm">
+                <button type="submit" id="btn_newsletter" class="gbtn txt-forte font-bold px-6 py-3 rounded-lg transition-colors text-sm shadow-md">
                     Cadastre-se!
                 </button>
             </form>
@@ -324,7 +324,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Coloca um "Spinner" de carregamento
         postsGrid.innerHTML = `
             <div class="col-span-1 md:col-span-3 flex justify-center items-center py-20">
-                <svg class="animate-spin h-10 w-10 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                <svg class="animate-spin h-10 w-10 text-blue-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
             </div>
         `;
         
@@ -350,9 +350,9 @@ document.addEventListener('DOMContentLoaded', function() {
         botao.addEventListener('click', function() {
             botoesFiltro.forEach(b => {
                 b.classList.remove('bg-blue-600', 'text-white');
-                b.classList.add('glass', 'text-slate-300');
+                b.classList.add('glass', 'txt');
             });
-            this.classList.remove('glass', 'text-slate-300');
+            this.classList.remove('glass', 'txt');
             this.classList.add('bg-blue-600', 'text-white');
 
             // Limpa o campo de busca quando clica em categoria
@@ -373,9 +373,9 @@ document.addEventListener('DOMContentLoaded', function() {
             // Reseta a cor dos botões para "Todos"
             botoesFiltro.forEach(b => {
                 b.classList.remove('bg-blue-600', 'text-white');
-                b.classList.add('glass', 'text-slate-300');
+                b.classList.add('glass', 'txt');
             });
-            document.querySelector('[data-categoria="all"]').classList.remove('glass', 'text-slate-300');
+            document.querySelector('[data-categoria="all"]').classList.remove('glass', 'txt');
             document.querySelector('[data-categoria="all"]').classList.add('bg-blue-600', 'text-white');
 
             buscarPosts('all', termo);

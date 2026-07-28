@@ -104,7 +104,7 @@ add_filter('nav_menu_css_class', 'send_adicionar_classes_li_menu', 1, 3);
 function send_adicionar_classes_a_menu($atts, $item, $args) {
     if($args->theme_location == 'menu-principal') {
         // Cabeçalho escuro em todo o site: menu em tom claro.
-        $atts['class'] = 'text-slate-300 hover:text-white font-semibold text-sm uppercase tracking-wide transition-colors';
+        $atts['class'] = 'txt hover-forte font-semibold text-sm uppercase tracking-wide transition-colors';
     }
     return $atts;
 }
@@ -150,23 +150,23 @@ function enviar_posts_filtrados() {
                     <?php endif; ?>
                 </a>
                 <div class="p-6 flex flex-col flex-grow">
-                    <span class="text-blue-300 font-bold uppercase tracking-wider text-[9px] mb-2 block">
+                    <span class="txt-link font-bold uppercase tracking-wider text-[9px] mb-2 block">
                         <?php echo esc_html($nome_categoria); ?>
                     </span>
                     <a href="<?php the_permalink(); ?>">
-                        <h3 class="text-lg font-bold text-white group-hover:text-blue-300 transition-colors mb-2 leading-snug">
+                        <h3 class="text-lg font-bold txt-forte group-hover-link transition-colors mb-2 leading-snug">
                             <?php the_title(); ?>
                         </h3>
                     </a>
-                    <p class="text-slate-400 text-xs mb-4 line-clamp-3 leading-relaxed">
+                    <p class="txt text-xs mb-4 line-clamp-3 leading-relaxed">
                         <?php echo wp_trim_words(get_the_excerpt(), 18); ?>
                     </p>
 
-                    <div class="mt-auto flex items-center justify-between border-t border-white/10 pt-4">
-                        <span class="text-slate-400 text-[10px] font-semibold">
+                    <div class="mt-auto flex items-center justify-between border-t linha pt-4">
+                        <span class="txt text-[10px] font-semibold">
                             <?php echo get_the_date('d M, Y'); ?>
                         </span>
-                        <a href="<?php the_permalink(); ?>" class="text-blue-300 font-bold text-[11px] flex items-center gap-1 group-hover:text-blue-200">Ler artigo &rarr;</a>
+                        <a href="<?php the_permalink(); ?>" class="txt-link font-bold text-[11px] flex items-center gap-1 group-hover:text-blue-200">Ler artigo &rarr;</a>
                     </div>
                 </div>
             </article>
@@ -176,11 +176,11 @@ function enviar_posts_filtrados() {
     else :
         ?>
         <div class="col-span-full text-center py-16 glass rounded-[1.5rem]">
-            <div class="w-16 h-16 bg-white/5 text-slate-400 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div class="w-16 h-16 bg-bloco txt rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
             </div>
-            <h3 class="text-xl font-bold text-white mb-2">Nenhum resultado encontrado</h3>
-            <p class="text-slate-400 text-sm">Não encontramos artigos para "<strong><?php echo esc_html($busca); ?></strong>". Tente outras palavras.</p>
+            <h3 class="text-xl font-bold txt-forte mb-2">Nenhum resultado encontrado</h3>
+            <p class="txt text-sm">Não encontramos artigos para "<strong><?php echo esc_html($busca); ?></strong>". Tente outras palavras.</p>
         </div>
         <?php
     endif;

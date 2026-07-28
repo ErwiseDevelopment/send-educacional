@@ -746,6 +746,9 @@ function se_modulos_contagem( $slug ) {
  * catálogo de cem itens dentro de cartõezinhos vira ruído.
  */
 function se_bloco_modulos( $slug, $cor ) {
+	// O catalogo fica no corpo claro: usa a variante escurecida da cor.
+	$seg = se_segmento( $slug );
+	if ( $seg && ! empty( $seg['cor_clara'] ) ) { $cor = $seg['cor_clara']; }
 	$modulos = se_modulos_segmento( $slug );
 	if ( ! $modulos ) {
 		return;
@@ -763,10 +766,10 @@ function se_bloco_modulos( $slug, $cor ) {
 					</h2>
 				</div>
 				<div class="lg:col-span-6 flex flex-col justify-end">
-					<p class="text-lg text-slate-400 leading-relaxed">
+					<p class="text-lg txt leading-relaxed">
 						Não é uma lista de promessas: é o que já está no sistema, agrupado por área.
-						<span class="text-white font-semibold"><?php echo (int) $conta['modulos']; ?> módulos</span> e
-						<span class="text-white font-semibold"><?php echo (int) $conta['itens']; ?> funcionalidades</span>
+						<span class="txt-forte font-semibold"><?php echo (int) $conta['modulos']; ?> módulos</span> e
+						<span class="txt-forte font-semibold"><?php echo (int) $conta['itens']; ?> funcionalidades</span>
 						configuradas para este segmento, a implantação liga o que faz sentido para o seu porte.
 					</p>
 				</div>
@@ -786,18 +789,18 @@ function se_bloco_modulos( $slug, $cor ) {
 										<svg class="w-5 h-5" style="color:<?php echo esc_attr( $cor ); ?>" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><?php echo se_menu_icone( $m['icone'] ); // phpcs:ignore WordPress.Security.EscapeOutput ?></svg>
 									</span>
 									<div>
-										<h3 class="titulo-mini text-white text-xl leading-tight"><?php echo esc_html( $m['nome'] ); ?></h3>
-										<span class="text-[11px] font-bold uppercase tracking-widest text-slate-500 mt-1.5 block"><?php echo count( $m['itens'] ); ?> funcionalidades</span>
+										<h3 class="titulo-mini txt-forte text-xl leading-tight"><?php echo esc_html( $m['nome'] ); ?></h3>
+										<span class="text-[11px] font-bold uppercase tracking-widest txt-fraco mt-1.5 block"><?php echo count( $m['itens'] ); ?> funcionalidades</span>
 									</div>
 								</div>
-								<p class="text-slate-400 text-[15px] leading-relaxed mt-4"><?php echo esc_html( $m['resumo'] ); ?></p>
+								<p class="txt text-[15px] leading-relaxed mt-4"><?php echo esc_html( $m['resumo'] ); ?></p>
 
 								<div class="flex flex-wrap items-center gap-x-6 gap-y-2 mt-4">
 									<?php if ( $url ) : ?>
-										<a href="<?php echo esc_url( $url ); ?>" class="inline-flex items-center gap-1.5 text-sm font-bold text-blue-300 hover:text-white transition-colors">Ver o módulo <span aria-hidden="true">&rarr;</span></a>
+										<a href="<?php echo esc_url( $url ); ?>" class="inline-flex items-center gap-1.5 text-sm font-bold txt-link hover-forte transition-colors">Ver o módulo <span aria-hidden="true">&rarr;</span></a>
 									<?php endif; ?>
 									<?php // No celular a lista inteira soma quase vinte telas: aqui ela abre sob demanda. ?>
-									<button type="button" class="se-mod-abre lg:hidden inline-flex items-center gap-1.5 text-sm font-bold text-slate-300 hover:text-white transition-colors" aria-expanded="false">
+									<button type="button" class="se-mod-abre lg:hidden inline-flex items-center gap-1.5 text-sm font-bold txt hover-forte transition-colors" aria-expanded="false">
 										<span class="se-mod-rotulo">Ver as <?php echo count( $m['itens'] ); ?> funcionalidades</span>
 										<svg class="se-chevron w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
 									</button>
@@ -808,7 +811,7 @@ function se_bloco_modulos( $slug, $cor ) {
 						<div class="lg:col-span-8">
 							<ul class="se-mod-lista grid sm:grid-cols-2 gap-x-8 gap-y-2.5">
 								<?php foreach ( $m['itens'] as $item ) : ?>
-									<li class="flex items-start gap-2.5 text-[14.5px] text-slate-300 leading-snug">
+									<li class="flex items-start gap-2.5 text-[14.5px] txt leading-snug">
 										<svg class="w-4 h-4 shrink-0 mt-[3px]" style="color:<?php echo esc_attr( $cor ); ?>" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
 										<?php echo esc_html( $item ); ?>
 									</li>
@@ -820,10 +823,10 @@ function se_bloco_modulos( $slug, $cor ) {
 			</div>
 
 			<div class="regra pt-10 mt-2 flex flex-wrap items-center justify-between gap-6 reveal">
-				<p class="text-slate-400 max-w-lg leading-relaxed">
+				<p class="txt max-w-lg leading-relaxed">
 					Nenhuma instituição usa tudo no primeiro dia. Na demonstração a gente marca o que faz sentido para o seu porte e mostra só isso rodando.
 				</p>
-				<button onclick="abrirDemo('<?php echo esc_attr( $slug ); ?>')" class="gbtn text-white font-bold px-7 py-3.5 rounded-2xl transition-all hover:-translate-y-0.5 shrink-0">Montar a minha lista</button>
+				<button onclick="abrirDemo('<?php echo esc_attr( $slug ); ?>')" class="gbtn txt-forte font-bold px-7 py-3.5 rounded-2xl transition-all hover:-translate-y-0.5 shrink-0">Montar a minha lista</button>
 			</div>
 
 		</div>
