@@ -2,7 +2,7 @@
 Theme Name: Send Educacional
 Description: Tema customizado para o SaaS Send Educacional usando Tailwind CSS.
 Author: Send Solutions
-Version: 1.6.0
+Version: 1.7.0
 */
 
 *, ::before, ::after {
@@ -611,6 +611,10 @@ video {
   pointer-events: none;
 }
 
+.static {
+  position: static;
+}
+
 .fixed {
   position: fixed;
 }
@@ -862,6 +866,10 @@ video {
   top: -10%;
 }
 
+.top-full {
+  top: 100%;
+}
+
 .-z-10 {
   z-index: -10;
 }
@@ -900,6 +908,14 @@ video {
 
 .col-span-2 {
   grid-column: span 2 / span 2;
+}
+
+.col-span-3 {
+  grid-column: span 3 / span 3;
+}
+
+.col-span-6 {
+  grid-column: span 6 / span 6;
 }
 
 .col-span-full {
@@ -1247,6 +1263,10 @@ video {
   height: 24rem;
 }
 
+.h-\[18px\] {
+  height: 18px;
+}
+
 .h-\[300px\] {
   height: 300px;
 }
@@ -1409,6 +1429,10 @@ video {
 
 .w-\[1000px\] {
   width: 1000px;
+}
+
+.w-\[18px\] {
+  width: 18px;
 }
 
 .w-\[500px\] {
@@ -1626,6 +1650,10 @@ video {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
+.grid-cols-12 {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -1745,13 +1773,17 @@ video {
        column-gap: 1rem;
 }
 
-.gap-x-5 {
-  -moz-column-gap: 1.25rem;
-       column-gap: 1.25rem;
+.gap-x-8 {
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
 }
 
-.gap-y-1 {
-  row-gap: 0.25rem;
+.gap-y-2 {
+  row-gap: 0.5rem;
+}
+
+.gap-y-5 {
+  row-gap: 1.25rem;
 }
 
 .gap-y-6 {
@@ -1960,6 +1992,10 @@ video {
   border-bottom-width: 1px;
 }
 
+.border-l {
+  border-left-width: 1px;
+}
+
 .border-t {
   border-top-width: 1px;
 }
@@ -2092,8 +2128,9 @@ video {
   background-color: rgb(7 11 24 / 0.85);
 }
 
-.bg-\[\#070b18\]\/95 {
-  background-color: rgb(7 11 24 / 0.95);
+.bg-\[\#080d1c\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(8 13 28 / var(--tw-bg-opacity, 1));
 }
 
 .bg-\[\#0a0f1e\] {
@@ -2900,6 +2937,10 @@ video {
   padding-bottom: 1rem;
 }
 
+.pb-5 {
+  padding-bottom: 1.25rem;
+}
+
 .pb-6 {
   padding-bottom: 1.5rem;
 }
@@ -2922,6 +2963,14 @@ video {
 
 .pl-5 {
   padding-left: 1.25rem;
+}
+
+.pl-8 {
+  padding-left: 2rem;
+}
+
+.pl-\[30px\] {
+  padding-left: 30px;
 }
 
 .pr-28 {
@@ -3034,8 +3083,16 @@ video {
   font-size: 11px;
 }
 
+.text-\[12\.5px\] {
+  font-size: 12.5px;
+}
+
 .text-\[12px\] {
   font-size: 12px;
+}
+
+.text-\[13px\] {
+  font-size: 13px;
 }
 
 .text-\[15px\] {
@@ -3540,6 +3597,10 @@ video {
   opacity: 0.4;
 }
 
+.opacity-50 {
+  opacity: 0.5;
+}
+
 .opacity-60 {
   opacity: 0.6;
 }
@@ -3595,6 +3656,12 @@ video {
 .shadow-\[0_20px_50px_-30px_rgba\(2\2c 6\2c 23\2c \.4\)\] {
   --tw-shadow: 0 20px 50px -30px rgba(2,6,23,.4);
   --tw-shadow-colored: 0 20px 50px -30px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-\[0_40px_80px_-30px_rgba\(2\2c 6\2c 23\2c \.9\)\] {
+  --tw-shadow: 0 40px 80px -30px rgba(2,6,23,.9);
+  --tw-shadow-colored: 0 40px 80px -30px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -3907,6 +3974,166 @@ video {
   }
 }
 
+/* ===== Mega menu (cabeçalho) — ver inc/menu.php ===== */
+
+.se-nav-link{
+  display:inline-flex;
+  align-items:center;
+  gap:.35rem;
+  padding:.5rem .75rem;
+  border-radius:.6rem;
+  font-size:.875rem;
+  font-weight:600;
+  color:#cbd5e1;
+  white-space:nowrap;
+  cursor:pointer;
+  transition:color .2s ease,background-color .2s ease
+}
+
+.se-nav-link:hover{
+  color:#fff;
+  background:rgba(255,255,255,.06)
+}
+
+.se-nav-link:focus-visible{
+  outline:2px solid #60a5fa;
+  outline-offset:2px
+}
+
+.se-nav-ativo{
+  color:#fff;
+  background:rgba(255,255,255,.06)
+}
+
+.se-chevron{
+  transition:transform .2s ease
+}
+
+.se-nav-ativo .se-chevron,.se-acc-aberto .se-chevron{
+  transform:rotate(180deg)
+}
+
+/* Sem animação de entrada de propósito: opacity/transform no painel o deixam
+   translúcido por cima do hero e ainda criam contexto de empilhamento próprio,
+   que foi o que jogou o menu para trás do título da home. Aparece direto. */
+
+.se-mega-painel{
+  max-height:calc(100vh - 5.5rem);
+  overflow-y:auto
+}
+
+/* Na home o cabeçalho é transparente sobre o hero. Com o painel aberto isso
+   fica estranho (barra clara em cima de painel escuro): fecha o fundo. */
+
+.se-header-solido{
+  background:#080d1c
+}
+
+.se-menu-mobile-rolagem{
+  max-height:calc(100vh - 5rem);
+  overflow-y:auto
+}
+
+.se-aba{
+  display:flex;
+  align-items:center;
+  gap:.7rem;
+  width:100%;
+  padding:.7rem .85rem;
+  border-radius:.85rem;
+  font-size:.875rem;
+  font-weight:600;
+  color:#cbd5e1;
+  text-align:left;
+  cursor:pointer;
+  border:1px solid transparent;
+  transition:background-color .2s ease,color .2s ease,border-color .2s ease
+}
+
+.se-aba:hover{
+  color:#fff;
+  background:rgba(255,255,255,.04)
+}
+
+.se-aba:focus-visible{
+  outline:2px solid #60a5fa;
+  outline-offset:-2px
+}
+
+.se-aba-ativa{
+  color:#fff;
+  background:rgba(255,255,255,.07);
+  border-color:rgba(255,255,255,.1)
+}
+
+.se-aba-icone{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:2rem;
+  height:2rem;
+  flex:none;
+  border-radius:.6rem;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08)
+}
+
+.se-mega-item{
+  display:flex;
+  align-items:flex-start;
+  gap:.7rem;
+  padding:.55rem;
+  margin:-.55rem;
+  border-radius:.75rem;
+  transition:background-color .2s ease
+}
+
+.se-mega-item:hover{
+  background:rgba(255,255,255,.04)
+}
+
+.se-mega-item:focus-visible{
+  outline:2px solid #60a5fa;
+  outline-offset:-2px
+}
+
+.se-mega-item-icone{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:2rem;
+  height:2rem;
+  flex:none;
+  margin-top:.05rem;
+  border-radius:.55rem;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08)
+}
+
+.se-mega-post{
+  display:block;
+  padding:.75rem;
+  border-radius:.75rem;
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.07);
+  transition:border-color .2s ease,transform .2s ease
+}
+
+.se-mega-post:hover{
+  border-color:rgba(96,165,250,.45);
+  transform:translateY(-2px)
+}
+
+@media (prefers-reduced-motion:reduce){
+  .se-mega-painel{
+    animation:none
+  }
+
+  .se-chevron,.se-mega-post{
+    transition:none
+  }
+}
+
 .placeholder\:text-slate-500::-moz-placeholder {
   --tw-text-opacity: 1;
   color: rgb(100 116 139 / var(--tw-text-opacity, 1));
@@ -3915,6 +4142,10 @@ video {
 .placeholder\:text-slate-500::placeholder {
   --tw-text-opacity: 1;
   color: rgb(100 116 139 / var(--tw-text-opacity, 1));
+}
+
+.last\:mb-0:last-child {
+  margin-bottom: 0px;
 }
 
 .hover\:-translate-y-0\.5:hover {
@@ -4224,6 +4455,11 @@ video {
 .group:focus-within .group-focus-within\:text-blue-500 {
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity, 1));
+}
+
+.group:hover .group-hover\:translate-x-0\.5 {
+  --tw-translate-x: 0.125rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .group:hover .group-hover\:translate-x-1 {
@@ -4658,12 +4894,5 @@ video {
   .lg\:text-7xl {
     font-size: 4.5rem;
     line-height: 1;
-  }
-}
-
-@media (min-width: 1280px) {
-  .xl\:gap-x-7 {
-    -moz-column-gap: 1.75rem;
-         column-gap: 1.75rem;
   }
 }

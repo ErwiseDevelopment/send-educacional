@@ -33,7 +33,6 @@ function se_semear_conteudo() {
 
 	if ( $feito !== $antes ) {
 		update_option( 'se_conteudo_semeado', $feito, false );
-		se_incluir_segmentos_no_menu();
 	}
 }
 add_action( 'admin_init', 'se_semear_conteudo' );
@@ -73,46 +72,6 @@ function se_semear_paginas_segmento( $feito ) {
 	}
 
 	return $feito;
-}
-
-/** Põe as três páginas no menu principal, se elas ainda não estiverem lá. */
-function se_incluir_segmentos_no_menu() {
-	$locais = get_nav_menu_locations();
-	if ( empty( $locais['menu-principal'] ) ) {
-		return;
-	}
-
-	$menu_id = (int) $locais['menu-principal'];
-	$itens   = wp_get_nav_menu_items( $menu_id );
-	if ( ! is_array( $itens ) ) {
-		$itens = array();
-	}
-
-	$ja_tem = array();
-	foreach ( $itens as $item ) {
-		if ( $item->object === 'page' ) {
-			$ja_tem[] = (int) $item->object_id;
-		}
-	}
-
-	// Entram no fim do menu, sem embaralhar a ordem que o cliente já montou.
-	$posicao = count( $itens );
-	foreach ( se_segmentos() as $slug => $s ) {
-		$pagina = get_page_by_path( $slug );
-		if ( ! $pagina || in_array( (int) $pagina->ID, $ja_tem, true ) ) {
-			continue;
-		}
-
-		$posicao++;
-		wp_update_nav_menu_item( $menu_id, 0, array(
-			'menu-item-title'     => $s['curto'],
-			'menu-item-object'    => 'page',
-			'menu-item-object-id' => (int) $pagina->ID,
-			'menu-item-type'      => 'post_type',
-			'menu-item-status'    => 'publish',
-			'menu-item-position'  => $posicao,
-		) );
-	}
 }
 
 /** Categoria do blog por segmento, para o conteúdo alimentar as três portas. */

@@ -30,11 +30,12 @@ function se_segmentos() {
 			'porte_rotulo' => 'Qtd. de alunos',
 			'porte'        => array( 'Até 500', '501 a 1.500', '1.501 a 3.000', '3.001 a 6.000', 'Mais de 6.000' ),
 			'icone'        => '<path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5 2.5 9 12 13.5 21.5 9 12 4.5z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M6 11v5c0 1.2 2.7 2.8 6 2.8s6-1.6 6-2.8v-5M20 10v5"></path>',
+			// Nome + ícone: o mega menu do cabeçalho monta os cartões a partir daqui.
 			'destaques' => array(
-				'Processo seletivo e vestibular online',
-				'Censo INEP e ENADE sem retrabalho',
-				'Diploma digital e livro de registro',
-				'Gestão de polos e turmas EAD',
+				array( 'nome' => 'Processo seletivo e vestibular online', 'icone' => 'funil' ),
+				array( 'nome' => 'Censo INEP e ENADE sem retrabalho',     'icone' => 'grafico' ),
+				array( 'nome' => 'Diploma digital e livro de registro',   'icone' => 'academico' ),
+				array( 'nome' => 'Gestão de polos e turmas EAD',          'icone' => 'predio' ),
 			),
 		),
 
@@ -51,10 +52,10 @@ function se_segmentos() {
 			'porte'        => array( 'Até 200', '201 a 500', '501 a 1.000', '1.001 a 2.000', 'Mais de 2.000' ),
 			'icone'        => '<path stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M5 21V8l7-4 7 4v13"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10 21v-5h4v5M9.5 10.5h5"></path>',
 			'destaques' => array(
-				'Rematrícula em lote por série e turma',
-				'Diário, boletim e conselho de classe',
-				'Mensalidade, material e contraturno',
-				'Comunicação com a família por app',
+				array( 'nome' => 'Rematrícula em lote por série e turma', 'icone' => 'assinatura' ),
+				array( 'nome' => 'Diário, boletim e conselho de classe',  'icone' => 'documento' ),
+				array( 'nome' => 'Mensalidade, material e contraturno',   'icone' => 'dinheiro' ),
+				array( 'nome' => 'Comunicação com a família por app',     'icone' => 'celular' ),
 			),
 		),
 
@@ -71,10 +72,10 @@ function se_segmentos() {
 			'porte'        => array( 'Ainda vou lançar', 'Até 100', '101 a 500', '501 a 2.000', 'Mais de 2.000' ),
 			'icone'        => '<path stroke-linecap="round" stroke-linejoin="round" d="M3 5.5a2 2 0 012-2h14a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2v-9z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M9 20.5h6M12 16.5v4"></path><path fill="currentColor" stroke="none" d="M10.3 7.6l4 2.4-4 2.4V7.6z"></path>',
 			'destaques' => array(
-				'Checkout com Pix, cartão e recorrência',
-				'Aula no AVA próprio, sem plugin extra',
-				'Avaliação online com correção automática',
-				'Certificado com código de validação',
+				array( 'nome' => 'Checkout com Pix, cartão e recorrência',   'icone' => 'dinheiro' ),
+				array( 'nome' => 'Aula no AVA próprio, sem plugin extra',    'icone' => 'monitor' ),
+				array( 'nome' => 'Avaliação online com correção automática', 'icone' => 'escudo' ),
+				array( 'nome' => 'Certificado com código de validação',      'icone' => 'academico' ),
 			),
 		),
 	);

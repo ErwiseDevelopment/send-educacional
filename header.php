@@ -9,7 +9,7 @@
 <body <?php body_class('bg-[#070b18] text-slate-200 font-sans antialiased'); ?>>
 
 <?php $se_home = is_front_page(); ?>
-<header class="<?php echo $se_home ? 'absolute top-0 left-0 right-0 z-50' : 'sticky top-0 z-50 bg-[#070b18]/85 backdrop-blur-md border-b border-white/10'; ?>">
+<header id="se-header" class="<?php echo $se_home ? 'absolute top-0 left-0 right-0 z-50' : 'sticky top-0 z-50 bg-[#070b18]/85 backdrop-blur-md border-b border-white/10'; ?>">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center gap-4">
        <div class="flex flex-col items-start justify-center shrink-0">
             <a href="<?php echo home_url(); ?>" class="flex items-center gap-2.5 transition-transform hover:scale-105">
@@ -17,17 +17,8 @@
             </a>
        </div>
 
-        <?php // O menu ganhou os três segmentos: precisa caber sem encavalar a logo. ?>
-        <nav class="hidden lg:flex items-center min-w-0 flex-1 justify-center">
-            <?php
-            wp_nav_menu(array(
-                'theme_location'  => 'menu-principal',
-                'container'       => false, // Remove a div em volta
-                'menu_class'      => 'flex flex-wrap items-center justify-center gap-x-5 xl:gap-x-7 gap-y-1', // Classes na <ul>
-                'fallback_cb'     => false // Não mostra menu feio se não houver menu criado
-            ));
-            ?>
-        </nav>
+        <?php // Mega menu: a estrutura mora em inc/menu.php, não no Aparência > Menus. ?>
+        <?php se_menu_barra_desktop(); ?>
 
         <div class="flex items-center space-x-3 md:space-x-4 relative shrink-0">
 
@@ -73,16 +64,11 @@
         </div>
     </div>
 
-    <div id="menu-mobile" class="hidden lg:hidden border-t border-white/10 bg-[#070b18]/95 backdrop-blur-md">
+    <?php se_menu_paineis_desktop(); ?>
+
+    <div id="menu-mobile" class="hidden lg:hidden border-t border-white/10 bg-[#070b18] se-menu-mobile-rolagem">
         <div class="container mx-auto px-6 py-5">
-            <?php
-            wp_nav_menu( array(
-                'theme_location' => 'menu-principal',
-                'container'      => false,
-                'menu_class'     => 'flex flex-col gap-1',
-                'fallback_cb'    => false,
-            ) );
-            ?>
+            <?php se_menu_mobile(); ?>
             <button onclick="abrirDemo()" class="mt-5 w-full gbtn text-white font-bold px-5 py-3.5 rounded-xl text-sm">
                 Solicitar demonstração
             </button>
@@ -97,6 +83,114 @@
 </header>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+
+    /* ============ MEGA MENU ============
+       Abre no hover em quem tem mouse e no clique em todo mundo — quem navega
+       por toque ou teclado não fica sem acesso. */
+    var header   = document.getElementById('se-header');
+    var gatilhos = Array.prototype.slice.call(document.querySelectorAll('.se-mega-btn'));
+    var paineis  = Array.prototype.slice.call(document.querySelectorAll('.se-mega-painel'));
+    var temMouse = window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+    var abertoEm = null;
+    var timerFechar = null;
+
+    function painelDe(chave) {
+        return document.querySelector('.se-mega-painel[data-painel="' + chave + '"]');
+    }
+
+    function fecharMega() {
+        paineis.forEach(function (p) { p.classList.add('hidden'); });
+        gatilhos.forEach(function (b) {
+            b.setAttribute('aria-expanded', 'false');
+            b.classList.remove('se-nav-ativo');
+        });
+        abertoEm = null;
+        if (header) header.classList.remove('se-header-solido');
+    }
+
+    function abrirMega(chave) {
+        clearTimeout(timerFechar);
+        if (abertoEm === chave) return;
+        fecharMega();
+        var painel = painelDe(chave);
+        if (!painel) return;
+        painel.classList.remove('hidden');
+        gatilhos.forEach(function (b) {
+            if (b.getAttribute('data-mega') === chave) {
+                b.setAttribute('aria-expanded', 'true');
+                b.classList.add('se-nav-ativo');
+            }
+        });
+        abertoEm = chave;
+        if (header) header.classList.add('se-header-solido');
+    }
+
+    gatilhos.forEach(function (btn) {
+        var chave = btn.getAttribute('data-mega');
+
+        btn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            if (abertoEm === chave) { fecharMega(); } else { abrirMega(chave); }
+        });
+
+        if (temMouse) {
+            btn.addEventListener('mouseenter', function () { abrirMega(chave); });
+        }
+        // Teclado: chegar no item já mostra o painel correspondente.
+        btn.addEventListener('focus', function () { abrirMega(chave); });
+    });
+
+    if (temMouse && header) {
+        // Um respiro antes de fechar: o ponteiro passa por fora ao descer da
+        // barra para o painel, e fechar na hora deixaria o menu inalcançável.
+        header.addEventListener('mouseleave', function () {
+            timerFechar = setTimeout(fecharMega, 180);
+        });
+        header.addEventListener('mouseenter', function () { clearTimeout(timerFechar); });
+    }
+
+    document.addEventListener('click', function (e) {
+        if (abertoEm && header && !header.contains(e.target)) fecharMega();
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key !== 'Escape' || !abertoEm) return;
+        var chave = abertoEm;
+        fecharMega();
+        var btn = document.querySelector('.se-mega-btn[data-mega="' + chave + '"]');
+        if (btn) btn.focus();
+    });
+
+    // Troca de aba dentro do painel (a coluna da esquerda).
+    document.querySelectorAll('.se-mega-painel').forEach(function (painel) {
+        var abas = Array.prototype.slice.call(painel.querySelectorAll('.se-aba'));
+
+        function selecionar(chave) {
+            abas.forEach(function (a) {
+                var ativa = a.getAttribute('data-aba') === chave;
+                a.classList.toggle('se-aba-ativa', ativa);
+                a.setAttribute('aria-selected', ativa ? 'true' : 'false');
+            });
+            painel.querySelectorAll('.se-pane').forEach(function (p) {
+                p.classList.toggle('hidden', p.getAttribute('data-pane') !== chave);
+            });
+        }
+
+        abas.forEach(function (aba, i) {
+            var chave = aba.getAttribute('data-aba');
+            aba.addEventListener('mouseenter', function () { selecionar(chave); });
+            aba.addEventListener('focus', function () { selecionar(chave); });
+            aba.addEventListener('click', function (e) { e.preventDefault(); selecionar(chave); });
+            aba.addEventListener('keydown', function (e) {
+                if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+                e.preventDefault();
+                var proxima = abas[(i + (e.key === 'ArrowDown' ? 1 : abas.length - 1)) % abas.length];
+                if (proxima) proxima.focus();
+            });
+        });
+    });
+
+    /* ============ MENU DO CELULAR ============ */
     var btnMenuMobile = document.getElementById('btn-menu-mobile');
     var menuMobile = document.getElementById('menu-mobile');
     if (btnMenuMobile && menuMobile) {
@@ -105,6 +199,16 @@ document.addEventListener('DOMContentLoaded', function() {
             btnMenuMobile.setAttribute('aria-expanded', aberto ? 'true' : 'false');
         });
     }
+
+    document.querySelectorAll('.se-acc-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var painel = btn.nextElementSibling;
+            if (!painel) return;
+            var aberto = !painel.classList.toggle('hidden');
+            btn.setAttribute('aria-expanded', aberto ? 'true' : 'false');
+            btn.classList.toggle('se-acc-aberto', aberto);
+        });
+    });
 
     const btnAreaCliente = document.getElementById('btn-area-cliente');
     const menuAreaCliente = document.getElementById('menu-area-cliente');
