@@ -40,24 +40,24 @@ if ( ! defined( 'ABSPATH' ) ) exit;
   .floaty{ animation:floaty 6s ease-in-out infinite; }
   .floaty2{ animation:floaty 7s ease-in-out infinite; }
   @keyframes floaty{ 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
-  .dash{ background:#fff; border-radius:18px; overflow:hidden; border:1px solid rgba(15,23,42,.08); }
-  .dbar{ height:42px; display:flex; align-items:center; gap:8px; padding:0 16px; background:#f7f7f9; border-bottom:1px solid #ededf0; }
+  .dash{ background:#050741; border-radius:18px; overflow:hidden; border:1px solid rgba(150,177,209,.18); }
+  .dbar{ height:42px; display:flex; align-items:center; gap:8px; padding:0 16px; background:#030429; border-bottom:1px solid rgba(255,255,255,.08); }
   .dot{ width:11px;height:11px;border-radius:50%; }
-  .durl{ margin:0 auto; font-size:11px; color:#8b8c9d; background:#fff; border:1px solid #ededf0; border-radius:999px; padding:4px 16px; font-weight:600; }
+  .durl{ margin:0 auto; font-size:11px; color:#b8b9c3; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.12); border-radius:999px; padding:4px 16px; font-weight:600; }
   .dbody{ display:grid; grid-template-columns:64px 1fr; min-height:330px; }
-  .dside{ background:#050741; padding:16px 0; display:flex; flex-direction:column; align-items:center; gap:18px; }
+  .dside{ background:#030429; border-right:1px solid rgba(255,255,255,.07); padding:16px 0; display:flex; flex-direction:column; align-items:center; gap:18px; }
   .dside .smark{ width:34px;height:34px;border-radius:10px; background:linear-gradient(135deg,#4a78b0,#080b6c); color:#fff; font-weight:800; display:flex;align-items:center;justify-content:center; }
   .dside i{ width:20px;height:20px;border-radius:6px;background:rgba(255,255,255,.12); display:block; }
   .dside i.on{ background:#7296c1; }
   .dmain{ padding:18px 20px; }
-  .kpi{ border:1px solid #ededf0; border-radius:14px; padding:12px 14px; background:#fff; }
-  .kpi .v{ font-size:20px; font-weight:800; color:#07082c; letter-spacing:-.02em; }
+  .kpi{ border:1px solid rgba(255,255,255,.09); border-radius:14px; padding:12px 14px; background:rgba(255,255,255,.035); }
+  .kpi .v{ font-size:20px; font-weight:800; color:#fff; letter-spacing:-.02em; }
   .kpi .l{ font-size:10.5px; font-weight:600; color:#8b8c9d; text-transform:uppercase; letter-spacing:.06em; }
   .chip{ font-size:10px;font-weight:700;padding:2px 7px;border-radius:999px; display:inline-flex; align-items:center; gap:3px; }
   .bars{ display:flex; align-items:flex-end; gap:9px; height:90px; }
-  .bars span{ flex:1; border-radius:6px 6px 0 0; background:linear-gradient(180deg,#7296c1,#1f3184); opacity:.85; }
-  .donut{ width:104px;height:104px;border-radius:50%; background:conic-gradient(#1f3184 0 46%,#4a78b0 46% 72%,#22d3ee 72% 88%,#d9d9df 88% 100%); display:flex;align-items:center;justify-content:center; }
-  .donut::after{ content:"";width:62px;height:62px;border-radius:50%;background:#fff; }
+  .bars span{ flex:1; border-radius:6px 6px 0 0; background:linear-gradient(180deg,#7296c1,#4a78b0); opacity:.9; }
+  .donut{ width:104px;height:104px;border-radius:50%; background:conic-gradient(#4a78b0 0 46%,#7296c1 46% 72%,#56b2cb 72% 88%,#3a3b58 88% 100%); display:flex;align-items:center;justify-content:center; }
+  .donut::after{ content:"";width:62px;height:62px;border-radius:50%;background:#050741; }
   .lg-dot{ width:9px;height:9px;border-radius:3px;display:inline-block; }
   .mqo{ overflow:hidden; }
   .mq{ display:flex; gap:40px; white-space:nowrap; animation:mq 22s linear infinite; }
@@ -112,8 +112,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
       <div class="absolute -inset-x-10 -top-6 bottom-0 bg-gradient-to-b from-blue-500/30 to-violet-600/10 blur-3xl rounded-[3rem]"></div>
       <div class="relative dash card-ring">
         <div class="dbar">
-          <span class="dot" style="background:#ef6a5e"></span><span class="dot" style="background:#f4be4f"></span><span class="dot" style="background:#62c554"></span>
+          <span class="dot" style="background:#3a3b58"></span><span class="dot" style="background:#3a3b58"></span><span class="dot" style="background:#3a3b58"></span>
           <span class="durl">app.sendeducacional.com.br</span>
+          <span class="hidden sm:inline text-[9px] uppercase tracking-widest font-bold text-slate-500 border border-white/10 rounded-full px-2 py-0.5">Dados ilustrativos</span>
         </div>
         <div class="dbody">
           <div class="dside">
@@ -123,20 +124,20 @@ if ( ! defined( 'ABSPATH' ) ) exit;
           <div class="dmain">
             <div class="flex items-center justify-between mb-4">
               <div class="text-left">
-                <div class="text-[15px] font-extrabold text-slate-900 tracking-tight">Visão geral</div>
+                <div class="text-[15px] font-extrabold text-white tracking-tight">Visão geral</div>
                 <div class="text-[11px] text-slate-400 font-medium">Resumo do mês · 2026</div>
               </div>
               <div class="hidden sm:flex gap-1.5 text-[11px] font-semibold">
                 <span class="px-3 py-1.5 rounded-lg bg-blue-600 text-white">Acadêmico</span>
-                <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-500">Financeiro</span>
-                <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-500">Evasão</span>
+                <span class="px-3 py-1.5 rounded-lg bg-white/5 text-slate-400">Financeiro</span>
+                <span class="px-3 py-1.5 rounded-lg bg-white/5 text-slate-400">Evasão</span>
               </div>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-2.5 mb-4">
-              <div class="kpi text-left"><div class="l mb-1">Matrículas</div><div class="v">1.284</div><span class="chip" style="background:#dcfce7;color:#16a34a"><i class="ti ti-trending-up"></i> 12%</span></div>
-              <div class="kpi text-left"><div class="l mb-1">Inadimplência</div><div class="v">4,2%</div><span class="chip" style="background:#dcfce7;color:#16a34a"><i class="ti ti-trending-down"></i> 1,8pp</span></div>
-              <div class="kpi text-left"><div class="l mb-1">Risco evasão</div><div class="v">37</div><span class="chip" style="background:#fef3c7;color:#b45309">alunos</span></div>
-              <div class="kpi text-left"><div class="l mb-1">Receita</div><div class="v">R$2,4M</div><span class="chip" style="background:#dcfce7;color:#16a34a"><i class="ti ti-trending-up"></i> 8%</span></div>
+              <div class="kpi text-left"><div class="l mb-1">Matrículas</div><div class="v">1.284</div><span class="chip" style="background:rgba(52,211,153,.16);color:#6ee7b7"><i class="ti ti-trending-up"></i> 12%</span></div>
+              <div class="kpi text-left"><div class="l mb-1">Inadimplência</div><div class="v">4,2%</div><span class="chip" style="background:rgba(52,211,153,.16);color:#6ee7b7"><i class="ti ti-trending-down"></i> 1,8pp</span></div>
+              <div class="kpi text-left"><div class="l mb-1">Risco evasão</div><div class="v">37</div><span class="chip" style="background:rgba(251,191,36,.16);color:#fcd34d">alunos</span></div>
+              <div class="kpi text-left"><div class="l mb-1">Receita</div><div class="v">R$2,4M</div><span class="chip" style="background:rgba(52,211,153,.16);color:#6ee7b7"><i class="ti ti-trending-up"></i> 8%</span></div>
             </div>
             <div class="grid md:grid-cols-3 gap-3">
               <div class="md:col-span-2 kpi text-left">
@@ -147,11 +148,11 @@ if ( ! defined( 'ABSPATH' ) ) exit;
                 <div class="l mb-3">Cursos</div>
                 <div class="flex items-center gap-3">
                   <div class="donut"></div>
-                  <div class="space-y-1.5 text-[11px] text-slate-500 font-medium">
-                    <div><span class="lg-dot" style="background:#1f3184"></span> Graduação</div>
-                    <div><span class="lg-dot" style="background:#4a78b0"></span> EAD</div>
-                    <div><span class="lg-dot" style="background:#22d3ee"></span> Pós</div>
-                    <div><span class="lg-dot" style="background:#d9d9df"></span> Técnico</div>
+                  <div class="space-y-1.5 text-[11px] text-slate-400 font-medium">
+                    <div><span class="lg-dot" style="background:#4a78b0"></span> Graduação</div>
+                    <div><span class="lg-dot" style="background:#7296c1"></span> EAD</div>
+                    <div><span class="lg-dot" style="background:#56b2cb"></span> Pós</div>
+                    <div><span class="lg-dot" style="background:#3a3b58"></span> Técnico</div>
                   </div>
                 </div>
               </div>
@@ -160,13 +161,13 @@ if ( ! defined( 'ABSPATH' ) ) exit;
         </div>
       </div>
       <!-- floating accent cards -->
-      <div class="floaty hidden md:flex absolute -left-8 bottom-16 items-center gap-3 bg-white rounded-2xl px-4 py-3 shadow-xl border border-slate-100">
-        <div class="w-9 h-9 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center"><i class="ti ti-check text-lg"></i></div>
-        <div class="text-left"><p class="text-[10px] text-slate-400 font-bold uppercase">Mensalidade</p><p class="text-sm font-bold text-slate-800">Paga via Pix</p></div>
+      <div class="floaty hidden md:flex absolute -left-8 bottom-16 items-center gap-3 rounded-2xl px-4 py-3 shadow-xl border border-white/12 bg-[#050741]">
+        <div class="w-9 h-9 rounded-full bg-emerald-400/15 text-emerald-300 flex items-center justify-center"><i class="ti ti-check text-lg"></i></div>
+        <div class="text-left"><p class="text-[10px] text-slate-400 font-bold uppercase">Mensalidade</p><p class="text-sm font-bold text-white">Paga via Pix</p></div>
       </div>
-      <div class="floaty2 hidden md:flex absolute -right-6 top-24 items-center gap-3 bg-white rounded-2xl px-4 py-3 shadow-xl border border-slate-100">
-        <div class="w-9 h-9 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center"><i class="ti ti-signature text-lg"></i></div>
-        <div class="text-left"><p class="text-[10px] text-slate-400 font-bold uppercase">Matrícula</p><p class="text-sm font-bold text-slate-800">Contrato assinado</p></div>
+      <div class="floaty2 hidden md:flex absolute -right-6 top-24 items-center gap-3 rounded-2xl px-4 py-3 shadow-xl border border-white/12 bg-[#050741]">
+        <div class="w-9 h-9 rounded-full bg-blue-400/15 text-blue-300 flex items-center justify-center"><i class="ti ti-signature text-lg"></i></div>
+        <div class="text-left"><p class="text-[10px] text-slate-400 font-bold uppercase">Matrícula</p><p class="text-sm font-bold text-white">Contrato assinado</p></div>
       </div>
     </div>
   </div>
