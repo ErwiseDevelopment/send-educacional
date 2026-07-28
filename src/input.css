@@ -2,14 +2,14 @@
 Theme Name: Send Educacional
 Description: Tema customizado para o SaaS Send Educacional usando Tailwind CSS.
 Author: Send Solutions
-Version: 1.9.2
+Version: 1.9.3
 */
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* ===== Tipografia — Poppins, a fonte da marca =====
+/* ===== Tipografia, Poppins, a fonte da marca =====
    Uma família só. A hierarquia vem de peso e espacejamento, não do contraste
    entre duas fontes: 800 bem apertado nos títulos, 400 no texto corrido. */
 .titulo{
@@ -29,7 +29,7 @@ Version: 1.9.2
 
 /* ===== Formas de seção =====
    Três formas diferentes de propósito. O site inteiro era a mesma grade de
-   cartões de vidro repetida oito vezes — é o que mais o entrega como
+   cartões de vidro repetida oito vezes, é o que mais o entrega como
    template. Aqui existem: cartão (o que já havia), faixa editorial com
    filete e lista numerada sem caixa nenhuma. */
 
@@ -53,7 +53,7 @@ Version: 1.9.2
 /* Filete comum, para separar sem desenhar caixa. */
 .regra{border-top:1px solid rgba(255,255,255,.12)}
 
-/* ===== Design tokens escuros — compartilhados entre a home e as páginas internas ===== */
+/* ===== Design tokens escuros, compartilhados entre a home e as páginas internas ===== */
 .gtext{background:linear-gradient(100deg,#96b1d1,#7296c1 45%,#4a78b0);-webkit-background-clip:text;background-clip:text;color:transparent}
 .gbtn{background:linear-gradient(100deg,#4a78b0,#1f3184);box-shadow:0 10px 30px -8px rgba(8,11,108,.75)}
 .gbtn:hover{background:linear-gradient(100deg,#5883b6,#2b2d81);box-shadow:0 16px 42px -8px rgba(8,11,108,.95)}
@@ -66,7 +66,7 @@ Version: 1.9.2
 .reveal.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 
-/* ===== Mega menu (cabeçalho) — ver inc/menu.php ===== */
+/* ===== Mega menu (cabeçalho), ver inc/menu.php ===== */
 .se-nav-link{display:inline-flex;align-items:center;gap:.35rem;padding:.5rem .75rem;border-radius:.6rem;
   font-size:.875rem;font-weight:600;color:#b8b9c3;white-space:nowrap;cursor:pointer;
   transition:color .2s ease,background-color .2s ease}

@@ -120,7 +120,7 @@ get_header(); ?>
                         <li class="flex items-start gap-3"><span class="text-amber-500 mt-0.5">✓</span> Disparo automático por mudança de etapa no fluxo</li>
                         <li class="flex items-start gap-3"><span class="text-amber-500 mt-0.5">✓</span> Personalização por Tipo de E-mail Institucional</li>
                         <li class="flex items-start gap-3"><span class="text-amber-500 mt-0.5">✓</span> Variáveis dinâmicas (Nome do aluno, protocolo, etc.)</li>
-                        <li class="flex items-start gap-3"><span class="text-amber-500 mt-0.5">✓</span> Fim do atendimento "invisível" — o aluno sempre sabe onde está seu pedido.</li>
+                        <li class="flex items-start gap-3"><span class="text-amber-500 mt-0.5">✓</span> Fim do atendimento "invisível", o aluno sempre sabe onde está seu pedido.</li>
                     </ul>
                 </div>
 

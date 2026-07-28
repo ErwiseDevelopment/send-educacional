@@ -1,12 +1,12 @@
 <?php
 /**
- * Prova social — logos de clientes e depoimentos.
+ * Prova social, logos de clientes e depoimentos.
  *
  * O site não tinha NENHUMA prova social: nem logo, nem depoimento, nem case.
  * Num produto em que a objeção nº 1 é medo de migração, isso é o que mais
  * custa conversão. Aqui fica a estrutura pronta; o conteúdo é preenchido em
  * Aparência > Personalizar > "Prova social", porque logo e depoimento de
- * cliente só entram no ar com autorização — não é coisa para inventar no
+ * cliente só entram no ar com autorização, não é coisa para inventar no
  * código. Enquanto os campos estiverem vazios, a seção simplesmente não sai.
  *
  * @see se_bloco_prova_social()
@@ -57,7 +57,7 @@ function se_ps_tem_conteudo() {
 }
 
 /**
- * A seção de prova social. Não imprime nada se ninguém preencheu — melhor
+ * A seção de prova social. Não imprime nada se ninguém preencheu, melhor
  * ausência do que uma seção vazia com "seus clientes aqui".
  */
 function se_bloco_prova_social() {
@@ -180,7 +180,7 @@ function se_ps_customize_register( $wp_customize ) {
 			'transport'         => 'refresh',
 		) );
 		$wp_customize->add_control( 'se_ps_dep_texto_' . $i, array(
-			'label'       => sprintf( 'Depoimento %d — texto', $i ),
+			'label'       => sprintf( 'Depoimento %d, texto', $i ),
 			'description' => 'Deixe vazio para não exibir este depoimento.',
 			'section'     => 'se_prova_social',
 			'type'        => 'textarea',
@@ -197,7 +197,7 @@ function se_ps_customize_register( $wp_customize ) {
 				'transport'         => 'refresh',
 			) );
 			$wp_customize->add_control( 'se_ps_dep_' . $campo . '_' . $i, array(
-				'label'   => sprintf( 'Depoimento %d — %s', $i, $rotulo ),
+				'label'   => sprintf( 'Depoimento %d, %s', $i, $rotulo ),
 				'section' => 'se_prova_social',
 				'type'    => 'text',
 			) );
@@ -212,7 +212,7 @@ function se_ps_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'se_foto_time', array(
 		'label'       => 'Foto real do time (página Sobre)',
 		'description' => 'Numa página que fala de três décadas de história, foto de banco de imagem trabalha contra o argumento. '
-			. 'Sem foto enviada, entra um bloco desenhado com a linha do tempo — nunca uma foto genérica.',
+			. 'Sem foto enviada, entra um bloco desenhado com a linha do tempo, nunca uma foto genérica.',
 		'section'     => 'se_prova_social',
 		'mime_type'   => 'image',
 	) ) );

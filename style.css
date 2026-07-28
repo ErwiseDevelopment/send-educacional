@@ -2,7 +2,7 @@
 Theme Name: Send Educacional
 Description: Tema customizado para o SaaS Send Educacional usando Tailwind CSS.
 Author: Send Solutions
-Version: 1.9.2
+Version: 1.9.3
 */
 
 *, ::before, ::after {
@@ -4013,7 +4013,7 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ===== Tipografia — Poppins, a fonte da marca =====
+/* ===== Tipografia, Poppins, a fonte da marca =====
    Uma família só. A hierarquia vem de peso e espacejamento, não do contraste
    entre duas fontes: 800 bem apertado nos títulos, 400 no texto corrido. */
 
@@ -4045,7 +4045,7 @@ video {
 
 /* ===== Formas de seção =====
    Três formas diferentes de propósito. O site inteiro era a mesma grade de
-   cartões de vidro repetida oito vezes — é o que mais o entrega como
+   cartões de vidro repetida oito vezes, é o que mais o entrega como
    template. Aqui existem: cartão (o que já havia), faixa editorial com
    filete e lista numerada sem caixa nenhuma. */
 
@@ -4113,7 +4113,7 @@ video {
   border-top:1px solid rgba(255,255,255,.12)
 }
 
-/* ===== Design tokens escuros — compartilhados entre a home e as páginas internas ===== */
+/* ===== Design tokens escuros, compartilhados entre a home e as páginas internas ===== */
 
 .gtext{
   background:linear-gradient(100deg,#96b1d1,#7296c1 45%,#4a78b0);
@@ -4176,7 +4176,7 @@ video {
   }
 }
 
-/* ===== Mega menu (cabeçalho) — ver inc/menu.php ===== */
+/* ===== Mega menu (cabeçalho), ver inc/menu.php ===== */
 
 .se-nav-link{
   display:inline-flex;

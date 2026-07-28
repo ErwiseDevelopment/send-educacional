@@ -5,7 +5,7 @@
  * Fonte única de verdade: a bifurcação da home, as páginas de cada segmento,
  * o formulário de demonstração (cargos e porte mudam conforme o segmento) e o
  * seeder de páginas leem tudo daqui. Mexer em um rótulo aqui muda o site
- * inteiro de uma vez — era exatamente o que faltava quando o site só falava
+ * inteiro de uma vez, era exatamente o que faltava quando o site só falava
  * com ensino superior.
  */
 
@@ -21,8 +21,8 @@ function se_segmentos() {
 			'nome'      => 'Ensino Superior',
 			'curto'     => 'Superior',
 			'titulo'    => 'Faculdades, centros universitários e EAD',
-			'resumo'    => 'Processo seletivo, secretaria acadêmica, Censo INEP, colação de grau, diploma digital e gestão de polos — com a regulação do MEC acompanhada de perto.',
-			'cor'       => '#7296c1', // superior — azul da marca clareado (contraste 6.5)
+			'resumo'    => 'Processo seletivo, secretaria acadêmica, Censo INEP, colação de grau, diploma digital e gestão de polos, com a regulação do MEC acompanhada de perto.',
+			'cor'       => '#7296c1', // superior, azul da marca clareado (contraste 6.5)
 			'publico'   => 'Mantenedores, reitorias, secretaria acadêmica e TI',
 			// Rótulos usados no formulário
 			'form_valor'   => 'Ensino superior',
@@ -43,8 +43,8 @@ function se_segmentos() {
 			'nome'      => 'Educação Básica e Ensino Médio',
 			'curto'     => 'Básica e Média',
 			'titulo'    => 'Escolas de educação infantil, fundamental e ensino médio',
-			'resumo'    => 'Matrícula e rematrícula, diário de classe, boletim, mensalidade e comunicação com a família no mesmo sistema — sem vocabulário de faculdade e sem planilha paralela.',
-			'cor'       => '#56b2cb', // básica — azul frio da família (contraste 8.2)
+			'resumo'    => 'Matrícula e rematrícula, diário de classe, boletim, mensalidade e comunicação com a família no mesmo sistema, sem vocabulário de faculdade e sem planilha paralela.',
+			'cor'       => '#56b2cb', // básica, azul frio da família (contraste 8.2)
 			'publico'   => 'Mantenedores, direção pedagógica, secretaria escolar e financeiro',
 			'form_valor'   => 'Educação básica e ensino médio',
 			'cargos'       => array( 'Mantenedor(a) / Diretor(a)', 'Direção pedagógica', 'Coordenação pedagógica', 'Secretaria escolar', 'Financeiro', 'TI / Gestor(a) de sistemas' ),
@@ -63,8 +63,8 @@ function se_segmentos() {
 			'nome'      => 'Cursos e Venda Online',
 			'curto'     => 'Cursos Online',
 			'titulo'    => 'Cursos livres, profissionalizantes e corporativos',
-			'resumo'    => 'Venda do curso com pagamento na hora, aula no AVA próprio, avaliação online e certificado emitido sozinho — sem juntar checkout, plataforma de aula e planilha de certificado.',
-			'cor'       => '#8f92e8', // cursos online — o azul profundo clareado (contraste 7.1)
+			'resumo'    => 'Venda do curso com pagamento na hora, aula no AVA próprio, avaliação online e certificado emitido sozinho, sem juntar checkout, plataforma de aula e planilha de certificado.',
+			'cor'       => '#8f92e8', // cursos online, o azul profundo clareado (contraste 7.1)
 			'publico'   => 'Fundadores, head de operações, produto e marketing',
 			'form_valor'   => 'Cursos e venda online',
 			'cargos'       => array( 'Fundador(a) / Sócio(a)', 'Head de operações', 'Gestor(a) de produto / conteúdo', 'Marketing', 'Financeiro', 'TI / Gestor(a) de sistemas' ),

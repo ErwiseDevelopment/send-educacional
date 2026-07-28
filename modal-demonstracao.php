@@ -1,6 +1,6 @@
 <?php
 /**
- * Modal de demonstração — porta única de conversão do site.
+ * Modal de demonstração, porta única de conversão do site.
  *
  * O campo "Tipo de instituição" é o primeiro por um motivo: o site atende três
  * segmentos e sem ele é impossível rotear o lead para o consultor certo.
@@ -216,7 +216,7 @@ $md_segmentos = se_segmentos();
             return { success: false };
         }).then(function (resposta) {
             // O lead não pode ser perdido: mesmo se o CRM recusar, seguimos para o
-            // WhatsApp — mas avisando, em vez de fingir que deu tudo certo.
+            // WhatsApp, mas avisando, em vez de fingir que deu tudo certo.
             if (!resposta || resposta.success !== true) {
                 var aviso = document.getElementById('aviso_registro');
                 if (aviso) aviso.classList.remove('hidden');

@@ -85,7 +85,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     /* ============ MEGA MENU ============
-       Abre no hover em quem tem mouse e no clique em todo mundo — quem navega
+       Abre no hover em quem tem mouse e no clique em todo mundo, quem navega
        por toque ou teclado não fica sem acesso. */
     var header   = document.getElementById('se-header');
     var gatilhos = Array.prototype.slice.call(document.querySelectorAll('.se-mega-btn'));

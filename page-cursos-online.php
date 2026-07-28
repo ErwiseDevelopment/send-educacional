@@ -24,11 +24,11 @@ get_header(); ?>
             </span>
 
             <h1 class="titulo text-[2.5rem] md:text-[4.4rem] leading-[0.99] tracking-tightest mb-6">
-                Venda o curso, dê a aula, aplique a prova e <span class="gtext">emita o certificado</span> — no mesmo sistema.
+                Venda o curso, dê a aula, aplique a prova e <span class="gtext">emita o certificado</span>, no mesmo sistema.
             </h1>
 
             <p class="text-lg md:text-xl text-slate-400 leading-relaxed max-w-2xl mx-auto mb-9">
-                Hoje quase todo mundo junta três ferramentas: um checkout, uma plataforma de aula e uma planilha para os certificados. O Send Educacional resolve as três coisas em um só lugar — o aluno paga, estuda, é avaliado e recebe o certificado sem ninguém precisar conferir nada à mão.
+                Hoje quase todo mundo junta três ferramentas: um checkout, uma plataforma de aula e uma planilha para os certificados. O Send Educacional resolve as três coisas em um só lugar: o aluno paga, estuda, é avaliado e recebe o certificado sem ninguém precisar conferir nada à mão.
             </p>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -73,13 +73,13 @@ get_header(); ?>
                             'Questão dissertativa com correção do tutor',
                             'Tentativas, tempo limite e nota mínima',
                             'Progresso e frequência de acesso por aluno',
-                            'Nota cai direto no histórico — sem planilha',
+                            'Nota cai direto no histórico, sem planilha à parte',
                         ),
                         '<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"></path><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"></path><path stroke-linecap="round" stroke-linejoin="round" d="M9 5a2 2 0 012-2h2a2 2 0 012 2v0a1 1 0 01-1 1h-4a1 1 0 01-1-1z"></path>',
                     ),
                     array(
                         'Certificado automático',
-                        'Bateu a regra de conclusão, o certificado sai sozinho — com código de validação para o aluno provar que é verdadeiro e para você conferir depois.',
+                        'Bateu a regra de conclusão, o certificado sai sozinho, com código de validação para o aluno provar que é verdadeiro e para você conferir depois.',
                         array(
                             'Regra de conclusão configurável',
                             'Emissão automática, sem pedido de suporte',
@@ -130,7 +130,7 @@ get_header(); ?>
                     <?php
                     $co_jornada = array(
                         array( 'Página de venda', 'Catálogo de cursos com preço, ementa e carga horária.' ),
-                        array( 'Checkout', 'Pix, cartão ou recorrência — com cupom e parcelamento.' ),
+                        array( 'Checkout', 'Pix, cartão ou recorrência, com cupom e parcelamento.' ),
                         array( 'Acesso liberado', 'Matrícula criada no ato da confirmação do pagamento.' ),
                         array( 'Aula no AVA', 'Vídeo, material e trilha de progresso no ambiente próprio.' ),
                         array( 'Avaliação', 'Prova online corrigida na hora, nota no histórico.' ),
@@ -159,12 +159,12 @@ get_header(); ?>
                 <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass text-[11px] font-bold uppercase tracking-widest mb-5" style="color:<?php echo esc_attr( $se_cor ); ?>">Certificado</span>
                 <h2 class="titulo text-[2rem] md:text-4xl leading-[1.04] mb-5">O certificado que ninguém precisa montar</h2>
                 <p class="text-lg text-slate-400 leading-relaxed mb-6">
-                    Certificado emitido no momento em que o aluno cumpre a regra de conclusão que você definiu — carga horária, nota mínima, progresso ou tudo isso junto. Sai com a sua marca, com a carga horária e com um código único.
+                    Certificado emitido no momento em que o aluno cumpre a regra de conclusão que você definiu, carga horária, nota mínima, progresso ou tudo isso junto. Sai com a sua marca, com a carga horária e com um código único.
                 </p>
                 <ul class="space-y-3 mb-8">
                     <?php foreach ( array(
                         'Página pública de validação: quem contrata o seu aluno confere o código e vê que é verdadeiro.',
-                        'Sem fila de suporte pedindo segunda via — o aluno baixa sozinho pelo portal.',
+                        'Sem fila de suporte pedindo segunda via, o aluno baixa sozinho pelo portal.',
                         'Modelo configurável por curso: você define layout, assinatura e o que aparece no verso.',
                     ) as $li ) {
                         printf( '<li class="flex items-start gap-3 text-slate-300"><svg class="w-5 h-5 flex-shrink-0 mt-0.5" style="color:%s" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>%s</li>', esc_attr( $se_cor ), esc_html( $li ) );
@@ -257,10 +257,10 @@ get_header(); ?>
             <div class="space-y-3 reveal">
                 <?php
                 $co_faq = array(
-                    array( 'Preciso de curso reconhecido pelo MEC para usar?', 'Não. Este módulo atende curso livre, profissionalizante e treinamento corporativo — que não dependem de reconhecimento do MEC. Se a sua operação também tem curso regulado, ele roda no mesmo sistema, na parte de ensino superior.' ),
+                    array( 'Preciso de curso reconhecido pelo MEC para usar?', 'Não. Este módulo atende curso livre, profissionalizante e treinamento corporativo, que não dependem de reconhecimento do MEC. Se a sua operação também tem curso regulado, ele roda no mesmo sistema, na parte de ensino superior.' ),
                     array( 'Dá para vender assinatura, e não só curso avulso?', 'Sim. Você configura curso avulso, combo, trilha e assinatura recorrente. Na recorrência, o acesso é liberado e bloqueado conforme o pagamento, sem ninguém precisar acompanhar.' ),
                     array( 'A prova é corrigida sozinha?', 'A questão objetiva sim, na hora em que o aluno entrega. A dissertativa vai para a fila do tutor, com a nota entrando no histórico assim que ele corrige.' ),
-                    array( 'O certificado tem validade?', 'Certificado de curso livre não é diploma, e a gente não vende isso como se fosse. O que ele tem é rastreabilidade: código único, página pública de validação e a carga horária e o conteúdo registrados — que é o que uma empresa checa quando o seu aluno apresenta o certificado.' ),
+                    array( 'O certificado tem validade?', 'Certificado de curso livre não é diploma, e a gente não vende isso como se fosse. O que ele tem é rastreabilidade: código único, página pública de validação e a carga horária e o conteúdo registrados, que é o que uma empresa checa quando o seu aluno apresenta o certificado.' ),
                     array( 'Já uso uma plataforma. Dá para migrar os alunos?', 'Dá. A implantação inclui a importação da sua base de alunos, cursos e histórico de conclusão. A migração é conduzida por um consultor, sem parar a venda.' ),
                 );
                 foreach ( $co_faq as $f ) {

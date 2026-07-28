@@ -1,11 +1,11 @@
 <?php
 /**
- * Consentimentos do formulário — a prova que a LGPD pede.
+ * Consentimentos do formulário, a prova que a LGPD pede.
  *
  * O site tinha um selo "Dados protegidos pela LGPD" no formulário, mas selo
  * não é consentimento: o titular precisa marcar que autoriza, e a empresa
  * precisa conseguir demonstrar depois que ele marcou. Aqui ficam a lista e a
- * exportação. Guardamos só o necessário — sem IP e sem rastro de navegação.
+ * exportação. Guardamos só o necessário, sem IP e sem rastro de navegação.
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit;

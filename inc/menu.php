@@ -10,9 +10,9 @@
  * Aparência > Menus: um menu de administrador não consegue expressar título,
  * descrição, ícone e agrupamento por aba sem virar uma gambiarra de classes
  * CSS em item de menu. O preço é que incluir uma entrada nova exige editar
- * este arquivo — em troca, desktop e celular saem sempre do mesmo lugar.
+ * este arquivo, em troca, desktop e celular saem sempre do mesmo lugar.
  *
- * @see se_segmentos() — os três segmentos continuam com fonte única própria.
+ * @see se_segmentos(), os três segmentos continuam com fonte única própria.
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit;
@@ -214,7 +214,7 @@ function se_menu_mega_bruto() {
 					'icone'     => 'academico',
 					'cor'       => '#4a78b0',
 					'titulo'    => 'Secretaria e vida acadêmica',
-					'descricao' => 'Matrícula, notas, histórico e documentos — a informação lançada uma vez só, na origem.',
+					'descricao' => 'Matrícula, notas, histórico e documentos. A informação é lançada uma vez só, na origem.',
 					'cta'       => 'Ver gestão acadêmica',
 					'url'       => se_url_pagina( 'gestao-academica' ),
 					'itens'     => array(
@@ -243,12 +243,12 @@ function se_menu_mega_bruto() {
 					'icone'     => 'monitor',
 					'cor'       => '#2b2d81',
 					'titulo'    => 'O ambiente de quem estuda',
-					'descricao' => 'AVA próprio, portais e app — com o acesso do aluno alimentando o alerta de evasão.',
+					'descricao' => 'AVA próprio, portais e app, com o acesso do aluno alimentando o alerta de evasão.',
 					'cta'       => 'Ver portais e AVA',
 					'url'       => se_url_pagina( 'portais' ),
 					'itens'     => array(
 						// Os dois itens levavam à mesma página; viraram um só.
-						array( 'nome' => 'Portais, app e AVA', 'desc' => 'Aluno, família, docente e polo no mesmo login — web e celular', 'url' => se_url_pagina( 'portais' ), 'icone' => 'monitor' ),
+						array( 'nome' => 'Portais, app e AVA', 'desc' => 'Aluno, família, docente e polo no mesmo login, web e celular', 'url' => se_url_pagina( 'portais' ), 'icone' => 'monitor' ),
 						array( 'nome' => 'Retenção de Alunos', 'desc' => 'Risco de evasão cruzando nota, frequência e financeiro', 'url' => se_url_pagina( 'retencao' ), 'icone' => 'pessoas' ),
 					),
 				),

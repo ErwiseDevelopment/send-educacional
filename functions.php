@@ -17,7 +17,7 @@ require_once get_template_directory() . '/inc/paginas.php';
 require_once get_template_directory() . '/inc/consentimentos.php';
 
 /* -------------------------------------------------------------------------
- * Auto-update do tema via GitHub (plugin-update-checker) — mesmo esquema do
+ * Auto-update do tema via GitHub (plugin-update-checker), mesmo esquema do
  * tema salvatorianos. Suba um commit na branch `main` com a "Version" do
  * style.css maior que a instalada e o WordPress mostra o aviso de atualização
  * em 1 clique (Painel > Atualizações). Repo privado: precisa da constante
@@ -63,7 +63,7 @@ add_action('after_setup_theme', 'send_educacional_setup');
 
 function send_educacional_scripts() {
     /*
-     * Poppins é a fonte da marca Send — uma família só, do título ao rodapé.
+     * Poppins é a fonte da marca Send, uma família só, do título ao rodapé.
      *
      * Com uma fonte geométrica sem serifa, a hierarquia não pode vir do
      * contraste entre duas famílias: ela vem de peso e espacejamento. Por isso
@@ -272,7 +272,7 @@ function registrar_lead_crm() {
 
     // 3. Monta o corpo para a RD Station
     //    O segmento entra no NOME da negociação porque a conta ainda não tem um
-    //    campo personalizado para ele — assim já dá para rotear e filtrar hoje.
+    //    campo personalizado para ele, assim já dá para rotear e filtrar hoje.
     //    Quando o cliente criar o campo no RD, basta acrescentar aqui o ID.
     $rotulo_seg = $segmentos[ $seg_slug ]['curto'];
 
@@ -318,7 +318,7 @@ function se_ssl_verify() {
 
 /**
  * Prova de consentimento: a LGPD exige poder demonstrar que a pessoa
- * autorizou. Guardamos a data, quem autorizou e o texto vigente — sem IP,
+ * autorizou. Guardamos a data, quem autorizou e o texto vigente, sem IP,
  * para não coletar mais do que o necessário. Fica em Ferramentas > Consentimentos.
  */
 function se_registrar_consentimento( $email, $nome, $segmento ) {
@@ -342,7 +342,7 @@ function se_registrar_consentimento( $email, $nome, $segmento ) {
 /**
  * Guarda a falha de uma integração no log do PHP e numa opção, para dar
  * para auditar depois. Sem isso, uma chave expirada derruba a captação
- * de leads em silêncio — foi o que aconteceu com a newsletter.
+ * de leads em silêncio, foi o que aconteceu com a newsletter.
  */
 function se_registrar_falha_integracao( $rotulo, $resposta, $code = 0 ) {
     $motivo = is_wp_error( $resposta )

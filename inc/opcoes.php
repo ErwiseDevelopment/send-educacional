@@ -142,7 +142,7 @@ function se_logo_url() {
 /**
  * Largura/altura reais da logo, para o navegador reservar o espaço certo.
  * Retorna null quando não dá para descobrir (aí sai sem os atributos, e o
- * tamanho fica só por CSS — melhor do que declarar uma proporção errada).
+ * tamanho fica só por CSS, melhor do que declarar uma proporção errada).
  */
 function se_logo_dimensoes() {
 	$id = se_logo_id();
@@ -170,7 +170,7 @@ function se_logo_altura() {
 
 /**
  * Regra de tamanho da logo. Fica no wp_head porque o valor vem do
- * Personalizar e o Tailwind é compilado — não dá para gerar classe na hora.
+ * Personalizar e o Tailwind é compilado, não dá para gerar classe na hora.
  */
 function se_logo_css() {
 	// Mantém a mesma relação do layout original: 44/48 no cabeçalho e 48/56 no rodapé.

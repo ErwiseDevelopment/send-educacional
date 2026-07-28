@@ -3,7 +3,7 @@
  * Catálogo completo de módulos, por segmento.
  *
  * A base é o que já estava escrito nas páginas de módulo do próprio site
- * (Gestão Acadêmica, Financeiro, Requerimentos, Retenção) — não é lista
+ * (Gestão Acadêmica, Financeiro, Requerimentos, Retenção), não é lista
  * inventada. O que muda de um segmento para o outro é o vocabulário e o
  * recorte: a mesma capacidade de "rematrícula em lote" se chama período e
  * turma numa faculdade, série e turma numa escola, e turma/trilha num curso
@@ -324,7 +324,7 @@ function se_modulos_segmento( $slug ) {
 			array(
 				'chave'  => 'secretaria',
 				'nome'   => 'Secretaria escolar',
-				'resumo' => 'Matrícula, enturmação, transferência e documento — com o histórico saindo pronto.',
+				'resumo' => 'Matrícula, enturmação, transferência e documento, com o histórico escolar saindo pronto.',
 				'icone'  => 'academico',
 				'url'    => 'gestao-academica',
 				'itens'  => array(
@@ -346,7 +346,7 @@ function se_modulos_segmento( $slug ) {
 			array(
 				'chave'  => 'sala',
 				'nome'   => 'Sala de aula e avaliação',
-				'resumo' => 'O professor lança uma vez, na origem — e o boletim, a ficha e o conselho se montam sozinhos.',
+				'resumo' => 'O professor lança uma vez, na origem. O boletim, a ficha e o conselho se montam sozinhos.',
 				'icone'  => 'documento',
 				'url'    => 'gestao-academica',
 				'itens'  => array(
@@ -387,7 +387,7 @@ function se_modulos_segmento( $slug ) {
 			array(
 				'chave'  => 'financeiro',
 				'nome'   => 'Financeiro da escola',
-				'resumo' => 'Mensalidade, material, contraturno e uniforme na mesma conta — e a inadimplência aparecendo cedo.',
+				'resumo' => 'Mensalidade, material, contraturno e uniforme na mesma conta. A inadimplência aparece cedo.',
 				'icone'  => 'dinheiro',
 				'url'    => array( 'financeiro', 'gestao-financeira' ),
 				'itens'  => array(
@@ -548,7 +548,7 @@ function se_modulos_segmento( $slug ) {
 			array(
 				'chave'  => 'catalogo',
 				'nome'   => 'Catálogo e oferta',
-				'resumo' => 'O que você vende, como está embalado e por quanto — configurável sem pedir para o TI.',
+				'resumo' => 'O que você vende, como está embalado e por quanto. Tudo configurável sem pedir para o TI.',
 				'icone'  => 'pasta',
 				'url'    => 'cursos-online',
 				'itens'  => array(
@@ -621,7 +621,7 @@ function se_modulos_segmento( $slug ) {
 					'Questionário de fixação por módulo',
 					'Tentativas, tempo limite e nota mínima',
 					'Embaralhamento de questões e alternativas',
-					'Nota registrada no histórico, sem planilha',
+					'Nota registrada no histórico, sem planilha à parte',
 					'Fila de correção para a equipe',
 					'Relatório de desempenho por questão',
 					'Recuperação e nova tentativa configurável',
@@ -631,7 +631,7 @@ function se_modulos_segmento( $slug ) {
 			array(
 				'chave'  => 'certificado',
 				'nome'   => 'Certificado e validação',
-				'resumo' => 'Bateu a regra, o certificado sai sozinho — com código público para quem contrata conferir.',
+				'resumo' => 'Bateu a regra, o certificado sai sozinho, com código público para quem contrata poder conferir.',
 				'icone'  => 'academico',
 				'url'    => 'cursos-online',
 				'itens'  => array(
@@ -688,7 +688,7 @@ function se_modulos_segmento( $slug ) {
 			array(
 				'chave'  => 'engajamento',
 				'nome'   => 'Engajamento e conclusão',
-				'resumo' => 'Quem comprou e não voltou é o seu maior custo escondido — aqui ele aparece.',
+				'resumo' => 'Quem comprou e não voltou é o seu maior custo escondido. Aqui ele aparece.',
 				'icone'  => 'grafico',
 				'url'    => 'retencao',
 				'itens'  => array(
@@ -767,7 +767,7 @@ function se_bloco_modulos( $slug, $cor ) {
 						Não é uma lista de promessas: é o que já está no sistema, agrupado por área.
 						<span class="text-white font-semibold"><?php echo (int) $conta['modulos']; ?> módulos</span> e
 						<span class="text-white font-semibold"><?php echo (int) $conta['itens']; ?> funcionalidades</span>
-						configuradas para este segmento — a implantação liga o que faz sentido para o seu porte.
+						configuradas para este segmento, a implantação liga o que faz sentido para o seu porte.
 					</p>
 				</div>
 			</div>
@@ -832,7 +832,7 @@ function se_bloco_modulos( $slug, $cor ) {
 	<script>
 	(function () {
 		// Desktop mostra o catálogo inteiro; no celular cada módulo abre sob
-		// demanda. Sai fechado só quando há JS — sem ele, tudo continua visível.
+		// demanda. Sai fechado só quando há JS, sem ele, tudo continua visível.
 		var telaPequena = window.matchMedia('(max-width: 1023px)');
 
 		function aplicar() {

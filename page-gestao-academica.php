@@ -156,7 +156,7 @@ get_header(); ?>
         <div class="container mx-auto px-6 max-w-4xl relative z-10">
             <h2 class="text-4xl md:text-6xl font-black text-white mb-8 tracking-tighter">Pronto para operar no <span class="gtext">nível máximo?</span></h2>
             <p class="text-xl text-slate-400 mb-12 font-light leading-relaxed">
-                São mais de 80 funcionalidades nativas de gestão acadêmica, com implantação conduzida por um consultor — não por um manual em PDF. Agende uma conversa técnica e traga os seus processos.
+                São mais de 80 funcionalidades nativas de gestão acadêmica, com implantação conduzida por um consultor, não por um manual em PDF. Agende uma conversa técnica e traga os seus processos.
             </p>
             <button onclick="abrirDemo()" class="gbtn text-white px-12 py-5 rounded-2xl font-black text-xl transition-all hover:scale-105 flex items-center justify-center gap-3 mx-auto">
                 Quero conhecer na prática

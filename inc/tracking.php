@@ -1,6 +1,6 @@
 <?php
 /**
- * Métricas do site — registro de visitas e cliques (primeira parte, sem serviços externos).
+ * Métricas do site, registro de visitas e cliques (primeira parte, sem serviços externos).
  *
  * - Grava PAGEVIEWS no servidor (template_redirect), fora do admin e de robôs.
  * - Grava CLIQUES via beacon nos elementos com [data-track] (js/se-tracking.js).
@@ -70,7 +70,7 @@ function se_analytics_should_skip() {
 	return false;
 }
 
-/** Hash diário do visitante — sem armazenar IP. */
+/** Hash diário do visitante, sem armazenar IP. */
 function se_analytics_visitor_hash() {
 	$ip = isset( $_SERVER['REMOTE_ADDR'] ) ? $_SERVER['REMOTE_ADDR'] : '';
 	if ( ! empty( $_SERVER['HTTP_X_FORWARDED_FOR'] ) ) {
@@ -250,7 +250,7 @@ function se_analytics_render_dashboard() {
 	?>
 	<div class="wrap">
 		<h1 style="margin-bottom:4px;">Send Analytics</h1>
-		<p style="color:#666;margin-top:0;">Visitas e cliques do site — dados próprios, sem cookies de terceiros. Visitante identificado por hash diário (LGPD).</p>
+		<p style="color:#666;margin-top:0;">Visitas e cliques do site, dados próprios, sem cookies de terceiros. Visitante identificado por hash diário (LGPD).</p>
 
 		<p>
 			<?php foreach ( array( 7 => 'Últimos 7 dias', 30 => 'Últimos 30 dias', 90 => 'Últimos 90 dias' ) as $r => $lbl ) : ?>

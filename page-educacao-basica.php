@@ -28,7 +28,7 @@ get_header(); ?>
             </h1>
 
             <p class="text-lg md:text-xl text-slate-400 leading-relaxed max-w-2xl mx-auto mb-9">
-                Matrícula e rematrícula, diário de classe, boletim, mensalidade e comunicação com a família — sem planilha paralela e sem a secretaria digitando a mesma informação três vezes. Feito para escola, com o vocabulário da escola.
+                Matrícula e rematrícula, diário de classe, boletim, mensalidade e comunicação com a família. Tudo sem planilha paralela e sem a secretaria digitando a mesma informação três vezes. Feito para escola, com o vocabulário da escola.
             </p>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -71,7 +71,7 @@ get_header(); ?>
                 <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass text-[11px] font-bold uppercase tracking-widest mb-5" style="color:<?php echo esc_attr( $se_cor ); ?>">Campanha de rematrícula</span>
                 <h2 class="titulo text-[2rem] md:text-4xl leading-[1.04] mb-5">A rematrícula sem o mutirão de dezembro</h2>
                 <p class="text-lg text-slate-400 leading-relaxed mb-6">
-                    A escola abre a campanha, o sistema gera o contrato de cada aluno com o valor e o desconto certos, e o responsável assina do celular. A secretaria só cuida da exceção — não da fila inteira.
+                    A escola abre a campanha, o sistema gera o contrato de cada aluno com o valor e o desconto certos, e o responsável assina do celular. A secretaria só cuida da exceção. Não da fila inteira.
                 </p>
                 <ul class="space-y-3 mb-8">
                     <?php foreach ( array(
@@ -160,10 +160,10 @@ get_header(); ?>
             <div class="space-y-3 reveal">
                 <?php
                 $eb_faq = array(
-                    array( 'O sistema não é feito para faculdade?', 'A plataforma é a mesma, mas a configuração é outra. Numa escola você trabalha com série e turma, bimestre, boletim, conselho de classe e responsável financeiro — não com período letivo, disciplina isolada e colação de grau. É assim que a implantação entrega.' ),
+                    array( 'O sistema não é feito para faculdade?', 'A plataforma é a mesma, mas a configuração é outra. Numa escola você trabalha com série e turma, bimestre, boletim, conselho de classe e responsável financeiro, não com período letivo, disciplina isolada e colação de grau. É assim que a implantação entrega.' ),
                     array( 'A escola tem educação infantil com parecer descritivo. Funciona?', 'Funciona. Além de nota numérica, o sistema aceita conceito e parecer descritivo por campo de experiência, com o boletim saindo no formato certo para cada etapa.' ),
                     array( 'E se a escola tem mais de uma unidade?', 'Cada unidade tem a própria secretaria, o próprio financeiro e os próprios indicadores, e a mantenedora vê tudo consolidado num painel só.' ),
-                    array( 'Quanto tempo demora para implantar?', 'Depende do tamanho da escola e de quanta informação vem de sistema antigo. O caminho é sempre o mesmo: levantamento dos processos, importação da base, configuração do ano letivo e treinamento por setor — com um consultor conduzindo, não um manual em PDF.' ),
+                    array( 'Quanto tempo demora para implantar?', 'Depende do tamanho da escola e de quanta informação vem de sistema antigo. O caminho é sempre o mesmo: levantamento dos processos, importação da base, configuração do ano letivo e treinamento por setor, sempre com um consultor conduzindo. Não com um manual em PDF.' ),
                     array( 'Vamos perder o histórico do sistema antigo?', 'Não. A importação da base de alunos, do histórico e dos títulos financeiros faz parte da implantação. O ano letivo só vira quando os dados conferem.' ),
                 );
                 foreach ( $eb_faq as $f ) {

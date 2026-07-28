@@ -66,7 +66,7 @@
             </h1>
 
             <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed mb-9">
-                Matrícula, secretaria, financeiro, sala de aula e o <span class="text-white font-semibold">AVA próprio</span> numa plataforma só — configurada para o seu segmento, com o suporte de quem faz software de gestão há 33 anos.
+                Matrícula, secretaria, financeiro, sala de aula e o <span class="text-white font-semibold">AVA próprio</span> numa plataforma só, configurada para o seu segmento, com o suporte de quem faz software de gestão há 33 anos.
             </p>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -177,7 +177,7 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-y-8 md:gap-x-10">
                 <?php
                 // Cada número aqui precisa aguentar ser checado. "33 anos" é da Send
-                // Solutions, não de educação — dizer os dois evita a leitura errada.
+                // Solutions, não de educação, dizer os dois evita a leitura errada.
                 $fp_stats = array(
                     array( '33', 'anos de mercado', 'Send Solutions · em educação desde 2019' ),
                     array( '20+', 'módulos integrados', 'na mesma plataforma, com o mesmo dado' ),
@@ -213,7 +213,7 @@
                     Novidade
                 </div>
                 <h2 class="titulo text-[2.2rem] md:text-5xl leading-[1.02] mb-6">A aula acontece <span class="gtext">dentro do sistema</span>, não ao lado dele.</h2>
-                <p class="text-lg text-slate-400 leading-relaxed mb-8">Desenvolvemos o nosso próprio Ambiente Virtual de Aprendizagem: aula, material e avaliação ficam no mesmo sistema do acadêmico e do financeiro, e a nota cai direto no histórico sem ninguém reimportar planilha. O aluno estuda, é avaliado e vê a nota sem trocar de ambiente — e a coordenação enxerga acesso, progresso e desempenho no mesmo lugar em que enxerga a matrícula e a mensalidade.</p>
+                <p class="text-lg text-slate-400 leading-relaxed mb-8">Desenvolvemos o nosso próprio Ambiente Virtual de Aprendizagem: aula, material e avaliação ficam no mesmo sistema do acadêmico e do financeiro, e a nota cai direto no histórico sem ninguém reimportar planilha. O aluno estuda, é avaliado e vê a nota sem trocar de ambiente. A coordenação enxerga acesso, progresso e desempenho no mesmo lugar em que enxerga a matrícula e a mensalidade.</p>
                 <button onclick="abrirDemo()" class="gbtn text-white font-bold px-7 py-3.5 rounded-2xl transition-all hover:-translate-y-0.5">Ver o AVA na demonstração</button>
             </div>
             <div class="glass rounded-3xl p-7 md:p-9 cardring">
@@ -246,7 +246,7 @@
             <div class="text-center mb-14 reveal">
                 <span class="text-blue-400 font-bold tracking-widest uppercase text-xs">Ecossistema integrado</span>
                 <h2 class="titulo text-[2.2rem] md:text-5xl leading-[1.03] mt-4">Todos os setores no mesmo sistema</h2>
-                <p class="text-lg text-slate-400 mt-4 max-w-2xl mx-auto">Da primeira conversa com o aluno até a conclusão do curso, com os dados conversando de ponta a ponta — no ensino superior, na escola e no curso online.</p>
+                <p class="text-lg text-slate-400 mt-4 max-w-2xl mx-auto">Da primeira conversa com o aluno até a conclusão do curso, com os dados conversando de ponta a ponta, no ensino superior, na escola e no curso online.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-5 reveal">
@@ -263,7 +263,7 @@
                     <div>
                         <div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6"><svg class="w-7 h-7 text-blue-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8V7m0 9v1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
                         <h3 class="titulo-mini text-xl text-white mb-3">Gestão Financeira</h3>
-                        <p class="text-slate-400 leading-relaxed mb-6">Boletos, Pix e régua de cobrança automática, acordos, DRE e notas fiscais — inadimplência sob controle, do lançamento ao caixa.</p>
+                        <p class="text-slate-400 leading-relaxed mb-6">Boletos, Pix e régua de cobrança automática, acordos, DRE e notas fiscais. A inadimplência fica sob controle, do lançamento ao caixa.</p>
                     </div>
                     <a href="<?php echo home_url('/financeiro'); ?>" class="inline-flex items-center gap-2 font-bold text-blue-300 hover:text-white transition">Ver módulo financeiro <span aria-hidden="true">&rarr;</span></a>
                 </div>
@@ -281,7 +281,7 @@
                     <div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0"><svg class="w-7 h-7 text-blue-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg></div>
                     <div>
                         <h3 class="titulo-mini text-xl text-white mb-2">Biblioteca &amp; GED</h3>
-                        <p class="text-slate-400 leading-relaxed">Gestão eletrônica de documentos para adequação fiscal e acadêmica, com controle completo de acervo — documentos 100% digitalizados.</p>
+                        <p class="text-slate-400 leading-relaxed">Gestão eletrônica de documentos para adequação fiscal e acadêmica, com controle completo de acervo. Documentos 100% digitalizados.</p>
                     </div>
                 </div>
             </div>
@@ -307,7 +307,7 @@
             <div class="text-center mb-16 reveal">
                 <span class="text-blue-400 font-bold tracking-widest uppercase text-xs">Uma plataforma, a jornada inteira</span>
                 <h2 class="titulo text-[2.2rem] md:text-5xl leading-[1.03] mt-4">Da captação à <span class="gtext">conclusão</span>, sem trocar de sistema</h2>
-                <p class="text-slate-400 max-w-2xl mx-auto text-lg mt-4">Matrícula com assinatura digital, secretaria, financeiro, AVA e a emissão do documento final — cada etapa já conversa com a próxima, sem planilha nem sistema paralelo.</p>
+                <p class="text-slate-400 max-w-2xl mx-auto text-lg mt-4">Matrícula com assinatura digital, secretaria, financeiro, AVA e a emissão do documento final. Cada etapa já conversa com a próxima, sem planilha nem sistema paralelo.</p>
             </div>
 
             <div class="relative reveal">
@@ -361,10 +361,10 @@
                 <div>
                     <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass text-xs font-bold uppercase tracking-widest text-blue-300 mb-5">Central de assinaturas</div>
                     <h3 class="titulo text-2xl md:text-3xl text-white mb-4">Contratos e assinaturas digitais, sob controle</h3>
-                    <p class="text-slate-400 text-lg mb-6">Do envio à assinatura concluída: acompanhe cada contrato por período letivo, curso, modalidade e status — com distribuição em tempo real e busca por aluno ou matrícula.</p>
+                    <p class="text-slate-400 text-lg mb-6">Do envio à assinatura concluída: acompanhe cada contrato por período letivo, curso, modalidade e status. A distribuição é em tempo real, com busca por aluno ou matrícula.</p>
                     <ul class="space-y-3">
                         <?php foreach ( array(
-                            'Assinatura digital validada — e registro de contrato assinado internamente.',
+                            'Assinatura digital validada, e registro de contrato assinado internamente.',
                             'Distribuição por status: em assinatura, concluído, recusado, cancelado.',
                             'Filtros por período, curso, modalidade e situação acadêmica.',
                         ) as $li ) {
@@ -441,7 +441,7 @@
     </section>
 
     <!-- ===================== DIFERENCIAIS ===================== -->
-    <?php /* Eram seis cartões idênticos — o pior sintoma de "grade repetida".
+    <?php /* Eram seis cartões idênticos, o pior sintoma de "grade repetida".
              Aqui a seção tem um dominante à esquerda e a lista à direita, em
              filete, sem caixa. */ ?>
     <section class="relative z-10 py-28">
@@ -465,9 +465,9 @@
                 $fp_dif = array(
                     array( 'AVA próprio', 'O ambiente de aula é desenvolvido pela própria Send e nasce integrado ao acadêmico e ao financeiro: a nota da avaliação já entra no histórico do aluno.' ),
                     array( 'Uma plataforma, não remendos', 'Do primeiro contato ao documento final no mesmo sistema, com os dados conversando de ponta a ponta.' ),
-                    array( 'Dados que não se perdem', 'A nota da avaliação cai no histórico e a cobrança no financeiro — sem reimportar planilha nem digitar duas vezes.' ),
+                    array( 'Dados que não se perdem', 'A nota da avaliação cai no histórico e a cobrança no financeiro, sem reimportar planilha nem digitar duas vezes.' ),
                     array( 'Conformidade por segmento', 'MEC, Censo e diploma digital no superior. Conselhos, Secretarias e Censo Escolar na educação básica. Cada um com o que a sua rede exige.' ),
-                    array( 'Implantação conduzida', 'Levantamento de processos, importação da base e treinamento por setor, com um consultor junto — não um manual em PDF.' ),
+                    array( 'Implantação conduzida', 'Levantamento de processos, importação da base e treinamento por setor, com um consultor junto. Não um manual em PDF.' ),
                     array( '33 anos de mercado', 'Nascido dentro da Send Solutions, com a estabilidade de quem faz software de gestão há três décadas.' ),
                 );
                 foreach ( $fp_dif as $n => $d ) {

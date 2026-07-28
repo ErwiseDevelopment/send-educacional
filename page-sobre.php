@@ -33,7 +33,7 @@ get_header(); ?>
                     // Numa página que fala de três décadas de história, foto de banco
                     // de imagem trabalha contra o argumento. Se o cliente subir a foto
                     // real do time no Personalizar, ela entra aqui; enquanto não subir,
-                    // mostramos a linha do tempo — nunca um escritório genérico.
+                    // mostramos a linha do tempo, nunca um escritório genérico.
                     $sobre_foto = se_foto_time_id();
                     if ( $sobre_foto ) : ?>
                         <div class="relative z-10 rounded-[3rem] overflow-hidden cardring">

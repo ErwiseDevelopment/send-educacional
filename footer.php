@@ -192,7 +192,7 @@
     </script>
 
     <script>
-    // Reveal on scroll — vale para todas as páginas (home e internas).
+    // Reveal on scroll, vale para todas as páginas (home e internas).
     document.addEventListener('DOMContentLoaded', function () {
         var els = document.querySelectorAll('.reveal');
         if (!els.length || !('IntersectionObserver' in window)) return;

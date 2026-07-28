@@ -97,7 +97,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
       Toda a gestão da sua<br class="hidden md:block"> instituição em <span class="gtext">um só sistema</span>
     </h1>
     <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed mb-9">
-      Acadêmico, financeiro, contratos, CRM, BI e <span class="text-white font-semibold">AVA próprio</span> — integrados em uma única plataforma, sem depender de sistemas terceiros.
+      Acadêmico, financeiro, contratos, CRM, BI e <span class="text-white font-semibold">AVA próprio</span>, integrados em uma única plataforma, sem depender de sistemas terceiros.
     </p>
     <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
       <button type="button" onclick="abrirDemo()" data-track="hero-demo" class="gbtn text-white font-bold px-8 py-4 rounded-2xl text-lg w-full sm:w-auto transition-all hover:-translate-y-0.5">Solicitar demonstração</button>
@@ -196,7 +196,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
   <div class="max-w-3xl mx-auto px-6 text-center reveal">
     <span class="text-blue-600 font-bold tracking-widest uppercase text-xs">O que é o Send Educacional</span>
     <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight mt-4 mb-6 leading-tight">Um sistema único no lugar de vários que não conversam.</h2>
-    <p class="text-lg text-slate-500 leading-relaxed mb-5">A maioria das instituições usa um sistema para o acadêmico, outro para o financeiro, uma planilha para a cobrança e um portal à parte para o aluno — e gasta tempo costurando tudo na mão. O Send reúne essa operação inteira em <span class="text-slate-800 font-semibold">uma só plataforma</span>, com os dados integrados de ponta a ponta.</p>
+    <p class="text-lg text-slate-500 leading-relaxed mb-5">A maioria das instituições usa um sistema para o acadêmico, outro para o financeiro, uma planilha para a cobrança e um portal à parte para o aluno, e gasta tempo costurando tudo na mão. O Send reúne essa operação inteira em <span class="text-slate-800 font-semibold">uma só plataforma</span>, com os dados integrados de ponta a ponta.</p>
     <p class="text-lg text-slate-500 leading-relaxed">Nascido em 2019 dentro da <span class="text-slate-800 font-semibold">Send Solutions</span> (33 anos de mercado), é mantido sempre atualizado conforme o MEC e as mudanças fiscais. Até o <span class="text-slate-800 font-semibold">ambiente de aula (AVA) é desenvolvido pela própria Send</span>, e não um sistema de terceiros costurado por fora.</p>
   </div>
 </section>
@@ -209,8 +209,8 @@ if ( ! defined( 'ABSPATH' ) ) exit;
       <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/30 text-blue-300 text-xs font-bold uppercase tracking-widest mb-6">
         <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span></span> Novidade
       </div>
-      <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight mb-6">O AVA agora é <span class="gtext">nosso</span> — não de terceiros.</h2>
-      <p class="text-lg text-slate-400 leading-relaxed mb-8">Desenvolvemos o nosso próprio <span class="text-white font-semibold">Ambiente Virtual de Aprendizagem</span>. Aulas, conteúdo e avaliações online ficam dentro do mesmo sistema do acadêmico e do financeiro — o aluno não troca de ambiente e a nota cai direto no histórico.</p>
+      <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight mb-6">O AVA agora é <span class="gtext">nosso</span>, não de terceiros.</h2>
+      <p class="text-lg text-slate-400 leading-relaxed mb-8">Desenvolvemos o nosso próprio <span class="text-white font-semibold">Ambiente Virtual de Aprendizagem</span>. Aulas, conteúdo e avaliações online ficam dentro do mesmo sistema do acadêmico e do financeiro, o aluno não troca de ambiente e a nota cai direto no histórico.</p>
       <button type="button" onclick="abrirDemo()" data-track="ava-demo" class="gbtn text-white font-bold px-7 py-3.5 rounded-2xl transition-all hover:-translate-y-0.5">Ver o AVA na demonstração</button>
     </div>
     <div class="bg-white/[.04] border border-white/10 rounded-3xl p-7 md:p-9 backdrop-blur card-ring">
@@ -277,7 +277,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
     <div class="text-center mb-14">
       <span class="text-blue-300 font-bold tracking-widest uppercase text-xs">Resultados na prática</span>
       <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mt-4 mb-5 leading-tight">Uma faculdade de 3.000 alunos<br class="hidden md:block"> roda a operação inteira no Send.</h2>
-      <p class="text-lg text-slate-400 max-w-2xl mx-auto">Acadêmico, financeiro, contratos, portal do aluno e BI — em um só sistema, com implantação estruturada e suporte de parceiro 24/7.</p>
+      <p class="text-lg text-slate-400 max-w-2xl mx-auto">Acadêmico, financeiro, contratos, portal do aluno e BI, em um só sistema, com implantação estruturada e suporte de parceiro 24/7.</p>
     </div>
 
     <!-- métricas em destaque -->
@@ -322,7 +322,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
       <i class="ti ti-quote text-5xl text-blue-400/60 shrink-0"></i>
       <div>
         <p class="text-xl md:text-2xl font-medium leading-relaxed text-slate-100">“Hoje a faculdade inteira roda em um sistema só. A secretaria parou de apagar incêndio e a inadimplência caiu de verdade.”</p>
-        <p class="text-slate-400 mt-4 font-semibold">— Coordenação de TI <span class="text-slate-500 font-normal">· instituição parceira com 3.000 alunos</span></p>
+        <p class="text-slate-400 mt-4 font-semibold">· Coordenação de TI <span class="text-slate-500 font-normal">· instituição parceira com 3.000 alunos</span></p>
       </div>
     </div>
   </div>
@@ -334,7 +334,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
     <div class="text-center mb-16 reveal">
       <span class="text-blue-600 font-bold tracking-widest uppercase text-xs">Implantação guiada</span>
       <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight mt-4 mb-4">Medo de trocar de sistema? A gente conduz.</h2>
-      <p class="text-lg text-slate-500 max-w-2xl mx-auto">Migração silenciosa em ~6 meses. Sua operação não para — nem no meio do semestre.</p>
+      <p class="text-lg text-slate-500 max-w-2xl mx-auto">Migração silenciosa em ~6 meses. Sua operação não para, nem no meio do semestre.</p>
     </div>
 
     <div class="relative reveal">
@@ -348,7 +348,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
           <div class="bg-white rounded-3xl border border-slate-100 p-7 shadow-[0_20px_50px_-30px_rgba(2,6,23,.4)] w-full text-left hover:-translate-y-1 transition-transform">
             <div class="flex items-center gap-2 mb-3">
               <span class="text-[11px] font-bold text-white px-2.5 py-1 rounded-full" style="background:linear-gradient(100deg,#4a78b0,#080b6c)">Etapa 1</span>
-              <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wide">Semanas 1–6</span>
+              <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wide">Semanas 1 a 6</span>
             </div>
             <h4 class="text-lg font-bold text-slate-900 mb-2">Levantamento &amp; migração</h4>
             <p class="text-slate-500 text-sm leading-relaxed mb-4">Mapeamos o sistema atual e importamos alunos, notas, histórico e financeiro sem perda.</p>
@@ -366,7 +366,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
           <div class="bg-white rounded-3xl border border-slate-100 p-7 shadow-[0_20px_50px_-30px_rgba(2,6,23,.4)] w-full text-left hover:-translate-y-1 transition-transform">
             <div class="flex items-center gap-2 mb-3">
               <span class="text-[11px] font-bold text-white px-2.5 py-1 rounded-full" style="background:linear-gradient(100deg,#4a78b0,#080b6c)">Etapa 2</span>
-              <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wide">Semanas 6–16</span>
+              <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wide">Semanas 6 a 16</span>
             </div>
             <h4 class="text-lg font-bold text-slate-900 mb-2">Configuração &amp; treinamento</h4>
             <p class="text-slate-500 text-sm leading-relaxed mb-4">Parametrizamos as regras da sua instituição e treinamos cada setor ao vivo.</p>
@@ -497,7 +497,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
   // Catálogo de módulos (bento)
   var modulos = [
-    ['AVA · Ambiente de aula próprio','Aulas, conteúdo e avaliações online — desenvolvido pela Send, integrado ao acadêmico.','Novo','ti-school'],
+    ['AVA · Ambiente de aula próprio','Aulas, conteúdo e avaliações online, desenvolvido pela Send, integrado ao acadêmico.','Novo','ti-school'],
     ['CRM & Captação','Funil de captação, campanhas e recuperação de matrículas.','Novo','ti-filter'],
     ['Retenção de Alunos','Alertas de risco de evasão por notas, frequência e financeiro.','Novo','ti-shield-heart'],
     ['Secretaria Acadêmica','Matrícula, notas, histórico, diploma digital e MEC.','','ti-certificate'],
@@ -519,7 +519,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
       + '</div>';
   }).join('');
 
-  // Cargo e porte dependem do segmento — mesma tabela do resto do site.
+  // Cargo e porte dependem do segmento, mesma tabela do resto do site.
   var AP_SEGMENTOS = <?php echo wp_json_encode( se_segmentos_para_js() ); ?>;
 
   function apPreencher(select, opcoes){
@@ -544,7 +544,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
       e.target.value === 'cursos-online' ? 'Nome da escola ou empresa' : 'Nome da instituição';
   });
 
-  // Envio do lead (RD Station + redireciona ao WhatsApp) — mesmo endpoint do site
+  // Envio do lead (RD Station + redireciona ao WhatsApp), mesmo endpoint do site
   function enviarLeadApresentacao(e){
     e.preventDefault();
     if (document.getElementById('ap_hp').value !== '') return; // honeypot

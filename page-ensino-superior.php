@@ -28,7 +28,7 @@ get_header(); ?>
             </h1>
 
             <p class="text-lg md:text-xl text-slate-400 leading-relaxed max-w-2xl mx-auto mb-9">
-                Secretaria acadêmica, financeiro, AVA próprio e gestão de polos numa plataforma só — com o Censo INEP, o ENADE, o diploma digital e o livro de registro acompanhando a regulação do MEC sem correria de última hora.
+                Secretaria acadêmica, financeiro, AVA próprio e gestão de polos numa plataforma só, com o Censo INEP, o ENADE, o diploma digital e o livro de registro acompanhando a regulação do MEC sem correria de última hora.
             </p>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -72,7 +72,7 @@ get_header(); ?>
                 <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass text-[11px] font-bold uppercase tracking-widest mb-5" style="color:<?php echo esc_attr( $se_cor ); ?>">AVA próprio</span>
                 <h2 class="titulo text-[2rem] md:text-4xl leading-[1.04] mb-5">O ambiente de aula é nosso, e conversa com o acadêmico</h2>
                 <p class="text-lg text-slate-400 leading-relaxed mb-6">
-                    O Send Educacional tem AVA próprio, desenvolvido pela Send: a aula, o material e a avaliação ficam no mesmo sistema do acadêmico e do financeiro, e a nota cai direto no histórico — sem exportar, sem reimportar e sem o professor lançar duas vezes. O acesso do aluno ao ambiente também é o que alimenta o alerta de evasão.
+                    O Send Educacional tem AVA próprio, desenvolvido pela Send: a aula, o material e a avaliação ficam no mesmo sistema do acadêmico e do financeiro, e a nota cai direto no histórico, sem exportar, sem reimportar e sem o professor lançar duas vezes. O acesso do aluno ao ambiente também é o que alimenta o alerta de evasão.
                 </p>
                 <ul class="space-y-3 mb-8">
                     <?php foreach ( array(
@@ -119,8 +119,8 @@ get_header(); ?>
                 $es_faq = array(
                     array( 'Já usamos outro ambiente de aula. Precisamos migrar?', 'Não precisa. O Send tem AVA próprio, e ele é o caminho que recomendamos porque a nota cai direto no histórico. Mas trocar o ambiente de aula não é condição para implantar o acadêmico e o financeiro: existe integração com o LMS que a IES já usa, inclusive Moodle, e a migração fica para quando fizer sentido.' ),
                     array( 'A IES tem EAD com vários polos. O sistema separa?', 'Separa. Curso, turma, tutoria, repasse e indicadores são por polo, com o portal do polo à parte, e a mantenedora enxerga tudo consolidado.' ),
-                    array( 'Como fica o diploma digital?', 'A emissão e o registro seguem o padrão das portarias do MEC, com assinatura digital e livro de registro dentro do próprio sistema — não é um serviço externo contratado à parte.' ),
-                    array( 'Quanto tempo leva a implantação?', 'Depende do porte e de quanta informação vem do sistema antigo. O caminho é sempre levantamento de processos, importação da base, configuração dos períodos letivos e treinamento por setor, com consultor conduzindo. Numa IES de porte médio isso costuma se organizar em alguns meses, não em semanas — e a gente prefere dizer isso antes.' ),
+                    array( 'Como fica o diploma digital?', 'A emissão e o registro seguem o padrão das portarias do MEC, com assinatura digital e livro de registro dentro do próprio sistema. Não é um serviço externo contratado à parte.' ),
+                    array( 'Quanto tempo leva a implantação?', 'Depende do porte e de quanta informação vem do sistema antigo. O caminho é sempre levantamento de processos, importação da base, configuração dos períodos letivos e treinamento por setor, com consultor conduzindo. Numa IES de porte médio isso costuma se organizar em alguns meses, não em semanas, e a gente prefere dizer isso antes.' ),
                     array( 'Perdemos o histórico acadêmico do sistema atual?', 'Não. Importar histórico, matrículas e títulos financeiros faz parte da implantação, e a virada só acontece depois que os dados conferem com os seus relatórios.' ),
                 );
                 foreach ( $es_faq as $f ) {
@@ -142,7 +142,7 @@ get_header(); ?>
         <div class="container mx-auto px-6 max-w-5xl">
             <div class="glass rounded-[2.5rem] p-10 md:p-14 text-center cardring reveal">
                 <h2 class="titulo text-[2.2rem] md:text-5xl leading-[1.03] mb-5">Uma demonstração com os processos da sua IES</h2>
-                <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-8">A gente parte do seu processo seletivo, da sua secretaria e da sua cobrança — e mostra onde cada um deles vive dentro do sistema.</p>
+                <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-8">A gente parte do seu processo seletivo, da sua secretaria e da sua cobrança, para mostrar onde cada um deles vive dentro do sistema.</p>
                 <button data-track="cta-final-ensino-superior" onclick="abrirDemo('ensino-superior')" class="gbtn text-white font-bold px-9 py-4 rounded-2xl text-lg transition-all hover:-translate-y-0.5">Solicitar demonstração</button>
                 <p class="text-slate-500 text-sm mt-4">Gratuita · sem compromisso · com um especialista em ensino superior</p>
             </div>
