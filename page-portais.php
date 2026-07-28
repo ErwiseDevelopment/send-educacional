@@ -71,7 +71,7 @@ get_header(); ?>
                 
                 <div class="flex flex-col p-8 glass glass-hover rounded-3xl transition-all group reveal">
                     <div class="w-16 h-16 bg-white/5 border border-white/10 text-purple-300 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14v7M5 9.8v4.4M19 9.8v4.4"></path></svg>
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14v7M5 9.8v4.4M19 9.8v4.4"></path></svg>
                     </div>
                     <h3 class="text-2xl font-bold text-white mb-4">Portal do Aluno</h3>
                     <p class="text-slate-400 leading-relaxed mb-6">O centro de comando do estudante. Autonomia total para acompanhar a vida acadêmica e financeira sem precisar ligar para a secretaria.</p>

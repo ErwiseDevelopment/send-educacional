@@ -2,7 +2,7 @@
 Theme Name: Send Educacional
 Description: Tema customizado para o SaaS Send Educacional usando Tailwind CSS.
 Author: Send Solutions
-Version: 1.9.4
+Version: 1.9.5
 */
 
 *, ::before, ::after {
@@ -2597,6 +2597,12 @@ video {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
+.from-blue-600\/40 {
+  --tw-gradient-from: rgb(74 120 176 / 0.4) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(74 120 176 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
 .from-blue-700 {
   --tw-gradient-from: #335298 var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(51 82 152 / 0) var(--tw-gradient-to-position);
@@ -2666,6 +2672,10 @@ video {
 
 .to-amber-400 {
   --tw-gradient-to: #fbbf24 var(--tw-gradient-to-position);
+}
+
+.to-blue-900\/10 {
+  --tw-gradient-to: rgb(8 11 108 / 0.1) var(--tw-gradient-to-position);
 }
 
 .to-blue-950 {

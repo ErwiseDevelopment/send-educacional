@@ -14,16 +14,14 @@
         background-size:54px 54px;
         -webkit-mask-image:radial-gradient(100% 55% at 50% 0,#000,transparent 78%); mask-image:radial-gradient(100% 55% at 50% 0,#000,transparent 78%); }
 
-    .gtext { background:linear-gradient(100deg,#7296c1,#7296c1 45%,#9799c1); -webkit-background-clip:text; background-clip:text; color:transparent; }
-    .gbtn  { background:linear-gradient(100deg,#4a78b0,#1f3184); box-shadow:0 10px 30px -8px rgba(79,70,229,.6); }
-    .gbtn:hover { box-shadow:0 16px 42px -8px rgba(79,70,229,.9); }
-    .glass { background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.09); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); }
+    .gtext { background:linear-gradient(100deg,#96b1d1,#7296c1 45%,#4a78b0); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .gbtn  { background:linear-gradient(100deg,#4a78b0,#1f3184); box-shadow:0 10px 30px -8px rgba(8,11,108,.75); }
+    .gbtn:hover { background:linear-gradient(100deg,#5883b6,#2b2d81); box-shadow:0 16px 42px -8px rgba(8,11,108,.95); }
+    .glass { background:rgba(74,120,176,.07); border:1px solid rgba(150,177,209,.16); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); }
     .glass-hover { transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease; }
-    .glass-hover:hover { transform:translateY(-4px); border-color:rgba(96,165,250,.45); box-shadow:0 30px 60px -30px rgba(37,99,235,.55); }
-    .cardring { box-shadow:0 1px 0 0 rgba(255,255,255,.06) inset, 0 40px 90px -40px rgba(2,6,23,.95); }
+    .glass-hover:hover { transform:translateY(-4px); border-color:rgba(74,120,176,.6); box-shadow:0 30px 60px -30px rgba(8,11,108,.9); }
+    .cardring { box-shadow:0 1px 0 0 rgba(255,255,255,.07) inset, 0 40px 90px -40px rgba(3,4,41,.95); }
     .igrad { background:linear-gradient(135deg,#4a78b0,#080b6c); }
-
-    .fp-dash { background:#fff; border-radius:16px; overflow:hidden; border:1px solid rgba(15,23,42,.08); }
 
     .floaty  { animation:floaty 6s ease-in-out infinite; }
     .floaty2 { animation:floaty 7.5s ease-in-out infinite; }
@@ -79,7 +77,7 @@
         <!-- tela do sistema (clara) sobre o hero escuro -->
         <div class="container mx-auto px-6 relative mt-16 max-w-5xl reveal">
             <div class="relative">
-                <div class="absolute -inset-x-10 -top-8 bottom-0 bg-gradient-to-b from-blue-500/40 to-violet-600/10 blur-3xl rounded-[3rem]"></div>
+                <div class="absolute -inset-x-10 -top-8 bottom-0 bg-gradient-to-b from-blue-600/40 to-blue-900/10 blur-3xl rounded-[3rem]"></div>
 
                 <div class="relative rounded-2xl overflow-hidden border border-white/10 bg-[#050741] cardring">
                     <div class="h-11 flex items-center px-4 gap-2 border-b border-white/10 bg-slate-900/60">
@@ -246,7 +244,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-5 reveal">
                 <div class="md:col-span-2 glass glass-hover rounded-3xl p-9 flex flex-col justify-between">
                     <div class="md:w-3/4">
-                        <div class="w-14 h-14 igrad rounded-2xl flex items-center justify-center mb-6"><svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M12 14v7"></path></svg></div>
+                        <div class="w-14 h-14 igrad rounded-2xl flex items-center justify-center mb-6"><svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M12 14v7M5 11v5c0 1 3 3 7 3s7-2 7-3v-5"></path></svg></div>
                         <h3 class="titulo-mini text-2xl text-white mb-3">Secretaria Acadêmica</h3>
                         <p class="text-slate-400 leading-relaxed mb-6">Do processo seletivo à colação de grau: matrícula e rematrícula online, diário de classe, histórico, diploma digital e adequação às portarias do MEC.</p>
                     </div>
