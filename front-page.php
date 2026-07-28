@@ -153,6 +153,12 @@
             </div>
         </div>
 
+    </section>
+
+    <!-- ===================== QUAL E O SEU DESAFIO ===================== -->
+    <?php se_bloco_busca_desafio(); ?>
+
+    <section class="relative z-10">
         <!-- marquee -->
         <div class="relative z-10 mt-16 border-t border-white/10 py-6 mqo">
             <div class="mq text-slate-500 text-sm font-semibold uppercase tracking-widest">
@@ -292,6 +298,9 @@
             </div>
         </div>
     </section>
+
+    <!-- ===================== COMPARATIVO DOS SEGMENTOS ===================== -->
+    <?php se_bloco_comparativo(); ?>
 
     <!-- ===================== JORNADA COMPLETA ===================== -->
     <section class="relative z-10 py-24">

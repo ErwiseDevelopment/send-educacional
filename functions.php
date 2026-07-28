@@ -12,6 +12,7 @@ require_once get_template_directory() . '/inc/segmentos.php';
 require_once get_template_directory() . '/inc/menu.php';
 require_once get_template_directory() . '/inc/menu-render.php';
 require_once get_template_directory() . '/inc/modulos.php';
+require_once get_template_directory() . '/inc/busca-desafio.php';
 require_once get_template_directory() . '/inc/prova-social.php';
 require_once get_template_directory() . '/inc/paginas.php';
 require_once get_template_directory() . '/inc/consentimentos.php';

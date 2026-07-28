@@ -110,21 +110,117 @@ function se_bloco_segmentos( $atual = '', $titulo = '' ) {
 			<p class="md:col-span-3 text-center text-sm font-bold uppercase tracking-widest text-slate-400 mb-1"><?php echo esc_html( $titulo ); ?></p>
 		<?php endif; ?>
 		<?php foreach ( $segmentos as $slug => $s ) : ?>
+			<?php
+			// Bloco de cor chapada, não cartão de vidro: é a escolha principal da
+			// home e precisa ter peso. O texto vai no azul profundo da marca
+			// porque branco sobre estes tons não passa de 3:1 de contraste.
+			?>
 			<a href="<?php echo esc_url( se_segmento_url( $slug ) ); ?>"
 			   data-track="segmento-<?php echo esc_attr( $slug ); ?>"
-			   class="group glass glass-hover rounded-3xl p-6 text-left flex flex-col">
-				<span class="w-12 h-12 rounded-2xl flex items-center justify-center mb-4 shrink-0"
-				      style="background:<?php echo esc_attr( $s['cor'] ); ?>22;border:1px solid <?php echo esc_attr( $s['cor'] ); ?>55">
-					<svg class="w-6 h-6" style="color:<?php echo esc_attr( $s['cor'] ); ?>" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><?php echo $s['icone']; // phpcs:ignore WordPress.Security.EscapeOutput ?></svg>
+			   class="se-bloco-seg group"
+			   style="background:<?php echo esc_attr( $s['cor'] ); ?>">
+				<span class="se-bloco-seg-icone">
+					<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><?php echo $s['icone']; // phpcs:ignore WordPress.Security.EscapeOutput ?></svg>
 				</span>
-				<h3 class="text-lg font-bold text-white mb-1.5 leading-tight"><?php echo esc_html( $s['nome'] ); ?></h3>
-				<p class="text-slate-400 text-sm leading-relaxed mb-4 flex-grow"><?php echo esc_html( $s['titulo'] ); ?></p>
-				<span class="inline-flex items-center gap-1.5 text-sm font-bold text-blue-300 group-hover:text-white transition">
+				<h3 class="titulo-mini text-[1.35rem] leading-[1.15] mb-2"><?php echo esc_html( $s['nome'] ); ?></h3>
+				<p class="text-[14.5px] leading-relaxed opacity-80 mb-5 flex-grow"><?php echo esc_html( $s['titulo'] ); ?></p>
+				<span class="inline-flex items-center gap-1.5 text-sm font-bold border-b border-current pb-0.5 group-hover:gap-3 transition-all">
 					Ver a solução <span aria-hidden="true">&rarr;</span>
 				</span>
 			</a>
 		<?php endforeach; ?>
 	</div>
+	<?php
+}
+
+/**
+ * Comparativo dos três segmentos, lado a lado.
+ *
+ * Até aqui, quem quisesse comparar precisava abrir três páginas e ir e voltar.
+ * A tabela responde de uma vez as perguntas que separam os segmentos: quem
+ * decide a compra, quem regula, o que sai no fim e como se mede o porte.
+ */
+function se_bloco_comparativo() {
+	$segmentos = se_segmentos();
+
+	$linhas = array(
+		'Para quem é' => array(
+			'ensino-superior' => 'Faculdades, centros universitários e institutos, com ou sem EAD',
+			'educacao-basica' => 'Escolas de educação infantil, fundamental e ensino médio',
+			'cursos-online'   => 'Escolas de curso livre, profissionalizante e treinamento corporativo',
+		),
+		'Quem decide a compra' => array(
+			'ensino-superior' => 'Mantenedora e reitoria, com a TI avaliando junto',
+			'educacao-basica' => 'Mantenedora e direção, com a secretaria opinando',
+			'cursos-online'   => 'Fundador ou head de operações, decisão rápida',
+		),
+		'Quem regula' => array(
+			'ensino-superior' => 'MEC: Censo INEP, ENADE, portarias de diploma e recredenciamento',
+			'educacao-basica' => 'Conselhos e Secretarias de Educação, mais o Censo Escolar',
+			'cursos-online'   => 'Não há órgão regulador do curso livre. Vale a LGPD e o Código do Consumidor',
+		),
+		'O que sai no fim' => array(
+			'ensino-superior' => 'Diploma digital, registrado em livro próprio',
+			'educacao-basica' => 'Histórico escolar e certificado de conclusão da etapa',
+			'cursos-online'   => 'Certificado com código único e página pública de validação',
+		),
+		'Como o porte é medido' => array(
+			'ensino-superior' => 'Alunos matriculados por período letivo',
+			'educacao-basica' => 'Alunos por série e por unidade',
+			'cursos-online'   => 'Alunos ativos e turmas por ano',
+		),
+		'O que costuma doer' => array(
+			'ensino-superior' => 'Evasão, inadimplência e prazo de entrega ao MEC',
+			'educacao-basica' => 'Mutirão de rematrícula e boletim digitado duas vezes',
+			'cursos-online'   => 'Liberar acesso na mão e emitir certificado um a um',
+		),
+	);
+	?>
+	<section class="relative z-10 py-24">
+		<div class="container mx-auto px-6 max-w-6xl">
+
+			<div class="text-center mb-12 reveal">
+				<span class="text-blue-400 font-bold tracking-widest uppercase text-xs">Lado a lado</span>
+				<h2 class="titulo text-[2.2rem] md:text-5xl leading-[1.03] mt-4">Em que os três segmentos são diferentes</h2>
+				<p class="text-lg text-slate-400 mt-4 max-w-2xl mx-auto">
+					A plataforma é a mesma. O que muda é o vocabulário, quem regula e o que sai no fim.
+				</p>
+			</div>
+
+			<div class="overflow-x-auto reveal">
+				<table class="se-comparativo">
+					<thead>
+						<tr>
+							<th scope="col"><span class="sr-only">Critério</span></th>
+							<?php foreach ( $segmentos as $slug => $s ) : ?>
+								<th scope="col">
+									<a href="<?php echo esc_url( se_segmento_url( $slug ) ); ?>" class="block group">
+										<span class="se-comparativo-tag" style="background:<?php echo esc_attr( $s['cor'] ); ?>"><?php echo esc_html( $s['curto'] ); ?></span>
+										<span class="titulo-mini block text-white text-base mt-3 leading-tight group-hover:text-blue-300 transition-colors"><?php echo esc_html( $s['nome'] ); ?></span>
+									</a>
+								</th>
+							<?php endforeach; ?>
+						</tr>
+					</thead>
+					<tbody>
+						<?php foreach ( $linhas as $criterio => $valores ) : ?>
+							<tr>
+								<th scope="row"><?php echo esc_html( $criterio ); ?></th>
+								<?php foreach ( $segmentos as $slug => $s ) : ?>
+									<td><?php echo esc_html( isset( $valores[ $slug ] ) ? $valores[ $slug ] : '' ); ?></td>
+								<?php endforeach; ?>
+							</tr>
+						<?php endforeach; ?>
+					</tbody>
+				</table>
+			</div>
+
+			<p class="text-center text-slate-500 text-sm mt-8 reveal">
+				Ainda em dúvida sobre onde a sua instituição se encaixa?
+				<button type="button" onclick="abrirDemo()" class="text-blue-400 hover:text-white font-semibold transition-colors">Conte a sua operação para um especialista</button>.
+			</p>
+		</div>
+	</section>
 	<?php
 }
 

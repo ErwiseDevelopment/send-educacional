@@ -2,7 +2,7 @@
 Theme Name: Send Educacional
 Description: Tema customizado para o SaaS Send Educacional usando Tailwind CSS.
 Author: Send Solutions
-Version: 1.9.5
+Version: 1.10.0
 */
 
 *, ::before, ::after {
@@ -1043,6 +1043,10 @@ video {
 
 .ml-4 {
   margin-left: 1rem;
+}
+
+.mr-1 {
+  margin-right: 0.25rem;
 }
 
 .mr-3 {
@@ -2090,6 +2094,10 @@ video {
   border-color: rgb(31 49 132 / 0.5);
 }
 
+.border-current {
+  border-color: currentColor;
+}
+
 .border-emerald-500\/30 {
   border-color: rgb(16 185 129 / 0.3);
 }
@@ -2150,6 +2158,10 @@ video {
 
 .border-white\/10 {
   border-color: rgb(255 255 255 / 0.1);
+}
+
+.border-white\/15 {
+  border-color: rgb(255 255 255 / 0.15);
 }
 
 .border-white\/5 {
@@ -2537,6 +2549,10 @@ video {
 
 .bg-white\/\[\.04\] {
   background-color: rgb(255 255 255 / .04);
+}
+
+.bg-white\/\[\.06\] {
+  background-color: rgb(255 255 255 / .06);
 }
 
 .bg-gradient-to-b {
@@ -2970,6 +2986,10 @@ video {
   padding-bottom: 0px;
 }
 
+.pb-0\.5 {
+  padding-bottom: 0.125rem;
+}
+
 .pb-10 {
   padding-bottom: 2.5rem;
 }
@@ -3044,6 +3064,10 @@ video {
 
 .pr-28 {
   padding-right: 7rem;
+}
+
+.pr-4 {
+  padding-right: 1rem;
 }
 
 .pr-6 {
@@ -3142,6 +3166,10 @@ video {
 .text-9xl {
   font-size: 8rem;
   line-height: 1;
+}
+
+.text-\[1\.35rem\] {
+  font-size: 1.35rem;
 }
 
 .text-\[10px\] {
@@ -3291,6 +3319,10 @@ video {
 
 .leading-\[1\.05\] {
   line-height: 1.05;
+}
+
+.leading-\[1\.15\] {
+  line-height: 1.15;
 }
 
 .leading-\[1\.1\] {
@@ -3716,6 +3748,10 @@ video {
 
 .opacity-75 {
   opacity: 0.75;
+}
+
+.opacity-80 {
+  opacity: 0.8;
 }
 
 .opacity-90 {
@@ -4371,6 +4407,145 @@ video {
   outline-offset:2px
 }
 
+/* ===== Busca "Qual e o seu desafio?" (inc/busca-desafio.php) ===== */
+
+.se-chip{
+  font-size:12.5px;
+  font-weight:600;
+  color:#b8b9c3;
+  background:rgba(74,120,176,.1);
+  border:1px solid rgba(150,177,209,.2);
+  border-radius:999px;
+  padding:.35rem .8rem;
+  cursor:pointer;
+  transition:color .2s ease,border-color .2s ease,background-color .2s ease
+}
+
+.se-chip:hover{
+  color:#fff;
+  border-color:rgba(74,120,176,.65);
+  background:rgba(74,120,176,.2)
+}
+
+.se-chip:focus-visible{
+  outline:2px solid #7296c1;
+  outline-offset:2px
+}
+
+.se-resultado{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  gap:.75rem;
+  padding:.9rem 1rem;
+  border-radius:1rem;
+  background:rgba(255,255,255,.035);
+  border:1px solid rgba(255,255,255,.08)
+}
+
+.se-selo{
+  display:inline-block;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.02em;
+  border:1px solid;
+  border-radius:999px;
+  padding:.2rem .6rem;
+  transition:filter .2s ease
+}
+
+.se-selo:hover{
+  filter:brightness(1.25)
+}
+
+/* ===== Bloco de segmento em cor chapada (inc/segmentos.php) =====
+   Substitui o cartao de vidro. O texto vai no azul profundo da marca porque
+   branco sobre estes tons nao passa de 3:1 de contraste; escuro passa de 6:1. */
+
+.se-bloco-seg{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+  padding:1.75rem;
+  border-radius:1.5rem;
+  color:#030429;
+  transition:transform .25s ease,box-shadow .25s ease
+}
+
+.se-bloco-seg:hover{
+  transform:translateY(-4px);
+  box-shadow:0 30px 60px -25px rgba(3,4,41,.85)
+}
+
+.se-bloco-seg:focus-visible{
+  outline:3px solid #fff;
+  outline-offset:3px
+}
+
+.se-bloco-seg-icone{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:2.75rem;
+  height:2.75rem;
+  border-radius:.9rem;
+  margin-bottom:1.15rem;
+  background:rgba(3,4,41,.14);
+  color:#030429
+}
+
+/* ===== Comparativo dos tres segmentos ===== */
+
+.se-comparativo{
+  width:100%;
+  min-width:760px;
+  border-collapse:collapse;
+  text-align:left
+}
+
+.se-comparativo th,.se-comparativo td{
+  padding:1.15rem 1.25rem;
+  vertical-align:top;
+  border-top:1px solid rgba(255,255,255,.1)
+}
+
+.se-comparativo thead th{
+  border-top:0;
+  padding-bottom:1.5rem
+}
+
+.se-comparativo tbody th{
+  width:22%;
+  font-size:12.5px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  color:#8b8c9d
+}
+
+.se-comparativo td{
+  width:26%;
+  font-size:14.5px;
+  line-height:1.55;
+  color:#b8b9c3
+}
+
+.se-comparativo tbody tr:hover td{
+  color:#fff
+}
+
+.se-comparativo-tag{
+  display:inline-block;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  color:#030429;
+  border-radius:999px;
+  padding:.25rem .7rem
+}
+
 .placeholder\:text-slate-500::-moz-placeholder {
   --tw-text-opacity: 1;
   color: rgb(109 109 131 / var(--tw-text-opacity, 1));
@@ -4631,6 +4806,11 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.focus\:border-blue-400:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(114 150 193 / var(--tw-border-opacity, 1));
+}
+
 .focus\:border-blue-500:focus {
   --tw-border-opacity: 1;
   border-color: rgb(88 131 182 / var(--tw-border-opacity, 1));
@@ -4714,6 +4894,10 @@ video {
   --tw-scale-x: 1.1;
   --tw-scale-y: 1.1;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.group:hover .group-hover\:gap-3 {
+  gap: 0.75rem;
 }
 
 .group:hover .group-hover\:bg-amber-600\/30 {
@@ -5029,6 +5213,10 @@ video {
 
   .md\:text-\[12rem\] {
     font-size: 12rem;
+  }
+
+  .md\:text-\[2\.75rem\] {
+    font-size: 2.75rem;
   }
 
   .md\:text-\[4\.4rem\] {
