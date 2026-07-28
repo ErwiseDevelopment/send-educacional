@@ -68,7 +68,7 @@ function se_menu_painel_colunas( $item ) {
 	     class="se-mega-painel hidden absolute left-0 right-0 top-full"
 	     data-painel="<?php echo esc_attr( $item['chave'] ); ?>">
 
-		<div class="border-t linha bg-[#050741] shadow-[0_40px_80px_-30px_rgba(3,4,41,.9)]">
+		<div class="sup-clara border-t linha shadow-[0_30px_60px_-30px_rgba(3,4,41,.28)]">
 			<div class="container mx-auto px-6 max-w-7xl py-9">
 				<div class="grid gap-8 <?php echo $n >= 3 ? 'md:grid-cols-3' : 'md:grid-cols-2'; ?>">
 					<?php foreach ( $colunas as $col ) : ?>
@@ -137,7 +137,7 @@ function se_menu_painel( $item ) {
 	     class="se-mega-painel hidden absolute left-0 right-0 top-full"
 	     data-painel="<?php echo esc_attr( $item['chave'] ); ?>">
 
-		<div class="border-t linha bg-[#050741] shadow-[0_40px_80px_-30px_rgba(2,6,23,.9)]">
+		<div class="sup-clara border-t linha shadow-[0_30px_60px_-30px_rgba(3,4,41,.28)]">
 			<div class="container mx-auto px-6 max-w-7xl py-8">
 				<div class="grid grid-cols-12 gap-8">
 

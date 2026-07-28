@@ -144,6 +144,23 @@ function se_logo_url() {
  * Retorna null quando não dá para descobrir (aí sai sem os atributos, e o
  * tamanho fica só por CSS, melhor do que declarar uma proporção errada).
  */
+/**
+ * Logo para fundo CLARO.
+ *
+ * A logo do tema e branca (feita para o cabecalho escuro). Com o cabecalho
+ * claro ela sumia. `logo-marca.png` e a mesma arte repintada no azul
+ * profundo da marca, gerada a partir do canal alfa da branca.
+ *
+ * Se o cliente enviar uma logo pelo Personalizar, ela e usada como esta: nao
+ * da para adivinhar se e clara ou escura, entao vale a que ele escolheu.
+ */
+function se_logo_url_claro() {
+	if ( se_logo_id() || trim( (string) get_theme_mod( 'se_logo', '' ) ) !== '' ) {
+		return se_logo_url();
+	}
+	return get_template_directory_uri() . '/assets/img/logo-marca.png';
+}
+
 function se_logo_dimensoes() {
 	$id = se_logo_id();
 

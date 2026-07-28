@@ -3,24 +3,19 @@
 <style>
     /* camadas de ambiente (aurora + grade) fixas atrás de tudo */
     .aurora { position:absolute; inset:0; z-index:0; pointer-events:none; overflow:hidden; }
-    .aurora::before, .aurora::after { content:""; position:absolute; border-radius:50%; filter:blur(130px); opacity:.45; }
-    .aurora::before { width:620px; height:620px; background:#4a78b0; top:-160px; left:-120px; animation:drift1 20s ease-in-out infinite; }
-    .aurora::after  { width:520px; height:520px; background:#080b6c; top:180px; right:-140px; animation:drift2 24s ease-in-out infinite; }
+    .aurora::before, .aurora::after { content:""; position:absolute; border-radius:50%; filter:blur(130px); opacity:.55; }
+    .aurora::before { width:620px; height:620px; background:#96b1d1; top:-200px; left:-140px; animation:drift1 20s ease-in-out infinite; }
+    .aurora::after  { width:520px; height:520px; background:#c5d4e6; top:120px; right:-160px; animation:drift2 24s ease-in-out infinite; }
     @keyframes drift1 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(120px,90px)} }
     @keyframes drift2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-110px,120px)} }
     .gridmask { position:absolute; inset:0; z-index:0; pointer-events:none;
-        background-image:linear-gradient(rgba(148,163,184,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(148,163,184,.06) 1px,transparent 1px);
+        background-image:linear-gradient(rgba(8,11,108,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(8,11,108,.05) 1px,transparent 1px);
         background-size:54px 54px;
         -webkit-mask-image:radial-gradient(100% 55% at 50% 0,#000,transparent 78%); mask-image:radial-gradient(100% 55% at 50% 0,#000,transparent 78%); }
 
-    .gtext { background:linear-gradient(100deg,#96b1d1,#7296c1 45%,#4a78b0); -webkit-background-clip:text; background-clip:text; color:transparent; }
     .gbtn  { background:linear-gradient(100deg,#4a78b0,#1f3184); box-shadow:0 10px 30px -8px rgba(8,11,108,.75); }
     .gbtn:hover { background:linear-gradient(100deg,#5883b6,#2b2d81); box-shadow:0 16px 42px -8px rgba(8,11,108,.95); }
-    .glass { background:rgba(74,120,176,.07); border:1px solid rgba(150,177,209,.16); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); }
     .glass-hover { transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease; }
-    .glass-hover:hover { transform:translateY(-4px); border-color:rgba(74,120,176,.6); box-shadow:0 30px 60px -30px rgba(8,11,108,.9); }
-    .cardring { box-shadow:0 1px 0 0 rgba(255,255,255,.07) inset, 0 40px 90px -40px rgba(3,4,41,.95); }
-    .igrad { background:linear-gradient(135deg,#4a78b0,#080b6c); }
 
     .floaty  { animation:floaty 6s ease-in-out infinite; }
     .floaty2 { animation:floaty 7.5s ease-in-out infinite; }
@@ -48,7 +43,7 @@
 <main class="relative overflow-hidden">
 
     <!-- ===================== HERO ===================== -->
-    <section class="sup-escura relative z-10 pt-36 pb-24 overflow-hidden">
+    <section class="sup-clara-2 relative z-10 pt-24 pb-24 overflow-hidden">
         <div class="aurora"></div>
         <div class="gridmask"></div>
         <div class="container mx-auto px-6 text-center max-w-5xl relative z-10">
@@ -249,7 +244,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-5 reveal">
                 <div class="md:col-span-2 glass glass-hover rounded-3xl p-9 flex flex-col justify-between">
                     <div class="md:w-3/4">
-                        <div class="w-14 h-14 igrad rounded-2xl flex items-center justify-center mb-6"><svg class="w-7 h-7 txt-forte" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M12 14v7M5 11v5c0 1 3 3 7 3s7-2 7-3v-5"></path></svg></div>
+                        <div class="w-14 h-14 rounded-2xl bg-bloco border linha flex items-center justify-center mb-6"><svg class="w-7 h-7 txt-link" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M12 14v7M5 11v5c0 1 3 3 7 3s7-2 7-3v-5"></path></svg></div>
                         <h3 class="titulo-mini text-2xl txt-forte mb-3">Secretaria Acadêmica</h3>
                         <p class="txt leading-relaxed mb-6">Do processo seletivo à colação de grau: matrícula e rematrícula online, diário de classe, histórico, diploma digital e adequação às portarias do MEC.</p>
                     </div>
@@ -267,7 +262,7 @@
 
                 <div class="glass glass-hover rounded-3xl p-9 flex flex-col justify-between">
                     <div>
-                        <div class="w-14 h-14 rounded-2xl bg-bloco border linha flex items-center justify-center mb-6"><svg class="w-7 h-7 text-violet-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17H5a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-4m-6 4h6"></path></svg></div>
+                        <div class="w-14 h-14 rounded-2xl bg-bloco border linha flex items-center justify-center mb-6"><svg class="w-7 h-7 txt-link" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17H5a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-4m-6 4h6"></path></svg></div>
                         <h3 class="titulo-mini text-xl txt-forte mb-3">Portais + AVA próprio</h3>
                         <p class="txt leading-relaxed mb-6">Portais do aluno, do docente e do coordenador, com gestão de polos EAD e o AVA próprio junto: notas, diário, requerimentos e aulas no mesmo login.</p>
                     </div>

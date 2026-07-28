@@ -2,7 +2,7 @@
 Theme Name: Send Educacional
 Description: Tema customizado para o SaaS Send Educacional usando Tailwind CSS.
 Author: Send Solutions
-Version: 2.0.1
+Version: 2.1.0
 */
 
 *, ::before, ::after {
@@ -2170,15 +2170,6 @@ video {
   background-color: rgb(51 82 152 / var(--tw-bg-opacity, 1)) !important;
 }
 
-.\!bg-transparent {
-  background-color: transparent !important;
-}
-
-.bg-\[\#030429\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(3 4 41 / var(--tw-bg-opacity, 1));
-}
-
 .bg-\[\#050741\] {
   --tw-bg-opacity: 1;
   background-color: rgb(5 7 65 / var(--tw-bg-opacity, 1));
@@ -3066,16 +3057,20 @@ video {
   padding-top: 4rem;
 }
 
+.pt-20 {
+  padding-top: 5rem;
+}
+
+.pt-24 {
+  padding-top: 6rem;
+}
+
 .pt-28 {
   padding-top: 7rem;
 }
 
 .pt-32 {
   padding-top: 8rem;
-}
-
-.pt-36 {
-  padding-top: 9rem;
 }
 
 .pt-4 {
@@ -3692,15 +3687,9 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.shadow-\[0_40px_80px_-30px_rgba\(2\2c 6\2c 23\2c \.9\)\] {
-  --tw-shadow: 0 40px 80px -30px rgba(2,6,23,.9);
-  --tw-shadow-colored: 0 40px 80px -30px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.shadow-\[0_40px_80px_-30px_rgba\(3\2c 4\2c 41\2c \.9\)\] {
-  --tw-shadow: 0 40px 80px -30px rgba(3,4,41,.9);
-  --tw-shadow-colored: 0 40px 80px -30px var(--tw-shadow-color);
+.shadow-\[0_30px_60px_-30px_rgba\(3\2c 4\2c 41\2c \.28\)\] {
+  --tw-shadow: 0 30px 60px -30px rgba(3,4,41,.28);
+  --tw-shadow-colored: 0 30px 60px -30px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 

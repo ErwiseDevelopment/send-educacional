@@ -9,18 +9,18 @@ get_header(); ?>
 
 <main class="relative overflow-hidden">
 
-    <section class="sup-escura relative pt-36 pb-16 overflow-hidden">
-        <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[420px] rounded-full blur-[140px] pointer-events-none" style="background:<?php echo esc_attr( $se_cor ); ?>2e"></div>
+    <section class="sup-clara-2 relative pt-20 pb-16 overflow-hidden">
+        <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[420px] rounded-full blur-[140px] pointer-events-none" style="background:<?php echo esc_attr( $se_cor ); ?>26"></div>
 
         <div class="container mx-auto px-6 max-w-4xl text-center relative z-10">
             <div class="flex justify-center items-center gap-2 text-xs txt mb-7 font-semibold uppercase tracking-widest">
                 <a href="<?php echo esc_url( home_url() ); ?>" class="hover-forte transition">Início</a>
                 <span aria-hidden="true">/</span>
-                <span style="color:<?php echo esc_attr( $se_cor ); ?>"><?php echo esc_html( $se_seg['nome'] ); ?></span>
+                <span style="color:<?php echo esc_attr( $se_cor_t ); ?>"><?php echo esc_html( $se_seg['nome'] ); ?></span>
             </div>
 
-            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-[11px] font-bold uppercase tracking-widest mb-7" style="color:<?php echo esc_attr( $se_cor ); ?>">
-                <span class="w-2 h-2 rounded-full" style="background:<?php echo esc_attr( $se_cor ); ?>"></span>
+            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-[11px] font-bold uppercase tracking-widest mb-7" style="color:<?php echo esc_attr( $se_cor_t ); ?>">
+                <span class="w-2 h-2 rounded-full" style="background:<?php echo esc_attr( $se_cor_t ); ?>"></span>
                 Cursos livres, profissionalizantes e corporativos
             </span>
 

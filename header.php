@@ -9,11 +9,11 @@
 <body <?php body_class('sup-clara font-sans antialiased'); ?>>
 
 <?php $se_home = is_front_page(); ?>
-<header id="se-header" class="sup-escura <?php echo $se_home ? 'absolute top-0 left-0 right-0 z-50 !bg-transparent' : 'sticky top-0 z-50 border-b linha'; ?>">
+<header id="se-header" class="sup-clara sticky top-0 z-50 border-b linha">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center gap-4">
        <div class="flex flex-col items-start justify-center shrink-0">
             <a href="<?php echo home_url(); ?>" class="flex items-center gap-2.5 transition-transform hover:scale-105">
-                <img src="<?php echo esc_url( se_logo_url() ); ?>" alt="Send Educacional"<?php echo se_logo_dimensoes_attr(); ?> class="se-logo w-auto object-contain">
+                <img src="<?php echo esc_url( se_logo_url_claro() ); ?>" alt="Send Educacional"<?php echo se_logo_dimensoes_attr(); ?> class="se-logo w-auto object-contain">
             </a>
        </div>
 
@@ -66,7 +66,7 @@
 
     <?php se_menu_paineis_desktop(); ?>
 
-    <div id="menu-mobile" class="hidden lg:hidden border-t linha bg-[#030429] se-menu-mobile-rolagem">
+    <div id="menu-mobile" class="sup-clara hidden lg:hidden border-t linha se-menu-mobile-rolagem">
         <div class="container mx-auto px-6 py-5">
             <?php se_menu_mobile(); ?>
             <button onclick="abrirDemo()" class="mt-5 w-full gbtn txt-forte font-bold px-5 py-3.5 rounded-xl text-sm">
