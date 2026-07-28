@@ -51,6 +51,34 @@ function se_url_pagina( $slugs ) {
 function se_menu_limpar( $mega ) {
 	foreach ( $mega as $i => $entrada ) {
 
+		// Painel de colunas: poda item por item e some com a coluna vazia.
+		if ( ! empty( $entrada['colunas'] ) ) {
+			foreach ( $entrada['colunas'] as $j => $col ) {
+
+				if ( ! empty( $col['destaque'] ) ) {
+					if ( empty( $col['url'] ) ) {
+						unset( $mega[ $i ]['colunas'][ $j ] );
+					}
+					continue;
+				}
+
+				$col['itens'] = array_values( array_filter( $col['itens'], function ( $item ) {
+					return ! empty( $item['url'] );
+				} ) );
+
+				if ( $col['itens'] || ! empty( $col['posts'] ) ) {
+					$mega[ $i ]['colunas'][ $j ] = $col;
+				} else {
+					unset( $mega[ $i ]['colunas'][ $j ] );
+				}
+			}
+			$mega[ $i ]['colunas'] = array_values( $mega[ $i ]['colunas'] );
+			if ( ! $mega[ $i ]['colunas'] ) {
+				unset( $mega[ $i ] );
+			}
+			continue;
+		}
+
 		if ( empty( $entrada['abas'] ) ) {
 			if ( isset( $entrada['url'] ) && $entrada['url'] === '' ) {
 				unset( $mega[ $i ] );
@@ -151,58 +179,29 @@ function se_menu_mega() {
 function se_menu_mega_bruto() {
 	$demo = home_url( '/apresentacao' );
 
-	// ---- Segmentos: reaproveita os destaques já escritos em inc/segmentos.php
-	$abas_segmentos = array();
+	// ---- Segmentos: são três. Painel com abas, trilho e rodapé para três
+	// itens gerava seis links para a mesma página; aqui é um item por coluna.
+	$colunas_segmentos = array();
 	foreach ( se_segmentos() as $slug => $s ) {
-		$itens = array();
-		foreach ( $s['destaques'] as $d ) {
-			$itens[] = array(
-				'nome'  => $d['nome'],
-				'icone' => $d['icone'],
-				'url'   => se_segmento_url( $slug ),
-			);
-		}
-
-		$abas_segmentos[] = array(
-			'chave'     => $slug,
-			'rotulo'    => $s['nome'],
+		$colunas_segmentos[] = array(
+			'destaque'  => true,
 			'icone'     => ( $slug === 'ensino-superior' ? 'academico' : ( $slug === 'educacao-basica' ? 'escola' : 'monitor' ) ),
 			'cor'       => $s['cor'],
 			'titulo'    => $s['nome'],
 			'descricao' => $s['resumo'],
-			'cta'       => 'Conheça a solução',
+			'publico'   => $s['publico'],
+			'cta'       => 'Ver a solução',
 			'url'       => se_segmento_url( $slug ),
-			'itens'     => $itens,
-			'rodape'    => 'Para ' . strtolower( $s['publico'] ),
 		);
 	}
 
 	return array(
 
 		array(
-			'chave'  => 'segmentos',
-			'rotulo' => 'Segmentos',
-			'abas'   => $abas_segmentos,
-			'trilho' => array(
-				array(
-					'titulo' => 'Para o seu negócio',
-					'links'  => array(
-						array( 'Visão geral da plataforma', $demo ),
-						array( 'Sobre a Send', home_url( '/sobre' ) ),
-					),
-				),
-				array(
-					'card'      => true,
-					'titulo'    => 'Não sabe por onde começar?',
-					'texto'     => 'Conte a sua operação e a gente diz o que muda no seu caso.',
-					'cta'       => 'Falar com um especialista',
-					'acao'      => 'demo',
-				),
-			),
-			'rodape' => array(
-				array( 'Comparar os três segmentos', home_url( '/#segmentos' ), 'grafico' ),
-				array( 'Solicitar demonstração', '#demo', 'apresentacao' ),
-			),
+			'chave'   => 'segmentos',
+			'rotulo'  => 'Segmentos',
+			'layout'  => 'colunas',
+			'colunas' => $colunas_segmentos,
 		),
 
 		array(
@@ -248,8 +247,8 @@ function se_menu_mega_bruto() {
 					'cta'       => 'Ver portais e AVA',
 					'url'       => se_url_pagina( 'portais' ),
 					'itens'     => array(
-						array( 'nome' => 'Portais e AVA', 'desc' => 'Aluno, docente, coordenação e polo no mesmo login', 'url' => se_url_pagina( 'portais' ), 'icone' => 'monitor' ),
-						array( 'nome' => 'App do aluno e da família', 'desc' => 'Boletim, faltas, boleto e comunicados no celular', 'url' => se_url_pagina( 'portais' ), 'icone' => 'celular' ),
+						// Os dois itens levavam à mesma página; viraram um só.
+						array( 'nome' => 'Portais, app e AVA', 'desc' => 'Aluno, família, docente e polo no mesmo login — web e celular', 'url' => se_url_pagina( 'portais' ), 'icone' => 'monitor' ),
 						array( 'nome' => 'Retenção de Alunos', 'desc' => 'Risco de evasão cruzando nota, frequência e financeiro', 'url' => se_url_pagina( 'retencao' ), 'icone' => 'pessoas' ),
 					),
 				),
@@ -271,13 +270,6 @@ function se_menu_mega_bruto() {
 			),
 			'trilho' => array(
 				array(
-					'titulo' => 'Como tudo se conecta',
-					'links'  => array(
-						array( 'Visão geral da plataforma', $demo ),
-						array( 'Catálogo de módulos', se_url_pagina( 'modulo' ) ),
-					),
-				),
-				array(
 					'card'   => true,
 					'titulo' => 'Já usa outro sistema?',
 					'texto'  => 'A migração da base entra na implantação, conduzida por um consultor.',
@@ -285,72 +277,36 @@ function se_menu_mega_bruto() {
 					'acao'   => 'demo',
 				),
 			),
-			'rodape' => array(
-				array( 'Ver todos os módulos', se_url_pagina( 'modulo' ), 'pasta' ),
-				array( 'Solicitar demonstração', '#demo', 'apresentacao' ),
-			),
 		),
 
 		array(
-			'chave'  => 'recursos',
-			'rotulo' => 'Recursos',
-			'abas'   => array(
+			'chave'   => 'recursos',
+			'rotulo'  => 'Recursos',
+			'layout'  => 'colunas',
+			// Seis links no total. Antes eram abas + trilho + rodapé para isto.
+			'colunas' => array(
 				array(
-					'chave'     => 'conteudo',
-					'rotulo'    => 'Conteúdo',
-					'icone'     => 'artigo',
-					'cor'       => '#4a78b0',
-					'titulo'    => 'Para decidir com informação',
-					'descricao' => 'Material sobre gestão educacional, troca de sistema e operação de cursos online.',
-					'cta'       => 'Ir para o blog',
-					'url'       => home_url( '/blog' ),
-					'itens'     => array(
+					'titulo' => 'Conteúdo',
+					'itens'  => array(
 						array( 'nome' => 'Blog', 'desc' => 'Artigos por segmento, do superior ao curso livre', 'url' => home_url( '/blog' ), 'icone' => 'artigo' ),
 						array( 'nome' => 'Visão geral da plataforma', 'desc' => 'A apresentação completa, módulo a módulo', 'url' => $demo, 'icone' => 'apresentacao' ),
 					),
-					'posts'     => true, // puxa os últimos artigos publicados
+					'posts'  => true, // últimos artigos publicados
 				),
 				array(
-					'chave'     => 'suporte',
-					'rotulo'    => 'Suporte e documentação',
-					'icone'     => 'ajuda',
-					'cor'       => '#56b2cb',
-					'titulo'    => 'Para quem já é cliente',
-					'descricao' => 'Documentação do sistema e canal de suporte da Send Solutions.',
-					'cta'       => 'Abrir a central de ajuda',
-					'url'       => 'https://help.sendsolutions.com.br/',
-					'itens'     => array(
+					'titulo' => 'Já é cliente',
+					'itens'  => array(
 						array( 'nome' => 'Central de Ajuda', 'desc' => 'Documentação do sistema, passo a passo', 'url' => 'https://help.sendsolutions.com.br/', 'icone' => 'ajuda', 'externo' => true ),
 						array( 'nome' => 'Suporte', 'desc' => 'Abertura e acompanhamento de chamados', 'url' => 'https://aplicacao.sendsolutions.com.br/TimeSheet/timesheet.login.aspx', 'icone' => 'escudo', 'externo' => true ),
 					),
 				),
 				array(
-					'chave'     => 'empresa',
-					'rotulo'    => 'A empresa',
-					'icone'     => 'predio',
-					'cor'       => '#2b2d81',
-					'titulo'    => 'Quem está por trás',
-					'descricao' => 'A Send Solutions faz software de gestão desde 1994 e está em educação desde 2019.',
-					'cta'       => 'Conhecer a Send',
-					'url'       => home_url( '/sobre' ),
-					'itens'     => array(
-						array( 'nome' => 'Sobre nós', 'desc' => 'História, missão e como conduzimos a implantação', 'url' => home_url( '/sobre' ), 'icone' => 'predio' ),
+					'titulo' => 'A empresa',
+					'itens'  => array(
+						array( 'nome' => 'Sobre nós', 'desc' => 'Software de gestão desde 1994, em educação desde 2019', 'url' => home_url( '/sobre' ), 'icone' => 'predio' ),
 						array( 'nome' => 'Política de Privacidade', 'desc' => 'Como tratamos os dados, conforme a LGPD', 'url' => home_url( '/privacidade' ), 'icone' => 'cadeado' ),
 					),
 				),
-			),
-			'trilho' => array(
-				array(
-					'card'   => true,
-					'titulo' => 'Quer ver rodando?',
-					'texto'  => 'Demonstração gratuita, com um especialista do seu segmento.',
-					'cta'    => 'Solicitar demonstração',
-					'acao'   => 'demo',
-				),
-			),
-			'rodape' => array(
-				array( 'Ver todos os artigos', home_url( '/blog' ), 'artigo' ),
-				array( 'Solicitar demonstração', '#demo', 'apresentacao' ),
 			),
 		),
 	);

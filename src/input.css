@@ -2,7 +2,7 @@
 Theme Name: Send Educacional
 Description: Tema customizado para o SaaS Send Educacional usando Tailwind CSS.
 Author: Send Solutions
-Version: 1.9.0
+Version: 1.9.1
 */
 
 @tailwind base;
@@ -111,3 +111,9 @@ Version: 1.9.0
   .se-mega-painel{animation:none}
   .se-chevron,.se-mega-post{transition:none}
 }
+/* Cartão de segmento no mega menu (painel de colunas). */
+.se-mega-card{display:flex;flex-direction:column;height:100%;padding:1.5rem;border-radius:1.25rem;
+  background:rgba(74,120,176,.07);border:1px solid rgba(150,177,209,.16);
+  transition:border-color .25s ease,background-color .25s ease,transform .25s ease}
+.se-mega-card:hover{border-color:rgba(74,120,176,.6);background:rgba(74,120,176,.12);transform:translateY(-2px)}
+.se-mega-card:focus-visible{outline:2px solid #7296c1;outline-offset:2px}

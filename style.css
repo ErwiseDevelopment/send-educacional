@@ -2,7 +2,7 @@
 Theme Name: Send Educacional
 Description: Tema customizado para o SaaS Send Educacional usando Tailwind CSS.
 Author: Send Solutions
-Version: 1.9.0
+Version: 1.9.1
 */
 
 *, ::before, ::after {
@@ -1271,6 +1271,10 @@ video {
   height: 18px;
 }
 
+.h-\[22px\] {
+  height: 22px;
+}
+
 .h-\[300px\] {
   height: 300px;
 }
@@ -1437,6 +1441,10 @@ video {
 
 .w-\[18px\] {
   width: 18px;
+}
+
+.w-\[22px\] {
+  width: 22px;
 }
 
 .w-\[500px\] {
@@ -2935,6 +2943,11 @@ video {
   padding-bottom: 2rem;
 }
 
+.py-9 {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+}
+
 .pb-0 {
   padding-bottom: 0px;
 }
@@ -3127,6 +3140,10 @@ video {
 
 .text-\[12px\] {
   font-size: 12px;
+}
+
+.text-\[13\.5px\] {
+  font-size: 13.5px;
 }
 
 .text-\[13px\] {
@@ -3735,6 +3752,12 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.shadow-\[0_40px_80px_-30px_rgba\(3\2c 4\2c 41\2c \.9\)\] {
+  --tw-shadow: 0 40px 80px -30px rgba(3,4,41,.9);
+  --tw-shadow-colored: 0 40px 80px -30px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .shadow-\[0_8px_30px_rgb\(37\2c 99\2c 235\2c 0\.3\)\] {
   --tw-shadow: 0 8px 30px rgb(37,99,235,0.3);
   --tw-shadow-colored: 0 8px 30px var(--tw-shadow-color);
@@ -4304,6 +4327,30 @@ video {
   .se-chevron,.se-mega-post{
     transition:none
   }
+}
+
+/* Cartão de segmento no mega menu (painel de colunas). */
+
+.se-mega-card{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+  padding:1.5rem;
+  border-radius:1.25rem;
+  background:rgba(74,120,176,.07);
+  border:1px solid rgba(150,177,209,.16);
+  transition:border-color .25s ease,background-color .25s ease,transform .25s ease
+}
+
+.se-mega-card:hover{
+  border-color:rgba(74,120,176,.6);
+  background:rgba(74,120,176,.12);
+  transform:translateY(-2px)
+}
+
+.se-mega-card:focus-visible{
+  outline:2px solid #7296c1;
+  outline-offset:2px
 }
 
 .placeholder\:text-slate-500::-moz-placeholder {
