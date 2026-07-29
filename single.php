@@ -7,25 +7,32 @@ get_header();
 
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-    <?php // Topo enxuto de propósito: sem a capa, tudo o que sobrava era ar branco. ?>
-    <section class="pt-24 pb-8 bg-white se-artigo-topo">
-        <div class="container mx-auto px-6 max-w-4xl text-center">
+    <?php
+    // O topo virou a capa do artigo: mesmo degradê que a lista desenha no
+    // cartão, na cor do segmento a que o texto pertence. Antes era branco
+    // sobre branco e a página abria sem nenhum ponto de fixação.
+    list( $capa_cor, $capa_fundo ) = se_capa_cor();
+    ?>
+    <section class="sup-escura se-artigo-topo pt-28 pb-12"
+             style="background:linear-gradient(135deg,<?php echo esc_attr( $capa_cor ); ?>,<?php echo esc_attr( $capa_fundo ); ?>)">
+        <span class="se-capa-grade" aria-hidden="true"></span>
+        <div class="container mx-auto px-6 max-w-4xl text-center relative z-10">
 
             <div class="mb-5 inline-flex">
                 <?php // Rótulo fixo: o leitor está na Comunicação, a categoria já aparece na lista. ?>
-                <a href="<?php echo esc_url( home_url( '/blog' ) ); ?>" class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-blue-100 transition-colors">
+                <a href="<?php echo esc_url( home_url( '/blog' ) ); ?>" class="se-artigo-selo px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
                     Comunicação
                 </a>
             </div>
 
-            <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-5 leading-tight tracking-tight">
+            <h1 class="text-3xl md:text-5xl font-extrabold txt-forte mb-5 leading-tight tracking-tight">
                 <?php the_title(); ?>
             </h1>
 
-            <div class="flex items-center justify-center gap-4 txt-fraco text-sm font-medium">
+            <div class="flex items-center justify-center gap-4 txt text-sm font-medium">
                 <div class="flex items-center gap-2">
                     <?php echo get_avatar( get_the_author_meta('ID'), 40, '', '', ['class' => 'w-10 h-10 rounded-full'] ); ?>
-                    <span class="text-slate-900 font-bold">
+                    <span class="txt-forte font-bold">
                         <?php echo esc_html( get_the_author_meta('nickname') ); ?>
                     </span>
                  </span>

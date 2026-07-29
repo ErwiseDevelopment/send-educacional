@@ -2,7 +2,7 @@
 Theme Name: Send Educacional
 Description: Tema customizado para o SaaS Send Educacional usando Tailwind CSS.
 Author: Send Solutions
-Version: 2.3.3
+Version: 2.4.0
 */
 
 *, ::before, ::after {
@@ -4874,22 +4874,40 @@ video {
   border:1px solid rgba(255,255,255,.24)
 }
 
-/* Topo do artigo: o branco chapado sobre fundo claro precisava de um fecho com
-   cor, senão o cabeçalho e o texto viravam uma mancha branca só. */
+/* Topo do artigo: a mesma capa que a lista desenha no cartão, esticada em
+   faixa. Repete as camadas da capa (listras e anéis) para o artigo aberto e o
+   cartão na lista serem visivelmente a mesma peça. */
 
 .se-artigo-topo{
   position:relative;
-  border-bottom:1px solid rgba(3,4,41,.08)
+  overflow:hidden
 }
 
-.se-artigo-topo::after{
+.se-artigo-topo::before{
   content:"";
   position:absolute;
-  left:0;
-  right:0;
-  bottom:-1px;
-  height:3px;
-  background:linear-gradient(90deg,#080b6c,#4a78b0 55%,rgba(74,120,176,0))
+  inset:0;
+  pointer-events:none;
+  background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.05) 0 2px,transparent 2px 15px)
+}
+
+/* Os anéis nasceram para um cartão estreito: numa faixa larga precisam encolher. */
+
+.se-artigo-topo .se-capa-grade{
+  width:38%;
+  right:-7%;
+  bottom:-52%
+}
+
+.se-artigo-selo{
+  color:#fff;
+  background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.26);
+  transition:background-color .2s ease
+}
+
+.se-artigo-selo:hover{
+  background:rgba(255,255,255,.26)
 }
 
 .se-capa-rotulo{
@@ -4998,11 +5016,6 @@ video {
 .hover\:bg-black:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
-}
-
-.hover\:bg-blue-100:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(226 233 242 / var(--tw-bg-opacity, 1));
 }
 
 .hover\:bg-blue-50:hover {
