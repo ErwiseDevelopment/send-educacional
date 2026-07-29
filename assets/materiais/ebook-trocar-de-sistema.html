@@ -48,7 +48,7 @@
 
   .pagina{
     width:210mm; height:297mm;
-    padding:22mm 20mm;
+    padding:27mm 20mm 22mm;
     position:relative;
     page-break-after:always;
     overflow:hidden;
@@ -56,6 +56,7 @@
   .pagina:last-child{ page-break-after:auto; }
 
   /* ---------------------------------------------------------------- capa */
+  .capa, .fecho{ padding:22mm 20mm; }
   .capa{
     background:linear-gradient(135deg,var(--navy),var(--fundo));
     color:#fff;
@@ -92,7 +93,7 @@
   /* -------------------------------------------------------------- comuns */
   h2{
     font-size:19pt; font-weight:800; color:var(--forte);
-    letter-spacing:-.02em; line-height:1.15; margin-bottom:4mm;
+    letter-spacing:-.02em; line-height:1.15; margin-bottom:3.2mm;
   }
   h3{
     font-size:12.5pt; font-weight:700; color:var(--forte);
@@ -110,7 +111,7 @@
   .abertura p{ font-size:11pt; line-height:1.7; }
 
   /* --------------------------------------------------------- as perguntas */
-  .q{ margin-bottom:4.8mm; }
+  .q{ margin-bottom:3.6mm; }
   .q:last-child{ margin-bottom:0; }
 
   .q-topo{ display:flex; gap:4mm; align-items:baseline; margin-bottom:2mm; }
@@ -122,7 +123,7 @@
   .q-corpo p{ margin-bottom:2mm; font-size:9.8pt; }
 
   .marca-boa, .marca-alerta{
-    font-size:9pt; padding:2.2mm 3.5mm; border-radius:2mm; margin-bottom:1.6mm;
+    font-size:9pt; padding:2.1mm 3.5mm; border-radius:2mm; margin-bottom:1.3mm;
   }
   .marca-boa{ background:rgba(74,120,176,.10); border-left:1.2mm solid var(--azul); }
   .marca-alerta{ background:rgba(171,8,13,.07); border-left:1.2mm solid #ab080d; }
@@ -164,17 +165,34 @@
     padding:4mm 9mm; border-radius:3mm; text-decoration:none;
   }
   .fecho .assinatura{
-    margin-top:16mm; padding-top:5mm;
+    margin-top:14mm; padding-top:5mm;
     border-top:.5pt solid rgba(255,255,255,.2);
     font-size:9pt; color:#8b8c9d;
   }
+  .rot-solucao{
+    display:block; font-size:7.5pt; font-weight:700;
+    letter-spacing:.16em; text-transform:uppercase; color:#8b8c9d; margin-bottom:2.5mm;
+  }
+  .logo-solucao{ height:9mm; width:auto; display:block; margin-bottom:3.5mm; }
 
   /* ---------------------------------------------------------- identidade
      O material sai da mao do cliente e vira PDF encaminhado por e-mail,
      impresso, jogado numa pasta compartilhada. Em qualquer uma dessas
      viagens ele precisa dizer de quem e e como chegar de volta. */
-  .logo-capa{ height:13mm; width:auto; display:block; margin-bottom:12mm; }
-  .logo-rodape{ height:5.5mm; width:auto; opacity:.55; }
+  /* Capa: a marca vem grande e centralizada, ela é o primeiro contato. */
+  .capa{ text-align:center; align-items:center; }
+  .logo-capa{ height:26mm; width:auto; display:block; margin:0 auto; }
+  .capa .sub{ margin:0 auto; }
+
+  /* Cabeçalho de marca em toda página de conteúdo: o PDF circula folha a
+     folha, impresso e fotocopiado, e cada uma precisa se identificar. */
+  .cabecalho{
+    position:absolute; top:11mm; left:20mm; right:20mm;
+    display:flex; align-items:center; justify-content:space-between;
+    padding-bottom:2.5mm; border-bottom:.4pt solid var(--linha);
+  }
+  .logo-topo{ height:6mm; width:auto; }
+
   .rodape-linha{
     position:absolute; left:20mm; right:20mm; bottom:11mm;
     display:flex; align-items:center; justify-content:space-between;
@@ -209,8 +227,7 @@
   }
 
   .num-pag{ font-size:8pt; color:var(--fraco); }
-  /* Linha do rodapé em três partes: marca, endereço e número da página. */
-  .rodape-linha .site{ margin-left:auto; margin-right:6mm; }
+  /* Rodapé em duas partes: endereço à esquerda, número à direita. */
 </style>
 </head>
 <body>
@@ -219,7 +236,7 @@
 <section class="pagina capa">
   <div>
     <img class="logo-capa" src="../img/logo-branco.png" alt="Send Educacional">
-    <span class="selo">Guia para mantenedores e gestores</span>
+    <span class="selo" style="margin-top:9mm">Guia para mantenedores e gestores</span>
   </div>
 
   <div>
@@ -240,6 +257,10 @@
 
 <!-- ======================================================== abertura -->
 <section class="pagina abertura">
+  <div class="cabecalho">
+    <img class="logo-topo" src="../img/logo-marca.png" alt="Send Educacional">
+  </div>
+
   <p class="olho">Antes de começar</p>
   <h2>O medo de trocar é legítimo. Fingir que não existe é que dá errado.</h2>
 
@@ -279,7 +300,6 @@
   </div>
 
   <div class="rodape-linha">
-    <img class="logo-rodape" src="../img/logo-marca.png" alt="Send Educacional">
     <span class="site">sendeducacional.com.br</span>
     <span class="num-pag">2</span>
   </div>
@@ -287,6 +307,10 @@
 
 <!-- =================================================== perguntas 1 a 3 -->
 <section class="pagina">
+  <div class="cabecalho">
+    <img class="logo-topo" src="../img/logo-marca.png" alt="Send Educacional">
+  </div>
+
   <p class="olho">Parte 1 · O que vem junto da sua base</p>
   <h2>Os dados</h2>
 
@@ -357,7 +381,6 @@
   </div>
 
   <div class="rodape-linha">
-    <img class="logo-rodape" src="../img/logo-marca.png" alt="Send Educacional">
     <span class="site">sendeducacional.com.br</span>
     <span class="num-pag">3</span>
   </div>
@@ -365,6 +388,10 @@
 
 <!-- =================================================== perguntas 4 a 6 -->
 <section class="pagina">
+  <div class="cabecalho">
+    <img class="logo-topo" src="../img/logo-marca.png" alt="Send Educacional">
+  </div>
+
   <p class="olho">Parte 2 · O que não está escrito em lugar nenhum</p>
   <h2>As regras da casa</h2>
 
@@ -434,7 +461,6 @@
   </div>
 
   <div class="rodape-linha">
-    <img class="logo-rodape" src="../img/logo-marca.png" alt="Send Educacional">
     <span class="site">sendeducacional.com.br</span>
     <span class="num-pag">4</span>
   </div>
@@ -442,6 +468,10 @@
 
 <!-- =================================================== perguntas 7 a 9 -->
 <section class="pagina">
+  <div class="cabecalho">
+    <img class="logo-topo" src="../img/logo-marca.png" alt="Send Educacional">
+  </div>
+
   <p class="olho">Parte 3 · O mundo fora do sistema</p>
   <h2>Regulação, integrações e o aluno</h2>
 
@@ -512,7 +542,6 @@
   </div>
 
   <div class="rodape-linha">
-    <img class="logo-rodape" src="../img/logo-marca.png" alt="Send Educacional">
     <span class="site">sendeducacional.com.br</span>
     <span class="num-pag">5</span>
   </div>
@@ -520,6 +549,10 @@
 
 <!-- ================================================= perguntas 10 a 12 -->
 <section class="pagina">
+  <div class="cabecalho">
+    <img class="logo-topo" src="../img/logo-marca.png" alt="Send Educacional">
+  </div>
+
   <p class="olho">Parte 4 · O contrato</p>
   <h2>Custo, suporte e saída</h2>
 
@@ -587,7 +620,6 @@
   </div>
 
   <div class="rodape-linha">
-    <img class="logo-rodape" src="../img/logo-marca.png" alt="Send Educacional">
     <span class="site">sendeducacional.com.br</span>
     <span class="num-pag">6</span>
   </div>
@@ -595,6 +627,10 @@
 
 <!-- ======================================================= checklist -->
 <section class="pagina">
+  <div class="cabecalho">
+    <img class="logo-topo" src="../img/logo-marca.png" alt="Send Educacional">
+  </div>
+
   <p class="olho">Para levar impresso</p>
   <h2>As doze perguntas, em uma página</h2>
 
@@ -633,7 +669,6 @@
   </div>
 
   <div class="rodape-linha">
-    <img class="logo-rodape" src="../img/logo-marca.png" alt="Send Educacional">
     <span class="site">sendeducacional.com.br</span>
     <span class="num-pag">7</span>
   </div>
@@ -678,9 +713,9 @@
     </div>
 
     <div class="assinatura">
-      <img src="../img/logo-branco.png" alt="Send Educacional" style="height:9mm;width:auto;display:block;margin-bottom:4mm">
-      Uma solução <strong style="color:#fff">Send Solutions</strong>. Software de gestão desde 1994,
-      em educação desde 2019.
+      <span class="rot-solucao">Uma solução</span>
+      <img src="../img/logo-send-solutions.png" alt="Send Solutions" class="logo-solucao">
+      Software de gestão desde 1994, em educação desde 2019.
     </div>
   </div>
 </section>
