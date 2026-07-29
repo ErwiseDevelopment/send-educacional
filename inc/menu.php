@@ -289,6 +289,7 @@ function se_menu_mega_bruto() {
 					'titulo' => 'Conteúdo',
 					'itens'  => array(
 						array( 'nome' => 'Comunicação', 'desc' => 'Artigos por segmento, do superior ao curso livre', 'url' => home_url( '/blog' ), 'icone' => 'artigo' ),
+						array( 'nome' => 'Guia: 12 perguntas antes de trocar de sistema', 'desc' => 'Material em PDF para levar para a reunião com fornecedores', 'url' => se_url_pagina( 'material-trocar-de-sistema' ), 'icone' => 'documento' ),
 						array( 'nome' => 'Visão geral da plataforma', 'desc' => 'A apresentação completa, módulo a módulo', 'url' => $demo, 'icone' => 'apresentacao' ),
 					),
 					'posts'  => true, // últimos artigos publicados

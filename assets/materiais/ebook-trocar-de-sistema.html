@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>12 perguntas antes de trocar o sistema de gestão</title>
+<!-- Poppins é a fonte da marca. Precisa vir da rede na hora de gerar o PDF,
+     senão o Chrome cai numa sans genérica e o material sai fora da identidade.
+     Depois de gerado o PDF a fonte já está embutida no arquivo. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<!--
+  FONTE do PDF entregue no material rico.
+
+  Este arquivo não é servido ao visitante: ele é o original de onde o PDF é
+  gerado, por Chrome headless:
+
+    chrome --headless --disable-gpu --no-pdf-header-footer \
+           --print-to-pdf=ebook-12-perguntas-trocar-de-sistema.pdf \
+           file:///.../ebook-trocar-de-sistema.html
+
+  Mantido junto do PDF de propósito: material rico envelhece, e quem for
+  atualizar o texto daqui a um ano precisa do original, não de um PDF fechado.
+-->
+<style>
+  @page { size: A4; margin: 0; }
+
+  :root{
+    --navy:#080b6c;
+    --azul:#4a78b0;
+    --fundo:#030429;
+    --texto:#3a3b58;
+    --forte:#07082c;
+    --fraco:#54546d;
+    --linha:rgba(3,4,41,.13);
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  body{
+    font-family:'Poppins','Segoe UI',system-ui,sans-serif;
+    color:var(--texto);
+    font-size:10.5pt;
+    line-height:1.6;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+
+  .pagina{
+    width:210mm; height:297mm;
+    padding:22mm 20mm;
+    position:relative;
+    page-break-after:always;
+    overflow:hidden;
+  }
+  .pagina:last-child{ page-break-after:auto; }
+
+  /* ---------------------------------------------------------------- capa */
+  .capa{
+    background:linear-gradient(135deg,var(--navy),var(--fundo));
+    color:#fff;
+    display:flex; flex-direction:column; justify-content:space-between;
+  }
+  .capa::before{
+    content:""; position:absolute; inset:0;
+    background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.05) 0 2px,transparent 2px 15px);
+  }
+  .capa::after{
+    content:""; position:absolute; right:-14%; bottom:-26%;
+    width:64%; aspect-ratio:1;
+    background:repeating-radial-gradient(circle at 50% 50%,
+      rgba(255,255,255,0) 0 13px, rgba(255,255,255,.13) 13px 14px);
+    -webkit-mask-image:radial-gradient(circle at 50% 50%,#000 48%,transparent 76%);
+  }
+  .capa > *{ position:relative; }
+
+  .selo{
+    display:inline-block;
+    font-size:8pt; font-weight:700; letter-spacing:.16em; text-transform:uppercase;
+    padding:4pt 10pt; border-radius:99pt;
+    background:rgba(255,255,255,.16); border:.5pt solid rgba(255,255,255,.3);
+  }
+  .capa h1{
+    font-size:34pt; font-weight:800; line-height:1.03; letter-spacing:-.03em;
+    margin:14mm 0 6mm;
+  }
+  .capa h1 em{ font-style:normal; color:#96b1d1; }
+  .capa .sub{ font-size:12pt; color:#c9cbd6; max-width:135mm; line-height:1.55; }
+  .capa .rodape{ font-size:9pt; color:#8b8c9d; }
+  .capa .rodape strong{ color:#fff; font-weight:700; }
+
+  /* -------------------------------------------------------------- comuns */
+  h2{
+    font-size:19pt; font-weight:800; color:var(--forte);
+    letter-spacing:-.02em; line-height:1.15; margin-bottom:4mm;
+  }
+  h3{
+    font-size:12.5pt; font-weight:700; color:var(--forte);
+    letter-spacing:-.01em; line-height:1.25;
+  }
+  p{ margin-bottom:3.5mm; }
+  p:last-child{ margin-bottom:0; }
+  strong{ color:var(--forte); font-weight:600; }
+
+  .olho{
+    font-size:8pt; font-weight:700; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--azul); margin-bottom:3mm;
+  }
+
+  .abertura p{ font-size:11pt; line-height:1.7; }
+
+  /* --------------------------------------------------------- as perguntas */
+  .q{ margin-bottom:4.8mm; }
+  .q:last-child{ margin-bottom:0; }
+
+  .q-topo{ display:flex; gap:4mm; align-items:baseline; margin-bottom:2mm; }
+  .q-num{
+    font-size:15pt; font-weight:800; color:var(--azul);
+    letter-spacing:-.03em; min-width:11mm;
+  }
+  .q-corpo{ padding-left:15mm; }
+  .q-corpo p{ margin-bottom:2mm; font-size:9.8pt; }
+
+  .marca-boa, .marca-alerta{
+    font-size:9pt; padding:2.2mm 3.5mm; border-radius:2mm; margin-bottom:1.6mm;
+  }
+  .marca-boa{ background:rgba(74,120,176,.10); border-left:1.2mm solid var(--azul); }
+  .marca-alerta{ background:rgba(171,8,13,.07); border-left:1.2mm solid #ab080d; }
+  .marca-boa b, .marca-alerta b{
+    display:block; font-size:8pt; letter-spacing:.12em; text-transform:uppercase;
+    margin-bottom:1mm;
+  }
+  .marca-boa b{ color:#1f3184; }
+  .marca-alerta b{ color:#ab080d; }
+
+  /* --------------------------------------------------------- lista final */
+  .checklist{ margin-top:4mm; }
+  .checklist li{
+    list-style:none; display:flex; gap:3.5mm; align-items:flex-start;
+    padding:2.6mm 0; border-top:.4pt solid var(--linha); font-size:10pt;
+  }
+  .checklist li:last-child{ border-bottom:.4pt solid var(--linha); }
+  .caixa{
+    width:4mm; height:4mm; border:.6pt solid var(--azul); border-radius:.8mm;
+    flex:none; margin-top:1.2mm;
+  }
+
+  /* -------------------------------------------------------------- fecho */
+  .fecho{
+    background:linear-gradient(135deg,var(--navy),var(--fundo));
+    color:#fff; display:flex; flex-direction:column; justify-content:center;
+  }
+  .fecho::before{
+    content:""; position:absolute; inset:0;
+    background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.05) 0 2px,transparent 2px 15px);
+  }
+  .fecho > *{ position:relative; }
+  .fecho h2{ color:#fff; font-size:24pt; margin-bottom:6mm; }
+  .fecho p{ color:#c9cbd6; font-size:11pt; max-width:140mm; }
+  .fecho .cta{
+    display:inline-block; margin-top:8mm;
+    background:#fff; color:var(--navy);
+    font-size:11pt; font-weight:700;
+    padding:4mm 9mm; border-radius:3mm; text-decoration:none;
+  }
+  .fecho .assinatura{
+    margin-top:16mm; padding-top:5mm;
+    border-top:.5pt solid rgba(255,255,255,.2);
+    font-size:9pt; color:#8b8c9d;
+  }
+
+  .num-pag{
+    position:absolute; bottom:12mm; right:20mm;
+    font-size:8pt; color:var(--fraco);
+  }
+  .rodape-marca{
+    position:absolute; bottom:12mm; left:20mm;
+    font-size:8pt; color:var(--fraco); letter-spacing:.06em;
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================ capa -->
+<section class="pagina capa">
+  <div>
+    <span class="selo">Guia para mantenedores e gestores</span>
+  </div>
+
+  <div>
+    <h1>12 perguntas antes de <em>trocar o sistema</em> de gestão</h1>
+    <p class="sub">
+      Um roteiro para conduzir a migração sem parar a secretaria no meio do
+      período letivo. Serve para ensino superior, educação básica e cursos
+      livres.
+    </p>
+  </div>
+
+  <div class="rodape">
+    <strong>Send Educacional</strong><br>
+    Software de gestão desde 1994, em educação desde 2019.
+  </div>
+</section>
+
+<!-- ======================================================== abertura -->
+<section class="pagina abertura">
+  <p class="olho">Antes de começar</p>
+  <h2>O medo de trocar é legítimo. Fingir que não existe é que dá errado.</h2>
+
+  <p>
+    Toda instituição que pensa em trocar de sistema esbarra no mesmo receio: se
+    a migração der errado, quem paga o preço é a secretaria, no meio do período
+    letivo, com aluno na fila e prazo de órgão regulador correndo.
+  </p>
+  <p>
+    Esse receio é justo. Migração mal conduzida não é um problema de software,
+    é um problema de operação: histórico que chega pela metade, título
+    financeiro que aparece com saldo diferente, regra de cálculo que só existia
+    na cabeça de quem operava o sistema antigo e que ninguém escreveu em lugar
+    nenhum.
+  </p>
+  <p>
+    A boa notícia é que quase todo desastre de migração é previsível. Ele
+    aparece nas respostas que o fornecedor dá, ou deixa de dar, antes de
+    assinar. Este guia reúne as doze perguntas que separam uma proposta
+    honesta de uma promessa vaga.
+  </p>
+  <p>
+    Use como roteiro de reunião. Faça as doze para todos os fornecedores que
+    estiver avaliando, incluindo o seu atual, e compare as respostas lado a
+    lado. Perguntas iguais tornam propostas comparáveis, e é aí que a diferença
+    de verdade aparece.
+  </p>
+
+  <p class="olho" style="margin-top:12mm">Como ler cada pergunta</p>
+  <div class="marca-boa">
+    <b>Resposta que tranquiliza</b>
+    O que você deve ouvir de um fornecedor que já fez isso muitas vezes.
+  </div>
+  <div class="marca-alerta">
+    <b>Sinal de alerta</b>
+    A resposta que costuma virar problema depois da assinatura.
+  </div>
+
+  <span class="rodape-marca">SEND EDUCACIONAL</span>
+  <span class="num-pag">2</span>
+</section>
+
+<!-- =================================================== perguntas 1 a 3 -->
+<section class="pagina">
+  <p class="olho">Parte 1 · O que vem junto da sua base</p>
+  <h2>Os dados</h2>
+
+  <div class="q">
+    <div class="q-topo"><span class="q-num">01</span><h3>O que exatamente vai ser migrado, e o que fica para trás?</h3></div>
+    <div class="q-corpo">
+      <p>
+        "Migramos tudo" não é resposta. Peça a lista: alunos ativos, alunos
+        formados, evadidos, histórico completo, aproveitamento de estudos,
+        dependências, adaptações, títulos financeiros, contratos, documentos
+        digitalizados. Cada item que ficar de fora vira consulta manual ao
+        sistema antigo por anos.
+      </p>
+      <div class="marca-boa">
+        <b>Resposta que tranquiliza</b>
+        Uma planilha de escopo, item a item, com o que entra, o que não entra e
+        o que entra parcialmente, assinada antes do contrato.
+      </div>
+      <div class="marca-alerta">
+        <b>Sinal de alerta</b>
+        "Depois a gente vê na implantação." O escopo de dados é a parte mais
+        cara de renegociar depois.
+      </div>
+    </div>
+  </div>
+
+  <div class="q">
+    <div class="q-topo"><span class="q-num">02</span><h3>Quem responde pelo histórico de quem já saiu?</h3></div>
+    <div class="q-corpo">
+      <p>
+        A instituição é obrigada a emitir histórico e certificado de alunos que
+        se formaram há muitos anos. Se esses registros ficarem só no sistema
+        antigo, você vai manter uma licença viva só para consulta, ou vai
+        depender de um backup que ninguém sabe abrir.
+      </p>
+      <div class="marca-boa">
+        <b>Resposta que tranquiliza</b>
+        O acervo histórico entra na migração, ou entra digitalizado no GED, com
+        busca por aluno e emissão pelo sistema novo.
+      </div>
+      <div class="marca-alerta">
+        <b>Sinal de alerta</b>
+        "Guarde o sistema antigo ligado por garantia." Isso é custo recorrente
+        que ninguém colocou na conta.
+      </div>
+    </div>
+  </div>
+
+  <div class="q">
+    <div class="q-topo"><span class="q-num">03</span><h3>Os títulos em aberto chegam do outro lado com o mesmo saldo?</h3></div>
+    <div class="q-corpo">
+      <p>
+        Acordos parcelados, bolsas, descontos por convênio, FIES e PROUNI têm
+        regra própria de cálculo. Um centavo de diferença por título vira
+        centenas de ligações da tesouraria no primeiro mês.
+      </p>
+      <div class="marca-boa">
+        <b>Resposta que tranquiliza</b>
+        Uma conciliação de saldos, título a título, comparando sistema antigo e
+        novo, com relatório de divergências antes da virada.
+      </div>
+      <div class="marca-alerta">
+        <b>Sinal de alerta</b>
+        Conferência por amostragem. Divergência financeira não aparece na
+        amostra, aparece no boleto do aluno.
+      </div>
+    </div>
+  </div>
+
+  <span class="rodape-marca">SEND EDUCACIONAL</span>
+  <span class="num-pag">3</span>
+</section>
+
+<!-- =================================================== perguntas 4 a 6 -->
+<section class="pagina">
+  <p class="olho">Parte 2 · O que não está escrito em lugar nenhum</p>
+  <h2>As regras da casa</h2>
+
+  <div class="q">
+    <div class="q-topo"><span class="q-num">04</span><h3>Quem vai levantar as regras que só existem na prática?</h3></div>
+    <div class="q-corpo">
+      <p>
+        Toda instituição tem exceções: arredondamento de nota, tolerância de
+        frequência, desconto de irmão, regra de rematrícula de quem tem
+        dependência, prazo de carência antes de mandar para cobrança. Essas
+        regras raramente estão em documento. Elas estão na cabeça de duas ou
+        três pessoas.
+      </p>
+      <div class="marca-boa">
+        <b>Resposta que tranquiliza</b>
+        Uma etapa formal de levantamento de processos, com um consultor
+        entrevistando cada setor e devolvendo o que entendeu por escrito.
+      </div>
+      <div class="marca-alerta">
+        <b>Sinal de alerta</b>
+        Um formulário para a instituição preencher sozinha. Quem opera não sabe
+        que a regra dele é exceção, justamente porque para ele é o normal.
+      </div>
+    </div>
+  </div>
+
+  <div class="q">
+    <div class="q-topo"><span class="q-num">05</span><h3>Em que ponto do calendário a virada acontece?</h3></div>
+    <div class="q-corpo">
+      <p>
+        Trocar de sistema no meio do semestre, com diário aberto e mensalidade
+        correndo, multiplica o risco. Existem janelas naturais: depois do
+        fechamento das notas, antes da abertura da rematrícula.
+      </p>
+      <div class="marca-boa">
+        <b>Resposta que tranquiliza</b>
+        Um cronograma amarrado ao SEU calendário letivo, com a data de virada
+        escolhida junto e um plano do que fazer se atrasar.
+      </div>
+      <div class="marca-alerta">
+        <b>Sinal de alerta</b>
+        Data definida pela agenda do fornecedor, ou pelo fechamento do trimestre
+        comercial dele.
+      </div>
+    </div>
+  </div>
+
+  <div class="q">
+    <div class="q-topo"><span class="q-num">06</span><h3>Quem treina cada setor, e quando?</h3></div>
+    <div class="q-corpo">
+      <p>
+        Secretaria, tesouraria, coordenação e docentes usam partes diferentes do
+        sistema e têm rotinas diferentes. Treinamento único para todo mundo, em
+        uma tarde, é treinamento que ninguém aproveita.
+      </p>
+      <div class="marca-boa">
+        <b>Resposta que tranquiliza</b>
+        Treinamento por setor, com material que fica, e uma pessoa de referência
+        disponível nos primeiros dias de operação real.
+      </div>
+      <div class="marca-alerta">
+        <b>Sinal de alerta</b>
+        "Enviamos os vídeos e o manual em PDF." Manual não responde pergunta às
+        sete da manhã do primeiro dia de matrícula.
+      </div>
+    </div>
+  </div>
+
+  <span class="rodape-marca">SEND EDUCACIONAL</span>
+  <span class="num-pag">4</span>
+</section>
+
+<!-- =================================================== perguntas 7 a 9 -->
+<section class="pagina">
+  <p class="olho">Parte 3 · O mundo fora do sistema</p>
+  <h2>Regulação, integrações e o aluno</h2>
+
+  <div class="q">
+    <div class="q-topo"><span class="q-num">07</span><h3>O sistema atende à regulação do meu segmento?</h3></div>
+    <div class="q-corpo">
+      <p>
+        Cada segmento presta contas a alguém diferente. No ensino superior é
+        MEC, Censo do INEP, ENADE, portaria de diploma digital e
+        recredenciamento. Na educação básica são os Conselhos e as Secretarias
+        de Educação, mais o Censo Escolar. No curso livre não há órgão
+        regulador, mas valem a LGPD e o Código de Defesa do Consumidor.
+      </p>
+      <div class="marca-boa">
+        <b>Resposta que tranquiliza</b>
+        O fornecedor cita as obrigações do SEU segmento sem você precisar
+        explicar, e mostra a tela onde cada exportação é gerada.
+      </div>
+      <div class="marca-alerta">
+        <b>Sinal de alerta</b>
+        Um discurso genérico de "atendemos toda a educação", sem entrar em uma
+        obrigação concreta do seu tipo de instituição.
+      </div>
+    </div>
+  </div>
+
+  <div class="q">
+    <div class="q-topo"><span class="q-num">08</span><h3>O que acontece com as integrações que já funcionam?</h3></div>
+    <div class="q-corpo">
+      <p>
+        Gateway de pagamento, conciliação bancária, contabilidade, assinatura
+        eletrônica, ambiente de aula. Cada integração que quebra na troca vira
+        trabalho manual que você não tinha.
+      </p>
+      <div class="marca-boa">
+        <b>Resposta que tranquiliza</b>
+        Uma lista das integrações nativas, quais são homologadas e o que
+        acontece com as que não têm equivalente.
+      </div>
+      <div class="marca-alerta">
+        <b>Sinal de alerta</b>
+        "Integramos com qualquer coisa via API." Traduzindo: existe projeto de
+        integração, e ele não está no preço.
+      </div>
+    </div>
+  </div>
+
+  <div class="q">
+    <div class="q-topo"><span class="q-num">09</span><h3>O aluno vai perder acesso a alguma coisa?</h3></div>
+    <div class="q-corpo">
+      <p>
+        Se na segunda-feira o aluno não conseguir emitir o boleto, ver a nota ou
+        baixar o material, a troca de sistema vira crise de imagem antes de
+        virar problema técnico. E a reclamação chega pela família, não pelo
+        suporte.
+      </p>
+      <div class="marca-boa">
+        <b>Resposta que tranquiliza</b>
+        Portal e aplicativo do aluno prontos antes da virada, com comunicado
+        pronto e período de convivência entre os dois acessos.
+      </div>
+      <div class="marca-alerta">
+        <b>Sinal de alerta</b>
+        O portal do aluno entra "na segunda fase". A segunda fase costuma
+        demorar mais do que a primeira.
+      </div>
+    </div>
+  </div>
+
+  <span class="rodape-marca">SEND EDUCACIONAL</span>
+  <span class="num-pag">5</span>
+</section>
+
+<!-- ================================================= perguntas 10 a 12 -->
+<section class="pagina">
+  <p class="olho">Parte 4 · O contrato</p>
+  <h2>Custo, suporte e saída</h2>
+
+  <div class="q">
+    <div class="q-topo"><span class="q-num">10</span><h3>Quanto custa de verdade, somando tudo?</h3></div>
+    <div class="q-corpo">
+      <p>
+        Licença mensal é só uma linha da conta. Some implantação, migração de
+        base, treinamento, módulos cobrados à parte, horas de consultoria para
+        ajuste e o custo de manter o sistema antigo ligado durante a transição.
+        Sistema barato que exige três planilhas por fora sai caro.
+      </p>
+      <div class="marca-boa">
+        <b>Resposta que tranquiliza</b>
+        Um custo total de doze e de trinta e seis meses, com o que é uma vez só
+        separado do que é recorrente.
+      </div>
+      <div class="marca-alerta">
+        <b>Sinal de alerta</b>
+        Proposta só com o valor por aluno por mês. É o número mais fácil de
+        deixar bonito e o que menos diz.
+      </div>
+    </div>
+  </div>
+
+  <div class="q">
+    <div class="q-topo"><span class="q-num">11</span><h3>Como é o suporte depois que a implantação termina?</h3></div>
+    <div class="q-corpo">
+      <p>
+        Durante a venda todo mundo responde rápido. O que importa é o que
+        acontece no dia mais movimentado do ano, quando a secretaria trava às
+        oito da manhã da abertura de matrícula.
+      </p>
+      <div class="marca-boa">
+        <b>Resposta que tranquiliza</b>
+        Canal definido, prazo de resposta por gravidade e a informação de quem
+        atende: gente que conhece educação, não roteiro genérico.
+      </div>
+      <div class="marca-alerta">
+        <b>Sinal de alerta</b>
+        Só formulário na web, sem prazo escrito. Peça para falar com um cliente
+        atual antes de assinar.
+      </div>
+    </div>
+  </div>
+
+  <div class="q">
+    <div class="q-topo"><span class="q-num">12</span><h3>Se um dia eu quiser sair, como levo meus dados?</h3></div>
+    <div class="q-corpo">
+      <p>
+        Parece pergunta rude para fazer numa reunião de venda. É a mais
+        importante. Um fornecedor confiante responde sem hesitar, e a resposta
+        diz muito sobre quem você tem do outro lado.
+      </p>
+      <div class="marca-boa">
+        <b>Resposta que tranquiliza</b>
+        Cláusula de portabilidade no contrato: formato dos arquivos, prazo de
+        entrega e custo, se houver.
+      </div>
+      <div class="marca-alerta">
+        <b>Sinal de alerta</b>
+        Constrangimento com a pergunta, ou "isso a gente resolve na hora".
+      </div>
+    </div>
+  </div>
+
+  <span class="rodape-marca">SEND EDUCACIONAL</span>
+  <span class="num-pag">6</span>
+</section>
+
+<!-- ======================================================= checklist -->
+<section class="pagina">
+  <p class="olho">Para levar impresso</p>
+  <h2>As doze perguntas, em uma página</h2>
+
+  <p style="margin-bottom:6mm">
+    Faça todas para cada fornecedor, incluindo o atual. Marque só o que foi
+    respondido com informação concreta, não com intenção.
+  </p>
+
+  <ul class="checklist">
+    <li><span class="caixa"></span><span><strong>1.</strong> O que exatamente vai ser migrado, e o que fica para trás?</span></li>
+    <li><span class="caixa"></span><span><strong>2.</strong> Quem responde pelo histórico de quem já saiu?</span></li>
+    <li><span class="caixa"></span><span><strong>3.</strong> Os títulos em aberto chegam com o mesmo saldo?</span></li>
+    <li><span class="caixa"></span><span><strong>4.</strong> Quem vai levantar as regras que só existem na prática?</span></li>
+    <li><span class="caixa"></span><span><strong>5.</strong> Em que ponto do calendário letivo a virada acontece?</span></li>
+    <li><span class="caixa"></span><span><strong>6.</strong> Quem treina cada setor, e quando?</span></li>
+    <li><span class="caixa"></span><span><strong>7.</strong> O sistema atende à regulação do meu segmento?</span></li>
+    <li><span class="caixa"></span><span><strong>8.</strong> O que acontece com as integrações que já funcionam?</span></li>
+    <li><span class="caixa"></span><span><strong>9.</strong> O aluno vai perder acesso a alguma coisa?</span></li>
+    <li><span class="caixa"></span><span><strong>10.</strong> Quanto custa de verdade, somando tudo?</span></li>
+    <li><span class="caixa"></span><span><strong>11.</strong> Como é o suporte depois da implantação?</span></li>
+    <li><span class="caixa"></span><span><strong>12.</strong> Se um dia eu quiser sair, como levo meus dados?</span></li>
+  </ul>
+
+  <p style="margin-top:8mm;font-size:9.5pt;color:var(--fraco)">
+    Dica de uso: peça as respostas por escrito, por e-mail. O que o fornecedor
+    aceita colocar no papel é uma informação em si.
+  </p>
+
+  <span class="rodape-marca">SEND EDUCACIONAL</span>
+  <span class="num-pag">7</span>
+</section>
+
+<!-- =========================================================== fecho -->
+<section class="pagina fecho">
+  <div>
+    <p class="olho" style="color:#96b1d1">E quando a resposta for a nossa</p>
+    <h2>A gente conduz a migração, não entrega um manual.</h2>
+    <p>
+      No Send Educacional a troca de sistema tem levantamento de processos,
+      importação da base com conciliação e treinamento por setor, com um
+      consultor junto. Acadêmico, financeiro, secretaria, portais e o ambiente
+      de aula ficam no mesmo sistema, então a nota da avaliação cai no
+      histórico e a cobrança no financeiro sem ninguém reimportar planilha.
+    </p>
+    <p style="margin-top:4mm">
+      Se quiser fazer as doze perguntas para a gente, é só marcar uma conversa.
+      Respondemos todas, inclusive a décima segunda.
+    </p>
+
+    <a class="cta" href="https://sendeducacional.com.br/apresentacao">Ver a plataforma em funcionamento</a>
+
+    <div class="assinatura">
+      <strong style="color:#fff">Send Educacional</strong>, uma solução Send Solutions.<br>
+      Software de gestão desde 1994, em educação desde 2019.<br>
+      sendeducacional.com.br
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

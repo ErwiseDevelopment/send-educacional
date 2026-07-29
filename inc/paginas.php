@@ -29,6 +29,7 @@ function se_semear_conteudo() {
 	$antes = $feito;
 
 	$feito = se_semear_paginas_segmento( $feito );
+	$feito = se_semear_pagina_material( $feito );
 	$feito = se_semear_artigos( $feito );
 
 	if ( $feito !== $antes ) {
@@ -69,6 +70,45 @@ function se_semear_paginas_segmento( $feito ) {
 		if ( ! is_wp_error( $id ) ) {
 			$feito[ $chave ] = (int) $id;
 		}
+	}
+
+	return $feito;
+}
+
+/**
+ * Página do material rico.
+ *
+ * O popup de saída depende de o visitante estar indo embora. A página é o
+ * endereço fixo: dá para linkar no menu, num artigo ou numa campanha.
+ */
+function se_semear_pagina_material( $feito ) {
+	$slug  = 'material-trocar-de-sistema';
+	$chave = 'pagina:' . $slug;
+
+	if ( ! empty( $feito[ $chave ] ) ) {
+		return $feito;
+	}
+
+	$existente = get_page_by_path( $slug );
+	if ( $existente ) {
+		$feito[ $chave ] = (int) $existente->ID;
+		return $feito;
+	}
+
+	$m  = se_material();
+	$id = wp_insert_post( array(
+		'post_type'    => 'page',
+		'post_status'  => 'publish',
+		'post_title'   => $m['titulo'],
+		'post_name'    => $slug,
+		'post_content' => '', // o conteúdo mora no template
+		'meta_input'   => array(
+			'_wp_page_template' => 'page-' . $slug . '.php',
+		),
+	), true );
+
+	if ( ! is_wp_error( $id ) ) {
+		$feito[ $chave ] = (int) $id;
 	}
 
 	return $feito;

@@ -17,6 +17,7 @@ require_once get_template_directory() . '/inc/capa.php';
 require_once get_template_directory() . '/inc/prova-social.php';
 require_once get_template_directory() . '/inc/paginas.php';
 require_once get_template_directory() . '/inc/consentimentos.php';
+require_once get_template_directory() . '/inc/material.php';
 
 /* -------------------------------------------------------------------------
  * Auto-update do tema via GitHub (plugin-update-checker), mesmo esquema do
