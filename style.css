@@ -2,7 +2,7 @@
 Theme Name: Send Educacional
 Description: Tema customizado para o SaaS Send Educacional usando Tailwind CSS.
 Author: Send Solutions
-Version: 2.3.1
+Version: 2.3.2
 */
 
 *, ::before, ::after {
@@ -4655,20 +4655,36 @@ video {
    tingida da marca com o simbolo em azul. O destaque, quando existe, vem do
    preenchimento cheio, nao de um degrade diferente. */
 
+:root,.sup-clara{
+  --icone-fundo:#e9eff8;
+  --icone-borda:rgba(74,120,176,.22);
+  --icone-cor:#335298;
+  --passo-fundo:#e6edf7;
+  --passo-borda:rgba(74,120,176,.24);
+  --passo-cor:#1f3184
+}
+
+.sup-escura{
+  --icone-fundo:#161c46;
+  --icone-borda:rgba(150,177,209,.28);
+  --icone-cor:#96b1d1;
+  --passo-fundo:#1a2150;
+  --passo-borda:rgba(150,177,209,.3);
+  --passo-cor:#fff
+}
+
+/* Fundo OPACO de proposito: na linha do tempo da jornada existe um fio
+   ligando as etapas por tras dos icones. Com fundo translucido o fio
+   aparecia atravessando cada icone. */
+
 .marca-icone{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  background:rgba(74,120,176,.10);
-  border:1px solid rgba(74,120,176,.22);
-  color:#335298;
+  background:var(--icone-fundo);
+  border:1px solid var(--icone-borda);
+  color:var(--icone-cor);
   border-radius:.9rem
-}
-
-.sup-escura .marca-icone{
-  background:rgba(150,177,209,.14);
-  border-color:rgba(150,177,209,.28);
-  color:#96b1d1
 }
 
 .marca-icone-cheio{
@@ -4682,16 +4698,10 @@ video {
   align-items:center;
   justify-content:center;
   border-radius:999px;
-  background:rgba(74,120,176,.12);
-  border:1px solid rgba(74,120,176,.24);
-  color:#1f3184;
+  background:var(--passo-fundo);
+  border:1px solid var(--passo-borda);
+  color:var(--passo-cor);
   font-weight:800
-}
-
-.sup-escura .marca-passo{
-  background:rgba(150,177,209,.16);
-  border-color:rgba(150,177,209,.3);
-  color:#fff
 }
 
 /* ===== Modal de demonstracao =====
