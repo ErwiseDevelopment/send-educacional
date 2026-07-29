@@ -244,7 +244,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
           <li class="flex gap-3"><i class="ti ti-x text-red-300 shrink-0 mt-0.5"></i> Vários sistemas que não conversam entre si.</li>
         </ul>
       </div>
-      <div class="rounded-3xl p-9 txt-forte relative overflow-hidden" style="background:linear-gradient(135deg,#335298,#080b6c)">
+      <div class="sup-escura rounded-3xl p-9 txt-forte relative overflow-hidden" style="background:linear-gradient(135deg,#335298,#080b6c)">
         <div class="absolute -top-10 -right-10 w-48 h-48 bg-white/10 rounded-full blur-2xl"></div>
         <h3 class="text-lg font-bold mb-6 flex items-center gap-2 relative z-10"><span class="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center"><i class="ti ti-check text-sm"></i></span> Com o Send Educacional</h3>
         <ul class="space-y-4 relative z-10 font-medium">
@@ -282,7 +282,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
     <!-- métricas em destaque -->
     <div class="grid lg:grid-cols-3 gap-4 mb-4">
-      <div class="relative overflow-hidden rounded-3xl p-9 flex flex-col justify-between min-h-[220px]" style="background:linear-gradient(150deg,#335298,#080b6c)">
+      <div class="sup-escura relative overflow-hidden rounded-3xl p-9 flex flex-col justify-between min-h-[220px]" style="background:linear-gradient(150deg,#335298,#080b6c)">
         <div class="absolute -top-12 -right-12 w-48 h-48 bg-white/10 rounded-full blur-2xl"></div>
         <div class="relative z-10">
           <div class="text-6xl md:text-7xl font-extrabold tracking-tighter leading-none">3.000</div>
@@ -347,7 +347,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
           </div>
           <div class="bg-white rounded-3xl border border-slate-100 p-7 shadow-[0_20px_50px_-30px_rgba(2,6,23,.4)] w-full text-left hover:-translate-y-1 transition-transform">
             <div class="flex items-center gap-2 mb-3">
-              <span class="text-[11px] font-bold txt-forte px-2.5 py-1 rounded-full" style="background:linear-gradient(100deg,#4a78b0,#080b6c)">Etapa 1</span>
+              <span class="sup-escura text-[11px] font-bold txt-forte px-2.5 py-1 rounded-full" style="background:linear-gradient(100deg,#4a78b0,#080b6c)">Etapa 1</span>
               <span class="text-[11px] font-bold txt uppercase tracking-wide">Semanas 1 a 6</span>
             </div>
             <h4 class="text-lg font-bold text-slate-900 mb-2">Levantamento &amp; migração</h4>
@@ -365,7 +365,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
           </div>
           <div class="bg-white rounded-3xl border border-slate-100 p-7 shadow-[0_20px_50px_-30px_rgba(2,6,23,.4)] w-full text-left hover:-translate-y-1 transition-transform">
             <div class="flex items-center gap-2 mb-3">
-              <span class="text-[11px] font-bold txt-forte px-2.5 py-1 rounded-full" style="background:linear-gradient(100deg,#4a78b0,#080b6c)">Etapa 2</span>
+              <span class="sup-escura text-[11px] font-bold txt-forte px-2.5 py-1 rounded-full" style="background:linear-gradient(100deg,#4a78b0,#080b6c)">Etapa 2</span>
               <span class="text-[11px] font-bold txt uppercase tracking-wide">Semanas 6 a 16</span>
             </div>
             <h4 class="text-lg font-bold text-slate-900 mb-2">Configuração &amp; treinamento</h4>
@@ -383,7 +383,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
           </div>
           <div class="bg-white rounded-3xl border border-slate-100 p-7 shadow-[0_20px_50px_-30px_rgba(2,6,23,.4)] w-full text-left hover:-translate-y-1 transition-transform">
             <div class="flex items-center gap-2 mb-3">
-              <span class="text-[11px] font-bold txt-forte px-2.5 py-1 rounded-full" style="background:linear-gradient(100deg,#080b6c,#2b2d81)">Etapa 3</span>
+              <span class="sup-escura text-[11px] font-bold txt-forte px-2.5 py-1 rounded-full" style="background:linear-gradient(100deg,#080b6c,#2b2d81)">Etapa 3</span>
               <span class="text-[11px] font-bold txt uppercase tracking-wide">Mês ~6</span>
             </div>
             <h4 class="text-lg font-bold text-slate-900 mb-2">Go-live acompanhado</h4>
@@ -399,7 +399,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
     </div>
 
     <div class="mt-12 flex justify-center reveal">
-      <div class="inline-flex items-center gap-3 txt-forte px-7 py-4 rounded-2xl font-bold shadow-lg" style="background:linear-gradient(100deg,#4a78b0,#080b6c)">
+      <div class="sup-escura inline-flex items-center gap-3 txt-forte px-7 py-4 rounded-2xl font-bold shadow-lg" style="background:linear-gradient(100deg,#4a78b0,#080b6c)">
         <i class="ti ti-shield-check text-xl"></i> Do contrato ao go-live em ~6 meses, sem parar a operação.
       </div>
     </div>
@@ -409,7 +409,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 <!-- ===================== CTA FINAL ===================== -->
 <section class="bg-white pb-28 pt-4">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="relative overflow-hidden rounded-[2.5rem] px-8 py-16 md:p-20 text-center" style="background:linear-gradient(120deg,#335298,#1f3184 55%,#080b6c)">
+    <div class="sup-escura relative overflow-hidden rounded-[2.5rem] px-8 py-16 md:p-20 text-center" style="background:linear-gradient(120deg,#335298,#1f3184 55%,#080b6c)">
       <div class="absolute -top-16 -right-16 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
       <div class="absolute -bottom-16 -left-16 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
       <h2 class="relative z-10 text-3xl md:text-5xl font-extrabold txt-forte mb-5 leading-tight">Veja o Send rodando na sua realidade.</h2>
@@ -510,10 +510,10 @@ if ( ! defined( 'ABSPATH' ) ) exit;
   ];
   document.getElementById('grid-modulos').innerHTML = modulos.map(function(m,i){
     var feat = (i===0) ? ' md:col-span-2' : '';
-    var badge = m[2] ? '<span class="absolute top-5 right-5 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full txt-forte" style="background:linear-gradient(100deg,#4a78b0,#080b6c)">'+m[2]+'</span>' : '';
+    var badge = m[2] ? '<span class="sup-escura absolute top-5 right-5 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full txt-forte" style="background:linear-gradient(100deg,#4a78b0,#080b6c)">'+m[2]+'</span>' : '';
     return '<div class="group relative bg-white rounded-3xl p-7 border border-slate-200 hover:border-blue-300 hover:shadow-[0_24px_60px_-30px_rgba(37,99,235,.5)] hover:-translate-y-1 transition-all'+feat+'">'
       + badge
-      + '<div class="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 txt-forte" style="background:linear-gradient(135deg,#4a78b0,#080b6c)"><i class="ti '+m[3]+' text-2xl"></i></div>'
+      + '<div class="sup-escura w-12 h-12 rounded-2xl flex items-center justify-center mb-5 txt-forte" style="background:linear-gradient(135deg,#4a78b0,#080b6c)"><i class="ti '+m[3]+' text-2xl"></i></div>'
       + '<h4 class="text-lg font-bold text-slate-900 mb-2">'+m[0]+'</h4>'
       + '<p class="txt-fraco text-sm leading-relaxed">'+m[1]+'</p>'
       + '</div>';

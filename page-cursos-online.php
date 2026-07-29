@@ -140,7 +140,7 @@ get_header(); ?>
                     foreach ( $co_jornada as $n => $j ) {
                         printf(
                             '<div class="text-center px-1">
-                                <div class="relative w-14 h-14 mx-auto rounded-2xl flex items-center justify-center mb-4 z-10 ring-4 ring-[#030429] txt-forte font-extrabold" style="background:linear-gradient(135deg,%s,#4a78b0)">%d</div>
+                                <div class="sup-escura relative w-14 h-14 mx-auto rounded-2xl flex items-center justify-center mb-4 z-10 ring-4 ring-[#030429] txt-forte font-extrabold" style="background:linear-gradient(135deg,%s,#4a78b0)">%d</div>
                                 <h4 class="text-sm font-bold txt-forte leading-tight">%s</h4>
                                 <p class="text-[12px] txt mt-1 leading-snug">%s</p>
                             </div>',

@@ -83,7 +83,7 @@
                     <div class="p-5 md:p-6 text-left">
                         <div class="flex items-center justify-between mb-5">
                             <div class="flex items-center gap-2.5">
-                                <span class="w-8 h-8 rounded-lg flex items-center justify-center" style="background:linear-gradient(135deg,#4a78b0,#080b6c)"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 5 3 9l9 4 9-4-9-4z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M7 11v4c0 1 2.5 2.5 5 2.5s5-1.5 5-2.5v-4"></path></svg></span>
+                                <span class="sup-escura w-8 h-8 rounded-lg flex items-center justify-center" style="background:linear-gradient(135deg,#4a78b0,#080b6c)"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 5 3 9l9 4 9-4-9-4z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M7 11v4c0 1 2.5 2.5 5 2.5s5-1.5 5-2.5v-4"></path></svg></span>
                                 <span class="txt-forte font-extrabold text-sm tracking-tight">SEND <span class="txt-fraco font-medium">EDUCACIONAL</span></span>
                                 <span class="hidden sm:inline text-slate-600">|</span>
                                 <span class="hidden sm:inline txt text-sm font-semibold">Faculdade Exemplo</span>
@@ -319,7 +319,7 @@
                     );
                     foreach ( $fp_jornada as $j ) {
                         $classe = $j[3] ? 'marca-icone marca-icone-cheio' : 'marca-icone';
-                        $badge = $j[3] ? '<span class="absolute -top-2 -right-2 text-[8px] font-black uppercase tracking-wider txt-forte px-1.5 py-0.5 rounded-full" style="background:linear-gradient(100deg,#080b6c,#2b2d81)">Novo</span>' : '';
+                        $badge = $j[3] ? '<span class="sup-escura absolute -top-2 -right-2 text-[8px] font-black uppercase tracking-wider txt-forte px-1.5 py-0.5 rounded-full" style="background:linear-gradient(100deg,#080b6c,#2b2d81)">Novo</span>' : '';
                         printf(
                             '<div class="text-center px-1">
                                 <div class="relative w-14 h-14 mx-auto mb-4 z-10 %s">

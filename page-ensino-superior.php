@@ -101,7 +101,7 @@ get_header(); ?>
                     );
                     foreach ( $es_jornada as $n => $j ) {
                         printf(
-                            '<li class="flex items-start gap-4"><span class="w-8 h-8 rounded-xl flex items-center justify-center text-sm font-extrabold txt-forte flex-shrink-0" style="background:linear-gradient(135deg,%s,#080b6c)">%d</span><span><span class="block font-bold txt-forte text-sm">%s</span><span class="block txt text-sm leading-snug mt-0.5">%s</span></span></li>',
+                            '<li class="flex items-start gap-4"><span class="sup-escura w-8 h-8 rounded-xl flex items-center justify-center text-sm font-extrabold txt-forte flex-shrink-0" style="background:linear-gradient(135deg,%s,#080b6c)">%d</span><span><span class="block font-bold txt-forte text-sm">%s</span><span class="block txt text-sm leading-snug mt-0.5">%s</span></span></li>',
                             esc_attr( $se_cor ), $n + 1, esc_html( $j[0] ), esc_html( $j[1] )
                         );
                     }
