@@ -318,18 +318,18 @@
                         array( 'Diploma ou certificado', 'Diploma digital no padrão do MEC; certificado com validação nos cursos livres.', '<path stroke-linecap="round" stroke-linejoin="round" d="M12 15a4 4 0 100-8 4 4 0 000 8z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M8.5 13.5 7 21l5-2.5L17 21l-1.5-7.5"></path>', false ),
                     );
                     foreach ( $fp_jornada as $j ) {
-                        $bg    = $j[3] ? 'linear-gradient(135deg,#080b6c,#2b2d81)' : 'linear-gradient(135deg,#4a78b0,#080b6c)';
+                        $classe = $j[3] ? 'marca-icone marca-icone-cheio' : 'marca-icone';
                         $badge = $j[3] ? '<span class="absolute -top-2 -right-2 text-[8px] font-black uppercase tracking-wider txt-forte px-1.5 py-0.5 rounded-full" style="background:linear-gradient(100deg,#080b6c,#2b2d81)">Novo</span>' : '';
                         printf(
                             '<div class="text-center px-1">
-                                <div class="relative w-14 h-14 mx-auto rounded-2xl flex items-center justify-center mb-4 z-10 ring-4 ring-[#030429]" style="background:%s">
-                                    <svg class="w-7 h-7 txt-forte" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">%s</svg>
+                                <div class="relative w-14 h-14 mx-auto mb-4 z-10 %s">
+                                    <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">%s</svg>
                                     %s
                                 </div>
                                 <h4 class="text-sm font-bold txt-forte leading-tight">%s</h4>
                                 <p class="text-[12px] txt mt-1 leading-snug">%s</p>
                             </div>',
-                            $bg, $j[2], $badge, esc_html( $j[0] ), esc_html( $j[1] )
+                            $classe, $j[2], $badge, esc_html( $j[0] ), esc_html( $j[1] )
                         );
                     }
                     ?>
@@ -496,7 +496,7 @@
                         } ?>
                     </ul>
                 </div>
-                <div class="rounded-3xl p-9 relative overflow-hidden" style="background:linear-gradient(135deg,#335298,#080b6c)">
+                <div class="sup-escura rounded-3xl p-9 relative overflow-hidden" style="background:#080b6c">
                     <div class="absolute -top-10 -right-10 w-48 h-48 bg-white/10 rounded-full blur-2xl"></div>
                     <h3 class="text-lg font-bold txt-forte mb-6 flex items-center gap-2 relative z-10"><span class="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></span> Com o Send Educacional</h3>
                     <ul class="space-y-4 relative z-10 font-medium txt-forte">
@@ -542,7 +542,7 @@
                     foreach ( $fp_etapas as $i => $e ) {
                         $line = ( $i < $fp_total - 1 ) ? '<div class="w-px flex-1 bg-white/10 mt-2"></div>' : '';
                         printf(
-                            '<div class="flex gap-5"><div class="flex flex-col items-center"><div class="w-9 h-9 rounded-full igrad flex items-center justify-center font-bold text-sm txt-forte shrink-0">%s</div>%s</div><div class="pb-2"><h4 class="text-lg font-bold txt-forte">%s</h4><p class="text-sm txt mt-1">%s</p></div></div>',
+                            '<div class="flex gap-5"><div class="flex flex-col items-center"><div class="marca-passo w-9 h-9 text-sm shrink-0">%s</div>%s</div><div class="pb-2"><h4 class="text-lg font-bold txt-forte">%s</h4><p class="text-sm txt mt-1">%s</p></div></div>',
                             esc_html( $e[0] ), $line, esc_html( $e[1] ), esc_html( $e[2] )
                         );
                     }

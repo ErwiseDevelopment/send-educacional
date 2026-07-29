@@ -6,6 +6,10 @@
  * segmentos e sem ele é impossível rotear o lead para o consultor certo.
  * Cargo e porte mudam conforme o segmento escolhido (as listas vêm de
  * inc/segmentos.php, para não haver duas verdades).
+ *
+ * Visual: o modal abria como um cartão branco anônimo, sem nada que dissesse
+ * que era o mesmo site. Agora tem a faixa da marca no topo, com a logo, e usa
+ * os mesmos campos e botões do resto das páginas.
  */
 if ( ! defined( 'ABSPATH' ) ) exit;
 
@@ -13,110 +17,115 @@ $md_segmentos = se_segmentos();
 ?>
 <div id="demo-modal" class="hidden fixed inset-0 z-[100] overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
 
-    <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:p-0">
-        <div class="sup-escura fixed inset-0 bg-slate-900/60 backdrop-blur-md transition-opacity" onclick="fecharDemo()"></div>
+    <div class="flex items-center justify-center min-h-screen p-4 sm:p-6">
+        <div class="fixed inset-0 se-modal-fundo" onclick="fecharDemo()"></div>
 
-        <div class="relative inline-block align-middle bg-white rounded-[2.5rem] text-left shadow-2xl transform transition-all sm:my-8 sm:max-w-xl sm:w-full overflow-hidden border border-slate-100">
+        <div class="sup-clara relative w-full sm:max-w-lg rounded-[1.75rem] text-left overflow-hidden se-modal-caixa">
 
-            <button onclick="fecharDemo()" class="absolute top-8 right-8 txt hover:text-slate-600 transition-colors z-20" aria-label="Fechar">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-            </button>
+            <!-- faixa da marca: é o que diz, de cara, que você continua no Send -->
+            <div class="sup-escura relative px-7 pt-7 pb-6" style="background:#080b6c">
+                <div class="absolute -top-16 -right-12 w-52 h-52 rounded-full blur-3xl pointer-events-none" style="background:rgba(74,120,176,.6)"></div>
 
-            <div class="px-8 md:px-10 pt-12 pb-12">
-                <div class="mb-8 text-center md:text-left">
-                    <h3 class="text-3xl font-extrabold text-slate-900 tracking-tight" id="modal-title">Agendar demonstração</h3>
-                    <p class="txt-fraco mt-2 font-medium">Comece pelo tipo de instituição: é assim que direcionamos você ao consultor daquele segmento.</p>
-                </div>
+                <button onclick="fecharDemo()" class="absolute top-5 right-5 z-20 w-9 h-9 rounded-full flex items-center justify-center txt hover-forte transition-colors" style="background:rgba(255,255,255,.14)" aria-label="Fechar">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
 
-                <form id="form-conversao" class="grid grid-cols-1 md:grid-cols-2 gap-6" onsubmit="enviarLead(event)">
+                <img src="<?php echo esc_url( se_logo_url() ); ?>" alt="Send Educacional" class="h-7 w-auto object-contain relative z-10 mb-5">
+
+                <h3 class="titulo text-[1.6rem] leading-tight relative z-10" id="modal-title">Agendar demonstração</h3>
+                <p class="txt text-[14px] leading-relaxed mt-2 relative z-10 max-w-sm">
+                    Comece pelo tipo de instituição: é assim que direcionamos você ao consultor daquele segmento.
+                </p>
+            </div>
+
+            <div class="px-7 py-7">
+                <form id="form-conversao" class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-5" onsubmit="enviarLead(event)">
 
                     <div style="display:none;" aria-hidden="true">
                         <input type="text" id="hp_username" tabindex="-1" autocomplete="off">
                     </div>
 
-                    <!-- SEGMENTO: sem ele não há como rotear o lead -->
                     <fieldset class="col-span-2">
-                        <legend class="text-[10px] font-bold uppercase tracking-widest txt mb-3">Tipo de instituição</legend>
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                        <legend class="se-rotulo mb-2.5">Tipo de instituição</legend>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
                             <?php foreach ( $md_segmentos as $md_slug => $md_s ) : ?>
-                                <label class="lead-seg-opt relative flex flex-col justify-center cursor-pointer rounded-2xl border-2 border-slate-100 bg-slate-50/50 px-4 py-3.5 transition-all hover:border-slate-200">
-                                    <input type="radio" name="lead_segmento" value="<?php echo esc_attr( $md_slug ); ?>" required class="sr-only peer">
-                                    <span class="text-sm font-bold text-slate-800 leading-tight"><?php echo esc_html( $md_s['curto'] ); ?></span>
-                                    <span class="text-[11px] txt-fraco leading-snug mt-0.5"><?php echo esc_html( $md_s['publico'] ); ?></span>
+                                <label class="se-seg-opt">
+                                    <input type="radio" name="lead_segmento" value="<?php echo esc_attr( $md_slug ); ?>" required class="sr-only">
+                                    <span class="se-seg-marca" style="background:<?php echo esc_attr( $md_s['cor_bloco'] ); ?>"></span>
+                                    <span class="block text-[13.5px] font-bold txt-forte leading-tight"><?php echo esc_html( $md_s['curto'] ); ?></span>
+                                    <span class="block text-[11px] txt-fraco leading-snug mt-1"><?php echo esc_html( $md_s['publico'] ); ?></span>
                                 </label>
                             <?php endforeach; ?>
                         </div>
                     </fieldset>
 
-                    <div class="relative col-span-2">
-                        <label for="lead_nome" class="text-[10px] font-bold uppercase tracking-widest txt absolute -top-2 left-4 bg-white px-2 z-10">Nome completo</label>
-                        <input type="text" id="lead_nome" required class="w-full border-2 border-slate-100 rounded-2xl px-5 py-4 focus:outline-none focus:border-blue-600 transition-all bg-slate-50/50 font-medium text-slate-800">
+                    <div class="col-span-2">
+                        <label for="lead_nome" class="se-rotulo">Nome completo</label>
+                        <input type="text" id="lead_nome" required class="se-campo w-full rounded-xl px-4 py-3 mt-1.5 focus:outline-none transition-colors">
                     </div>
 
-                    <div class="relative col-span-2">
-                        <label for="lead_instituicao" class="text-[10px] font-bold uppercase tracking-widest txt absolute -top-2 left-4 bg-white px-2 z-10" id="rot_instituicao">Nome da instituição</label>
-                        <input type="text" id="lead_instituicao" required class="w-full border-2 border-slate-100 rounded-2xl px-5 py-4 focus:outline-none focus:border-blue-600 transition-all bg-slate-50/50 font-medium text-slate-800">
+                    <div class="col-span-2">
+                        <label for="lead_instituicao" class="se-rotulo" id="rot_instituicao">Nome da instituição</label>
+                        <input type="text" id="lead_instituicao" required class="se-campo w-full rounded-xl px-4 py-3 mt-1.5 focus:outline-none transition-colors">
                     </div>
 
-                    <div class="relative col-span-2 md:col-span-1">
-                        <label for="lead_whatsapp" class="text-[10px] font-bold uppercase tracking-widest txt absolute -top-2 left-4 bg-white px-2 z-10">WhatsApp</label>
-                        <input type="tel" id="lead_whatsapp" required class="w-full border-2 border-slate-100 rounded-2xl px-5 py-4 focus:outline-none focus:border-blue-600 transition-all bg-slate-50/50 font-medium text-slate-800" placeholder="(11) 99999-9999">
+                    <div class="col-span-2 sm:col-span-1">
+                        <label for="lead_whatsapp" class="se-rotulo">WhatsApp</label>
+                        <input type="tel" id="lead_whatsapp" required placeholder="(11) 99999-9999" class="se-campo w-full rounded-xl px-4 py-3 mt-1.5 focus:outline-none transition-colors">
                     </div>
 
-                    <div class="relative col-span-2 md:col-span-1">
-                        <label for="lead_email" class="text-[10px] font-bold uppercase tracking-widest txt absolute -top-2 left-4 bg-white px-2 z-10">E-mail</label>
-                        <input type="email" id="lead_email" required class="w-full border-2 border-slate-100 rounded-2xl px-5 py-4 focus:outline-none focus:border-blue-600 transition-all bg-slate-50/50 font-medium text-slate-800" placeholder="voce@suainstituicao.com.br">
+                    <div class="col-span-2 sm:col-span-1">
+                        <label for="lead_email" class="se-rotulo">E-mail</label>
+                        <input type="email" id="lead_email" required placeholder="voce@suainstituicao.com.br" class="se-campo w-full rounded-xl px-4 py-3 mt-1.5 focus:outline-none transition-colors">
                     </div>
 
-                    <div class="relative col-span-2 md:col-span-1">
-                        <label for="lead_cargo" class="text-[10px] font-bold uppercase tracking-widest txt absolute -top-2 left-4 bg-white px-2 z-10">Seu cargo</label>
-                        <select id="lead_cargo" required class="w-full border-2 border-slate-100 rounded-2xl px-5 py-4 focus:outline-none focus:border-blue-600 transition-all bg-slate-50/50 font-medium text-slate-800 appearance-none">
+                    <div class="col-span-2 sm:col-span-1">
+                        <label for="lead_cargo" class="se-rotulo">Seu cargo</label>
+                        <select id="lead_cargo" required class="se-campo se-select w-full rounded-xl px-4 py-3 mt-1.5 focus:outline-none transition-colors">
                             <option value="" disabled selected>Escolha o segmento antes</option>
                         </select>
                     </div>
 
-                    <div class="relative col-span-2 md:col-span-1">
-                        <label for="lead_alunos" class="text-[10px] font-bold uppercase tracking-widest txt absolute -top-2 left-4 bg-white px-2 z-10" id="rot_alunos">Porte</label>
-                        <select id="lead_alunos" required class="w-full border-2 border-slate-100 rounded-2xl px-5 py-4 focus:outline-none focus:border-blue-600 transition-all bg-slate-50/50 font-medium text-slate-800 appearance-none">
+                    <div class="col-span-2 sm:col-span-1">
+                        <label for="lead_alunos" class="se-rotulo" id="rot_alunos">Porte</label>
+                        <select id="lead_alunos" required class="se-campo se-select w-full rounded-xl px-4 py-3 mt-1.5 focus:outline-none transition-colors">
                             <option value="" disabled selected>Escolha o segmento antes</option>
                         </select>
                     </div>
 
-                    <!-- Consentimento de verdade: selo não é base legal. -->
                     <label class="col-span-2 flex items-start gap-3 cursor-pointer">
-                        <input type="checkbox" id="lead_lgpd" required class="mt-0.5 w-5 h-5 shrink-0 rounded-md border-2 border-slate-200 text-blue-700 focus:ring-blue-500 focus:ring-offset-0">
-                        <span class="text-xs txt-fraco leading-relaxed">
+                        <input type="checkbox" id="lead_lgpd" required class="se-check mt-0.5 shrink-0">
+                        <span class="text-[12.5px] txt-fraco leading-relaxed">
                             Autorizo a Send a usar os dados acima para entrar em contato comigo sobre o Send Educacional, conforme a
-                            <a href="<?php echo esc_url( home_url( '/privacidade' ) ); ?>" target="_blank" rel="noopener" class="text-blue-700 font-semibold underline">Política de Privacidade</a>.
+                            <a href="<?php echo esc_url( home_url( '/privacidade' ) ); ?>" target="_blank" rel="noopener" class="txt-link font-semibold underline">Política de Privacidade</a>.
                             Posso pedir a exclusão a qualquer momento.
                         </span>
                     </label>
 
-                    <button type="submit" id="btn_enviar" class="sup-escura col-span-2 bg-blue-600 text-white font-extrabold py-5 rounded-[1.5rem] hover:bg-blue-700 transition-all shadow-xl shadow-blue-500/30 flex justify-center items-center gap-3 text-lg group">
+                    <button type="submit" id="btn_enviar" class="col-span-2 gbtn font-bold py-4 rounded-xl flex justify-center items-center gap-2.5 text-[15px] group transition-all hover:-translate-y-0.5">
                         <span>Falar com um especialista</span>
-                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </button>
+
+                    <p class="col-span-2 text-center text-[11px] txt-fraco -mt-1">
+                        Gratuita e sem compromisso. Respondemos em até um dia útil.
+                    </p>
                 </form>
 
-                <div id="sucesso_container" class="hidden text-center py-10 animate-[fadeIn_0.5s]">
-                    <p id="aviso_registro" class="hidden text-sm text-amber-500 font-bold mb-4">
+                <div id="sucesso_container" class="hidden text-center py-8 animate-[fadeIn_0.5s]">
+                    <p id="aviso_registro" class="hidden text-sm text-amber-600 font-bold mb-4">
                         Não conseguimos registrar seus dados automaticamente, mas seu contato não se perdeu: estamos te levando direto para o especialista.
                     </p>
-                    <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5" style="background:rgba(74,120,176,.14)">
+                        <svg class="w-8 h-8 txt-link" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
                     </div>
-                    <h3 class="text-3xl font-bold text-slate-900">Perfeito!</h3>
-                    <p class="text-slate-600 mt-3">Estamos te redirecionando para o consultor especialista...</p>
+                    <h3 class="titulo text-2xl">Perfeito!</h3>
+                    <p class="txt mt-2">Estamos te redirecionando para o consultor especialista...</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-<style>
-    .lead-seg-opt:has(input:checked) { border-color:#4a78b0; background:#f1f4f9; box-shadow:0 0 0 4px rgba(37,99,235,.12); }
-    .lead-seg-opt input:focus-visible + span { outline:2px solid #4a78b0; outline-offset:2px; }
-</style>
 
 <script>
 (function () {

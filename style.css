@@ -2,7 +2,7 @@
 Theme Name: Send Educacional
 Description: Tema customizado para o SaaS Send Educacional usando Tailwind CSS.
 Author: Send Solutions
-Version: 2.1.0
+Version: 2.2.0
 */
 
 *, ::before, ::after {
@@ -798,10 +798,6 @@ video {
   right: 1.5rem;
 }
 
-.right-8 {
-  right: 2rem;
-}
-
 .right-\[16\%\] {
   right: 16%;
 }
@@ -852,10 +848,6 @@ video {
 
 .top-7 {
   top: 1.75rem;
-}
-
-.top-8 {
-  top: 2rem;
 }
 
 .top-9 {
@@ -959,6 +951,10 @@ video {
 
 .-mr-20 {
   margin-right: -5rem;
+}
+
+.-mt-1 {
+  margin-top: -0.25rem;
 }
 
 .-mt-10 {
@@ -1243,6 +1239,10 @@ video {
   height: 1.25rem;
 }
 
+.h-52 {
+  height: 13rem;
+}
+
 .h-6 {
   height: 1.5rem;
 }
@@ -1405,6 +1405,10 @@ video {
 
 .w-5 {
   width: 1.25rem;
+}
+
+.w-52 {
+  width: 13rem;
 }
 
 .w-56 {
@@ -1662,12 +1666,6 @@ video {
 
 .list-none {
   list-style-type: none;
-}
-
-.appearance-none {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
 }
 
 .grid-cols-1 {
@@ -1994,6 +1992,10 @@ video {
 
 .rounded-\[1\.5rem\] {
   border-radius: 1.5rem;
+}
+
+.rounded-\[1\.75rem\] {
+  border-radius: 1.75rem;
 }
 
 .rounded-\[2\.5rem\] {
@@ -2323,11 +2325,6 @@ video {
   background-color: rgb(43 45 129 / 0.2);
 }
 
-.bg-green-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(220 252 231 / var(--tw-bg-opacity, 1));
-}
-
 .bg-green-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(240 253 244 / var(--tw-bg-opacity, 1));
@@ -2431,10 +2428,6 @@ video {
   background-color: rgb(247 247 249 / var(--tw-bg-opacity, 1));
 }
 
-.bg-slate-50\/50 {
-  background-color: rgb(247 247 249 / 0.5);
-}
-
 .bg-slate-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(109 109 131 / var(--tw-bg-opacity, 1));
@@ -2461,10 +2454,6 @@ video {
 
 .bg-slate-900\/50 {
   background-color: rgb(18 19 54 / 0.5);
-}
-
-.bg-slate-900\/60 {
-  background-color: rgb(18 19 54 / 0.6);
 }
 
 .bg-slate-950 {
@@ -2943,6 +2932,11 @@ video {
   padding-bottom: 1.5rem;
 }
 
+.py-7 {
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
+}
+
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -3085,6 +3079,10 @@ video {
   padding-top: 1.5rem;
 }
 
+.pt-7 {
+  padding-top: 1.75rem;
+}
+
 .pt-8 {
   padding-top: 2rem;
 }
@@ -3099,10 +3097,6 @@ video {
 
 .text-right {
   text-align: right;
-}
-
-.align-middle {
-  vertical-align: middle;
 }
 
 .font-mono {
@@ -3147,6 +3141,10 @@ video {
   font-size: 1.35rem;
 }
 
+.text-\[1\.6rem\] {
+  font-size: 1.6rem;
+}
+
 .text-\[10px\] {
   font-size: 10px;
 }
@@ -3173,6 +3171,10 @@ video {
 
 .text-\[14\.5px\] {
   font-size: 14.5px;
+}
+
+.text-\[14px\] {
+  font-size: 14px;
 }
 
 .text-\[15px\] {
@@ -4340,8 +4342,9 @@ video {
 }
 
 /* ===== Bloco de segmento em cor chapada (inc/segmentos.php) =====
-   Substitui o cartao de vidro. O texto vai no azul profundo da marca porque
-   branco sobre estes tons nao passa de 3:1 de contraste; escuro passa de 6:1. */
+   Substitui o cartao de vidro. Os tres nao usam matizes soltos: sao tres
+   profundidades do azul da marca (#080b6c, #335298, #4a78b0), com texto branco
+   em todos. Contraste 16.5, 7.5 e 4.6. */
 
 .se-bloco-seg{
   display:flex;
@@ -4349,7 +4352,7 @@ video {
   height:100%;
   padding:1.75rem;
   border-radius:1.5rem;
-  color:#030429;
+  color:#fff;
   transition:transform .25s ease,box-shadow .25s ease
 }
 
@@ -4371,8 +4374,9 @@ video {
   height:2.75rem;
   border-radius:.9rem;
   margin-bottom:1.15rem;
-  background:rgba(3,4,41,.14);
-  color:#030429
+  background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.24);
+  color:#fff
 }
 
 /* ===== Comparativo dos tres segmentos ===== */
@@ -4421,7 +4425,7 @@ video {
   font-weight:700;
   letter-spacing:.04em;
   text-transform:uppercase;
-  color:#030429;
+  color:#fff;
   border-radius:999px;
   padding:.25rem .7rem
 }
@@ -4618,9 +4622,9 @@ video {
    escuro, independente da superficie em que o bloco estiver. */
 
 .se-bloco-seg{
-  --t-forte:#030429;
-  --t:#030429;
-  --t-fraco:rgba(3,4,41,.7)
+  --t-forte:#fff;
+  --t:#fff;
+  --t-fraco:rgba(255,255,255,.78)
 }
 
 /* Botao de acao tem fundo escuro proprio: o rotulo e branco em qualquer
@@ -4662,6 +4666,156 @@ video {
 .se-campo:focus{
   border-color:#4a78b0;
   box-shadow:0 0 0 3px rgba(74,120,176,.18)
+}
+
+/* ===== Uma linguagem so para icone, passo e marcador =====
+   O site tinha tres tratamentos convivendo: caixinha de vidro neutra, quadrado
+   com degrade azul e circulo azul solido. Agora e um so: caixa levemente
+   tingida da marca com o simbolo em azul. O destaque, quando existe, vem do
+   preenchimento cheio, nao de um degrade diferente. */
+
+.marca-icone{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(74,120,176,.10);
+  border:1px solid rgba(74,120,176,.22);
+  color:#335298;
+  border-radius:.9rem
+}
+
+.sup-escura .marca-icone{
+  background:rgba(150,177,209,.14);
+  border-color:rgba(150,177,209,.28);
+  color:#96b1d1
+}
+
+.marca-icone-cheio{
+  background:#080b6c;
+  border-color:#080b6c;
+  color:#fff
+}
+
+.marca-passo{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:999px;
+  background:rgba(74,120,176,.12);
+  border:1px solid rgba(74,120,176,.24);
+  color:#1f3184;
+  font-weight:800
+}
+
+.sup-escura .marca-passo{
+  background:rgba(150,177,209,.16);
+  border-color:rgba(150,177,209,.3);
+  color:#fff
+}
+
+/* ===== Modal de demonstracao =====
+   Abria como um cartao branco anonimo. Agora tem faixa da marca no topo e usa
+   os mesmos campos, rotulos e botao do resto do site. */
+
+.se-modal-fundo{
+  background:rgba(3,4,41,.62);
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px)
+}
+
+.se-modal-caixa{
+  box-shadow:0 40px 90px -30px rgba(3,4,41,.55),0 0 0 1px rgba(3,4,41,.06)
+}
+
+.se-rotulo{
+  display:block;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+  color:var(--t-fraco)
+}
+
+/* Opcao de segmento: marca de cor em cima, estado escolhido em azul da marca. */
+
+.se-seg-opt{
+  position:relative;
+  display:block;
+  cursor:pointer;
+  padding:.85rem .8rem .8rem;
+  border-radius:.9rem;
+  background:#fff;
+  border:1.5px solid rgba(3,4,41,.13);
+  transition:border-color .2s ease,box-shadow .2s ease,background-color .2s ease
+}
+
+.se-seg-opt:hover{
+  border-color:rgba(74,120,176,.55)
+}
+
+.se-seg-marca{
+  display:block;
+  width:1.6rem;
+  height:.3rem;
+  border-radius:999px;
+  margin-bottom:.6rem;
+  opacity:.85
+}
+
+.se-seg-opt:has(input:checked){
+  border-color:#080b6c;
+  background:#f1f4f9;
+  box-shadow:0 0 0 3px rgba(8,11,108,.12)
+}
+
+.se-seg-opt:has(input:checked) .se-seg-marca{
+  opacity:1;
+  width:2.4rem
+}
+
+.se-seg-opt:has(input:focus-visible){
+  outline:2px solid #4a78b0;
+  outline-offset:2px
+}
+
+/* Seta propria no select, para nao herdar a do sistema operacional. */
+
+.se-select{
+  -moz-appearance:none;
+       appearance:none;
+  -webkit-appearance:none;
+  padding-right:2.5rem;
+  background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%2354546d' stroke-width='2.2' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:right .9rem center;
+  background-size:1.05rem
+}
+
+.se-check{
+  -moz-appearance:none;
+       appearance:none;
+  -webkit-appearance:none;
+  width:1.15rem;
+  height:1.15rem;
+  border-radius:.35rem;
+  border:1.5px solid rgba(3,4,41,.28);
+  background:#fff;
+  cursor:pointer;
+  transition:all .15s ease
+}
+
+.se-check:checked{
+  background:#080b6c;
+  border-color:#080b6c;
+  background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%23fff' stroke-width='3.2' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M5 13l4 4L19 7'/%3E%3C/svg%3E");
+  background-size:.8rem;
+  background-position:center;
+  background-repeat:no-repeat
+}
+
+.se-check:focus-visible{
+  outline:2px solid #4a78b0;
+  outline-offset:2px
 }
 
 .last\:mb-0:last-child {
@@ -4708,11 +4862,6 @@ video {
 .hover\:border-blue-500:hover {
   --tw-border-opacity: 1;
   border-color: rgb(88 131 182 / var(--tw-border-opacity, 1));
-}
-
-.hover\:border-slate-200:hover {
-  --tw-border-opacity: 1;
-  border-color: rgb(217 217 223 / var(--tw-border-opacity, 1));
 }
 
 .hover\:border-slate-300:hover {
@@ -4874,11 +5023,6 @@ video {
   border-color: rgb(88 131 182 / var(--tw-border-opacity, 1));
 }
 
-.focus\:border-blue-600:focus {
-  --tw-border-opacity: 1;
-  border-color: rgb(74 120 176 / var(--tw-border-opacity, 1));
-}
-
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -5018,9 +5162,8 @@ video {
 }
 
 @media (min-width: 640px) {
-  .sm\:my-8 {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+  .sm\:col-span-1 {
+    grid-column: span 1 / span 1;
   }
 
   .sm\:block {
@@ -5043,12 +5186,8 @@ video {
     width: auto;
   }
 
-  .sm\:w-full {
-    width: 100%;
-  }
-
-  .sm\:max-w-xl {
-    max-width: 36rem;
+  .sm\:max-w-lg {
+    max-width: 32rem;
   }
 
   .sm\:grid-cols-2 {
@@ -5067,8 +5206,8 @@ video {
     flex-direction: row;
   }
 
-  .sm\:p-0 {
-    padding: 0px;
+  .sm\:p-6 {
+    padding: 1.5rem;
   }
 }
 
@@ -5218,11 +5357,6 @@ video {
 
   .md\:p-9 {
     padding: 2.25rem;
-  }
-
-  .md\:px-10 {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
   }
 
   .md\:text-left {
