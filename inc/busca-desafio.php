@@ -83,12 +83,16 @@ function se_bloco_busca_desafio() {
 	foreach ( $segmentos as $slug => $s ) {
 		$meta[ $slug ] = array(
 			'n' => $s['curto'],
-			'c' => $s['cor'],
+			// O bloco vive em superfície clara: aqui vale a variante escura da
+			// cor do segmento. A 'cor' normal foi calculada para fundo escuro e
+			// dava 3.07 de contraste no selo, abaixo do mínimo para texto miúdo.
+			'c' => $s['cor_clara'],
 			'u' => se_segmento_url( $slug ) . '#catalogo',
 		);
 	}
 	?>
-	<section class="relative z-10 py-20">
+	<?php // O id é o destino do buscador que vive no menu (ver se_menu_busca_desafio). ?>
+	<section id="desafio" class="relative z-10 py-20 scroll-mt-28">
 		<div class="container mx-auto px-6 max-w-4xl">
 			<div class="glass rounded-[2rem] p-8 md:p-12 cardring reveal">
 
@@ -252,6 +256,18 @@ function se_bloco_busca_desafio() {
 				desenhar(campo.value);
 			});
 		});
+
+		// Chegou pelo buscador do menu (/?desafio=termo): preenche, busca e
+		// leva a pessoa ate o resultado, senao ela cai no topo da home sem
+		// entender por que o campo la embaixo ja esta preenchido.
+		var doUrl = new URLSearchParams(location.search).get('desafio');
+		if (doUrl) {
+			campo.value = doUrl;
+			desenhar(doUrl);
+			requestAnimationFrame(function () {
+				document.getElementById('desafio').scrollIntoView({ behavior: 'smooth', block: 'start' });
+			});
+		}
 	})();
 	</script>
 	<?php

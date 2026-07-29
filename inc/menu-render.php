@@ -130,6 +130,50 @@ function se_menu_painel_colunas( $item ) {
 	<?php
 }
 
+/**
+ * Busca por desafio dentro do menu.
+ *
+ * O painel de Módulos é organizado do jeito que o produto foi construído
+ * (acadêmico, financeiro, sala de aula). Quem chega no site não pensa assim:
+ * pensa "a secretaria digita a mesma coisa duas vezes" ou "a inadimplência
+ * subiu". Esta é a porta de entrada por PROBLEMA, para quem não sabe o nome
+ * do módulo que precisa.
+ *
+ * É um form GET puro de propósito: cai em /?desafio=termo, e o bloco da home
+ * lê o parâmetro, preenche o campo e rola até o resultado. Funciona mesmo se
+ * o JavaScript do menu falhar.
+ *
+ * @param string $id       Sufixo para o id do campo, os painéis coexistem no DOM.
+ * @param bool   $compacto Versão do menu do celular.
+ */
+function se_menu_busca_desafio( $id, $compacto = false ) {
+	$campo = 'se-busca-menu-' . $id;
+	?>
+	<div class="<?php echo $compacto ? 'mb-5 pb-5' : 'mb-7 pb-6'; ?> border-b linha">
+		<form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get"
+		      class="flex flex-col <?php echo $compacto ? '' : 'lg:flex-row lg:items-center'; ?> gap-3">
+
+			<div class="shrink-0">
+				<span class="block text-sm font-bold txt-forte">Não sabe o nome do módulo?</span>
+				<span class="block text-[12px] txt-fraco">Escreva o que trava a sua operação.</span>
+			</div>
+
+			<label for="<?php echo esc_attr( $campo ); ?>" class="sr-only">Descreva o seu desafio</label>
+			<div class="relative flex-1 min-w-0">
+				<svg class="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 txt-fraco pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.2-5.2M17 10a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+				<input type="search" name="desafio" id="<?php echo esc_attr( $campo ); ?>" autocomplete="off"
+				       placeholder="Ex.: rematrícula, inadimplência, certificado"
+				       class="se-campo w-full rounded-xl pl-10 pr-4 py-2.5 text-sm focus:outline-none transition-colors">
+			</div>
+
+			<button type="submit" class="gbtn txt-forte font-bold px-5 py-2.5 rounded-xl text-sm shrink-0 transition-all hover:-translate-y-0.5">
+				Ver o que resolve
+			</button>
+		</form>
+	</div>
+	<?php
+}
+
 function se_menu_painel( $item ) {
 	$id = 'mega-' . $item['chave'];
 	?>
@@ -139,6 +183,9 @@ function se_menu_painel( $item ) {
 
 		<div class="sup-clara border-t linha shadow-[0_30px_60px_-30px_rgba(3,4,41,.28)]">
 			<div class="container mx-auto px-6 max-w-7xl py-8">
+
+				<?php se_menu_busca_desafio( $item['chave'] ); ?>
+
 				<div class="grid grid-cols-12 gap-8">
 
 					<!-- coluna de categorias -->
@@ -316,6 +363,7 @@ function se_menu_mobile() {
 				</button>
 
 				<div class="se-acc-painel hidden pb-4">
+					<?php se_menu_busca_desafio( 'mob-' . $item['chave'], true ); ?>
 					<?php foreach ( $item['abas'] as $aba ) : ?>
 						<div class="mb-4 last:mb-0">
 							<a href="<?php echo esc_url( $aba['url'] ); ?>" class="flex items-center gap-2.5 mb-2.5">
