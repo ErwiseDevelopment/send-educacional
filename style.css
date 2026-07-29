@@ -2,7 +2,7 @@
 Theme Name: Send Educacional
 Description: Tema customizado para o SaaS Send Educacional usando Tailwind CSS.
 Author: Send Solutions
-Version: 2.5.0
+Version: 2.6.0
 */
 
 *, ::before, ::after {
@@ -4093,6 +4093,130 @@ video {
     opacity:1;
     transform:none;
     transition:none
+  }
+}
+
+/* ===== Logotipo com brilho =====
+   Uma luz atravessa o desenho ao carregar a página e de novo no passar do
+   mouse. O recorte é o alfa do próprio PNG (mask-image), então nada vaza para
+   o fundo e a arte da marca não precisou ser redesenhada.
+
+   A luz é AZUL da marca, não branca: sobre cabeçalho claro, um brilho branco
+   apagaria o logotipo por um instante, e ele pareceria piscar. Em azul, o
+   navy só clareia na passagem. */
+
+.se-logo-marca{
+  position:relative;
+  display:inline-block;
+  line-height:0;
+  transition:transform .3s ease
+}
+
+a:hover .se-logo-marca{
+  transform:scale(1.03)
+}
+
+/* A entrada e a luz automatica so rodam na PRIMEIRA pagina da visita (ver o
+   script no header). Repetir a mesma animacao a cada clique do menu cansa, e
+   e o motivo mais comum de o cliente pedir para tirar depois. */
+
+[data-logo-anima] .se-logo-marca{
+  animation:se-logo-entra .6s cubic-bezier(.22,.8,.25,1) both
+}
+
+@keyframes se-logo-entra{
+  /* As quatro medidas em POR CENTO nos dois lados: misturar 100% com 0 (que
+     vira pixel) impede a interpolacao e o corte vira um salto seco. */
+
+  from{
+    clip-path:inset(0% 100% 0% 0%)
+  }
+
+  to{
+    clip-path:inset(0% 0% 0% 0%)
+  }
+}
+
+.se-logo-brilho{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  -webkit-mask-image:var(--se-logo);
+  mask-image:var(--se-logo);
+  -webkit-mask-size:contain;
+  mask-size:contain;
+  -webkit-mask-repeat:no-repeat;
+  mask-repeat:no-repeat;
+  -webkit-mask-position:center;
+  mask-position:center;
+  background-image:linear-gradient(102deg,transparent 43%,#96b1d1 50%,transparent 57%);
+  background-size:165% 100%;
+  background-repeat:no-repeat;
+  background-position:175% 0;
+  opacity:0
+}
+
+[data-logo-anima] .se-logo-brilho{
+  animation:se-logo-luz 1.15s ease-out .55s 1
+}
+
+/* Mesma animação com outro nome, senão o hover não reinicia depois da primeira. */
+
+.se-logo-marca:hover .se-logo-brilho{
+  animation:se-logo-luz-hover 1.15s ease-out
+}
+
+@keyframes se-logo-luz{
+  0%{
+    background-position:175% 0;
+    opacity:0
+  }
+
+  10%{
+    opacity:1
+  }
+
+  85%{
+    opacity:1
+  }
+
+  100%{
+    background-position:-75% 0;
+    opacity:0
+  }
+}
+
+@keyframes se-logo-luz-hover{
+  0%{
+    background-position:175% 0;
+    opacity:0
+  }
+
+  10%{
+    opacity:1
+  }
+
+  85%{
+    opacity:1
+  }
+
+  100%{
+    background-position:-75% 0;
+    opacity:0
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  [data-logo-anima] .se-logo-marca,
+  [data-logo-anima] .se-logo-brilho,
+  .se-logo-marca:hover .se-logo-brilho{
+    animation:none;
+    opacity:0
+  }
+
+  [data-logo-anima] .se-logo-marca{
+    opacity:1;
+    clip-path:none
   }
 }
 

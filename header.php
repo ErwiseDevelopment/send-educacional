@@ -8,12 +8,27 @@
 </head>
 <body <?php body_class('sup-clara font-sans antialiased'); ?>>
 
+<?php // Marca a primeira pagina da visita: a animacao do logotipo roda uma vez
+      // so, e nao a cada navegacao. Fica antes do cabecalho de proposito, para
+      // o atributo existir antes da primeira pintura e nao dar salto. ?>
+<script>try{if(!sessionStorage.getItem('se-logo-visto')){document.documentElement.setAttribute('data-logo-anima','1');sessionStorage.setItem('se-logo-visto','1');}}catch(e){document.documentElement.setAttribute('data-logo-anima','1');}</script>
+
 <?php $se_home = is_front_page(); ?>
 <header id="se-header" class="sup-clara sticky top-0 z-50 border-b linha">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center gap-4">
        <div class="flex flex-col items-start justify-center shrink-0">
-            <a href="<?php echo home_url(); ?>" class="flex items-center gap-2.5 transition-transform hover:scale-105">
-                <img src="<?php echo esc_url( se_logo_url_claro() ); ?>" alt="Send Educacional"<?php echo se_logo_dimensoes_attr(); ?> class="se-logo w-auto object-contain">
+            <?php
+            // A camada de brilho é recortada pelo ALFA do próprio arquivo do
+            // logotipo (mask-image), então a luz passa só por cima do desenho,
+            // sem tocar no fundo. É por isso que a URL vai também numa
+            // variável CSS: a máscara precisa ser exatamente a mesma imagem.
+            $se_logo = se_logo_url_claro();
+            ?>
+            <a href="<?php echo home_url(); ?>" class="flex items-center gap-2.5">
+                <span class="se-logo-marca" style="--se-logo:url('<?php echo esc_url( $se_logo ); ?>')">
+                    <img src="<?php echo esc_url( $se_logo ); ?>" alt="Send Educacional"<?php echo se_logo_dimensoes_attr(); ?> class="se-logo w-auto object-contain">
+                    <span class="se-logo-brilho" aria-hidden="true"></span>
+                </span>
             </a>
        </div>
 
