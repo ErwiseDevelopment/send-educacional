@@ -45,12 +45,12 @@ function se_capa_simbolo() {
  * Desenha a capa da marca.
  *
  * @param string $altura Classes de altura do bloco (ex.: 'h-48').
- * @param string $porte  'mini' (sem rótulo, selo menor), 'normal' ou 'grande'.
+ * @param string $porte  'mini' (sem rótulo, selo menor) ou 'normal'.
  */
 function se_capa_desenhada( $altura = 'h-48', $porte = 'normal' ) {
 	list( $cor, $fundo, $rotulo ) = se_capa_cor();
 	$classe = 'se-capa ' . $altura . ( $porte === 'mini' ? ' se-capa-mini' : '' );
-	$selo   = 'se-capa-marca' . ( $porte === 'grande' ? ' se-capa-marca-g' : '' );
+	$selo   = 'se-capa-marca';
 	?>
 	<div class="<?php echo esc_attr( $classe ); ?>"
 	     style="background:linear-gradient(135deg,<?php echo esc_attr( $cor ); ?>,<?php echo esc_attr( $fundo ); ?>)"
@@ -80,14 +80,4 @@ function se_capa_post( $tamanho = 'medium_large', $altura = 'h-48', $porte = 'no
 	}
 
 	se_capa_desenhada( $altura, $porte );
-}
-
-/** A mesma capa, em versão grande, para o topo do artigo. */
-function se_capa_post_grande() {
-	if ( has_post_thumbnail() ) {
-		the_post_thumbnail( 'large', array( 'class' => 'w-full h-auto md:h-[420px] object-cover' ) );
-		return;
-	}
-
-	se_capa_desenhada( 'h-56 md:h-[320px]', 'grande' );
 }

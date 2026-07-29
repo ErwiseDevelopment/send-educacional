@@ -197,7 +197,7 @@
     </section>
 
     <!-- ===================== AVA NATIVO ===================== -->
-    <section id="ava" class="relative z-10 py-24">
+    <section id="ava" class="sup-clara sup-clara-2 relative z-10 py-24">
         <div class="container mx-auto px-6 max-w-6xl grid lg:grid-cols-2 gap-14 items-center reveal">
             <div>
                 <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/30 txt-link text-xs font-bold uppercase tracking-widest mb-6">
@@ -297,7 +297,7 @@
     <?php se_bloco_comparativo(); ?>
 
     <!-- ===================== JORNADA COMPLETA ===================== -->
-    <section class="relative z-10 py-24">
+    <section class="sup-clara sup-clara-2 relative z-10 py-24">
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="text-center mb-16 reveal">
                 <span class="txt-link font-bold tracking-widest uppercase text-xs">Uma plataforma, a jornada inteira</span>
@@ -439,7 +439,7 @@
     <?php /* Eram seis cartões idênticos, o pior sintoma de "grade repetida".
              Aqui a seção tem um dominante à esquerda e a lista à direita, em
              filete, sem caixa. */ ?>
-    <section class="relative z-10 py-28">
+    <section class="sup-escura sup-escura-2 relative z-10 py-28">
         <div class="container mx-auto px-6 max-w-6xl grid lg:grid-cols-12 gap-x-16 gap-y-12">
 
             <div class="lg:col-span-5 reveal">
@@ -510,7 +510,7 @@
     </section>
 
     <!-- ===================== SEGURANÇA + MIGRAÇÃO ===================== -->
-    <section class="relative z-10 py-24">
+    <section class="sup-clara sup-clara-2 relative z-10 py-24">
         <div class="container mx-auto px-6 max-w-6xl grid lg:grid-cols-2 gap-14 items-center reveal">
             <div>
                 <span class="txt-link font-bold tracking-widest uppercase text-xs">Segurança &amp; implantação</span>

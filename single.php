@@ -7,23 +7,18 @@ get_header();
 
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-    <section class="pt-32 pb-12 bg-white border-b border-slate-100">
+    <?php // Topo enxuto de propósito: sem a capa, tudo o que sobrava era ar branco. ?>
+    <section class="pt-24 pb-8 bg-white se-artigo-topo">
         <div class="container mx-auto px-6 max-w-4xl text-center">
-            
-            <div class="mb-6 inline-flex">
-                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
-                    <?php 
-                    $categories = get_the_category();
-                    if ( ! empty( $categories ) ) {
-                        echo esc_html( $categories[0]->name );   
-                    } else {
-                        echo 'Comunicação';
-                    }
-                    ?>
-                </span>
+
+            <div class="mb-5 inline-flex">
+                <?php // Rótulo fixo: o leitor está na Comunicação, a categoria já aparece na lista. ?>
+                <a href="<?php echo esc_url( home_url( '/blog' ) ); ?>" class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-blue-100 transition-colors">
+                    Comunicação
+                </a>
             </div>
 
-            <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 leading-tight tracking-tight">
+            <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-5 leading-tight tracking-tight">
                 <?php the_title(); ?>
             </h1>
 
@@ -47,15 +42,11 @@ get_header();
         </div>
     </section>
 
-    <section class="py-12">
+    <section class="py-10">
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="flex flex-col lg:flex-row gap-12">
-                
+
                 <article class="w-full lg:w-2/3">
-                    
-                    <div class="mb-12 rounded-[2rem] overflow-hidden shadow-xl shadow-slate-200/50">
-                        <?php se_capa_post_grande(); ?>
-                    </div>
 
                     <div class="prose prose-lg prose-slate max-w-none prose-headings:font-bold prose-headings:text-slate-900 prose-a:text-blue-700 hover:prose-a:text-blue-500 prose-img:rounded-2xl">
                         <?php the_content(); ?>

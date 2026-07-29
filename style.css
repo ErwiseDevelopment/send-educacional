@@ -2,7 +2,7 @@
 Theme Name: Send Educacional
 Description: Tema customizado para o SaaS Send Educacional usando Tailwind CSS.
 Author: Send Solutions
-Version: 2.3.0
+Version: 2.3.1
 */
 
 *, ::before, ::after {
@@ -1245,10 +1245,6 @@ video {
 
 .h-52 {
   height: 13rem;
-}
-
-.h-56 {
-  height: 14rem;
 }
 
 .h-6 {
@@ -2860,11 +2856,6 @@ video {
   padding-bottom: 2.5rem;
 }
 
-.py-12 {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
 .py-16 {
   padding-top: 4rem;
   padding-bottom: 4rem;
@@ -3755,11 +3746,6 @@ video {
   --tw-shadow: var(--tw-shadow-colored);
 }
 
-.shadow-slate-200\/50 {
-  --tw-shadow-color: rgb(217 217 223 / 0.5);
-  --tw-shadow: var(--tw-shadow-colored);
-}
-
 .shadow-violet-500\/30 {
   --tw-shadow-color: rgb(77 79 149 / 0.3);
   --tw-shadow: var(--tw-shadow-colored);
@@ -3974,19 +3960,19 @@ video {
 /* 1. Faixa de números: filete no lugar de caixa. */
 
 .faixa{
-  border-top:1px solid rgba(255,255,255,.14)
+  border-top:1px solid var(--linha)
 }
 
 .faixa-item{
   padding:1.75rem 0 0;
-  border-top:1px solid rgba(255,255,255,.14);
+  border-top:1px solid var(--linha);
   margin-top:-1px
 }
 
 @media (min-width:768px){
   .faixa-item{
     border-top:0;
-    border-left:1px solid rgba(255,255,255,.14);
+    border-left:1px solid var(--linha);
     padding:0 0 0 1.75rem;
     margin-top:0
   }
@@ -4002,7 +3988,7 @@ video {
 .marco{
   position:relative;
   padding-top:1.5rem;
-  border-top:1px solid rgba(255,255,255,.14);
+  border-top:1px solid var(--linha);
   transition:border-color .3s ease
 }
 
@@ -4015,7 +4001,7 @@ video {
   font-weight:700;
   font-size:.8rem;
   letter-spacing:.08em;
-  color:#7296c1;
+  color:var(--num);
   display:block;
   margin-bottom:.65rem
 }
@@ -4032,7 +4018,7 @@ video {
 /* Filete comum, para separar sem desenhar caixa. */
 
 .regra{
-  border-top:1px solid rgba(255,255,255,.12)
+  border-top:1px solid var(--linha)
 }
 
 /* ===== Design tokens escuros, compartilhados entre a home e as páginas internas ===== */
@@ -4457,7 +4443,9 @@ video {
 }
 
 .sup-clara-2{
-  --sup-fundo:#f4f6fa
+  --sup-fundo:#f4f6fa;
+  background:var(--sup-fundo);
+  color:var(--t)
 }
 
 .sup-escura{
@@ -4876,13 +4864,22 @@ video {
   border:1px solid rgba(255,255,255,.24)
 }
 
-.se-capa-marca-g{
-  height:3.2rem;
-  width:3.2rem;
-  padding:.6rem;
-  border-radius:1.1rem;
-  left:1.6rem;
-  top:1.5rem
+/* Topo do artigo: o branco chapado sobre fundo claro precisava de um fecho com
+   cor, senão o cabeçalho e o texto viravam uma mancha branca só. */
+
+.se-artigo-topo{
+  position:relative;
+  border-bottom:1px solid rgba(3,4,41,.08)
+}
+
+.se-artigo-topo::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:-1px;
+  height:3px;
+  background:linear-gradient(90deg,#080b6c,#4a78b0 55%,rgba(74,120,176,0))
 }
 
 .se-capa-rotulo{
@@ -4991,6 +4988,11 @@ video {
 .hover\:bg-black:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
+}
+
+.hover\:bg-blue-100:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(226 233 242 / var(--tw-bg-opacity, 1));
 }
 
 .hover\:bg-blue-50:hover {
@@ -5357,14 +5359,6 @@ video {
 
   .md\:h-80 {
     height: 20rem;
-  }
-
-  .md\:h-\[320px\] {
-    height: 320px;
-  }
-
-  .md\:h-\[420px\] {
-    height: 420px;
   }
 
   .md\:w-1\/3 {
