@@ -572,9 +572,9 @@
             <div class="flex flex-wrap items-end justify-between gap-4 mb-10 reveal">
                 <div>
                     <span class="txt-link font-bold tracking-widest uppercase text-xs">Conteúdo</span>
-                    <h2 class="titulo text-[2rem] md:text-4xl leading-[1.05] mt-3">Do blog do Send Educacional</h2>
+                    <h2 class="titulo text-[2rem] md:text-4xl leading-[1.05] mt-3">Comunicação Send Educacional</h2>
                 </div>
-                <a href="<?php echo esc_url( home_url( '/blog' ) ); ?>" class="inline-flex items-center gap-2 font-bold txt-link hover-forte transition">Ver todos os artigos <span aria-hidden="true">&rarr;</span></a>
+                <a href="<?php echo esc_url( home_url( '/blog' ) ); ?>" class="inline-flex items-center gap-2 font-bold txt-link hover-forte transition">Ver toda a comunicação <span aria-hidden="true">&rarr;</span></a>
             </div>
 
             <div class="grid md:grid-cols-3 gap-5 reveal">
@@ -582,11 +582,10 @@
                     $fp_cats = get_the_category();
                     ?>
                     <article class="group flex flex-col glass glass-hover rounded-3xl overflow-hidden">
-                        <?php if ( has_post_thumbnail() ) : ?>
-                            <a href="<?php the_permalink(); ?>" class="block h-40 overflow-hidden bg-white/[.02]">
-                                <?php the_post_thumbnail( 'medium_large', array( 'class' => 'w-full h-full object-cover group-hover:scale-105 transition-transform duration-700' ) ); ?>
-                            </a>
-                        <?php endif; ?>
+                        <?php // Sem imagem destacada entra a capa da marca, na cor do segmento. ?>
+                        <a href="<?php the_permalink(); ?>" class="block overflow-hidden">
+                            <?php se_capa_post( 'medium_large', 'h-40' ); ?>
+                        </a>
                         <div class="p-7 flex flex-col flex-grow">
                             <?php if ( $fp_cats ) : ?>
                                 <span class="txt-link font-bold uppercase tracking-wider text-[10px] mb-2.5"><?php echo esc_html( $fp_cats[0]->name ); ?></span>

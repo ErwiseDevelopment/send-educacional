@@ -1,5 +1,6 @@
 <?php 
-// page-blog.php - Template do Portal de Conteúdo (Compacto, Elegante e com Filtro AJAX)
+// page-blog.php - Template da Comunicação (lista de artigos com filtro AJAX).
+// O slug continua /blog: trocar a URL quebraria links publicados e o sitemap.
 get_header(); 
 ?>
 
@@ -15,7 +16,7 @@ get_header();
         
         <div class="container mx-auto px-6 relative z-10 max-w-4xl">
             <h1 class="text-3xl md:text-5xl font-extrabold txt-forte mb-4 tracking-tight">
-                Portal de Conteúdo
+                Comunicação
             </h1>
             <p class="text-base text-blue-200 mb-8">
                 Estratégias valiosas para se destacar no mercado, combater a evasão e tornar sua gestão escolar de alta performance.
@@ -59,17 +60,15 @@ get_header();
                         $contador++;
                         $post_ids_destaque[] = get_the_ID();
                         $categoria = get_the_category();
-                        $nome_categoria = !empty($categoria) ? $categoria[0]->name : 'Blog';
+                        $nome_categoria = !empty($categoria) ? $categoria[0]->name : 'Artigo';
                     ?>
                         
                         <?php if ( $contador === 1 ) : ?>
                             <div class="lg:col-span-7 group">
                                 <a href="<?php the_permalink(); ?>" class="block glass glass-hover rounded-[1.5rem] transition-all overflow-hidden h-full flex flex-col">
-                                    <div class="w-full h-64 md:h-80 bg-white/[.02] overflow-hidden relative">
-                                        <?php if ( has_post_thumbnail() ) : ?>
-                                            <?php the_post_thumbnail('large', ['class' => 'w-full h-full object-cover group-hover:scale-105 transition-transform duration-700']); ?>
-                                        <?php endif; ?>
-                                        <div class="absolute top-4 left-4 bg-blue-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">
+                                    <div class="w-full overflow-hidden relative">
+                                        <?php se_capa_post( 'large', 'h-64 md:h-80', 'grande' ); ?>
+                                        <div class="absolute top-4 right-4 bg-white text-blue-900 text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest shadow-lg">
                                             Em Destaque
                                         </div>
                                     </div>
@@ -98,10 +97,8 @@ get_header();
 
                         <?php else : ?>
                             <a href="<?php the_permalink(); ?>" class="flex glass glass-hover rounded-2xl transition-all overflow-hidden group h-28">
-                                <div class="w-1/3 h-full bg-white/[.02] overflow-hidden flex-shrink-0 relative">
-                                    <?php if ( has_post_thumbnail() ) : ?>
-                                        <?php the_post_thumbnail('medium', ['class' => 'w-full h-full object-cover group-hover:scale-105 transition-transform duration-500']); ?>
-                                    <?php endif; ?>
+                                <div class="w-1/3 overflow-hidden flex-shrink-0 relative">
+                                    <?php se_capa_post( 'medium', 'h-full', 'mini' ); ?>
                                 </div>
                                 <div class="w-2/3 p-4 flex flex-col justify-center">
                                     <span class="txt-link font-bold uppercase tracking-wider text-[9px] mb-1"><?php echo $nome_categoria; ?></span>
@@ -167,21 +164,35 @@ get_header();
 
         <?php endif; ?>
 
-        <h2 class="text-xl font-bold txt-forte mb-6">Mais Recentes</h2>
+        <?php
+        // Esta é uma página, então a consulta principal traz a PRÓPRIA página, e
+        // não os artigos: a lista vinha mostrando um cartão "Blog" no meio dos
+        // posts. Aqui os artigos são buscados de propósito, já sem os quatro que
+        // subiram para o topo.
+        //
+        // Os cartões são montados antes de imprimir: se não sobrar nenhum, o
+        // bloco inteiro fica oculto em vez de abrir um buraco na página. O filtro
+        // por categoria reexibe o bloco quando traz resultado.
+        $pagina_atual = max( 1, (int) get_query_var( 'paged' ), (int) get_query_var( 'page' ) );
 
-        <div id="posts-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 min-h-[400px]">
-            <?php 
-            if ( have_posts() ) :
-                while ( have_posts() ) : the_post(); 
-                    if ( isset($post_ids_destaque) && in_array(get_the_ID(), $post_ids_destaque) ) continue;
+        $recentes = new WP_Query( array(
+            'post_type'           => 'post',
+            'post_status'         => 'publish',
+            'posts_per_page'      => 9,
+            'paged'               => $pagina_atual,
+            'post__not_in'        => $post_ids_destaque,
+            'ignore_sticky_posts' => true,
+        ) );
+
+        ob_start();
+        if ( $recentes->have_posts() ) :
+            while ( $recentes->have_posts() ) : $recentes->the_post();
                     $categoria = get_the_category();
                     $nome_categoria = !empty($categoria) ? $categoria[0]->name : 'Artigo';
             ?>
                 <article class="col-span-1 group flex flex-col glass glass-hover rounded-[1.5rem] hover:-translate-y-1 transition-all overflow-hidden animate-[fadeIn_0.5s_ease-in-out]">
-                    <a href="<?php the_permalink(); ?>" class="block w-full h-48 bg-white/[.02] overflow-hidden relative">
-                        <?php if ( has_post_thumbnail() ) : ?>
-                            <?php the_post_thumbnail('medium_large', ['class' => 'w-full h-full object-cover group-hover:scale-105 transition-transform duration-700']); ?>
-                        <?php endif; ?>
+                    <a href="<?php the_permalink(); ?>" class="block w-full overflow-hidden relative">
+                        <?php se_capa_post( 'medium_large', 'h-48' ); ?>
                     </a>
                     <div class="p-6 flex flex-col flex-grow">
                         <span class="txt-link font-bold uppercase tracking-wider text-[9px] mb-2 block">
@@ -192,7 +203,7 @@ get_header();
                                 <?php the_title(); ?>
                             </h3>
                         </a>
-                        <p class="txt text-xs mb-4 line-clamp-3 leading-relaxed">
+                        <p class="txt text-sm mb-4 line-clamp-3 leading-relaxed">
                             <?php echo wp_trim_words(get_the_excerpt(), 18); ?>
                         </p>
 
@@ -200,31 +211,41 @@ get_header();
                             <span class="txt text-[10px] font-semibold">
                                 <?php echo get_the_date('d M, Y'); ?>
                             </span>
-                            <a href="<?php the_permalink(); ?>" class="txt-link font-bold text-[11px] flex items-center gap-1 group-hover:text-blue-200">Ler artigo &rarr;</a>
+                            <a href="<?php the_permalink(); ?>" class="txt-link font-bold text-[11px] flex items-center gap-1 group-hover:opacity-70 transition-opacity">Ler artigo &rarr;</a>
                         </div>
                     </div>
                 </article>
-            <?php 
-                endwhile; 
-            else : 
-            ?>
-                <div class="col-span-full text-center py-16 glass rounded-3xl">
-                    <h3 class="text-xl font-bold txt-forte mb-2">Nenhum artigo encontrado</h3>
-                </div>
-            <?php endif; ?>
+        <?php
+            endwhile;
+            wp_reset_postdata();
+        endif;
+        $cartoes_recentes = trim( ob_get_clean() );
+        ?>
+
+        <div id="bloco-recentes"<?php echo $cartoes_recentes ? '' : ' class="hidden"'; ?>>
+            <h2 class="text-xl font-bold txt-forte mb-6">Mais Recentes</h2>
+
+            <div id="posts-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <?php echo $cartoes_recentes; // phpcs:ignore ?>
+            </div>
         </div>
 
-        <div class="flex justify-center mb-16" id="paginacao-blog">
+        <?php
+        // Com uma página só, paginate_links devolve nulo: sem esta guarda sobrava
+        // uma pílula vazia flutuando no fim da lista.
+        $links_paginas = paginate_links(array(
+            'prev_text' => '&larr; Voltar',
+            'next_text' => 'Próxima &rarr;',
+            'type'      => 'plain',
+            'total'     => $recentes->max_num_pages,
+            'current'   => $pagina_atual,
+            'before_page_number' => '<span class="px-3 py-1.5 hover:bg-white/10 rounded-lg transition-colors txt block">',
+            'after_page_number'  => '</span>',
+        ));
+        ?>
+        <div class="flex justify-center mb-16" id="paginacao-blog"<?php echo $links_paginas ? '' : ' style="display:none"'; ?>>
             <div class="inline-flex glass rounded-xl p-1.5 gap-1 font-bold text-sm">
-                <?php
-                echo paginate_links(array(
-                    'prev_text' => '&larr; Voltar',
-                    'next_text' => 'Próxima &rarr;',
-                    'type'      => 'plain',
-                    'before_page_number' => '<span class="px-3 py-1.5 hover:bg-white/10 rounded-lg transition-colors txt block">',
-                    'after_page_number'  => '</span>',
-                ));
-                ?>
+                <?php echo $links_paginas; // phpcs:ignore ?>
             </div>
             <style>
                 .page-numbers.current .px-3 { background-color: #4a78b0; color: white; border-radius: 0.5rem; }
@@ -329,6 +350,10 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
         
         if(paginacao) paginacao.style.display = 'none';
+
+        // O bloco nasce oculto quando nao sobrou artigo para a grade.
+        const blocoRecentes = document.getElementById('bloco-recentes');
+        if(blocoRecentes) blocoRecentes.classList.remove('hidden');
 
         const formData = new FormData();
         formData.append('action', 'filtrar_posts_blog');

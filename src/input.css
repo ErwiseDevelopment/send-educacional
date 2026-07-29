@@ -2,7 +2,7 @@
 Theme Name: Send Educacional
 Description: Tema customizado para o SaaS Send Educacional usando Tailwind CSS.
 Author: Send Solutions
-Version: 2.2.0
+Version: 2.3.0
 */
 
 @tailwind base;
@@ -312,3 +312,34 @@ Version: 2.2.0
   background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%23fff' stroke-width='3.2' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M5 13l4 4L19 7'/%3E%3C/svg%3E");
   background-size:.8rem;background-position:center;background-repeat:no-repeat}
 .se-check:focus-visible{outline:2px solid #4a78b0;outline-offset:2px}
+
+/* ===== Capa do artigo quando nao ha imagem destacada (inc/capa.php) =====
+   Sem imagem nao e problema; o que estraga a pagina e um cartao com foto ao
+   lado de outro com retangulo vazio. A capa desenhada resolve a inconsistencia
+   e ainda diz, pela cor, para qual segmento aquele artigo e. */
+/* Capa desenhada: composição da marca para o post sem imagem destacada.
+   Camadas, de baixo para cima: listras diagonais, brilho no canto, anéis,
+   selo com o símbolo e, por fim, o rótulo da categoria. */
+.se-capa{position:relative;display:flex;align-items:flex-end;width:100%;overflow:hidden;isolation:isolate}
+.se-capa::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.05) 0 2px,transparent 2px 15px)}
+.se-capa::after{content:"";position:absolute;right:-16%;top:-52%;width:74%;aspect-ratio:1;
+  border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle at 50% 50%,rgba(255,255,255,.20),rgba(255,255,255,0) 64%)}
+.se-capa-grade{position:absolute;right:-13%;bottom:-42%;width:64%;aspect-ratio:1;pointer-events:none;
+  background:repeating-radial-gradient(circle at 50% 50%,
+    rgba(255,255,255,0) 0 13px,rgba(255,255,255,.13) 13px 14px);
+  -webkit-mask-image:radial-gradient(circle at 50% 50%,#000 48%,transparent 76%);
+  mask-image:radial-gradient(circle at 50% 50%,#000 48%,transparent 76%)}
+.se-capa-marca{position:absolute;left:1.15rem;top:1.1rem;height:2.4rem;width:2.4rem;padding:.42rem;
+  border-radius:.85rem;color:rgba(255,255,255,.92);pointer-events:none;
+  background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.24)}
+.se-capa-marca-g{height:3.2rem;width:3.2rem;padding:.6rem;border-radius:1.1rem;left:1.6rem;top:1.5rem}
+.se-capa-rotulo{position:relative;margin:0 0 1rem 1.15rem;padding:.25rem .7rem;border-radius:999px;
+  font-size:10.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  color:#fff;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.26);
+  backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+/* Capa pequena (lista lateral): só o selo, sem rótulo, para não apertar. */
+.se-capa-mini::before{background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.05) 0 2px,transparent 2px 11px)}
+.se-capa-mini .se-capa-marca{height:1.9rem;width:1.9rem;padding:.34rem;border-radius:.7rem;left:.7rem;top:.7rem}
+.se-capa-mini .se-capa-grade{width:82%;right:-20%;bottom:-46%}

@@ -17,7 +17,7 @@ get_header();
                     if ( ! empty( $categories ) ) {
                         echo esc_html( $categories[0]->name );   
                     } else {
-                        echo 'Blog';
+                        echo 'Comunicação';
                     }
                     ?>
                 </span>
@@ -53,11 +53,9 @@ get_header();
                 
                 <article class="w-full lg:w-2/3">
                     
-                    <?php if ( has_post_thumbnail() ) : ?>
-                        <div class="mb-12 rounded-[2rem] overflow-hidden shadow-xl shadow-slate-200/50">
-                            <?php the_post_thumbnail('large', ['class' => 'w-full h-auto md:h-[450px] object-cover hover:scale-105 transition-transform duration-700']); ?>
-                        </div>
-                    <?php endif; ?>
+                    <div class="mb-12 rounded-[2rem] overflow-hidden shadow-xl shadow-slate-200/50">
+                        <?php se_capa_post_grande(); ?>
+                    </div>
 
                     <div class="prose prose-lg prose-slate max-w-none prose-headings:font-bold prose-headings:text-slate-900 prose-a:text-blue-700 hover:prose-a:text-blue-500 prose-img:rounded-2xl">
                         <?php the_content(); ?>
@@ -86,10 +84,12 @@ get_header();
                 <aside class="w-full lg:w-1/3">
                     <div class="sticky top-32 space-y-6">
                         
-                        <div class="bg-gradient-to-br from-blue-700 to-indigo-900 rounded-[2rem] p-8 txt-forte shadow-2xl shadow-blue-900/20 relative overflow-hidden">
+                        <?php // Mesmo degradê da capa do artigo, para o CTA parecer parte da peça. ?>
+                        <div class="sup-escura rounded-[2rem] p-8 shadow-2xl shadow-blue-900/20 relative overflow-hidden"
+                             style="background:linear-gradient(135deg,#1f3184,#080b6c)">
                             <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -mr-10 -mt-10"></div>
-                            
-                            <h3 class="text-2xl font-extrabold mb-3 leading-tight">Gostou desse conteúdo?</h3>
+
+                            <h3 class="text-2xl font-extrabold mb-3 leading-tight txt-forte">Gostou desse conteúdo?</h3>
                             <p class="txt mb-6 text-sm leading-relaxed">
                                 Descubra como o <strong class="txt-forte">Send Educacional</strong> pode automatizar a gestão da sua escola e reduzir a inadimplência hoje mesmo.
                             </p>
@@ -122,27 +122,39 @@ get_header();
         </div>
     </section>
 
+    <?php
+    // Três artigos da mesma categoria. Quando a categoria só tem este texto, o
+    // bloco caía vazio e sobrava um título solto com uma linha embaixo: aqui a
+    // busca abre para os mais recentes e, se nem isso houver, a seção não sai.
+    $related = new WP_Query( array(
+        'category__in'        => wp_get_post_categories( $post->ID ),
+        'posts_per_page'      => 3,
+        'post__not_in'        => array( $post->ID ),
+        'ignore_sticky_posts' => true,
+    ) );
+
+    if ( ! $related->have_posts() ) {
+        $related = new WP_Query( array(
+            'posts_per_page'      => 3,
+            'post__not_in'        => array( $post->ID ),
+            'ignore_sticky_posts' => true,
+        ) );
+    }
+
+    if ( $related->have_posts() ) :
+    ?>
     <section class="container mx-auto px-6 max-w-6xl mt-24">
         <h3 class="text-2xl font-bold text-slate-900 mb-8 border-b border-slate-200 pb-4">Continue lendo</h3>
-        
+
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <?php
-            // Busca 3 posts da mesma categoria
-            $related = new WP_Query([
-                'category__in'   => wp_get_post_categories($post->ID),
-                'posts_per_page' => 3,
-                'post__not_in'   => [$post->ID]
-            ]);
-
-            if( $related->have_posts() ) { 
-                while( $related->have_posts() ) { 
-                    $related->the_post(); 
+            {
+                while( $related->have_posts() ) {
+                    $related->the_post();
             ?>
                 <a href="<?php the_permalink(); ?>" class="group block">
-                    <div class="rounded-2xl overflow-hidden mb-4 bg-slate-200 aspect-[16/10]">
-                        <?php if(has_post_thumbnail()) {
-                            the_post_thumbnail('medium_large', ['class' => 'w-full h-full object-cover group-hover:scale-110 transition-transform duration-500']);
-                        } ?>
+                    <div class="rounded-2xl overflow-hidden mb-4">
+                        <?php se_capa_post( 'medium_large', 'h-44' ); ?>
                     </div>
                     <span class="text-blue-700 text-xs font-bold uppercase tracking-wider mb-2 block">
                         <?php $cats = get_the_category(); echo $cats[0]->name; ?>
@@ -157,10 +169,11 @@ get_header();
             <?php 
                 }
                 wp_reset_postdata();
-            } 
+            }
             ?>
         </div>
     </section>
+    <?php endif; ?>
 
     <?php endwhile; endif; ?>
 

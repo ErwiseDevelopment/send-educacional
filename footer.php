@@ -90,7 +90,7 @@
                 <div class="lg:col-span-1 mt-4 lg:mt-0">
                     <h4 class="text-lg font-bold mb-6 txt-forte">Conteúdo</h4>
                     <ul class="space-y-4 txt text-sm">
-                        <li><a href="<?php echo home_url('/blog'); ?>" class="hover-forte transition-colors">Blog</a></li>
+                        <li><a href="<?php echo home_url('/blog'); ?>" class="hover-forte transition-colors">Comunicação</a></li>
                         <li><a href="https://help.sendsolutions.com.br/" target="_blank" class="hover-forte transition-colors">Central de Ajuda</a></li>
                     </ul>
                 </div>

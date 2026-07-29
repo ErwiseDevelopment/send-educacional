@@ -13,6 +13,7 @@ require_once get_template_directory() . '/inc/menu.php';
 require_once get_template_directory() . '/inc/menu-render.php';
 require_once get_template_directory() . '/inc/modulos.php';
 require_once get_template_directory() . '/inc/busca-desafio.php';
+require_once get_template_directory() . '/inc/capa.php';
 require_once get_template_directory() . '/inc/prova-social.php';
 require_once get_template_directory() . '/inc/paginas.php';
 require_once get_template_directory() . '/inc/consentimentos.php';
@@ -144,10 +145,8 @@ function enviar_posts_filtrados() {
             $nome_categoria = !empty($cat) ? $cat[0]->name : 'Artigo';
             ?>
             <article class="col-span-1 group flex flex-col glass glass-hover rounded-[1.5rem] hover:-translate-y-1 transition-all overflow-hidden animate-[fadeIn_0.5s_ease-in-out]">
-                <a href="<?php the_permalink(); ?>" class="block w-full h-48 bg-white/[.02] overflow-hidden relative">
-                    <?php if ( has_post_thumbnail() ) : ?>
-                        <?php the_post_thumbnail('medium_large', ['class' => 'w-full h-full object-cover group-hover:scale-105 transition-transform duration-700']); ?>
-                    <?php endif; ?>
+                <a href="<?php the_permalink(); ?>" class="block w-full overflow-hidden relative">
+                    <?php se_capa_post( 'medium_large', 'h-48' ); ?>
                 </a>
                 <div class="p-6 flex flex-col flex-grow">
                     <span class="txt-link font-bold uppercase tracking-wider text-[9px] mb-2 block">
@@ -166,7 +165,7 @@ function enviar_posts_filtrados() {
                         <span class="txt text-[10px] font-semibold">
                             <?php echo get_the_date('d M, Y'); ?>
                         </span>
-                        <a href="<?php the_permalink(); ?>" class="txt-link font-bold text-[11px] flex items-center gap-1 group-hover:text-blue-200">Ler artigo &rarr;</a>
+                        <a href="<?php the_permalink(); ?>" class="txt-link font-bold text-[11px] flex items-center gap-1 group-hover:opacity-70 transition-opacity">Ler artigo &rarr;</a>
                     </div>
                 </div>
             </article>
