@@ -304,7 +304,7 @@ function se_menu_mega_bruto() {
 				array(
 					'titulo' => 'A empresa',
 					'itens'  => array(
-						array( 'nome' => 'Sobre nós', 'desc' => 'Software de gestão desde 1994, em educação desde 2019', 'url' => home_url( '/sobre' ), 'icone' => 'predio' ),
+						array( 'nome' => 'Sobre nós', 'desc' => 'Send Solutions desde 1994; o Send Educacional em produção desde 2021', 'url' => home_url( '/sobre' ), 'icone' => 'predio' ),
 						array( 'nome' => 'Política de Privacidade', 'desc' => 'Como tratamos os dados, conforme a LGPD', 'url' => home_url( '/privacidade' ), 'icone' => 'cadeado' ),
 					),
 				),

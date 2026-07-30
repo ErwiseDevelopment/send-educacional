@@ -49,7 +49,7 @@ get_header(); ?>
                                 <span class="absolute left-[13px] top-2 bottom-2 w-px bg-gradient-to-b from-blue-500/50 to-violet-500/20" aria-hidden="true"></span>
                                 <?php foreach ( array(
                                     array( '1994', 'Nasce a Send Solutions', 'Sistemas de gestão para indústria, comércio e serviços.' ),
-                                    array( '2019', 'A Send entra em educação', 'A bagagem de ERP passa a ser aplicada à gestão de instituições de ensino.' ),
+                                    array( '2021', 'O Send Educacional entra em produção', 'A bagagem de trinta anos de ERP passa a ser aplicada à gestão de instituições de ensino.' ),
                                     array( 'Hoje', 'Três segmentos atendidos', 'Ensino superior, educação básica e média, e cursos com venda online.' ),
                                 ) as $marco ) {
                                     printf(
@@ -69,7 +69,7 @@ get_header(); ?>
                 <div class="w-full lg:w-1/2">
                     <h2 class="reveal text-4xl font-extrabold txt-forte mb-6 tracking-tight">O Próximo Passo: <br><span class="gtext">Send Educacional</span></h2>
                     <div class="space-y-6 txt text-lg leading-relaxed">
-                        <p>Ao longo das décadas, fornecemos informações gerenciais para empresas de vários portes, focando em rentabilidade e controle. Em <strong>2019</strong>, decidimos levar essa inteligência para o setor de ensino.</p>
+                        <p>Ao longo das décadas, fornecemos informações gerenciais para empresas de vários portes, focando em rentabilidade e controle. Em <strong>2021</strong>, decidimos levar essa inteligência para o setor de ensino.</p>
                         <p>O <strong>Send Educacional</strong> nasceu não apenas como um software, mas como um sistema de gestão completo. Unificamos o ERP Acadêmico com consultoria personalizada para garantir que cada instituição receba exatamente o que precisa.</p>
 
                         <div class="glass flex items-center gap-6 p-6 rounded-3xl mt-8">

@@ -45,7 +45,7 @@ function se_segmentos() {
 			'nome'      => 'Educação Básica e Ensino Médio',
 			'curto'     => 'Básica e Média',
 			'titulo'    => 'Escolas de educação infantil, fundamental e ensino médio',
-			'resumo'    => 'Matrícula e rematrícula, diário de classe, boletim, mensalidade e comunicação com a família no mesmo sistema, sem vocabulário de faculdade e sem planilha paralela.',
+			'resumo'    => 'A conversa com a família sai do WhatsApp pessoal e a receita extra sai da planilha: portal dos pais, extracurriculares, material e eventos no mesmo sistema da mensalidade e do boletim.',
 			'cor'       => '#56b2cb', // sobre fundo escuro (contraste 8.2)
 			'cor_clara' => '#387484', // sobre fundo claro (contraste 5.3)
 			'cor_bloco' => '#335298', // bloco chapado (branco sobre ele: 7.5)
@@ -56,10 +56,10 @@ function se_segmentos() {
 			'porte'        => array( 'Até 200', '201 a 500', '501 a 1.000', '1.001 a 2.000', 'Mais de 2.000' ),
 			'icone'        => '<path stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M5 21V8l7-4 7 4v13"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10 21v-5h4v5M9.5 10.5h5"></path>',
 			'destaques' => array(
-				array( 'nome' => 'Rematrícula em lote por série e turma', 'icone' => 'assinatura' ),
+				array( 'nome' => 'Portal dos pais, com grupo de conversa por turma', 'icone' => 'celular' ),
+				array( 'nome' => 'Extracurriculares, material e eventos no financeiro', 'icone' => 'dinheiro' ),
+				array( 'nome' => 'Rematrícula em lote, com contrato assinado digital', 'icone' => 'assinatura' ),
 				array( 'nome' => 'Diário, boletim e conselho de classe',  'icone' => 'documento' ),
-				array( 'nome' => 'Mensalidade, material e contraturno',   'icone' => 'dinheiro' ),
-				array( 'nome' => 'Comunicação com a família por app',     'icone' => 'celular' ),
 			),
 		),
 

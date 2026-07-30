@@ -171,10 +171,10 @@
                 // Cada número aqui precisa aguentar ser checado. "33 anos" é da Send
                 // Solutions, não de educação, dizer os dois evita a leitura errada.
                 $fp_stats = array(
-                    array( '33', 'anos de mercado', 'Send Solutions · em educação desde 2019' ),
-                    array( '20+', 'módulos integrados', 'na mesma plataforma, com o mesmo dado' ),
-                    array( '150+', 'funcionalidades nativas', 'entre acadêmico, financeiro e atendimento' ),
-                    array( '3', 'segmentos atendidos', 'superior · básica e média · cursos online' ),
+                    array( '45%', 'menos inadimplência', 'com a régua de cobrança e o acadêmico no mesmo sistema' ),
+                    array( '1h', 'para importar as notas', 'a mesma rotina levava três dias na operação anterior' ),
+                    array( '1', 'pessoa fecha o Censo', 'era processo manual, com uma equipe interna montando na mão' ),
+                    array( '33', 'anos de mercado', 'Send Solutions desde 1994 · Send Educacional em produção desde 2021' ),
                 );
                 foreach ( $fp_stats as $s ) {
                     printf(
@@ -190,8 +190,11 @@
             </div>
 
             <p class="regra mt-12 pt-6 text-sm txt-fraco leading-relaxed max-w-3xl">
-                <span class="txt font-semibold">Conformidade regulatória por segmento.</span>
-                MEC, Censo INEP e diploma digital no ensino superior. Conselhos de Educação, Secretarias e Censo Escolar na educação básica. LGPD nos três.
+                <span class="txt font-semibold">De onde vêm estes números.</span>
+                São resultados medidos na instituição de ensino superior com 5.000 alunos que roda
+                o Send Educacional em produção. Não publicamos nome nem logotipo de cliente sem
+                autorização formal, e preferimos mostrar o que mudou na operação a mostrar uma
+                parede de logotipos.
             </p>
         </div>
     </section>
@@ -513,9 +516,27 @@
     <section class="sup-clara sup-clara-2 relative z-10 py-24">
         <div class="container mx-auto px-6 max-w-6xl grid lg:grid-cols-2 gap-14 items-center reveal">
             <div>
-                <span class="txt-link font-bold tracking-widest uppercase text-xs">Segurança &amp; implantação</span>
-                <h2 class="titulo text-[2rem] md:text-4xl leading-[1.04] mt-4 mb-5">Medo de trocar de sistema? A gente conduz.</h2>
-                <p class="txt text-lg mb-8 leading-relaxed">Migração guiada e silenciosa: sua operação não para, nem no meio do semestre. E os dados dos seus alunos ficam sob criptografia e conformidade com a LGPD.</p>
+                <span class="txt-link font-bold tracking-widest uppercase text-xs">Diagnóstico de Migração</span>
+                <h2 class="titulo text-[2rem] md:text-4xl leading-[1.04] mt-4 mb-5">Você vê o que dá para trazer antes de assinar qualquer coisa.</h2>
+                <p class="txt text-lg mb-6 leading-relaxed">
+                    A gente mapeia o banco do seu sistema atual e devolve, por escrito, o que migra,
+                    o que não migra e quanto custa. Sem contrato, sem compromisso. Ninguém troca de
+                    sistema no escuro.
+                </p>
+
+                <div class="bloco rounded-2xl p-5 mb-8">
+                    <p class="text-sm txt leading-relaxed">
+                        <span class="txt-forte font-bold">É gratuito e vem antes da proposta.</span>
+                        A objeção número um de quem pensa em trocar de sistema é o medo da migração,
+                        e ela é legítima. Preferimos responder com um mapa do seu banco de dados a
+                        responder com uma promessa.
+                    </p>
+                    <button onclick="abrirDemo()" class="mt-4 inline-flex items-center gap-2 text-sm font-bold txt-link hover-forte transition">
+                        Pedir o diagnóstico da minha base
+                        <span aria-hidden="true">&rarr;</span>
+                    </button>
+                </div>
+
                 <div class="grid grid-cols-2 gap-4">
                     <div class="glass rounded-2xl p-5">
                         <div class="w-10 h-10 rounded-lg bg-blue-500/15 txt-link flex items-center justify-center mb-3"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg></div>
@@ -524,8 +545,8 @@
                     </div>
                     <div class="glass rounded-2xl p-5">
                         <div class="w-10 h-10 rounded-lg bg-emerald-500/15 text-emerald-600 flex items-center justify-center mb-3"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg></div>
-                        <h4 class="font-bold txt-forte mb-1">Conformidade MEC</h4>
-                        <p class="text-sm txt">Atualizações a cada nova portaria.</p>
+                        <h4 class="font-bold txt-forte mb-1">1 a 3 meses</h4>
+                        <p class="text-sm txt">Da assinatura ao sistema rodando, com cronograma.</p>
                     </div>
                 </div>
             </div>
@@ -534,9 +555,10 @@
                 <div class="space-y-6">
                     <?php
                     $fp_etapas = array(
-                        array( '1', 'Análise e extração de dados', 'Mapeamos o banco do sistema atual e preparamos a estrutura.' ),
-                        array( '2', 'Migração segura', 'Importamos alunos, notas, histórico e financeiro sem perda.' ),
-                        array( '3', 'Treinamento da equipe', 'Sessões ao vivo com secretaria, financeiro e professores.' ),
+                        array( '0', 'Diagnóstico, antes de assinar', 'Mapeamos o banco do sistema atual e mostramos o que dá para trazer, com escopo e preço fechados.' ),
+                        array( '1', 'Levantamento de processos', 'Um consultor entrevista cada setor e escreve as regras que hoje só existem na cabeça de quem opera.' ),
+                        array( '2', 'Migração com conciliação', 'Alunos, notas, histórico e financeiro em aberto, com relatório de divergências antes da virada.' ),
+                        array( '3', 'Treinamento por setor', 'Secretaria, financeiro e docentes, cada um na sua rotina. Não um manual em PDF.' ),
                     );
                     $fp_total = count( $fp_etapas );
                     foreach ( $fp_etapas as $i => $e ) {

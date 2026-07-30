@@ -197,7 +197,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
     <span class="text-blue-700 font-bold tracking-widest uppercase text-xs">O que é o Send Educacional</span>
     <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight mt-4 mb-6 leading-tight">Um sistema único no lugar de vários que não conversam.</h2>
     <p class="text-lg txt-fraco leading-relaxed mb-5">A maioria das instituições usa um sistema para o acadêmico, outro para o financeiro, uma planilha para a cobrança e um portal à parte para o aluno, e gasta tempo costurando tudo na mão. O Send reúne essa operação inteira em <span class="text-slate-800 font-semibold">uma só plataforma</span>, com os dados integrados de ponta a ponta.</p>
-    <p class="text-lg txt-fraco leading-relaxed">Nascido em 2019 dentro da <span class="text-slate-800 font-semibold">Send Solutions</span> (33 anos de mercado), é mantido sempre atualizado conforme o MEC e as mudanças fiscais. Até o <span class="text-slate-800 font-semibold">ambiente de aula (AVA) é desenvolvido pela própria Send</span>, e não um sistema de terceiros costurado por fora.</p>
+    <p class="text-lg txt-fraco leading-relaxed">Em produção desde 2021, nascido dentro da <span class="text-slate-800 font-semibold">Send Solutions</span> (33 anos de mercado), é mantido sempre atualizado conforme o MEC e as mudanças fiscais. Até o <span class="text-slate-800 font-semibold">ambiente de aula (AVA) é desenvolvido pela própria Send</span>, e não um sistema de terceiros costurado por fora.</p>
   </div>
 </section>
 
