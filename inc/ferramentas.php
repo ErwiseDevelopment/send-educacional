@@ -116,62 +116,146 @@ function se_ferramentas() {
 		),
 
 		// ------------------------------------------ OS TRÊS, TROCAR HOJE
-		// Aqui a pergunta é sobre o SISTEMA ATUAL, item por item, e cada
-		// lacuna é respondida com o que o Send entrega nativo. É a versão em
-		// tela da pergunta que abre a conversa comercial, "o que a secretaria
-		// ainda faz fora do sistema?", só que module a module.
+		// Único com três alternativas e com resultado FECHADO até o cadastro.
+		// As outras entregam de graça porque servem a quem ainda está longe da
+		// compra; esta é o diagnóstico completo do sistema atual, com a resposta
+		// técnica ponto a ponto, e vale o dado de contato.
 		//
-		// Todas as lacunas aparecem, não só três: aqui a lista COMPLETA é o
-		// conteúdo. Nas outras ferramentas o excesso cansa; nesta, cada linha
-		// é uma resposta que o visitante veio buscar.
+		// As alternativas não são sim e não: são o estado real da rotina. "Existe,
+		// mas por fora" é a resposta mais comum do mercado e é justamente a que
+		// revela a costura, então precisa ter peso próprio.
 		'12-perguntas-antes-de-trocar-de-sistema' => array(
-			'tipo'      => 'quiz',
-			'segmento'  => '',
-			'material'  => 'material-trocar-de-sistema',
-			'limite'    => 12,
+			'tipo'        => 'quiz',
+			'formato'     => 'abc',
+			'exige_lead'  => true,
+			'segmento'    => '',
+			'material'    => 'material-trocar-de-sistema',
+			'limite'      => 12,
 			'rotulo_recs' => 'O que o Send Educacional entrega nativo nesses pontos',
-			'nome'      => '12 perguntas para mudar de sistema hoje',
-			'titulo'    => 'O que o seu sistema atual não faz?',
-			'chamada'   => 'Doze perguntas técnicas sobre o que você usa hoje. Para cada não, mostramos o que o Send Educacional entrega nativo.',
-			'resumo'    => 'A maioria das instituições não tem um sistema ruim: tem um sistema incompleto, com o resto costurado em planilha, serviço de terceiro e retrabalho da secretaria. Estas doze perguntas mostram onde está a costura.',
-			'rotulos'   => array( 'Sim, o meu sistema faz', 'Não faz, ou é por fora' ),
-			'perguntas' => array(
-				'O seu sistema tem CRM de captação, com funil de leads e campanhas?',
-				'O contrato é assinado eletronicamente dentro do próprio sistema?',
-				'Existe régua de cobrança automática, com boleto, Pix e recorrência no mesmo lugar?',
-				'O ambiente de aula é do próprio sistema, com a nota da avaliação caindo direto no histórico?',
-				'Aluno e família têm portal e aplicativo, com o mesmo login do sistema?',
-				'O sistema aponta risco de evasão cruzando nota, frequência e situação financeira?',
-				'O documento final sai nativo: diploma digital no padrão MEC ou certificado com validação?',
-				'Os pedidos do aluno viram protocolo com prazo e responsável, sem depender do balcão?',
-				'A exportação para o Censo sai pronta do sistema, sem ninguém montar planilha?',
-				'A mantenedora tem painel de indicadores em tempo real, com o mesmo dado do acadêmico?',
-				'Conciliação bancária e DRE ficam dentro do financeiro do sistema?',
-				'O acervo de documentos do aluno é digitalizado e pesquisável por nome?',
+			'nome'        => '12 perguntas para mudar de sistema hoje',
+			'titulo'      => 'O que o seu sistema atual não faz?',
+			'chamada'     => 'Doze perguntas técnicas, três alternativas cada. No fim, o que o Send Educacional entrega nativo em cada ponto que ficou em aberto.',
+			'resumo'      => 'A maioria das instituições não tem um sistema ruim: tem um sistema incompleto, com o resto costurado em planilha, serviço de terceiro e retrabalho da secretaria. Estas doze perguntas mostram onde está a costura, e o que existiria nativo no lugar dela.',
+			'perguntas'   => array(
+				array(
+					'p'   => 'Como a instituição capta e acompanha quem ainda não é aluno?',
+					'ops' => array(
+						array( 't' => 'CRM dentro do próprio sistema de gestão', 'peso' => 0 ),
+						array( 't' => 'CRM separado, planilha ou caderno de contatos', 'peso' => 1 ),
+						array( 't' => 'Não há acompanhamento estruturado de interessados', 'peso' => 2 ),
+					),
+					'r' => 'O Send Educacional tem CRM nativo: funil de leads, campanhas e recuperação de matrícula. O interessado que vira aluno não é redigitado, ele já entra como matrícula com o histórico da conversa junto.',
+				),
+				array(
+					'p'   => 'Como o contrato de matrícula é assinado?',
+					'ops' => array(
+						array( 't' => 'Assinatura eletrônica dentro do próprio sistema', 'peso' => 0 ),
+						array( 't' => 'Assinatura eletrônica, mas em serviço contratado à parte', 'peso' => 1 ),
+						array( 't' => 'Impresso, assinado presencialmente na secretaria', 'peso' => 2 ),
+					),
+					'r' => 'A assinatura eletrônica é parte do fluxo: o contrato sai do cadastro do aluno, é assinado com validade jurídica e trilha de auditoria, e a primeira parcela é gerada em seguida, sem ninguém lançar de novo.',
+				),
+				array(
+					'p'   => 'Como a cobrança acontece hoje?',
+					'ops' => array(
+						array( 't' => 'Régua automática, com boleto, Pix e acordo no mesmo sistema', 'peso' => 0 ),
+						array( 't' => 'O boleto sai do sistema, mas o lembrete e a cobrança são manuais', 'peso' => 1 ),
+						array( 't' => 'A cobrança é feita por fora, em planilha ou pelo banco', 'peso' => 2 ),
+					),
+					'r' => 'A régua de cobrança é nativa: boleto, Pix, recorrência, acordo e aviso automático antes e depois do vencimento. É o módulo por trás da queda de inadimplência medida no cliente em produção.',
+				),
+				array(
+					'p'   => 'Onde a aula e a avaliação online acontecem?',
+					'ops' => array(
+						array( 't' => 'No mesmo sistema, com a nota caindo direto no histórico', 'peso' => 0 ),
+						array( 't' => 'Em um AVA separado, com a nota importada depois', 'peso' => 1 ),
+						array( 't' => 'Não existe ambiente online, o material vai por outro canal', 'peso' => 2 ),
+					),
+					'r' => 'O AVA é desenvolvido pela própria Send e nasce dentro do sistema: aula, material e avaliação no mesmo lugar do acadêmico, e a nota cai direto no histórico. Quem já usa Moodle e não quer mexer agora tem integração nos dois sentidos.',
+				),
+				array(
+					'p'   => 'Como o aluno e a família acompanham notas, documentos e cobrança?',
+					'ops' => array(
+						array( 't' => 'Portal e aplicativo com o mesmo login do sistema', 'peso' => 0 ),
+						array( 't' => 'Portal limitado, e o resto vai por e-mail ou WhatsApp', 'peso' => 1 ),
+						array( 't' => 'Tudo passa pela secretaria, no balcão ou no telefone', 'peso' => 2 ),
+					),
+					'r' => 'Portal e aplicativo de aluno, família, docente e polo com o mesmo login, na web e no celular, com a marca da instituição. A conversa com a família sai do WhatsApp pessoal de quem atende.',
+				),
+				array(
+					'p'   => 'Como a instituição percebe que um aluno está prestes a sair?',
+					'ops' => array(
+						array( 't' => 'O sistema aponta risco cruzando nota, frequência e financeiro', 'peso' => 0 ),
+						array( 't' => 'Alguém percebe, olhando relatórios separados', 'peso' => 1 ),
+						array( 't' => 'A gente descobre quando o aluno não rematricula', 'peso' => 2 ),
+					),
+					'r' => 'O módulo de retenção cruza nota, frequência e situação financeira para apontar risco de evasão antes de o aluno sumir, com registro das tratativas por aluno.',
+				),
+				array(
+					'p'   => 'Como sai o documento final: diploma ou certificado?',
+					'ops' => array(
+						array( 't' => 'Nativo do sistema, no padrão exigido e com registro', 'peso' => 0 ),
+						array( 't' => 'Parte no sistema, parte em processo paralelo', 'peso' => 1 ),
+						array( 't' => 'Fora do sistema, em editor de texto ou serviço de terceiro', 'peso' => 2 ),
+					),
+					'r' => 'Diploma digital no padrão MEC, com XML assinado e livro de registro, no ensino superior. Nos cursos livres, certificado emitido sozinho ao fim do curso, com validação pública.',
+				),
+				array(
+					'p'   => 'Como o aluno pede uma declaração, uma revisão ou uma segunda via?',
+					'ops' => array(
+						array( 't' => 'Vira protocolo no sistema, com prazo e responsável', 'peso' => 0 ),
+						array( 't' => 'Por e-mail ou formulário, e alguém controla numa lista', 'peso' => 1 ),
+						array( 't' => 'No balcão ou no WhatsApp de quem estiver disponível', 'peso' => 2 ),
+					),
+					'r' => 'A Central de Requerimentos transforma o pedido em protocolo com prazo, responsável e histórico. O aluno acompanha pelo portal, e a secretaria deixa de ser o sistema de controle.',
+				),
+				array(
+					'p'   => 'Como o Censo é fechado?',
+					'ops' => array(
+						array( 't' => 'A exportação sai pronta do sistema', 'peso' => 0 ),
+						array( 't' => 'Sai do sistema, mas precisa de ajuste manual antes de enviar', 'peso' => 1 ),
+						array( 't' => 'É montado na mão, com equipe dedicada na época', 'peso' => 2 ),
+					),
+					'r' => 'A exportação do Censo sai do sistema. Na instituição em produção, o que era processo manual com equipe interna virou um arquivo e uma pessoa.',
+				),
+				array(
+					'p'   => 'Como a mantenedora enxerga os números da operação?',
+					'ops' => array(
+						array( 't' => 'Painel em tempo real, com o mesmo dado do acadêmico', 'peso' => 0 ),
+						array( 't' => 'Relatórios exportados e consolidados em planilha', 'peso' => 1 ),
+						array( 't' => 'Cada setor manda o seu número, e eles nem sempre batem', 'peso' => 2 ),
+					),
+					'r' => 'O painel de indicadores lê o mesmo dado do acadêmico e do financeiro, então a mantenedora e a secretaria param de discutir qual número está certo.',
+				),
+				array(
+					'p'   => 'Onde ficam a conciliação bancária e o resultado financeiro?',
+					'ops' => array(
+						array( 't' => 'No mesmo financeiro que emite a cobrança do aluno', 'peso' => 0 ),
+						array( 't' => 'Em um sistema contábil separado, alimentado por exportação', 'peso' => 1 ),
+						array( 't' => 'Em planilha, conferida no fim do mês', 'peso' => 2 ),
+					),
+					'r' => 'Conciliação bancária, contas a pagar e a receber e DRE ficam no mesmo financeiro que emite a cobrança do aluno, sem exportar nada para fechar o mês.',
+				),
+				array(
+					'p'   => 'Onde estão os documentos digitalizados dos alunos?',
+					'ops' => array(
+						array( 't' => 'No sistema, com busca por aluno', 'peso' => 0 ),
+						array( 't' => 'Em pastas na rede ou na nuvem, fora do sistema', 'peso' => 1 ),
+						array( 't' => 'Em papel, no arquivo físico da secretaria', 'peso' => 2 ),
+					),
+					'r' => 'A Biblioteca e o GED guardam o documento digitalizado com busca por nome do aluno, o que evita manter o sistema antigo ligado só para consulta e encurta o atendimento de segunda via.',
+				),
 			),
+			// Faixa por PONTOS (0 a 24), não por quantidade de lacunas: um "existe,
+			// mas por fora" pesa menos que um "não existe", e a leitura precisa
+			// refletir isso.
 			'faixas' => array(
-				array( 'ate' => 2, 'titulo' => 'O seu sistema cobre quase tudo.',
-					'texto' => 'Sobrou pouca coisa fora, e trocar de sistema por causa disso raramente compensa. Vale olhar só os pontos abaixo e decidir se eles atrapalham o suficiente.' ),
-				array( 'ate' => 6, 'titulo' => 'Você está costurando o resto por fora.',
-					'texto' => 'Uma parte do que a instituição precisa não existe no sistema, e alguém está resolvendo isso com planilha, serviço de terceiro ou digitação em dobro. É o custo que não aparece na mensalidade do fornecedor, mas aparece na folha da secretaria.' ),
-				array( 'ate' => 12, 'titulo' => 'Metade da operação vive fora do sistema.',
+				array( 'ate' => 5,  'titulo' => 'O seu sistema cobre quase tudo.',
+					'texto' => 'Sobrou pouca coisa de fora, e trocar de sistema por causa disso raramente compensa. Vale olhar os pontos abaixo e decidir se eles atrapalham o suficiente.' ),
+				array( 'ate' => 13, 'titulo' => 'Você está costurando o resto por fora.',
+					'texto' => 'Parte do que a instituição precisa não existe no sistema, e alguém resolve isso com planilha, serviço de terceiro ou digitação em dobro. É o custo que não aparece na mensalidade do fornecedor, mas aparece na folha da secretaria.' ),
+				array( 'ate' => 24, 'titulo' => 'Metade da operação vive fora do sistema.',
 					'texto' => 'Não é sinal de fornecedor ruim: é sinal de que aqueles módulos não existem ali, e a instituição foi preenchendo os buracos como deu. O problema é que cada buraco tem um custo, um responsável e um dado que não conversa com o resto.' ),
-			),
-			// Cada lacuna é respondida com o que existe nativo, sem citar nem
-			// atacar concorrente: a comparação é com a rotina de hoje.
-			'recomendacoes' => array(
-				0  => 'O Send Educacional tem CRM nativo: funil de leads, campanhas e recuperação de matrícula. O lead que vira aluno não é redigitado, ele já entra como matrícula.',
-				1  => 'A assinatura eletrônica é parte do fluxo: o contrato sai do cadastro do aluno, é assinado com validade jurídica e trilha de auditoria, e a primeira parcela é gerada em seguida.',
-				2  => 'A régua de cobrança é nativa, com boleto, Pix, recorrência, acordo e lembrete automático antes e depois do vencimento. É o módulo por trás da queda de inadimplência do cliente em produção.',
-				3  => 'O AVA é desenvolvido pela própria Send e nasce dentro do sistema: aula, material e avaliação no mesmo lugar do acadêmico, e a nota cai direto no histórico. Quem já usa Moodle e não quer mexer agora tem integração nos dois sentidos.',
-				4  => 'Portal e aplicativo de aluno, família, docente e polo com o mesmo login, na web e no celular, com a marca da instituição.',
-				5  => 'O módulo de retenção cruza nota, frequência e financeiro para apontar risco de evasão antes de o aluno sumir, com registro das tratativas por aluno.',
-				6  => 'Diploma digital no padrão MEC, com XML assinado e livro de registro, no superior. Nos cursos livres, certificado emitido sozinho e com validação pública.',
-				7  => 'A Central de Requerimentos transforma pedido em protocolo, com prazo, responsável e histórico. O aluno acompanha pelo portal e a secretaria para de atender por WhatsApp pessoal.',
-				8  => 'A exportação do Censo sai do sistema. Na instituição em produção, o que era processo manual com equipe interna virou um arquivo e uma pessoa.',
-				9  => 'O painel de BI lê o mesmo dado do acadêmico e do financeiro, então a mantenedora e a secretaria não discutem qual número está certo.',
-				10 => 'Conciliação bancária, contas a pagar e a receber e DRE ficam no mesmo financeiro que emite a cobrança do aluno.',
-				11 => 'A Biblioteca e o GED guardam o documento digitalizado do aluno com busca por nome, o que evita manter o sistema antigo ligado só para consulta.',
 			),
 		),
 
@@ -185,6 +269,44 @@ function se_ferramentas() {
 			'resumo'   => 'Inadimplência costuma ser discutida em percentual, e percentual não dói. Em reais, a conversa muda: é o valor que a instituição já entregou em aula, já pagou em folha e não recebeu.',
 		),
 	);
+}
+
+/**
+ * Põe os dois formatos de quiz na mesma estrutura.
+ *
+ * O quiz binário nasceu com 'perguntas' de texto simples, dois rótulos comuns a
+ * todas e as respostas num array separado. O de alternativas nasceu já com a
+ * pergunta, as opções e a resposta juntas. Em vez de dois motores, um
+ * conversor: o binário é só um caso de duas alternativas, peso 0 e peso 1.
+ *
+ * @return array<int,array{p:string,ops:array,r:string}>
+ */
+function se_ferramenta_normaliza( $f ) {
+	$saida = array();
+
+	foreach ( $f['perguntas'] as $i => $perg ) {
+
+		// Formato novo: já vem pronto.
+		if ( is_array( $perg ) ) {
+			$saida[] = array(
+				'p'   => $perg['p'],
+				'ops' => $perg['ops'],
+				'r'   => isset( $perg['r'] ) ? $perg['r'] : '',
+			);
+			continue;
+		}
+
+		$saida[] = array(
+			'p'   => $perg,
+			'ops' => array(
+				array( 't' => $f['rotulos'][0], 'peso' => 0 ),
+				array( 't' => $f['rotulos'][1], 'peso' => 1 ),
+			),
+			'r'   => isset( $f['recomendacoes'][ $i ] ) ? $f['recomendacoes'][ $i ] : '',
+		);
+	}
+
+	return $saida;
 }
 
 /** Uma ferramenta pelo slug, ou null. */
@@ -219,6 +341,7 @@ function se_ferramenta_lead() {
 	$nome      = isset( $_POST['nome'] ) ? sanitize_text_field( wp_unslash( $_POST['nome'] ) ) : '';
 	$email     = isset( $_POST['email'] ) ? sanitize_email( wp_unslash( $_POST['email'] ) ) : '';
 	$inst      = isset( $_POST['instituicao'] ) ? sanitize_text_field( wp_unslash( $_POST['instituicao'] ) ) : '';
+	$telefone  = isset( $_POST['telefone'] ) ? sanitize_text_field( wp_unslash( $_POST['telefone'] ) ) : '';
 	$resultado = isset( $_POST['resultado'] ) ? sanitize_text_field( wp_unslash( $_POST['resultado'] ) ) : '';
 	$detalhe   = isset( $_POST['detalhe'] ) ? sanitize_textarea_field( wp_unslash( $_POST['detalhe'] ) ) : '';
 
@@ -230,6 +353,10 @@ function se_ferramenta_lead() {
 	}
 	if ( $nome === '' || $inst === '' ) {
 		wp_send_json_error( 'Preencha nome e instituição.' );
+	}
+	// Só as ferramentas fechadas exigem telefone; nas abertas ele nem aparece.
+	if ( ! empty( $f['exige_lead'] ) && strlen( preg_replace( '/\D/', '', $telefone ) ) < 10 ) {
+		wp_send_json_error( 'Informe um telefone com DDD.' );
 	}
 
 	$segmentos = se_segmentos();
@@ -252,6 +379,15 @@ function se_ferramenta_lead() {
 
 	$token = defined( 'SE_RD_CRM_TOKEN' ) ? SE_RD_CRM_TOKEN : '699cbb3b8057d8001d350178';
 
+	// A RD recusa o telefone quando vem com 'type'; só o número passa.
+	$contato = array(
+		'name'   => $nome,
+		'emails' => array( array( 'email' => $email ) ),
+	);
+	if ( $telefone !== '' ) {
+		$contato['phones'] = array( array( 'phone' => $telefone ) );
+	}
+
 	wp_remote_post( 'https://crm.rdstation.com/api/v1/deals', array(
 		'headers'   => array( 'Content-Type' => 'application/json' ),
 		'timeout'   => 15,
@@ -261,12 +397,7 @@ function se_ferramenta_lead() {
 			'deal'  => array(
 				'name' => sprintf( '[DIAGNÓSTICO][%s] %s · %s', $seg['curto'], $inst, $resultado ),
 			),
-			'contacts' => array(
-				array(
-					'name'   => $nome,
-					'emails' => array( array( 'email' => $email ) ),
-				),
-			),
+			'contacts' => array( $contato ),
 		) ),
 	) );
 
@@ -281,17 +412,26 @@ function se_ferramenta_lead() {
 	wp_send_json_success();
 }
 
-/** Formulário do fim da ferramenta. O resultado já está na tela. */
-function se_ferramenta_form( $slug, $pede_segmento = false ) {
+/**
+ * Formulário da ferramenta.
+ *
+ * Dois modos. Em porta = false ele é opcional e vem DEPOIS do resultado, que já
+ * está na tela. Em porta = true ele é a condição para ver o resultado, e aí o
+ * telefone entra como obrigatório: quem aceita esse acordo é lead de verdade,
+ * e o time precisa conseguir ligar.
+ */
+function se_ferramenta_form( $slug, $pede_segmento = false, $porta = false ) {
 	?>
-	<form class="se-fer-form mt-8 pt-8 regra" data-ferramenta="<?php echo esc_attr( $slug ); ?>">
-		<p class="text-[11px] font-bold uppercase tracking-widest txt-fraco mb-2">Opcional</p>
-		<h3 class="titulo-mini text-xl txt-forte leading-snug mb-1.5">Quer o resultado por e-mail?</h3>
-		<p class="text-[13px] txt leading-relaxed mb-5">
-			Seu diagnóstico já está aí em cima e não vai a lugar nenhum. Se quiser guardar,
-			mandamos por e-mail a versão completa, com a recomendação de todos os pontos em
-			aberto, não só dos três que aparecem na tela.
-		</p>
+	<form class="se-fer-form<?php echo $porta ? ' se-fer-form-porta' : ' mt-8 pt-8 regra'; ?>" data-ferramenta="<?php echo esc_attr( $slug ); ?>">
+		<?php if ( ! $porta ) : ?>
+			<p class="text-[11px] font-bold uppercase tracking-widest txt-fraco mb-2">Opcional</p>
+			<h3 class="titulo-mini text-xl txt-forte leading-snug mb-1.5">Quer o resultado por e-mail?</h3>
+			<p class="text-[13px] txt leading-relaxed mb-5">
+				Seu diagnóstico já está aí em cima e não vai a lugar nenhum. Se quiser guardar,
+				mandamos por e-mail a versão completa, com a recomendação de todos os pontos em
+				aberto, não só dos três que aparecem na tela.
+			</p>
+		<?php endif; ?>
 
 		<div class="grid sm:grid-cols-2 gap-3">
 			<div>
@@ -302,7 +442,14 @@ function se_ferramenta_form( $slug, $pede_segmento = false ) {
 				<label class="block text-[11px] font-bold uppercase tracking-widest txt-fraco mb-1.5" for="fer-email-<?php echo esc_attr( $slug ); ?>">E-mail</label>
 				<input type="email" id="fer-email-<?php echo esc_attr( $slug ); ?>" name="email" required class="se-campo w-full rounded-xl px-4 py-2.5 text-sm focus:outline-none transition-colors">
 			</div>
-			<div<?php echo $pede_segmento ? '' : ' class="sm:col-span-2"'; ?>>
+			<?php if ( $porta ) : ?>
+			<div>
+				<label class="block text-[11px] font-bold uppercase tracking-widest txt-fraco mb-1.5" for="fer-tel-<?php echo esc_attr( $slug ); ?>">Telefone ou WhatsApp</label>
+				<input type="tel" id="fer-tel-<?php echo esc_attr( $slug ); ?>" name="telefone" required inputmode="tel" placeholder="(11) 90000-0000"
+				       class="se-campo w-full rounded-xl px-4 py-2.5 text-sm focus:outline-none transition-colors">
+			</div>
+			<?php endif; ?>
+			<div<?php echo ( $pede_segmento || $porta ) ? '' : ' class="sm:col-span-2"'; ?>>
 				<label class="block text-[11px] font-bold uppercase tracking-widest txt-fraco mb-1.5" for="fer-inst-<?php echo esc_attr( $slug ); ?>">Instituição</label>
 				<input type="text" id="fer-inst-<?php echo esc_attr( $slug ); ?>" name="instituicao" required class="se-campo w-full rounded-xl px-4 py-2.5 text-sm focus:outline-none transition-colors">
 			</div>
@@ -330,12 +477,20 @@ function se_ferramenta_form( $slug, $pede_segmento = false ) {
 
 		<div class="flex flex-col sm:flex-row gap-3 mt-5">
 			<button type="submit" class="gbtn txt-forte font-bold px-6 py-3.5 rounded-xl transition-all hover:-translate-y-0.5">
-				Receber o diagnóstico
+				<?php echo $porta ? 'Ver o meu diagnóstico' : 'Receber o diagnóstico'; ?>
 			</button>
-			<button type="button" onclick="abrirDemo()" class="bloco txt-forte font-bold px-6 py-3.5 rounded-xl transition-colors">
-				Ver isso rodando no sistema
-			</button>
+			<?php if ( ! $porta ) : ?>
+				<button type="button" onclick="abrirDemo()" class="bloco txt-forte font-bold px-6 py-3.5 rounded-xl transition-colors">
+					Ver isso rodando no sistema
+				</button>
+			<?php endif; ?>
 		</div>
+
+		<?php if ( $porta ) : ?>
+			<p class="txt-fraco text-[12px] mt-4 leading-snug">
+				O resultado aparece na hora, nesta mesma tela, e também vai para o seu e-mail.
+			</p>
+		<?php endif; ?>
 
 		<p class="se-fer-erro hidden text-[12px] font-semibold mt-3" style="color:#ab080d"></p>
 		<p class="se-fer-ok hidden text-[13px] font-semibold mt-4 txt-forte">

@@ -3,6 +3,10 @@
  *
  * Carregado só nas páginas que têm ferramenta. Depende de window.SE_FER,
  * injetado pelo PHP com a URL do admin-ajax.
+ *
+ * Um motor só para os dois formatos de quiz: o PHP normaliza tudo em pergunta,
+ * alternativas com peso e a resposta da lacuna, então aqui não existe "binário"
+ * nem "A, B e C", existe uma lista de alternativas.
  */
 (function () {
 	var caixa = document.querySelector('.se-fer');
@@ -10,6 +14,9 @@
 
 	var AJAX = (window.SE_FER && window.SE_FER.ajax) || '/wp-admin/admin-ajax.php';
 	var resumoEnvio = { resultado: '', detalhe: '' };
+	var mostrarResultado = null;
+
+	var LETRAS = ['A', 'B', 'C', 'D'];
 
 	/* ------------------------------------------------------------- quiz */
 	var bruto = caixa.getAttribute('data-dados');
@@ -20,31 +27,69 @@
 
 		var elInicio = caixa.querySelector('.se-fer-inicio');
 		var elJogo   = caixa.querySelector('.se-fer-jogo');
+		var elPorta  = caixa.querySelector('.se-fer-porta');
 		var elRes    = caixa.querySelector('.se-fer-resultado');
 		var elPerg   = caixa.querySelector('.se-fer-pergunta');
+		var elOps    = caixa.querySelector('.se-fer-ops');
 		var elAtual  = caixa.querySelector('.se-fer-atual');
 		var elFill   = caixa.querySelector('.se-fer-barra-fill');
 		var elVoltar = caixa.querySelector('.se-fer-voltar');
 
 		var desenha = function () {
-			elPerg.textContent = d.perguntas[i];
+			var q = d.perguntas[i];
+			elPerg.textContent = q.p;
 			elAtual.textContent = i + 1;
 			elFill.style.width = ((i / d.total) * 100) + '%';
 			elVoltar.classList.toggle('hidden', i === 0);
+
+			elOps.innerHTML = '';
+			q.ops.forEach(function (op, k) {
+				var b = document.createElement('button');
+				b.type = 'button';
+				b.className = 'se-fer-op';
+				/* A alternativa já escolhida fica marcada quando a pessoa volta:
+				   sem isso, voltar parece ter apagado a resposta. */
+				if (respostas[i] === k) b.classList.add('se-fer-op-sel');
+
+				var letra = document.createElement('span');
+				letra.className = 'se-fer-letra';
+				letra.textContent = LETRAS[k] || (k + 1);
+
+				var texto = document.createElement('span');
+				texto.className = 'se-fer-op-txt';
+				texto.textContent = op.t;
+
+				b.appendChild(letra);
+				b.appendChild(texto);
+				b.addEventListener('click', function () {
+					respostas[i] = k;
+					i++;
+					if (i >= d.total) { finaliza(); return; }
+					desenha();
+				});
+				elOps.appendChild(b);
+			});
 		};
 
-		var faixaDe = function (lacunas) {
+		var faixaDe = function (pontos) {
 			for (var k = 0; k < d.faixas.length; k++) {
-				if (lacunas <= d.faixas[k].ate) return d.faixas[k];
+				if (pontos <= d.faixas[k].ate) return d.faixas[k];
 			}
 			return d.faixas[d.faixas.length - 1];
 		};
 
-		var finaliza = function () {
+		var pinta = function () {
 			var abertos = [];
-			respostas.forEach(function (r, idx) { if (r === 0) abertos.push(idx); });
+			var pontos = 0;
 
-			var faixa = faixaDe(abertos.length);
+			respostas.forEach(function (escolha, idx) {
+				var op = d.perguntas[idx].ops[escolha];
+				var peso = op ? (op.peso || 0) : 0;
+				pontos += peso;
+				if (peso > 0) abertos.push({ idx: idx, peso: peso, escolha: op ? op.t : '' });
+			});
+
+			var faixa = faixaDe(pontos);
 			caixa.querySelector('.se-fer-nota-num').textContent = abertos.length;
 			caixa.querySelector('.se-fer-faixa-titulo').textContent = faixa.titulo;
 			caixa.querySelector('.se-fer-faixa-texto').textContent = faixa.texto;
@@ -58,26 +103,34 @@
 				titulo.textContent = d.rotuloRecs || 'O que fazer com o que ficou em aberto';
 				alvo.appendChild(titulo);
 
-				/* O limite vem da ferramenta: em diagnóstico de rotina, lista
-				   de dez cansa e a terceira ja e menos urgente; no diagnostico
-				   do sistema atual, a lista completa e o que a pessoa veio ver. */
+				/* O limite vem da ferramenta: em diagnóstico de rotina, lista de
+				   dez cansa e a terceira já é menos urgente; no diagnóstico do
+				   sistema atual, a lista completa é o que a pessoa veio ver. */
 				var limite = d.limite || 3;
-				abertos.slice(0, limite).forEach(function (idx) {
-					var bloco = document.createElement('div');
-					bloco.className = 'se-fer-rec';
+				/* Maior peso primeiro: o que não existe vem antes do que existe
+				   por fora. */
+				abertos.slice().sort(function (a, b) { return b.peso - a.peso; })
+					.slice(0, limite).forEach(function (item) {
+						var bloco = document.createElement('div');
+						bloco.className = 'se-fer-rec';
 
-					var p1 = document.createElement('p');
-					p1.className = 'text-sm txt-forte font-bold leading-snug mb-1';
-					p1.textContent = d.perguntas[idx];
+						var p1 = document.createElement('p');
+						p1.className = 'text-sm txt-forte font-bold leading-snug mb-1';
+						p1.textContent = d.perguntas[item.idx].p;
 
-					var p2 = document.createElement('p');
-					p2.className = 'text-[13px] txt leading-relaxed';
-					p2.textContent = d.recomendacoes[idx];
+						var p0 = document.createElement('p');
+						p0.className = 'text-[12px] txt-fraco leading-snug mb-1.5';
+						p0.textContent = 'Sua resposta: ' + item.escolha;
 
-					bloco.appendChild(p1);
-					bloco.appendChild(p2);
-					alvo.appendChild(bloco);
-				});
+						var p2 = document.createElement('p');
+						p2.className = 'text-[13px] txt leading-relaxed';
+						p2.textContent = d.perguntas[item.idx].r;
+
+						bloco.appendChild(p1);
+						bloco.appendChild(p0);
+						bloco.appendChild(p2);
+						alvo.appendChild(bloco);
+					});
 
 				if (abertos.length > limite) {
 					var resto = document.createElement('p');
@@ -98,29 +151,43 @@
 
 			resumoEnvio.resultado = abertos.length + ' de ' + d.total + ' em aberto. ' + faixa.titulo;
 			resumoEnvio.detalhe = abertos.length
-				? abertos.map(function (idx) {
-					return '- ' + d.perguntas[idx] + '\n  ' + d.recomendacoes[idx];
+				? abertos.map(function (item) {
+					return '- ' + d.perguntas[item.idx].p + '\n  Resposta: ' + item.escolha +
+						'\n  ' + d.perguntas[item.idx].r;
 				}).join('\n\n')
 				: 'Nenhum ponto em aberto.';
 
-			elJogo.classList.add('hidden');
+			return abertos.length;
+		};
+
+		mostrarResultado = function () {
+			if (elPorta) elPorta.classList.add('hidden');
 			elRes.classList.remove('hidden');
 			elRes.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		};
+
+		var finaliza = function () {
+			var abertos = pinta();
+			elJogo.classList.add('hidden');
+
+			/* Ferramenta fechada: o resultado já está montado, mas fica atrás do
+			   cadastro. A quantidade aparece na porta de propósito, é ela que
+			   dá motivo para preencher. */
+			if (d.exigeLead && elPorta) {
+				var num = elPorta.querySelector('.se-fer-porta-num');
+				if (num) num.textContent = abertos;
+				elPorta.classList.remove('hidden');
+				elPorta.scrollIntoView({ behavior: 'smooth', block: 'start' });
+				return;
+			}
+
+			mostrarResultado();
 		};
 
 		caixa.querySelector('.se-fer-comecar').addEventListener('click', function () {
 			elInicio.classList.add('hidden');
 			elJogo.classList.remove('hidden');
 			desenha();
-		});
-
-		caixa.querySelectorAll('.se-fer-op').forEach(function (b) {
-			b.addEventListener('click', function () {
-				respostas[i] = parseInt(b.getAttribute('data-valor'), 10);
-				i++;
-				if (i >= d.total) { finaliza(); return; }
-				desenha();
-			});
 		});
 
 		elVoltar.addEventListener('click', function () {
@@ -191,6 +258,8 @@
 	var form = caixa.querySelector('.se-fer-form');
 	if (!form) return;
 
+	var ehPorta = form.classList.contains('se-fer-form-porta');
+
 	form.addEventListener('submit', function (e) {
 		e.preventDefault();
 
@@ -220,6 +289,14 @@
 					erro.classList.remove('hidden');
 					return;
 				}
+
+				/* Na porta, o prêmio é o resultado, não uma mensagem de
+				   obrigado: some com o formulário e abre o diagnóstico. */
+				if (ehPorta && mostrarResultado) {
+					mostrarResultado();
+					return;
+				}
+
 				form.querySelectorAll('.grid, label, button[type=submit]').forEach(function (el) {
 					el.classList.add('hidden');
 				});

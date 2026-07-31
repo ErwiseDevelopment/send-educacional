@@ -40,23 +40,28 @@ function se_ferramenta_quiz( $slug ) {
 	}
 
 	se_ferramenta_topo( $f );
+
+	// Os dois formatos viram a MESMA estrutura antes de chegar no JS: pergunta,
+	// alternativas com peso e a resposta da lacuna. O quiz binário é só um caso
+	// particular de duas alternativas, então o motor é um só.
+	$perguntas = se_ferramenta_normaliza( $f );
+	$exige     = ! empty( $f['exige_lead'] );
 	?>
 	<section class="py-14">
 		<div class="container mx-auto px-6 max-w-3xl">
 			<div class="se-fer glass rounded-[1.75rem] p-7 md:p-10 cardring"
 			     data-ferramenta="<?php echo esc_attr( $slug ); ?>"
 			     data-dados="<?php echo esc_attr( wp_json_encode( array(
-					'nome'    => $f['nome'],
-					'rotulos' => $f['rotulos'],
-					'total'   => count( $f['perguntas'] ),
-					'faixas'  => $f['faixas'],
-					'recomendacoes' => $f['recomendacoes'],
-					// Quantas recomendações cabem na tela antes de cansar. O
+					'nome'      => $f['nome'],
+					'total'     => count( $perguntas ),
+					'faixas'    => $f['faixas'],
+					'perguntas' => $perguntas,
+					// Quantas respostas cabem na tela antes de cansar. O
 					// diagnóstico do sistema atual mostra todas, porque ali a
 					// lista completa é o conteúdo.
-					'limite'        => isset( $f['limite'] ) ? (int) $f['limite'] : 3,
-					'rotuloRecs'    => isset( $f['rotulo_recs'] ) ? $f['rotulo_recs'] : '',
-					'perguntas'     => $f['perguntas'],
+					'limite'     => isset( $f['limite'] ) ? (int) $f['limite'] : 3,
+					'rotuloRecs' => isset( $f['rotulo_recs'] ) ? $f['rotulo_recs'] : '',
+					'exigeLead'  => $exige,
 			     ) ) ); ?>">
 
 				<?php // Passo 1: o convite. Explica o porquê antes de pedir a primeira resposta. ?>
@@ -66,7 +71,8 @@ function se_ferramenta_quiz( $slug ) {
 						Começar o diagnóstico
 					</button>
 					<p class="txt-fraco text-[12px] mt-3">
-						<?php echo (int) count( $f['perguntas'] ); ?> perguntas, cerca de dois minutos. Sem cadastro para ver o resultado.
+						<?php echo (int) count( $perguntas ); ?> perguntas, cerca de dois minutos.
+						<?php echo $exige ? 'O resultado é liberado depois dos seus dados de contato.' : 'Sem cadastro para ver o resultado.'; ?>
 					</p>
 				</div>
 
@@ -74,7 +80,7 @@ function se_ferramenta_quiz( $slug ) {
 				<div class="se-fer-jogo hidden">
 					<div class="flex items-center justify-between mb-2">
 						<span class="text-[11px] font-bold uppercase tracking-widest txt-fraco">
-							Pergunta <span class="se-fer-atual">1</span> de <?php echo (int) count( $f['perguntas'] ); ?>
+							Pergunta <span class="se-fer-atual">1</span> de <?php echo (int) count( $perguntas ); ?>
 						</span>
 						<button type="button" class="se-fer-voltar text-[12px] font-bold txt-link hover-forte transition hidden">Voltar</button>
 					</div>
@@ -82,18 +88,39 @@ function se_ferramenta_quiz( $slug ) {
 
 					<p class="se-fer-pergunta text-xl md:text-2xl titulo-mini txt-forte leading-snug mt-7 mb-7"></p>
 
-					<div class="grid sm:grid-cols-2 gap-3">
-						<button type="button" class="se-fer-op" data-valor="1"><?php echo esc_html( $f['rotulos'][0] ); ?></button>
-						<button type="button" class="se-fer-op" data-valor="0"><?php echo esc_html( $f['rotulos'][1] ); ?></button>
-					</div>
+					<?php // As alternativas são desenhadas pelo JS: variam por pergunta. ?>
+					<div class="se-fer-ops flex flex-col gap-3"></div>
 				</div>
 
-				<?php // Passo 3: resultado, antes de pedir qualquer dado. ?>
+				<?php if ( $exige ) : ?>
+					<?php
+					// Passo 3 quando a ferramenta é fechada: o resultado já está
+					// calculado, mas fica atrás do cadastro. O texto diz isso sem
+					// rodeio, porque descobrir a troca depois de responder doze
+					// perguntas é o que faz a pessoa fechar a aba.
+					?>
+					<div class="se-fer-porta hidden">
+						<div class="text-center max-w-xl mx-auto mb-8">
+							<span class="marca-icone w-12 h-12 mx-auto mb-4">
+								<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+							</span>
+							<h2 class="titulo text-2xl md:text-3xl leading-[1.1] txt-forte mb-3">Seu diagnóstico está pronto</h2>
+							<p class="txt leading-relaxed">
+								Encontramos <span class="se-fer-porta-num txt-forte font-bold">0</span> ponto(s)
+								em aberto no seu sistema atual. Preencha os dados para ver o resultado
+								completo, com o que existe nativo em cada um deles.
+							</p>
+						</div>
+						<?php se_ferramenta_form( $slug, $f['segmento'] === '', true ); ?>
+					</div>
+				<?php endif; ?>
+
+				<?php // Passo final: o resultado. ?>
 				<div class="se-fer-resultado hidden">
 					<div class="flex items-start gap-5">
 						<div class="se-fer-nota shrink-0">
 							<span class="se-fer-nota-num">0</span>
-							<span class="se-fer-nota-de">de <?php echo (int) count( $f['perguntas'] ); ?></span>
+							<span class="se-fer-nota-de">de <?php echo (int) count( $perguntas ); ?></span>
 						</div>
 						<div>
 							<p class="text-[11px] font-bold uppercase tracking-widest txt-link mb-1.5">Pontos em aberto</p>
@@ -128,7 +155,7 @@ function se_ferramenta_quiz( $slug ) {
 							</a>
 					<?php endif; ?>
 
-					<?php se_ferramenta_form( $slug, $f['segmento'] === '' ); ?>
+					<?php if ( ! $exige ) : se_ferramenta_form( $slug, $f['segmento'] === '' ); endif; ?>
 
 					<button type="button" class="se-fer-refazer text-[12px] font-bold txt-fraco hover-forte transition mt-6">
 						Refazer o diagnóstico

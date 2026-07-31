@@ -2,7 +2,7 @@
 Theme Name: Send Educacional
 Description: Tema customizado para o SaaS Send Educacional usando Tailwind CSS.
 Author: Send Solutions
-Version: 2.12.0
+Version: 2.13.0
 */
 
 @tailwind base;
@@ -135,14 +135,21 @@ a:hover .se-logo-marca{transform:scale(1.03)}
 
 /* Alvo grande de propósito: a pessoa responde dez vezes seguidas, e cada
    clique precisa ser óbvio no celular sem mirar. */
-.se-fer-op{display:flex;align-items:center;justify-content:center;text-align:center;
-  min-height:4.25rem;padding:1rem 1.25rem;border-radius:1rem;font-weight:700;
+.se-fer-op{display:flex;align-items:center;gap:.9rem;text-align:left;width:100%;
+  min-height:3.75rem;padding:.9rem 1.1rem;border-radius:1rem;font-weight:600;
   color:var(--t-forte);background:var(--cartao);border:1px solid var(--cartao-borda);
   box-shadow:var(--cartao-sombra);cursor:pointer;
   transition:border-color .2s ease,transform .2s ease,box-shadow .2s ease}
 .se-fer-op:hover{border-color:rgba(74,120,176,.65);transform:translateY(-2px);
   box-shadow:var(--cartao-sombra-hover)}
 .se-fer-op:focus-visible{outline:2px solid #4a78b0;outline-offset:2px}
+.se-fer-op-txt{flex:1;line-height:1.35}
+/* A letra é o que faz a lista parecer alternativa de prova, e não botão. */
+.se-fer-letra{display:flex;align-items:center;justify-content:center;flex:none;
+  width:2rem;height:2rem;border-radius:.6rem;font-size:.8rem;font-weight:800;
+  background:var(--icone-fundo);border:1px solid var(--icone-borda);color:var(--icone-cor)}
+.se-fer-op-sel{border-color:rgba(74,120,176,.85)}
+.se-fer-op-sel .se-fer-letra{background:#1f3184;border-color:#1f3184;color:#fff}
 
 .se-fer-nota{display:flex;flex-direction:column;align-items:center;justify-content:center;
   width:5.5rem;height:5.5rem;border-radius:1.25rem;
