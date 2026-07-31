@@ -2,7 +2,7 @@
 Theme Name: Send Educacional
 Description: Tema customizado para o SaaS Send Educacional usando Tailwind CSS.
 Author: Send Solutions
-Version: 2.13.0
+Version: 2.14.0
 */
 
 *, ::before, ::after {
@@ -1553,6 +1553,10 @@ video {
 
 .max-w-xl {
   max-width: 36rem;
+}
+
+.max-w-xs {
+  max-width: 20rem;
 }
 
 .flex-1 {
@@ -4423,6 +4427,38 @@ a:hover .se-logo-marca{
 
 .se-fer-rec:last-child{
   border-bottom:1px solid var(--linha)
+}
+
+/* Trava da calculadora: o valor fica borrado e ilegível até o cadastro, mas
+   a estrutura continua aparecendo, então dá para ver que existe resultado. */
+
+.se-calc-valores{
+  transition:filter .35s ease
+}
+
+.se-fer-travado .se-calc-valores{
+  filter:blur(9px);
+  pointer-events:none;
+  -webkit-user-select:none;
+     -moz-user-select:none;
+          user-select:none
+}
+
+.se-calc-trava{
+  position:absolute;
+  inset:0;
+  z-index:2;
+  display:none;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:1.5rem;
+  border-radius:1rem
+}
+
+.se-fer-travado .se-calc-trava{
+  display:flex
 }
 
 /* Deslizante na cor da marca nos dois motores de render. */

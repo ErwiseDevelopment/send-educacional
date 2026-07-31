@@ -188,7 +188,7 @@ function se_ferramenta_calculadora( $slug ) {
 			<div class="se-fer se-calc glass rounded-[1.75rem] p-7 md:p-10 cardring" data-ferramenta="<?php echo esc_attr( $slug ); ?>">
 				<p class="txt leading-relaxed max-w-2xl"><?php echo esc_html( $f['resumo'] ); ?></p>
 
-				<div class="grid lg:grid-cols-2 gap-10 mt-8">
+				<div class="grid lg:grid-cols-2 gap-10 mt-8 se-calc-grade">
 
 					<div class="space-y-5">
 						<div>
@@ -212,13 +212,30 @@ function se_ferramenta_calculadora( $slug ) {
 							<input type="range" id="calc-dias" min="5" max="180" step="5" value="45" class="se-range w-full">
 						</div>
 						<p class="txt-fraco text-[12px] leading-snug">
-							Nada aqui é enviado para a gente enquanto você não pedir. A conta roda
-							no seu navegador.
+							A conta roda no seu navegador. Os números que você digita só chegam
+							até nós quando você envia o formulário.
 						</p>
 					</div>
 
-					<div>
-						<div class="sup-escura rounded-2xl p-7" style="background:linear-gradient(135deg,#1f3184,#080b6c)">
+					<?php
+					// Os campos ficam livres e a conta roda em tempo real; o que
+					// a trava esconde é o RESULTADO. Assim a pessoa vê a
+					// ferramenta funcionando antes de decidir se entrega o
+					// contato, em vez de encarar um formulário seco.
+					?>
+					<div class="relative">
+						<?php if ( ! empty( $f['exige_lead'] ) ) : ?>
+							<div class="se-calc-trava">
+								<span class="marca-icone w-12 h-12 mb-3">
+									<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+								</span>
+								<p class="titulo-mini text-lg txt-forte leading-snug">O resultado está calculado</p>
+								<p class="text-[13px] txt mt-1.5 leading-snug max-w-xs">
+									Preencha os dados abaixo para ver quanto a inadimplência custa por mês e por ano.
+								</p>
+							</div>
+						<?php endif; ?>
+						<div class="se-calc-valores sup-escura rounded-2xl p-7" style="background:linear-gradient(135deg,#1f3184,#080b6c)">
 							<p class="text-[11px] font-bold uppercase tracking-widest txt-fraco">Parado por mês</p>
 							<p class="numero text-4xl md:text-5xl txt-forte leading-none mt-1.5" id="calc-mes">R$ 0</p>
 
@@ -250,7 +267,7 @@ function se_ferramenta_calculadora( $slug ) {
 					</div>
 				</div>
 
-				<?php se_ferramenta_form( $slug, true ); ?>
+				<?php se_ferramenta_form( $slug, true, ! empty( $f['exige_lead'] ) ); ?>
 			</div>
 		</div>
 	</section>
@@ -349,15 +366,23 @@ function se_bloco_ferramentas() {
 
 			<div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10 reveal">
 				<div class="max-w-2xl">
-					<span class="txt-link font-bold tracking-widest uppercase text-xs">Antes de falar com a gente</span>
+					<span class="txt-link font-bold tracking-widest uppercase text-xs">Diagnósticos gratuitos</span>
 					<h2 class="titulo text-[2rem] md:text-4xl leading-[1.04] mt-4">
-						Descubra sozinho onde está o seu problema
+						Descubra onde está o seu problema
 					</h2>
 					<p class="txt text-lg mt-4 leading-relaxed">
-						Quatro diagnósticos gratuitos, respondidos em dois minutos. O resultado
-						aparece na hora, sem cadastro, e serve mesmo que você nunca fale com a Send.
+						Quatro diagnósticos gratuitos, respondidos em dois minutos. Você responde,
+						a gente mostra o que está em aberto na sua operação e o que existiria
+						pronto no lugar.
 					</p>
 				</div>
+
+				<?php $url_indice = se_url_pagina( 'diagnosticos' ); ?>
+				<?php if ( $url_indice ) : ?>
+					<a href="<?php echo esc_url( $url_indice ); ?>" class="inline-flex items-center gap-2 font-bold txt-link hover-forte transition shrink-0">
+						Ver todos <span aria-hidden="true">&rarr;</span>
+					</a>
+				<?php endif; ?>
 			</div>
 
 			<div class="grid md:grid-cols-2 gap-5 reveal">

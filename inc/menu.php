@@ -288,12 +288,10 @@ function se_menu_mega_bruto() {
 				array(
 					'titulo' => 'Conteúdo',
 					'itens'  => array(
+						// Cinco entradas viraram uma: o menu tinha um item por
+						// diagnóstico e ficou grande demais. O índice reúne todos.
+						array( 'nome' => 'Diagnósticos gratuitos', 'desc' => 'Quatro diagnósticos da sua operação, com resultado na hora', 'url' => se_url_pagina( 'diagnosticos' ), 'icone' => 'ajuda' ),
 						array( 'nome' => 'Comunicação', 'desc' => 'Artigos por segmento, do superior ao curso livre', 'url' => home_url( '/blog' ), 'icone' => 'artigo' ),
-						array( 'nome' => '12 perguntas para mudar de sistema hoje', 'desc' => 'O que o seu sistema atual não faz, e o que o Send entrega nativo', 'url' => se_url_pagina( '12-perguntas-antes-de-trocar-de-sistema' ), 'icone' => 'ajuda' ),
-						array( 'nome' => 'Guia em PDF: o que perguntar ao fornecedor', 'desc' => 'As doze perguntas para levar impressas para a reunião', 'url' => se_url_pagina( 'material-trocar-de-sistema' ), 'icone' => 'documento' ),
-						array( 'nome' => 'Raio-X da Rematrícula', 'desc' => 'Dez perguntas com nota e recomendações, para escolas', 'url' => se_url_pagina( 'raio-x-rematricula' ), 'icone' => 'escola' ),
-						array( 'nome' => 'Prontidão regulatória', 'desc' => 'Quanto do Censo, ENADE e diploma sai pronto do sistema', 'url' => se_url_pagina( 'prontidao-regulatoria' ), 'icone' => 'escudo' ),
-						array( 'nome' => 'Calculadora de inadimplência', 'desc' => 'Quanto a inadimplência custa por mês e por ano', 'url' => se_url_pagina( 'calculadora-inadimplencia' ), 'icone' => 'dinheiro' ),
 						array( 'nome' => 'Visão geral da plataforma', 'desc' => 'A apresentação completa, módulo a módulo', 'url' => $demo, 'icone' => 'apresentacao' ),
 					),
 					'posts'  => true, // últimos artigos publicados

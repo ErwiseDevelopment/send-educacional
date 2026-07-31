@@ -27,9 +27,10 @@ function se_ferramentas() {
 
 		// ------------------------------------------------- EDUCAÇÃO BÁSICA
 		'raio-x-rematricula' => array(
-			'tipo'      => 'quiz',
-			'segmento'  => 'educacao-basica',
-			'nome'      => 'Raio-X da Rematrícula',
+			'tipo'       => 'quiz',
+			'exige_lead' => true,
+			'segmento'   => 'educacao-basica',
+			'nome'       => 'Diagnóstico da Rematrícula',
 			'titulo'    => 'A sua rematrícula está pronta para agosto?',
 			'chamada'   => 'Dez perguntas, dois minutos. No fim você recebe uma nota e três recomendações.',
 			'resumo'    => 'A rematrícula define a receita do ano inteiro e acontece com toda a base ao mesmo tempo. Na maioria das escolas ela roda em três lugares diferentes: o contrato sai de um, a assinatura de outro e a cobrança de um terceiro. Este raio-x mostra onde está o seu vazamento.',
@@ -70,9 +71,10 @@ function se_ferramentas() {
 
 		// -------------------------------------------------- ENSINO SUPERIOR
 		'prontidao-regulatoria' => array(
-			'tipo'      => 'quiz',
-			'segmento'  => 'ensino-superior',
-			'nome'      => 'Checklist de Prontidão Regulatória',
+			'tipo'       => 'quiz',
+			'exige_lead' => true,
+			'segmento'   => 'ensino-superior',
+			'nome'       => 'Diagnóstico de Prontidão Regulatória',
 			'titulo'    => 'Quanto da sua obrigação regulatória sai do sistema?',
 			'chamada'   => 'Doze itens. Para cada um, responda se ele sai pronto do sistema ou se é montado na mão.',
 			'resumo'    => 'Toda IES entrega Censo, ENADE e diploma. A diferença entre uma instituição tranquila e uma instituição em risco é quanto disso sai pronto do sistema e quanto depende de alguém montar na planilha, sempre na semana do prazo.',
@@ -132,7 +134,7 @@ function se_ferramentas() {
 			'material'    => 'material-trocar-de-sistema',
 			'limite'      => 12,
 			'rotulo_recs' => 'O que o Send Educacional entrega nativo nesses pontos',
-			'nome'        => '12 perguntas para mudar de sistema hoje',
+			'nome'        => 'Diagnóstico do seu sistema atual',
 			'titulo'      => 'O que o seu sistema atual não faz?',
 			'chamada'     => 'Doze perguntas técnicas, três alternativas cada. No fim, o que o Send Educacional entrega nativo em cada ponto que ficou em aberto.',
 			'resumo'      => 'A maioria das instituições não tem um sistema ruim: tem um sistema incompleto, com o resto costurado em planilha, serviço de terceiro e retrabalho da secretaria. Estas doze perguntas mostram onde está a costura, e o que existiria nativo no lugar dela.',
@@ -261,9 +263,10 @@ function se_ferramentas() {
 
 		// ---------------------------------------------------------- OS DOIS
 		'calculadora-inadimplencia' => array(
-			'tipo'     => 'calculadora',
-			'segmento' => '',
-			'nome'     => 'Calculadora de inadimplência',
+			'tipo'       => 'calculadora',
+			'exige_lead' => true,
+			'segmento'   => '',
+			'nome'       => 'Diagnóstico de Inadimplência',
 			'titulo'   => 'Quanto a inadimplência custa na sua instituição?',
 			'chamada'  => 'Quatro campos. O resultado sai em reais, por mês e por ano.',
 			'resumo'   => 'Inadimplência costuma ser discutida em percentual, e percentual não dói. Em reais, a conversa muda: é o valor que a instituição já entregou em aula, já pagou em folha e não recebeu.',

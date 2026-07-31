@@ -31,6 +31,7 @@ function se_semear_conteudo() {
 	$feito = se_semear_paginas_segmento( $feito );
 	$feito = se_semear_pagina_material( $feito );
 	$feito = se_semear_paginas_ferramenta( $feito );
+	$feito = se_semear_pagina_simples( $feito, 'diagnosticos', 'Diagnósticos' );
 	$feito = se_semear_artigos( $feito );
 
 	if ( $feito !== $antes ) {
@@ -149,6 +150,40 @@ function se_semear_paginas_ferramenta( $feito ) {
 		if ( ! is_wp_error( $id ) ) {
 			$feito[ $chave ] = (int) $id;
 		}
+	}
+
+	return $feito;
+}
+
+/**
+ * Página sem conteúdo próprio, cujo template faz tudo.
+ *
+ * O slug bate com o nome do arquivo (page-<slug>.php), então o WordPress já
+ * escolhe o template sozinho; o _wp_page_template é cinto de segurança.
+ */
+function se_semear_pagina_simples( $feito, $slug, $titulo ) {
+	$chave = 'pagina:' . $slug;
+	if ( ! empty( $feito[ $chave ] ) ) {
+		return $feito;
+	}
+
+	$existente = get_page_by_path( $slug );
+	if ( $existente ) {
+		$feito[ $chave ] = (int) $existente->ID;
+		return $feito;
+	}
+
+	$id = wp_insert_post( array(
+		'post_type'    => 'page',
+		'post_status'  => 'publish',
+		'post_title'   => $titulo,
+		'post_name'    => $slug,
+		'post_content' => '',
+		'meta_input'   => array( '_wp_page_template' => 'page-' . $slug . '.php' ),
+	), true );
+
+	if ( ! is_wp_error( $id ) ) {
+		$feito[ $chave ] = (int) $id;
 	}
 
 	return $feito;

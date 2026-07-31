@@ -206,6 +206,18 @@
 
 	/* ----------------------------------------------------- calculadora */
 	if (caixa.classList.contains('se-calc')) {
+		/* A conta roda desde o primeiro segundo; o que fica travado é a
+		   leitura do valor. Sem isso, a pessoa preencheria um formulário sem
+		   nunca ter visto a ferramenta funcionar. */
+		if (caixa.querySelector('.se-calc-trava')) {
+			caixa.classList.add('se-fer-travado');
+			mostrarResultado = function () {
+				caixa.classList.remove('se-fer-travado');
+				caixa.querySelector('.se-calc-valores')
+					.scrollIntoView({ behavior: 'smooth', block: 'center' });
+			};
+		}
+
 		var alunos = document.getElementById('calc-alunos');
 		var ticket = document.getElementById('calc-ticket');
 		var taxa   = document.getElementById('calc-taxa');
