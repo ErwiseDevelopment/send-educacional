@@ -45,7 +45,7 @@ get_header(); ?>
                     <p class="txt mb-8 leading-relaxed text-sm flex-grow">
                         Combate à inadimplência com régua de cobrança automática, conciliação PIX instantânea, repasse para polos e emissão automática de NF-e.
                     </p>
-                    <a href="<?php echo home_url('/financeiro'); ?>" class="inline-flex items-center font-bold txt-link hover:text-blue-200 group-hover:translate-x-1 transition-transform">
+                    <a href="<?php echo se_url_pagina( array( 'financeiro', 'gestao-financeira' ) ); ?>" class="inline-flex items-center font-bold txt-link hover:text-blue-200 group-hover:translate-x-1 transition-transform">
                         Conhecer módulo <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"></path></svg>
                     </a>
                 </div>
@@ -71,7 +71,7 @@ get_header(); ?>
                     <p class="txt mb-8 leading-relaxed text-sm flex-grow">
                         Acervo digital e físico integrados. Realize empréstimos automatizados e armazene a documentação dos alunos com validade jurídica (GED).
                     </p>
-                    <a href="<?php echo home_url('/biblioteca-e-ged'); ?>" class="inline-flex items-center font-bold txt-link hover:text-blue-200 group-hover:translate-x-1 transition-transform">
+                    <a href="<?php echo se_url_pagina( array( 'biblioteca', 'biblioteca-e-ged' ) ); ?>" class="inline-flex items-center font-bold txt-link hover:text-blue-200 group-hover:translate-x-1 transition-transform">
                         Conhecer módulo <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"></path></svg>
                     </a>
                 </div>

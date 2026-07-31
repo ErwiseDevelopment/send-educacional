@@ -276,7 +276,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
   <div class="relative z-10 max-w-6xl mx-auto px-6 reveal">
     <div class="text-center mb-14">
       <span class="txt-link font-bold tracking-widest uppercase text-xs">Resultados na prática</span>
-      <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mt-4 mb-5 leading-tight">Uma faculdade de 3.000 alunos<br class="hidden md:block"> roda a operação inteira no Send.</h2>
+      <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mt-4 mb-5 leading-tight">Uma faculdade de 5.000 alunos<br class="hidden md:block"> roda a operação inteira no Send.</h2>
       <p class="text-lg txt max-w-2xl mx-auto">Acadêmico, financeiro, contratos, portal do aluno e BI, em um só sistema, com implantação estruturada e suporte de parceiro 24/7.</p>
     </div>
 
@@ -285,16 +285,16 @@ if ( ! defined( 'ABSPATH' ) ) exit;
       <div class="sup-escura relative overflow-hidden rounded-3xl p-9 flex flex-col justify-between min-h-[220px]" style="background:linear-gradient(150deg,#335298,#080b6c)">
         <div class="absolute -top-12 -right-12 w-48 h-48 bg-white/10 rounded-full blur-2xl"></div>
         <div class="relative z-10">
-          <div class="text-6xl md:text-7xl font-extrabold tracking-tighter leading-none">3.000</div>
+          <div class="text-6xl md:text-7xl font-extrabold tracking-tighter leading-none">5.000</div>
           <p class="text-blue-100 font-semibold mt-3 text-lg">alunos com a operação 100% no Send</p>
         </div>
         <div class="relative z-10 flex items-center gap-2 mt-6 txt text-sm font-medium"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Em produção, todos os dias</div>
       </div>
       <div class="lg:col-span-2 grid grid-cols-2 gap-4">
         <div class="bg-white/[.04] border linha rounded-3xl p-7 flex flex-col justify-center"><div class="text-4xl md:text-5xl font-extrabold gtext">20+</div><p class="txt text-sm font-semibold mt-1">Módulos integrados</p></div>
-        <div class="bg-white/[.04] border linha rounded-3xl p-7 flex flex-col justify-center"><div class="text-4xl md:text-5xl font-extrabold gtext">~6 meses</div><p class="txt text-sm font-semibold mt-1">Da assinatura ao go-live</p></div>
+        <div class="bg-white/[.04] border linha rounded-3xl p-7 flex flex-col justify-center"><div class="text-4xl md:text-5xl font-extrabold gtext">1 a 3 meses</div><p class="txt text-sm font-semibold mt-1">Da assinatura ao go-live</p></div>
         <div class="bg-white/[.04] border linha rounded-3xl p-7 flex flex-col justify-center"><div class="text-4xl md:text-5xl font-extrabold gtext">33 anos</div><p class="txt text-sm font-semibold mt-1">De mercado (Send Solutions)</p></div>
-        <div class="bg-white/[.04] border linha rounded-3xl p-7 flex flex-col justify-center"><div class="text-4xl md:text-5xl font-extrabold gtext">100%</div><p class="txt text-sm font-semibold mt-1">Aderência ao MEC</p></div>
+        <div class="bg-white/[.04] border linha rounded-3xl p-7 flex flex-col justify-center"><div class="text-4xl md:text-5xl font-extrabold gtext">Por segmento</div><p class="txt text-sm font-semibold mt-1">Conformidade regulatória</p></div>
       </div>
     </div>
 
@@ -302,7 +302,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
     <div class="grid md:grid-cols-3 gap-4 mb-4">
       <div class="bg-white/[.04] border linha rounded-3xl p-7">
         <div class="flex items-center gap-2 text-emerald-400 text-sm font-bold mb-4"><i class="ti ti-trending-down text-lg"></i> Inadimplência</div>
-        <div class="flex items-baseline gap-2.5"><span class="txt-fraco line-through text-lg font-bold">alta</span><i class="ti ti-arrow-right txt-fraco"></i><span class="text-3xl font-extrabold gtext">até −40%</span></div>
+        <div class="flex items-baseline gap-2.5"><span class="txt-fraco line-through text-lg font-bold">alta</span><i class="ti ti-arrow-right txt-fraco"></i><span class="text-3xl font-extrabold gtext">43% de retorno</span></div>
         <p class="txt text-sm mt-3">Régua de cobrança automática + Pix com baixa instantânea.</p>
       </div>
       <div class="bg-white/[.04] border linha rounded-3xl p-7">
@@ -322,7 +322,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
       <i class="ti ti-quote text-5xl txt-link/60 shrink-0"></i>
       <div>
         <p class="text-xl md:text-2xl font-medium leading-relaxed text-slate-100">“Hoje a faculdade inteira roda em um sistema só. A secretaria parou de apagar incêndio e a inadimplência caiu de verdade.”</p>
-        <p class="txt mt-4 font-semibold">· Coordenação de TI <span class="txt-fraco font-normal">· instituição parceira com 3.000 alunos</span></p>
+        <p class="txt mt-4 font-semibold">· Coordenação de TI <span class="txt-fraco font-normal">· instituição em produção com 5.000 alunos</span></p>
       </div>
     </div>
   </div>
@@ -334,7 +334,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
     <div class="text-center mb-16 reveal">
       <span class="text-blue-700 font-bold tracking-widest uppercase text-xs">Implantação guiada</span>
       <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight mt-4 mb-4">Medo de trocar de sistema? A gente conduz.</h2>
-      <p class="text-lg txt-fraco max-w-2xl mx-auto">Migração silenciosa em ~6 meses. Sua operação não para, nem no meio do semestre.</p>
+      <p class="text-lg txt-fraco max-w-2xl mx-auto">Migração conduzida em 1 a 3 meses, com cronograma e treinamento por setor. Sua operação não para, nem no meio do semestre.</p>
     </div>
 
     <div class="relative reveal">
@@ -400,7 +400,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
     <div class="mt-12 flex justify-center reveal">
       <div class="sup-escura inline-flex items-center gap-3 txt-forte px-7 py-4 rounded-2xl font-bold shadow-lg" style="background:linear-gradient(100deg,#4a78b0,#080b6c)">
-        <i class="ti ti-shield-check text-xl"></i> Do contrato ao go-live em ~6 meses, sem parar a operação.
+        <i class="ti ti-shield-check text-xl"></i> Do contrato ao sistema rodando em 1 a 3 meses, sem parar a operação.
       </div>
     </div>
   </div>

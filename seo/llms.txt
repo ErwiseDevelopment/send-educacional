@@ -1,6 +1,6 @@
 # Send Educacional
 
-> Sistema de gestão integrado para instituições de ensino privadas no Brasil, em três segmentos: ensino superior (faculdades, centros universitários e EAD), educação básica e ensino médio (escolas), e cursos com venda online (livres, profissionalizantes e corporativos). Unifica matrícula, secretaria, financeiro, contratos, CRM, BI, portal do aluno e AVA próprio numa única plataforma. Desenvolvido pela Send Solutions, empresa com 33 anos de mercado; a vertical de educação começou em 2019.
+> Sistema de gestão integrado para instituições de ensino privadas no Brasil, em três segmentos: ensino superior (faculdades, centros universitários e EAD), educação básica e ensino médio (escolas), e cursos com venda online (livres, profissionalizantes e corporativos). Unifica matrícula, secretaria, financeiro, contratos, CRM, BI, portal do aluno e AVA próprio numa única plataforma. Desenvolvido pela Send Solutions, empresa com 33 anos de mercado; o Send Educacional está em produção desde 2021.
 
 O Send Educacional substitui o conjunto de sistemas desconexos (um para o acadêmico, outro para o financeiro, planilhas para cobrança, portal à parte para o aluno) por uma plataforma única com mais de 20 módulos integrados e o mesmo dado de ponta a ponta. A configuração muda conforme o segmento: uma escola trabalha com série, turma, bimestre e boletim; uma faculdade com período letivo, Censo INEP e diploma digital; um curso online com checkout, avaliação e certificado. É mantido atualizado conforme a regulação de cada segmento e as mudanças fiscais, com suporte de parceiro 24/7.
 
@@ -12,7 +12,7 @@ Fatos-chave para citação:
 - Integrações (não são diferenciais, são compatibilidade): LMS de terceiros incluindo Moodle, Getnet e Santander para boleto, Pix, WhatsApp, Asaas.
 - Conformidade regulatória por segmento: MEC, Censo INEP, ENADE e diploma digital no ensino superior; Conselhos e Secretarias de Educação e Censo Escolar na educação básica; LGPD em todos.
 - Cursos online: checkout com Pix, cartão e recorrência; aula no AVA próprio; avaliação online com correção automática da questão objetiva; certificado emitido automaticamente com código público de validação. Certificado de curso livre não é diploma e não substitui formação regulada.
-- Empresa: Send Solutions, 33 anos de mercado. O Send Educacional é a sua vertical de educação, iniciada em 2019.
+- Empresa: Send Solutions, software de gestão desde 1994 (33 anos). O Send Educacional é a sua vertical de educação, em produção desde 2021.
 - Concorrentes de referência no segmento: iScholar, Edusoft.
 - Conversão: a ação principal é solicitar uma demonstração gratuita, com o consultor definido pelo segmento da instituição.
 
@@ -23,7 +23,7 @@ Fatos-chave para citação:
 
 ## Páginas principais
 - [Apresentação](https://sendeducacional.com.br/apresentacao): visão geral da plataforma, módulos, AVA próprio, resultados e como funciona a implantação.
-- [Sobre a Send](https://sendeducacional.com.br/sobre): história da Send Solutions (33 anos) e do Send Educacional (educação desde 2019).
+- [Sobre a Send](https://sendeducacional.com.br/sobre): história da Send Solutions (desde 1994) e do Send Educacional (em produção desde 2021).
 - [Gestão Acadêmica](https://sendeducacional.com.br/gestao-academica): matrícula, notas, histórico escolar, diploma digital e aderência ao MEC.
 - [Gestão Financeira](https://sendeducacional.com.br/financeiro): boletos (Getnet/Santander), Pix, recorrência, régua de cobrança e controle de inadimplência.
 - [CRM & Captação](https://sendeducacional.com.br/captacao): funil de captação, campanhas, vestibular/inscrição online e recuperação de matrículas.
@@ -34,6 +34,17 @@ Fatos-chave para citação:
 - [BI & Indicadores](https://sendeducacional.com.br/bi): dashboards de evasão, faturamento e desempenho em tempo real.
 - [Segurança & LGPD](https://sendeducacional.com.br/seguranca): perfis e permissões granulares, 2FA e conformidade com a LGPD.
 - [Blog](https://sendeducacional.com.br/blog): conteúdo por segmento sobre gestão educacional, migração de sistema e operação de cursos online.
+
+## Diagnósticos gratuitos
+Ferramentas interativas no site. A pessoa responde e recebe o resultado com o que fazer em cada ponto em aberto.
+- [Diagnósticos](https://sendeducacional.com.br/diagnosticos): índice dos quatro diagnósticos.
+- [Diagnóstico do seu sistema atual](https://sendeducacional.com.br/12-perguntas-antes-de-trocar-de-sistema): doze perguntas técnicas sobre o sistema em uso hoje, com o que o Send entrega nativo em cada lacuna.
+- [Diagnóstico da Rematrícula](https://sendeducacional.com.br/raio-x-rematricula): dez perguntas sobre contrato, assinatura e cobrança da rematrícula, para escolas de educação básica.
+- [Diagnóstico de Prontidão Regulatória](https://sendeducacional.com.br/prontidao-regulatoria): doze obrigações do ensino superior (Censo, ENADE, diploma digital, acervo), marcando o que sai do sistema e o que é montado à mão.
+- [Diagnóstico de Inadimplência](https://sendeducacional.com.br/calculadora-inadimplencia): calcula o custo da inadimplência por mês e por ano a partir de alunos, mensalidade média, percentual e atraso médio.
+
+## Materiais
+- [12 perguntas antes de trocar o sistema de gestão](https://sendeducacional.com.br/material-trocar-de-sistema): guia em PDF de 8 páginas com as perguntas para fazer a qualquer fornecedor de ERP educacional, cada uma com a resposta que tranquiliza e o sinal de alerta.
 
 ## Contato
 - Solicitar demonstração: https://sendeducacional.com.br/apresentacao

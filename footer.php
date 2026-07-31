@@ -76,14 +76,27 @@
 
                     <h4 class="text-lg font-bold mb-6 txt-forte">Ecossistema</h4>
                     <ul class="space-y-4 txt text-sm">
-                        <li><a href="<?php echo home_url('/gestao-academica'); ?>" class="hover-forte transition-colors">Gestão Acadêmica</a></li>
-                        <?php // era /gestao-financeira, que devolve 404: o slug em produção é /financeiro ?>
-                        <li><a href="<?php echo home_url('/financeiro'); ?>" class="hover-forte transition-colors">Gestão Financeira</a></li>
-                        <li><a href="<?php echo home_url('/requerimentos'); ?>" class="hover-forte transition-colors">Central de Requerimentos</a></li>
-                        <li><a href="<?php echo home_url('/retencao'); ?>" class="hover-forte transition-colors">Retenção de Alunos</a></li>
-                        <li><a href="<?php echo home_url('/captacao'); ?>" class="hover-forte transition-colors">CRM Educacional</a></li>
-                        <li><a href="<?php echo home_url('/biblioteca'); ?>" class="hover-forte transition-colors">Biblioteca & GED</a></li>
-                        <li><a href="<?php echo home_url('/portais'); ?>" class="hover-forte transition-colors">Portal do Aluno e App</a></li>
+                        <?php
+                        // Antes: sete <li> com o slug escrito na mão. Local e
+                        // produção divergem em dois casos (financeiro e
+                        // biblioteca) e isso já deixou link 404 no rodapé por
+                        // meses. Agora a primeira página que existir de verdade
+                        // ganha, e o item some quando nenhuma existe.
+                        $se_rodape_modulos = array(
+                            array( 'Gestão Acadêmica',     array( 'gestao-academica' ) ),
+                            array( 'Gestão Financeira',    array( 'financeiro', 'gestao-financeira' ) ),
+                            array( 'Requerimentos',        array( 'requerimentos' ) ),
+                            array( 'Retenção de Alunos',   array( 'retencao' ) ),
+                            array( 'CRM & Captação',       array( 'captacao' ) ),
+                            array( 'Biblioteca & GED',     array( 'biblioteca', 'biblioteca-e-ged' ) ),
+                            array( 'Portais e AVA',        array( 'portais' ) ),
+                        );
+                        foreach ( $se_rodape_modulos as $se_item ) :
+                            $se_url = se_url_pagina( $se_item[1] );
+                            if ( ! $se_url ) { continue; }
+                            ?>
+                            <li><a href="<?php echo esc_url( $se_url ); ?>" class="hover-forte transition-colors"><?php echo esc_html( $se_item[0] ); ?></a></li>
+                        <?php endforeach; ?>
                     </ul>
                 </div>
 
