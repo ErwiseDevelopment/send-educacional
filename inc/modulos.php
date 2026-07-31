@@ -874,3 +874,38 @@ function se_bloco_modulos( $slug, $cor ) {
 	</script>
 	<?php
 }
+
+/**
+ * Acha um módulo pela URL declarada no catálogo, em todos os segmentos.
+ *
+ * As páginas de módulo que só existem em produção (captação, assinatura, BI e
+ * segurança) nunca ganharam template próprio e caíam no page.php, que estava
+ * vazio: a página abria em branco. O catálogo já tem o conteúdo delas, então
+ * o fallback monta a página a partir daqui em vez de mostrar nada.
+ *
+ * @return array{nome:string,resumo:string,icone:string,segmentos:array<string,array>}|null
+ */
+function se_modulo_por_url( $url ) {
+	$achado = null;
+
+	foreach ( array_keys( se_segmentos() ) as $seg ) {
+		foreach ( se_modulos_segmento( $seg ) as $mod ) {
+			if ( empty( $mod['url'] ) || $mod['url'] !== $url ) {
+				continue;
+			}
+
+			if ( $achado === null ) {
+				$achado = array(
+					'nome'      => $mod['nome'],
+					'resumo'    => $mod['resumo'],
+					'icone'     => isset( $mod['icone'] ) ? $mod['icone'] : 'documento',
+					'segmentos' => array(),
+				);
+			}
+
+			$achado['segmentos'][ $seg ] = $mod['itens'];
+		}
+	}
+
+	return $achado;
+}

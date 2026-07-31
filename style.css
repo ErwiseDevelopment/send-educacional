@@ -2,7 +2,7 @@
 Theme Name: Send Educacional
 Description: Tema customizado para o SaaS Send Educacional usando Tailwind CSS.
 Author: Send Solutions
-Version: 2.15.0
+Version: 2.15.1
 */
 
 *, ::before, ::after {
@@ -6086,6 +6086,10 @@ a:hover .se-logo-marca{
 
   .md\:text-\[12rem\] {
     font-size: 12rem;
+  }
+
+  .md\:text-\[2\.5rem\] {
+    font-size: 2.5rem;
   }
 
   .md\:text-\[2\.75rem\] {
