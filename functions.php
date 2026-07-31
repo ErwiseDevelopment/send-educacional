@@ -18,6 +18,8 @@ require_once get_template_directory() . '/inc/prova-social.php';
 require_once get_template_directory() . '/inc/paginas.php';
 require_once get_template_directory() . '/inc/consentimentos.php';
 require_once get_template_directory() . '/inc/material.php';
+require_once get_template_directory() . '/inc/ferramentas.php';
+require_once get_template_directory() . '/inc/ferramentas-render.php';
 
 /* -------------------------------------------------------------------------
  * Auto-update do tema via GitHub (plugin-update-checker), mesmo esquema do

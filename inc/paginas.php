@@ -30,6 +30,7 @@ function se_semear_conteudo() {
 
 	$feito = se_semear_paginas_segmento( $feito );
 	$feito = se_semear_pagina_material( $feito );
+	$feito = se_semear_paginas_ferramenta( $feito );
 	$feito = se_semear_artigos( $feito );
 
 	if ( $feito !== $antes ) {
@@ -109,6 +110,45 @@ function se_semear_pagina_material( $feito ) {
 
 	if ( ! is_wp_error( $id ) ) {
 		$feito[ $chave ] = (int) $id;
+	}
+
+	return $feito;
+}
+
+/**
+ * Páginas das ferramentas de diagnóstico.
+ *
+ * O slug bate com o nome do arquivo (page-<slug>.php) e com a chave em
+ * se_ferramentas(), então incluir uma ferramenta nova é criar as duas pontas
+ * e nada mais.
+ */
+function se_semear_paginas_ferramenta( $feito ) {
+	foreach ( se_ferramentas() as $slug => $f ) {
+		$chave = 'pagina:' . $slug;
+		if ( ! empty( $feito[ $chave ] ) ) {
+			continue;
+		}
+
+		$existente = get_page_by_path( $slug );
+		if ( $existente ) {
+			$feito[ $chave ] = (int) $existente->ID;
+			continue;
+		}
+
+		$id = wp_insert_post( array(
+			'post_type'    => 'page',
+			'post_status'  => 'publish',
+			'post_title'   => $f['nome'],
+			'post_name'    => $slug,
+			'post_content' => '', // o conteúdo mora no template
+			'meta_input'   => array(
+				'_wp_page_template' => 'page-' . $slug . '.php',
+			),
+		), true );
+
+		if ( ! is_wp_error( $id ) ) {
+			$feito[ $chave ] = (int) $id;
+		}
 	}
 
 	return $feito;
