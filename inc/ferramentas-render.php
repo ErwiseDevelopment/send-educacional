@@ -100,14 +100,13 @@ function se_ferramenta_quiz( $slug ) {
 					<div class="se-fer-recs mt-9"></div>
 
 					<?php
-					// Quando existe material irmão, ele entra AQUI e não no
-					// lugar do formulário: o guia é o que a pessoa leva para a
-					// reunião com o fornecedor, com a pergunta impressa e
-					// espaço para anotar a resposta.
-					if ( ! empty( $f['material'] ) ) :
-						$url_material = se_url_pagina( $f['material'] );
-						if ( $url_material ) : ?>
-							<a href="<?php echo esc_url( $url_material ); ?>" class="bloco rounded-2xl p-5 mt-8 flex items-start gap-4 transition-colors hover:border-blue-400">
+					// O arquivo vai DIRETO, sem passar pela página com
+					// formulário. Quem acabou de responder doze perguntas já
+					// pagou o pedágio; pedir cadastro de novo para entregar o
+					// mesmo conteúdo é cobrar duas vezes pela mesma coisa.
+					if ( ! empty( $f['material'] ) && function_exists( 'se_material' ) ) :
+						$m_irmao = se_material(); ?>
+							<a href="<?php echo esc_url( $m_irmao['arquivo'] ); ?>" download class="bloco rounded-2xl p-5 mt-8 flex items-start gap-4 transition-colors hover:border-blue-400">
 								<span class="marca-icone w-11 h-11 shrink-0">
 									<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h9l5 5v11a2 2 0 01-2 2H6a2 2 0 01-2-2V6z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h8M8 16h5"></path></svg>
 								</span>
@@ -118,12 +117,11 @@ function se_ferramenta_quiz( $slug ) {
 										de alerta e uma página de checklist para ir marcando na conversa.
 									</span>
 									<span class="inline-flex items-center gap-1.5 text-[13px] font-bold txt-link mt-2">
-										Ver o guia <span aria-hidden="true">&rarr;</span>
+										Baixar o PDF agora, sem formulário <span aria-hidden="true">&darr;</span>
 									</span>
 								</span>
 							</a>
-						<?php endif;
-					endif; ?>
+					<?php endif; ?>
 
 					<?php se_ferramenta_form( $slug, $f['segmento'] === '' ); ?>
 

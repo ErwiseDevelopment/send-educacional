@@ -278,10 +278,12 @@ function se_ferramenta_lead() {
 function se_ferramenta_form( $slug, $pede_segmento = false ) {
 	?>
 	<form class="se-fer-form mt-8 pt-8 regra" data-ferramenta="<?php echo esc_attr( $slug ); ?>">
-		<p class="text-[11px] font-bold uppercase tracking-widest txt-link mb-2">Leve por escrito</p>
-		<h3 class="titulo-mini text-xl txt-forte leading-snug mb-1.5">Receber este diagnóstico por e-mail</h3>
+		<p class="text-[11px] font-bold uppercase tracking-widest txt-fraco mb-2">Opcional</p>
+		<h3 class="titulo-mini text-xl txt-forte leading-snug mb-1.5">Quer o resultado por e-mail?</h3>
 		<p class="text-[13px] txt leading-relaxed mb-5">
-			Mandamos o resultado completo, com a recomendação de cada ponto que ficou em aberto.
+			Seu diagnóstico já está aí em cima e não vai a lugar nenhum. Se quiser guardar,
+			mandamos por e-mail a versão completa, com a recomendação de todos os pontos em
+			aberto, não só dos três que aparecem na tela.
 		</p>
 
 		<div class="grid sm:grid-cols-2 gap-3">
