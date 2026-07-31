@@ -115,56 +115,63 @@ function se_ferramentas() {
 			),
 		),
 
-		// ----------------------------------------- OS TRÊS, ANTES DE TROCAR
-		// Versão em tela do ebook. As doze perguntas são para fazer AO
-		// FORNECEDOR, então a pergunta aqui não é se a instituição faz, é se
-		// ela já tem a resposta. O que devolvemos em cada lacuna é o que uma
-		// boa resposta precisa conter, que é a parte do guia que vale na
-		// reunião.
+		// ------------------------------------------ OS TRÊS, TROCAR HOJE
+		// Aqui a pergunta é sobre o SISTEMA ATUAL, item por item, e cada
+		// lacuna é respondida com o que o Send entrega nativo. É a versão em
+		// tela da pergunta que abre a conversa comercial, "o que a secretaria
+		// ainda faz fora do sistema?", só que module a module.
+		//
+		// Todas as lacunas aparecem, não só três: aqui a lista COMPLETA é o
+		// conteúdo. Nas outras ferramentas o excesso cansa; nesta, cada linha
+		// é uma resposta que o visitante veio buscar.
 		'12-perguntas-antes-de-trocar-de-sistema' => array(
 			'tipo'      => 'quiz',
 			'segmento'  => '',
 			'material'  => 'material-trocar-de-sistema',
-			'nome'      => '12 perguntas antes de trocar de sistema',
-			'titulo'    => 'Você já tem as doze respostas do seu fornecedor?',
-			'chamada'   => 'Marque só o que já foi respondido com informação concreta, não com intenção.',
-			'resumo'    => 'Quase todo desastre de migração é previsível: ele aparece nas respostas que o fornecedor dá, ou deixa de dar, antes de assinar. Faça as doze para todos os que estiver avaliando, inclusive o atual. Perguntas iguais tornam propostas comparáveis.',
-			'rotulos'   => array( 'Já tenho essa resposta', 'Ainda não perguntei' ),
+			'limite'    => 12,
+			'rotulo_recs' => 'O que o Send Educacional entrega nativo nesses pontos',
+			'nome'      => '12 perguntas para mudar de sistema hoje',
+			'titulo'    => 'O que o seu sistema atual não faz?',
+			'chamada'   => 'Doze perguntas técnicas sobre o que você usa hoje. Para cada não, mostramos o que o Send Educacional entrega nativo.',
+			'resumo'    => 'A maioria das instituições não tem um sistema ruim: tem um sistema incompleto, com o resto costurado em planilha, serviço de terceiro e retrabalho da secretaria. Estas doze perguntas mostram onde está a costura.',
+			'rotulos'   => array( 'Sim, o meu sistema faz', 'Não faz, ou é por fora' ),
 			'perguntas' => array(
-				'O que exatamente vai ser migrado da sua base, e o que fica para trás?',
-				'Quem responde pelo histórico dos alunos que já se formaram ou evadiram?',
-				'Os títulos financeiros em aberto chegam do outro lado com o mesmo saldo?',
-				'Quem vai levantar as regras que hoje só existem na cabeça de quem opera?',
-				'Em que ponto do calendário letivo a virada acontece?',
-				'Quem treina cada setor, e quando?',
-				'O sistema atende à regulação do seu segmento, item por item?',
-				'O que acontece com as integrações que já funcionam hoje?',
-				'O aluno vai perder acesso a alguma coisa na virada?',
-				'Quanto custa de verdade, somando implantação, migração e treinamento?',
-				'Como é o suporte depois que a implantação termina?',
-				'Se um dia você quiser sair, como leva os seus dados?',
+				'O seu sistema tem CRM de captação, com funil de leads e campanhas?',
+				'O contrato é assinado eletronicamente dentro do próprio sistema?',
+				'Existe régua de cobrança automática, com boleto, Pix e recorrência no mesmo lugar?',
+				'O ambiente de aula é do próprio sistema, com a nota da avaliação caindo direto no histórico?',
+				'Aluno e família têm portal e aplicativo, com o mesmo login do sistema?',
+				'O sistema aponta risco de evasão cruzando nota, frequência e situação financeira?',
+				'O documento final sai nativo: diploma digital no padrão MEC ou certificado com validação?',
+				'Os pedidos do aluno viram protocolo com prazo e responsável, sem depender do balcão?',
+				'A exportação para o Censo sai pronta do sistema, sem ninguém montar planilha?',
+				'A mantenedora tem painel de indicadores em tempo real, com o mesmo dado do acadêmico?',
+				'Conciliação bancária e DRE ficam dentro do financeiro do sistema?',
+				'O acervo de documentos do aluno é digitalizado e pesquisável por nome?',
 			),
 			'faixas' => array(
-				array( 'ate' => 2, 'titulo' => 'Você está conduzindo a escolha.',
-					'texto' => 'A maior parte das respostas já está na mesa, e isso muda quem controla a negociação. O que falta dá para cobrir numa conversa.' ),
-				array( 'ate' => 6, 'titulo' => 'Faltam respostas justamente nas partes caras.',
-					'texto' => 'O que está em aberto costuma ser escopo de dados, custo total e suporte, que são os três itens mais caros de renegociar depois de assinado.' ),
-				array( 'ate' => 12, 'titulo' => 'A decisão está sendo tomada no escuro.',
-					'texto' => 'Sem essas respostas por escrito, o que existe é uma promessa. Não é sinal de fornecedor ruim: é sinal de que a conversa ainda não aconteceu, e ela precisa acontecer antes da assinatura, não depois.' ),
+				array( 'ate' => 2, 'titulo' => 'O seu sistema cobre quase tudo.',
+					'texto' => 'Sobrou pouca coisa fora, e trocar de sistema por causa disso raramente compensa. Vale olhar só os pontos abaixo e decidir se eles atrapalham o suficiente.' ),
+				array( 'ate' => 6, 'titulo' => 'Você está costurando o resto por fora.',
+					'texto' => 'Uma parte do que a instituição precisa não existe no sistema, e alguém está resolvendo isso com planilha, serviço de terceiro ou digitação em dobro. É o custo que não aparece na mensalidade do fornecedor, mas aparece na folha da secretaria.' ),
+				array( 'ate' => 12, 'titulo' => 'Metade da operação vive fora do sistema.',
+					'texto' => 'Não é sinal de fornecedor ruim: é sinal de que aqueles módulos não existem ali, e a instituição foi preenchendo os buracos como deu. O problema é que cada buraco tem um custo, um responsável e um dado que não conversa com o resto.' ),
 			),
+			// Cada lacuna é respondida com o que existe nativo, sem citar nem
+			// atacar concorrente: a comparação é com a rotina de hoje.
 			'recomendacoes' => array(
-				0  => 'Uma boa resposta é uma planilha de escopo, item a item, com o que entra, o que não entra e o que entra parcialmente, assinada antes do contrato. "Migramos tudo" não é resposta.',
-				1  => 'Uma boa resposta traz o acervo histórico para o sistema novo, ou digitalizado com busca por aluno. Manter o sistema antigo ligado só para consulta é custo recorrente que ninguém colocou na conta.',
-				2  => 'Uma boa resposta é conciliação título a título, com relatório de divergências antes da virada. Conferência por amostragem não pega diferença de centavo, e ela reaparece no boleto do aluno.',
-				3  => 'Uma boa resposta é uma etapa formal de levantamento, com um consultor entrevistando cada setor e devolvendo por escrito. Formulário para a instituição preencher sozinha não funciona: quem opera não sabe que a regra dele é exceção.',
-				4  => 'Uma boa resposta amarra o cronograma ao seu calendário letivo, não à agenda comercial do fornecedor, e diz o que acontece se atrasar.',
-				5  => 'Uma boa resposta é treinamento por setor, com material que fica e uma pessoa de referência nos primeiros dias de operação real.',
-				6  => 'Uma boa resposta cita as obrigações do seu segmento sem você precisar explicar, e mostra a tela onde cada exportação é gerada.',
-				7  => 'Uma boa resposta lista as integrações nativas e diz o que acontece com as que não têm equivalente. "Integramos com qualquer coisa via API" quer dizer que existe projeto, e ele não está no preço.',
-				8  => 'Uma boa resposta tem portal e aplicativo prontos antes da virada, com comunicado pronto e período de convivência entre os dois acessos.',
-				9  => 'Uma boa resposta dá o custo total de doze e de trinta e seis meses, separando o que é uma vez só do que é recorrente.',
-				10 => 'Uma boa resposta tem canal definido, prazo por gravidade e diz quem atende. Peça para falar com um cliente atual antes de assinar.',
-				11 => 'Uma boa resposta é uma cláusula de portabilidade no contrato: formato, prazo e custo. Constrangimento com esta pergunta já é a resposta.',
+				0  => 'O Send Educacional tem CRM nativo: funil de leads, campanhas e recuperação de matrícula. O lead que vira aluno não é redigitado, ele já entra como matrícula.',
+				1  => 'A assinatura eletrônica é parte do fluxo: o contrato sai do cadastro do aluno, é assinado com validade jurídica e trilha de auditoria, e a primeira parcela é gerada em seguida.',
+				2  => 'A régua de cobrança é nativa, com boleto, Pix, recorrência, acordo e lembrete automático antes e depois do vencimento. É o módulo por trás da queda de inadimplência do cliente em produção.',
+				3  => 'O AVA é desenvolvido pela própria Send e nasce dentro do sistema: aula, material e avaliação no mesmo lugar do acadêmico, e a nota cai direto no histórico. Quem já usa Moodle e não quer mexer agora tem integração nos dois sentidos.',
+				4  => 'Portal e aplicativo de aluno, família, docente e polo com o mesmo login, na web e no celular, com a marca da instituição.',
+				5  => 'O módulo de retenção cruza nota, frequência e financeiro para apontar risco de evasão antes de o aluno sumir, com registro das tratativas por aluno.',
+				6  => 'Diploma digital no padrão MEC, com XML assinado e livro de registro, no superior. Nos cursos livres, certificado emitido sozinho e com validação pública.',
+				7  => 'A Central de Requerimentos transforma pedido em protocolo, com prazo, responsável e histórico. O aluno acompanha pelo portal e a secretaria para de atender por WhatsApp pessoal.',
+				8  => 'A exportação do Censo sai do sistema. Na instituição em produção, o que era processo manual com equipe interna virou um arquivo e uma pessoa.',
+				9  => 'O painel de BI lê o mesmo dado do acadêmico e do financeiro, então a mantenedora e a secretaria não discutem qual número está certo.',
+				10 => 'Conciliação bancária, contas a pagar e a receber e DRE ficam no mesmo financeiro que emite a cobrança do aluno.',
+				11 => 'A Biblioteca e o GED guardam o documento digitalizado do aluno com busca por nome, o que evita manter o sistema antigo ligado só para consulta.',
 			),
 		),
 

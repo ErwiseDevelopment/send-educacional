@@ -55,12 +55,14 @@
 			if (abertos.length) {
 				var titulo = document.createElement('p');
 				titulo.className = 'text-[11px] font-bold uppercase tracking-widest txt-link mb-4';
-				titulo.textContent = 'O que fazer com o que ficou em aberto';
+				titulo.textContent = d.rotuloRecs || 'O que fazer com o que ficou em aberto';
 				alvo.appendChild(titulo);
 
-				/* No máximo três: lista de dez recomendações ninguém lê, e a
-				   terceira já é menos urgente que a primeira. */
-				abertos.slice(0, 3).forEach(function (idx) {
+				/* O limite vem da ferramenta: em diagnóstico de rotina, lista
+				   de dez cansa e a terceira ja e menos urgente; no diagnostico
+				   do sistema atual, a lista completa e o que a pessoa veio ver. */
+				var limite = d.limite || 3;
+				abertos.slice(0, limite).forEach(function (idx) {
 					var bloco = document.createElement('div');
 					bloco.className = 'se-fer-rec';
 
@@ -77,10 +79,10 @@
 					alvo.appendChild(bloco);
 				});
 
-				if (abertos.length > 3) {
+				if (abertos.length > limite) {
 					var resto = document.createElement('p');
 					resto.className = 'txt-fraco text-[12px] mt-4';
-					resto.textContent = 'Outros ' + (abertos.length - 3) +
+					resto.textContent = 'Outros ' + (abertos.length - limite) +
 						' pontos em aberto vão no diagnóstico completo por e-mail.';
 					alvo.appendChild(resto);
 				}

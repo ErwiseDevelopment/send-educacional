@@ -51,6 +51,11 @@ function se_ferramenta_quiz( $slug ) {
 					'total'   => count( $f['perguntas'] ),
 					'faixas'  => $f['faixas'],
 					'recomendacoes' => $f['recomendacoes'],
+					// Quantas recomendações cabem na tela antes de cansar. O
+					// diagnóstico do sistema atual mostra todas, porque ali a
+					// lista completa é o conteúdo.
+					'limite'        => isset( $f['limite'] ) ? (int) $f['limite'] : 3,
+					'rotuloRecs'    => isset( $f['rotulo_recs'] ) ? $f['rotulo_recs'] : '',
 					'perguntas'     => $f['perguntas'],
 			     ) ) ); ?>">
 
