@@ -302,7 +302,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
     <div class="grid md:grid-cols-3 gap-4 mb-4">
       <div class="bg-white/[.04] border linha rounded-3xl p-7">
         <div class="flex items-center gap-2 text-emerald-400 text-sm font-bold mb-4"><i class="ti ti-trending-down text-lg"></i> Inadimplência</div>
-        <div class="flex items-baseline gap-2.5"><span class="txt-fraco line-through text-lg font-bold">alta</span><i class="ti ti-arrow-right txt-fraco"></i><span class="text-3xl font-extrabold gtext">43% de retorno</span></div>
+        <div class="flex items-baseline gap-2.5"><span class="txt-fraco line-through text-lg font-bold">alta</span><i class="ti ti-arrow-right txt-fraco"></i><span class="text-3xl font-extrabold gtext">45% de retorno</span></div>
         <p class="txt text-sm mt-3">Régua de cobrança automática + Pix com baixa instantânea.</p>
       </div>
       <div class="bg-white/[.04] border linha rounded-3xl p-7">

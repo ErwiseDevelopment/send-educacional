@@ -180,7 +180,7 @@
                 // Três quadrados chapados, do escuro para o claro: a leitura
                 // acompanha a cor e o olho não trata os três como iguais.
                 $fp_stats = array(
-                    array( '43%', 'de retorno da inadimplência', 'com a régua de comunicação integrada ao acadêmico', '#080b6c', '' ),
+                    array( '45%', 'de retorno da inadimplência', 'com a régua de comunicação integrada ao acadêmico', '#080b6c', '' ),
                     array( '130h', 'a menos em processos da secretaria', 'o que era montado na mão passou a sair pronto do sistema', '#1f3184', '' ),
                     array( '', 'Mais velocidade na captação e no contrato do aluno', 'do primeiro contato à assinatura, sem trocar de sistema no meio', '#335298',
                         '<svg class="w-14 h-14 txt-forte" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5-5 5M6 7l5 5-5 5"></path></svg>' ),

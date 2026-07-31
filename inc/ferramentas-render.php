@@ -278,9 +278,9 @@ function se_ferramenta_calculadora( $slug ) {
 							<p class="text-[11px] font-bold uppercase tracking-widest txt-link mb-2">Uma referência, não uma promessa</p>
 							<p class="text-sm txt leading-relaxed">
 								Na instituição de 5.000 alunos que roda o Send Educacional em produção,
-								a inadimplência caiu <span class="txt-forte font-bold">45%</span> depois que
-								a régua de cobrança passou a viver no mesmo sistema do acadêmico.
-								Na sua conta, uma queda desse tamanho seria
+								a régua de cobrança no mesmo sistema do acadêmico devolveu
+								<span class="txt-forte font-bold">45%</span> do que estava em aberto.
+								Na sua conta, um retorno desse tamanho seria
 								<span class="txt-forte font-bold" id="calc-recup">R$ 0</span> por ano.
 							</p>
 							<p class="txt-fraco text-[12px] mt-3 leading-snug">
