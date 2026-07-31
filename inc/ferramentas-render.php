@@ -107,9 +107,19 @@ function se_ferramenta_quiz( $slug ) {
 							<h2 class="titulo text-2xl md:text-3xl leading-[1.1] txt-forte mb-3">Seu diagnóstico está pronto</h2>
 							<p class="txt leading-relaxed">
 								Encontramos <span class="se-fer-porta-num txt-forte font-bold">0</span> ponto(s)
-								em aberto no seu sistema atual. Preencha os dados para ver o resultado
-								completo, com o que existe nativo em cada um deles.
+								em aberto. Preencha os dados para ver quais são e o que existe pronto
+								no lugar de cada um.
 							</p>
+						</div>
+
+						<?php
+						// O mapa aparece ANTES do cadastro de propósito: mostra o
+						// tamanho do buraco sem revelar o conteúdo. Ver a própria
+						// operação pintada é o que faz querer saber o resto.
+						?>
+						<div class="mb-8">
+							<div class="se-fer-mapa" data-mapa></div>
+							<div class="se-fer-legenda" data-legenda></div>
 						</div>
 						<?php se_ferramenta_form( $slug, $f['segmento'] === '', true ); ?>
 					</div>
@@ -127,6 +137,16 @@ function se_ferramenta_quiz( $slug ) {
 							<h2 class="se-fer-faixa-titulo titulo text-2xl md:text-3xl leading-[1.1] txt-forte mb-3"></h2>
 							<p class="se-fer-faixa-texto txt leading-relaxed"></p>
 						</div>
+					</div>
+
+					<div class="mt-8">
+						<div class="flex items-baseline justify-between gap-4 mb-2">
+							<span class="text-[11px] font-bold uppercase tracking-widest txt-fraco">A sua operação hoje</span>
+							<span class="text-[13px] font-bold txt-forte"><span class="se-fer-pct">0</span>% fora do sistema</span>
+						</div>
+						<div class="se-fer-medidor mb-4" data-medidor></div>
+						<div class="se-fer-mapa" data-mapa></div>
+						<div class="se-fer-legenda" data-legenda></div>
 					</div>
 
 					<div class="se-fer-recs mt-9"></div>
@@ -245,8 +265,12 @@ function se_ferramenta_calculadora( $slug ) {
 							</div>
 
 							<div class="regra mt-6 pt-6">
-								<p class="text-[11px] font-bold uppercase tracking-widest txt-fraco">Equivale a</p>
-								<p class="text-sm txt mt-1.5 leading-relaxed" id="calc-equivale"></p>
+								<p class="text-[11px] font-bold uppercase tracking-widest txt-fraco">De cada R$ 100 cobrados</p>
+								<div class="se-calc-fatia">
+									<span class="se-calc-entra" id="calc-fatia-entra">entram</span>
+									<span class="se-calc-falta" id="calc-fatia-falta">não entram</span>
+								</div>
+								<p class="text-sm txt mt-4 leading-relaxed" id="calc-equivale"></p>
 							</div>
 						</div>
 

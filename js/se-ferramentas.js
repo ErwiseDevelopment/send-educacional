@@ -78,15 +78,83 @@
 			return d.faixas[d.faixas.length - 1];
 		};
 
+		/* Um bloco por pergunta, pintado pelo peso da resposta. O texto explica;
+		   isto faz sentir. Desenha nos dois lugares: na porta mostra o tamanho
+		   do buraco, no resultado fica como resumo. */
+		var desenhaMapa = function (respostasPeso) {
+			caixa.querySelectorAll('[data-mapa]').forEach(function (grade) {
+				grade.innerHTML = '';
+				respostasPeso.forEach(function (peso, k) {
+					var b = document.createElement('span');
+					b.className = 'se-fer-bloco se-fer-b' + peso + ' se-fer-bloco-anima';
+					b.style.animationDelay = (k * 45) + 'ms';
+					b.textContent = k + 1;
+					grade.appendChild(b);
+				});
+			});
+
+			var rotulos = [
+				['se-fer-b0', 'já está no sistema'],
+				['se-fer-b1', 'existe, mas por fora'],
+				['se-fer-b2', 'não existe hoje']
+			];
+			/* Quiz de duas alternativas não tem meio-termo: mostrar a legenda
+			   inteira criaria uma categoria que não aparece em bloco nenhum. */
+			var usados = {};
+			respostasPeso.forEach(function (p) { usados[p] = true; });
+
+			caixa.querySelectorAll('[data-legenda]').forEach(function (leg) {
+				leg.innerHTML = '';
+				rotulos.forEach(function (r, idx) {
+					if (!usados[idx]) return;
+					var item = document.createElement('span');
+					item.className = 'se-fer-leg';
+					var cor = document.createElement('i');
+					cor.className = r[0];
+					var txt = document.createElement('span');
+					txt.textContent = r[1];
+					item.appendChild(cor);
+					item.appendChild(txt);
+					leg.appendChild(item);
+				});
+			});
+		};
+
 		var pinta = function () {
 			var abertos = [];
 			var pontos = 0;
 
+			var pesos = [];
 			respostas.forEach(function (escolha, idx) {
 				var op = d.perguntas[idx].ops[escolha];
 				var peso = op ? (op.peso || 0) : 0;
+				pesos.push(peso);
 				pontos += peso;
 				if (peso > 0) abertos.push({ idx: idx, peso: peso, escolha: op ? op.t : '' });
+			});
+
+			desenhaMapa(pesos);
+
+			/* Percentual sobre o total de pontos possíveis, não sobre o número
+			   de perguntas: é a leitura que respeita o peso de cada resposta. */
+			var maximo = d.perguntas.reduce(function (acc, q) {
+				return acc + Math.max.apply(null, q.ops.map(function (o) { return o.peso || 0; }));
+			}, 0);
+			var pct = maximo ? Math.round((pontos / maximo) * 100) : 0;
+
+			var elPct = caixa.querySelector('.se-fer-pct');
+			if (elPct) elPct.textContent = pct;
+
+			caixa.querySelectorAll('[data-medidor]').forEach(function (m) {
+				m.innerHTML = '';
+				var fora = document.createElement('span');
+				fora.className = 'se-fer-b2';
+				fora.style.width = pct + '%';
+				var dentro = document.createElement('span');
+				dentro.className = 'se-fer-b0';
+				dentro.style.width = (100 - pct) + '%';
+				m.appendChild(fora);
+				m.appendChild(dentro);
 			});
 
 			var faixa = faixaDe(pontos);
@@ -248,6 +316,19 @@
 			document.getElementById('calc-mes').textContent = reais(mes);
 			document.getElementById('calc-ano').textContent = reais(ano);
 			document.getElementById('calc-recup').textContent = reais(ano * 0.45);
+			/* De cada R$ 100 cobrados, quanto não entra. O percentual sozinho é
+			   abstrato; a fatia mostra o pedaço que falta. */
+			var pctFalta = Math.round(p * 100);
+			var entra = document.getElementById('calc-fatia-entra');
+			var falta = document.getElementById('calc-fatia-falta');
+			if (entra && falta) {
+				entra.style.width = (100 - pctFalta) + '%';
+				falta.style.width = pctFalta + '%';
+				entra.textContent = 'R$ ' + (100 - pctFalta) + ' entram';
+				falta.textContent = pctFalta >= 8 ? 'R$ ' + pctFalta : '';
+				falta.title = 'R$ ' + pctFalta + ' não entram';
+			}
+
 			document.getElementById('calc-equivale').textContent =
 				reais(parado) + ' parados a qualquer momento, com ' + dias.value +
 				' dias de atraso médio. No ano, equivale a ' +

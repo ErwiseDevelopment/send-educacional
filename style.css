@@ -2,7 +2,7 @@
 Theme Name: Send Educacional
 Description: Tema customizado para o SaaS Send Educacional usando Tailwind CSS.
 Author: Send Solutions
-Version: 2.14.0
+Version: 2.15.0
 */
 
 *, ::before, ::after {
@@ -4429,6 +4429,139 @@ a:hover .se-logo-marca{
   border-bottom:1px solid var(--linha)
 }
 
+/* ===== Mapa da operação =====
+   O resultado em texto explica; o mapa faz sentir. Um bloco por pergunta,
+   pintado pelo peso da resposta, e a pessoa vê de uma vez quanto da operação
+   dela está fora do sistema. É a peça que aparece ANTES do cadastro: mostra o
+   tamanho do buraco sem revelar o conteúdo. */
+
+.se-fer-mapa{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:.5rem
+}
+
+@media (min-width:640px){
+  .se-fer-mapa{
+    grid-template-columns:repeat(12,1fr);
+    gap:.45rem
+  }
+}
+
+.se-fer-bloco{
+  aspect-ratio:1/1;
+  border-radius:.55rem;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:.7rem;
+  font-weight:800;
+  color:#fff;
+  transition:transform .35s ease,opacity .35s ease
+}
+
+/* Entra um por vez: a sequência é o que dá a sensação de contagem. */
+
+.se-fer-bloco-anima{
+  animation:se-bloco-entra .32s ease-out both
+}
+
+@keyframes se-bloco-entra{
+  from{
+    opacity:0;
+    transform:scale(.6)
+  }
+
+  to{
+    opacity:1;
+    transform:none
+  }
+}
+
+.se-fer-b0{
+  background:var(--icone-fundo);
+  border:1px solid var(--icone-borda);
+  color:var(--icone-cor)
+}
+
+.se-fer-b1{
+  background:#c77700
+}
+
+.se-fer-b2{
+  background:#ab080d
+}
+
+.se-fer-legenda{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.35rem 1.25rem;
+  margin-top:.9rem
+}
+
+.se-fer-leg{
+  display:flex;
+  align-items:center;
+  gap:.45rem;
+  font-size:11.5px;
+  color:var(--t-fraco)
+}
+
+.se-fer-leg i{
+  width:.7rem;
+  height:.7rem;
+  border-radius:.2rem;
+  display:block
+}
+
+/* Medidor: a mesma informação em uma linha, para quem lê só o número. */
+
+.se-fer-medidor{
+  height:.6rem;
+  border-radius:99px;
+  overflow:hidden;
+  background:var(--bloco-borda);
+  display:flex
+}
+
+.se-fer-medidor span{
+  display:block;
+  height:100%;
+  transition:width .5s ease
+}
+
+/* Proporção da inadimplência: de cada R$ 100 cobrados, quanto não entra. */
+
+.se-calc-fatia{
+  display:flex;
+  height:2.75rem;
+  border-radius:.75rem;
+  overflow:hidden;
+  margin-top:1.25rem
+}
+
+.se-calc-fatia span{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:11.5px;
+  font-weight:800;
+  letter-spacing:.02em;
+  color:#fff;
+  transition:width .35s ease;
+  white-space:nowrap;
+  overflow:hidden
+}
+
+.se-calc-entra{
+  background:#1f3184
+}
+
+.se-calc-falta{
+  background:#ab080d
+}
+
 /* Trava da calculadora: o valor fica borrado e ilegível até o cadastro, mas
    a estrutura continua aparecendo, então dá para ver que existe resultado. */
 
@@ -4444,6 +4577,10 @@ a:hover .se-logo-marca{
           user-select:none
 }
 
+/* Véu claro por baixo do texto: sem ele, o rótulo fica escuro sobre o navy
+   borrado e some. O auditor de contraste não pega este caso, porque ignora
+   fundo translúcido. */
+
 .se-calc-trava{
   position:absolute;
   inset:0;
@@ -4454,7 +4591,10 @@ a:hover .se-logo-marca{
   justify-content:center;
   text-align:center;
   padding:1.5rem;
-  border-radius:1rem
+  border-radius:1rem;
+  background:rgba(255,255,255,.86);
+  backdrop-filter:blur(2px);
+  -webkit-backdrop-filter:blur(2px)
 }
 
 .se-fer-travado .se-calc-trava{
