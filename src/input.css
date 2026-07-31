@@ -2,7 +2,7 @@
 Theme Name: Send Educacional
 Description: Tema customizado para o SaaS Send Educacional usando Tailwind CSS.
 Author: Send Solutions
-Version: 2.10.1
+Version: 2.11.0
 */
 
 @tailwind base;
@@ -116,6 +116,17 @@ a:hover .se-logo-marca{transform:scale(1.03)}
   .se-logo-marca:hover .se-logo-brilho{animation:none;opacity:0}
   [data-logo-anima] .se-logo-marca{opacity:1;clip-path:none}
 }
+
+/* ===== Quadrado de resultado (home) =====
+   O número precisa parar a rolagem, então ele ganha fundo, altura e cor em
+   vez de viver num filete. Quadrado de verdade só no desktop: no celular a
+   proporção 1:1 esmaga o texto. */
+.se-quadro{position:relative;overflow:hidden;display:flex;flex-direction:column;
+  justify-content:space-between;gap:2.5rem;min-height:15rem;
+  padding:1.75rem;border-radius:1.5rem;color:#fff}
+@media (min-width:768px){ .se-quadro{aspect-ratio:1/1;padding:2rem} }
+.se-quadro-num{display:block;font-size:clamp(3rem,6vw,4.25rem);line-height:.95;color:#fff}
+.se-quadro .se-capa-grade{width:78%;right:-16%;bottom:-30%}
 
 /* ===== Ferramentas de diagnóstico (inc/ferramentas.php) ===== */
 .se-fer-barra{height:4px;border-radius:99px;background:var(--bloco-borda);overflow:hidden}

@@ -289,3 +289,70 @@ function se_ferramentas_assets() {
 	);
 }
 add_action( 'wp_enqueue_scripts', 'se_ferramentas_assets' );
+
+/**
+ * Bloco das ferramentas na home.
+ *
+ * Elas só existiam no menu, em Recursos, atrás de dois cliques. São a coisa
+ * mais útil que o site oferece para quem ainda não quer falar com ninguém,
+ * então precisam estar no caminho de quem só rola a home.
+ */
+function se_bloco_ferramentas() {
+	$lista = array();
+	foreach ( se_ferramentas() as $slug => $f ) {
+		$url = se_ferramenta_url( $slug );
+		if ( $url ) {
+			$f['url']  = $url;
+			$f['slug'] = $slug;
+			$lista[]   = $f;
+		}
+	}
+
+	if ( ! $lista ) {
+		return;
+	}
+	?>
+	<section class="relative z-10 py-20">
+		<div class="container mx-auto px-6 max-w-6xl">
+
+			<div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10 reveal">
+				<div class="max-w-2xl">
+					<span class="txt-link font-bold tracking-widest uppercase text-xs">Antes de falar com a gente</span>
+					<h2 class="titulo text-[2rem] md:text-4xl leading-[1.04] mt-4">
+						Descubra sozinho onde está o seu problema
+					</h2>
+					<p class="txt text-lg mt-4 leading-relaxed">
+						Quatro diagnósticos gratuitos, respondidos em dois minutos. O resultado
+						aparece na hora, sem cadastro, e serve mesmo que você nunca fale com a Send.
+					</p>
+				</div>
+			</div>
+
+			<div class="grid md:grid-cols-2 gap-5 reveal">
+				<?php foreach ( $lista as $f ) :
+					$seg = $f['segmento'] ? se_segmento( $f['segmento'] ) : null;
+					?>
+					<a href="<?php echo esc_url( $f['url'] ); ?>" class="glass glass-hover rounded-2xl p-6 md:p-7 flex items-start gap-5 group">
+						<span class="marca-icone w-12 h-12 shrink-0">
+							<?php if ( $f['tipo'] === 'calculadora' ) : ?>
+								<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 7h6M9 11h.01M12 11h.01M15 11h.01M9 15h.01M12 15h.01M15 15h.01M7 3h10a2 2 0 012 2v14a2 2 0 01-2 2H7a2 2 0 01-2-2V5a2 2 0 012-2z"></path></svg>
+							<?php else : ?>
+								<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M4 6a2 2 0 012-2h12a2 2 0 012 2v13a2 2 0 01-2 2H6a2 2 0 01-2-2V6z"></path></svg>
+							<?php endif; ?>
+						</span>
+						<span class="min-w-0">
+							<span class="block text-[10px] font-bold uppercase tracking-widest txt-link mb-1.5">
+								<?php echo $seg ? esc_html( $seg['curto'] ) : 'Qualquer segmento'; ?>
+							</span>
+							<span class="block titulo-mini text-lg txt-forte leading-snug mb-1.5 group-hover-link transition-colors">
+								<?php echo esc_html( $f['nome'] ); ?>
+							</span>
+							<span class="block text-sm txt leading-snug"><?php echo esc_html( $f['chamada'] ); ?></span>
+						</span>
+					</a>
+				<?php endforeach; ?>
+			</div>
+		</div>
+	</section>
+	<?php
+}

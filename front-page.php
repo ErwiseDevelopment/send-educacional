@@ -152,6 +152,10 @@
     <!-- ===================== QUAL E O SEU DESAFIO ===================== -->
     <?php se_bloco_busca_desafio(); ?>
 
+    <?php // As ferramentas moravam só no menu, atrás de dois cliques.
+         // Aqui elas ficam no caminho de quem só rola a home. ?>
+    <?php se_bloco_ferramentas(); ?>
+
     <section class="relative z-10">
         <!-- marquee -->
         <div class="relative z-10 mt-16 border-t linha py-6 mqo">
@@ -163,39 +167,39 @@
     </section>
 
     <!-- ===================== NÚMEROS ===================== -->
-    <section class="relative z-10 py-16">
-        <?php // Filete no lugar de caixa: quatro cartões iguais viravam mais uma grade. ?>
+    <section class="sup-clara sup-clara-2 relative z-10 py-20">
         <div class="container mx-auto px-6 max-w-6xl reveal">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-y-8 md:gap-x-10">
+
+            <div class="max-w-2xl mb-10">
+                <span class="txt-link font-bold tracking-widest uppercase text-xs">O que muda na operação</span>
+                <h2 class="titulo text-[2rem] md:text-4xl leading-[1.04] mt-4">Resultado de quem já roda o Send</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
                 <?php
-                // Cada número aqui precisa aguentar ser checado. "33 anos" é da Send
-                // Solutions, não de educação, dizer os dois evita a leitura errada.
+                // Três quadrados chapados, do escuro para o claro: a leitura
+                // acompanha a cor e o olho não trata os três como iguais.
                 $fp_stats = array(
-                    array( '45%', 'menos inadimplência', 'com a régua de cobrança e o acadêmico no mesmo sistema' ),
-                    array( '1h', 'para importar as notas', 'a mesma rotina levava três dias na operação anterior' ),
-                    array( '1', 'pessoa fecha o Censo', 'era processo manual, com uma equipe interna montando na mão' ),
-                    array( '33', 'anos de mercado', 'Send Solutions desde 1994 · Send Educacional em produção desde 2021' ),
+                    array( '43%', 'de retorno da inadimplência', 'com a régua de comunicação integrada ao acadêmico', '#080b6c', '' ),
+                    array( '130h', 'a menos em processos da secretaria', 'o que era montado na mão passou a sair pronto do sistema', '#1f3184', '' ),
+                    array( '', 'Mais velocidade na captação e no contrato do aluno', 'do primeiro contato à assinatura, sem trocar de sistema no meio', '#335298',
+                        '<svg class="w-14 h-14 txt-forte" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5-5 5M6 7l5 5-5 5"></path></svg>' ),
                 );
                 foreach ( $fp_stats as $s ) {
                     printf(
-                        '<div class="faixa-item">
-                            <div class="numero text-5xl md:text-6xl txt-forte leading-none">%s</div>
-                            <p class="titulo-mini txt-forte text-base mt-3">%s</p>
-                            <p class="txt-fraco text-[13px] mt-1.5 leading-snug">%s</p>
+                        '<div class="se-quadro sup-escura" style="background:linear-gradient(140deg,%1$s,#030429)">
+                            <span class="se-capa-grade" aria-hidden="true"></span>
+                            <div class="relative">%2$s<span class="numero se-quadro-num">%3$s</span></div>
+                            <div class="relative">
+                                <p class="titulo-mini text-lg leading-snug txt-forte">%4$s</p>
+                                <p class="text-[13px] txt mt-2 leading-snug">%5$s</p>
+                            </div>
                         </div>',
-                        esc_html( $s[0] ), esc_html( $s[1] ), esc_html( $s[2] )
+                        esc_attr( $s[3] ), $s[4], esc_html( $s[0] ), esc_html( $s[1] ), esc_html( $s[2] )
                     );
                 }
                 ?>
             </div>
-
-            <p class="regra mt-12 pt-6 text-sm txt-fraco leading-relaxed max-w-3xl">
-                <span class="txt font-semibold">De onde vêm estes números.</span>
-                São resultados medidos na instituição de ensino superior com 5.000 alunos que roda
-                o Send Educacional em produção. Não publicamos nome nem logotipo de cliente sem
-                autorização formal, e preferimos mostrar o que mudou na operação a mostrar uma
-                parede de logotipos.
-            </p>
         </div>
     </section>
 
