@@ -115,6 +115,59 @@ function se_ferramentas() {
 			),
 		),
 
+		// ----------------------------------------- OS TRÊS, ANTES DE TROCAR
+		// Versão em tela do ebook. As doze perguntas são para fazer AO
+		// FORNECEDOR, então a pergunta aqui não é se a instituição faz, é se
+		// ela já tem a resposta. O que devolvemos em cada lacuna é o que uma
+		// boa resposta precisa conter, que é a parte do guia que vale na
+		// reunião.
+		'12-perguntas-antes-de-trocar-de-sistema' => array(
+			'tipo'      => 'quiz',
+			'segmento'  => '',
+			'material'  => 'material-trocar-de-sistema',
+			'nome'      => '12 perguntas antes de trocar de sistema',
+			'titulo'    => 'Você já tem as doze respostas do seu fornecedor?',
+			'chamada'   => 'Marque só o que já foi respondido com informação concreta, não com intenção.',
+			'resumo'    => 'Quase todo desastre de migração é previsível: ele aparece nas respostas que o fornecedor dá, ou deixa de dar, antes de assinar. Faça as doze para todos os que estiver avaliando, inclusive o atual. Perguntas iguais tornam propostas comparáveis.',
+			'rotulos'   => array( 'Já tenho essa resposta', 'Ainda não perguntei' ),
+			'perguntas' => array(
+				'O que exatamente vai ser migrado da sua base, e o que fica para trás?',
+				'Quem responde pelo histórico dos alunos que já se formaram ou evadiram?',
+				'Os títulos financeiros em aberto chegam do outro lado com o mesmo saldo?',
+				'Quem vai levantar as regras que hoje só existem na cabeça de quem opera?',
+				'Em que ponto do calendário letivo a virada acontece?',
+				'Quem treina cada setor, e quando?',
+				'O sistema atende à regulação do seu segmento, item por item?',
+				'O que acontece com as integrações que já funcionam hoje?',
+				'O aluno vai perder acesso a alguma coisa na virada?',
+				'Quanto custa de verdade, somando implantação, migração e treinamento?',
+				'Como é o suporte depois que a implantação termina?',
+				'Se um dia você quiser sair, como leva os seus dados?',
+			),
+			'faixas' => array(
+				array( 'ate' => 2, 'titulo' => 'Você está conduzindo a escolha.',
+					'texto' => 'A maior parte das respostas já está na mesa, e isso muda quem controla a negociação. O que falta dá para cobrir numa conversa.' ),
+				array( 'ate' => 6, 'titulo' => 'Faltam respostas justamente nas partes caras.',
+					'texto' => 'O que está em aberto costuma ser escopo de dados, custo total e suporte, que são os três itens mais caros de renegociar depois de assinado.' ),
+				array( 'ate' => 12, 'titulo' => 'A decisão está sendo tomada no escuro.',
+					'texto' => 'Sem essas respostas por escrito, o que existe é uma promessa. Não é sinal de fornecedor ruim: é sinal de que a conversa ainda não aconteceu, e ela precisa acontecer antes da assinatura, não depois.' ),
+			),
+			'recomendacoes' => array(
+				0  => 'Uma boa resposta é uma planilha de escopo, item a item, com o que entra, o que não entra e o que entra parcialmente, assinada antes do contrato. "Migramos tudo" não é resposta.',
+				1  => 'Uma boa resposta traz o acervo histórico para o sistema novo, ou digitalizado com busca por aluno. Manter o sistema antigo ligado só para consulta é custo recorrente que ninguém colocou na conta.',
+				2  => 'Uma boa resposta é conciliação título a título, com relatório de divergências antes da virada. Conferência por amostragem não pega diferença de centavo, e ela reaparece no boleto do aluno.',
+				3  => 'Uma boa resposta é uma etapa formal de levantamento, com um consultor entrevistando cada setor e devolvendo por escrito. Formulário para a instituição preencher sozinha não funciona: quem opera não sabe que a regra dele é exceção.',
+				4  => 'Uma boa resposta amarra o cronograma ao seu calendário letivo, não à agenda comercial do fornecedor, e diz o que acontece se atrasar.',
+				5  => 'Uma boa resposta é treinamento por setor, com material que fica e uma pessoa de referência nos primeiros dias de operação real.',
+				6  => 'Uma boa resposta cita as obrigações do seu segmento sem você precisar explicar, e mostra a tela onde cada exportação é gerada.',
+				7  => 'Uma boa resposta lista as integrações nativas e diz o que acontece com as que não têm equivalente. "Integramos com qualquer coisa via API" quer dizer que existe projeto, e ele não está no preço.',
+				8  => 'Uma boa resposta tem portal e aplicativo prontos antes da virada, com comunicado pronto e período de convivência entre os dois acessos.',
+				9  => 'Uma boa resposta dá o custo total de doze e de trinta e seis meses, separando o que é uma vez só do que é recorrente.',
+				10 => 'Uma boa resposta tem canal definido, prazo por gravidade e diz quem atende. Peça para falar com um cliente atual antes de assinar.',
+				11 => 'Uma boa resposta é uma cláusula de portabilidade no contrato: formato, prazo e custo. Constrangimento com esta pergunta já é a resposta.',
+			),
+		),
+
 		// ---------------------------------------------------------- OS DOIS
 		'calculadora-inadimplencia' => array(
 			'tipo'     => 'calculadora',

@@ -48,7 +48,18 @@ $m = se_material();
 						</ul>
 					</div>
 
-					<p class="text-sm txt-fraco mt-8 max-w-xl leading-relaxed">
+					<?php
+					// Nem todo mundo quer baixar PDF. Quem prefere responder na
+					// hora tem o mesmo roteiro em tela, sem formulário antes.
+					$url_tela = se_url_pagina( '12-perguntas-antes-de-trocar-de-sistema' );
+					if ( $url_tela ) : ?>
+						<a href="<?php echo esc_url( $url_tela ); ?>" class="inline-flex items-center gap-2 text-sm font-bold txt-link hover-forte transition mt-8">
+							Prefere responder agora, na tela? Faça o diagnóstico
+							<span aria-hidden="true">&rarr;</span>
+						</a>
+					<?php endif; ?>
+
+					<p class="text-sm txt-fraco mt-6 max-w-xl leading-relaxed">
 						Escrito para quem decide: mantenedores, reitoria, direção e secretaria.
 						Serve para ensino superior, educação básica e cursos livres, porque as
 						doze perguntas valem para qualquer fornecedor, inclusive o seu atual.
