@@ -31,7 +31,7 @@ function se_ferramentas() {
 			'exige_lead' => true,
 			'segmento'   => 'educacao-basica',
 			'nome'       => 'Diagnóstico da Rematrícula',
-			'titulo'    => 'A sua rematrícula está pronta para agosto?',
+			'titulo'    => 'A sua rematrícula está pronta para o ano que vem?',
 			'chamada'   => 'Dez perguntas, dois minutos. No fim você recebe uma nota e três recomendações.',
 			'resumo'    => 'A rematrícula define a receita do ano inteiro e acontece com toda a base ao mesmo tempo. Na maioria das escolas ela roda em três lugares diferentes: o contrato sai de um, a assinatura de outro e a cobrança de um terceiro. Este raio-x mostra onde está o seu vazamento.',
 			'rotulos'   => array( 'Sim, já é assim', 'Ainda não' ),
@@ -49,7 +49,7 @@ function se_ferramentas() {
 			),
 			'faixas' => array(
 				array( 'ate' => 2, 'titulo' => 'Sua rematrícula está bem resolvida.',
-					'texto' => 'O processo está em pé e a secretaria não está apagando incêndio. As lacunas que sobraram são pontuais, e valem uma conversa só se atrapalharem em agosto.' ),
+					'texto' => 'O processo está em pé e a secretaria não está apagando incêndio. As lacunas que sobraram são pontuais, e valem uma conversa só se atrapalharem na próxima rematrícula.' ),
 				array( 'ate' => 5, 'titulo' => 'Meio caminho. E o meio é o que dói.',
 					'texto' => 'Parte da rematrícula já está no sistema e parte ainda é feita na mão. Esse é o cenário que mais consome a secretaria, porque exige conferir os dois lados e ninguém confia inteiramente em nenhum.' ),
 				array( 'ate' => 10, 'titulo' => 'A rematrícula está sendo feita na mão.',
