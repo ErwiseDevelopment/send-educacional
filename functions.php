@@ -7,6 +7,7 @@ if (!defined('ABSPATH')) exit;
 // ========================================================
 require_once get_template_directory() . '/inc/tracking.php';
 require_once get_template_directory() . '/inc/seo.php';
+require_once get_template_directory() . '/inc/links.php';
 require_once get_template_directory() . '/inc/opcoes.php';
 require_once get_template_directory() . '/inc/segmentos.php';
 require_once get_template_directory() . '/inc/menu.php';

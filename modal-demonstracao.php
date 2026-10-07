@@ -187,6 +187,18 @@ $md_segmentos = se_segmentos();
         if (e.key === 'Escape') window.fecharDemo();
     });
 
+    // Link direto para o formulário: qualquer página com #demonstracao no
+    // endereço já abre o modal (usado pela página /links da bio do Instagram).
+    function abrirPeloEndereco() {
+        if (location.hash === '#demonstracao') window.abrirDemo();
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', abrirPeloEndereco);
+    } else {
+        abrirPeloEndereco();
+    }
+    window.addEventListener('hashchange', abrirPeloEndereco);
+
     window.enviarLead = function (e) {
         e.preventDefault();
 
